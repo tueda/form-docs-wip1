@@ -16,4 +16,5 @@ set -o pipefail
   echo 'title: FORM documentation'
   echo 'layout: default'
   echo '---'
+  echo '# FORM documentation'
 } >docs/index.md
