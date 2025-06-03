@@ -11,26 +11,6 @@ set -o pipefail
 
 REPOSITORY=https://github.com/vermaseren/form.git
 
-# Trap ERR to print the stack trace when a command fails.
-# See: https://gist.github.com/ahendrix/7030300
-_errexit() {
-  local err=$?
-  set +o xtrace
-  local code="${1:-1}"
-  echo "Error in ${BASH_SOURCE[1]}:${BASH_LINENO[0]}: '${BASH_COMMAND}' exited with status $err" >&2
-  # Print out the stack trace described by $FUNCNAME
-  if [ ${#FUNCNAME[@]} -gt 2 ]; then
-    echo "Traceback:" >&2
-    for ((i=1;i<${#FUNCNAME[@]}-1;i++)); do
-      echo "  [$i]: at ${BASH_SOURCE[$i+1]}:${BASH_LINENO[$i]} in function ${FUNCNAME[$i]}" >&2
-    done
-  fi
-  echo "Exiting with status $code" >&2
-  exit "$code"
-}
-trap _errexit ERR
-set -o errtrace
-
 # Check the command line arguments.
 if [[ $# == 1 ]]; then
   out_dir="$1"
@@ -67,7 +47,7 @@ clean_latex2html() {
 git clone $REPOSITORY
 cd form
 git checkout "$repo_rev"
-distname=form-$(./scripts/git-version-gen.sh -r | sed '2q;d' | sed 's/^v//')
+version=$(./scripts/git-version-gen.sh -r | sed '2q;d' | sed 's/^v//')
 autoreconf -i
 mkdir build
 cd build
@@ -84,10 +64,10 @@ mkdir -p "$out_dir"
 
 # Move the documents.
 git rev-parse HEAD >"$out_dir/REVISION"
-echo "$distname" >"$out_dir/DISTNAME"
-mv doc/manual/manual.pdf "$out_dir/$distname-manual.pdf"
-mv doc/devref/devref.pdf "$out_dir/$distname-devref.pdf"
-mv doc/doxygen/doxygen.pdf "$out_dir/$distname-doxygen.pdf"
+echo "$version" >"$out_dir/VERSION"
+mv doc/manual/manual.pdf "$out_dir/form-$version-manual.pdf"
+mv doc/devref/devref.pdf "$out_dir/form-$version-devref.pdf"
+mv doc/doxygen/doxygen.pdf "$out_dir/form-$version-doxygen.pdf"
 mv doc/manual/manual "$out_dir/manual"
 mv doc/devref/devref "$out_dir/devref"
 mv doc/doxygen/html "$out_dir/doxygen"
