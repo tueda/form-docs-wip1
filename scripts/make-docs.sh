@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Build documents.
+# Build documentation.
 #
 # Usage:
 #   make-docs.sh OUTPUT-DIR
@@ -8,6 +8,8 @@
 #
 set -eu
 set -o pipefail
+
+REPOSITORY=https://github.com/vermaseren/form.git
 
 # Trap ERR to print the stack trace when a command fails.
 # See: https://gist.github.com/ahendrix/7030300
@@ -52,17 +54,17 @@ fi
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf "$tmp_dir"' EXIT
 
-# Build documents.
+# Build documentation in the temporary directory.
 cd "$tmp_dir"
 
 clean_latex2html() {
   (
     cd "$1"
-    rm -f images.aux images.idx images.log images.pdf images.pl images.tex internals.pl labels.pl WARNINGS
+    rm -f images.aux images.idx images.log images.pdf images.pl images.tex internals.pl labels.pl # WARNINGS
   )
 }
 
-git clone https://github.com/vermaseren/form.git
+git clone $REPOSITORY
 cd form
 git checkout "$repo_rev"
 distname=form-$(./scripts/git-version-gen.sh -r | sed '2q;d' | sed 's/^v//')
@@ -81,7 +83,8 @@ make -C doc/doxygen html
 mkdir -p "$out_dir"
 
 # Move the documents.
-echo "$distname" >"$out_dir/distname"
+git rev-parse HEAD >"$out_dir/REVISION"
+echo "$distname" >"$out_dir/DISTNAME"
 mv doc/manual/manual.pdf "$out_dir/$distname-manual.pdf"
 mv doc/devref/devref.pdf "$out_dir/$distname-devref.pdf"
 mv doc/doxygen/doxygen.pdf "$out_dir/$distname-doxygen.pdf"
