@@ -1,1 +1,4 @@
-This is a test.
+---
+layout: default
+title: FORM documentation
+---
