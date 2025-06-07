@@ -10,11 +10,12 @@ set -eu
 set -o pipefail
 
 REPOSITORY=https://github.com/vermaseren/form.git
+DEFAULT_BRANCH=master
 
 # Check the command line arguments.
 if [[ $# == 1 ]]; then
   out_dir="$1"
-  repo_rev=master
+  repo_rev=$DEFAULT_BRANCH
 elif [[ $# == 2 ]]; then
   out_dir="$1"
   repo_rev="$2"

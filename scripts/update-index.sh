@@ -12,6 +12,7 @@ set -eu
 set -o pipefail
 
 REPOSITORY=https://github.com/vermaseren/form.git
+DEFAULT_BRANCH=master
 
 repo_url="${REPOSITORY%.git}"
 
@@ -27,7 +28,7 @@ write_items() {
 
   echo
 
-  if [ "$dir" = master ]; then
+  if [ "$dir" = $DEFAULT_BRANCH ]; then
     echo "## [Nightly Build]($repo_url/tree/$revision)"
   else
     echo "## [$version]($repo_url/tree/v$version)"
@@ -43,7 +44,7 @@ write_items() {
 
   cd docs
 
-  write_items master
+  write_items $DEFAULT_BRANCH
   for dir in $(printf "%s\n" v* | sort -V -r); do
     write_items "$dir"
   done
