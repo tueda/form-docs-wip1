@@ -1,4 +1,1 @@
----
-layout: default
-title: FORM documentation
----
+This is a test.
