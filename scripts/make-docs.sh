@@ -45,6 +45,12 @@ clean_latex2html() {
   )
 }
 
+make_tarball() {
+  cp -r "$1" "$2"
+  tar -c "$2"/* | gzip -c -9 > "$2.tar.gz"
+  rm -r "$2"
+}
+
 git clone $REPOSITORY
 cd form
 git checkout "$repo_rev"
@@ -56,19 +62,25 @@ cd build
 make pdf
 make -C doc/manual latex2html
 clean_latex2html doc/manual/manual
+make_tarball doc/manual/manual "form-$version-manual-html"
 make -C doc/devref latex2html
 clean_latex2html doc/devref/devref
+make_tarball doc/devref/devref "form-$version-devref-html"
 make -C doc/doxygen html
+make_tarball doc/doxygen/html "form-$version-doxygen-html"
 
 # Prepare the output directory.
 mkdir -p "$out_dir"
 
 # Move the documents.
-git rev-parse HEAD >"$out_dir/REVISION"
-echo "$version" >"$out_dir/VERSION"
+git rev-parse HEAD >"$out_dir/_REVISION"
+echo "$version" >"$out_dir/_VERSION"
 mv doc/manual/manual.pdf "$out_dir/form-$version-manual.pdf"
 mv doc/devref/devref.pdf "$out_dir/form-$version-devref.pdf"
 mv doc/doxygen/doxygen.pdf "$out_dir/form-$version-doxygen.pdf"
+mv "form-$version-manual-html.tar.gz" "$out_dir/form-$version-manual-html.tar.gz"
+mv "form-$version-devref-html.tar.gz" "$out_dir/form-$version-devref-html.tar.gz"
+mv "form-$version-doxygen-html.tar.gz" "$out_dir/form-$version-doxygen-html.tar.gz"
 mv doc/manual/manual "$out_dir/manual"
 mv doc/devref/devref "$out_dir/devref"
 mv doc/doxygen/html "$out_dir/doxygen"

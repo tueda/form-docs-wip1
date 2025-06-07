@@ -19,12 +19,12 @@ repo_url="${REPOSITORY%.git}"
 write_items() {
   dir=$1
 
-  if [ ! -f "$dir/REVISION" ]; then
+  if [ ! -f "$dir/_REVISION" ] || [ ! -f "$dir/_VERSION" ]; then
     return 0
   fi
 
-  revision=$(cat "$dir/REVISION")
-  version=$(cat "$dir/VERSION")
+  revision=$(cat "$dir/_REVISION")
+  version=$(cat "$dir/_VERSION")
 
   echo
 
@@ -37,7 +37,6 @@ write_items() {
 
 {
   echo '---'
-  echo 'title: FORM documentation'
   echo 'layout: default'
   echo '---'
 
