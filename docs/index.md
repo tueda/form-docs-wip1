@@ -1,5 +1,4 @@
 ---
-title: FORM documentation
 layout: default
+title: FORM documentation
 ---
-# FORM documentation

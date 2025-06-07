@@ -40,7 +40,6 @@ write_items() {
   echo 'title: FORM documentation'
   echo 'layout: default'
   echo '---'
-  echo '# FORM documentation'
 
   cd docs
 
