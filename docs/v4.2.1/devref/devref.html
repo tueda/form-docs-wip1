@@ -1,0 +1,1994 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>FORM version 4.2.1 Developer's reference manual</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
+
+<LINK REL="STYLESHEET" HREF="devref.css">
+
+</HEAD>
+
+<BODY >
+
+<P>
+
+<H1 class="CENTER"><SPAN CLASS="XHUGE">FORM
+<BR><SPAN CLASS="XLARGE">version 4.2.1
+<BR><SPAN CLASS="HUGE">Developer's reference manual</SPAN></SPAN></SPAN></H1>
+<DIV CLASS="author_info">
+
+<STRONG>J.A.M.Vermaseren et al.</STRONG>
+<P>
+25 June 2017</P>
+</DIV><P>
+ <SPAN CLASS="TINY">. </SPAN>
+
+<BR>
+
+<H2><A ID="SECTION00010000000000000000">
+Contents</A>
+</H2>
+<!--Table of Contents-->
+
+<UL CLASS="TofC">
+<LI><A ID="tex2html18"
+  HREF="#SECTION00020000000000000000">Initial remarks</A>
+<LI><A ID="tex2html19"
+  HREF="#SECTION00030000000000000000">Overview of the source code</A>
+<UL>
+<LI><A ID="tex2html20"
+  HREF="#SECTION00031000000000000000">The header files</A>
+<LI><A ID="tex2html21"
+  HREF="#SECTION00032000000000000000">The source files</A>
+<LI><A ID="tex2html22"
+  HREF="#SECTION00033000000000000000">The global structs</A>
+<LI><A ID="tex2html23"
+  HREF="#SECTION00034000000000000000">Configuration</A>
+</UL>
+<BR>
+<LI><A ID="tex2html24"
+  HREF="#SECTION00040000000000000000">Discussion of a typical FORM run</A>
+<LI><A ID="tex2html25"
+  HREF="#SECTION00050000000000000000">Specific topics</A>
+<UL>
+<LI><A ID="tex2html26"
+  HREF="#SECTION00051000000000000000">Pattern matching</A>
+<LI><A ID="tex2html27"
+  HREF="#SECTION00052000000000000000">The problem of dummy indices</A>
+<LI><A ID="tex2html28"
+  HREF="#SECTION00053000000000000000">Values of indices (and vectors)</A>
+</UL>
+<BR>
+<LI><A ID="tex2html29"
+  HREF="#SECTION00060000000000000000">The test suite</A>
+<LI><A ID="tex2html30"
+  HREF="#SECTION00070000000000000000">CVS</A>
+<UL>
+<LI><A ID="tex2html31"
+  HREF="#SECTION00071000000000000000">Some useful CVS idioms</A>
+</UL>
+<BR>
+<LI><A ID="tex2html32"
+  HREF="#SECTION00080000000000000000">Index</A>
+</UL>
+<!--End of Table of Contents--> <SPAN CLASS="TINY">. </SPAN>
+
+<P>
+
+<H1><A ID="SECTION00020000000000000000">
+Initial remarks</A>
+</H1>
+
+<P>
+This document is intended for people who are interested in understanding how FORM works internally,
+how to find and correct bugs in the source code, and how to extend FORM by implementing new
+features.
+
+<P>
+It is assumed, that the source code is available, either as a package or directly via CVS access to
+the FORM repository. The FORM package contains many files and several subdirectories. The actual
+sources of FORM, TFORM, and P<SMALL>AR</SMALL>FORM are all in the directory <SPAN style="font-family:monospace">sources</SPAN> (see section
+<A HREF="#sec:source">2</A> for an overview).  Documentation can be found in the directory <SPAN style="font-family:monospace">doc</SPAN>. The testing
+suite is contained in the directory <SPAN style="font-family:monospace">check</SPAN>.
+
+<P>
+
+<H1><A ID="SECTION00030000000000000000"></A>
+<A ID="sec:source"></A>
+<BR>
+Overview of the source code
+</H1>
+
+<P>
+Here we will discuss general aspects of the source code, i.e. the files contained in the directory
+<SPAN style="font-family:monospace">sources</SPAN>.
+
+<P>
+FORM is written in ANSI C. The code is split up in header files <SPAN style="font-family:monospace">*.h</SPAN> and source files
+<SPAN style="font-family:monospace">*.c</SPAN>. Files usually don't come in pairs of a header file with the declarations and a source file
+with the definitions, but instead most declarations are collected in a few headers. The declaration
+of function headers is done in <SPAN style="font-family:monospace">declare.h</SPAN> for example. The most prominent exceptions are
+<SPAN style="font-family:monospace">parallel.h</SPAN> and <SPAN style="font-family:monospace">minos.h</SPAN>.
+
+<P>
+Each file usually contains many hundred lines of code. To make the files more accessible, the code
+is structure by so&ndash;called folds. If you use the editor STedi, the code will be visualized
+correctly. If you use a vi&ndash;compatible editor, it is advisable to activate folds and set the
+foldmarkers to <SPAN style="font-family:monospace">set foldmarker=#[,#]</SPAN>
+
+<P>
+
+<H2><A ID="SECTION00031000000000000000">
+The header files</A>
+</H2>
+
+<P>
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 0.21ex; vertical-align: -0.11ex; " SRC="img1.svg"
+ ALT="$\quad\;\:$"></SPAN><TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">declare.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Contains the declarations of all publicly relevant functions as
+well as of commonly used macros like <SPAN style="font-family:monospace">NCOPY</SPAN> or <SPAN style="font-family:monospace">LOCK</SPAN>.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">form3.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Global settings and macro definitions like word size or version
+number. It includes several different system
+header files depending on the computer's architecture.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">fsizes.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Defines macros that determine the size and layout of FORM's internal data like the
+sizes of the work buffers etc.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">ftypes.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Contains preprocessor definitions of the codes used in the internal representation of
+parsed input and expressions.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">fwin.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Special settings for the Windows operating system.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">inivar.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Contains the initialization of various global data like the
+FORM function names or the character table for parsing. It also defines the global
+struct <SPAN style="font-family:monospace">A</SPAN>, and for TFORM the struct pointer <SPAN style="font-family:monospace">AB</SPAN>.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">minos.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Dedicated header to the minos.c source file.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">parallel.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Dedicated header to the parallel.c source file.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">portsignals.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Preprocessor definition of the OS signals FORM can deal with.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">structs.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Defines the structs that contain almost all of
+FORM's internal data.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">unix.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Special definitions for Unix&ndash;like operating systems.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">variable.h</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Some convinience preprocessor definitions to ease the access to
+global variables, like <SPAN style="font-family:monospace">cbuf</SPAN> or <SPAN style="font-family:monospace">AC</SPAN>.</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H2><A ID="SECTION00032000000000000000">
+The source files</A>
+</H2>
+
+<P>
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 0.21ex; vertical-align: -0.11ex; " SRC="img1.svg"
+ ALT="$\quad\;\:$"></SPAN><TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">argument.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for the <SPAN style="font-family:monospace">argument</SPAN> and <SPAN style="font-family:monospace">term</SPAN>
+	FORM statements.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">bugtool.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Low-level debugging code.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">checkpoint.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code to test for checkpoint conditions, to create
+snapshots, and to recover from snapshot data.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">comexpr.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Functions the compiler calls to translate a statement that
+involves an algebraic expression, e.g. <SPAN style="font-family:monospace">Local</SPAN> or <SPAN style="font-family:monospace">Id</SPAN>.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">compcomm.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Functions the compiler calls to translate a statement that
+neither involves an algebraic expression nor is a variable declaration.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">compiler.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Main compiler code.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">compress.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for GZIP (de-)compression in sort files.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">comtool.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Utility functions for the compiler, like <SPAN style="font-family:monospace">AddRHS</SPAN>.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">dollar.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code dealing with dollar variables.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">execute.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for the execution phase of a module. Also, code dealing
+with brackets in FORM expressions.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">extcmd.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>External command code.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">factor.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Simple factorizing code for dollar variables and expressions.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">findpat.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Pattern matching for symbols and dot products.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">function.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Pattern matching for functions.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">if.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for the <SPAN style="font-family:monospace">if</SPAN> statement.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">index.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for bracket indexing.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">lus.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code to find loops in index contractions.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">message.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Text output functions, like <SPAN style="font-family:monospace">MesPrint</SPAN> or <SPAN style="font-family:monospace">PrintTerm</SPAN>.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">minos.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>The minos database.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">module.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for module execution and the <SPAN style="font-family:monospace">moduleoption</SPAN>, <SPAN style="font-family:monospace">exec</SPAN> and
+<SPAN style="font-family:monospace">pipe</SPAN> statements.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">mpi2.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>MPI2 code for P<SMALL>AR</SMALL>FORM.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">mpi.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>MPI1 code for P<SMALL>AR</SMALL>FORM.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">names.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Name administration code to deal with the declaration of
+FORM variables.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">normal.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code to normalize terms, i.e. bring them to standard form.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">opera.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for doing traces, contractions, and tensor conversions.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">optim.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code to optimize FORTRAN or C output.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">parallel.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>P<SMALL>AR</SMALL>FORM (MPI-independant code).</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">pattern.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>General pattern matching and substitution.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">poly.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for polynomial arithmetic (experimental).</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">polynito.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for polynomial arithmetic and manipulation.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">pre.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>The preprocessor.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">proces.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>The central processor.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">ratio.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Partial fractioning and summing functions.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">reken.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for numerics.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">reshuf.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Utility functions for the renumbering of dummy indices, and for
+statements like <SPAN style="font-family:monospace">shuffle</SPAN>, <SPAN style="font-family:monospace">stuffle</SPAN>, <SPAN style="font-family:monospace">multiply</SPAN>.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">sch.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for the textual output of terms and expressions.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">setfile.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code to deal with setup parameters and setup files.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">smart.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code doing optimized pattern matching.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">sort.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for the sorting of expressions.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">startup.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Start of program (<SPAN style="font-family:monospace">main()</SPAN>). Code for the startup and shutdown
+phase of FORM.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">store.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code to read from disk or write to disk terms and expressions.
+Also, store file and save file management.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">symmetr.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Pattern matching for functions with symmetric properties.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">tables.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for the tablebases.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">threads.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>TFORM. Almost all of the TFORM specific code.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">token.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>The tokenizer.</TD>
+</TR>
+</TABLE>
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">tools.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Utility functions to deal with streams, files, strings, memory
+management, and timers.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">unixfile.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Wrapper functions for UNIX file I/O functions.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=100><SPAN style="font-family:monospace">wildcard.c</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=325>Code for wildcards.</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H2><A ID="SECTION00033000000000000000">
+The global structs</A>
+</H2>
+
+<P>
+FORM keeps its data organized in several global structs. These structs are defined in
+<SPAN style="font-family:monospace">structs.h</SPAN> (in the fold <SPAN style="font-family:monospace">A</SPAN>) and come by the names <SPAN style="font-family:monospace">M_const</SPAN>, <SPAN style="font-family:monospace">P_const</SPAN>, ....  The
+various global variables are grouped in these structs according to their rôle in the
+program. The fold commentaries give details on this. <SPAN style="font-family:monospace">M_const</SPAN> is for global settings at startup
+and <SPAN style="font-family:monospace">.clear</SPAN>, for example.
+
+<P>
+The various structs are collected in the struct <SPAN style="font-family:monospace">AllGlobals</SPAN>. In the case of sequential FORM,
+this struct is made into the type <SPAN style="font-family:monospace">ALLGLOBALS</SPAN>, and in <SPAN style="font-family:monospace">inivar.h</SPAN>, the global variable <SPAN style="font-family:monospace">A</SPAN> is
+defined having this type. This global variable <SPAN style="font-family:monospace">A</SPAN> holds all the data defined in the various
+structs. In <SPAN style="font-family:monospace">variable.h</SPAN> several macros are defined to simplify (and more importantly unify) the
+access to the struct elements. For example, one can access the variable <SPAN style="font-family:monospace">S0</SPAN> in <SPAN style="font-family:monospace">T_const</SPAN> as
+<SPAN style="font-family:monospace">AT.S0</SPAN>.
+
+<P>
+With the multi-threaded version TFORM things are a little bit more complicated, because some data
+needs to be replicated and made private for each thread. This kind of data is situated in the
+structs <SPAN style="font-family:monospace">N_const</SPAN>, <SPAN style="font-family:monospace">R_const</SPAN>, and <SPAN style="font-family:monospace">T_const</SPAN>. For TFORM, these structs are collected in the
+struct <SPAN style="font-family:monospace">AllPrivates</SPAN> (which makes up the type <SPAN style="font-family:monospace">ALLPRIVATES</SPAN>), all other structs go into the
+<SPAN style="font-family:monospace">AllGlobals</SPAN> struct. The global variable <SPAN style="font-family:monospace">A</SPAN> now contains only the non-thread specific data. For
+each thread a <SPAN style="font-family:monospace">AllPrivates</SPAN> struct is dynamically allocated and the global pointer variable (in
+<SPAN style="font-family:monospace">inivar.h</SPAN>) <SPAN style="font-family:monospace">AB</SPAN> holds their references. <SPAN style="font-family:monospace">AB</SPAN> is an array of pointers where the index
+corresponds to the thread number. The macros defined in <SPAN style="font-family:monospace">variable.h</SPAN> to access the global struct
+data are made such that they transparently work with the <SPAN style="font-family:monospace">AB</SPAN> array. The user doesn't need to care
+about these details and can still write as in the previous example <SPAN style="font-family:monospace">AT.S0</SPAN>. This keeps the code
+of sequential FORM and multi-threaded TFORM uniform.
+
+<P>
+The only small price one has to pay to make this uniform access by macros possible is to make sure
+every function in FORM knows in which thread it is executed. The <SPAN style="font-family:monospace">AN</SPAN>, <SPAN style="font-family:monospace">AR</SPAN>, and <SPAN style="font-family:monospace">AT</SPAN> macros
+use a variable <SPAN style="font-family:monospace">B</SPAN>, which is set to the correct entry in <SPAN style="font-family:monospace">AB</SPAN> by one of two ways. First, a
+function can use the macro <SPAN style="font-family:monospace">GETIDENTITY</SPAN> (defined in <SPAN style="font-family:monospace">declare.h</SPAN>).  In TFORM&nbsp; it calls
+<SPAN style="font-family:monospace">WhoAmI()</SPAN> to get the thread number, declares the pointer <SPAN style="font-family:monospace">B</SPAN>, and sets <SPAN style="font-family:monospace">B</SPAN> to point to the
+correct entry in <SPAN style="font-family:monospace">AB</SPAN>. In sequential FORM this macro is empty. The second way is to get the
+variable <SPAN style="font-family:monospace">B</SPAN> as a parameter from the caller. For this method the macros <SPAN style="font-family:monospace">PHEAD</SPAN>, <SPAN style="font-family:monospace">PHEAD0</SPAN>,
+<SPAN style="font-family:monospace">BHEAD</SPAN>, and <SPAN style="font-family:monospace">BHEAD0</SPAN> exist (defined in <SPAN style="font-family:monospace">ftypes.h</SPAN>), which can be used in the parameter list of
+the function declarations. The variants with a zero differ only by not including a trailing comma,
+which is not allowed if no other parameters are following in the declaration. Usually, <SPAN style="font-family:monospace">PHEAD</SPAN> is
+used in the declaration (it includes type information), while <SPAN style="font-family:monospace">BHEAD</SPAN> appears in the calling of
+functions. Which way to set <SPAN style="font-family:monospace">B</SPAN> is chosen, depends on the use of the function. The <SPAN style="font-family:monospace">PHEAD</SPAN> method
+is faster than <SPAN style="font-family:monospace">GETIDENTITY</SPAN> and should be preferred in functions that are called very often. On
+the other hand, <SPAN style="font-family:monospace">GETIDENTITY</SPAN> is more general as it does not rely on every caller to supply <SPAN style="font-family:monospace">B</SPAN>.
+
+<P>
+The elements of the structs are of various types. Some types are just simple macros mapping directly
+to built-in types (see <SPAN style="font-family:monospace">form3.h</SPAN>) like <SPAN style="font-family:monospace">WORD</SPAN>, others are names for structs that are defined
+(mostly) in <SPAN style="font-family:monospace">structs.h</SPAN>. Often, variables of the same type are grouped together to help the
+compiler with alignment. Also, a lot of structs use macros like <SPAN style="font-family:monospace">PADLONG</SPAN> (<SPAN style="font-family:monospace">unix.h</SPAN> or
+<SPAN style="font-family:monospace">fwin.h</SPAN>) to pad a struct such that its size is a multiple of a built-in type size. This again
+is to help with the data alignment.
+
+<P>
+Most struct elements have comments that explain their use. These commentaries often include
+the information where this element was once located in the old version 2 of FORM (it is the pair
+of parentheses with or without a capital letter inside). Pointers come in two flavors: Some
+pointers reference a dynamically allocated piece of memory, basically owning this memory. Others
+just reference another variable or point into allocated memory. The first kind is usually marked
+with <SPAN style="font-family:monospace">[D]</SPAN> for easy identification. These pointers often need to be treated particularly, e.g. during the
+snapshot creation, when recovering, or when shutting down.
+
+<P>
+During start up (<SPAN style="font-family:monospace">main()</SPAN>), all the memory of these global structs, i.e. their element variables, is
+initialized to zero.
+
+<P>
+
+<H2><A ID="SECTION00034000000000000000">
+Configuration</A>
+</H2>
+
+<P>
+The source code evaluates several preprocessor definitions that can be defined by the user.
+According to these definitions the executable can be configured in different ways. As a default, the
+sequential version of FORM is generated. But if, for example, the preprocessor variable
+<SPAN style="font-family:monospace">WITHPTHREADS</SPAN> is defined, the multi-threaded version TFORM will be compiled. These preprocessor
+variables can be set when calling the compiler, like
+
+<P>
+<SPAN style="font-family:monospace">gcc -c -DWITHPTHREADS -o pre.o pre.c</SPAN>
+
+<P>
+The most commonly considered preprocessor variables are:
+<BR><SPAN style="font-family:monospace">WITHPTHREADS</SPAN>, <SPAN style="font-family:monospace">PARALLEL</SPAN>,
+<SPAN style="font-family:monospace">WITHZLIB</SPAN>, <SPAN style="font-family:monospace">WITHGMP</SPAN>, <SPAN style="font-family:monospace">WITHSORTBOTS</SPAN>, <SPAN style="font-family:monospace">LINUX</SPAN>,
+<BR><SPAN style="font-family:monospace">OPTERON</SPAN>, <SPAN style="font-family:monospace">DEBUGGING</SPAN>. The first two
+change the flavor of the executable: TFORM or P<SMALL>AR</SMALL>FORM. The next two configure whether FORM uses
+the zlib library for compression during sorts or the GMP library for arbitrary precision arithmetics.
+The next decides whether FORM uses dedicated sorting  threads in TFORM. <SPAN style="font-family:monospace">LINUX</SPAN>
+specifies that the executable is to be compiled for a Linux or UNIX compliant operating system. An
+alternative here would be to set the variable <SPAN style="font-family:monospace">ALPHA</SPAN> or <SPAN style="font-family:monospace">MYWIN64</SPAN> instead, but these builds are
+less common. <SPAN style="font-family:monospace">OPTERON</SPAN> has to be set if one compiles a 64bit executable. <SPAN style="font-family:monospace">DEBUGGING</SPAN> enables
+some features for a non-release debugging version of the executable (commonly named <SPAN style="font-family:monospace">vorm</SPAN> or
+<SPAN style="font-family:monospace">tvorm</SPAN>).
+
+<P>
+When using the autoconf setup, the settings concerning the operating system, architecture (32/64bit), and
+flavor of the executable are automatically done right. Additional settings like <SPAN style="font-family:monospace">WITHZLIB</SPAN> can be
+changed by manually editing the file <SPAN style="font-family:monospace">config.h</SPAN>, which is included in <SPAN style="font-family:monospace">form3.h</SPAN>.
+
+<P>
+Version numbers and production date can also be set, but then one either needs to edit the
+appropriate lines in <SPAN style="font-family:monospace">form3.h</SPAN> when in a manual compiling setup, or by editing <SPAN style="font-family:monospace">configure.ac</SPAN> in
+an autoconf setup.
+
+<P>
+
+<H1><A ID="SECTION00040000000000000000">
+Discussion of a typical FORM run</A>
+</H1>
+
+<P>
+We discuss in the following what is happening inside FORM when it executes a
+given program. The discussion focuses more on the interplay between the various
+parts of FORM and on key concepts of the internal data representation than on
+in-depth details of the code. For the latter, the reader is referred to section
+<A HREF="#sec:indepth">4</A>. This section should for better comprehension be read with the
+referenced FORM source files opened aside.
+
+<P>
+We consider the following exemplary FORM program <SPAN style="font-family:monospace">test.frm</SPAN> (which we run
+with the command "<SPAN style="font-family:monospace">form test</SPAN>"):
+
+<P>
+<PRE>
+ 1      #define N "3"
+ 2
+ 3      Symbol x, y, z;
+ 4
+ 5      L	f = (x+y)^2 - (x+z)^`N';
+ 6      L	g = f - x;
+ 7
+ 8      Brackets x;
+ 9      Print;
+10      .sort
+11
+12      #do i=2,3
+13      Id	x?^`i' = x;
+14      #enddo
+15
+16      Print +s;
+17      .end
+</PRE>
+
+<P>
+The entry function <SPAN style="font-family:monospace">main()</SPAN> is in <SPAN style="font-family:monospace">startup.c</SPAN>. It does various
+initializations before it calls the preprocessor <SPAN style="font-family:monospace">PreProcessor()</SPAN>, which
+actually deals with the FORM program. The code shows some typical features:
+Preprocessor macros are frequently used to select code specific to certain
+configurations. The two most common macros can be seen here: <SPAN style="font-family:monospace">WITHPTHREADS</SPAN>
+for a TFORM executable and <SPAN style="font-family:monospace">PARALLEL</SPAN> for a P<SMALL>AR</SMALL>FORM executable. Macros are
+used to access the global data contained in the variable <SPAN style="font-family:monospace">A</SPAN>, like
+<SPAN style="font-family:monospace">AX.timeout</SPAN> for example. The code uses (usually) own functions instead of
+standard functions provided by the C library for common tasks. Examples in
+<SPAN style="font-family:monospace">main()</SPAN> are <SPAN style="font-family:monospace">strDup1</SPAN> or <SPAN style="font-family:monospace">MesPrint</SPAN> (replacing <SPAN style="font-family:monospace">printf()</SPAN>). Another
+very often used function is <SPAN style="font-family:monospace">Malloc1()</SPAN> replacing <SPAN style="font-family:monospace">malloc()</SPAN>. The reasons
+are better portability and the inclusion of special features.  <SPAN style="font-family:monospace">Malloc1()</SPAN> for
+example makes a custom memory debugger available while <SPAN style="font-family:monospace">MesPrint()</SPAN> knows
+among other things how to print encoded expressions from the internal buffers.
+
+<P>
+The initializations in <SPAN style="font-family:monospace">main()</SPAN> are done in several steps. Some like the
+initialization of <SPAN style="font-family:monospace">A</SPAN> with zeros is done directly, most others are done by
+calls to dedicated functions. The initializations are split up according to the
+type of objects involved and the available information at this point. The
+command line parameters passed to FORM (none in our example run) are treated
+in the function <SPAN style="font-family:monospace">DoTail()</SPAN>. After that, files are opened and also parsed for
+addtional settings. Then, as all settings are known, the large part of the
+internal data is allocated and initialized. Finally, recovery settings are
+checked, threads are started if necessary, timers are started, and variable
+initializations that might need to be repeated later (e.g. clear modules) are
+done in <SPAN style="font-family:monospace">IniVars()</SPAN>.
+
+<P>
+The call to <SPAN style="font-family:monospace">OpenInput()</SPAN> reads the actual FORM program into memory. The
+input is handled in an abstract fashion as character streams. The stream implementation
+(<SPAN style="font-family:monospace">tools.c</SPAN>) offers several functions to open, close, and read from a stream.
+Streams can be of different types including files, in-memory data like parts of
+other streams or dollar variables, as well as external channels. The access to
+the characters in all streams though is nicely uniform. In
+<SPAN style="font-family:monospace">OpenInput()</SPAN> a stream is representing our input file. Most of the logic
+there deals with the jump to the requested module (skipping clear instructions).
+It uses the function <SPAN style="font-family:monospace">GetInput()</SPAN> to get the next character in the stream.
+Which stream it reads from is determined by the variable <SPAN style="font-family:monospace">AC.CurrentStream</SPAN>.
+This global variable in the sub-struct <SPAN style="font-family:monospace">C_const</SPAN> of the <SPAN style="font-family:monospace">ALLGLOBALS</SPAN>
+variable <SPAN style="font-family:monospace">A</SPAN> is an example of how the different parts of FORM typically
+communicate with each other by means of global variables.
+
+<P>
+Next is the preprocessor. The preprocessor is implemented in the function
+<SPAN style="font-family:monospace">PreProcessor()</SPAN> in <SPAN style="font-family:monospace">pre.c</SPAN>. This function consists basically of two nested
+for-loops without conditions (<SPAN style="font-family:monospace">for (;;) { ...}</SPAN>). The outer loop deals
+with one FORM module for each iteration, the inner loop deals with one input
+line. We have certain initializations done before in our example the code runs
+into the inner loop, where <SPAN style="font-family:monospace">GetInput()</SPAN> reads our input file. The variables
+are all set such that the reading starts from the beginning of out input file.
+
+<P>
+The input in variable <SPAN style="font-family:monospace">c</SPAN> is tested for special cases. Whitespaces are
+skipped. Comments starting with a star <SPAN style="font-family:monospace">*</SPAN> (unless <SPAN style="font-family:monospace">AP.ComChar</SPAN> is set to a
+different character) are also skipped including whole folds. The crucial check
+on <SPAN style="font-family:monospace">c</SPAN> is the if-clause that checks it for being a preprocessor command (<SPAN style="font-family:monospace">#</SPAN>),
+a module statement (<SPAN style="font-family:monospace">.</SPAN>), or something else which is usually an ordinary
+statement.
+
+<P>
+<PRE>
+ 1      #define N "3"
+</PRE>
+
+<P>
+In our case, we have a preprocessor command in the input. The function
+<SPAN style="font-family:monospace">PreProInstruction()</SPAN> is called to read and interpret the rest of the line.
+The first part deals with the loading of the command in a dedicated buffer. For
+the moment, we ignore the details for the special treatment of cases when we are
+already inside a if or switch clause in a FORM program. In our run, the
+function <SPAN style="font-family:monospace">LoadInstruction(0)</SPAN> is simply called.
+
+<P>
+<SPAN style="font-family:monospace">LoadInstruction()</SPAN> copies input into the preprocessor instruction buffer.
+Three variables govern this buffer: <SPAN style="font-family:monospace">AP.preStart</SPAN> points to the start of the
+buffer, <SPAN style="font-family:monospace">AP.preFill</SPAN> to the point where new input can be copied to, and
+<SPAN style="font-family:monospace">AP.preStop</SPAN> to (roughly) the end of the buffer. This setup is quite typical
+for buffers in FORM. The memory is allocated at the start of FORM. Later, like
+at the end of <SPAN style="font-family:monospace">LoadInstruction()</SPAN>, if the buffer gets to small, it can be
+replaced by a larger memory patch with the help of utility functions like
+<SPAN style="font-family:monospace">DoubleLList()</SPAN>. The contents is copied from the old to the new buffer. Since
+this dynamical resizing of buffers needs to be done with most buffers
+occationally, most buffers in FORM store data such that it easily allows for
+copying, i.e.  usually C pointers are avoided and instead numbers representing
+offsets are used. Since the preprocessor instruction buffer just contains
+characters there is no problem here.
+
+<P>
+In <SPAN style="font-family:monospace">LoadInstruction()</SPAN> with our input and the mode set to 5 the input is just
+copied directly without any special actions taking except for a zero that is
+added at the end of the data. <SPAN style="font-family:monospace">PreProInstruction()</SPAN> examines the data in the
+preprocessor instruction buffer for special cases, and then does a look-up in
+the <SPAN style="font-family:monospace">precommands</SPAN> variable. This is a vector of type <SPAN style="font-family:monospace">KEYWORD</SPAN> which enables
+the translation of a string (the command) to a function pointer (the C function
+that performs the operations requested by preprocessor command).
+<SPAN style="font-family:monospace">FindKeyword()</SPAN> does these translations and the found function pointer is then
+dereferenced with the rest of the input in the instruction buffer as an argument.
+
+<P>
+The function pointer will point to <SPAN style="font-family:monospace">DoDefine()</SPAN> in our case. <SPAN style="font-family:monospace">DoDefine()</SPAN>
+just calls <SPAN style="font-family:monospace">TheDefine()</SPAN> that does the work. The if-clauses for
+<BR><SPAN style="font-family:monospace">AP.PreSwitchModes</SPAN> and <SPAN style="font-family:monospace">AP.PreIfStack</SPAN> are present in most of the
+functions dealing with preprocessor commands. They check whether we are in a
+preprocessor if or switch block that is not to be considered, because the
+condition didn't hold. Then, the standard action is to just exit the current
+function leaving it with no effect. Since there are preprocessor commands like
+<SPAN style="font-family:monospace">#else</SPAN> or <SPAN style="font-family:monospace">#endif</SPAN> this decision can only be taken at this level of the
+execution and requires the repeated use of this idiom.
+
+<P>
+The function scans through possible arguments and the value. In the value, special
+characters are interpreted. Ultimately, the preprocessor variable is created and
+assigned in the called function <SPAN style="font-family:monospace">PutPreVar()</SPAN>. The variable <SPAN style="font-family:monospace">chartype</SPAN>
+deserves an explanation. One will find it used very often in the C code that
+does input parsing. <SPAN style="font-family:monospace">chartype</SPAN> is actually a macro standing in for
+<SPAN style="font-family:monospace">FG.cTable</SPAN>. This global, statically initialized (in <SPAN style="font-family:monospace">inivar.h</SPAN>) vector
+contains a value of every possible ASCII character describing its parsing type.
+The parsing type groups different ASCII characters such that the syntax checking
+is facilitated, see <SPAN style="font-family:monospace">inivar.h</SPAN> for details.
+
+<P>
+In <SPAN style="font-family:monospace">PutPreVar()</SPAN> we get into the details of the name administration. We will
+just comment on some of the more general features. <SPAN style="font-family:monospace">NumPre</SPAN> and <SPAN style="font-family:monospace">PreVar</SPAN> are
+macros to access elements in <SPAN style="font-family:monospace">AP.PreVarList</SPAN>. The type of <SPAN style="font-family:monospace">AP.PreVarList</SPAN> is
+<SPAN style="font-family:monospace">LIST</SPAN>. This is a generic type for all kinds of lists and it is used for many
+other variables in FORM. A <SPAN style="font-family:monospace">LIST</SPAN> stores list entries in a piece of
+dynamically allocated memory that has no defined type (<SPAN style="font-family:monospace">void *</SPAN>). The utility
+functions for managing <SPAN style="font-family:monospace">LIST</SPAN>s like <SPAN style="font-family:monospace">FromList()</SPAN> are ignorant about the
+actual contents and perform list-specific operations like adding, removing or
+resizing a list. An actual entry can be accessed by some pointer arithmetic and
+type casting. The <SPAN style="font-family:monospace">PreVar</SPAN> macro contains such a cast to the type <SPAN style="font-family:monospace">PREVAR</SPAN>
+which represents a preprocessor variable.
+
+<P>
+<SPAN style="font-family:monospace">PutPreVar()</SPAN> creates a new list entry for us and basically copies the
+contents of the parameter <SPAN style="font-family:monospace">value</SPAN> to the memory allocated to <SPAN style="font-family:monospace">PREVAR</SPAN>'s
+<SPAN style="font-family:monospace">name</SPAN>. So, by writing <SPAN style="font-family:monospace">PreVar[0]-&gt;name</SPAN> or <SPAN style="font-family:monospace">PreVar[0]-&gt;value</SPAN> we could
+access the strings <SPAN style="font-family:monospace">N</SPAN> or <SPAN style="font-family:monospace">3</SPAN>.
+
+<P>
+In <SPAN style="font-family:monospace">TheDefine()</SPAN> the function <SPAN style="font-family:monospace">Terminate()</SPAN> is used several times. This
+function ultimately exits the program, but first tries to clean up things and
+print information about the problems causing this program termination.
+
+<P>
+<PRE>
+ 2
+ 3      Symbol x, y, z;
+</PRE>
+
+<P>
+In our run, we return to the function <SPAN style="font-family:monospace">PreProcessor()</SPAN> and start a new inner
+loop iteration that reads a new line. After skipping the empty line we end up
+in the else-branch of the big if-clause testing <SPAN style="font-family:monospace">c</SPAN> this time. Here the major
+steps are: we check again whether we are in a preprocessor if or switch, call
+<SPAN style="font-family:monospace">LoadStatement()</SPAN> to read and prepare the input, and call
+<SPAN style="font-family:monospace">CompileStatement()</SPAN> to perform the actions requested by the statement. Th
+programs enters the compiler stage.
+
+<P>
+We also see a call to <SPAN style="font-family:monospace">UngetChar()</SPAN>, which puts back the character that has
+been read into the input stream. This is necessary, because
+<BR><SPAN style="font-family:monospace">LoadStatement()</SPAN> and <SPAN style="font-family:monospace">CompileStatement()</SPAN> need the complete line for
+parsing. The variable <SPAN style="font-family:monospace">AP.PreContinuation</SPAN> is used several times. This variable
+deals with statements that span several input lines. <SPAN style="font-family:monospace">LoadStatement()</SPAN> can
+recognize unfinished statements and sets this variable accordingly.
+
+<P>
+<SPAN style="font-family:monospace">LoadStatement()</SPAN> basically copies the input to the compiler's input buffer at
+<SPAN style="font-family:monospace">AC.iBuffer</SPAN> (which has <SPAN style="font-family:monospace">AC.iPointer</SPAN> and <SPAN style="font-family:monospace">AC.iStop</SPAN> associated to it). It
+modifies the copy if necessary. The modification are to replace spaces by commas
+or insert commas at teh right spots to separate tokens. The interpretation steps
+that are following rely on these synactic conventions.
+
+<P>
+The call to <SPAN style="font-family:monospace">CompileStatement()</SPAN> is done only if no errors occured and all
+lines of a statement have been gathered into the compiler's input buffer.
+<SPAN style="font-family:monospace">CompileStatement()</SPAN> is called with the address of this input buffer and tries
+to identify the statement. Like in the preprocessor, the input string is search
+in a vector of <SPAN style="font-family:monospace">KEYWORD</SPAN>s (in <SPAN style="font-family:monospace">compiler.c</SPAN> and if found, a function pointer
+is dereferenced to the function that actually deals with the command and its
+options and arguments.  Here, we have actually two vectors of <SPAN style="font-family:monospace">KEYWORD</SPAN>s,
+because some statements might be stated in abbreviated form. The function
+<SPAN style="font-family:monospace">findcommand()</SPAN> deals with the search. <SPAN style="font-family:monospace">CompileStatement()</SPAN> does some small
+extra work, like for example checking the correct order of statements. In our
+case, it calls the function <SPAN style="font-family:monospace">CoSymbol()</SPAN>. This functions is in file
+<SPAN style="font-family:monospace">name.c</SPAN>, because as a declaration it basically adds something to the name
+administration. Functions for other statements can be found in <SPAN style="font-family:monospace">compcomm.c</SPAN>
+and <SPAN style="font-family:monospace">compexpr.c</SPAN>.
+
+<P>
+<SPAN style="font-family:monospace">CoSymbol()</SPAN> loops over the arguments and adds proper variable names together
+with their options to the symbols list <SPAN style="font-family:monospace">AC.Symbols</SPAN> and the name
+administration (in the call to <SPAN style="font-family:monospace">AddSymbol()</SPAN>.  In our case, we have <SPAN style="font-family:monospace">x</SPAN>,
+<SPAN style="font-family:monospace">y</SPAN>, and <SPAN style="font-family:monospace">z</SPAN> added. We have already encountered the basic mechanism of how a
+specific struct is added to a <SPAN style="font-family:monospace">LIST</SPAN>. The name administration was not
+explained before, though.
+
+<P>
+Symbols can appear in expressions that need to be encoded. The coding for
+symbols can simply be its entry index in the list <SPAN style="font-family:monospace">AC.Symbols</SPAN>, but symbols
+also need to be recognized when an expression is parsed. Therefore a efficient
+look-up mechnism is required. This is achieved by a second data structure that
+holds the name strings in a tree for fast searching. The data in the symbol list
+does not contain the name string itself, but contains a referece (a index) into
+this name string tree. The tree is managed by generalized functions and types
+that are also used for other, similiar objects like vectors, indices, etc. The
+functions for name trees are located in the first part of the file <SPAN style="font-family:monospace">name.c</SPAN>.
+The types <SPAN style="font-family:monospace">NAMENODE</SPAN> and <SPAN style="font-family:monospace">NAMETREE</SPAN> are defined in <SPAN style="font-family:monospace">structs.h</SPAN>.
+<SPAN style="font-family:monospace">NAMENODE</SPAN>s are the node of a balanced binary tree. It does not hold the
+name string just an index into <SPAN style="font-family:monospace">NAMETREE</SPAN>. The actual data is contained in
+<SPAN style="font-family:monospace">NAMETREE</SPAN> that constitute one tree. This type has buffers for the nodes and
+for the name strings. This has the benefit of avoiding small malloc calls for
+individual nodes. Also, since all referencing is done via offsets into these
+buffers, a relocation or serialization of such a tree is very easy. In the
+struct <SPAN style="font-family:monospace">C_const</SPAN> (aka the global <SPAN style="font-family:monospace">AC</SPAN>) several name trees are defined, for
+dollar variables, expressions, etc. The symbols added in our example program go
+into the nametree referenced by <SPAN style="font-family:monospace">AC.activenames</SPAN>, which is at this point equal
+to <SPAN style="font-family:monospace">AC.varnames</SPAN>.
+
+<P>
+Our program returns to the <SPAN style="font-family:monospace">PreProcessor()</SPAN> and starts parsing the next lines:
+
+<P>
+<PRE>
+ 5      L	f = (x+y)^2 - (x+z)^`N';
+ 6      L	g = f - x;
+</PRE>
+
+<P>
+This time the function <SPAN style="font-family:monospace">DoExpr()</SPAN> will get called (via <SPAN style="font-family:monospace">CoLocal()</SPAN>) for each
+line to do the parsing.  The function <SPAN style="font-family:monospace">DoExpr()</SPAN> first tries to figure out
+what type of <SPAN style="font-family:monospace">Local</SPAN> statement we have. In our cases we have an actual
+assignment. With the call to <SPAN style="font-family:monospace">GetVar()</SPAN> we check whether a variable of the same
+name already exists. The search is done in the nametrees <SPAN style="font-family:monospace">AC.varnames</SPAN> and
+<SPAN style="font-family:monospace">AC.exprnames</SPAN>. Since our names are new we don't find a previous variable and
+simply call <SPAN style="font-family:monospace">EntVar()</SPAN>. <SPAN style="font-family:monospace">EntVar()</SPAN> creates an entry in <SPAN style="font-family:monospace">AC.ExpressionList</SPAN>
+and puts the name into the <SPAN style="font-family:monospace">AC.exprnames</SPAN> nametree. The entry in
+<SPAN style="font-family:monospace">AC.ExpressionList</SPAN> is of type <SPAN style="font-family:monospace">struct ExPrEsSiOn</SPAN>. There are more struct
+elements than in the case of symbols, but the principle is the same. Up to now,
+the right-hand-side (RHS) has not been looked at and therefore no information
+about it is saved in the expression's entry yet. The connection between the
+expression's entry in the <SPAN style="font-family:monospace">AC.ExpressionList</SPAN> and the data containing the RHS
+will be made via the elements <SPAN style="font-family:monospace">prototype</SPAN> and <SPAN style="font-family:monospace">onfile</SPAN> as we will describe
+soon.  The access to elements in <SPAN style="font-family:monospace">AC.ExpressionList</SPAN> is facilitated by the
+macro <SPAN style="font-family:monospace">Expressions</SPAN>. The following code in <SPAN style="font-family:monospace">DoExpr()</SPAN> builds up a so-called
+prototype and puts the RHS in encoded form into the buffer system via the call
+to <SPAN style="font-family:monospace">CompileAlgebra()</SPAN>.
+
+<P>
+FORM uses the allocated memory in <SPAN style="font-family:monospace">AT.WorkSpace</SPAN> for operations like the
+generation of terms. This memory stores <SPAN style="font-family:monospace">WORD</SPAN>s and is used in a stack-like
+fashion with the help of the pointer <SPAN style="font-family:monospace">AT.WorkPointer</SPAN>. A function can write to
+this memory and set <SPAN style="font-family:monospace">AT.WorkPointer</SPAN> beyond the written data to insure that
+other functions that are called and might use the workspace as well do not
+overwrite this data. It is the responsibility of the function to reset
+<SPAN style="font-family:monospace">AT.WorkPointer</SPAN> to its original value again (see variable <SPAN style="font-family:monospace">OldWork</SPAN> in our
+case). Every thread in TFORM will have its own private work space.
+
+<P>
+FORM now uses <SPAN style="font-family:monospace">AT.WorkSpace</SPAN> to build up a data structure that contains
+everything that needs to be known at a later stage about the expression that is
+parsed. The creation and the layout of the data is quite typical. First comes a
+header that signifies what is coming. Here, it is <SPAN style="font-family:monospace">TYPEEXPRESSION</SPAN>. Then comes
+the length of the whole data, i.e. the total number of occupied <SPAN style="font-family:monospace">WORD</SPAN>s. The
+actual contents is following, which is a so-called subexpression that we will
+discuss soon. The contents is followed by a coefficient and a zero, which
+signifies the end of the data.
+
+<P>
+<B>Coefficients</B> are coded in FORM always in the following manner: Since
+coefficients can in general be fractional numbers, we encode an integer
+numerator and an integer denominator. The integers can have arbitrary length
+(limited only by the buffer sizes, see the setup variables <SPAN style="font-family:monospace">MaxNumberSize</SPAN> and
+<SPAN style="font-family:monospace">MaxTermSize</SPAN>) and are encoded in <SPAN style="font-family:monospace">WORD</SPAN>-pieces in little-endian convention.
+The number of allocated <SPAN style="font-family:monospace">WORD</SPAN>s is always the same for the numerator and the
+denominator. The last word of the coefficient contains the size of the whole
+coefficient in words. The formal structure of a coefficients is therefore like
+this:
+<DIV class="CENTER">
+<I>NUMERATOR WORDS, DENOMINATOR WORDS, LENGTH</I>.
+
+</DIV>
+The integers are always
+unsigned, i.e. positive. Negative fractions are encoded by a negative length.
+Examples (with 16bit words): <!-- MATH
+ $2^{16}+2 = 65538$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.33ex; vertical-align: -0.30ex; " SRC="img2.svg"
+ ALT="$2^{16}+2 = 65538$"></SPAN> gives words 2,1,1,0,5 and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.53ex; vertical-align: -0.69ex; " SRC="img3.svg"
+ ALT="$-5/2$"></SPAN>
+gives <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.15ex; vertical-align: -0.56ex; " SRC="img4.svg"
+ ALT="$5,2,-3$"></SPAN>.
+
+<P>
+The data structure in <SPAN style="font-family:monospace">AT.WorkSpace</SPAN> is basically an instruction for the
+generator, a central function that does the main work during the execution of
+the FORM program, to generate an expression. The content of the expression is
+a subexpression. This is a pointer to the real content of the expression and
+will be substituted later after the execution. The main reason for this delayed
+expression insertion is that it can often save a lot of intermediate operations
+and data space and thereby speed up FORM. A case where such a thing can happen
+is, when an expression is used at different places and the different parts are
+brought together by some operations. Then, cancellations may occur or terms can
+be factored out and when the expressions finally is inserted the workload is
+less.
+
+<P>
+In our example run, the data that will later instruct the generator to
+create an expression looks in total like this:
+
+<P>
+<DIV class="CENTER">
+<I>TYPEEXPRESSION, SUBEXPSIZE+3, 9, SUBEXPRESSION,
+<BR>
+SUBEXPSIZE, 0, 1, AC.cbufnum, 1, 1, 3, 0</I>
+
+</DIV>
+
+<P>
+We used the macro names as in the actual code. <SPAN style="font-family:monospace">AC.cbufnum</SPAN> is a variable that
+is the index of the compile buffer used for this parsed statement.
+At the end of the data preparation phase the pointer <SPAN style="font-family:monospace">AT.WorkPointer</SPAN> is set
+beyond the data on the trailing zero, the pointer <SPAN style="font-family:monospace">AT.ProtoType</SPAN>, which is
+used soon in following functions is set to the word <SPAN style="font-family:monospace">SUBEXPRESSION</SPAN>.
+
+<P>
+The expression will be put into the scratch buffer system. This system comprises
+the small and large buffers and the scratch files. Where new data to the scratch
+buffers will be stored is of no concern to a function like <SPAN style="font-family:monospace">DoExpr()</SPAN>, it
+simply uses several utility functions for that purpose. Still, we need to
+initialize the variable <SPAN style="font-family:monospace">pos</SPAN> here that will indicate the position of the
+data, i.e. the expression, in the scratch file.
+
+<P>
+Next, the function <SPAN style="font-family:monospace">CompileAlgebra()</SPAN> is called to parse the right hand side
+and put the codified expression into the FORM buffers. It basically calls two
+functions: <SPAN style="font-family:monospace">tokenize</SPAN> and <SPAN style="font-family:monospace">CompileSubExpressions</SPAN>. <SPAN style="font-family:monospace">tokenize</SPAN> is the
+tokenizer that translates the input character string in a sanitized and partly
+interpreted string of codes. It will look up the variables named in the input
+string and put the index they have in the name administration into the tokenized
+output. Our input string is transformed into the code string like this
+
+<P>
+<PRE>
+   (     -13  LPARENTHESIS
+   x      -1  TSYMBOL
+           5
+   +     -26  TPLUS
+   y      -1  TSYMBOL
+           6
+   )     -14  RPARENTHESIS
+   ^     -25  TPOWER
+   2      -8  TNUMBER
+           2
+   -     -27  TMINUS
+   (     -13  LPARENTHESIS
+   x      -1  TSYMBOL
+           5
+   +     -26  TPLUS
+   z      -1  TSYMBOL
+           7
+   )     -14  RPARENTHESIS
+   ^     -25  TPOWER
+   `N'    -8  TNUMBER
+           3
+         -29  TENDOFIT
+</PRE>
+
+<P>
+This code string then lies in the <SPAN style="font-family:monospace">AC.tokens</SPAN> buffer where it is used by
+subsequent functions.
+
+<P>
+The function <SPAN style="font-family:monospace">CompileSubExpression()</SPAN> finds terms in an expression that might
+be reused at another place and extracts them. As one can see in the code, the
+function looks for terms in parentheses and works recursively. The end of such a
+term is each time marked with <SPAN style="font-family:monospace">TENDOFIT</SPAN>. Then, the function
+<SPAN style="font-family:monospace">CodeGenerator()</SPAN> called at the end of <SPAN style="font-family:monospace">CompileSubExpression()</SPAN> does the
+real work.
+
+<P>
+In our example <SPAN style="font-family:monospace">CodeGenerator()</SPAN> first gets the data
+<DIV class="CENTER">
+<I>LPARENTHESIS, TSYMBOL, 5, TPLUS, TSYMBOL, 6, TENDOFIT</I>
+
+</DIV>
+as a parameter, which is the term <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.01ex; vertical-align: -0.56ex; " SRC="img5.svg"
+ ALT="$x+y$"></SPAN>. It builds up the actual term encoding
+in the workspace and first reserves for that enough space there. One can see the
+pointer arithmetic using constants like <SPAN style="font-family:monospace">AM.MaxTal</SPAN>, which is the maximum
+number of words a number can occupy. It reserves space for the coefficient, an
+integer, and the actual term. Once a token is recognized, the equivalent term
+data is written to the workspace and the function <SPAN style="font-family:monospace">CompleteTerm</SPAN> is called.
+This function completes the data to
+<DIV class="CENTER">
+<I>8, 1, 4, 5, 1, 1, 1, 3, 0</I>.
+
+</DIV>
+The first word is the total length, i.e. 8 words. This is the length of the
+whole expression. The second word is the type of the term, which is a symbol. It
+is the value <SPAN style="font-family:monospace">SYMBOL</SPAN> as defined in <SPAN style="font-family:monospace">ftypes.h</SPAN>. This macro definition
+<SPAN style="font-family:monospace">SYMBOL</SPAN> has the value 1 (in the FORM version at this time this reference is
+written). Following the type signifying word is the length of the term, which is
+4. Several such terms could follow each other, but we only have one term at the
+moment. Finally, we have the trailing words for the coefficient being 1 and a
+terminating zero. The meaning and interpretation of the words in the data of a
+single term after the type word and the length word are dependent on the type.
+For symbols, we have pairs of word, where the first word is the index of the
+symbol in the name administration and the second word is the exponent. Here we
+have symbol 5 (<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.21ex; vertical-align: -0.11ex; " SRC="img6.svg"
+ ALT="$= x$"></SPAN>) with an exponent 1.  After <SPAN style="font-family:monospace">CompleteTerm()</SPAN> has
+constructed the whole expression it copies the data to the compile buffers with
+the help of the function <SPAN style="font-family:monospace">AddNtoC()</SPAN>.
+
+<P>
+The compile buffers contain the instruction for the execution engine, the
+<SPAN style="font-family:monospace">Processor()</SPAN>, that will start when the <SPAN style="font-family:monospace">.sort</SPAN> command is parsed. Our terms
+are put into the right-hand-side buffers in the compile buffer. When the
+<SPAN style="font-family:monospace">Processor()</SPAN> will read these buffers one after the other, it will take the
+terms and put them into the scratch buffer system. Then, they become the
+expressions upon which further statements do act. The compile buffers are stored
+in the list <SPAN style="font-family:monospace">AC.cbufList</SPAN> and we get access to the elements via the cast
+<SPAN style="font-family:monospace">((CBUF *)(AC.cbufList.lijst))</SPAN>. This cast is defined as a preprocessor macro
+called <SPAN style="font-family:monospace">cbuf</SPAN>. The element <SPAN style="font-family:monospace">cbuf[0]-&gt;numrhs</SPAN> (0 is the current compile
+buffer we are using) gives the number of entries in <SPAN style="font-family:monospace">cbuf[0]-&gt;rhs</SPAN>, which is
+an array of pointer into <SPAN style="font-family:monospace">cbuf[0]-&gt;Buffer</SPAN>. We have 3 elements:
+
+<P>
+<PRE>
+  cbuf[0]-&gt;rhs[1]   --&gt;
+     8, 1, 4, 5, 1, 1, 1, 3, 8, 1, 4, 6, 1, 1, 1, 3, 0
+  cbuf[0]-&gt;rhs[2]   --&gt;
+     8, 1, 4, 5, 1, 1, 1, 3, 8, 1, 4, 7, 1, 1, 1, 3, 0
+  cbuf[0]-&gt;rhs[3]   --&gt;
+     9, 6, 5, 1, 2, 0, 1, 1, 3, 9, 6, 5, 2, 3, 0, 1, 1, -3, 0
+</PRE>
+
+<P>
+<SPAN style="font-family:monospace">cbuf[0]-&gt;rhs[0]</SPAN> is not used and the data lies consecutively in
+<BR><SPAN style="font-family:monospace">cbuf[0]-&gt;Buffer</SPAN>. The meaning of the first two entries has already been
+explained. These are expressions containing <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.01ex; vertical-align: -0.56ex; " SRC="img5.svg"
+ ALT="$x+y$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.75ex; vertical-align: -0.30ex; " SRC="img7.svg"
+ ALT="$x+z$"></SPAN>, respectively.
+The last expression uses subexpressions that have the type <SPAN style="font-family:monospace">SUBEXPRESSION</SPAN>
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.70ex; vertical-align: -0.11ex; " SRC="img8.svg"
+ ALT="$= 6$"></SPAN>. The length of a subexpression is 5 and the contents <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.15ex; vertical-align: -0.56ex; " SRC="img9.svg"
+ ALT="$1,2,0$"></SPAN> means
+that expression 1 needs to be inserted with an exponent of 2. The zero is a
+dirty flag that signals to the processor the state of the subexpression. Here in
+the compile buffers it is simply cleared to zero. The contents <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.15ex; vertical-align: -0.56ex; " SRC="img10.svg"
+ ALT="$2,3,0$"></SPAN> of the
+second subexpression should be obvious. Finally, we have an negative
+coefficient for the second subexpression which accounts for the minus sign
+between the parentheses in our original expression.
+
+<P>
+We return to the function <SPAN style="font-family:monospace">DoExpr()</SPAN> where the prototype of the expression is
+put into the scratch system via the call <SPAN style="font-family:monospace">PutOut()</SPAN> and we are finished with
+this line in the input file. The next line defining a second local expression
+works the same.
+
+<P>
+We come to the parsing of the following statements:
+
+<P>
+<PRE>
+ 7
+ 8      Brackets x;
+ 9      Print;
+</PRE>
+
+<P>
+The bracket statement is dealt with in function <SPAN style="font-family:monospace">DoBrackets()</SPAN>. It sets the
+flag <SPAN style="font-family:monospace">AR.BracketOn</SPAN> to 1 and constructs the term that will stand outside the
+bracket. This term is copied into the <SPAN style="font-family:monospace">AT.BrackBuf</SPAN> buffer, where it can be
+used by the execution engine when it needs to insert this heading term into an
+expression.
+
+<P>
+The print statement is parsed in function <SPAN style="font-family:monospace">DoPrint()</SPAN>. Since we don't have any
+arguments to <SPAN style="font-family:monospace">Print</SPAN> all active expressions shall be printed.
+<SPAN style="font-family:monospace">DoPrint()</SPAN> just loops through the <SPAN style="font-family:monospace">Expressions</SPAN> list and sets the
+<SPAN style="font-family:monospace">printflag</SPAN> to 1 for each expression.
+
+<P>
+With the next statement in our input file
+
+<P>
+<PRE>
+10      .sort
+</PRE>
+
+<P>
+we will get to know the other central parts of FORM: the processor and the
+sorting routines. The code in the <SPAN style="font-family:monospace">PreProcessor()</SPAN> will call
+<SPAN style="font-family:monospace">ExecModule()</SPAN>
+which calls <SPAN style="font-family:monospace">DoExecute()</SPAN>. We can ignore a lot of code there that is only for
+parallelized versions of FORM. There are three important functions calls
+happening. First, <SPAN style="font-family:monospace">RevertScratch()</SPAN> is called. FORM uses three scratch
+buffers: input buffer, output buffer, and the hide buffer. The usual mode of
+operation is to apply statements on expressions in the input buffer, sort and
+normalize the result, and write it into the output buffer. This repeats for
+every executing module and therefore an important optimization is made: the
+input buffer and the output buffer simply change their roles.
+<SPAN style="font-family:monospace">RevertScratch()</SPAN> does this job.  The second and third important calls are to
+<SPAN style="font-family:monospace">Processor()</SPAN> and <SPAN style="font-family:monospace">WriteAll()</SPAN>.
+
+<P>
+<SPAN style="font-family:monospace">Processor()</SPAN> is, as the name suggests, the main processor that executes
+statements and deals with the results. A lot of initialization work is done
+before we go into the large loop over the expressions that spans almost the
+whole function. Our expressions have as regular expressions from the scratch
+buffers the <SPAN style="font-family:monospace">inmem</SPAN> flag set to zero, so we go into the else branch of the
+checking if-clause. There we go to the case of a <SPAN style="font-family:monospace">LOCALEXPRESSION</SPAN>. The main
+logic here is to do a single call to <SPAN style="font-family:monospace">GetTerm()</SPAN> to get the first term from
+the input file and copy that to the output with the call to <SPAN style="font-family:monospace">PutOut()</SPAN>. This
+first term, which is a subexpression, serves as a header for the expression. It
+follows a (while-)loop that calls <SPAN style="font-family:monospace">GetTerm()</SPAN>, and if there are still terms,
+the loop executes its body and calls <SPAN style="font-family:monospace">Generator()</SPAN>. After this loop, some
+clean-up and a final <SPAN style="font-family:monospace">EndSort()</SPAN> is done, before the outer loop over the
+expressions repeats. <SPAN style="font-family:monospace">Generator()</SPAN> is the function where the read input, which
+is <I>9, 6, 5, 3, 1, 0, 1, 1, 3</I>, will be substituted and expanded.
+
+<P>
+<SPAN style="font-family:monospace">Generator()</SPAN> gets the term in the workspace and first tries to do all
+substitutions (<SPAN style="font-family:monospace">SUBEXPRESSION</SPAN>), then applies the statements in the compile
+buffers to the normalized terms, substitutes again if necessary, do brackets,
+and finally sorts the result.
+
+<P>
+The call to <SPAN style="font-family:monospace">TestSub()</SPAN> does the search for subexpressions. <SPAN style="font-family:monospace">TestSub()</SPAN> will
+find a subexpression in our case and return the number (3) of this subexpression
+and set other global variables ready for the following steps. In <SPAN style="font-family:monospace">Generator()</SPAN>
+we enter therefore the if-clause checking <SPAN style="font-family:monospace">replac</SPAN><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.79ex; vertical-align: -0.20ex; " SRC="img11.svg"
+ ALT="$&gt; 0$"></SPAN>.  Depending on the
+power of the subexpression different operations are taken. We have our
+subexpression to the power one only, which is an easy case. The actual
+substitution is performed by the function <SPAN style="font-family:monospace">InsertTerm()</SPAN>. Since the new term
+might again contain subexpressions we do a recursive call to <SPAN style="font-family:monospace">Generator()</SPAN>.
+Our expression contains several layers of subexpressions which are all dealt
+with as described above. Only the powers of the other subexpressions are
+different from one, so we get slightly more work to be done which involves the
+expansion of the terms using binomials.
+
+<P>
+Finally, the call to <SPAN style="font-family:monospace">TestSub()</SPAN> at the beginning of <SPAN style="font-family:monospace">Generator()</SPAN> will
+return zero. The function <SPAN style="font-family:monospace">Normalize()</SPAN> is called, which puts the terms in a
+canonical form, i.e. terms are ordered and collected with the correct
+coefficient. In our example, as the first fully subsituted term we have
+<I>12, 1, 4, 6, 1, 1, 4, 6, 1, 1, 1, 3</I> before the call to
+<SPAN style="font-family:monospace">Normalize()</SPAN>, which means we have a term <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.29ex; vertical-align: -0.11ex; " SRC="img12.svg"
+ ALT="$x*x$"></SPAN>. <SPAN style="font-family:monospace">Normalize()</SPAN>
+makes this into <I>8, 1, 4, 6, 2, 1, 1, 3</I>, which is <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.14ex; vertical-align: -0.11ex; " SRC="img13.svg"
+ ALT="$x^2$"></SPAN>.
+
+<P>
+Then, we loop over the statements in the compile buffer. <SPAN style="font-family:monospace">level</SPAN> is the
+instruction counter. We have a long switch-clause that interprets the statement
+type identifiers like <SPAN style="font-family:monospace">TYPECOUNT</SPAN>. Statements with <SPAN style="font-family:monospace">TYPEEXPRESSION</SPAN> are not
+treated here. So we loop over all the compile buffer statements here and only
+call <SPAN style="font-family:monospace">TestMatch()</SPAN> at the loop's end. This function has no effect in our
+example, because we have no pattern matching going on.
+
+<P>
+Then, the function <SPAN style="font-family:monospace">PutBracket()</SPAN> is called to deal with brackets. Brackets
+are implemented by putting the special code <SPAN style="font-family:monospace">HAAKJE</SPAN> inside the expression.
+The terms before the <SPAN style="font-family:monospace">HAAKJE</SPAN> are outside the bracket, everything following it
+will be inside the bracket.
+
+<P>
+At the end of the loop over the terms in the expressions, the function
+<SPAN style="font-family:monospace">StoreTerm()</SPAN> is called. This function puts the result of the processing in
+the output scratch buffers. Finally, we return to <SPAN style="font-family:monospace">Processor()</SPAN>. There the
+final sorting is started. Also, the printing of the expressions is done here.
+
+<P>
+The parsing in <SPAN style="font-family:monospace">PreProcessor()</SPAN> continues with
+
+<P>
+<PRE>
+11
+12      #do i=2,3
+13      Id	x?^`i' = x;
+14      #enddo
+</PRE>
+
+<P>
+Here we have a somewhat more complicated example of preprocessor instructions.
+The do-loop is treated in <SPAN style="font-family:monospace">DoDo()</SPAN> which sets up data structures (<SPAN style="font-family:monospace">DOLOOP</SPAN>)
+to guide the preprocessor when it is parsing the loop body. The statement line
+will then be presented to the compiler two times and with the correct values of
+the preprocessor variable <SPAN style="font-family:monospace">i</SPAN>. The compiler deals with this statement in
+<SPAN style="font-family:monospace">CoId()</SPAN> which is just calling <SPAN style="font-family:monospace">CoIdExpression()</SPAN>.  <SPAN style="font-family:monospace">CoIdExpression()</SPAN>
+puts a <SPAN style="font-family:monospace">TYPEIDNEW</SPAN> code into the lhs compile buffer. This tells the processor
+later how to do the pattern matching. The rhs is the term <SPAN style="font-family:monospace">x</SPAN> that will be
+inserted.
+
+<P>
+The parsing continues and ends with
+
+<P>
+<PRE>
+15
+16      Print +s;
+17      .end
+</PRE>
+
+<P>
+The way these statements are treated and how the program is executed has already
+been described. The pattern matching is something that has not occurred before,
+though. We will not describe it here, since there is a dedicated section in this
+manual for that. After the final sorting, FORM will clean up tempory files and
+other resources that are not automatically freed by the operating system before
+FORM ends itself.
+
+<P>
+
+<H1><A ID="SECTION00050000000000000000">
+Specific topics</A>
+</H1>
+
+<P>
+<A ID="sec:indepth"></A>
+<P>
+
+<H2><A ID="SECTION00051000000000000000">
+Pattern matching</A>
+</H2>
+
+<P>
+to be written
+
+<P>
+
+<H2><A ID="SECTION00052000000000000000">
+The problem of dummy indices</A>
+</H2>
+
+<P>
+FORM has a indices that can be automatically renumbered. With this we mean
+that when we have an expression like
+
+<P>
+<PRE>
+f(i)*g(i)*h(j)*k(j)-f(j)*g(j)*h(i)*k(i)
+</PRE>
+
+<P>
+we can say
+
+<P>
+<PRE>
+Sum i,j;
+</PRE>
+
+<P>
+and FORM will change the expression into
+
+<P>
+<PRE>
+f(N1_?)*g(N1_?)*h(N2_?)*k(N2_?)-f(N2_?)*g(N2_?)*h(N1_?)*k(N1_?)
+</PRE>
+
+<P>
+in which <SPAN style="font-family:monospace">Ni_?</SPAN> are internal indices.
+
+<P>
+These internal indices follow a number of rules:
+
+<OL>
+<LI>their numbers (<SPAN style="font-family:monospace">AC.CurDum</SPAN>) start at <SPAN style="font-family:monospace">AM.IndDum</SPAN>, which again starts at
+   <SPAN style="font-family:monospace">AM.DumInd+WILDOFFSET</SPAN> and <SPAN style="font-family:monospace">AM.DumInd</SPAN> starts at <SPAN style="font-family:monospace">AM.OffsetIndex + 2*WILDOFFSET</SPAN>.
+   Hence <SPAN style="font-family:monospace">AC.CurDum</SPAN> starts at <SPAN style="font-family:monospace">AM.OffsetIndex +
+<BR>
+3*WILDOFFSET</SPAN>.
+   Because we need this extra space <SPAN style="font-family:monospace">WILDOFFSET</SPAN> cannot be too large and this
+   limits the number of indices that is allowed.
+</LI>
+<LI>The dimension of the dummy indices is equal to the default dimension.
+</LI>
+<LI>The internal (dummy) indices can be renamed at any time in order to
+   create uniquely minimal terms. In the above expression that would mean
+   that the second term would be 'rearranged' into
+<PRE>
+f(N2_?)*g(N2_?)*h(N1_?)*k(N1_?) --&gt;
+                          f(N1_?)*g(N1_?)*h(N2_?)*k(N2_?)
+</PRE>
+   and the expression becomes zero.
+</LI>
+</OL>
+
+<P>
+There are problems with this concept.
+
+<OL>
+<LI>Multiplying expressions with dummy indices could give a repetition of
+	the same indices as in <SPAN style="font-family:monospace">(f(N1_?)*g(N1_?))ˆ3</SPAN>. This has been solved
+   partially as can be seen with the following program:
+<PRE>
+   CF  f,g;
+   L   F = (f(N1_?)*g(N1_?))^3;
+   L   G = f(N1_?)*g(N1_?);
+   .sort
+   L   G3 = G^3;
+   Print;
+   .end
+</PRE>
+   The routine that takes care of the proper shifts in dummy numbers is
+   <SPAN style="font-family:monospace">MoveDummies()</SPAN>. As one can see from the example, the <SPAN style="font-family:monospace">SUBEXPRESSION</SPAN> to a
+   power isn't treated this way. It would have a serious impact on the
+   speed. With the <SPAN style="font-family:monospace">Gˆ3</SPAN> it is different because that is slower to begin
+   with.
+</LI>
+<LI>Keep Brackets is extremely dangerous. The problem here is
+<PRE>
+f(N1_?)*(g(N1_?)*h(N2_?)*k(N2_?)+g(N2_?)*h(N1_?)*k(N2_?))
+</PRE>
+   What is inside the brackets is invisible during the module. Hence a
+   renumbering that involves <SPAN style="font-family:monospace">f(N1_?)</SPAN> only can change <SPAN style="font-family:monospace">N1_?</SPAN> into <SPAN style="font-family:monospace">N2?_</SPAN>
+   (FORM doesn't know there is already a <SPAN style="font-family:monospace">N2_?</SPAN>) and anyway, the
+   corresponding <SPAN style="font-family:monospace">N1_?</SPAN> remains as it is.
+   It means that there are complicatetions with <SPAN style="font-family:monospace">Sum</SPAN>, <SPAN style="font-family:monospace">Trace4</SPAN> and things like
+   <SPAN style="font-family:monospace">id  p = f(?);</SPAN> which can generate dummy indices.
+</LI>
+</OL>
+
+<P>
+The second problem requires some action.
+<DL class="COMPACT">
+<DT>A</DT>
+<DD>When Keep Brackets is active, renumbering should not be allowed, until
+   the contents are multiplied with the outside of the brackets.
+</DD>
+<DT>B</DT>
+<DD>The multiplying with the contents of the bracket should follow the same
+   procedure as the multiplication with a complete expression
+<BR>   (<SPAN style="font-family:monospace">MoveDummies()</SPAN>).
+</DD>
+<DT>C</DT>
+<DD>Introduction of new dummy indices should be above <SPAN style="font-family:monospace">AM.IndDum + WILDOFFSET/2</SPAN>.
+   These should vanish when the term is renumbered after multiplying the
+   outside of the bracket with the inside.
+</DD>
+</DL>
+
+<P>
+<SPAN style="font-family:monospace">Trace4</SPAN> involves the creation of dummy indices, but these vanish again
+without renumbering. Hence they don't cause problems.
+
+<P>
+In order to implement <SPAN style="font-family:monospace">A-C</SPAN> we have to have a good look at all routines that
+use <SPAN style="font-family:monospace">AR.CurDum</SPAN> and call <SPAN style="font-family:monospace">ReNumber()</SPAN> or <SPAN style="font-family:monospace">DetCurDum()</SPAN>.
+
+<P>
+
+<H2><A ID="SECTION00053000000000000000">
+Values of indices (and vectors)</A>
+</H2>
+
+<P>
+The indices and vectors share common use. That means that vectors can occur
+in the places that are reserved for indices. In addition we have various
+types of indices. Hence it is important to know what range of values in an
+index location refers to what.
+
+<P>
+
+<OL>
+<LI>Special values:
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">GAMMA1</SPAN></TD>
+<TD CLASS="RIGHT">0</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Dirac unit matrix</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">GAMMA5</SPAN></TD>
+<TD CLASS="RIGHT">-1</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Dirac gamma 5 (only defined in 4 dimensions)</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">GAMMA6</SPAN></TD>
+<TD CLASS="RIGHT">-2</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Dirac (1+gamma5) (only defined in 4 dimensions)</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">GAMMA7</SPAN></TD>
+<TD CLASS="RIGHT">-3</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Dirac (1-gamma5) (only defined in 4 dimensions)</TD>
+</TR>
+</TABLE>
+
+<P>
+The above 4 indices are to be used only inside the function <SPAN style="font-family:monospace">g_</SPAN>.
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">FUNNYVEC</SPAN></TD>
+<TD CLASS="RIGHT">-4</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Used in <SPAN style="font-family:monospace">replace_</SPAN> to indicate a vector with an
+								unspecified index. Hence <SPAN style="font-family:monospace">VECTOR,4,numvec,FUNNYVEC</SPAN>
+								instead of <SPAN style="font-family:monospace">INDEX,3,numvec</SPAN>.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">FUNNYWILD</SPAN></TD>
+<TD CLASS="RIGHT">-5</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Used to indicate an argument field wildcard like
+								<SPAN style="font-family:monospace">?a</SPAN> inside a tensor.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">SUMMEDIND</SPAN></TD>
+<TD CLASS="RIGHT">-6</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Used in <SPAN style="font-family:monospace">DELTA</SPAN> to indicate <SPAN style="font-family:monospace">d_(mu,mu)-4</SPAN> as generated
+								in traces.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">NOINDEX</SPAN></TD>
+<TD CLASS="RIGHT">-7</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Used by <SPAN style="font-family:monospace">ExecArg()</SPAN> in splitting a multi-delta or
+								multi-index. Taking out one to make a new argument
+								we leave the old one with two or one empty spots.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">FUNNYDOLLAR</SPAN></TD>
+<TD CLASS="RIGHT">-8</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Used to indicate a dollar variable inside a tensor.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">EMPTYINDEX</SPAN></TD>
+<TD CLASS="RIGHT">-9</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>Used in the bracket statement to indicate a <SPAN style="font-family:monospace">d_</SPAN>.
+								Because <SPAN style="font-family:monospace">d_</SPAN> isn't a regular function we cannot use
+								the function notation and it needs two arguments.</TD>
+</TR>
+<TR><TD CLASS="LEFT TOP"  WIDTH=84><SPAN style="font-family:monospace">MINSPEC</SPAN></TD>
+<TD CLASS="RIGHT">-10</TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>&nbsp;</TD>
+</TR>
+</TABLE>
+
+<P>
+<SPAN style="font-family:monospace">MINSPEC</SPAN> must be smaller than all the other special values.
+
+<P>
+</LI>
+<LI>Fixed indices. They are in the range of 1 to <SPAN style="font-family:monospace">AM.OffsetIndex-1</SPAN>.
+
+<P>
+</LI>
+<LI>Vectors are in the range from
+<BR>	<SPAN style="font-family:monospace">AM.OffsetVector = -2*WILDOFFSET+MINSPEC;</SPAN>
+<BR>
+to
+<BR>	<SPAN style="font-family:monospace">AM.OffsetVector + WILDOFFSET</SPAN>
+
+<P>
+</LI>
+<LI>Wildcard vectors are in the range
+<BR>	<SPAN style="font-family:monospace">AM.OffsetVector + WILDOFFSET</SPAN>
+<BR>
+to
+<BR>	<SPAN style="font-family:monospace">AM.OffsetVector + 2*WILDOFFSET</SPAN>
+
+<P>
+</LI>
+<LI>Regular indices are in the range from
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex</SPAN> to <SPAN style="font-family:monospace">AM.OffsetIndex + WILDOFFSET</SPAN>
+
+<P>
+</LI>
+<LI>Wildcard indices are in the range
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + WILDOFFSET    (=AM.WilInd)</SPAN>
+<BR>
+to
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 2*WILDOFFSET  (=AM.DumInd)</SPAN>
+
+<P>
+</LI>
+<LI>Unused in the range of
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 2*WILDOFFSET  (=AM.DumInd)</SPAN>
+<BR>
+to
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 3*WILDOFFSET  (=AM.IndDum)</SPAN>
+
+<P>
+</LI>
+<LI>Summed indices (<SPAN style="font-family:monospace">Ni_?</SPAN>) are in the range of
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 3*WILDOFFSET  (=AM.IndDum)</SPAN>
+    to
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 4*WILDOFFSET</SPAN>
+
+<P>
+</LI>
+<LI>Unused in the range of
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 4*WILDOFFSET</SPAN>
+<BR>
+to
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 5*WILDOFFSET  (=AM.mTraceDum)</SPAN>
+
+<P>
+</LI>
+<LI>Summed indices as generated by the trace routines are above
+<BR>	<SPAN style="font-family:monospace">AM.OffsetIndex + 5*WILDOFFSET  (=AM.mTraceDum)</SPAN>
+</LI>
+</OL>
+
+<P>
+<I>Note (JV)</I>: I am not sure why there are unused regions. I must have had a
+reason for them, but I have forgotten about it (it was more than 20 years
+ago). And then, maybe it is used somewhere in a totally untransparent way.
+
+<P>
+<I>Note 2 (JV)</I>: It was good to make this list. It turned out that in several
+places the code that checks for wildcard indices was only limited from
+below, not from above. It would of course be very rare to run into trouble
+with this, but it is better to have the code formally correct. One never
+knows. This was particularly the case in <SPAN style="font-family:monospace">FindRest()</SPAN> (in <SPAN style="font-family:monospace">findpat.c</SPAN>). There may
+be more. It is best to repair this, whenever encountered.
+
+<P>
+From the above it should be clear that on a 32-bits computer
+<BR><SPAN style="font-family:monospace">5*WILDOFFSET+AM.OffsetIndex+nTraceDummies &lt; 2ˆ15</SPAN>
+<BR>
+in which <SPAN style="font-family:monospace">nTraceDummies</SPAN> is the number of dummies that can be introduced when
+taking a 4-dimensional trace.
+
+<P>
+If we assume that we will not take traces of more than 200 gamma matrices
+(each with a different index, because otherwise there are contractions)
+<SPAN style="font-family:monospace">nTraceDummies</SPAN> will be at most 100. <SPAN style="font-family:monospace">AM.OffsetIndex</SPAN> is by default 128.
+The value that we selected for <SPAN style="font-family:monospace">WILDOFFSET</SPAN> is 6100 which allows a maximum
+value of 2167 for <SPAN style="font-family:monospace">AM.OffsetIndex</SPAN>.
+
+<P>
+
+<H1><A ID="SECTION00060000000000000000">
+The test suite</A>
+</H1>
+
+<P>
+The subdirectory <SPAN style="font-family:monospace">check</SPAN> contains a test suite for FORM. Using the autoconf
+facilities the checks can be started with the command <SPAN style="font-family:monospace">make check</SPAN>.
+Otherwise, one can issue the command <SPAN style="font-family:monospace">ruby form.rb</SPAN> in the <SPAN style="font-family:monospace">check</SPAN>
+directory.
+
+<P>
+The test suite is written in the language
+Ruby<A ID="tex2html1"
+  HREF="#foot907"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A>. Ruby itself already offers a
+unit testing framework and this is used with as minimal as possible extensions
+to make the creation of test cases for FORM programs easy. All the extensions
+to the built-in Ruby testing framework (<SPAN style="font-family:monospace">Test::Unit</SPAN>) are contained in the
+file <SPAN style="font-family:monospace">form.rb</SPAN>. This file also contains code to load test cases from other
+<SPAN style="font-family:monospace">*.rb</SPAN> files in the <SPAN style="font-family:monospace">check</SPAN> directory. Therefore all test cases are
+contained in appropriately named <SPAN style="font-family:monospace">*.rb</SPAN> files. The makefile's purpose is to
+integrate the call <SPAN style="font-family:monospace">ruby form.rb</SPAN> into the autoconf system.
+
+<P>
+<I>Side note:</I>
+The choice to use Ruby and its built-in test framework was taken for several
+reasons: It makes sense to use or adapt already existing testing frameworks in
+order to keep the extra cost of maintenance as low as possible for the FORM programmers. There are numerous systems available on the market, some are part
+of a language runtime environment (libraries), and some are dedicated programs
+with a custom configuration language. Since the tests for FORM programs center
+mainly about text processing, i.e. comparing the textual FORM output to a
+correct answer, we need powerful text processing facilities like pattern
+matching. But we also need file operations and information from the operating
+system to check the run of a FORM program, eventually. All this is readily
+available in the testing frameworks of scripting languages, like Ruby, Python,
+or Tcl. Ruby was ultimately chosen, because the mixing of FORM code with the
+steering scripting language code looked nicest, and the small amount of extra
+(Ruby) syntax necessary makes it convenient to add new test cases.
+
+<P>
+A new test case can be implemented in the following way. First of all, we need a
+FORM program that is to be run. It might be a program that exhibits an actual
+bug in (a previous version of) FORM or that contains generic code that should
+be guaranteed to work, also in coming releases of FORM. It might also be code
+that deliberately crashes FORM or causes other errors, like syntax errors, if
+this behavior of FORM is to be assumed. Usually, the FORM program is rather
+short or can be made such. In this case, we are going to mix the Ruby and the
+FORM code in one file. Alternatively, the FORM program can also be kept in a
+separate file. This option will be discussed later.
+
+<P>
+Now, either one choses an existing <SPAN style="font-family:monospace">*.rb</SPAN> file (not <SPAN style="font-family:monospace">form.rb</SPAN>) or starts a
+new one. The name of the file should fit the test case scenario. In this file we
+need to define a Ruby class that will contain our FORM code as well as the
+checks (assertions) we want to impose on the run.
+
+<P>
+The generic frame of this test case definition looks like this:
+
+<P>
+<PRE>
+  class [Test name] &lt; FormTest
+  def setup
+    [Setup code, usually this includes the FORM program code]
+  end
+  def test1
+    [Execution code, and the assertion and testing code]
+  end
+  end
+</PRE>
+
+<P>
+The text in the brackets [ ] needs to be filled with our specific code. The
+details of the Ruby code itself will be explained later. For a start, it is
+usually advisable just to copy an existing test case and modify it.
+
+<P>
+Every class defined in this way will be used for the testing. First, Ruby will
+run the code in the class method <SPAN style="font-family:monospace">setup</SPAN>, and then it runs <SPAN style="font-family:monospace">test1</SPAN>.
+
+<P>
+A complete test might look like this:
+
+<P>
+<PRE>
+  class SymbolIdTest &lt; FormTest
+  def setup
+    input &lt;&lt;-EOF
+  S x, y;
+  L f = (x+y)^100;
+  id x = y;
+  print;
+  .end
+    EOF
+  end
+  def test1
+    execute FORM
+    assert no_problem
+    assert result("f") =~
+        pattern("1267650600228229401496703205376*y^100;")
+  end
+  end
+</PRE>
+
+<P>
+We have chose the name <SPAN style="font-family:monospace">SymbolIdTest</SPAN> for our class. We defined the FORM program in-line with a so called here document (<SPAN style="font-family:monospace">«-EOF ... EOF</SPAN>). We do run
+the FORM executable. Alternatives would be TFORM, for example. The assertions
+we have are that no problem occurred, i.e. no syntax error, no runtime error, or
+similar things. We also check the output of our FORM program. We compare via
+pattern matching the result of the expression <SPAN style="font-family:monospace">f</SPAN> with the correct answer. The
+function <SPAN style="font-family:monospace">result()</SPAN> extracts the appropriate line from the output, <SPAN style="font-family:monospace">=˜</SPAN> is
+the pattern matching operator in Ruby, and the function <SPAN style="font-family:monospace">pattern()</SPAN> prepares
+special characters like the caret (ˆ) for the pattern matcher.
+
+<P>
+Next time we run the test suite, our test will be run as well. If no assertions
+are violated, we will only see the number of successful tests and assertions
+increased in the summary output.
+
+<P>
+Even though the extra Ruby syntax is kept to a minimum and is rather
+straightforward, some remarks about the Ruby language are useful here. Classes
+are defined by the keyword <SPAN style="font-family:monospace">class</SPAN>, and methods (or functions) are declared
+with the keyword <SPAN style="font-family:monospace">def</SPAN>. These definitions are always ended with the keyword
+<SPAN style="font-family:monospace">end</SPAN>. <SPAN style="font-family:monospace">FormTest</SPAN> is a class defined in <SPAN style="font-family:monospace">form.rb</SPAN> that contains all the
+special code for FORM test and that is derived from the built-in Ruby test
+case class <SPAN style="font-family:monospace">TestCase</SPAN>. For every test case we derive again from this class
+(<SPAN style="font-family:monospace">class B &lt; A</SPAN> says that <SPAN style="font-family:monospace">B</SPAN> is derived from <SPAN style="font-family:monospace">A</SPAN>). We don't need
+semicolons to end a line and indentation is arbitrary. Class names should be
+capitalized. In Ruby, parentheses around the arguments of functions can often be
+omitted. We use this possibility when we call the functions <SPAN style="font-family:monospace">input</SPAN>,
+<SPAN style="font-family:monospace">execute</SPAN>, and <SPAN style="font-family:monospace">assert</SPAN>. We could have written <SPAN style="font-family:monospace">execute(FORM)</SPAN> as well,
+for example. The here document (<SPAN style="font-family:monospace">«-EOF ... EOF</SPAN>) can also use other markers
+instead of <SPAN style="font-family:monospace">EOF</SPAN>, of course. The minus sign before <SPAN style="font-family:monospace">EOF</SPAN> allows the end
+marker to be indented. Comments are started with a #.
+
+<P>
+One class can actually contain more than one test. The testing framework will
+call the method <SPAN style="font-family:monospace">setup</SPAN> and then a method whose name starts with <SPAN style="font-family:monospace">test</SPAN>
+(Note: in newer versions of Ruby the name could be just <SPAN style="font-family:monospace">test</SPAN>, but older
+versions (<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.00ex; vertical-align: -0.42ex; " SRC="img14.svg"
+ ALT="$\ge$"></SPAN>1.8.x) require at least one following extra character). If there are
+more methods starting with <SPAN style="font-family:monospace">test</SPAN>, each will be called and for each <SPAN style="font-family:monospace">setup</SPAN>
+will be called first.
+
+<P>
+In <SPAN style="font-family:monospace">setup</SPAN> we need to prepare everything for the execution of FORM. We can
+either use <SPAN style="font-family:monospace">input</SPAN> to in-line the source directly, or we can use
+<SPAN style="font-family:monospace">input_file</SPAN> with a string as an argument to reference an external file,
+e.g.
+<PRE>
+  input_file "parsebug.frm"
+</PRE>
+The function <SPAN style="font-family:monospace">input</SPAN> will create a temporary
+FORM file for the contents. The name of the file is defined in <SPAN style="font-family:monospace">form.rb</SPAN>.
+The executable will later be run with the given name or the name of the
+temporary file as an argument. If additional arguments need to be given to the
+executable, the function <SPAN style="font-family:monospace">extra_parameter</SPAN> can be used, like e.g.
+<PRE>
+  extra_parameter "-w4 -l"
+</PRE>
+
+<P>
+Sometimes one might need to prepare more things for a FORM run, like setting
+up certain files or starting an external program. This needs to be done
+by ordinary Ruby code. For this, some more of the Ruby language needs to be
+known by the user.
+
+<P>
+In the class methods with a name starting with <SPAN style="font-family:monospace">test</SPAN> we put the code to run
+the FORM executable and to test the outcome. Usually, the first line will be
+the call to the executable itself, either
+<PRE>
+  execute FORM
+</PRE>
+or
+<PRE>
+  execute TFORM
+</PRE>
+(P<SMALL>AR</SMALL>FORM is not supported yet). The function <SPAN style="font-family:monospace">execute</SPAN> will run the
+executable with the necessary or requested arguments, but it will run it under
+the supervision of the <SPAN style="font-family:monospace">strace</SPAN> system utility. Therefore <SPAN style="font-family:monospace">strace</SPAN> needs to
+be present on the system (options to enable or disable the use of <SPAN style="font-family:monospace">strace</SPAN>
+will probably be added in the future). <SPAN style="font-family:monospace">strace</SPAN> is used to get detailed
+information about the return value or possible failure states of the executable.
+The output of <SPAN style="font-family:monospace">strace</SPAN> will be saved in a temporary file and made available to
+the test case programmer in a Ruby variable. The regular output and the error
+channel output will be available in Ruby variables as well.
+
+<P>
+The Ruby variables containing the output are <SPAN style="font-family:monospace">@strace_out</SPAN>, <SPAN style="font-family:monospace">@stdout</SPAN>,
+and <SPAN style="font-family:monospace">@stderr</SPAN> (the leading @-sign is Ruby syntax for specifying instance
+variables, i.e. variables belonging to a certain object). These variables are the
+primary source for doing tests. In principle, these variables can be
+investigated directly, for example via pattern matching like
+<PRE>
+  if @strace_out =~ /Segmentation fault/
+    ...
+  end
+</PRE>
+which checks whether a segmentation fault has occurred (the slashes in Ruby
+define a pattern). But for the most common cases some test functions
+exist that encapsulate necessary pattern matching details. These functions
+return true or false values which can be used as arguments to the <SPAN style="font-family:monospace">assert</SPAN>
+function. The <SPAN style="font-family:monospace">assert</SPAN> function raises an error if the argument is false.
+
+<P>
+Available tests functions are:
+
+<P>
+<TABLE class="PAD " style="">
+<TR><TD CLASS="LEFT"><SPAN style="font-family:monospace">crash</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>true if a crash (segmentation fault) occurred</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN style="font-family:monospace">warning</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>true if FORM has issued a warning</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN style="font-family:monospace">compile_error</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>true if FORM has found a syntax error</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN style="font-family:monospace">runtime_error</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>true if FORM has terminated prematurely</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN style="font-family:monospace">error</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>true if <SPAN style="font-family:monospace">compile_error</SPAN> or <SPAN style="font-family:monospace">runtime_error</SPAN> is true or
+					 the standard error channel contains data</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN style="font-family:monospace">problem</SPAN></TD>
+<TD CLASS="LEFT TOP"  WIDTH=282>true if <SPAN style="font-family:monospace">warning</SPAN> or <SPAN style="font-family:monospace">error</SPAN> or <SPAN style="font-family:monospace">crash</SPAN> is true</TD>
+</TR>
+</TABLE>
+
+<P>
+Additionally, the logical opposite of each function exists with a name starting
+with <SPAN style="font-family:monospace">no_</SPAN>, like <SPAN style="font-family:monospace">no_problem</SPAN> or <SPAN style="font-family:monospace">no_crash</SPAN>.
+
+<P>
+There is also the function <SPAN style="font-family:monospace">return_value</SPAN> which gives the return value of the
+FORM program as an integer, so one could do a check like
+<PRE>
+  assert return_value == 66
+</PRE>
+
+<P>
+If pattern matching is coded directly, like in our example, some details have to
+be considered. The operator <SPAN style="font-family:monospace">=˜</SPAN> will try to match a string with a pattern.
+The variables like <SPAN style="font-family:monospace">@stdout</SPAN> are actually strings (they do contain the
+carriage return and/or line feed for multi-line output). Patterns in Ruby are
+written between slashes and various characters are interpreted in a special way
+(following the widely used regex-syntax).
+
+<P>
+There are four functions to facilitate things: <SPAN style="font-family:monospace">result()</SPAN>, <SPAN style="font-family:monospace">pattern()</SPAN>,
+<SPAN style="font-family:monospace">exact_result()</SPAN>, and <SPAN style="font-family:monospace">exact_pattern()</SPAN>. <SPAN style="font-family:monospace">result()</SPAN> takes a string being
+the name of an expression and returns a string that only contains the lines
+belonging to the last output of this expression. If it is not the last output of
+an expression that is wished for, a second numeric parameter can be given that
+specifies the index of the output (counting starts at 0).  While <SPAN style="font-family:monospace">result()</SPAN>
+removes all line breaks and whitespaces, <SPAN style="font-family:monospace">exact_result()</SPAN> leaves them in
+place.  <SPAN style="font-family:monospace">pattern()</SPAN> transforms special characters in the given string, removes
+whitespaces and line breaks, and returns the string as a pattern. Since FORM expressions usually contain a lot of special characters like +, *, ., etc. they
+cannot not be simply used in a pattern. <SPAN style="font-family:monospace">pattern()</SPAN> transforms these
+characters automatically into the correct regex equivalent, e.g. + becomes
+\+.  With it, a FORM expression can be directly given as an
+argument and used in a pattern matching (see example). <SPAN style="font-family:monospace">exact_pattern()</SPAN> does
+not treat whitespaces and line breaks in a special way as <SPAN style="font-family:monospace">pattern()</SPAN> does and
+can therefore be used when a exact comparison is required (if for example a bug
+in the output functions of FORM had caused some whitespace or line breaks to
+be missing and a test case were required to check for this behavior).
+
+<P>
+If one doesn't want or cannot use the <SPAN style="font-family:monospace">assert</SPAN> function, one can signal a test
+failure to the testing framework by raising an <SPAN style="font-family:monospace">AssertionFailedError</SPAN>
+directly, like for example
+<PRE>
+  if return_value != 2
+    raise AssertionFailedError.new("return value is wrong!")
+  end
+</PRE>
+
+<P>
+Suppose a FORM program should have deleted some file (<SPAN style="font-family:monospace">#remove</SPAN>), one could
+implement the following test
+<PRE>
+  if File.exist?("thenameofthefile")
+    raise AssertionFailedError.new("File still exists!")
+  end
+</PRE>
+
+<P>
+The testing framework actually not only calls <SPAN style="font-family:monospace">setup</SPAN> and each <SPAN style="font-family:monospace">test</SPAN> method
+but also a method called <SPAN style="font-family:monospace">teardown</SPAN>. This method is responsible for cleaning
+up things at the end of each test run. The class <SPAN style="font-family:monospace">FormTest</SPAN> provides such a
+<SPAN style="font-family:monospace">teardown</SPAN> method that will be inherited by the users test case class unless
+it is overwritten. It calls the method <SPAN style="font-family:monospace">remove_files</SPAN> to delete all temporary
+files that have been created so far. <SPAN style="font-family:monospace">remove_files</SPAN> can be called by the user
+directly. If <SPAN style="font-family:monospace">teardown</SPAN> is to be replaced by a specific implementation, it is
+advisable to still call <SPAN style="font-family:monospace">FormTest</SPAN>'s <SPAN style="font-family:monospace">teardown</SPAN> (using Ruby's command
+<SPAN style="font-family:monospace">super</SPAN>), like for example
+<PRE>
+  ...
+  def teardown
+    super
+    File.delete("extra.log")
+  end
+  ...
+</PRE>
+
+<P>
+At last, a complete example as it is actually contained in the repository.
+<SPAN CLASS="SCRIPTSIZE"></SPAN><PRE>
+    #[ SparseTable1 :
+    =begin
+      Bugs reported 2004-04-06 by Misha Tentukov
+      PrintTable and FillExpression did not work with non-sparse tables
+      Fixed 2005-09-27
+    =end
+    class SparseTable1 &lt; FormTest
+    def setup
+      input &lt;&lt;-EOF
+    cf f;
+    s x;
+    ctable Tab(1:`TableSize');
+    ctable TabNew(1:`TableSize');
+
+    #do i=1,`TableSize',1
+    Fill Tab(`i')=f(`i');
+    .sort
+    #enddo
+
+    * BUG1 (not all elements are printed):
+    PrintTable Tab;
+
+    bracket x;
+    .sort
+    L expr1=table_(Tab,x);
+    print;
+    .sort
+
+    bracket x;
+    .sort
+
+    * BUG 2 ( seems only TabNew(1) is ok - further everything is broken):
+    Fillexpression TabNew=expr1(x);
+    .sort
+
+    #do i=1,`TableSize'
+    L e`i'=TabNew(`i');
+    #enddo
+    print;
+    .sort
+    .end
+      EOF
+      extra_parameter "-D TableSize=10"
+    end
+    def test1
+      execute FORM
+      assert no_problem
+      assert result("expr1") =~ pattern(&lt;&lt;-EOF
+        f(1)*x + f(2)*x^2 + f(3)*x^3 + f(4)*x^4 + f(5)*x^5 + f(6)*x^6 + f(7)*x^7
+        + f(8)*x^8 + f(9)*x^9 + f(10)*x^10;
+        EOF
+      )
+      assert result("e10") =~ /\s+f\(10\);/
+    end
+    end
+    #] SparseTable1 :
+</PRE><SPAN CLASS="SCRIPTSIZE"></SPAN>
+
+<P>
+Some remarks. Folds are used (to structure a long file). <SPAN style="font-family:monospace">=begin</SPAN> and <SPAN style="font-family:monospace">=end</SPAN>
+define a commentary block. Here useful information are given about the bug that
+triggered the test case. The input is not modified compared to the original
+FORM program, it is just directly pasted into this Ruby file. We use
+<SPAN style="font-family:monospace">extra_parameter</SPAN> to define a preprocessor variable for the run. We check
+<SPAN style="font-family:monospace">expr1</SPAN> to a multi-line reference. Since we use <SPAN style="font-family:monospace">pattern()</SPAN> (instead of
+<SPAN style="font-family:monospace">exact_pattern()</SPAN>), we can be sloppy about the indentation and the whitespaces.
+The expression <SPAN style="font-family:monospace">e10</SPAN> is matched to a pattern done "by hand" instead (just to
+show the principle). For such a test case, where we are mostly interested about
+the correctness of the calculation, the first assertion (<SPAN style="font-family:monospace">assert no_problem</SPAN>)
+is a standard.
+
+<P>
+
+<H1><A ID="SECTION00070000000000000000">
+CVS</A>
+</H1>
+
+<P>
+The CVS repository resides in <SPAN style="font-family:monospace">/user/form/cvs_repository</SPAN>. It is advisable to
+set the enviroment variable <SPAN style="font-family:monospace">CVSROOT</SPAN> accordingly, like (using bash shell syntax)
+<SPAN CLASS="SCRIPTSIZE"></SPAN><PRE>
+  export CVSROOT=:ext:myusername@mytrustedmachine.nikhef.nl:/user/form/cvs_repository
+</PRE><SPAN CLASS="SCRIPTSIZE"></SPAN>
+
+<P>
+A mailing list exists for CVS commits. The administration interface for this mailing list can be
+found under the web address
+
+<P>
+<SPAN style="font-family:monospace">https://mailman.nikhef.nl/cgi-bin/admin/form-cvs</SPAN>
+
+<P>
+A password is required.
+
+<P>
+Click <I>Membership Management</I> and then <I>Mass Subscription</I> to add
+new people. The personal details of the subscribers like the email address or
+the name can be changed under <I>Membership Management</I> as well.
+
+<P>
+The triggering of the CVS commits mails is done in the following way. In the
+file <SPAN style="font-family:monospace">loginfo</SPAN> in the directory <SPAN style="font-family:monospace">CVSROOT</SPAN> (inside the repository) the
+default action for logging is set such that the script <SPAN style="font-family:monospace">/user/form/cvs-log.sh</SPAN>
+will be called with the committer's user name and the CVS mailing list user
+name. The shell script does some simple message transformation and then uses the
+command <SPAN style="font-family:monospace">mail</SPAN> to send the commit mail to the mailing list.
+
+<P>
+
+<H2><A ID="SECTION00071000000000000000">
+Some useful CVS idioms</A>
+</H2>
+
+<P>
+To just show what would be updated/changed without actually
+modifiying anything, use
+<PRE>
+  cvs -n update
+</PRE>
+
+<P>
+If <SPAN style="font-family:monospace">cvs -n update</SPAN> has shown you that something new in the repository will be
+merged into your directory and you want to know in advance what the details are,
+you can do for each of the files involved a
+<PRE>
+  cvs status &lt;filename&gt;
+</PRE>
+and note the version number of your local file, and then do a
+<PRE>
+  cvs diff -r &lt;versionnumber&gt; &lt;filename&gt;
+</PRE>
+to see the differences.
+
+<P>
+In case you want to compile an older version of FORM (maybe to find out
+whether a certain bug is already present or not), do
+<PRE>
+  cvs update -D "&lt;DATE&gt;"
+</PRE>
+to checkout the sources as they were on a certain date, e.g.
+<BR><SPAN style="font-family:monospace">cvs update -D "2006-05-12"</SPAN>. The files will get the so-called sticky flag,
+which do prevent simple <SPAN style="font-family:monospace">cvs update</SPAN> commands in the future to update to the
+latest version from the repository. To remove the sticky flag on a file use
+<PRE>
+  cvs update -A &lt;filename&gt;
+</PRE>
+Without the filename all files will have the sticky flag removed.
+
+<P>
+<BR>
+
+<H2><A ID="SECTION00080000000000000000">
+Index</A>
+</H2><DL COMPACT>
+<DD>
+</DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A ID="foot907">...
+Ruby</A><A
+ HREF="#tex2html1"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A></DT>
+<DD><SPAN style="font-family:monospace">http://www.ruby-lang.org</SPAN>
+
+</DD>
+</DL>
+<BR><HR>
+
+</BODY>
+</HTML>
