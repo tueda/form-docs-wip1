@@ -1,0 +1,11 @@
+<map id="FiLeDaTa" name="FiLeDaTa">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,317,85,343"/>
+<area shape="rect" id="Node000002" href="$struct_fi_le_in_de_x.html" title=" " alt="" coords="53,229,139,255"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,268,55,318,50,315,80,265"/>
+<area shape="rect" id="Node000003" href="$struct_po_si_ti_on.html" title=" " alt="" coords="48,5,128,31"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="80,44,57,104,39,176,39,205,47,317,42,317,33,205,33,176,52,102,75,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,45,98,229,93,229,86,45"/>
+<area shape="rect" id="Node000004" href="$struct_in_de_xe_nt_ry.html" title=" " alt="" coords="163,125,264,150"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="112,38,203,122,199,126,109,42"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="192,161,111,231,108,227,188,157"/>
+</map>

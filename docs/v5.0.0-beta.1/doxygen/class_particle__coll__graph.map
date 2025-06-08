@@ -1,0 +1,9 @@
+<map id="Particle" name="Particle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="22,5,92,31"/>
+<area shape="rect" id="Node000002" href="$class_model.html" title=" " alt="" coords="26,93,88,119"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="23,41,10,56,9,66,13,75,34,91,31,95,9,78,3,66,5,54,19,37"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,80,72,69,71,50,63,32,68,30,76,48,77,70,73,81"/>
+<area shape="rect" id="Node000003" href="$class_interaction.html" title=" " alt="" coords="11,181,103,207"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="35,130,26,144,25,153,29,162,43,179,39,183,24,165,20,154,21,142,30,127"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="56,167,56,157,55,119,60,119,61,157,61,167"/>
+</map>
