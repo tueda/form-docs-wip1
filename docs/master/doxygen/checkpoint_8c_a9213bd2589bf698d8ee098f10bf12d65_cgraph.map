@@ -1,0 +1,9 @@
+<map id="DoRecovery" name="DoRecovery">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,107,80"/>
+<area shape="rect" id="Node000002" href="$tools_8c.html#a96ec928b26a63c6dcdadbd111829f0a6" title=" " alt="" coords="187,5,265,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,52,172,31,174,36,101,57"/>
+<area shape="rect" id="Node000003" href="$checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd" title=" " alt="" coords="155,55,297,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,65,141,65,141,70,107,70"/>
+<area shape="rect" id="Node000004" href="$tools_8c.html#a48988e4bcc3ab0029fa4c64a68bd115c" title=" " alt="" coords="167,104,285,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="101,77,169,97,167,102,100,83"/>
+</map>
