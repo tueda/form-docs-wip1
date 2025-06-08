@@ -1,0 +1,8 @@
+<map id="SpecTatoR" name="SpecTatoR">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,200,95,225"/>
+<area shape="rect" id="Node000002" href="$struct_po_si_ti_on.html" title=" " alt="" coords="10,5,90,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,44,44,88,43,137,51,200,45,200,38,137,39,87,43,44"/>
+<area shape="rect" id="Node000003" href="$struct_fi_le.html" title=" " alt="" coords="110,110,158,135"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="70,40,127,108,122,111,66,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,147,63,201,59,198,112,143"/>
+</map>
