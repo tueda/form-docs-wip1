@@ -1,0 +1,7 @@
+<map id="optimization" name="optimization">
+<area shape="rect" id="Node000001" title=" " alt="" coords="94,93,198,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,140,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,39,138,91,134,95,89,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="164,5,275,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,43,158,95,154,91,199,39"/>
+</map>
