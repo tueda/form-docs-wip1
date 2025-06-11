@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v4.3.1-118-g0e67ae0</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v4.3.1-123-g0f34f82</span>
    </div>
   </td>
  </tr>
@@ -133,8 +133,8 @@ Functions</h2></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad258737edf0e64c0dd8070322431baf9" id="r_ad258737edf0e64c0dd8070322431baf9"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="startup_8c.html#ad258737edf0e64c0dd8070322431baf9">CleanUp</a> (WORD par)</td></tr>
 <tr class="separator:ad258737edf0e64c0dd8070322431baf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54cbf1d4a090e682bc77c75292e6e312" id="r_a54cbf1d4a090e682bc77c75292e6e312"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="startup_8c.html#a54cbf1d4a090e682bc77c75292e6e312">Terminate</a> (int errorcode)</td></tr>
-<tr class="separator:a54cbf1d4a090e682bc77c75292e6e312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf4ed74e3508ff4e1361d8777c48501" id="r_afbf4ed74e3508ff4e1361d8777c48501"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="startup_8c.html#afbf4ed74e3508ff4e1361d8777c48501">TerminateImpl</a> (int errorcode, const char *file, int line, const char *function)</td></tr>
+<tr class="separator:afbf4ed74e3508ff4e1361d8777c48501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa248d87609f98ee3dcd04ecc4d322e60" id="r_aa248d87609f98ee3dcd04ecc4d322e60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="startup_8c.html#aa248d87609f98ee3dcd04ecc4d322e60">PrintDeprecation</a> (const char *feature, const char *issue)</td></tr>
 <tr class="separator:aa248d87609f98ee3dcd04ecc4d322e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a647c601ab9596facbbb28f1352758191" id="r_a647c601ab9596facbbb28f1352758191"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="startup_8c.html#a647c601ab9596facbbb28f1352758191">PrintRunningTime</a> ()</td></tr>
@@ -350,7 +350,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l00904">904</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
 
-<p class="reference">References <a class="el" href="comtool_8c_source.html#l00317">AddNtoC()</a>, <a class="el" href="comtool_8c_source.html#l00214">AddRHS()</a>, <a class="el" href="sort_8c_source.html#l02574">Compare1()</a>, <a class="el" href="comtool_8c_source.html#l00047">inicbufs()</a>, <a class="el" href="structs_8h_source.html#l00478">FuNcTiOn::name</a>, <a class="el" href="parallel_8c_source.html#l02094">PF_BroadcastNumber()</a>, <a class="el" href="pre_8c_source.html#l00645">PutPreVar()</a>, and <a class="el" href="structs_8h_source.html#l00484">FuNcTiOn::symmetric</a>.</p>
+<p class="reference">References <a class="el" href="comtool_8c_source.html#l00317">AddNtoC()</a>, <a class="el" href="comtool_8c_source.html#l00214">AddRHS()</a>, <a class="el" href="sort_8c_source.html#l02577">Compare1()</a>, <a class="el" href="comtool_8c_source.html#l00047">inicbufs()</a>, <a class="el" href="structs_8h_source.html#l00478">FuNcTiOn::name</a>, <a class="el" href="parallel_8c_source.html#l02094">PF_BroadcastNumber()</a>, <a class="el" href="pre_8c_source.html#l00645">PutPreVar()</a>, and <a class="el" href="structs_8h_source.html#l00484">FuNcTiOn::symmetric</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -469,18 +469,40 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a54cbf1d4a090e682bc77c75292e6e312" name="a54cbf1d4a090e682bc77c75292e6e312"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54cbf1d4a090e682bc77c75292e6e312">&#9670;&#160;</a></span>Terminate()</h2>
+<a id="afbf4ed74e3508ff4e1361d8777c48501" name="afbf4ed74e3508ff4e1361d8777c48501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf4ed74e3508ff4e1361d8777c48501">&#9670;&#160;</a></span>TerminateImpl()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">VOID Terminate </td>
+          <td class="memname">VOID TerminateImpl </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>errorcode</em></td><td>)</td>
+          <td class="paramname"><em>errorcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>function</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -523,7 +545,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l01882">1882</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l01884">1884</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
 
 </div>
 </div>
@@ -542,7 +564,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l01906">1906</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l01908">1908</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
 
 </div>
 </div>
@@ -561,7 +583,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l01947">1947</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="startup_8c_source.html#l01949">1949</a> of file <a class="el" href="startup_8c_source.html">startup.c</a>.</p>
 
 </div>
 </div>

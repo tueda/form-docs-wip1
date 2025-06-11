@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v4.3.1-118-g0e67ae0</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v4.3.1-123-g0f34f82</span>
    </div>
   </td>
  </tr>
@@ -1595,7 +1595,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>    }</div>
 <div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>    trappedTerminate = 1;</div>
-<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>    <span class="comment">/*[13jul2005 mt]*/</span><span class="comment">/*Terminate(-1) on signal is here:*/</span></div>
+<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>    <span class="comment">/*[13jul2005 mt]*/</span><span class="comment">/*TerminateImpl(-1) on signal is here:*/</span></div>
 <div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>    Terminate(-1);</div>
 <div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span>}</div>
 <div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span> </div>
@@ -1829,12 +1829,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01785" name="l01785"></a><span class="lineno"> 1785</span> </div>
 <div class="line"><a id="l01786" name="l01786"></a><span class="lineno"> 1786</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01787" name="l01787"></a><span class="lineno"> 1787</span><span class="comment">        #] CleanUp : </span></div>
-<div class="line"><a id="l01788" name="l01788"></a><span class="lineno"> 1788</span><span class="comment">        #[ Terminate :</span></div>
+<div class="line"><a id="l01788" name="l01788"></a><span class="lineno"> 1788</span><span class="comment">        #[ TerminateImpl :</span></div>
 <div class="line"><a id="l01789" name="l01789"></a><span class="lineno"> 1789</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01790" name="l01790"></a><span class="lineno"> 1790</span> </div>
 <div class="line"><a id="l01791" name="l01791"></a><span class="lineno"> 1791</span><span class="keyword">static</span> <span class="keywordtype">int</span> firstterminate = 1;</div>
 <div class="line"><a id="l01792" name="l01792"></a><span class="lineno"> 1792</span> </div>
-<div class="line"><a id="l01793" name="l01793"></a><span class="lineno"> 1793</span>VOID Terminate(<span class="keywordtype">int</span> errorcode)</div>
+<div class="line"><a id="l01793" name="l01793"></a><span class="lineno"> 1793</span>VOID TerminateImpl(<span class="keywordtype">int</span> errorcode, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span>* function)</div>
 <div class="line"><a id="l01794" name="l01794"></a><span class="lineno"> 1794</span>{</div>
 <div class="line"><a id="l01795" name="l01795"></a><span class="lineno"> 1795</span>    <span class="keywordflow">if</span> ( errorcode &amp;&amp; firstterminate ) {</div>
 <div class="line"><a id="l01796" name="l01796"></a><span class="lineno"> 1796</span>        firstterminate = 0;</div>
@@ -1845,182 +1845,184 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01801" name="l01801"></a><span class="lineno"> 1801</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l01802" name="l01802"></a><span class="lineno"> 1802</span>        MesPrint(<span class="stringliteral">&quot;Program terminating at &amp;&quot;</span>);</div>
 <div class="line"><a id="l01803" name="l01803"></a><span class="lineno"> 1803</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01804" name="l01804"></a><span class="lineno"> 1804</span>        Crash();</div>
-<div class="line"><a id="l01805" name="l01805"></a><span class="lineno"> 1805</span>    }</div>
-<div class="line"><a id="l01806" name="l01806"></a><span class="lineno"> 1806</span><span class="preprocessor">#ifdef TRAPSIGNALS</span></div>
-<div class="line"><a id="l01807" name="l01807"></a><span class="lineno"> 1807</span>    exitInProgress=1;</div>
-<div class="line"><a id="l01808" name="l01808"></a><span class="lineno"> 1808</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01809" name="l01809"></a><span class="lineno"> 1809</span><span class="preprocessor">#ifdef WITHEXTERNALCHANNEL</span></div>
-<div class="line"><a id="l01810" name="l01810"></a><span class="lineno"> 1810</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01811" name="l01811"></a><span class="lineno"> 1811</span><span class="comment">    This function can be called from the error handler, so it is better to</span></div>
-<div class="line"><a id="l01812" name="l01812"></a><span class="lineno"> 1812</span><span class="comment">    clean up all started processes before any activity:</span></div>
-<div class="line"><a id="l01813" name="l01813"></a><span class="lineno"> 1813</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01814" name="l01814"></a><span class="lineno"> 1814</span>    closeAllExternalChannels();</div>
-<div class="line"><a id="l01815" name="l01815"></a><span class="lineno"> 1815</span>    AX.currentExternalChannel=0;</div>
-<div class="line"><a id="l01816" name="l01816"></a><span class="lineno"> 1816</span>    <span class="comment">/*[08may2006 mt]:*/</span></div>
-<div class="line"><a id="l01817" name="l01817"></a><span class="lineno"> 1817</span>    AX.killSignal=SIGKILL;</div>
-<div class="line"><a id="l01818" name="l01818"></a><span class="lineno"> 1818</span>    AX.killWholeGroup=1;</div>
-<div class="line"><a id="l01819" name="l01819"></a><span class="lineno"> 1819</span>    AX.daemonize=1;</div>
-<div class="line"><a id="l01820" name="l01820"></a><span class="lineno"> 1820</span>    <span class="comment">/*:[08may2006 mt]*/</span></div>
-<div class="line"><a id="l01821" name="l01821"></a><span class="lineno"> 1821</span>    <span class="keywordflow">if</span>(AX.currentPrompt){</div>
-<div class="line"><a id="l01822" name="l01822"></a><span class="lineno"> 1822</span>        M_free(AX.currentPrompt,<span class="stringliteral">&quot;external channel prompt&quot;</span>);</div>
-<div class="line"><a id="l01823" name="l01823"></a><span class="lineno"> 1823</span>        AX.currentPrompt=0;</div>
-<div class="line"><a id="l01824" name="l01824"></a><span class="lineno"> 1824</span>    }</div>
-<div class="line"><a id="l01825" name="l01825"></a><span class="lineno"> 1825</span>    <span class="comment">/*[08may2006 mt]:*/</span></div>
-<div class="line"><a id="l01826" name="l01826"></a><span class="lineno"> 1826</span>    <span class="keywordflow">if</span>(AX.shellname){</div>
-<div class="line"><a id="l01827" name="l01827"></a><span class="lineno"> 1827</span>        M_free(AX.shellname,<span class="stringliteral">&quot;external channel shellname&quot;</span>);</div>
-<div class="line"><a id="l01828" name="l01828"></a><span class="lineno"> 1828</span>        AX.shellname=0;</div>
-<div class="line"><a id="l01829" name="l01829"></a><span class="lineno"> 1829</span>    }</div>
-<div class="line"><a id="l01830" name="l01830"></a><span class="lineno"> 1830</span>    <span class="keywordflow">if</span>(AX.stderrname){</div>
-<div class="line"><a id="l01831" name="l01831"></a><span class="lineno"> 1831</span>        M_free(AX.stderrname,<span class="stringliteral">&quot;external channel stderrname&quot;</span>);</div>
-<div class="line"><a id="l01832" name="l01832"></a><span class="lineno"> 1832</span>        AX.stderrname=0;</div>
-<div class="line"><a id="l01833" name="l01833"></a><span class="lineno"> 1833</span>    }</div>
-<div class="line"><a id="l01834" name="l01834"></a><span class="lineno"> 1834</span>    <span class="comment">/*:[08may2006 mt]*/</span></div>
-<div class="line"><a id="l01835" name="l01835"></a><span class="lineno"> 1835</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01836" name="l01836"></a><span class="lineno"> 1836</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
-<div class="line"><a id="l01837" name="l01837"></a><span class="lineno"> 1837</span>    <span class="keywordflow">if</span> ( !WhoAmI() &amp;&amp; !errorcode ) {</div>
-<div class="line"><a id="l01838" name="l01838"></a><span class="lineno"> 1838</span>        TerminateAllThreads();</div>
-<div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span>    }</div>
-<div class="line"><a id="l01840" name="l01840"></a><span class="lineno"> 1840</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>    <span class="keywordflow">if</span> ( AC.FinalStats ) {</div>
-<div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span>        <span class="keywordflow">if</span> ( AM.PrintTotalSize ) {</div>
-<div class="line"><a id="l01843" name="l01843"></a><span class="lineno"> 1843</span>            MesPrint(<span class="stringliteral">&quot;Max. space for expressions: %19p bytes&quot;</span>,&amp;(AS.MaxExprSize));</div>
-<div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>        }</div>
-<div class="line"><a id="l01845" name="l01845"></a><span class="lineno"> 1845</span>        PrintRunningTime();</div>
-<div class="line"><a id="l01846" name="l01846"></a><span class="lineno"> 1846</span>    }</div>
-<div class="line"><a id="l01847" name="l01847"></a><span class="lineno"> 1847</span><span class="preprocessor">#ifdef WITHMPI</span></div>
-<div class="line"><a id="l01848" name="l01848"></a><span class="lineno"> 1848</span>    <span class="keywordflow">if</span> ( AM.HoldFlag &amp;&amp; PF.me == MASTER ) {</div>
-<div class="line"><a id="l01849" name="l01849"></a><span class="lineno"> 1849</span>        WriteFile(AM.StdOut,(UBYTE *)(<span class="stringliteral">&quot;Hit any key &quot;</span>),12);</div>
-<div class="line"><a id="l01850" name="l01850"></a><span class="lineno"> 1850</span>        <a class="code hl_function" href="parallel_8c.html#aaa6f2290ae527132b557e572636a7a20">PF_FlushStdOutBuffer</a>();</div>
-<div class="line"><a id="l01851" name="l01851"></a><span class="lineno"> 1851</span>        getchar();</div>
-<div class="line"><a id="l01852" name="l01852"></a><span class="lineno"> 1852</span>    }</div>
-<div class="line"><a id="l01853" name="l01853"></a><span class="lineno"> 1853</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01854" name="l01854"></a><span class="lineno"> 1854</span>    <span class="keywordflow">if</span> ( AM.HoldFlag ) {</div>
-<div class="line"><a id="l01855" name="l01855"></a><span class="lineno"> 1855</span>        WriteFile(AM.StdOut,(UBYTE *)(<span class="stringliteral">&quot;Hit any key &quot;</span>),12);</div>
-<div class="line"><a id="l01856" name="l01856"></a><span class="lineno"> 1856</span>        getchar();</div>
-<div class="line"><a id="l01857" name="l01857"></a><span class="lineno"> 1857</span>    }</div>
-<div class="line"><a id="l01858" name="l01858"></a><span class="lineno"> 1858</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01859" name="l01859"></a><span class="lineno"> 1859</span><span class="preprocessor">#ifdef WITHMPI</span></div>
-<div class="line"><a id="l01860" name="l01860"></a><span class="lineno"> 1860</span>    <a class="code hl_function" href="parallel_8c.html#a9c62cfe2b9d250a2ee224c3c7e6e7b4d">PF_Terminate</a>(errorcode);</div>
-<div class="line"><a id="l01861" name="l01861"></a><span class="lineno"> 1861</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01862" name="l01862"></a><span class="lineno"> 1862</span>    CleanUp(errorcode);</div>
-<div class="line"><a id="l01863" name="l01863"></a><span class="lineno"> 1863</span>    M_print();</div>
-<div class="line"><a id="l01864" name="l01864"></a><span class="lineno"> 1864</span><span class="preprocessor">#ifdef VMS</span></div>
-<div class="line"><a id="l01865" name="l01865"></a><span class="lineno"> 1865</span>    P_term(errorcode? 0: 1);</div>
-<div class="line"><a id="l01866" name="l01866"></a><span class="lineno"> 1866</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01867" name="l01867"></a><span class="lineno"> 1867</span>    P_term(errorcode);</div>
-<div class="line"><a id="l01868" name="l01868"></a><span class="lineno"> 1868</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01869" name="l01869"></a><span class="lineno"> 1869</span>}</div>
-<div class="line"><a id="l01870" name="l01870"></a><span class="lineno"> 1870</span> </div>
-<div class="line"><a id="l01871" name="l01871"></a><span class="lineno"> 1871</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01872" name="l01872"></a><span class="lineno"> 1872</span><span class="comment">        #] Terminate : </span></div>
-<div class="line"><a id="l01873" name="l01873"></a><span class="lineno"> 1873</span><span class="comment">        #[ PrintDeprecation :</span></div>
-<div class="line"><a id="l01874" name="l01874"></a><span class="lineno"> 1874</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01875" name="l01875"></a><span class="lineno"> 1875</span> </div>
-<div class="foldopen" id="foldopen01882" data-start="{" data-end="}">
-<div class="line"><a id="l01882" name="l01882"></a><span class="lineno"><a class="line" href="declare_8h.html#a24465fa9b8c5483106bc5a91535aa472"> 1882</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="startup_8c.html#aa248d87609f98ee3dcd04ecc4d322e60">PrintDeprecation</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *feature, <span class="keyword">const</span> <span class="keywordtype">char</span> *issue) {</div>
-<div class="line"><a id="l01883" name="l01883"></a><span class="lineno"> 1883</span><span class="preprocessor">#ifdef WITHMPI</span></div>
-<div class="line"><a id="l01884" name="l01884"></a><span class="lineno"> 1884</span>    <span class="keywordflow">if</span> ( PF.me != MASTER ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01885" name="l01885"></a><span class="lineno"> 1885</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01886" name="l01886"></a><span class="lineno"> 1886</span>    <span class="keywordflow">if</span> ( AM.IgnoreDeprecation ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01887" name="l01887"></a><span class="lineno"> 1887</span> </div>
-<div class="line"><a id="l01888" name="l01888"></a><span class="lineno"> 1888</span>    UBYTE *e = (UBYTE *)getenv(<span class="stringliteral">&quot;FORM_IGNORE_DEPRECATION&quot;</span>);</div>
-<div class="line"><a id="l01889" name="l01889"></a><span class="lineno"> 1889</span>    <span class="keywordflow">if</span> ( e &amp;&amp; e[0] &amp;&amp; StrCmp(e, (UBYTE *)<span class="stringliteral">&quot;0&quot;</span>) &amp;&amp; StrICmp(e, (UBYTE *)<span class="stringliteral">&quot;false&quot;</span>) &amp;&amp; StrICmp(e, (UBYTE *)<span class="stringliteral">&quot;no&quot;</span>) ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01890" name="l01890"></a><span class="lineno"> 1890</span> </div>
-<div class="line"><a id="l01891" name="l01891"></a><span class="lineno"> 1891</span>    MesPrint(<span class="stringliteral">&quot;DeprecationWarning: We are considering deprecating %s.&quot;</span>, feature);</div>
-<div class="line"><a id="l01892" name="l01892"></a><span class="lineno"> 1892</span>    MesPrint(<span class="stringliteral">&quot;If you want this support to continue, leave a comment at:&quot;</span>);</div>
-<div class="line"><a id="l01893" name="l01893"></a><span class="lineno"> 1893</span>    MesPrint(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l01894" name="l01894"></a><span class="lineno"> 1894</span>    MesPrint(<span class="stringliteral">&quot;    https://github.com/vermaseren/form/%s&quot;</span>, issue);</div>
+<div class="line"><a id="l01804" name="l01804"></a><span class="lineno"> 1804</span>        MesPrint(<span class="stringliteral">&quot;Terminate called from %s:%d (%s)&quot;</span>, file, line, function);</div>
+<div class="line"><a id="l01805" name="l01805"></a><span class="lineno"> 1805</span> </div>
+<div class="line"><a id="l01806" name="l01806"></a><span class="lineno"> 1806</span>        Crash();</div>
+<div class="line"><a id="l01807" name="l01807"></a><span class="lineno"> 1807</span>    }</div>
+<div class="line"><a id="l01808" name="l01808"></a><span class="lineno"> 1808</span><span class="preprocessor">#ifdef TRAPSIGNALS</span></div>
+<div class="line"><a id="l01809" name="l01809"></a><span class="lineno"> 1809</span>    exitInProgress=1;</div>
+<div class="line"><a id="l01810" name="l01810"></a><span class="lineno"> 1810</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01811" name="l01811"></a><span class="lineno"> 1811</span><span class="preprocessor">#ifdef WITHEXTERNALCHANNEL</span></div>
+<div class="line"><a id="l01812" name="l01812"></a><span class="lineno"> 1812</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01813" name="l01813"></a><span class="lineno"> 1813</span><span class="comment">    This function can be called from the error handler, so it is better to</span></div>
+<div class="line"><a id="l01814" name="l01814"></a><span class="lineno"> 1814</span><span class="comment">    clean up all started processes before any activity:</span></div>
+<div class="line"><a id="l01815" name="l01815"></a><span class="lineno"> 1815</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01816" name="l01816"></a><span class="lineno"> 1816</span>    closeAllExternalChannels();</div>
+<div class="line"><a id="l01817" name="l01817"></a><span class="lineno"> 1817</span>    AX.currentExternalChannel=0;</div>
+<div class="line"><a id="l01818" name="l01818"></a><span class="lineno"> 1818</span>    <span class="comment">/*[08may2006 mt]:*/</span></div>
+<div class="line"><a id="l01819" name="l01819"></a><span class="lineno"> 1819</span>    AX.killSignal=SIGKILL;</div>
+<div class="line"><a id="l01820" name="l01820"></a><span class="lineno"> 1820</span>    AX.killWholeGroup=1;</div>
+<div class="line"><a id="l01821" name="l01821"></a><span class="lineno"> 1821</span>    AX.daemonize=1;</div>
+<div class="line"><a id="l01822" name="l01822"></a><span class="lineno"> 1822</span>    <span class="comment">/*:[08may2006 mt]*/</span></div>
+<div class="line"><a id="l01823" name="l01823"></a><span class="lineno"> 1823</span>    <span class="keywordflow">if</span>(AX.currentPrompt){</div>
+<div class="line"><a id="l01824" name="l01824"></a><span class="lineno"> 1824</span>        M_free(AX.currentPrompt,<span class="stringliteral">&quot;external channel prompt&quot;</span>);</div>
+<div class="line"><a id="l01825" name="l01825"></a><span class="lineno"> 1825</span>        AX.currentPrompt=0;</div>
+<div class="line"><a id="l01826" name="l01826"></a><span class="lineno"> 1826</span>    }</div>
+<div class="line"><a id="l01827" name="l01827"></a><span class="lineno"> 1827</span>    <span class="comment">/*[08may2006 mt]:*/</span></div>
+<div class="line"><a id="l01828" name="l01828"></a><span class="lineno"> 1828</span>    <span class="keywordflow">if</span>(AX.shellname){</div>
+<div class="line"><a id="l01829" name="l01829"></a><span class="lineno"> 1829</span>        M_free(AX.shellname,<span class="stringliteral">&quot;external channel shellname&quot;</span>);</div>
+<div class="line"><a id="l01830" name="l01830"></a><span class="lineno"> 1830</span>        AX.shellname=0;</div>
+<div class="line"><a id="l01831" name="l01831"></a><span class="lineno"> 1831</span>    }</div>
+<div class="line"><a id="l01832" name="l01832"></a><span class="lineno"> 1832</span>    <span class="keywordflow">if</span>(AX.stderrname){</div>
+<div class="line"><a id="l01833" name="l01833"></a><span class="lineno"> 1833</span>        M_free(AX.stderrname,<span class="stringliteral">&quot;external channel stderrname&quot;</span>);</div>
+<div class="line"><a id="l01834" name="l01834"></a><span class="lineno"> 1834</span>        AX.stderrname=0;</div>
+<div class="line"><a id="l01835" name="l01835"></a><span class="lineno"> 1835</span>    }</div>
+<div class="line"><a id="l01836" name="l01836"></a><span class="lineno"> 1836</span>    <span class="comment">/*:[08may2006 mt]*/</span></div>
+<div class="line"><a id="l01837" name="l01837"></a><span class="lineno"> 1837</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01838" name="l01838"></a><span class="lineno"> 1838</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
+<div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span>    <span class="keywordflow">if</span> ( !WhoAmI() &amp;&amp; !errorcode ) {</div>
+<div class="line"><a id="l01840" name="l01840"></a><span class="lineno"> 1840</span>        TerminateAllThreads();</div>
+<div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>    }</div>
+<div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01843" name="l01843"></a><span class="lineno"> 1843</span>    <span class="keywordflow">if</span> ( AC.FinalStats ) {</div>
+<div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>        <span class="keywordflow">if</span> ( AM.PrintTotalSize ) {</div>
+<div class="line"><a id="l01845" name="l01845"></a><span class="lineno"> 1845</span>            MesPrint(<span class="stringliteral">&quot;Max. space for expressions: %19p bytes&quot;</span>,&amp;(AS.MaxExprSize));</div>
+<div class="line"><a id="l01846" name="l01846"></a><span class="lineno"> 1846</span>        }</div>
+<div class="line"><a id="l01847" name="l01847"></a><span class="lineno"> 1847</span>        PrintRunningTime();</div>
+<div class="line"><a id="l01848" name="l01848"></a><span class="lineno"> 1848</span>    }</div>
+<div class="line"><a id="l01849" name="l01849"></a><span class="lineno"> 1849</span><span class="preprocessor">#ifdef WITHMPI</span></div>
+<div class="line"><a id="l01850" name="l01850"></a><span class="lineno"> 1850</span>    <span class="keywordflow">if</span> ( AM.HoldFlag &amp;&amp; PF.me == MASTER ) {</div>
+<div class="line"><a id="l01851" name="l01851"></a><span class="lineno"> 1851</span>        WriteFile(AM.StdOut,(UBYTE *)(<span class="stringliteral">&quot;Hit any key &quot;</span>),12);</div>
+<div class="line"><a id="l01852" name="l01852"></a><span class="lineno"> 1852</span>        <a class="code hl_function" href="parallel_8c.html#aaa6f2290ae527132b557e572636a7a20">PF_FlushStdOutBuffer</a>();</div>
+<div class="line"><a id="l01853" name="l01853"></a><span class="lineno"> 1853</span>        getchar();</div>
+<div class="line"><a id="l01854" name="l01854"></a><span class="lineno"> 1854</span>    }</div>
+<div class="line"><a id="l01855" name="l01855"></a><span class="lineno"> 1855</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01856" name="l01856"></a><span class="lineno"> 1856</span>    <span class="keywordflow">if</span> ( AM.HoldFlag ) {</div>
+<div class="line"><a id="l01857" name="l01857"></a><span class="lineno"> 1857</span>        WriteFile(AM.StdOut,(UBYTE *)(<span class="stringliteral">&quot;Hit any key &quot;</span>),12);</div>
+<div class="line"><a id="l01858" name="l01858"></a><span class="lineno"> 1858</span>        getchar();</div>
+<div class="line"><a id="l01859" name="l01859"></a><span class="lineno"> 1859</span>    }</div>
+<div class="line"><a id="l01860" name="l01860"></a><span class="lineno"> 1860</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01861" name="l01861"></a><span class="lineno"> 1861</span><span class="preprocessor">#ifdef WITHMPI</span></div>
+<div class="line"><a id="l01862" name="l01862"></a><span class="lineno"> 1862</span>    <a class="code hl_function" href="parallel_8c.html#a9c62cfe2b9d250a2ee224c3c7e6e7b4d">PF_Terminate</a>(errorcode);</div>
+<div class="line"><a id="l01863" name="l01863"></a><span class="lineno"> 1863</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01864" name="l01864"></a><span class="lineno"> 1864</span>    CleanUp(errorcode);</div>
+<div class="line"><a id="l01865" name="l01865"></a><span class="lineno"> 1865</span>    M_print();</div>
+<div class="line"><a id="l01866" name="l01866"></a><span class="lineno"> 1866</span><span class="preprocessor">#ifdef VMS</span></div>
+<div class="line"><a id="l01867" name="l01867"></a><span class="lineno"> 1867</span>    P_term(errorcode? 0: 1);</div>
+<div class="line"><a id="l01868" name="l01868"></a><span class="lineno"> 1868</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01869" name="l01869"></a><span class="lineno"> 1869</span>    P_term(errorcode);</div>
+<div class="line"><a id="l01870" name="l01870"></a><span class="lineno"> 1870</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01871" name="l01871"></a><span class="lineno"> 1871</span>}</div>
+<div class="line"><a id="l01872" name="l01872"></a><span class="lineno"> 1872</span> </div>
+<div class="line"><a id="l01873" name="l01873"></a><span class="lineno"> 1873</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01874" name="l01874"></a><span class="lineno"> 1874</span><span class="comment">        #] TerminateImpl : </span></div>
+<div class="line"><a id="l01875" name="l01875"></a><span class="lineno"> 1875</span><span class="comment">        #[ PrintDeprecation :</span></div>
+<div class="line"><a id="l01876" name="l01876"></a><span class="lineno"> 1876</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01877" name="l01877"></a><span class="lineno"> 1877</span> </div>
+<div class="foldopen" id="foldopen01884" data-start="{" data-end="}">
+<div class="line"><a id="l01884" name="l01884"></a><span class="lineno"><a class="line" href="declare_8h.html#a24465fa9b8c5483106bc5a91535aa472"> 1884</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="startup_8c.html#aa248d87609f98ee3dcd04ecc4d322e60">PrintDeprecation</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *feature, <span class="keyword">const</span> <span class="keywordtype">char</span> *issue) {</div>
+<div class="line"><a id="l01885" name="l01885"></a><span class="lineno"> 1885</span><span class="preprocessor">#ifdef WITHMPI</span></div>
+<div class="line"><a id="l01886" name="l01886"></a><span class="lineno"> 1886</span>    <span class="keywordflow">if</span> ( PF.me != MASTER ) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01887" name="l01887"></a><span class="lineno"> 1887</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01888" name="l01888"></a><span class="lineno"> 1888</span>    <span class="keywordflow">if</span> ( AM.IgnoreDeprecation ) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01889" name="l01889"></a><span class="lineno"> 1889</span> </div>
+<div class="line"><a id="l01890" name="l01890"></a><span class="lineno"> 1890</span>    UBYTE *e = (UBYTE *)getenv(<span class="stringliteral">&quot;FORM_IGNORE_DEPRECATION&quot;</span>);</div>
+<div class="line"><a id="l01891" name="l01891"></a><span class="lineno"> 1891</span>    <span class="keywordflow">if</span> ( e &amp;&amp; e[0] &amp;&amp; StrCmp(e, (UBYTE *)<span class="stringliteral">&quot;0&quot;</span>) &amp;&amp; StrICmp(e, (UBYTE *)<span class="stringliteral">&quot;false&quot;</span>) &amp;&amp; StrICmp(e, (UBYTE *)<span class="stringliteral">&quot;no&quot;</span>) ) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01892" name="l01892"></a><span class="lineno"> 1892</span> </div>
+<div class="line"><a id="l01893" name="l01893"></a><span class="lineno"> 1893</span>    MesPrint(<span class="stringliteral">&quot;DeprecationWarning: We are considering deprecating %s.&quot;</span>, feature);</div>
+<div class="line"><a id="l01894" name="l01894"></a><span class="lineno"> 1894</span>    MesPrint(<span class="stringliteral">&quot;If you want this support to continue, leave a comment at:&quot;</span>);</div>
 <div class="line"><a id="l01895" name="l01895"></a><span class="lineno"> 1895</span>    MesPrint(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l01896" name="l01896"></a><span class="lineno"> 1896</span>    MesPrint(<span class="stringliteral">&quot;Otherwise, it will be discontinued in the future.&quot;</span>);</div>
-<div class="line"><a id="l01897" name="l01897"></a><span class="lineno"> 1897</span>    MesPrint(<span class="stringliteral">&quot;To suppress this warning, use the -ignore-deprecation command line option or&quot;</span>);</div>
-<div class="line"><a id="l01898" name="l01898"></a><span class="lineno"> 1898</span>    MesPrint(<span class="stringliteral">&quot;set the environment variable FORM_IGNORE_DEPRECATION=1.&quot;</span>);</div>
-<div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span>}</div>
+<div class="line"><a id="l01896" name="l01896"></a><span class="lineno"> 1896</span>    MesPrint(<span class="stringliteral">&quot;    https://github.com/vermaseren/form/%s&quot;</span>, issue);</div>
+<div class="line"><a id="l01897" name="l01897"></a><span class="lineno"> 1897</span>    MesPrint(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l01898" name="l01898"></a><span class="lineno"> 1898</span>    MesPrint(<span class="stringliteral">&quot;Otherwise, it will be discontinued in the future.&quot;</span>);</div>
+<div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span>    MesPrint(<span class="stringliteral">&quot;To suppress this warning, use the -ignore-deprecation command line option or&quot;</span>);</div>
+<div class="line"><a id="l01900" name="l01900"></a><span class="lineno"> 1900</span>    MesPrint(<span class="stringliteral">&quot;set the environment variable FORM_IGNORE_DEPRECATION=1.&quot;</span>);</div>
+<div class="line"><a id="l01901" name="l01901"></a><span class="lineno"> 1901</span>}</div>
 </div>
-<div class="line"><a id="l01900" name="l01900"></a><span class="lineno"> 1900</span> </div>
-<div class="line"><a id="l01901" name="l01901"></a><span class="lineno"> 1901</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01902" name="l01902"></a><span class="lineno"> 1902</span><span class="comment">        #] PrintDeprecation : </span></div>
-<div class="line"><a id="l01903" name="l01903"></a><span class="lineno"> 1903</span><span class="comment">        #[ PrintRunningTime :</span></div>
-<div class="line"><a id="l01904" name="l01904"></a><span class="lineno"> 1904</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01905" name="l01905"></a><span class="lineno"> 1905</span> </div>
-<div class="line"><a id="l01906" name="l01906"></a><span class="lineno"> 1906</span>VOID PrintRunningTime()</div>
-<div class="line"><a id="l01907" name="l01907"></a><span class="lineno"> 1907</span>{</div>
-<div class="line"><a id="l01908" name="l01908"></a><span class="lineno"> 1908</span><span class="preprocessor">#if (defined(WITHPTHREADS) &amp;&amp; (defined(WITHPOSIXCLOCK) || defined(WINDOWS))) || defined(WITHMPI)</span></div>
-<div class="line"><a id="l01909" name="l01909"></a><span class="lineno"> 1909</span>    LONG mastertime;</div>
-<div class="line"><a id="l01910" name="l01910"></a><span class="lineno"> 1910</span>    LONG workertime;</div>
-<div class="line"><a id="l01911" name="l01911"></a><span class="lineno"> 1911</span>    LONG wallclocktime;</div>
-<div class="line"><a id="l01912" name="l01912"></a><span class="lineno"> 1912</span>    LONG totaltime;</div>
-<div class="line"><a id="l01913" name="l01913"></a><span class="lineno"> 1913</span><span class="preprocessor">#if defined(WITHPTHREADS)</span></div>
-<div class="line"><a id="l01914" name="l01914"></a><span class="lineno"> 1914</span>    <span class="keywordflow">if</span> ( AB[0] != 0 ) {</div>
-<div class="line"><a id="l01915" name="l01915"></a><span class="lineno"> 1915</span>        workertime = GetWorkerTimes();</div>
-<div class="line"><a id="l01916" name="l01916"></a><span class="lineno"> 1916</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01917" name="l01917"></a><span class="lineno"> 1917</span>    workertime = <a class="code hl_function" href="parallel_8c.html#a4acf9c6814b057fdc96bd1e9efdd3910">PF_GetSlaveTimes</a>();  <span class="comment">/* must be called on all processors */</span></div>
-<div class="line"><a id="l01918" name="l01918"></a><span class="lineno"> 1918</span>    <span class="keywordflow">if</span> ( PF.me == MASTER ) {</div>
-<div class="line"><a id="l01919" name="l01919"></a><span class="lineno"> 1919</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01920" name="l01920"></a><span class="lineno"> 1920</span>        mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
-<div class="line"><a id="l01921" name="l01921"></a><span class="lineno"> 1921</span>        wallclocktime = <a class="code hl_function" href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a>(1);</div>
-<div class="line"><a id="l01922" name="l01922"></a><span class="lineno"> 1922</span>        totaltime = mastertime+workertime;</div>
-<div class="line"><a id="l01923" name="l01923"></a><span class="lineno"> 1923</span>        <span class="keywordflow">if</span> ( !AM.silent ) {</div>
-<div class="line"><a id="l01924" name="l01924"></a><span class="lineno"> 1924</span>        MesPrint(<span class="stringliteral">&quot;  %l.%2i sec + %l.%2i sec: %l.%2i sec out of %l.%2i sec&quot;</span>,</div>
-<div class="line"><a id="l01925" name="l01925"></a><span class="lineno"> 1925</span>            mastertime/1000,(WORD)((mastertime%1000)/10),</div>
-<div class="line"><a id="l01926" name="l01926"></a><span class="lineno"> 1926</span>            workertime/1000,(WORD)((workertime%1000)/10),</div>
-<div class="line"><a id="l01927" name="l01927"></a><span class="lineno"> 1927</span>            totaltime/1000,(WORD)((totaltime%1000)/10),</div>
-<div class="line"><a id="l01928" name="l01928"></a><span class="lineno"> 1928</span>            wallclocktime/100,(WORD)(wallclocktime%100));</div>
-<div class="line"><a id="l01929" name="l01929"></a><span class="lineno"> 1929</span>        }</div>
-<div class="line"><a id="l01930" name="l01930"></a><span class="lineno"> 1930</span>    }</div>
-<div class="line"><a id="l01931" name="l01931"></a><span class="lineno"> 1931</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01932" name="l01932"></a><span class="lineno"> 1932</span>    LONG mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
-<div class="line"><a id="l01933" name="l01933"></a><span class="lineno"> 1933</span>    LONG wallclocktime = <a class="code hl_function" href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a>(1);</div>
-<div class="line"><a id="l01934" name="l01934"></a><span class="lineno"> 1934</span>    <span class="keywordflow">if</span> ( !AM.silent ) {</div>
-<div class="line"><a id="l01935" name="l01935"></a><span class="lineno"> 1935</span>    MesPrint(<span class="stringliteral">&quot;  %l.%2i sec out of %l.%2i sec&quot;</span>,</div>
-<div class="line"><a id="l01936" name="l01936"></a><span class="lineno"> 1936</span>        mastertime/1000,(WORD)((mastertime%1000)/10),</div>
-<div class="line"><a id="l01937" name="l01937"></a><span class="lineno"> 1937</span>        wallclocktime/100,(WORD)(wallclocktime%100));</div>
-<div class="line"><a id="l01938" name="l01938"></a><span class="lineno"> 1938</span>    }</div>
-<div class="line"><a id="l01939" name="l01939"></a><span class="lineno"> 1939</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01940" name="l01940"></a><span class="lineno"> 1940</span>}</div>
-<div class="line"><a id="l01941" name="l01941"></a><span class="lineno"> 1941</span> </div>
-<div class="line"><a id="l01942" name="l01942"></a><span class="lineno"> 1942</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01943" name="l01943"></a><span class="lineno"> 1943</span><span class="comment">        #] PrintRunningTime : </span></div>
-<div class="line"><a id="l01944" name="l01944"></a><span class="lineno"> 1944</span><span class="comment">        #[ GetRunningTime :</span></div>
-<div class="line"><a id="l01945" name="l01945"></a><span class="lineno"> 1945</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01946" name="l01946"></a><span class="lineno"> 1946</span> </div>
-<div class="line"><a id="l01947" name="l01947"></a><span class="lineno"> 1947</span>LONG GetRunningTime()</div>
-<div class="line"><a id="l01948" name="l01948"></a><span class="lineno"> 1948</span>{</div>
-<div class="line"><a id="l01949" name="l01949"></a><span class="lineno"> 1949</span><span class="preprocessor">#if defined(WITHPTHREADS) &amp;&amp; (defined(WITHPOSIXCLOCK) || defined(WINDOWS))</span></div>
-<div class="line"><a id="l01950" name="l01950"></a><span class="lineno"> 1950</span>    LONG mastertime;</div>
-<div class="line"><a id="l01951" name="l01951"></a><span class="lineno"> 1951</span>    <span class="keywordflow">if</span> ( AB[0] != 0 ) {</div>
-<div class="line"><a id="l01952" name="l01952"></a><span class="lineno"> 1952</span><span class="comment">/* </span></div>
-<div class="line"><a id="l01953" name="l01953"></a><span class="lineno"> 1953</span><span class="comment">#if ( defined(APPLE64) || defined(APPLE32) )</span></div>
-<div class="line"><a id="l01954" name="l01954"></a><span class="lineno"> 1954</span><span class="comment">        mastertime = AM.SumTime + TimeCPU(1);</span></div>
-<div class="line"><a id="l01955" name="l01955"></a><span class="lineno"> 1955</span><span class="comment">        return(mastertime);</span></div>
-<div class="line"><a id="l01956" name="l01956"></a><span class="lineno"> 1956</span><span class="comment">#else</span></div>
-<div class="line"><a id="l01957" name="l01957"></a><span class="lineno"> 1957</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01958" name="l01958"></a><span class="lineno"> 1958</span>        LONG workertime = GetWorkerTimes();</div>
-<div class="line"><a id="l01959" name="l01959"></a><span class="lineno"> 1959</span>        mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
-<div class="line"><a id="l01960" name="l01960"></a><span class="lineno"> 1960</span>        <span class="keywordflow">return</span>(mastertime+workertime);</div>
-<div class="line"><a id="l01961" name="l01961"></a><span class="lineno"> 1961</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01962" name="l01962"></a><span class="lineno"> 1962</span><span class="comment">#endif</span></div>
-<div class="line"><a id="l01963" name="l01963"></a><span class="lineno"> 1963</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01964" name="l01964"></a><span class="lineno"> 1964</span>    }</div>
-<div class="line"><a id="l01965" name="l01965"></a><span class="lineno"> 1965</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01966" name="l01966"></a><span class="lineno"> 1966</span>        <span class="keywordflow">return</span>(AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1));</div>
-<div class="line"><a id="l01967" name="l01967"></a><span class="lineno"> 1967</span>    }</div>
-<div class="line"><a id="l01968" name="l01968"></a><span class="lineno"> 1968</span><span class="preprocessor">#elif defined(WITHMPI)</span></div>
-<div class="line"><a id="l01969" name="l01969"></a><span class="lineno"> 1969</span>    LONG mastertime, t = 0;</div>
-<div class="line"><a id="l01970" name="l01970"></a><span class="lineno"> 1970</span>    LONG workertime = <a class="code hl_function" href="parallel_8c.html#a4acf9c6814b057fdc96bd1e9efdd3910">PF_GetSlaveTimes</a>();  <span class="comment">/* must be called on all processors */</span></div>
-<div class="line"><a id="l01971" name="l01971"></a><span class="lineno"> 1971</span>    <span class="keywordflow">if</span> ( PF.me == MASTER ) {</div>
-<div class="line"><a id="l01972" name="l01972"></a><span class="lineno"> 1972</span>        mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
-<div class="line"><a id="l01973" name="l01973"></a><span class="lineno"> 1973</span>        t = mastertime + workertime;</div>
-<div class="line"><a id="l01974" name="l01974"></a><span class="lineno"> 1974</span>    }</div>
-<div class="line"><a id="l01975" name="l01975"></a><span class="lineno"> 1975</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="parallel_8c.html#ab17fe2cb9406a9962b7ae46f24c8b6b8">PF_BroadcastNumber</a>(t);  <span class="comment">/* must be called on all processors */</span></div>
-<div class="line"><a id="l01976" name="l01976"></a><span class="lineno"> 1976</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01977" name="l01977"></a><span class="lineno"> 1977</span>    <span class="keywordflow">return</span>(AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1));</div>
-<div class="line"><a id="l01978" name="l01978"></a><span class="lineno"> 1978</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01979" name="l01979"></a><span class="lineno"> 1979</span>}</div>
-<div class="line"><a id="l01980" name="l01980"></a><span class="lineno"> 1980</span> </div>
-<div class="line"><a id="l01981" name="l01981"></a><span class="lineno"> 1981</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01982" name="l01982"></a><span class="lineno"> 1982</span><span class="comment">        #] GetRunningTime : </span></div>
-<div class="line"><a id="l01983" name="l01983"></a><span class="lineno"> 1983</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01902" name="l01902"></a><span class="lineno"> 1902</span> </div>
+<div class="line"><a id="l01903" name="l01903"></a><span class="lineno"> 1903</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01904" name="l01904"></a><span class="lineno"> 1904</span><span class="comment">        #] PrintDeprecation : </span></div>
+<div class="line"><a id="l01905" name="l01905"></a><span class="lineno"> 1905</span><span class="comment">        #[ PrintRunningTime :</span></div>
+<div class="line"><a id="l01906" name="l01906"></a><span class="lineno"> 1906</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01907" name="l01907"></a><span class="lineno"> 1907</span> </div>
+<div class="line"><a id="l01908" name="l01908"></a><span class="lineno"> 1908</span>VOID PrintRunningTime()</div>
+<div class="line"><a id="l01909" name="l01909"></a><span class="lineno"> 1909</span>{</div>
+<div class="line"><a id="l01910" name="l01910"></a><span class="lineno"> 1910</span><span class="preprocessor">#if (defined(WITHPTHREADS) &amp;&amp; (defined(WITHPOSIXCLOCK) || defined(WINDOWS))) || defined(WITHMPI)</span></div>
+<div class="line"><a id="l01911" name="l01911"></a><span class="lineno"> 1911</span>    LONG mastertime;</div>
+<div class="line"><a id="l01912" name="l01912"></a><span class="lineno"> 1912</span>    LONG workertime;</div>
+<div class="line"><a id="l01913" name="l01913"></a><span class="lineno"> 1913</span>    LONG wallclocktime;</div>
+<div class="line"><a id="l01914" name="l01914"></a><span class="lineno"> 1914</span>    LONG totaltime;</div>
+<div class="line"><a id="l01915" name="l01915"></a><span class="lineno"> 1915</span><span class="preprocessor">#if defined(WITHPTHREADS)</span></div>
+<div class="line"><a id="l01916" name="l01916"></a><span class="lineno"> 1916</span>    <span class="keywordflow">if</span> ( AB[0] != 0 ) {</div>
+<div class="line"><a id="l01917" name="l01917"></a><span class="lineno"> 1917</span>        workertime = GetWorkerTimes();</div>
+<div class="line"><a id="l01918" name="l01918"></a><span class="lineno"> 1918</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01919" name="l01919"></a><span class="lineno"> 1919</span>    workertime = <a class="code hl_function" href="parallel_8c.html#a4acf9c6814b057fdc96bd1e9efdd3910">PF_GetSlaveTimes</a>();  <span class="comment">/* must be called on all processors */</span></div>
+<div class="line"><a id="l01920" name="l01920"></a><span class="lineno"> 1920</span>    <span class="keywordflow">if</span> ( PF.me == MASTER ) {</div>
+<div class="line"><a id="l01921" name="l01921"></a><span class="lineno"> 1921</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01922" name="l01922"></a><span class="lineno"> 1922</span>        mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
+<div class="line"><a id="l01923" name="l01923"></a><span class="lineno"> 1923</span>        wallclocktime = <a class="code hl_function" href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a>(1);</div>
+<div class="line"><a id="l01924" name="l01924"></a><span class="lineno"> 1924</span>        totaltime = mastertime+workertime;</div>
+<div class="line"><a id="l01925" name="l01925"></a><span class="lineno"> 1925</span>        <span class="keywordflow">if</span> ( !AM.silent ) {</div>
+<div class="line"><a id="l01926" name="l01926"></a><span class="lineno"> 1926</span>        MesPrint(<span class="stringliteral">&quot;  %l.%2i sec + %l.%2i sec: %l.%2i sec out of %l.%2i sec&quot;</span>,</div>
+<div class="line"><a id="l01927" name="l01927"></a><span class="lineno"> 1927</span>            mastertime/1000,(WORD)((mastertime%1000)/10),</div>
+<div class="line"><a id="l01928" name="l01928"></a><span class="lineno"> 1928</span>            workertime/1000,(WORD)((workertime%1000)/10),</div>
+<div class="line"><a id="l01929" name="l01929"></a><span class="lineno"> 1929</span>            totaltime/1000,(WORD)((totaltime%1000)/10),</div>
+<div class="line"><a id="l01930" name="l01930"></a><span class="lineno"> 1930</span>            wallclocktime/100,(WORD)(wallclocktime%100));</div>
+<div class="line"><a id="l01931" name="l01931"></a><span class="lineno"> 1931</span>        }</div>
+<div class="line"><a id="l01932" name="l01932"></a><span class="lineno"> 1932</span>    }</div>
+<div class="line"><a id="l01933" name="l01933"></a><span class="lineno"> 1933</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01934" name="l01934"></a><span class="lineno"> 1934</span>    LONG mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
+<div class="line"><a id="l01935" name="l01935"></a><span class="lineno"> 1935</span>    LONG wallclocktime = <a class="code hl_function" href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a>(1);</div>
+<div class="line"><a id="l01936" name="l01936"></a><span class="lineno"> 1936</span>    <span class="keywordflow">if</span> ( !AM.silent ) {</div>
+<div class="line"><a id="l01937" name="l01937"></a><span class="lineno"> 1937</span>    MesPrint(<span class="stringliteral">&quot;  %l.%2i sec out of %l.%2i sec&quot;</span>,</div>
+<div class="line"><a id="l01938" name="l01938"></a><span class="lineno"> 1938</span>        mastertime/1000,(WORD)((mastertime%1000)/10),</div>
+<div class="line"><a id="l01939" name="l01939"></a><span class="lineno"> 1939</span>        wallclocktime/100,(WORD)(wallclocktime%100));</div>
+<div class="line"><a id="l01940" name="l01940"></a><span class="lineno"> 1940</span>    }</div>
+<div class="line"><a id="l01941" name="l01941"></a><span class="lineno"> 1941</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01942" name="l01942"></a><span class="lineno"> 1942</span>}</div>
+<div class="line"><a id="l01943" name="l01943"></a><span class="lineno"> 1943</span> </div>
+<div class="line"><a id="l01944" name="l01944"></a><span class="lineno"> 1944</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01945" name="l01945"></a><span class="lineno"> 1945</span><span class="comment">        #] PrintRunningTime : </span></div>
+<div class="line"><a id="l01946" name="l01946"></a><span class="lineno"> 1946</span><span class="comment">        #[ GetRunningTime :</span></div>
+<div class="line"><a id="l01947" name="l01947"></a><span class="lineno"> 1947</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01948" name="l01948"></a><span class="lineno"> 1948</span> </div>
+<div class="line"><a id="l01949" name="l01949"></a><span class="lineno"> 1949</span>LONG GetRunningTime()</div>
+<div class="line"><a id="l01950" name="l01950"></a><span class="lineno"> 1950</span>{</div>
+<div class="line"><a id="l01951" name="l01951"></a><span class="lineno"> 1951</span><span class="preprocessor">#if defined(WITHPTHREADS) &amp;&amp; (defined(WITHPOSIXCLOCK) || defined(WINDOWS))</span></div>
+<div class="line"><a id="l01952" name="l01952"></a><span class="lineno"> 1952</span>    LONG mastertime;</div>
+<div class="line"><a id="l01953" name="l01953"></a><span class="lineno"> 1953</span>    <span class="keywordflow">if</span> ( AB[0] != 0 ) {</div>
+<div class="line"><a id="l01954" name="l01954"></a><span class="lineno"> 1954</span><span class="comment">/* </span></div>
+<div class="line"><a id="l01955" name="l01955"></a><span class="lineno"> 1955</span><span class="comment">#if ( defined(APPLE64) || defined(APPLE32) )</span></div>
+<div class="line"><a id="l01956" name="l01956"></a><span class="lineno"> 1956</span><span class="comment">        mastertime = AM.SumTime + TimeCPU(1);</span></div>
+<div class="line"><a id="l01957" name="l01957"></a><span class="lineno"> 1957</span><span class="comment">        return(mastertime);</span></div>
+<div class="line"><a id="l01958" name="l01958"></a><span class="lineno"> 1958</span><span class="comment">#else</span></div>
+<div class="line"><a id="l01959" name="l01959"></a><span class="lineno"> 1959</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01960" name="l01960"></a><span class="lineno"> 1960</span>        LONG workertime = GetWorkerTimes();</div>
+<div class="line"><a id="l01961" name="l01961"></a><span class="lineno"> 1961</span>        mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
+<div class="line"><a id="l01962" name="l01962"></a><span class="lineno"> 1962</span>        <span class="keywordflow">return</span>(mastertime+workertime);</div>
+<div class="line"><a id="l01963" name="l01963"></a><span class="lineno"> 1963</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01964" name="l01964"></a><span class="lineno"> 1964</span><span class="comment">#endif</span></div>
+<div class="line"><a id="l01965" name="l01965"></a><span class="lineno"> 1965</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01966" name="l01966"></a><span class="lineno"> 1966</span>    }</div>
+<div class="line"><a id="l01967" name="l01967"></a><span class="lineno"> 1967</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01968" name="l01968"></a><span class="lineno"> 1968</span>        <span class="keywordflow">return</span>(AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1));</div>
+<div class="line"><a id="l01969" name="l01969"></a><span class="lineno"> 1969</span>    }</div>
+<div class="line"><a id="l01970" name="l01970"></a><span class="lineno"> 1970</span><span class="preprocessor">#elif defined(WITHMPI)</span></div>
+<div class="line"><a id="l01971" name="l01971"></a><span class="lineno"> 1971</span>    LONG mastertime, t = 0;</div>
+<div class="line"><a id="l01972" name="l01972"></a><span class="lineno"> 1972</span>    LONG workertime = <a class="code hl_function" href="parallel_8c.html#a4acf9c6814b057fdc96bd1e9efdd3910">PF_GetSlaveTimes</a>();  <span class="comment">/* must be called on all processors */</span></div>
+<div class="line"><a id="l01973" name="l01973"></a><span class="lineno"> 1973</span>    <span class="keywordflow">if</span> ( PF.me == MASTER ) {</div>
+<div class="line"><a id="l01974" name="l01974"></a><span class="lineno"> 1974</span>        mastertime = AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1);</div>
+<div class="line"><a id="l01975" name="l01975"></a><span class="lineno"> 1975</span>        t = mastertime + workertime;</div>
+<div class="line"><a id="l01976" name="l01976"></a><span class="lineno"> 1976</span>    }</div>
+<div class="line"><a id="l01977" name="l01977"></a><span class="lineno"> 1977</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="parallel_8c.html#ab17fe2cb9406a9962b7ae46f24c8b6b8">PF_BroadcastNumber</a>(t);  <span class="comment">/* must be called on all processors */</span></div>
+<div class="line"><a id="l01978" name="l01978"></a><span class="lineno"> 1978</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01979" name="l01979"></a><span class="lineno"> 1979</span>    <span class="keywordflow">return</span>(AM.SumTime + <a class="code hl_function" href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a>(1));</div>
+<div class="line"><a id="l01980" name="l01980"></a><span class="lineno"> 1980</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01981" name="l01981"></a><span class="lineno"> 1981</span>}</div>
+<div class="line"><a id="l01982" name="l01982"></a><span class="lineno"> 1982</span> </div>
+<div class="line"><a id="l01983" name="l01983"></a><span class="lineno"> 1983</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01984" name="l01984"></a><span class="lineno"> 1984</span><span class="comment">        #] GetRunningTime : </span></div>
+<div class="line"><a id="l01985" name="l01985"></a><span class="lineno"> 1985</span><span class="comment">*/</span></div>
 <div class="ttc" id="acheckpoint_8c_html_a25f1f729f8d8c3cfb7b90a591cfa72ee"><div class="ttname"><a href="checkpoint_8c.html#a25f1f729f8d8c3cfb7b90a591cfa72ee">InitRecovery</a></div><div class="ttdeci">void InitRecovery()</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00399">checkpoint.c:399</a></div></div>
 <div class="ttc" id="acheckpoint_8c_html_a3f2b0b6f1b4c1500869a79bf891e3ee8"><div class="ttname"><a href="checkpoint_8c.html#a3f2b0b6f1b4c1500869a79bf891e3ee8">CheckRecoveryFile</a></div><div class="ttdeci">int CheckRecoveryFile()</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00278">checkpoint.c:278</a></div></div>
 <div class="ttc" id="acheckpoint_8c_html_a91b2f05c1f186bee0ad4399d2a033e08"><div class="ttname"><a href="checkpoint_8c.html#a91b2f05c1f186bee0ad4399d2a033e08">DeleteRecoveryFile</a></div><div class="ttdeci">void DeleteRecoveryFile()</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00333">checkpoint.c:333</a></div></div>
@@ -2028,10 +2030,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="acomtool_8c_html_aaa0838b0fca4643ea3d44dbde8341fb2"><div class="ttname"><a href="comtool_8c.html#aaa0838b0fca4643ea3d44dbde8341fb2">IniFbuffer</a></div><div class="ttdeci">int IniFbuffer(WORD bufnum)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00614">comtool.c:614</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ab9540604e742ad4b787c1bd5b93484b0"><div class="ttname"><a href="comtool_8c.html#ab9540604e742ad4b787c1bd5b93484b0">AddNtoC</a></div><div class="ttdeci">int AddNtoC(int bufnum, int n, WORD *array, int par)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00317">comtool.c:317</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ad91faf677174dfde886e00d7e85a061d"><div class="ttname"><a href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a></div><div class="ttdeci">int inicbufs(VOID)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a3f839f0db36a7c08ae5fbf187ceabdea"><div class="ttname"><a href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04751">sort.c:4751</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a3f839f0db36a7c08ae5fbf187ceabdea"><div class="ttname"><a href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04754">sort.c:4754</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a61aadbf93672ead01cecba3fccacf089"><div class="ttname"><a href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a></div><div class="ttdeci">LONG TimeWallClock(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03477">tools.c:3477</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03551">tools.c:3551</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae0619705fe9c9d90e128c7d5d40b33d4"><div class="ttname"><a href="declare_8h.html#ae0619705fe9c9d90e128c7d5d40b33d4">Compare1</a></div><div class="ttdeci">WORD Compare1(WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02574">sort.c:2574</a></div></div>
+<div class="ttc" id="adeclare_8h_html_ae0619705fe9c9d90e128c7d5d40b33d4"><div class="ttname"><a href="declare_8h.html#ae0619705fe9c9d90e128c7d5d40b33d4">Compare1</a></div><div class="ttdeci">WORD Compare1(WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02577">sort.c:2577</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ae8767d17b791ee81795da7cb7f91c725"><div class="ttname"><a href="declare_8h.html#ae8767d17b791ee81795da7cb7f91c725">PutPreVar</a></div><div class="ttdeci">int PutPreVar(UBYTE *, UBYTE *, UBYTE *, int)</div><div class="ttdef"><b>Definition</b> <a href="pre_8c_source.html#l00645">pre.c:645</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="ainivar_8h_html"><div class="ttname"><a href="inivar_8h.html">inivar.h</a></div></div>
@@ -2042,7 +2044,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aparallel_8c_html_ab17fe2cb9406a9962b7ae46f24c8b6b8"><div class="ttname"><a href="parallel_8c.html#ab17fe2cb9406a9962b7ae46f24c8b6b8">PF_BroadcastNumber</a></div><div class="ttdeci">LONG PF_BroadcastNumber(LONG x)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02094">parallel.c:2094</a></div></div>
 <div class="ttc" id="aportsignals_8h_html"><div class="ttname"><a href="portsignals_8h.html">portsignals.h</a></div></div>
 <div class="ttc" id="astartup_8c_html_a9b6a47001a19944f7aad386aebb36b04"><div class="ttname"><a href="startup_8c.html#a9b6a47001a19944f7aad386aebb36b04">StartVariables</a></div><div class="ttdeci">VOID StartVariables()</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l00904">startup.c:904</a></div></div>
-<div class="ttc" id="astartup_8c_html_aa248d87609f98ee3dcd04ecc4d322e60"><div class="ttname"><a href="startup_8c.html#aa248d87609f98ee3dcd04ecc4d322e60">PrintDeprecation</a></div><div class="ttdeci">void PrintDeprecation(const char *feature, const char *issue)</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l01882">startup.c:1882</a></div></div>
+<div class="ttc" id="astartup_8c_html_aa248d87609f98ee3dcd04ecc4d322e60"><div class="ttname"><a href="startup_8c.html#aa248d87609f98ee3dcd04ecc4d322e60">PrintDeprecation</a></div><div class="ttdeci">void PrintDeprecation(const char *feature, const char *issue)</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l01884">startup.c:1884</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00938">structs.h:938</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html_aa4176dd4d869dcaec6a018b319ed764d"><div class="ttname"><a href="struct_cb_uf.html#aa4176dd4d869dcaec6a018b319ed764d">CbUf::Buffer</a></div><div class="ttdeci">WORD * Buffer</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00939">structs.h:939</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html_ac623298359882af1bb18ef9a62c0771b"><div class="ttname"><a href="struct_cb_uf.html#ac623298359882af1bb18ef9a62c0771b">CbUf::Pointer</a></div><div class="ttdeci">WORD * Pointer</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00941">structs.h:941</a></div></div>
