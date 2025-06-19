@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -749,7 +749,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a5c0b56191c1b43ee69d841e161ebfd2d">boomlijst</a> = 0;</div>
 <div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a665742fa37af08ce14b0971ef7d82c4b">strict</a> = TT-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a665742fa37af08ce14b0971ef7d82c4b">strict</a>;</div>
 <div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ad38fca0139e24a0201532195c22382c4">bounds</a> = TT-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ad38fca0139e24a0201532195c22382c4">bounds</a>;</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();</div>
 <div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a35d3fa33d155af732b73f928181cfba6">argtail</a> = TT-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a35d3fa33d155af732b73f928181cfba6">argtail</a>;</div>
 <div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a26dd835679a4effac2f56de460bb95a7">spare</a> = TT;</div>
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a77812b899b1793f179e283c77b2ce83c">bufferssize</a> = 8;</div>
@@ -1945,7 +1945,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01896" name="l01896"></a><span class="lineno"> 1896</span><span class="comment">    This gains one space. Hence we have to be very careful</span></div>
 <div class="line"><a id="l01897" name="l01897"></a><span class="lineno"> 1897</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01898" name="l01898"></a><span class="lineno"> 1898</span> </div>
-<div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span>VOID ReWorkT(WORD *term, WORD *funs, WORD numfuns)</div>
+<div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span><span class="keywordtype">void</span> ReWorkT(WORD *term, WORD *funs, WORD numfuns)</div>
 <div class="line"><a id="l01900" name="l01900"></a><span class="lineno"> 1900</span>{</div>
 <div class="line"><a id="l01901" name="l01901"></a><span class="lineno"> 1901</span>    WORD *tstop, *tend, *m, *t, *tt, *mm, *mmm, *r, *rr;</div>
 <div class="line"><a id="l01902" name="l01902"></a><span class="lineno"> 1902</span>    <span class="keywordtype">int</span> i, j;</div>
@@ -2338,7 +2338,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02289" name="l02289"></a><span class="lineno"> 2289</span><span class="comment">    #[ TableReset :</span></div>
 <div class="line"><a id="l02290" name="l02290"></a><span class="lineno"> 2290</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02291" name="l02291"></a><span class="lineno"> 2291</span> </div>
-<div class="line"><a id="l02292" name="l02292"></a><span class="lineno"> 2292</span>WORD TableReset(VOID)</div>
+<div class="line"><a id="l02292" name="l02292"></a><span class="lineno"> 2292</span>WORD TableReset(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02293" name="l02293"></a><span class="lineno"> 2293</span>{</div>
 <div class="line"><a id="l02294" name="l02294"></a><span class="lineno"> 2294</span>    <a class="code hl_struct" href="struct_ta_bl_es.html">TABLES</a> T;</div>
 <div class="line"><a id="l02295" name="l02295"></a><span class="lineno"> 2295</span>    <span class="keywordtype">int</span> i;</div>
@@ -2365,7 +2365,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02316" name="l02316"></a><span class="lineno"> 2316</span><span class="comment">    Releases all TableBases</span></div>
 <div class="line"><a id="l02317" name="l02317"></a><span class="lineno"> 2317</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02318" name="l02318"></a><span class="lineno"> 2318</span> </div>
-<div class="line"><a id="l02319" name="l02319"></a><span class="lineno"> 2319</span><span class="keywordtype">int</span> ReleaseTB(VOID)</div>
+<div class="line"><a id="l02319" name="l02319"></a><span class="lineno"> 2319</span><span class="keywordtype">int</span> ReleaseTB(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02320" name="l02320"></a><span class="lineno"> 2320</span>{</div>
 <div class="line"><a id="l02321" name="l02321"></a><span class="lineno"> 2321</span>    <a class="code hl_struct" href="structdbase.html">DBASE</a> *d;</div>
 <div class="line"><a id="l02322" name="l02322"></a><span class="lineno"> 2322</span>    <span class="keywordtype">int</span> i;</div>
@@ -2381,7 +2381,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02332" name="l02332"></a><span class="lineno"> 2332</span><span class="comment">    #] ReleaseTB : </span></div>
 <div class="line"><a id="l02333" name="l02333"></a><span class="lineno"> 2333</span><span class="comment">*/</span></div>
 <div class="ttc" id="acomtool_8c_html_a15c25c5aa0a8c7ea9d0b2a0b9ec9d0a3"><div class="ttname"><a href="comtool_8c.html#a15c25c5aa0a8c7ea9d0b2a0b9ec9d0a3">AddNtoL</a></div><div class="ttdeci">int AddNtoL(int n, WORD *array)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00288">comtool.c:288</a></div></div>
-<div class="ttc" id="acomtool_8c_html_ad91faf677174dfde886e00d7e85a061d"><div class="ttname"><a href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a></div><div class="ttdeci">int inicbufs(VOID)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
+<div class="ttc" id="acomtool_8c_html_a3ad09bf828cf46a4a213b54269e34a3f"><div class="ttname"><a href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a></div><div class="ttdeci">int inicbufs(void)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8h_html"><div class="ttname"><a href="comtool_8h.html">comtool.h</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>

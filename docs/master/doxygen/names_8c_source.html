@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -645,7 +645,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span><span class="comment">    #[ DumpTree :</span></div>
 <div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span> </div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>VOID DumpTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *nametree)</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span><span class="keywordtype">void</span> DumpTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *nametree)</div>
 <div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>{</div>
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    <span class="keywordflow">if</span> ( nametree-&gt;<a class="code hl_variable" href="struct_na_me_tree.html#a57af79e8f8c79b6ff4d6be9e1b695935">headnode</a> &gt;= 0</div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        &amp;&amp; nametree-&gt;<a class="code hl_variable" href="struct_na_me_tree.html#a972047f3b64eddf04dbe00e6c7c1d32f">namebuffer</a> &amp;&amp; nametree-&gt;<a class="code hl_variable" href="struct_na_me_tree.html#a9df9b26befaa0ac0110cd9b0dbc7a40e">namenode</a> ) {</div>
@@ -658,7 +658,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span><span class="comment">    #[ DumpNode :</span></div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>VOID DumpNode(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *nametree, WORD <a class="code hl_struct" href="structnode.html">node</a>, WORD depth)</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="keywordtype">void</span> DumpNode(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *nametree, WORD <a class="code hl_struct" href="structnode.html">node</a>, WORD depth)</div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>{</div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <a class="code hl_struct" href="struct_na_me_node.html">NAMENODE</a> *n;</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    <span class="keywordtype">int</span> i;</div>
@@ -739,7 +739,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="comment">    #[ CopyTree :</span></div>
 <div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span> </div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>VOID CopyTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *newtree, <a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *oldtree, WORD <a class="code hl_struct" href="structnode.html">node</a>, WORD par)</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="keywordtype">void</span> CopyTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *newtree, <a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *oldtree, WORD <a class="code hl_struct" href="structnode.html">node</a>, WORD par)</div>
 <div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>{</div>
 <div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    <a class="code hl_struct" href="struct_na_me_node.html">NAMENODE</a> *n, *m;</div>
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    UBYTE *s, *t;</div>
@@ -827,7 +827,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span><span class="comment">    #[ LinkTree :</span></div>
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span> </div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>VOID LinkTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *<a class="code hl_struct" href="structtree.html">tree</a>, WORD offset, WORD numnodes)</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span><span class="keywordtype">void</span> LinkTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *<a class="code hl_struct" href="structtree.html">tree</a>, WORD offset, WORD numnodes)</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>{</div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="comment">    Makes the tree into a binary tree</span></div>
@@ -858,7 +858,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span><span class="comment">    #[ MakeNameTree :</span></div>
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span> </div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *MakeNameTree(VOID)</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *MakeNameTree(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>{</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>    <a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *n;</div>
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>    n = (<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *)Malloc1(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a>),<span class="stringliteral">&quot;new nametree&quot;</span>);</div>
@@ -877,7 +877,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span><span class="comment">    #[ FreeNameTree :</span></div>
 <div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span> </div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>VOID FreeNameTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *n)</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="keywordtype">void</span> FreeNameTree(<a class="code hl_struct" href="struct_na_me_tree.html">NAMETREE</a> *n)</div>
 <div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>{</div>
 <div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>    <span class="keywordflow">if</span> ( n ) {</div>
 <div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>        <span class="keywordflow">if</span> ( n-&gt;<a class="code hl_variable" href="struct_na_me_tree.html#a972047f3b64eddf04dbe00e6c7c1d32f">namebuffer</a> ) M_free(n-&gt;<a class="code hl_variable" href="struct_na_me_tree.html#a972047f3b64eddf04dbe00e6c7c1d32f">namebuffer</a>,<span class="stringliteral">&quot;nametree-&gt;namebuffer&quot;</span>);</div>
@@ -892,7 +892,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span><span class="comment">    #[ WildcardNames :</span></div>
 <div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span> </div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="keywordtype">void</span> ClearWildcardNames(VOID)</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="keywordtype">void</span> ClearWildcardNames(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>{</div>
 <div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    AC.NumWildcardNames = 0;</div>
 <div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>}</div>
@@ -1816,7 +1816,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01770" name="l01770"></a><span class="lineno"> 1770</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a5c0b56191c1b43ee69d841e161ebfd2d">boomlijst</a> = 0;</div>
 <div class="line"><a id="l01771" name="l01771"></a><span class="lineno"> 1771</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a665742fa37af08ce14b0971ef7d82c4b">strict</a> = rflag;</div>
 <div class="line"><a id="l01772" name="l01772"></a><span class="lineno"> 1772</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ad38fca0139e24a0201532195c22382c4">bounds</a> = checkflag;</div>
-<div class="line"><a id="l01773" name="l01773"></a><span class="lineno"> 1773</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();</div>
+<div class="line"><a id="l01773" name="l01773"></a><span class="lineno"> 1773</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();</div>
 <div class="line"><a id="l01774" name="l01774"></a><span class="lineno"> 1774</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a35d3fa33d155af732b73f928181cfba6">argtail</a> = 0;</div>
 <div class="line"><a id="l01775" name="l01775"></a><span class="lineno"> 1775</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a26dd835679a4effac2f56de460bb95a7">spare</a> = 0;</div>
 <div class="line"><a id="l01776" name="l01776"></a><span class="lineno"> 1776</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a77812b899b1793f179e283c77b2ce83c">bufferssize</a> = 8;</div>
@@ -1982,18 +1982,18 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01936" name="l01936"></a><span class="lineno"> 1936</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD w,C-&gt;numlhs) ) {</div>
 <div class="line"><a id="l01937" name="l01937"></a><span class="lineno"> 1937</span>        functions[funnum].tabl = T;</div>
 <div class="line"><a id="l01938" name="l01938"></a><span class="lineno"> 1938</span>        AR.Eside = oldEside;</div>
-<div class="line"><a id="l01939" name="l01939"></a><span class="lineno"> 1939</span>        <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> FinishUp;</div>
+<div class="line"><a id="l01939" name="l01939"></a><span class="lineno"> 1939</span>        <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> FinishUp;</div>
 <div class="line"><a id="l01940" name="l01940"></a><span class="lineno"> 1940</span>    }</div>
 <div class="line"><a id="l01941" name="l01941"></a><span class="lineno"> 1941</span>    functions[funnum].tabl = T;</div>
 <div class="line"><a id="l01942" name="l01942"></a><span class="lineno"> 1942</span>    AR.Eside = oldEside;</div>
 <div class="line"><a id="l01943" name="l01943"></a><span class="lineno"> 1943</span>    AT.WorkPointer = w;</div>
-<div class="line"><a id="l01944" name="l01944"></a><span class="lineno"> 1944</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD w,0) &lt; 0 ) { <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> FinishUp; }</div>
+<div class="line"><a id="l01944" name="l01944"></a><span class="lineno"> 1944</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD w,0) &lt; 0 ) { <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> FinishUp; }</div>
 <div class="line"><a id="l01945" name="l01945"></a><span class="lineno"> 1945</span>    <span class="keywordflow">if</span> ( *w == 0 || *(w+*w) != 0 ) {</div>
 <div class="line"><a id="l01946" name="l01946"></a><span class="lineno"> 1946</span>        MesPrint(<span class="stringliteral">&quot;&amp;Irregular pattern in table definition&quot;</span>);</div>
 <div class="line"><a id="l01947" name="l01947"></a><span class="lineno"> 1947</span>        error = 1;</div>
 <div class="line"><a id="l01948" name="l01948"></a><span class="lineno"> 1948</span>        <span class="keywordflow">goto</span> FinishUp;</div>
 <div class="line"><a id="l01949" name="l01949"></a><span class="lineno"> 1949</span>    }</div>
-<div class="line"><a id="l01950" name="l01950"></a><span class="lineno"> 1950</span>    <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01950" name="l01950"></a><span class="lineno"> 1950</span>    <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01951" name="l01951"></a><span class="lineno"> 1951</span>    <span class="keywordflow">if</span> ( AC.lhdollarflag ) {</div>
 <div class="line"><a id="l01952" name="l01952"></a><span class="lineno"> 1952</span>        MesPrint(<span class="stringliteral">&quot;&amp;Unexpanded dollar variables are not allowed in table definition&quot;</span>);</div>
 <div class="line"><a id="l01953" name="l01953"></a><span class="lineno"> 1953</span>        error = 1;</div>
@@ -2132,7 +2132,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02086" name="l02086"></a><span class="lineno"> 2086</span>    }</div>
 <div class="line"><a id="l02087" name="l02087"></a><span class="lineno"> 2087</span>    <span class="keywordflow">if</span> ( T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a24803226a74fda87d1b8487726c9e006">buffers</a> ) M_free(T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a24803226a74fda87d1b8487726c9e006">buffers</a>,<span class="stringliteral">&quot;Table buffers&quot;</span>);</div>
 <div class="line"><a id="l02088" name="l02088"></a><span class="lineno"> 2088</span>    <a class="code hl_function" href="comtool_8c.html#a538e21a98fbce59e0d5e5346e33c5848">finishcbuf</a>(T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a>);</div>
-<div class="line"><a id="l02089" name="l02089"></a><span class="lineno"> 2089</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();</div>
+<div class="line"><a id="l02089" name="l02089"></a><span class="lineno"> 2089</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();</div>
 <div class="line"><a id="l02090" name="l02090"></a><span class="lineno"> 2090</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a77812b899b1793f179e283c77b2ce83c">bufferssize</a> = 8;</div>
 <div class="line"><a id="l02091" name="l02091"></a><span class="lineno"> 2091</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a24803226a74fda87d1b8487726c9e006">buffers</a> = (WORD *)Malloc1(<span class="keyword">sizeof</span>(WORD)*T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a77812b899b1793f179e283c77b2ce83c">bufferssize</a>,<span class="stringliteral">&quot;Table buffers&quot;</span>);</div>
 <div class="line"><a id="l02092" name="l02092"></a><span class="lineno"> 2092</span>    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a5f3cc6edd3dcbf1442b31063cd480fa2">buffersfill</a> = 0;</div>
@@ -3171,7 +3171,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03125" name="l03125"></a><span class="lineno"> 3125</span><span class="comment">    #[ RemoveDollars :</span></div>
 <div class="line"><a id="l03126" name="l03126"></a><span class="lineno"> 3126</span><span class="comment">*/</span></div>
 <div class="line"><a id="l03127" name="l03127"></a><span class="lineno"> 3127</span> </div>
-<div class="line"><a id="l03128" name="l03128"></a><span class="lineno"> 3128</span><span class="keywordtype">void</span> RemoveDollars(VOID)</div>
+<div class="line"><a id="l03128" name="l03128"></a><span class="lineno"> 3128</span><span class="keywordtype">void</span> RemoveDollars(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l03129" name="l03129"></a><span class="lineno"> 3129</span>{</div>
 <div class="line"><a id="l03130" name="l03130"></a><span class="lineno"> 3130</span>    <a class="code hl_struct" href="struct_do_ll_ar_s.html">DOLLARS</a> d;</div>
 <div class="line"><a id="l03131" name="l03131"></a><span class="lineno"> 3131</span>    <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf + AM.dbufnum;</div>
@@ -3315,15 +3315,15 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03269" name="l03269"></a><span class="lineno"> 3269</span><span class="comment">    #] TestName : </span></div>
 <div class="line"><a id="l03270" name="l03270"></a><span class="lineno"> 3270</span><span class="comment">*/</span></div>
 <div class="ttc" id="acomtool_8c_html_a26072cb500b84460ce5816cc247311f6"><div class="ttname"><a href="comtool_8c.html#a26072cb500b84460ce5816cc247311f6">AddRHS</a></div><div class="ttdeci">WORD * AddRHS(int num, int type)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00214">comtool.c:214</a></div></div>
+<div class="ttc" id="acomtool_8c_html_a3ad09bf828cf46a4a213b54269e34a3f"><div class="ttname"><a href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a></div><div class="ttdeci">int inicbufs(void)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a538e21a98fbce59e0d5e5346e33c5848"><div class="ttname"><a href="comtool_8c.html#a538e21a98fbce59e0d5e5346e33c5848">finishcbuf</a></div><div class="ttdeci">void finishcbuf(WORD num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00089">comtool.c:89</a></div></div>
-<div class="ttc" id="acomtool_8c_html_ad91faf677174dfde886e00d7e85a061d"><div class="ttname"><a href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a></div><div class="ttdeci">int inicbufs(VOID)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ae9069b4533ceac646564659a6fc61ba2"><div class="ttname"><a href="comtool_8c.html#ae9069b4533ceac646564659a6fc61ba2">AddLHS</a></div><div class="ttdeci">WORD * AddLHS(int num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00188">comtool.c:188</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a3f61503891515c6616a071be88c0782c"><div class="ttname"><a href="declare_8h.html#a3f61503891515c6616a071be88c0782c">AddPotModdollar</a></div><div class="ttdeci">void AddPotModdollar(WORD)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03959">dollar.c:3959</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ad1138946c3fe173e5e46ce3bf110c7f4"><div class="ttname"><a href="declare_8h.html#ad1138946c3fe173e5e46ce3bf110c7f4">SortWild</a></div><div class="ttdeci">WORD SortWild(WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04723">sort.c:4723</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00992">structs.h:992</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html_a8d0df559789eacdb421d1591f88f1ff5"><div class="ttname"><a href="struct_cb_uf.html#a8d0df559789eacdb421d1591f88f1ff5">CbUf::rhs</a></div><div class="ttdeci">WORD ** rhs</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00997">structs.h:997</a></div></div>

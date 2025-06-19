@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -96,14 +96,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    #] Includes : </span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">    #[ RekenRational :</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">        #[ Pack :           VOID Pack(a,na,b,nb)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">        #[ Pack :           void Pack(a,na,b,nb)</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"></span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    Packs the contents of the numerator a and the denominator b into</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    one normalized fraction a.</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>VOID Pack(UWORD *a, WORD *na, UWORD *b, WORD nb)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> Pack(UWORD *a, WORD *na, UWORD *b, WORD nb)</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    WORD c, sgn = 1, i;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    UWORD *to,*from;</div>
@@ -134,14 +134,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">        #] Pack : </span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">        #[ UnPack :         VOID UnPack(a,na,denom,numer)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">        #[ UnPack :         void UnPack(a,na,denom,numer)</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment"></span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    Determines the sizes of the numerator and the denominator in the</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">    normalized fraction a with length na.</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>VOID UnPack(UWORD *a, WORD na, WORD *denom, WORD *numer)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> UnPack(UWORD *a, WORD na, WORD *denom, WORD *numer)</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>{</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    UWORD *pos;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    WORD i, sgn = na;</div>
@@ -837,14 +837,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span> </div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="comment">        #] AddPLon : </span></div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">        #[ SubPLon :        VOID SubPLon(a,na,b,nb,c,nc)</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">        #[ SubPLon :        void SubPLon(a,na,b,nb,c,nc)</span></div>
 <div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="comment"></span> </div>
 <div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="comment">    Subtracts b from a. Assumes that a &gt; b. Result in c.</span></div>
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="comment">    c can be a or b.</span></div>
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="comment"></span> </div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span> </div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>VOID SubPLon(UWORD *a, WORD na, UWORD *b, WORD nb, UWORD *c, WORD *nc)</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="keywordtype">void</span> SubPLon(UWORD *a, WORD na, UWORD *b, WORD nb, UWORD *c, WORD *nc)</div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>{</div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    UWORD borrow = 0, e, nd = 0;</div>
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    <span class="keywordflow">while</span> ( nb ) {</div>
@@ -1324,7 +1324,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span> </div>
 <div class="foldopen" id="foldopen01296" data-start="{" data-end="}">
-<div class="line"><a id="l01296" name="l01296"></a><span class="lineno"><a class="line" href="declare_8h.html#a43a9776b7c5f55bce7ae235ca20f2217"> 1296</a></span>VOID <a class="code hl_function" href="reken_8c.html#a65b7b140eab3dded6d6fce6e6a82fe83">RaisPowCached</a> (PHEAD WORD x, WORD n, UWORD **c, WORD *nc) {</div>
+<div class="line"><a id="l01296" name="l01296"></a><span class="lineno"><a class="line" href="declare_8h.html#a37dacf2473baaa139ffb13e829a12cb4"> 1296</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="reken_8c.html#a4096995ab4eeca82ba8d674273ae0f5f">RaisPowCached</a> (PHEAD WORD x, WORD n, UWORD **c, WORD *nc) {</div>
 <div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span> </div>
 <div class="line"><a id="l01298" name="l01298"></a><span class="lineno"> 1298</span>    <span class="keywordtype">int</span> i,j;</div>
 <div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>    WORD new_small_power_maxx, new_small_power_maxn, ID;</div>
@@ -1458,7 +1458,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="comment">        #[ MakeInverses :</span></div>
 <div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen01440" data-start="{" data-end="}">
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"><a class="line" href="declare_8h.html#a09230688fbc2e27dc8718546e6f5cbb3"> 1440</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="reken_8c.html#a09230688fbc2e27dc8718546e6f5cbb3">MakeInverses</a>(VOID)</div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"><a class="line" href="declare_8h.html#abe00108d38230c054397074efa88b0e5"> 1440</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="reken_8c.html#abe00108d38230c054397074efa88b0e5">MakeInverses</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>{</div>
 <div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>    WORD n = AC.cmod[0], i, inv2;</div>
 <div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>    <span class="keywordflow">if</span> ( AC.ncmod != 1 ) <span class="keywordflow">return</span>(1);</div>
@@ -1717,13 +1717,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01703" name="l01703"></a><span class="lineno"> 1703</span> </div>
 <div class="line"><a id="l01704" name="l01704"></a><span class="lineno"> 1704</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01705" name="l01705"></a><span class="lineno"> 1705</span><span class="comment">        #] Remain4 : </span></div>
-<div class="line"><a id="l01706" name="l01706"></a><span class="lineno"> 1706</span><span class="comment">        #[ PrtLong :        VOID PrtLong(a,na,s)</span></div>
+<div class="line"><a id="l01706" name="l01706"></a><span class="lineno"> 1706</span><span class="comment">        #[ PrtLong :        void PrtLong(a,na,s)</span></div>
 <div class="line"><a id="l01707" name="l01707"></a><span class="lineno"> 1707</span><span class="comment"></span> </div>
 <div class="line"><a id="l01708" name="l01708"></a><span class="lineno"> 1708</span><span class="comment">    Puts the long number a in string s.</span></div>
 <div class="line"><a id="l01709" name="l01709"></a><span class="lineno"> 1709</span><span class="comment"></span> </div>
 <div class="line"><a id="l01710" name="l01710"></a><span class="lineno"> 1710</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01711" name="l01711"></a><span class="lineno"> 1711</span> </div>
-<div class="line"><a id="l01712" name="l01712"></a><span class="lineno"> 1712</span>VOID PrtLong(UWORD *a, WORD na, UBYTE *s)</div>
+<div class="line"><a id="l01712" name="l01712"></a><span class="lineno"> 1712</span><span class="keywordtype">void</span> PrtLong(UWORD *a, WORD na, UBYTE *s)</div>
 <div class="line"><a id="l01713" name="l01713"></a><span class="lineno"> 1713</span>{</div>
 <div class="line"><a id="l01714" name="l01714"></a><span class="lineno"> 1714</span>    GETIDENTITY</div>
 <div class="line"><a id="l01715" name="l01715"></a><span class="lineno"> 1715</span>    WORD q, i;</div>
@@ -1850,7 +1850,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01836" name="l01836"></a><span class="lineno"> 1836</span><span class="preprocessor">        else naa = 1;            \</span></div>
 <div class="line"><a id="l01837" name="l01837"></a><span class="lineno"> 1837</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l01838" name="l01838"></a><span class="lineno"> 1838</span> </div>
-<div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span>VOID GCD(UWORD *a, WORD na, UWORD *b, WORD nb, UWORD *c, WORD *nc)</div>
+<div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span><span class="keywordtype">void</span> GCD(UWORD *a, WORD na, UWORD *b, WORD nb, UWORD *c, WORD *nc)</div>
 <div class="line"><a id="l01840" name="l01840"></a><span class="lineno"> 1840</span>{</div>
 <div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>    <span class="keywordtype">int</span> ja = 0, jb = 0, j;</div>
 <div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span>    UWORD *r,*t;</div>
@@ -3365,7 +3365,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03360" name="l03360"></a><span class="lineno"> 3360</span><span class="comment">        #[ MakeModTable :   WORD MakeModTable()</span></div>
 <div class="line"><a id="l03361" name="l03361"></a><span class="lineno"> 3361</span><span class="comment">*/</span></div>
 <div class="line"><a id="l03362" name="l03362"></a><span class="lineno"> 3362</span> </div>
-<div class="line"><a id="l03363" name="l03363"></a><span class="lineno"> 3363</span>WORD MakeModTable(VOID)</div>
+<div class="line"><a id="l03363" name="l03363"></a><span class="lineno"> 3363</span>WORD MakeModTable(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l03364" name="l03364"></a><span class="lineno"> 3364</span>{</div>
 <div class="line"><a id="l03365" name="l03365"></a><span class="lineno"> 3365</span>    LONG size, i, j, n;</div>
 <div class="line"><a id="l03366" name="l03366"></a><span class="lineno"> 3366</span>    n = ABS(AC.ncmod);</div>
@@ -3987,10 +3987,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03991" name="l03991"></a><span class="lineno"> 3991</span><span class="comment">*/</span></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="aparallel_8c_html_ab17fe2cb9406a9962b7ae46f24c8b6b8"><div class="ttname"><a href="parallel_8c.html#ab17fe2cb9406a9962b7ae46f24c8b6b8">PF_BroadcastNumber</a></div><div class="ttdeci">LONG PF_BroadcastNumber(LONG x)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02094">parallel.c:2094</a></div></div>
-<div class="ttc" id="areken_8c_html_a09230688fbc2e27dc8718546e6f5cbb3"><div class="ttname"><a href="reken_8c.html#a09230688fbc2e27dc8718546e6f5cbb3">MakeInverses</a></div><div class="ttdeci">int MakeInverses(VOID)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01440">reken.c:1440</a></div></div>
 <div class="ttc" id="areken_8c_html_a0eefedce674c6f8de9955735abddb7fe"><div class="ttname"><a href="reken_8c.html#a0eefedce674c6f8de9955735abddb7fe">GetModInverses</a></div><div class="ttdeci">int GetModInverses(WORD m1, WORD m2, WORD *im1, WORD *im2)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01476">reken.c:1476</a></div></div>
-<div class="ttc" id="areken_8c_html_a65b7b140eab3dded6d6fce6e6a82fe83"><div class="ttname"><a href="reken_8c.html#a65b7b140eab3dded6d6fce6e6a82fe83">RaisPowCached</a></div><div class="ttdeci">VOID RaisPowCached(PHEAD WORD x, WORD n, UWORD **c, WORD *nc)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01296">reken.c:1296</a></div></div>
+<div class="ttc" id="areken_8c_html_a4096995ab4eeca82ba8d674273ae0f5f"><div class="ttname"><a href="reken_8c.html#a4096995ab4eeca82ba8d674273ae0f5f">RaisPowCached</a></div><div class="ttdeci">void RaisPowCached(PHEAD WORD x, WORD n, UWORD **c, WORD *nc)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01296">reken.c:1296</a></div></div>
 <div class="ttc" id="areken_8c_html_aa1fcbc96fd8ca92f950bc0ee520e6684"><div class="ttname"><a href="reken_8c.html#aa1fcbc96fd8ca92f950bc0ee520e6684">NormalModulus</a></div><div class="ttdeci">int NormalModulus(UWORD *a, WORD *na)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01403">reken.c:1403</a></div></div>
+<div class="ttc" id="areken_8c_html_abe00108d38230c054397074efa88b0e5"><div class="ttname"><a href="reken_8c.html#abe00108d38230c054397074efa88b0e5">MakeInverses</a></div><div class="ttdeci">int MakeInverses(void)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01440">reken.c:1440</a></div></div>
 <div class="ttc" id="areken_8c_html_ae894a9ae7aab38972d59b5f49a1ad4b1"><div class="ttname"><a href="reken_8c.html#ae894a9ae7aab38972d59b5f49a1ad4b1">NextPrime</a></div><div class="ttdeci">WORD NextPrime(PHEAD WORD num)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l03664">reken.c:3664</a></div></div>
 <div class="ttc" id="areken_8c_html_af384113a0d550c378c47310f17471f43"><div class="ttname"><a href="reken_8c.html#af384113a0d550c378c47310f17471f43">CompCoef</a></div><div class="ttdeci">WORD CompCoef(WORD *term1, WORD *term2)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l03047">reken.c:3047</a></div></div>
 <div class="ttc" id="astruct_m_o_d_n_u_m_html"><div class="ttname"><a href="struct_m_o_d_n_u_m.html">MODNUM</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01301">structs.h:1301</a></div></div>

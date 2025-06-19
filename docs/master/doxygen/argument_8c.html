@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -149,7 +149,7 @@ Functions</h2></td></tr>
 <p>The notation of the output should be a string of arguments terminated by the number zero.</p>
 <p>Originally we sorted in a way that the constants came last. This gave conflicts with the dollar and expression factorizations (in the expressions we wanted the zero first and then followed by the constants). </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02052">2052</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02058">2058</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -210,7 +210,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01763">1763</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01769">1769</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -240,7 +240,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01839">1839</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01845">1845</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -270,7 +270,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01943">1943</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01949">1949</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -300,7 +300,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02054">2054</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02060">2060</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -321,7 +321,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Looks the argument up in the (workers) table. If it is found the number in the table is returned (plus one to make it positive). If it is not found we look in the compiler provided table. If it is found - the number in the table is returned (minus one to make it negative). If in neither table we return zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02507">2507</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02513">2513</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -358,9 +358,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Inserts the argument into the (workers) table. If the table is too full we eliminate half of it. The eliminated elements are the ones that have not been used most recently, weighted by their total use and age(?). If par == 0 it inserts in the regular factorization cache If par == 1 it inserts in the cache defined with the FactorCache statement </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02531">2531</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02537">2537</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="comtool_8c_source.html#l00317">AddNtoC()</a>, <a class="el" href="comtool_8c_source.html#l00214">AddRHS()</a>, and <a class="el" href="argument_8c_source.html#l02566">CleanupArgCache()</a>.</p>
+<p class="reference">References <a class="el" href="comtool_8c_source.html#l00317">AddNtoC()</a>, <a class="el" href="comtool_8c_source.html#l00214">AddRHS()</a>, and <a class="el" href="argument_8c_source.html#l02572">CleanupArgCache()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -375,7 +375,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="80,78,159,109,157,114,78,83"/>
 <area shape="rect" href="comtool_8c.html#a6bd9b98857d408fd568cab8915410946" title=" " alt="" coords="320,5,435,31"/>
 <area shape="poly" title=" " alt="" coords="243,15,307,15,307,21,243,21"/>
-<area shape="rect" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d" title=" " alt="" coords="341,55,414,80"/>
+<area shape="rect" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f" title=" " alt="" coords="341,55,414,80"/>
 <area shape="poly" title=" " alt="" coords="241,65,327,65,327,70,241,70"/>
 <area shape="rect" href="argument_8c.html#adf55e40be921bec44c5411dfcf86b987" title=" " alt="" coords="327,128,427,153"/>
 <area shape="poly" title=" " alt="" coords="273,131,314,134,313,139,272,136"/>
@@ -402,11 +402,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Cleans up the argument factorization cache. We throw half the elements. For a weight of what we want to keep we use the product of usage and the number in the buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02566">2566</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02572">2572</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="structs_8h_source.html#l01002">CbUf::boomlijst</a>, <a class="el" href="structs_8h_source.html#l00993">CbUf::Buffer</a>, <a class="el" href="structs_8h_source.html#l00995">CbUf::Pointer</a>, <a class="el" href="structs_8h_source.html#l00997">CbUf::rhs</a>, <a class="el" href="argument_8c_source.html#l03522">SortWeights()</a>, and <a class="el" href="structs_8h_source.html#l00300">tree::usage</a>.</p>
+<p class="reference">References <a class="el" href="structs_8h_source.html#l01002">CbUf::boomlijst</a>, <a class="el" href="structs_8h_source.html#l00993">CbUf::Buffer</a>, <a class="el" href="structs_8h_source.html#l00995">CbUf::Pointer</a>, <a class="el" href="structs_8h_source.html#l00997">CbUf::rhs</a>, <a class="el" href="argument_8c_source.html#l03528">SortWeights()</a>, and <a class="el" href="structs_8h_source.html#l00300">tree::usage</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02531">InsertArg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02537">InsertArg()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -447,7 +447,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02637">2637</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02643">2643</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -477,7 +477,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02692">2692</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02698">2698</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -508,9 +508,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Implements part of the old ExecArg in which we take common factors from arguments with more than one term. The common pieces are put in argout as a sequence of arguments. The part with the multiple terms that are now relative prime is put in argfree which is allocated via TermMalloc and is given as the return value. The difference with the old code is that negative powers are always removed. Hence it is as in MakeInteger in which only numerators will be left: now only zero or positive powers will be remaining. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02760">2760</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02766">2766</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, <a class="el" href="argument_8c_source.html#l03306">MakeInteger()</a>, <a class="el" href="argument_8c_source.html#l03477">MakeMod()</a>, <a class="el" href="sort_8c_source.html#l00614">NewSort()</a>, and <a class="el" href="sort_8c_source.html#l04510">StoreTerm()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, <a class="el" href="argument_8c_source.html#l03312">MakeInteger()</a>, <a class="el" href="argument_8c_source.html#l03483">MakeMod()</a>, <a class="el" href="sort_8c_source.html#l00614">NewSort()</a>, and <a class="el" href="sort_8c_source.html#l04510">StoreTerm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -535,18 +535,18 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="265,402,325,416,324,421,264,407"/>
 <area shape="rect" href="sort_8c.html#a1406ab273f5f7b7dfed046e1b243bb1e" title=" " alt="" coords="1100,218,1192,243"/>
 <area shape="poly" title=" " alt="" coords="233,382,267,323,294,289,326,259,371,233,410,220,504,208,585,199,669,195,833,197,978,207,1087,220,1086,225,977,213,833,202,669,200,586,205,504,213,411,225,373,238,330,263,298,292,271,326,238,384"/>
-<area shape="rect" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7" title=" " alt="" coords="1101,131,1191,157"/>
+<area shape="rect" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9" title=" " alt="" coords="1101,131,1191,157"/>
 <area shape="poly" title=" " alt="" coords="232,382,263,308,291,261,326,219,383,167,434,132,461,119,491,111,566,104,773,104,859,107,945,114,1087,132,1087,137,944,119,859,112,773,109,566,109,492,116,463,124,436,136,386,172,330,223,295,264,268,310,237,384"/>
 <area shape="rect" href="sort_8c.html#a911e7252a3311fdd541e91d7a874b56b" title=" " alt="" coords="534,598,601,623"/>
 <area shape="poly" title=" " alt="" coords="249,406,356,481,505,576,529,589,526,594,503,581,353,485,246,411"/>
-<area shape="rect" href="sort_8c.html#ad756bbef980a939c623c0f93c390e585" title=" " alt="" coords="525,246,610,271"/>
+<area shape="rect" href="sort_8c.html#ac94fcf69c74e92b60d423117e033bccd" title=" " alt="" coords="525,246,610,271"/>
 <area shape="poly" title=" " alt="" coords="260,381,521,274,523,279,262,386"/>
 <area shape="rect" href="parallel_8c.html#abc56c3ae41cd94a0ee0e1c900c2ee4d3" title=" " alt="" coords="345,597,439,622"/>
 <area shape="poly" title=" " alt="" coords="242,407,330,526,374,584,370,587,326,530,237,410"/>
 <area shape="rect" href="mpi_8c.html#ad98e922db7e56af48cd8e15b76966a87" title=" " alt="" coords="717,622,827,647"/>
 <area shape="poly" title=" " alt="" coords="607,652,703,640,704,646,608,658"/>
 <area shape="poly" title=" " alt="" coords="399,447,412,483,433,533,465,587,484,612,506,634,516,642,513,646,502,638,480,615,460,590,429,536,407,485,394,448"/>
-<area shape="rect" href="sort_8c.html#ae36114ce5e26fea98876b640b3609cbf" title=" " alt="" coords="1431,570,1507,595"/>
+<area shape="rect" href="sort_8c.html#aa8d2b0318bdb43f8453d30160b7eb075" title=" " alt="" coords="1431,570,1507,595"/>
 <area shape="poly" title=" " alt="" coords="410,446,451,478,505,508,567,531,632,551,764,579,898,596,1028,604,1150,605,1259,601,1418,587,1418,592,1259,606,1150,610,1028,609,898,602,763,584,630,556,566,536,503,513,448,482,406,450"/>
 <area shape="rect" href="reken_8c.html#aa1fcbc96fd8ca92f950bc0ee520e6684" title=" " alt="" coords="1407,495,1532,521"/>
 <area shape="poly" title=" " alt="" coords="417,445,457,464,505,480,629,503,757,517,884,526,1008,529,1230,524,1392,513,1393,518,1230,529,1008,534,884,531,756,523,628,508,503,485,455,469,415,450"/>
@@ -569,7 +569,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="813,305,924,305,924,311,813,311"/>
 <area shape="rect" href="sort_8c.html#aa36a4ad93dbde449e658716c583b5bab" title=" " alt="" coords="914,345,1051,370"/>
 <area shape="poly" title=" " alt="" coords="814,315,915,339,914,344,813,320"/>
-<area shape="rect" href="sort_8c.html#ae08e5ed1367868f7338f16f0b5d6b412" title=" " alt="" coords="921,394,1044,419"/>
+<area shape="rect" href="sort_8c.html#a69497409061c881ca2d83db4a6933d57" title=" " alt="" coords="921,394,1044,419"/>
 <area shape="poly" title=" " alt="" coords="814,311,841,318,867,330,882,342,892,355,901,367,915,379,927,386,924,391,912,384,897,371,887,358,878,346,864,334,839,323,813,316"/>
 <area shape="poly" title=" " alt="" coords="814,308,841,316,867,330,888,353,898,376,904,400,916,430,970,533,965,535,911,432,899,402,893,377,883,356,864,334,839,321,813,314"/>
 <area shape="poly" title=" " alt="" coords="790,293,951,176,954,180,793,297"/>
@@ -587,7 +587,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a" title=" " alt="" coords="1262,445,1337,470"/>
 <area shape="poly" title=" " alt="" coords="1163,242,1179,260,1194,281,1204,304,1210,324,1214,360,1220,395,1228,412,1242,430,1252,439,1248,443,1238,434,1224,415,1215,396,1209,361,1205,325,1199,305,1190,284,1175,263,1159,245"/>
 <area shape="poly" title=" " alt="" coords="1336,418,1360,430,1404,457,1443,485,1440,489,1401,462,1357,434,1334,423"/>
-<area shape="rect" href="sort_8c.html#a7ede99980b98cbd35000b39e0395a36a" title=" " alt="" coords="1426,421,1513,446"/>
+<area shape="rect" href="sort_8c.html#a3d1950d9d2cfbcd7013b7c2290c21add" title=" " alt="" coords="1426,421,1513,446"/>
 <area shape="poly" title=" " alt="" coords="1339,411,1413,422,1412,428,1338,416"/>
 <area shape="poly" title=" " alt="" coords="1320,468,1442,560,1439,564,1316,472"/>
 <area shape="poly" title=" " alt="" coords="1262,467,1158,481,1088,487,1010,490,927,487,842,478,758,461,678,433,661,423,652,411,643,398,629,386,620,381,622,376,632,382,647,395,656,407,665,419,680,428,759,456,843,473,927,482,1010,485,1088,482,1158,476,1261,462"/>
@@ -639,9 +639,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>For normalizing everything to integers we have to determine for all elements of this argument the LCM of the denominators and the GCD of the numerators. The input argument is in argin. The number that comes out should go to argout. The new pointer in the argout buffer is the return value. The normalized argument is in argfree. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03306">3306</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03312">3312</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02760">TakeArgContent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>.</p>
 
 </div>
 </div>
@@ -678,11 +678,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Similar to MakeInteger but now with modulus arithmetic using only a one WORD 'prime'. We make the coefficient of the first term in the argument equal to one. Already the coefficients are taken modulus AN.cmod and AN.ncmod == 1 </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03477">3477</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03483">3483</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 <p class="reference">References <a class="el" href="reken_8c_source.html#l01476">GetModInverses()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02760">TakeArgContent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -729,11 +729,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Sorts an array of LONGS in the same way SplitMerge (in <a class="el" href="sort_8c.html">sort.c</a>) works We use gradual division in two. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03522">3522</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03528">3528</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="argument_8c_source.html#l03522">SortWeights()</a>.</p>
+<p class="reference">References <a class="el" href="argument_8c_source.html#l03528">SortWeights()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02566">CleanupArgCache()</a>, and <a class="el" href="argument_8c_source.html#l03522">SortWeights()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02572">CleanupArgCache()</a>, and <a class="el" href="argument_8c_source.html#l03528">SortWeights()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

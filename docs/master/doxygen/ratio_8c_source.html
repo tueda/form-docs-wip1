@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -1298,14 +1298,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>    <a class="code hl_function" href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a>(BHEAD0);</div>
 <div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>    <span class="keywordflow">while</span> ( *in ) {</div>
 <div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>        <span class="keywordflow">if</span> ( ( action = <a class="code hl_function" href="declare_8h.html#a11d87d8362ccf85ebbdea700255d5c5d">LocalConvertToPoly</a>(BHEAD in,termout,startebuf,0) ) &lt; 0 ) {</div>
-<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>            <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>        }</div>
 <div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>        <span class="keywordflow">if</span> ( action &gt; 0 ) *actionflag = 1;</div>
 <div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>        <a class="code hl_function" href="declare_8h.html#a7e217b02e4ed9474e16b0d19e6aee30d">StoreTerm</a>(BHEAD termout);</div>
 <div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>        in += *in;</div>
 <div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>    }</div>
-<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((VOID *)(&amp;termout)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
+<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((<span class="keywordtype">void</span> *)(&amp;termout)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span>    <span class="keywordflow">return</span>(termout);</div>
 <div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>CalledFrom:</div>
 <div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>    MLOCK(ErrorMessageLock);</div>
@@ -1329,7 +1329,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span>    <a class="code hl_function" href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a>(BHEAD0);</div>
 <div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span>    <span class="keywordflow">while</span> ( *in ) {</div>
 <div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>        <span class="keywordflow">if</span> ( ConvertFromPoly(BHEAD in,termout,numxsymbol,CC-&gt;numrhs-startebuf+numxsymbol,startebuf-numxsymbol,1) &lt;= 0 ) {</div>
-<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span>            <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l01285" name="l01285"></a><span class="lineno"> 1285</span>        }</div>
 <div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>        in += *in;</div>
@@ -1338,12 +1338,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span><span class="comment">        ConvertFromPoly leaves terms with subexpressions. Hence:</span></div>
 <div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD termout,C-&gt;numlhs) ) {</div>
-<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>            <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>        }</div>
 <div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>    }</div>
 <div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>    AT.WorkPointer = oldworkpointer;</div>
-<div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((VOID *)(&amp;termout)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
+<div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((<span class="keywordtype">void</span> *)(&amp;termout)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l01298" name="l01298"></a><span class="lineno"> 1298</span>    <span class="keywordflow">return</span>(termout);</div>
 <div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span> </div>
 <div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>CalledFrom:</div>
@@ -1389,7 +1389,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>    <span class="keywordflow">if</span> ( par == 2 ) {</div>
 <div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span><span class="comment">/*      if ( AN.tryterm == 0 ) AN.tryterm = 1; */</span></div>
 <div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>        AN.tryterm = 0; <span class="comment">/* For now */</span></div>
-<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((VOID *)(&amp;termout)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
+<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((<span class="keywordtype">void</span> *)(&amp;termout)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>    }</div>
 <div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span>    <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD termout,1) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
@@ -2087,13 +2087,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02047" name="l02047"></a><span class="lineno"> 2047</span>    <span class="keywordflow">while</span> ( GetOneTerm(BHEAD term,fi,&amp;startposition,0) &gt; 0 ) {</div>
 <div class="line"><a id="l02048" name="l02048"></a><span class="lineno"> 2048</span>        AT.WorkPointer = term + *term;</div>
 <div class="line"><a id="l02049" name="l02049"></a><span class="lineno"> 2049</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,C-&gt;numlhs) ) {</div>
-<div class="line"><a id="l02050" name="l02050"></a><span class="lineno"> 2050</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l02050" name="l02050"></a><span class="lineno"> 2050</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l02051" name="l02051"></a><span class="lineno"> 2051</span>            <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l02052" name="l02052"></a><span class="lineno"> 2052</span>        }</div>
 <div class="line"><a id="l02053" name="l02053"></a><span class="lineno"> 2053</span>        AR.CompressPointer = oldipointer;</div>
 <div class="line"><a id="l02054" name="l02054"></a><span class="lineno"> 2054</span>    }</div>
 <div class="line"><a id="l02055" name="l02055"></a><span class="lineno"> 2055</span>    AT.WorkPointer = term;</div>
-<div class="line"><a id="l02056" name="l02056"></a><span class="lineno"> 2056</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((VOID *)(&amp;term)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
+<div class="line"><a id="l02056" name="l02056"></a><span class="lineno"> 2056</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((<span class="keywordtype">void</span> *)(&amp;term)),2) &lt; 0 ) <span class="keywordflow">goto</span> CalledFrom;</div>
 <div class="line"><a id="l02057" name="l02057"></a><span class="lineno"> 2057</span>    SetScratch(fi,&amp;oldposition);</div>
 <div class="line"><a id="l02058" name="l02058"></a><span class="lineno"> 2058</span>    <span class="keywordflow">return</span>(term);</div>
 <div class="line"><a id="l02059" name="l02059"></a><span class="lineno"> 2059</span>CalledFrom:</div>
@@ -3733,13 +3733,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="adeclare_8h_html_a11d87d8362ccf85ebbdea700255d5c5d"><div class="ttname"><a href="declare_8h.html#a11d87d8362ccf85ebbdea700255d5c5d">LocalConvertToPoly</a></div><div class="ttdeci">int LocalConvertToPoly(PHEAD WORD *, WORD *, WORD, WORD)</div><div class="ttdef"><b>Definition</b> <a href="notation_8c_source.html#l00510">notation.c:510</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a72ac63cec0bb787747e315cf92f5d1ae"><div class="ttname"><a href="declare_8h.html#a72ac63cec0bb787747e315cf92f5d1ae">InsertTerm</a></div><div class="ttdeci">WORD InsertTerm(PHEAD WORD *, WORD, WORD, WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l02744">proces.c:2744</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7e217b02e4ed9474e16b0d19e6aee30d"><div class="ttname"><a href="declare_8h.html#a7e217b02e4ed9474e16b0d19e6aee30d">StoreTerm</a></div><div class="ttdeci">WORD StoreTerm(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04510">sort.c:4510</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ae563b26fb36c6550122a01b80326d29d"><div class="ttname"><a href="declare_8h.html#ae563b26fb36c6550122a01b80326d29d">GetModInverses</a></div><div class="ttdeci">int GetModInverses(WORD, WORD, WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01476">reken.c:1476</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ae9cbf7dc89b9a87785f8cc59013196c2"><div class="ttname"><a href="declare_8h.html#ae9cbf7dc89b9a87785f8cc59013196c2">CompareSymbols</a></div><div class="ttdeci">WORD CompareSymbols(PHEAD WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03070">sort.c:3070</a></div></div>
-<div class="ttc" id="adeclare_8h_html_aedefbacdee2a33d677dbf6fe033b025e"><div class="ttname"><a href="declare_8h.html#aedefbacdee2a33d677dbf6fe033b025e">SymbolNormalize</a></div><div class="ttdeci">int SymbolNormalize(WORD *)</div><div class="ttdef"><b>Definition</b> <a href="normal_8c_source.html#l05127">normal.c:5127</a></div></div>
+<div class="ttc" id="adeclare_8h_html_aedefbacdee2a33d677dbf6fe033b025e"><div class="ttname"><a href="declare_8h.html#aedefbacdee2a33d677dbf6fe033b025e">SymbolNormalize</a></div><div class="ttdeci">int SymbolNormalize(WORD *)</div><div class="ttdef"><b>Definition</b> <a href="normal_8c_source.html#l05144">normal.c:5144</a></div></div>
 <div class="ttc" id="adeclare_8h_html_af64f7a4ac1b266a60f3827aa751eaaf4"><div class="ttname"><a href="declare_8h.html#af64f7a4ac1b266a60f3827aa751eaaf4">poly_gcd</a></div><div class="ttdeci">WORD * poly_gcd(PHEAD WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="polywrap_8cc_source.html#l00124">polywrap.cc:124</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="aratio_8c_html_a2d9be6032032b4e444e60fe6eac448f8"><div class="ttname"><a href="ratio_8c.html#a2d9be6032032b4e444e60fe6eac448f8">TakeContent</a></div><div class="ttdeci">WORD * TakeContent(PHEAD WORD *in, WORD *term)</div><div class="ttdef"><b>Definition</b> <a href="ratio_8c_source.html#l01376">ratio.c:1376</a></div></div>

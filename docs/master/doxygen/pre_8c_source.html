@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -179,7 +179,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">        If there are no more streams we let this be known.</span></div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>UBYTE GetInput(VOID)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>UBYTE GetInput(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    UBYTE c;</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">while</span> ( AC.CurrentStream ) {</div>
@@ -208,7 +208,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">        #[ ClearPushback :</span></div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>VOID ClearPushback(VOID)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keywordtype">void</span> ClearPushback(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>{</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    pushbackchar = 0;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}</div>
@@ -536,7 +536,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="comment">        #[ CharOut :</span></div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span> </div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>VOID CharOut(UBYTE c)</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span><span class="keywordtype">void</span> CharOut(UBYTE c)</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>{</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="keywordflow">if</span> ( c == LINEFEED ) {</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        AM.OutBuffer[AP.InOutBuf++] = c;</div>
@@ -557,7 +557,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span><span class="comment">        #[ UnsetAllowDelay :</span></div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>VOID UnsetAllowDelay(VOID)</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span><span class="keywordtype">void</span> UnsetAllowDelay(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>{</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordflow">if</span> ( ThePreVar != 0 ) {</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>        <span class="keywordflow">if</span> ( ThePreVar-&gt;<a class="code hl_variable" href="structp_re_va_r.html#a070f871efc2b5964c94459464dce54bb">nargs</a> &gt; 0 ) AP.AllowDelay = 0;</div>
@@ -855,7 +855,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span><span class="comment">        #[ PopPreVars :</span></div>
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span> </div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>VOID PopPreVars(<span class="keywordtype">int</span> tonumber)</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="keywordtype">void</span> PopPreVars(<span class="keywordtype">int</span> tonumber)</div>
 <div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>{</div>
 <div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>    <a class="code hl_struct" href="structp_re_va_r.html">PREVAR</a> *p = &amp;(PreVar[NumPre]);</div>
 <div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>    <span class="keywordflow">while</span> ( NumPre &gt; tonumber ) {</div>
@@ -870,7 +870,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="comment">        #[ IniModule :</span></div>
 <div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span> </div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>VOID IniModule(<span class="keywordtype">int</span> type)</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span><span class="keywordtype">void</span> IniModule(<span class="keywordtype">int</span> type)</div>
 <div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>{</div>
 <div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    GETIDENTITY</div>
 <div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    WORD **w, i;</div>
@@ -972,7 +972,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span><span class="comment">        #[ IniSpecialModule :</span></div>
 <div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span> </div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>VOID IniSpecialModule(<span class="keywordtype">int</span> type)</div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span><span class="keywordtype">void</span> IniSpecialModule(<span class="keywordtype">int</span> type)</div>
 <div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>{</div>
 <div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>    DUMMYUSE(type);</div>
 <div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>}</div>
@@ -982,7 +982,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span><span class="comment">        #[ PreProcessor :</span></div>
 <div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span> </div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>VOID PreProcessor(VOID)</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span><span class="keywordtype">void</span> PreProcessor(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>{</div>
 <div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>    <span class="keywordtype">int</span> moduletype = FIRSTMODULE;</div>
 <div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>    <span class="keywordtype">int</span> specialtype = 0;</div>
@@ -1201,7 +1201,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span><span class="comment">        #[ PreProInstruction :</span></div>
 <div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span> </div>
-<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span><span class="keywordtype">int</span> PreProInstruction(VOID)</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span><span class="keywordtype">int</span> PreProInstruction(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>{</div>
 <div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>    UBYTE *s, *t;</div>
 <div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>    <a class="code hl_struct" href="struct_k_e_y_w_o_r_d.html">KEYWORD</a> *key;</div>
@@ -1462,7 +1462,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>            position = s - AP.preStart;</div>
 <div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>            <span class="keywordflow">if</span> ( AP.preFill ) fillpos = AP.preFill - AP.preStart;</div>
 <div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>            ppp = &amp;(AP.preStart); <span class="comment">/* to avoid a compiler warning */</span></div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>            <span class="keywordflow">if</span> ( DoubleLList((VOID ***)ppp,&amp;AP.pSize,<span class="keyword">sizeof</span>(UBYTE),</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>            <span class="keywordflow">if</span> ( DoubleLList((<span class="keywordtype">void</span> ***)ppp,&amp;AP.pSize,<span class="keyword">sizeof</span>(UBYTE),</div>
 <div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>            <span class="stringliteral">&quot;instruction buffer&quot;</span>) ) { *s = 0; oldmode = mode; <span class="keywordflow">return</span>(-1); }</div>
 <div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>            AP.preStop = AP.preStart + AP.pSize-3;</div>
 <div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>            s = AP.preStart + position;</div>
@@ -1567,7 +1567,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>                LONG position = s - AC.iBuffer;</div>
 <div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>                LONG position2 = AC.iPointer - AC.iBuffer;</div>
 <div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>                UBYTE **ppp = &amp;(AC.iBuffer); <span class="comment">/* to avoid a compiler warning */</span></div>
-<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                <span class="keywordflow">if</span> ( DoubleLList((VOID ***)ppp,&amp;AC.iBufferSize</div>
+<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                <span class="keywordflow">if</span> ( DoubleLList((<span class="keywordtype">void</span> ***)ppp,&amp;AC.iBufferSize</div>
 <div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                ,<span class="keyword">sizeof</span>(UBYTE),<span class="stringliteral">&quot;statement buffer&quot;</span>) ) {</div>
 <div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                    *s = 0; retval = -1; AP.iBufError = 1;</div>
 <div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>                }</div>
@@ -1739,7 +1739,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01701" name="l01701"></a><span class="lineno"> 1701</span>                <span class="keywordflow">if</span> ( par == 0 ) {</div>
 <div class="line"><a id="l01702" name="l01702"></a><span class="lineno"> 1702</span>                    LONG position2 = AC.iPointer - AC.iBuffer;</div>
 <div class="line"><a id="l01703" name="l01703"></a><span class="lineno"> 1703</span>                    ppp = &amp;(AC.iBuffer); <span class="comment">/* to avoid a compiler warning */</span></div>
-<div class="line"><a id="l01704" name="l01704"></a><span class="lineno"> 1704</span>                    <span class="keywordflow">if</span> ( DoubleLList((VOID ***)ppp,&amp;AC.iBufferSize</div>
+<div class="line"><a id="l01704" name="l01704"></a><span class="lineno"> 1704</span>                    <span class="keywordflow">if</span> ( DoubleLList((<span class="keywordtype">void</span> ***)ppp,&amp;AC.iBufferSize</div>
 <div class="line"><a id="l01705" name="l01705"></a><span class="lineno"> 1705</span>                        ,<span class="keyword">sizeof</span>(UBYTE),<span class="stringliteral">&quot;statement buffer&quot;</span>) ) {</div>
 <div class="line"><a id="l01706" name="l01706"></a><span class="lineno"> 1706</span>                            Terminate(-1);</div>
 <div class="line"><a id="l01707" name="l01707"></a><span class="lineno"> 1707</span>                    }</div>
@@ -1751,7 +1751,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01713" name="l01713"></a><span class="lineno"> 1713</span>                    LONG fillpos = 0;</div>
 <div class="line"><a id="l01714" name="l01714"></a><span class="lineno"> 1714</span>                    <span class="keywordflow">if</span> ( AP.preFill ) fillpos = AP.preFill - AP.preStart;</div>
 <div class="line"><a id="l01715" name="l01715"></a><span class="lineno"> 1715</span>                    ppp = &amp;(AP.preStart); <span class="comment">/* to avoid a compiler warning */</span></div>
-<div class="line"><a id="l01716" name="l01716"></a><span class="lineno"> 1716</span>                    <span class="keywordflow">if</span> ( DoubleLList((VOID ***)ppp,&amp;AP.pSize,<span class="keyword">sizeof</span>(UBYTE),</div>
+<div class="line"><a id="l01716" name="l01716"></a><span class="lineno"> 1716</span>                    <span class="keywordflow">if</span> ( DoubleLList((<span class="keywordtype">void</span> ***)ppp,&amp;AP.pSize,<span class="keyword">sizeof</span>(UBYTE),</div>
 <div class="line"><a id="l01717" name="l01717"></a><span class="lineno"> 1717</span>                        <span class="stringliteral">&quot;instruction buffer&quot;</span>) ) {</div>
 <div class="line"><a id="l01718" name="l01718"></a><span class="lineno"> 1718</span>                            Terminate(-1);</div>
 <div class="line"><a id="l01719" name="l01719"></a><span class="lineno"> 1719</span>                    }</div>
@@ -1959,7 +1959,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01921" name="l01921"></a><span class="lineno"> 1921</span>                    LONG position2 = AC.iPointer - AC.iBuffer;</div>
 <div class="line"><a id="l01922" name="l01922"></a><span class="lineno"> 1922</span>                    UBYTE **ppp;</div>
 <div class="line"><a id="l01923" name="l01923"></a><span class="lineno"> 1923</span>                    ppp = &amp;(AC.iBuffer); <span class="comment">/* to avoid a compiler warning */</span></div>
-<div class="line"><a id="l01924" name="l01924"></a><span class="lineno"> 1924</span>                    <span class="keywordflow">if</span> ( DoubleLList((VOID ***)ppp,&amp;AC.iBufferSize</div>
+<div class="line"><a id="l01924" name="l01924"></a><span class="lineno"> 1924</span>                    <span class="keywordflow">if</span> ( DoubleLList((<span class="keywordtype">void</span> ***)ppp,&amp;AC.iBufferSize</div>
 <div class="line"><a id="l01925" name="l01925"></a><span class="lineno"> 1925</span>                        ,<span class="keyword">sizeof</span>(UBYTE),<span class="stringliteral">&quot;statement buffer&quot;</span>) ) {</div>
 <div class="line"><a id="l01926" name="l01926"></a><span class="lineno"> 1926</span>                            Terminate(-1);</div>
 <div class="line"><a id="l01927" name="l01927"></a><span class="lineno"> 1927</span>                    }</div>
@@ -3405,7 +3405,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03376" name="l03376"></a><span class="lineno"> 3376</span>    <span class="keywordflow">else</span> condition = LOOKINGFORENDIF;</div>
 <div class="line"><a id="l03377" name="l03377"></a><span class="lineno"> 3377</span>    <span class="keywordflow">if</span> ( AP.PreIfLevel+1 &gt;= AP.MaxPreIfLevel ) {</div>
 <div class="line"><a id="l03378" name="l03378"></a><span class="lineno"> 3378</span>        <span class="keywordtype">int</span> **ppp = &amp;AP.PreIfStack; <span class="comment">/* To avoid a compiler warning */</span></div>
-<div class="line"><a id="l03379" name="l03379"></a><span class="lineno"> 3379</span>        <span class="keywordflow">if</span> ( DoubleList((VOID ***)ppp,&amp;AP.MaxPreIfLevel,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>),</div>
+<div class="line"><a id="l03379" name="l03379"></a><span class="lineno"> 3379</span>        <span class="keywordflow">if</span> ( DoubleList((<span class="keywordtype">void</span> ***)ppp,&amp;AP.MaxPreIfLevel,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>),</div>
 <div class="line"><a id="l03380" name="l03380"></a><span class="lineno"> 3380</span>            <span class="stringliteral">&quot;PreIfLevels&quot;</span>) ) <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l03381" name="l03381"></a><span class="lineno"> 3381</span>    }</div>
 <div class="line"><a id="l03382" name="l03382"></a><span class="lineno"> 3382</span>    AP.PreIfStack[++AP.PreIfLevel] = condition;</div>
@@ -3430,7 +3430,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03401" name="l03401"></a><span class="lineno"> 3401</span>    <span class="keywordflow">else</span> condition = LOOKINGFORENDIF;</div>
 <div class="line"><a id="l03402" name="l03402"></a><span class="lineno"> 3402</span>    <span class="keywordflow">if</span> ( AP.PreIfLevel+1 &gt;= AP.MaxPreIfLevel ) {</div>
 <div class="line"><a id="l03403" name="l03403"></a><span class="lineno"> 3403</span>        <span class="keywordtype">int</span> **ppp = &amp;AP.PreIfStack; <span class="comment">/* to avoid a compiler warning */</span></div>
-<div class="line"><a id="l03404" name="l03404"></a><span class="lineno"> 3404</span>        <span class="keywordflow">if</span> ( DoubleList((VOID ***)ppp,&amp;AP.MaxPreIfLevel,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>),</div>
+<div class="line"><a id="l03404" name="l03404"></a><span class="lineno"> 3404</span>        <span class="keywordflow">if</span> ( DoubleList((<span class="keywordtype">void</span> ***)ppp,&amp;AP.MaxPreIfLevel,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>),</div>
 <div class="line"><a id="l03405" name="l03405"></a><span class="lineno"> 3405</span>            <span class="stringliteral">&quot;PreIfLevels&quot;</span>) ) <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l03406" name="l03406"></a><span class="lineno"> 3406</span>    }</div>
 <div class="line"><a id="l03407" name="l03407"></a><span class="lineno"> 3407</span>    AP.PreIfStack[++AP.PreIfLevel] = condition;</div>
@@ -3642,8 +3642,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03613" name="l03613"></a><span class="lineno"> 3613</span>            AT.WorkPointer = oldworkpointer;</div>
 <div class="line"><a id="l03614" name="l03614"></a><span class="lineno"> 3614</span>            CleanDollarFactors(d);</div>
 <div class="line"><a id="l03615" name="l03615"></a><span class="lineno"> 3615</span>            <span class="keywordflow">if</span> ( d-&gt;where ) { M_free(d-&gt;where,<span class="stringliteral">&quot;dollar contents&quot;</span>); d-&gt;where = 0; }</div>
-<div class="line"><a id="l03616" name="l03616"></a><span class="lineno"> 3616</span>            <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((VOID *)(&amp;(d-&gt;where))),2);</div>
-<div class="line"><a id="l03617" name="l03617"></a><span class="lineno"> 3617</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l03616" name="l03616"></a><span class="lineno"> 3616</span>            <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)((<span class="keywordtype">void</span> *)(&amp;(d-&gt;where))),2);</div>
+<div class="line"><a id="l03617" name="l03617"></a><span class="lineno"> 3617</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l03618" name="l03618"></a><span class="lineno"> 3618</span>            term = d-&gt;where; <span class="keywordflow">while</span> ( *term ) term += *term;</div>
 <div class="line"><a id="l03619" name="l03619"></a><span class="lineno"> 3619</span>            d-&gt;size = term - d-&gt;where;</div>
 <div class="line"><a id="l03620" name="l03620"></a><span class="lineno"> 3620</span>            <span class="keywordflow">if</span> ( nd != d ) M_free(nd,<span class="stringliteral">&quot;Copy of dollar variable&quot;</span>);</div>
@@ -4458,12 +4458,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04429" name="l04429"></a><span class="lineno"> 4429</span><span class="comment">        #[ StartPrepro :</span></div>
 <div class="line"><a id="l04430" name="l04430"></a><span class="lineno"> 4430</span><span class="comment">*/</span></div>
 <div class="line"><a id="l04431" name="l04431"></a><span class="lineno"> 4431</span> </div>
-<div class="line"><a id="l04432" name="l04432"></a><span class="lineno"> 4432</span>VOID StartPrepro(VOID)</div>
+<div class="line"><a id="l04432" name="l04432"></a><span class="lineno"> 4432</span><span class="keywordtype">void</span> StartPrepro(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l04433" name="l04433"></a><span class="lineno"> 4433</span>{</div>
 <div class="line"><a id="l04434" name="l04434"></a><span class="lineno"> 4434</span>    <span class="keywordtype">int</span> **ppp;</div>
 <div class="line"><a id="l04435" name="l04435"></a><span class="lineno"> 4435</span>    AP.MaxPreIfLevel = 2;</div>
 <div class="line"><a id="l04436" name="l04436"></a><span class="lineno"> 4436</span>    ppp = &amp;AP.PreIfStack;</div>
-<div class="line"><a id="l04437" name="l04437"></a><span class="lineno"> 4437</span>    <span class="keywordflow">if</span> ( DoubleList((VOID ***)ppp,&amp;AP.MaxPreIfLevel,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>),</div>
+<div class="line"><a id="l04437" name="l04437"></a><span class="lineno"> 4437</span>    <span class="keywordflow">if</span> ( DoubleList((<span class="keywordtype">void</span> ***)ppp,&amp;AP.MaxPreIfLevel,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>),</div>
 <div class="line"><a id="l04438" name="l04438"></a><span class="lineno"> 4438</span>            <span class="stringliteral">&quot;PreIfLevels&quot;</span>) ) Terminate(-1);</div>
 <div class="line"><a id="l04439" name="l04439"></a><span class="lineno"> 4439</span>    AP.PreIfLevel = 0; AP.PreIfStack[0] = EXECUTINGIF;</div>
 <div class="line"><a id="l04440" name="l04440"></a><span class="lineno"> 4440</span> </div>
@@ -5139,7 +5139,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05110" name="l05110"></a><span class="lineno"> 5110</span><span class="comment">        a stream.</span></div>
 <div class="line"><a id="l05111" name="l05111"></a><span class="lineno"> 5111</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05112" name="l05112"></a><span class="lineno"> 5112</span> </div>
-<div class="line"><a id="l05113" name="l05113"></a><span class="lineno"> 5113</span>UBYTE *PreCalc(VOID)</div>
+<div class="line"><a id="l05113" name="l05113"></a><span class="lineno"> 5113</span>UBYTE *PreCalc(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l05114" name="l05114"></a><span class="lineno"> 5114</span>{</div>
 <div class="line"><a id="l05115" name="l05115"></a><span class="lineno"> 5115</span>    UBYTE *buff, *s = 0, *t, *newb, c;</div>
 <div class="line"><a id="l05116" name="l05116"></a><span class="lineno"> 5116</span>    <span class="keywordtype">int</span> size, i, n, parlevel = 0, bralevel = 0;</div>
@@ -6443,7 +6443,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06414" name="l06414"></a><span class="lineno"> 6414</span>                <span class="keywordflow">if</span> ( AO.OptimizationLevel != 0 ) {</div>
 <div class="line"><a id="l06415" name="l06415"></a><span class="lineno"> 6415</span>                    WORD oldoutskip = AO.OutSkip;</div>
 <div class="line"><a id="l06416" name="l06416"></a><span class="lineno"> 6416</span>                    AO.OutSkip = number;</div>
-<div class="line"><a id="l06417" name="l06417"></a><span class="lineno"> 6417</span>                    <a class="code hl_function" href="declare_8h.html#abf5caa152c6894646b29af7f20a817d5">optimize_print_code</a>(0);</div>
+<div class="line"><a id="l06417" name="l06417"></a><span class="lineno"> 6417</span>                    <a class="code hl_function" href="declare_8h.html#a21657d7cfe5d40d7826607a01118e9c2">optimize_print_code</a>(0);</div>
 <div class="line"><a id="l06418" name="l06418"></a><span class="lineno"> 6418</span>                    AO.OutSkip = oldoutskip;</div>
 <div class="line"><a id="l06419" name="l06419"></a><span class="lineno"> 6419</span>                }</div>
 <div class="line"><a id="l06420" name="l06420"></a><span class="lineno"> 6420</span>            }</div>
@@ -6681,7 +6681,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06652" name="l06652"></a><span class="lineno"> 6652</span>        oldworkpointer = AT.WorkPointer;</div>
 <div class="line"><a id="l06653" name="l06653"></a><span class="lineno"> 6653</span>        <span class="keywordflow">if</span> ( DollarFactorize(BHEAD numdollar) ) <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l06654" name="l06654"></a><span class="lineno"> 6654</span>        AT.WorkPointer = oldworkpointer;</div>
-<div class="line"><a id="l06655" name="l06655"></a><span class="lineno"> 6655</span>        <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l06655" name="l06655"></a><span class="lineno"> 6655</span>        <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l06656" name="l06656"></a><span class="lineno"> 6656</span>        <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l06657" name="l06657"></a><span class="lineno"> 6657</span>    }</div>
 <div class="line"><a id="l06658" name="l06658"></a><span class="lineno"> 6658</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ParenthesesTest(s) ) <span class="keywordflow">return</span>(-1);</div>
@@ -6853,7 +6853,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06824" name="l06824"></a><span class="lineno"> 6824</span>        <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> position;</div>
 <div class="line"><a id="l06825" name="l06825"></a><span class="lineno"> 6825</span>        <span class="keywordtype">int</span> firstterm;</div>
 <div class="line"><a id="l06826" name="l06826"></a><span class="lineno"> 6826</span>        WORD *term = AT.WorkPointer;</div>
-<div class="line"><a id="l06827" name="l06827"></a><span class="lineno"> 6827</span>        <a class="code hl_function" href="optimize_8cc.html#a44b8879feddd8be746e5104265fe3155">ClearOptimize</a>();</div>
+<div class="line"><a id="l06827" name="l06827"></a><span class="lineno"> 6827</span>        <a class="code hl_function" href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a>();</div>
 <div class="line"><a id="l06828" name="l06828"></a><span class="lineno"> 6828</span>        <span class="keywordflow">if</span> ( AO.OptimizationLevel == 0 ) <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l06829" name="l06829"></a><span class="lineno"> 6829</span>        <span class="keywordflow">switch</span> ( e-&gt;status ) {</div>
 <div class="line"><a id="l06830" name="l06830"></a><span class="lineno"> 6830</span>            <span class="keywordflow">case</span> LOCALEXPRESSION:</div>
@@ -6949,7 +6949,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06920" name="l06920"></a><span class="lineno"> 6920</span>        UpdateMaxSize();</div>
 <div class="line"><a id="l06921" name="l06921"></a><span class="lineno"> 6921</span>    }</div>
 <div class="line"><a id="l06922" name="l06922"></a><span class="lineno"> 6922</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06923" name="l06923"></a><span class="lineno"> 6923</span>        <a class="code hl_function" href="optimize_8cc.html#a44b8879feddd8be746e5104265fe3155">ClearOptimize</a>();</div>
+<div class="line"><a id="l06923" name="l06923"></a><span class="lineno"> 6923</span>        <a class="code hl_function" href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a>();</div>
 <div class="line"><a id="l06924" name="l06924"></a><span class="lineno"> 6924</span>    }</div>
 <div class="line"><a id="l06925" name="l06925"></a><span class="lineno"> 6925</span>    <span class="keywordflow">return</span>(error);</div>
 <div class="line"><a id="l06926" name="l06926"></a><span class="lineno"> 6926</span>    </div>
@@ -6967,7 +6967,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06938" name="l06938"></a><span class="lineno"> 6938</span>    <span class="keywordflow">if</span> ( AP.PreSwitchModes[AP.PreSwitchLevel] != EXECUTINGPRESWITCH ) <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l06939" name="l06939"></a><span class="lineno"> 6939</span>    <span class="keywordflow">if</span> ( AP.PreIfStack[AP.PreIfLevel] != EXECUTINGIF ) <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l06940" name="l06940"></a><span class="lineno"> 6940</span>    DUMMYUSE(*s);</div>
-<div class="line"><a id="l06941" name="l06941"></a><span class="lineno"> 6941</span>    <span class="keywordflow">return</span>(<a class="code hl_function" href="optimize_8cc.html#a44b8879feddd8be746e5104265fe3155">ClearOptimize</a>());</div>
+<div class="line"><a id="l06941" name="l06941"></a><span class="lineno"> 6941</span>    <span class="keywordflow">return</span>(<a class="code hl_function" href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a>());</div>
 <div class="line"><a id="l06942" name="l06942"></a><span class="lineno"> 6942</span>}</div>
 <div class="line"><a id="l06943" name="l06943"></a><span class="lineno"> 6943</span> </div>
 <div class="line"><a id="l06944" name="l06944"></a><span class="lineno"> 6944</span><span class="comment">/*</span></div>
@@ -7792,19 +7792,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="acomtool_8c_html_ab9540604e742ad4b787c1bd5b93484b0"><div class="ttname"><a href="comtool_8c.html#ab9540604e742ad4b787c1bd5b93484b0">AddNtoC</a></div><div class="ttdeci">int AddNtoC(int bufnum, int n, WORD *array, int par)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00317">comtool.c:317</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ad6f6e76a3969acee0be0a3c9a7c2a36a"><div class="ttname"><a href="comtool_8c.html#ad6f6e76a3969acee0be0a3c9a7c2a36a">clearcbuf</a></div><div class="ttdeci">void clearcbuf(WORD num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00116">comtool.c:116</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a1e2e34a85cbfd5eea445975b7805c89e"><div class="ttname"><a href="declare_8h.html#a1e2e34a85cbfd5eea445975b7805c89e">GetFirstTerm</a></div><div class="ttdeci">int GetFirstTerm(WORD *, int, int)</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l01863">execute.c:1863</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a21657d7cfe5d40d7826607a01118e9c2"><div class="ttname"><a href="declare_8h.html#a21657d7cfe5d40d7826607a01118e9c2">optimize_print_code</a></div><div class="ttdeci">void optimize_print_code(int)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04525">optimize.cc:4525</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a3f61503891515c6616a071be88c0782c"><div class="ttname"><a href="declare_8h.html#a3f61503891515c6616a071be88c0782c">AddPotModdollar</a></div><div class="ttdeci">void AddPotModdollar(WORD)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03959">dollar.c:3959</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a44770ed698bf9bf084656622978cccf7"><div class="ttname"><a href="declare_8h.html#a44770ed698bf9bf084656622978cccf7">PutOut</a></div><div class="ttdeci">WORD PutOut(PHEAD WORD *, POSITION *, FILEHANDLE *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01436">sort.c:1436</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a90fab21487809d64e64f115845dcdde9"><div class="ttname"><a href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a></div><div class="ttdeci">int ClearOptimize(void)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04975">optimize.cc:4975</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a9be311915f0822785e9270f60f116e09"><div class="ttname"><a href="declare_8h.html#a9be311915f0822785e9270f60f116e09">Optimize</a></div><div class="ttdeci">int Optimize(WORD, int)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04638">optimize.cc:4638</a></div></div>
-<div class="ttc" id="adeclare_8h_html_abf5caa152c6894646b29af7f20a817d5"><div class="ttname"><a href="declare_8h.html#abf5caa152c6894646b29af7f20a817d5">optimize_print_code</a></div><div class="ttdeci">VOID optimize_print_code(int)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04525">optimize.cc:4525</a></div></div>
 <div class="ttc" id="adeclare_8h_html_aceb7b03b4b4e8ec7c2e0f943545b5000"><div class="ttname"><a href="declare_8h.html#aceb7b03b4b4e8ec7c2e0f943545b5000">FlushOut</a></div><div class="ttdeci">WORD FlushOut(POSITION *, FILEHANDLE *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01798">sort.c:1798</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03551">tools.c:3551</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="aftypes_8h_html_a694af121e4b95d07faaf8c5c7c76887b"><div class="ttname"><a href="ftypes_8h.html#a694af121e4b95d07faaf8c5c7c76887b">WITHOUTERROR</a></div><div class="ttdeci">#define WITHOUTERROR</div><div class="ttdef"><b>Definition</b> <a href="ftypes_8h_source.html#l00051">ftypes.h:51</a></div></div>
-<div class="ttc" id="aoptimize_8cc_html_a44b8879feddd8be746e5104265fe3155"><div class="ttname"><a href="optimize_8cc.html#a44b8879feddd8be746e5104265fe3155">ClearOptimize</a></div><div class="ttdeci">int ClearOptimize()</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04975">optimize.cc:4975</a></div></div>
 <div class="ttc" id="aparallel_8c_html_a27b88f27e555759116cf5bf20931ae2a"><div class="ttname"><a href="parallel_8c.html#a27b88f27e555759116cf5bf20931ae2a">PF_BroadcastRedefinedPreVars</a></div><div class="ttdeci">int PF_BroadcastRedefinedPreVars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03002">parallel.c:3002</a></div></div>
 <div class="ttc" id="aparallel_8c_html_a5efb548dd947c719005be2da0d79e114"><div class="ttname"><a href="parallel_8c.html#a5efb548dd947c719005be2da0d79e114">PF_BroadcastModifiedDollars</a></div><div class="ttdeci">int PF_BroadcastModifiedDollars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02785">parallel.c:2785</a></div></div>
 <div class="ttc" id="apre_8c_html_a65336af1bed55cddb7dfdd6e151b8996"><div class="ttname"><a href="pre_8c.html#a65336af1bed55cddb7dfdd6e151b8996">TheDefine</a></div><div class="ttdeci">int TheDefine(UBYTE *s, int mode)</div><div class="ttdef"><b>Definition</b> <a href="pre_8c_source.html#l02024">pre.c:2024</a></div></div>

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"></span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>WORD OpenTemp(VOID)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>WORD OpenTemp(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    GETIDENTITY</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> ( AR.outfile-&gt;handle &gt;= 0 ) {</div>
@@ -110,7 +110,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">        #[ SeekScratch :</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>VOID SeekScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fi, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *pos)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> SeekScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fi, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *pos)</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    *pos = fi-&gt;POposition;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    ADDPOS(*pos,(TOLONG(fi-&gt;POfill)-TOLONG(fi-&gt;PObuffer)));</div>
@@ -121,7 +121,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">        #[ SetEndScratch :</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>VOID SetEndScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> SetEndScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position)</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> ( f-&gt;<a class="code hl_variable" href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">handle</a> &lt; 0 ) {</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        SETBASEPOSITION(*position,(f-&gt;POfull-f-&gt;PObuffer)*<span class="keyword">sizeof</span>(WORD));</div>
@@ -135,7 +135,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">        #[ SetEndHScratch :</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>VOID SetEndHScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> SetEndHScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">if</span> ( f-&gt;<a class="code hl_variable" href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">handle</a> &lt; 0 ) {</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        SETBASEPOSITION(*position,(f-&gt;POfull-f-&gt;PObuffer)*<span class="keyword">sizeof</span>(WORD));</div>
@@ -161,7 +161,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">        #[ SetScratch :</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>VOID SetScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> SetScratch(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    GETIDENTITY</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> possize;</div>
@@ -236,7 +236,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"></span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>WORD RevertScratch(VOID)</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>WORD RevertScratch(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>{</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    GETIDENTITY</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f;</div>
@@ -281,7 +281,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment"></span> </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>WORD ResetScratch(VOID)</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>WORD ResetScratch(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>{</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    GETIDENTITY</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *f;</div>
@@ -655,7 +655,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        <span class="keywordflow">return</span>(MesPrint(<span class="stringliteral">&quot;Cannot open file %s&quot;</span>,inp));</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    }</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#a9574f905efd7120a3e5f5bb1f7bb8f99">SetFileIndex</a>() ) {</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#a91da7a186f87b6b3ae00a7f3f233f2bf">SetFileIndex</a>() ) {</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        MesCall(<span class="stringliteral">&quot;CoLoad&quot;</span>);</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        SETERROR(-1)</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    }</div>
@@ -666,7 +666,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordflow">if</span> ( ReadFile(AO.SaveData.Handle,(UBYTE *)(&amp;(AO.SaveData.Index)),</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        (LONG)<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_fi_le_in_de_x.html">FiLeInDeX</a>)) != (LONG)<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_fi_le_in_de_x.html">FiLeInDeX</a>) ) <span class="keywordflow">goto</span> LoadRead;</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#ad3a15db7bf4f237bef38890d6845d128">ReadSaveHeader</a>() ) <span class="keywordflow">goto</span> LoadRead;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#af6644ba0ca84c8db891ee99fe4fb54b5">ReadSaveHeader</a>() ) <span class="keywordflow">goto</span> LoadRead;</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    TELLFILE(AO.SaveData.Handle,&amp;firstposition);</div>
 <div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#aca5317024b51e88fdb06ecacacb9d08c">ReadSaveIndex</a>(&amp;AO.SaveData.Index) ) <span class="keywordflow">goto</span> LoadRead;</div>
 <div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span><span class="preprocessor">#endif</span></div>
@@ -1867,7 +1867,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01818" name="l01818"></a><span class="lineno"> 1818</span> </div>
 <div class="line"><a id="l01819" name="l01819"></a><span class="lineno"> 1819</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01820" name="l01820"></a><span class="lineno"> 1820</span><span class="comment">        #] GetFromStore : </span></div>
-<div class="line"><a id="l01821" name="l01821"></a><span class="lineno"> 1821</span><span class="comment">        #[ DetVars :            VOID DetVars(term)</span></div>
+<div class="line"><a id="l01821" name="l01821"></a><span class="lineno"> 1821</span><span class="comment">        #[ DetVars :            void DetVars(term)</span></div>
 <div class="line"><a id="l01822" name="l01822"></a><span class="lineno"> 1822</span><span class="comment"></span> </div>
 <div class="line"><a id="l01823" name="l01823"></a><span class="lineno"> 1823</span><span class="comment">    Determines which variables are used in term.</span></div>
 <div class="line"><a id="l01824" name="l01824"></a><span class="lineno"> 1824</span><span class="comment"></span> </div>
@@ -1876,7 +1876,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01827" name="l01827"></a><span class="lineno"> 1827</span><span class="comment"></span> </div>
 <div class="line"><a id="l01828" name="l01828"></a><span class="lineno"> 1828</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01829" name="l01829"></a><span class="lineno"> 1829</span> </div>
-<div class="line"><a id="l01830" name="l01830"></a><span class="lineno"> 1830</span>VOID DetVars(WORD *term, WORD par)</div>
+<div class="line"><a id="l01830" name="l01830"></a><span class="lineno"> 1830</span><span class="keywordtype">void</span> DetVars(WORD *term, WORD par)</div>
 <div class="line"><a id="l01831" name="l01831"></a><span class="lineno"> 1831</span>{</div>
 <div class="line"><a id="l01832" name="l01832"></a><span class="lineno"> 1832</span>    GETIDENTITY</div>
 <div class="line"><a id="l01833" name="l01833"></a><span class="lineno"> 1833</span>    WORD *stopper;</div>
@@ -2311,7 +2311,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02262" name="l02262"></a><span class="lineno"> 2262</span>    <span class="keywordtype">int</span> i, j = <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structs_8h.html#a8299a6a586c7ce6289556115dd3b4a20">FILEINDEX</a>)/(<span class="keyword">sizeof</span>(LONG));</div>
 <div class="line"><a id="l02263" name="l02263"></a><span class="lineno"> 2263</span>    LONG *lo;</div>
 <div class="line"><a id="l02264" name="l02264"></a><span class="lineno"> 2264</span>    <span class="keywordflow">if</span> ( AR.StoreData.Handle &lt;= 0 ) {</div>
-<div class="line"><a id="l02265" name="l02265"></a><span class="lineno"> 2265</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#a9574f905efd7120a3e5f5bb1f7bb8f99">SetFileIndex</a>() ) {</div>
+<div class="line"><a id="l02265" name="l02265"></a><span class="lineno"> 2265</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="store_8c.html#a91da7a186f87b6b3ae00a7f3f233f2bf">SetFileIndex</a>() ) {</div>
 <div class="line"><a id="l02266" name="l02266"></a><span class="lineno"> 2266</span>            MesCall(<span class="stringliteral">&quot;NextFileIndex&quot;</span>);</div>
 <div class="line"><a id="l02267" name="l02267"></a><span class="lineno"> 2267</span>            <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l02268" name="l02268"></a><span class="lineno"> 2268</span>        }</div>
@@ -2362,7 +2362,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02313" name="l02313"></a><span class="lineno"> 2313</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02314" name="l02314"></a><span class="lineno"> 2314</span> </div>
 <div class="foldopen" id="foldopen02321" data-start="{" data-end="}">
-<div class="line"><a id="l02321" name="l02321"></a><span class="lineno"><a class="line" href="declare_8h.html#a9574f905efd7120a3e5f5bb1f7bb8f99"> 2321</a></span>WORD <a class="code hl_function" href="store_8c.html#a9574f905efd7120a3e5f5bb1f7bb8f99">SetFileIndex</a>(VOID)</div>
+<div class="line"><a id="l02321" name="l02321"></a><span class="lineno"><a class="line" href="declare_8h.html#a91da7a186f87b6b3ae00a7f3f233f2bf"> 2321</a></span>WORD <a class="code hl_function" href="store_8c.html#a91da7a186f87b6b3ae00a7f3f233f2bf">SetFileIndex</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02322" name="l02322"></a><span class="lineno"> 2322</span>{</div>
 <div class="line"><a id="l02323" name="l02323"></a><span class="lineno"> 2323</span>    GETIDENTITY</div>
 <div class="line"><a id="l02324" name="l02324"></a><span class="lineno"> 2324</span>    <span class="keywordtype">int</span> i, j = <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structs_8h.html#a8299a6a586c7ce6289556115dd3b4a20">FILEINDEX</a>)/(<span class="keyword">sizeof</span>(LONG));</div>
@@ -3973,17 +3973,17 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04050" name="l04050"></a><span class="lineno"> 4050</span><span class="comment">*/</span></div>
 <div class="line"><a id="l04051" name="l04051"></a><span class="lineno"> 4051</span> </div>
 <div class="foldopen" id="foldopen04065" data-start="{" data-end="}">
-<div class="line"><a id="l04065" name="l04065"></a><span class="lineno"><a class="line" href="declare_8h.html#ad3a15db7bf4f237bef38890d6845d128"> 4065</a></span>WORD <a class="code hl_function" href="store_8c.html#ad3a15db7bf4f237bef38890d6845d128">ReadSaveHeader</a>(VOID)</div>
+<div class="line"><a id="l04065" name="l04065"></a><span class="lineno"><a class="line" href="declare_8h.html#af6644ba0ca84c8db891ee99fe4fb54b5"> 4065</a></span>WORD <a class="code hl_function" href="store_8c.html#af6644ba0ca84c8db891ee99fe4fb54b5">ReadSaveHeader</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l04066" name="l04066"></a><span class="lineno"> 4066</span>{</div>
 <div class="line"><a id="l04067" name="l04067"></a><span class="lineno"> 4067</span>    <span class="comment">/* Read-only tables of function pointers for conversions. */</span></div>
-<div class="line"><a id="l04068" name="l04068"></a><span class="lineno"> 4068</span>    <span class="keyword">static</span> VOID (*flipJumpTable[4])(UBYTE *) =</div>
+<div class="line"><a id="l04068" name="l04068"></a><span class="lineno"> 4068</span>    <span class="keyword">static</span> void (*flipJumpTable[4])(UBYTE *) =</div>
 <div class="line"><a id="l04069" name="l04069"></a><span class="lineno"> 4069</span>        { Flip16, Flip32, Flip64, Flip128 };</div>
-<div class="line"><a id="l04070" name="l04070"></a><span class="lineno"> 4070</span>    <span class="keyword">static</span> VOID (*resizeJumpTable[4][4])(UBYTE *, UBYTE *) = <span class="comment">/* &quot;own x saved&quot;-sizes  */</span></div>
+<div class="line"><a id="l04070" name="l04070"></a><span class="lineno"> 4070</span>    <span class="keyword">static</span> void (*resizeJumpTable[4][4])(UBYTE *, UBYTE *) = <span class="comment">/* &quot;own x saved&quot;-sizes  */</span></div>
 <div class="line"><a id="l04071" name="l04071"></a><span class="lineno"> 4071</span>        { { Resize16t16,  Resize32t16,  Resize64t16,  Resize128t16  },</div>
 <div class="line"><a id="l04072" name="l04072"></a><span class="lineno"> 4072</span>          { Resize16t32,  Resize32t32,  Resize64t32,  Resize128t32  },</div>
 <div class="line"><a id="l04073" name="l04073"></a><span class="lineno"> 4073</span>          { Resize16t64,  Resize32t64,  Resize64t64,  Resize128t64  },</div>
 <div class="line"><a id="l04074" name="l04074"></a><span class="lineno"> 4074</span>          { Resize16t128, Resize32t128, Resize64t128, Resize128t128 } };</div>
-<div class="line"><a id="l04075" name="l04075"></a><span class="lineno"> 4075</span>    <span class="keyword">static</span> VOID (*resizeNCJumpTable[4][4])(UBYTE *, UBYTE *) = <span class="comment">/* &quot;own x saved&quot;-sizes  */</span></div>
+<div class="line"><a id="l04075" name="l04075"></a><span class="lineno"> 4075</span>    <span class="keyword">static</span> void (*resizeNCJumpTable[4][4])(UBYTE *, UBYTE *) = <span class="comment">/* &quot;own x saved&quot;-sizes  */</span></div>
 <div class="line"><a id="l04076" name="l04076"></a><span class="lineno"> 4076</span>        { { Resize16t16,  Resize32t16NC,  Resize64t16NC,  Resize128t16NC  },</div>
 <div class="line"><a id="l04077" name="l04077"></a><span class="lineno"> 4077</span>          { Resize16t32,  Resize32t32,  Resize64t32NC,  Resize128t32NC  },</div>
 <div class="line"><a id="l04078" name="l04078"></a><span class="lineno"> 4078</span>          { Resize16t64,  Resize32t64,  Resize64t64,  Resize128t64NC  },</div>
@@ -5080,10 +5080,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="astore_8c_html_a4db0fcca96a80ea96c32e458ced74099"><div class="ttname"><a href="store_8c.html#a4db0fcca96a80ea96c32e458ced74099">ReadSaveVariables</a></div><div class="ttdeci">WORD ReadSaveVariables(UBYTE *buffer, UBYTE *top, LONG *size, LONG *outsize, INDEXENTRY *ind, LONG *stage)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l04369">store.c:4369</a></div></div>
 <div class="ttc" id="astore_8c_html_a55719180919e717b94b3d5ba4747077f"><div class="ttname"><a href="store_8c.html#a55719180919e717b94b3d5ba4747077f">ReadSaveTerm32</a></div><div class="ttdeci">UBYTE * ReadSaveTerm32(UBYTE *bin, UBYTE *binend, UBYTE **bout, UBYTE *boutend, UBYTE *top, int terminbuf)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l04736">store.c:4736</a></div></div>
 <div class="ttc" id="astore_8c_html_a6926648e6f1143d25005476a6a8cbf7d"><div class="ttname"><a href="store_8c.html#a6926648e6f1143d25005476a6a8cbf7d">TermRenumber</a></div><div class="ttdeci">WORD TermRenumber(WORD *term, RENUMBER renumber, WORD nexpr)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l02428">store.c:2428</a></div></div>
-<div class="ttc" id="astore_8c_html_a9574f905efd7120a3e5f5bb1f7bb8f99"><div class="ttname"><a href="store_8c.html#a9574f905efd7120a3e5f5bb1f7bb8f99">SetFileIndex</a></div><div class="ttdeci">WORD SetFileIndex(VOID)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l02321">store.c:2321</a></div></div>
+<div class="ttc" id="astore_8c_html_a91da7a186f87b6b3ae00a7f3f233f2bf"><div class="ttname"><a href="store_8c.html#a91da7a186f87b6b3ae00a7f3f233f2bf">SetFileIndex</a></div><div class="ttdeci">WORD SetFileIndex(void)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l02321">store.c:2321</a></div></div>
 <div class="ttc" id="astore_8c_html_aa679a806769abfb74d0be67c39720ae8"><div class="ttname"><a href="store_8c.html#aa679a806769abfb74d0be67c39720ae8">ReadSaveExpression</a></div><div class="ttdeci">WORD ReadSaveExpression(UBYTE *buffer, UBYTE *top, LONG *size, LONG *outsize)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l05146">store.c:5146</a></div></div>
 <div class="ttc" id="astore_8c_html_aca5317024b51e88fdb06ecacacb9d08c"><div class="ttname"><a href="store_8c.html#aca5317024b51e88fdb06ecacacb9d08c">ReadSaveIndex</a></div><div class="ttdeci">WORD ReadSaveIndex(FILEINDEX *fileind)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l04183">store.c:4183</a></div></div>
-<div class="ttc" id="astore_8c_html_ad3a15db7bf4f237bef38890d6845d128"><div class="ttname"><a href="store_8c.html#ad3a15db7bf4f237bef38890d6845d128">ReadSaveHeader</a></div><div class="ttdeci">WORD ReadSaveHeader(VOID)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l04065">store.c:4065</a></div></div>
+<div class="ttc" id="astore_8c_html_af6644ba0ca84c8db891ee99fe4fb54b5"><div class="ttname"><a href="store_8c.html#af6644ba0ca84c8db891ee99fe4fb54b5">ReadSaveHeader</a></div><div class="ttdeci">WORD ReadSaveHeader(void)</div><div class="ttdef"><b>Definition</b> <a href="store_8c_source.html#l04065">store.c:4065</a></div></div>
 <div class="ttc" id="astruct_ex_pr_es_si_on_html"><div class="ttname"><a href="struct_ex_pr_es_si_on.html">ExPrEsSiOn</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00391">structs.h:391</a></div></div>
 <div class="ttc" id="astruct_fi_le_da_ta_html"><div class="ttname"><a href="struct_fi_le_da_ta.html">FiLeDaTa</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00151">structs.h:151</a></div></div>
 <div class="ttc" id="astruct_fi_le_html"><div class="ttname"><a href="struct_fi_le.html">FiLe</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00682">structs.h:682</a></div></div>

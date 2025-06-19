@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -857,7 +857,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span><span class="keyword">typedef</span> WORD (*DO_UFFLE)(WORD *,WORD,WORD,WORD);</div>
 <div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span> </div>
 <div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="keyword">typedef</span> WORD (*COMPAREDUMMY)(VOID *,WORD *,WORD *,WORD);</div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="keyword">typedef</span> WORD (*COMPAREDUMMY)(<span class="keywordtype">void</span> *,WORD *,WORD *,WORD);</div>
 <div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span><span class="keyword">typedef</span> WORD (*COMPAREDUMMY)(WORD *,WORD *,WORD);</div>
 <div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span><span class="preprocessor">#endif</span></div>
@@ -1792,7 +1792,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01985" name="l01985"></a><span class="lineno"> 1985</span>    WORD    *Oldvflags;            <span class="comment">/* ( ) vflags in (old) expression */</span></div>
 <div class="line"><a id="l01986" name="l01986"></a><span class="lineno"> 1986</span>    WORD    *Olduflags;            <span class="comment">/* ( ) uflags in (old) expression */</span></div>
 <div class="line"><a id="l01987" name="l01987"></a><span class="lineno"> 1987</span><span class="preprocessor">#ifdef WITHFLOAT</span></div>
-<div class="line"><a id="l01988" name="l01988"></a><span class="lineno"> 1988</span>    VOID    *delta_1;</div>
+<div class="line"><a id="l01988" name="l01988"></a><span class="lineno"> 1988</span>    <span class="keywordtype">void</span>    *delta_1;</div>
 <div class="line"><a id="l01989" name="l01989"></a><span class="lineno"> 1989</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01990" name="l01990"></a><span class="lineno"> 1990</span>    <span class="keywordtype">int</span>     NumOldOnFile;          <span class="comment">/* (S) Number of expressions in OldOnFile */</span></div>
 <div class="line"><a id="l01991" name="l01991"></a><span class="lineno"> 1991</span>    <span class="keywordtype">int</span>     NumOldNumFactors;      <span class="comment">/* (S) Number of expressions in OldNumFactors */</span></div>
@@ -1955,10 +1955,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02160" name="l02160"></a><span class="lineno"> 2160</span><span class="preprocessor">#ifdef WITHFLOAT</span></div>
 <div class="line"><a id="l02161" name="l02161"></a><span class="lineno"> 2161</span>    <span class="keywordtype">int</span>     *indi1;</div>
 <div class="line"><a id="l02162" name="l02162"></a><span class="lineno"> 2162</span>    <span class="keywordtype">int</span>     *indi2;</div>
-<div class="line"><a id="l02163" name="l02163"></a><span class="lineno"> 2163</span>    VOID    *mpf_tab1;</div>
-<div class="line"><a id="l02164" name="l02164"></a><span class="lineno"> 2164</span>    VOID    *mpf_tab2;</div>
-<div class="line"><a id="l02165" name="l02165"></a><span class="lineno"> 2165</span>    VOID    *aux_;</div>
-<div class="line"><a id="l02166" name="l02166"></a><span class="lineno"> 2166</span>    VOID    *auxr_;</div>
+<div class="line"><a id="l02163" name="l02163"></a><span class="lineno"> 2163</span>    <span class="keywordtype">void</span>    *mpf_tab1;</div>
+<div class="line"><a id="l02164" name="l02164"></a><span class="lineno"> 2164</span>    <span class="keywordtype">void</span>    *mpf_tab2;</div>
+<div class="line"><a id="l02165" name="l02165"></a><span class="lineno"> 2165</span>    <span class="keywordtype">void</span>    *aux_;</div>
+<div class="line"><a id="l02166" name="l02166"></a><span class="lineno"> 2166</span>    <span class="keywordtype">void</span>    *auxr_;</div>
 <div class="line"><a id="l02167" name="l02167"></a><span class="lineno"> 2167</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l02168" name="l02168"></a><span class="lineno"> 2168</span>    <a class="code hl_struct" href="struct_pa_rt_i.html">PARTI</a>   partitions;</div>
 <div class="line"><a id="l02169" name="l02169"></a><span class="lineno"> 2169</span>    LONG    sBer;                  <span class="comment">/* (T) Size of the Bernoullis buffer */</span></div>
@@ -2246,18 +2246,18 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02463" name="l02463"></a><span class="lineno"> 2463</span>    UBYTE   *wpoin;                <span class="comment">/* (O) Only when storing file {local?} */</span></div>
 <div class="line"><a id="l02464" name="l02464"></a><span class="lineno"> 2464</span>    UBYTE   *DollarOutBuffer;      <span class="comment">/* (O) Outputbuffer for Dollars */</span></div>
 <div class="line"><a id="l02465" name="l02465"></a><span class="lineno"> 2465</span>    UBYTE   *CurBufWrt;            <span class="comment">/* (O) Name of currently written expr. */</span></div>
-<div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span>    VOID    (*FlipWORD)(UBYTE *);  <span class="comment">/* ()  Function pointers for translations. Initialized by ReadSaveHeader() */</span></div>
-<div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span>    VOID    (*FlipLONG)(UBYTE *);</div>
-<div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span>    VOID    (*FlipPOS)(UBYTE *);</div>
-<div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span>    VOID    (*FlipPOINTER)(UBYTE *);</div>
-<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>    VOID    (*ResizeData)(UBYTE *,int,UBYTE *,int);</div>
-<div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>    VOID    (*ResizeWORD)(UBYTE *,UBYTE *);</div>
-<div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span>    VOID    (*ResizeNCWORD)(UBYTE *,UBYTE *);</div>
-<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    VOID    (*ResizeLONG)(UBYTE *,UBYTE *);</div>
-<div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span>    VOID    (*ResizePOS)(UBYTE *,UBYTE *);</div>
-<div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span>    VOID    (*ResizePOINTER)(UBYTE *,UBYTE *);</div>
-<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span>    VOID    (*CheckPower)(UBYTE *);</div>
-<div class="line"><a id="l02477" name="l02477"></a><span class="lineno"> 2477</span>    VOID    (*RenumberVec)(UBYTE *);</div>
+<div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span>    void    (*FlipWORD)(UBYTE *);  <span class="comment">/* ()  Function pointers for translations. Initialized by ReadSaveHeader() */</span></div>
+<div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span>    void    (*FlipLONG)(UBYTE *);</div>
+<div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span>    void    (*FlipPOS)(UBYTE *);</div>
+<div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span>    void    (*FlipPOINTER)(UBYTE *);</div>
+<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>    void    (*ResizeData)(UBYTE *,int,UBYTE *,int);</div>
+<div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>    void    (*ResizeWORD)(UBYTE *,UBYTE *);</div>
+<div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span>    void    (*ResizeNCWORD)(UBYTE *,UBYTE *);</div>
+<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    void    (*ResizeLONG)(UBYTE *,UBYTE *);</div>
+<div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span>    void    (*ResizePOS)(UBYTE *,UBYTE *);</div>
+<div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span>    void    (*ResizePOINTER)(UBYTE *,UBYTE *);</div>
+<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span>    void    (*CheckPower)(UBYTE *);</div>
+<div class="line"><a id="l02477" name="l02477"></a><span class="lineno"> 2477</span>    void    (*RenumberVec)(UBYTE *);</div>
 <div class="line"><a id="l02478" name="l02478"></a><span class="lineno"> 2478</span>    <a class="code hl_struct" href="struct_d_i_c_t_i_o_n_a_r_y.html">DICTIONARY</a> **Dictionaries;</div>
 <div class="line"><a id="l02479" name="l02479"></a><span class="lineno"> 2479</span>    UBYTE   *tensorList;           <span class="comment">/* Dynamically allocated list with functions that are tensorial. */</span></div>
 <div class="line"><a id="l02480" name="l02480"></a><span class="lineno"> 2480</span>    WORD    *inscheme;             <span class="comment">/* for feeding a Horner scheme to Optimize */</span></div>
@@ -2411,7 +2411,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02644" name="l02644"></a><span class="lineno"> 2644</span><span class="preprocessor">#define BHEAD0 B</span></div>
 <div class="line"><a id="l02645" name="l02645"></a><span class="lineno"> 2645</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l02646" name="l02646"></a><span class="lineno"> 2646</span><span class="preprocessor">#define PHEAD</span></div>
-<div class="line"><a id="l02647" name="l02647"></a><span class="lineno"> 2647</span><span class="preprocessor">#define PHEAD0 VOID</span></div>
+<div class="line"><a id="l02647" name="l02647"></a><span class="lineno"> 2647</span><span class="preprocessor">#define PHEAD0 void</span></div>
 <div class="line"><a id="l02648" name="l02648"></a><span class="lineno"> 2648</span><span class="preprocessor">#define BHEAD</span></div>
 <div class="line"><a id="l02649" name="l02649"></a><span class="lineno"> 2649</span><span class="preprocessor">#define BHEAD0</span></div>
 <div class="line"><a id="l02650" name="l02650"></a><span class="lineno"> 2650</span><span class="preprocessor">#endif</span></div>

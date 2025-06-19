@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -375,7 +375,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment">    DON&#39;T forget AR.SortType to be put into e-&gt;bracketinfo-&gt;SortType</span></div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>VOID PutBracketInIndex(PHEAD WORD *term, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *newpos)</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="keywordtype">void</span> PutBracketInIndex(PHEAD WORD *term, <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *newpos)</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>{</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    GETBIDENTITY</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <a class="code hl_struct" href="struct_br_ac_ke_ti_nd_ex.html">BRACKETINDEX</a> *bi, *b1, *b2, *b3;</div>
@@ -622,7 +622,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span><span class="comment">    Note: This routine is thread-safe</span></div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>VOID OpenBracketIndex(WORD nexpr)</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keywordtype">void</span> OpenBracketIndex(WORD nexpr)</div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>{</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <a class="code hl_struct" href="struct_ex_pr_es_si_on.html">EXPRESSIONS</a> e = Expressions + nexpr;</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <a class="code hl_struct" href="struct_br_ac_ke_ti_nf_o.html">BRACKETINFO</a> *bi;</div>

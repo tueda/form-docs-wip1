@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -90,7 +90,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">   47</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>(VOID)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">   47</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> i, num = AC.cbufList.num;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf;</div>
@@ -222,7 +222,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    C-&gt;numlhs++;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">if</span> ( C-&gt;numlhs &gt;= (C-&gt;maxlhs-2) ) {</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        WORD ***ppp = &amp;(C-&gt;<a class="code hl_variable" href="struct_cb_uf.html#a9c7feb556659e439cef7351d1e25467f">lhs</a>);    <span class="comment">/* to avoid compiler warning */</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">if</span> ( DoubleList((VOID ***)ppp,&amp;(C-&gt;maxlhs),<span class="keyword">sizeof</span>(WORD *),</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">if</span> ( DoubleList((<span class="keywordtype">void</span> ***)ppp,&amp;(C-&gt;maxlhs),<span class="keyword">sizeof</span>(WORD *),</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="stringliteral">&quot;statement lists&quot;</span>) ) Terminate(-1);</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    C-&gt;<a class="code hl_variable" href="struct_cb_uf.html#a9c7feb556659e439cef7351d1e25467f">lhs</a>[C-&gt;numlhs] = C-&gt;<a class="code hl_variable" href="struct_cb_uf.html#ac623298359882af1bb18ef9a62c0771b">Pointer</a>;</div>
@@ -265,7 +265,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a24803226a74fda87d1b8487726c9e006">buffers</a> = nbufs;</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a77812b899b1793f179e283c77b2ce83c">bufferssize</a> = new1;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                }</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a24803226a74fda87d1b8487726c9e006">buffers</a>[T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a5f3cc6edd3dcbf1442b31063cd480fa2">buffersfill</a>++] = T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a24803226a74fda87d1b8487726c9e006">buffers</a>[T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#a5f3cc6edd3dcbf1442b31063cd480fa2">buffersfill</a>++] = T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a> = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                AC.cbufnum = num = T-&gt;<a class="code hl_variable" href="struct_ta_bl_es.html#ac63fa77b149b0fa265b653fbf26a594a">bufnum</a>;</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                <span class="keywordflow">goto</span> restart;</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            }</div>
@@ -693,12 +693,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="comment">*/</span></div>
 <div class="ttc" id="acomtool_8c_html_a15c25c5aa0a8c7ea9d0b2a0b9ec9d0a3"><div class="ttname"><a href="comtool_8c.html#a15c25c5aa0a8c7ea9d0b2a0b9ec9d0a3">AddNtoL</a></div><div class="ttdeci">int AddNtoL(int n, WORD *array)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00288">comtool.c:288</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a26072cb500b84460ce5816cc247311f6"><div class="ttname"><a href="comtool_8c.html#a26072cb500b84460ce5816cc247311f6">AddRHS</a></div><div class="ttdeci">WORD * AddRHS(int num, int type)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00214">comtool.c:214</a></div></div>
+<div class="ttc" id="acomtool_8c_html_a3ad09bf828cf46a4a213b54269e34a3f"><div class="ttname"><a href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a></div><div class="ttdeci">int inicbufs(void)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a538e21a98fbce59e0d5e5346e33c5848"><div class="ttname"><a href="comtool_8c.html#a538e21a98fbce59e0d5e5346e33c5848">finishcbuf</a></div><div class="ttdeci">void finishcbuf(WORD num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00089">comtool.c:89</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a6bd9b98857d408fd568cab8915410946"><div class="ttname"><a href="comtool_8c.html#a6bd9b98857d408fd568cab8915410946">DoubleCbuffer</a></div><div class="ttdeci">WORD * DoubleCbuffer(int num, WORD *w, int par)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00143">comtool.c:143</a></div></div>
 <div class="ttc" id="acomtool_8c_html_aaa0838b0fca4643ea3d44dbde8341fb2"><div class="ttname"><a href="comtool_8c.html#aaa0838b0fca4643ea3d44dbde8341fb2">IniFbuffer</a></div><div class="ttdeci">int IniFbuffer(WORD bufnum)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00614">comtool.c:614</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ab9540604e742ad4b787c1bd5b93484b0"><div class="ttname"><a href="comtool_8c.html#ab9540604e742ad4b787c1bd5b93484b0">AddNtoC</a></div><div class="ttdeci">int AddNtoC(int bufnum, int n, WORD *array, int par)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00317">comtool.c:317</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ad6f6e76a3969acee0be0a3c9a7c2a36a"><div class="ttname"><a href="comtool_8c.html#ad6f6e76a3969acee0be0a3c9a7c2a36a">clearcbuf</a></div><div class="ttdeci">void clearcbuf(WORD num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00116">comtool.c:116</a></div></div>
-<div class="ttc" id="acomtool_8c_html_ad91faf677174dfde886e00d7e85a061d"><div class="ttname"><a href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a></div><div class="ttdeci">int inicbufs(VOID)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ae9069b4533ceac646564659a6fc61ba2"><div class="ttname"><a href="comtool_8c.html#ae9069b4533ceac646564659a6fc61ba2">AddLHS</a></div><div class="ttdeci">WORD * AddLHS(int num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00188">comtool.c:188</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00992">structs.h:992</a></div></div>

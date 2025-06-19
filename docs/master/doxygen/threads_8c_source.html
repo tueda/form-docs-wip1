@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -152,7 +152,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    #[ Identity :</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">        #[ StartIdentity :</span></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keywordtype">void</span> StartIdentity(VOID)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keywordtype">void</span> StartIdentity(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>{</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    pthread_key_create(&amp;identitykey,FinishIdentity);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
@@ -191,7 +191,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">        #[ WhoAmI :</span></div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="keywordtype">int</span> WhoAmI(VOID)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="keywordtype">int</span> WhoAmI(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>{</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordtype">int</span> *identity;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">/*</span></div>
@@ -214,7 +214,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">        #] WhoAmI : </span></div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">        #[ BeginIdentities :</span></div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>VOID BeginIdentities(VOID)</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keywordtype">void</span> BeginIdentities(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>{</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    StartIdentity();</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    SetIdentity(&amp;identityretval);</div>
@@ -225,7 +225,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">    #] Identity : </span></div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">    #[ StartHandleLock :</span></div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keywordtype">void</span> StartHandleLock(VOID)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keywordtype">void</span> StartHandleLock(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>{</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    AM.handlelock = dummyrwlock;</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
@@ -547,10 +547,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    AT.WildMask = (WORD *)Malloc1((LONG)AM.MaxWildcards*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;maxwildcards&quot;</span>);</div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> </div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    LOCK(availabilitylock);</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    AT.ebufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Buffer for extras during execution */</span></div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    AT.fbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Buffer for caching in factorization */</span></div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    AT.allbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();      <span class="comment">/* Buffer for id,all */</span></div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    AT.aebufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();       <span class="comment">/* Buffer for id,all */</span></div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    AT.ebufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Buffer for extras during execution */</span></div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    AT.fbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Buffer for caching in factorization */</span></div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    AT.allbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();      <span class="comment">/* Buffer for id,all */</span></div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    AT.aebufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();       <span class="comment">/* Buffer for id,all */</span></div>
 <div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    UNLOCK(availabilitylock);</div>
 <div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
 <div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>    AT.RepCount = (<span class="keywordtype">int</span> *)Malloc1((LONG)((AM.RepMax+3)*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)),<span class="stringliteral">&quot;repeat buffers&quot;</span>);</div>
@@ -706,7 +706,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>        AT.StoreCacheAlloc = (<a class="code hl_typedef" href="structs_8h.html#aaf8ed89c248fc4b78575952539f7f63c">STORECACHE</a>)Malloc1(size*AM.NumStoreCaches,<span class="stringliteral">&quot;StoreCaches&quot;</span>);</div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>        sa = AT.StoreCache = AT.StoreCacheAlloc;</div>
 <div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; AM.NumStoreCaches; i++ ) {</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>            sb = (<a class="code hl_typedef" href="structs_8h.html#aaf8ed89c248fc4b78575952539f7f63c">STORECACHE</a>)(VOID *)((UBYTE *)sa+size);</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>            sb = (<a class="code hl_typedef" href="structs_8h.html#aaf8ed89c248fc4b78575952539f7f63c">STORECACHE</a>)(<span class="keywordtype">void</span> *)((UBYTE *)sa+size);</div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>            <span class="keywordflow">if</span> ( i == AM.NumStoreCaches-1 ) {</div>
 <div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>                sa-&gt;next = 0;</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>            }</div>
@@ -742,7 +742,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="comment">    #] FinalizeOneThread : </span></div>
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="comment">    #[ ClearAllThreads :</span></div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>VOID ClearAllThreads(VOID)</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="keywordtype">void</span> ClearAllThreads(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>{</div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>    MasterWaitAll();</div>
@@ -760,7 +760,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="comment">    #] ClearAllThreads : </span></div>
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="comment">    #[ TerminateAllThreads :</span></div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>VOID TerminateAllThreads(VOID)</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="keywordtype">void</span> TerminateAllThreads(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>{</div>
 <div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>    <span class="keywordflow">for</span> ( i = 1; i &lt;= numberofworkers; i++ ) {</div>
@@ -875,7 +875,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span><span class="comment">    #] WriteTimerInfo : </span></div>
 <div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span><span class="comment">    #[ GetWorkerTimes :</span></div>
 <div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>LONG GetWorkerTimes(VOID)</div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>LONG GetWorkerTimes(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>{</div>
 <div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>    LONG retval = 0;</div>
 <div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>    <span class="keywordtype">int</span> i;</div>
@@ -1027,7 +1027,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span><span class="comment">    #] BalanceRunThread : </span></div>
 <div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span><span class="comment">    #[ SetWorkerFiles :</span></div>
 <div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span><span class="keywordtype">void</span> SetWorkerFiles(VOID)</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span><span class="keywordtype">void</span> SetWorkerFiles(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>{</div>
 <div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>    <span class="keywordtype">int</span> id;</div>
 <div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>    ALLPRIVATES *B, *B0 = AB[0];</div>
@@ -1239,7 +1239,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>                        PolyFunClean(BHEAD term);</div>
 <div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>                  }</div>
 <div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>                  <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,0) ) {</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>                    <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>                    <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>                    MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>                    MesPrint(<span class="stringliteral">&quot;Error in processing one term in thread %d in module %d&quot;</span>,identity,AC.CModule);</div>
 <div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>                    MUNLOCK(ErrorMessageLock);</div>
@@ -1377,7 +1377,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>                term = AT.WorkSpace; AT.WorkPointer = term + *term;</div>
 <div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,AR.level) ) {</div>
-<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                    <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                    <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                    MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>                    MesPrint(<span class="stringliteral">&quot;Error in load balancing one term at level %d in thread %d in module %d&quot;</span>,AR.level,AT.identity,AC.CModule);</div>
 <div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>                    MUNLOCK(ErrorMessageLock);</div>
@@ -1511,7 +1511,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01664" name="l01664"></a><span class="lineno"> 1664</span>                        PolyFunClean(BHEAD term);</div>
 <div class="line"><a id="l01665" name="l01665"></a><span class="lineno"> 1665</span>                  }</div>
 <div class="line"><a id="l01666" name="l01666"></a><span class="lineno"> 1666</span>                  <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,0) ) {</div>
-<div class="line"><a id="l01667" name="l01667"></a><span class="lineno"> 1667</span>                    <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
+<div class="line"><a id="l01667" name="l01667"></a><span class="lineno"> 1667</span>                    <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
 <div class="line"><a id="l01668" name="l01668"></a><span class="lineno"> 1668</span>                  }</div>
 <div class="line"><a id="l01669" name="l01669"></a><span class="lineno"> 1669</span>                 }</div>
 <div class="line"><a id="l01670" name="l01670"></a><span class="lineno"> 1670</span>                }</div>
@@ -1525,7 +1525,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01678" name="l01678"></a><span class="lineno"> 1678</span>                  <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l01679" name="l01679"></a><span class="lineno"> 1679</span>                  <span class="keywordflow">if</span> ( AC.CollectFun &amp;&amp; *term &lt;= (AM.MaxTer/(2*(LONG)<span class="keyword">sizeof</span>(WORD))) ) {</div>
 <div class="line"><a id="l01680" name="l01680"></a><span class="lineno"> 1680</span>                    <span class="keywordflow">if</span> ( GetMoreTerms(term) &lt; 0 ) {</div>
-<div class="line"><a id="l01681" name="l01681"></a><span class="lineno"> 1681</span>                      <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
+<div class="line"><a id="l01681" name="l01681"></a><span class="lineno"> 1681</span>                      <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
 <div class="line"><a id="l01682" name="l01682"></a><span class="lineno"> 1682</span>                    }</div>
 <div class="line"><a id="l01683" name="l01683"></a><span class="lineno"> 1683</span>                    SeekScratch(fi,&amp;position);</div>
 <div class="line"><a id="l01684" name="l01684"></a><span class="lineno"> 1684</span>                  }</div>
@@ -1549,7 +1549,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01702" name="l01702"></a><span class="lineno"> 1702</span>                        PolyFunClean(BHEAD term);</div>
 <div class="line"><a id="l01703" name="l01703"></a><span class="lineno"> 1703</span>                  }</div>
 <div class="line"><a id="l01704" name="l01704"></a><span class="lineno"> 1704</span>                  <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,0) ) {</div>
-<div class="line"><a id="l01705" name="l01705"></a><span class="lineno"> 1705</span>                    <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
+<div class="line"><a id="l01705" name="l01705"></a><span class="lineno"> 1705</span>                    <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
 <div class="line"><a id="l01706" name="l01706"></a><span class="lineno"> 1706</span>                  }</div>
 <div class="line"><a id="l01707" name="l01707"></a><span class="lineno"> 1707</span>                  AN.ninterms += dd;</div>
 <div class="line"><a id="l01708" name="l01708"></a><span class="lineno"> 1708</span>                  }</div>
@@ -1685,7 +1685,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01838" name="l01838"></a><span class="lineno"> 1838</span>                    }</div>
 <div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span>                    AT.WorkPointer = term + *term;</div>
 <div class="line"><a id="l01840" name="l01840"></a><span class="lineno"> 1840</span>                    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,0) ) {</div>
-<div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>                        <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>                        <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span>                        MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l01843" name="l01843"></a><span class="lineno"> 1843</span>                        MesPrint(<span class="stringliteral">&quot;Error in processing one term in thread %d in module %d&quot;</span>,identity,AC.CModule);</div>
 <div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>                        MUNLOCK(ErrorMessageLock);</div>
@@ -1880,7 +1880,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02051" name="l02051"></a><span class="lineno"> 2051</span><span class="comment">    #] IAmAvailable : </span></div>
 <div class="line"><a id="l02052" name="l02052"></a><span class="lineno"> 2052</span><span class="comment">    #[ GetAvailableThread :</span></div>
 <div class="line"><a id="l02053" name="l02053"></a><span class="lineno"> 2053</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02062" name="l02062"></a><span class="lineno"> 2062</span><span class="keywordtype">int</span> GetAvailableThread(VOID)</div>
+<div class="line"><a id="l02062" name="l02062"></a><span class="lineno"> 2062</span><span class="keywordtype">int</span> GetAvailableThread(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02063" name="l02063"></a><span class="lineno"> 2063</span>{</div>
 <div class="line"><a id="l02064" name="l02064"></a><span class="lineno"> 2064</span>    <span class="keywordtype">int</span> retval = -1;</div>
 <div class="line"><a id="l02065" name="l02065"></a><span class="lineno"> 2065</span>    LOCK(availabilitylock);</div>
@@ -1901,7 +1901,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02080" name="l02080"></a><span class="lineno"> 2080</span><span class="comment">    #] GetAvailableThread : </span></div>
 <div class="line"><a id="l02081" name="l02081"></a><span class="lineno"> 2081</span><span class="comment">    #[ ConditionalGetAvailableThread :</span></div>
 <div class="line"><a id="l02082" name="l02082"></a><span class="lineno"> 2082</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02090" name="l02090"></a><span class="lineno"> 2090</span><span class="keywordtype">int</span> ConditionalGetAvailableThread(VOID)</div>
+<div class="line"><a id="l02090" name="l02090"></a><span class="lineno"> 2090</span><span class="keywordtype">int</span> ConditionalGetAvailableThread(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02091" name="l02091"></a><span class="lineno"> 2091</span>{</div>
 <div class="line"><a id="l02092" name="l02092"></a><span class="lineno"> 2092</span>    <span class="keywordtype">int</span> retval = -1;</div>
 <div class="line"><a id="l02093" name="l02093"></a><span class="lineno"> 2093</span>    <span class="keywordflow">if</span> ( topofavailables &gt; 0 ) {</div>
@@ -2035,7 +2035,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02258" name="l02258"></a><span class="lineno"> 2258</span><span class="comment">    #] ThreadClaimedBlock : </span></div>
 <div class="line"><a id="l02259" name="l02259"></a><span class="lineno"> 2259</span><span class="comment">    #[ MasterWait :</span></div>
 <div class="line"><a id="l02260" name="l02260"></a><span class="lineno"> 2260</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02268" name="l02268"></a><span class="lineno"> 2268</span><span class="keywordtype">int</span> MasterWait(VOID)</div>
+<div class="line"><a id="l02268" name="l02268"></a><span class="lineno"> 2268</span><span class="keywordtype">int</span> MasterWait(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02269" name="l02269"></a><span class="lineno"> 2269</span>{</div>
 <div class="line"><a id="l02270" name="l02270"></a><span class="lineno"> 2270</span>    <span class="keywordtype">int</span> retval;</div>
 <div class="line"><a id="l02271" name="l02271"></a><span class="lineno"> 2271</span>    LOCK(wakeupmasterlock);</div>
@@ -2070,7 +2070,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02306" name="l02306"></a><span class="lineno"> 2306</span><span class="comment">    #] MasterWaitThread : </span></div>
 <div class="line"><a id="l02307" name="l02307"></a><span class="lineno"> 2307</span><span class="comment">    #[ MasterWaitAll :</span></div>
 <div class="line"><a id="l02308" name="l02308"></a><span class="lineno"> 2308</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02315" name="l02315"></a><span class="lineno"> 2315</span><span class="keywordtype">void</span> MasterWaitAll(VOID)</div>
+<div class="line"><a id="l02315" name="l02315"></a><span class="lineno"> 2315</span><span class="keywordtype">void</span> MasterWaitAll(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02316" name="l02316"></a><span class="lineno"> 2316</span>{</div>
 <div class="line"><a id="l02317" name="l02317"></a><span class="lineno"> 2317</span>    LOCK(wakeupmasterlock);</div>
 <div class="line"><a id="l02318" name="l02318"></a><span class="lineno"> 2318</span>    <span class="keywordflow">while</span> ( topofavailables &lt; numberofworkers ) {</div>
@@ -2087,7 +2087,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02329" name="l02329"></a><span class="lineno"> 2329</span> </div>
 <div class="line"><a id="l02330" name="l02330"></a><span class="lineno"> 2330</span><span class="preprocessor">#ifdef WITHSORTBOTS</span></div>
 <div class="line"><a id="l02331" name="l02331"></a><span class="lineno"> 2331</span> </div>
-<div class="line"><a id="l02337" name="l02337"></a><span class="lineno"> 2337</span><span class="keywordtype">void</span> MasterWaitAllSortBots(VOID)</div>
+<div class="line"><a id="l02337" name="l02337"></a><span class="lineno"> 2337</span><span class="keywordtype">void</span> MasterWaitAllSortBots(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02338" name="l02338"></a><span class="lineno"> 2338</span>{</div>
 <div class="line"><a id="l02339" name="l02339"></a><span class="lineno"> 2339</span>    LOCK(wakeupsortbotlock);</div>
 <div class="line"><a id="l02340" name="l02340"></a><span class="lineno"> 2340</span>    <span class="keywordflow">while</span> ( topsortbotavailables &lt; numberofsortbots ) {</div>
@@ -2103,7 +2103,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02350" name="l02350"></a><span class="lineno"> 2350</span><span class="comment">    #] MasterWaitAllSortBots : </span></div>
 <div class="line"><a id="l02351" name="l02351"></a><span class="lineno"> 2351</span><span class="comment">    #[ MasterWaitAllBlocks :</span></div>
 <div class="line"><a id="l02352" name="l02352"></a><span class="lineno"> 2352</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02359" name="l02359"></a><span class="lineno"> 2359</span><span class="keywordtype">void</span> MasterWaitAllBlocks(VOID)</div>
+<div class="line"><a id="l02359" name="l02359"></a><span class="lineno"> 2359</span><span class="keywordtype">void</span> MasterWaitAllBlocks(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02360" name="l02360"></a><span class="lineno"> 2360</span>{</div>
 <div class="line"><a id="l02361" name="l02361"></a><span class="lineno"> 2361</span>    LOCK(wakeupmasterlock);</div>
 <div class="line"><a id="l02362" name="l02362"></a><span class="lineno"> 2362</span>    <span class="keywordflow">while</span> ( numberclaimed &lt; numberofworkers ) {</div>
@@ -2192,7 +2192,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span><span class="comment">    #] SendOneBucket : </span></div>
 <div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span><span class="comment">    #[ InParallelProcessor :</span></div>
 <div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02488" name="l02488"></a><span class="lineno"> 2488</span><span class="keywordtype">int</span> InParallelProcessor(VOID)</div>
+<div class="line"><a id="l02488" name="l02488"></a><span class="lineno"> 2488</span><span class="keywordtype">int</span> InParallelProcessor(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02489" name="l02489"></a><span class="lineno"> 2489</span>{</div>
 <div class="line"><a id="l02490" name="l02490"></a><span class="lineno"> 2490</span>    GETIDENTITY</div>
 <div class="line"><a id="l02491" name="l02491"></a><span class="lineno"> 2491</span>    <span class="keywordtype">int</span> i, id, retval = 0, num = 0;</div>
@@ -2496,7 +2496,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02814" name="l02814"></a><span class="lineno"> 2814</span>        <span class="keywordflow">if</span> ( AC.CollectFun &amp;&amp; *(thr-&gt;threadbuffer) &lt; (AM.MaxTer/((LONG)<span class="keyword">sizeof</span>(WORD))-10) ) {</div>
 <div class="line"><a id="l02815" name="l02815"></a><span class="lineno"> 2815</span>            <span class="keywordflow">if</span> ( ( dd = GetMoreTerms(thr-&gt;threadbuffer) ) &lt; 0 ) {</div>
-<div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span>                <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
+<div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span>                <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
 <div class="line"><a id="l02817" name="l02817"></a><span class="lineno"> 2817</span>            }</div>
 <div class="line"><a id="l02818" name="l02818"></a><span class="lineno"> 2818</span>        }</div>
 <div class="line"><a id="l02819" name="l02819"></a><span class="lineno"> 2819</span><span class="comment">/*</span></div>
@@ -2546,7 +2546,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02863" name="l02863"></a><span class="lineno"> 2863</span>            }</div>
 <div class="line"><a id="l02864" name="l02864"></a><span class="lineno"> 2864</span>            <span class="keywordflow">if</span> ( AC.CollectFun &amp;&amp; *tt &lt; (AM.MaxTer/((LONG)<span class="keyword">sizeof</span>(WORD))-10) ) {</div>
 <div class="line"><a id="l02865" name="l02865"></a><span class="lineno"> 2865</span>                <span class="keywordflow">if</span> ( ( ddd = GetMoreTerms(tt) ) &lt; 0 ) {</div>
-<div class="line"><a id="l02866" name="l02866"></a><span class="lineno"> 2866</span>                    <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
+<div class="line"><a id="l02866" name="l02866"></a><span class="lineno"> 2866</span>                    <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> ProcErr;</div>
 <div class="line"><a id="l02867" name="l02867"></a><span class="lineno"> 2867</span>                }</div>
 <div class="line"><a id="l02868" name="l02868"></a><span class="lineno"> 2868</span>                dd += ddd;</div>
 <div class="line"><a id="l02869" name="l02869"></a><span class="lineno"> 2869</span>            }</div>
@@ -2888,7 +2888,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03205" name="l03205"></a><span class="lineno"> 3205</span><span class="comment">    #] ThreadsProcessor : </span></div>
 <div class="line"><a id="l03206" name="l03206"></a><span class="lineno"> 3206</span><span class="comment">    #[ LoadReadjusted :</span></div>
 <div class="line"><a id="l03207" name="l03207"></a><span class="lineno"> 3207</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03226" name="l03226"></a><span class="lineno"> 3226</span><span class="keywordtype">int</span> LoadReadjusted(VOID)</div>
+<div class="line"><a id="l03226" name="l03226"></a><span class="lineno"> 3226</span><span class="keywordtype">int</span> LoadReadjusted(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l03227" name="l03227"></a><span class="lineno"> 3227</span>{</div>
 <div class="line"><a id="l03228" name="l03228"></a><span class="lineno"> 3228</span>    ALLPRIVATES *B0 = AB[0];</div>
 <div class="line"><a id="l03229" name="l03229"></a><span class="lineno"> 3229</span>    THREADBUCKET *thr = 0, *thrtogo = 0;</div>
@@ -3194,7 +3194,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03591" name="l03591"></a><span class="lineno"> 3591</span><span class="comment">    #] SortBotOut : </span></div>
 <div class="line"><a id="l03592" name="l03592"></a><span class="lineno"> 3592</span><span class="comment">    #[ MasterMerge :</span></div>
 <div class="line"><a id="l03593" name="l03593"></a><span class="lineno"> 3593</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03611" name="l03611"></a><span class="lineno"> 3611</span><span class="keywordtype">int</span> MasterMerge(VOID)</div>
+<div class="line"><a id="l03611" name="l03611"></a><span class="lineno"> 3611</span><span class="keywordtype">int</span> MasterMerge(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l03612" name="l03612"></a><span class="lineno"> 3612</span>{</div>
 <div class="line"><a id="l03613" name="l03613"></a><span class="lineno"> 3613</span>    ALLPRIVATES *B0 = AB[0], *B = 0;</div>
 <div class="line"><a id="l03614" name="l03614"></a><span class="lineno"> 3614</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT0.SS;</div>
@@ -3386,7 +3386,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03800" name="l03800"></a><span class="lineno"> 3800</span>                            MUNLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l03801" name="l03801"></a><span class="lineno"> 3801</span>                            Terminate(-1);</div>
 <div class="line"><a id="l03802" name="l03802"></a><span class="lineno"> 3802</span>                        }</div>
-<div class="line"><a id="l03803" name="l03803"></a><span class="lineno"> 3803</span>                        <a class="code hl_function" href="declare_8h.html#aabebcb5e00418adf3644430224de0f77">AddArgs</a>(B0,m1,m2,w);</div>
+<div class="line"><a id="l03803" name="l03803"></a><span class="lineno"> 3803</span>                        <a class="code hl_function" href="declare_8h.html#a050dbae749ed286b362d5b3b716ce229">AddArgs</a>(B0,m1,m2,w);</div>
 <div class="line"><a id="l03804" name="l03804"></a><span class="lineno"> 3804</span>                    }</div>
 <div class="line"><a id="l03805" name="l03805"></a><span class="lineno"> 3805</span>                    r1 = w[1];</div>
 <div class="line"><a id="l03806" name="l03806"></a><span class="lineno"> 3806</span>                    <span class="keywordflow">if</span> ( r1 &lt;= FUNHEAD</div>
@@ -3618,7 +3618,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04032" name="l04032"></a><span class="lineno"> 4032</span>    <span class="keywordflow">for</span> ( j = 1; j &lt;= numberofworkers; j++ ) {</div>
 <div class="line"><a id="l04033" name="l04033"></a><span class="lineno"> 4033</span>        S-&gt;GenTerms += AB[j]-&gt;T.SS-&gt;GenTerms;</div>
 <div class="line"><a id="l04034" name="l04034"></a><span class="lineno"> 4034</span>    }</div>
-<div class="line"><a id="l04035" name="l04035"></a><span class="lineno"> 4035</span>    <a class="code hl_function" href="declare_8h.html#ada282225c6d8d3edc26ab5e329b89bd4">WriteStats</a>(&amp;position,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
+<div class="line"><a id="l04035" name="l04035"></a><span class="lineno"> 4035</span>    <a class="code hl_function" href="declare_8h.html#a8dee4f71fd5d62d043a2827905a6e3a0">WriteStats</a>(&amp;position,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
 <div class="line"><a id="l04036" name="l04036"></a><span class="lineno"> 4036</span>    Expressions[AR0.CurExpr].counter = S-&gt;TermsLeft;</div>
 <div class="line"><a id="l04037" name="l04037"></a><span class="lineno"> 4037</span>    Expressions[AR0.CurExpr].size = position;</div>
 <div class="line"><a id="l04038" name="l04038"></a><span class="lineno"> 4038</span><span class="comment">/*</span></div>
@@ -3660,7 +3660,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04074" name="l04074"></a><span class="lineno"> 4074</span> </div>
 <div class="line"><a id="l04075" name="l04075"></a><span class="lineno"> 4075</span><span class="preprocessor">#ifdef WITHSORTBOTS</span></div>
 <div class="line"><a id="l04076" name="l04076"></a><span class="lineno"> 4076</span> </div>
-<div class="line"><a id="l04092" name="l04092"></a><span class="lineno"> 4092</span><span class="keywordtype">int</span> SortBotMasterMerge(VOID)</div>
+<div class="line"><a id="l04092" name="l04092"></a><span class="lineno"> 4092</span><span class="keywordtype">int</span> SortBotMasterMerge(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l04093" name="l04093"></a><span class="lineno"> 4093</span>{</div>
 <div class="line"><a id="l04094" name="l04094"></a><span class="lineno"> 4094</span>    <a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fin, *fout;</div>
 <div class="line"><a id="l04095" name="l04095"></a><span class="lineno"> 4095</span>    ALLPRIVATES *B = AB[0], *BB;</div>
@@ -3745,7 +3745,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04174" name="l04174"></a><span class="lineno"> 4174</span>        S-&gt;GenTerms += AB[j]-&gt;T.SS-&gt;GenTerms;</div>
 <div class="line"><a id="l04175" name="l04175"></a><span class="lineno"> 4175</span>    }</div>
 <div class="line"><a id="l04176" name="l04176"></a><span class="lineno"> 4176</span>    S-&gt;TermsLeft = numberofterms;</div>
-<div class="line"><a id="l04177" name="l04177"></a><span class="lineno"> 4177</span>    <a class="code hl_function" href="declare_8h.html#ada282225c6d8d3edc26ab5e329b89bd4">WriteStats</a>(&amp;position,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
+<div class="line"><a id="l04177" name="l04177"></a><span class="lineno"> 4177</span>    <a class="code hl_function" href="declare_8h.html#a8dee4f71fd5d62d043a2827905a6e3a0">WriteStats</a>(&amp;position,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
 <div class="line"><a id="l04178" name="l04178"></a><span class="lineno"> 4178</span>    Expressions[AR.CurExpr].counter = S-&gt;TermsLeft;</div>
 <div class="line"><a id="l04179" name="l04179"></a><span class="lineno"> 4179</span>    Expressions[AR.CurExpr].size = position;</div>
 <div class="line"><a id="l04180" name="l04180"></a><span class="lineno"> 4180</span>    AS.MasterSort = 0;</div>
@@ -3932,7 +3932,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04366" name="l04366"></a><span class="lineno"> 4366</span>                        MUNLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l04367" name="l04367"></a><span class="lineno"> 4367</span>                        Terminate(-1);</div>
 <div class="line"><a id="l04368" name="l04368"></a><span class="lineno"> 4368</span>                    }</div>
-<div class="line"><a id="l04369" name="l04369"></a><span class="lineno"> 4369</span>                    <a class="code hl_function" href="declare_8h.html#aabebcb5e00418adf3644430224de0f77">AddArgs</a>(BHEAD m1,m2,w);</div>
+<div class="line"><a id="l04369" name="l04369"></a><span class="lineno"> 4369</span>                    <a class="code hl_function" href="declare_8h.html#a050dbae749ed286b362d5b3b716ce229">AddArgs</a>(BHEAD m1,m2,w);</div>
 <div class="line"><a id="l04370" name="l04370"></a><span class="lineno"> 4370</span>                }</div>
 <div class="line"><a id="l04371" name="l04371"></a><span class="lineno"> 4371</span>                r1 = w[1];</div>
 <div class="line"><a id="l04372" name="l04372"></a><span class="lineno"> 4372</span>                <span class="keywordflow">if</span> ( r1 &lt;= FUNHEAD</div>
@@ -4421,7 +4421,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04865" name="l04865"></a><span class="lineno"> 4865</span> </div>
 <div class="line"><a id="l04866" name="l04866"></a><span class="lineno"> 4866</span><span class="preprocessor">#ifdef WITHSORTBOTS</span></div>
 <div class="line"><a id="l04867" name="l04867"></a><span class="lineno"> 4867</span> </div>
-<div class="line"><a id="l04873" name="l04873"></a><span class="lineno"> 4873</span><span class="keywordtype">void</span> DefineSortBotTree(VOID)</div>
+<div class="line"><a id="l04873" name="l04873"></a><span class="lineno"> 4873</span><span class="keywordtype">void</span> DefineSortBotTree(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l04874" name="l04874"></a><span class="lineno"> 4874</span>{</div>
 <div class="line"><a id="l04875" name="l04875"></a><span class="lineno"> 4875</span>    ALLPRIVATES *B;</div>
 <div class="line"><a id="l04876" name="l04876"></a><span class="lineno"> 4876</span>    <span class="keywordtype">int</span> n, i, from;</div>
@@ -4585,7 +4585,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05042" name="l05042"></a><span class="lineno"> 5042</span><span class="comment">    #[ SetHideFiles :</span></div>
 <div class="line"><a id="l05043" name="l05043"></a><span class="lineno"> 5043</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05044" name="l05044"></a><span class="lineno"> 5044</span> </div>
-<div class="line"><a id="l05045" name="l05045"></a><span class="lineno"> 5045</span><span class="keywordtype">void</span> SetHideFiles(VOID) {</div>
+<div class="line"><a id="l05045" name="l05045"></a><span class="lineno"> 5045</span><span class="keywordtype">void</span> SetHideFiles(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a id="l05046" name="l05046"></a><span class="lineno"> 5046</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l05047" name="l05047"></a><span class="lineno"> 5047</span>    ALLPRIVATES *B, *B0 = AB[0];</div>
 <div class="line"><a id="l05048" name="l05048"></a><span class="lineno"> 5048</span>    <span class="keywordflow">for</span> ( i = 1; i &lt;= numberofworkers; i++ ) {</div>
@@ -4616,7 +4616,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05073" name="l05073"></a><span class="lineno"> 5073</span><span class="comment">    #[ IniFbufs :</span></div>
 <div class="line"><a id="l05074" name="l05074"></a><span class="lineno"> 5074</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05075" name="l05075"></a><span class="lineno"> 5075</span> </div>
-<div class="line"><a id="l05076" name="l05076"></a><span class="lineno"> 5076</span><span class="keywordtype">void</span> IniFbufs(VOID)</div>
+<div class="line"><a id="l05076" name="l05076"></a><span class="lineno"> 5076</span><span class="keywordtype">void</span> IniFbufs(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l05077" name="l05077"></a><span class="lineno"> 5077</span>{</div>
 <div class="line"><a id="l05078" name="l05078"></a><span class="lineno"> 5078</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l05079" name="l05079"></a><span class="lineno"> 5079</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; AM.totalnumberofthreads; i++ ) {</div>
@@ -4629,7 +4629,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05086" name="l05086"></a><span class="lineno"> 5086</span><span class="comment">    #[ SetMods :</span></div>
 <div class="line"><a id="l05087" name="l05087"></a><span class="lineno"> 5087</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05088" name="l05088"></a><span class="lineno"> 5088</span> </div>
-<div class="line"><a id="l05089" name="l05089"></a><span class="lineno"> 5089</span><span class="keywordtype">void</span> SetMods(VOID)</div>
+<div class="line"><a id="l05089" name="l05089"></a><span class="lineno"> 5089</span><span class="keywordtype">void</span> SetMods(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l05090" name="l05090"></a><span class="lineno"> 5090</span>{</div>
 <div class="line"><a id="l05091" name="l05091"></a><span class="lineno"> 5091</span>    ALLPRIVATES *B;</div>
 <div class="line"><a id="l05092" name="l05092"></a><span class="lineno"> 5092</span>    <span class="keywordtype">int</span> i, n, j;</div>
@@ -4648,7 +4648,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05105" name="l05105"></a><span class="lineno"> 5105</span><span class="comment">    #[ UnSetMods :</span></div>
 <div class="line"><a id="l05106" name="l05106"></a><span class="lineno"> 5106</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05107" name="l05107"></a><span class="lineno"> 5107</span> </div>
-<div class="line"><a id="l05108" name="l05108"></a><span class="lineno"> 5108</span><span class="keywordtype">void</span> UnSetMods(VOID)</div>
+<div class="line"><a id="l05108" name="l05108"></a><span class="lineno"> 5108</span><span class="keywordtype">void</span> UnSetMods(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l05109" name="l05109"></a><span class="lineno"> 5109</span>{</div>
 <div class="line"><a id="l05110" name="l05110"></a><span class="lineno"> 5110</span>    ALLPRIVATES *B;</div>
 <div class="line"><a id="l05111" name="l05111"></a><span class="lineno"> 5111</span>    <span class="keywordtype">int</span> j;</div>
@@ -4664,7 +4664,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05121" name="l05121"></a><span class="lineno"> 5121</span><span class="comment">    #[ find_Horner_MCTS_expand_tree_threaded :</span></div>
 <div class="line"><a id="l05122" name="l05122"></a><span class="lineno"> 5122</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05123" name="l05123"></a><span class="lineno"> 5123</span> </div>
-<div class="line"><a id="l05124" name="l05124"></a><span class="lineno"> 5124</span><span class="keywordtype">void</span> find_Horner_MCTS_expand_tree_threaded(VOID) {</div>
+<div class="line"><a id="l05124" name="l05124"></a><span class="lineno"> 5124</span><span class="keywordtype">void</span> find_Horner_MCTS_expand_tree_threaded(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a id="l05125" name="l05125"></a><span class="lineno"> 5125</span>    <span class="keywordtype">int</span> id;</div>
 <div class="line"><a id="l05126" name="l05126"></a><span class="lineno"> 5126</span>    <span class="keywordflow">while</span> (( <span class="keywordtype">id</span> = GetAvailableThread() ) &lt; 0)</div>
 <div class="line"><a id="l05127" name="l05127"></a><span class="lineno"> 5127</span>        MasterWait();   </div>
@@ -4676,7 +4676,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05133" name="l05133"></a><span class="lineno"> 5133</span><span class="comment">    #[ optimize_expression_given_Horner_threaded :</span></div>
 <div class="line"><a id="l05134" name="l05134"></a><span class="lineno"> 5134</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05135" name="l05135"></a><span class="lineno"> 5135</span> </div>
-<div class="line"><a id="l05136" name="l05136"></a><span class="lineno"> 5136</span><span class="keyword">extern</span> <span class="keywordtype">void</span> optimize_expression_given_Horner_threaded(VOID) {</div>
+<div class="line"><a id="l05136" name="l05136"></a><span class="lineno"> 5136</span><span class="keyword">extern</span> <span class="keywordtype">void</span> optimize_expression_given_Horner_threaded(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a id="l05137" name="l05137"></a><span class="lineno"> 5137</span>    <span class="keywordtype">int</span> id;</div>
 <div class="line"><a id="l05138" name="l05138"></a><span class="lineno"> 5138</span>    <span class="keywordflow">while</span> (( <span class="keywordtype">id</span> = GetAvailableThread() ) &lt; 0)</div>
 <div class="line"><a id="l05139" name="l05139"></a><span class="lineno"> 5139</span>        MasterWait();   </div>
@@ -4688,23 +4688,23 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05145" name="l05145"></a><span class="lineno"> 5145</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05146" name="l05146"></a><span class="lineno"> 5146</span> </div>
 <div class="line"><a id="l05147" name="l05147"></a><span class="lineno"> 5147</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acomtool_8c_html_a3ad09bf828cf46a4a213b54269e34a3f"><div class="ttname"><a href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a></div><div class="ttdeci">int inicbufs(void)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8c_html_aaa0838b0fca4643ea3d44dbde8341fb2"><div class="ttname"><a href="comtool_8c.html#aaa0838b0fca4643ea3d44dbde8341fb2">IniFbuffer</a></div><div class="ttdeci">int IniFbuffer(WORD bufnum)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00614">comtool.c:614</a></div></div>
-<div class="ttc" id="acomtool_8c_html_ad91faf677174dfde886e00d7e85a061d"><div class="ttname"><a href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a></div><div class="ttdeci">int inicbufs(VOID)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a050dbae749ed286b362d5b3b716ce229"><div class="ttname"><a href="declare_8h.html#a050dbae749ed286b362d5b3b716ce229">AddArgs</a></div><div class="ttdeci">void AddArgs(PHEAD WORD *, WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02313">sort.c:2313</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a0afea81369a5a77116e95b2f9263a61a"><div class="ttname"><a href="declare_8h.html#a0afea81369a5a77116e95b2f9263a61a">poly_ratfun_add</a></div><div class="ttdeci">WORD * poly_ratfun_add(PHEAD WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="polywrap_8cc_source.html#l00633">polywrap.cc:633</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a111b5ce4b7544ca0040f0d3ac8ea92ad"><div class="ttname"><a href="declare_8h.html#a111b5ce4b7544ca0040f0d3ac8ea92ad">poly_unfactorize_expression</a></div><div class="ttdeci">int poly_unfactorize_expression(EXPRESSIONS)</div><div class="ttdef"><b>Definition</b> <a href="polywrap_8cc_source.html#l01522">polywrap.cc:1522</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a44770ed698bf9bf084656622978cccf7"><div class="ttname"><a href="declare_8h.html#a44770ed698bf9bf084656622978cccf7">PutOut</a></div><div class="ttdeci">WORD PutOut(PHEAD WORD *, POSITION *, FILEHANDLE *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01436">sort.c:1436</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7e217b02e4ed9474e16b0d19e6aee30d"><div class="ttname"><a href="declare_8h.html#a7e217b02e4ed9474e16b0d19e6aee30d">StoreTerm</a></div><div class="ttdeci">WORD StoreTerm(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04510">sort.c:4510</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a8c8daf0977ff39f7c923546450267aa5"><div class="ttname"><a href="declare_8h.html#a8c8daf0977ff39f7c923546450267aa5">poly_factorize_expression</a></div><div class="ttdeci">int poly_factorize_expression(EXPRESSIONS)</div><div class="ttdef"><b>Definition</b> <a href="polywrap_8cc_source.html#l01165">polywrap.cc:1165</a></div></div>
-<div class="ttc" id="adeclare_8h_html_aabebcb5e00418adf3644430224de0f77"><div class="ttname"><a href="declare_8h.html#aabebcb5e00418adf3644430224de0f77">AddArgs</a></div><div class="ttdeci">VOID AddArgs(PHEAD WORD *, WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02313">sort.c:2313</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a8dee4f71fd5d62d043a2827905a6e3a0"><div class="ttname"><a href="declare_8h.html#a8dee4f71fd5d62d043a2827905a6e3a0">WriteStats</a></div><div class="ttdeci">void WriteStats(POSITION *, WORD, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00101">sort.c:101</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ac492c314b777983902bc21d9d0827103"><div class="ttname"><a href="declare_8h.html#ac492c314b777983902bc21d9d0827103">NormalModulus</a></div><div class="ttdeci">int NormalModulus(UWORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01403">reken.c:1403</a></div></div>
 <div class="ttc" id="adeclare_8h_html_acce80d58dee0b9d618e9ea28894ef511"><div class="ttname"><a href="declare_8h.html#acce80d58dee0b9d618e9ea28894ef511">Compare1</a></div><div class="ttdeci">WORD Compare1(PHEAD WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02606">sort.c:2606</a></div></div>
 <div class="ttc" id="adeclare_8h_html_aceb7b03b4b4e8ec7c2e0f943545b5000"><div class="ttname"><a href="declare_8h.html#aceb7b03b4b4e8ec7c2e0f943545b5000">FlushOut</a></div><div class="ttdeci">WORD FlushOut(POSITION *, FILEHANDLE *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01798">sort.c:1798</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03551">tools.c:3551</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ada282225c6d8d3edc26ab5e329b89bd4"><div class="ttname"><a href="declare_8h.html#ada282225c6d8d3edc26ab5e329b89bd4">WriteStats</a></div><div class="ttdeci">VOID WriteStats(POSITION *, WORD, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00101">sort.c:101</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="aoptimize_8cc_html_a9bdc03e040f8c452701cb70c679209cd"><div class="ttname"><a href="optimize_8cc.html#a9bdc03e040f8c452701cb70c679209cd">optimize_expression_given_Horner</a></div><div class="ttdeci">void optimize_expression_given_Horner()</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04061">optimize.cc:4061</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nd_ex_html"><div class="ttname"><a href="struct_br_ac_ke_ti_nd_ex.html">BrAcKeTiNdEx</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00317">structs.h:317</a></div></div>

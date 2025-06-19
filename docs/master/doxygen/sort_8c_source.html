@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -115,13 +115,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    #] Includes : </span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    #[ SortUtilities :</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">        #[ WriteStats :             VOID WriteStats(lspace,par,checkLogType)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">        #[ WriteStats :             void WriteStats(lspace,par,checkLogType)</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keywordtype">char</span> *toterms[] = { <span class="stringliteral">&quot;   &quot;</span>, <span class="stringliteral">&quot; &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;--&gt;&quot;</span> };</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="declare_8h.html#ada282225c6d8d3edc26ab5e329b89bd4">  101</a></span>VOID <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(<a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *plspace, WORD par, WORD checkLogType)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="declare_8h.html#a8dee4f71fd5d62d043a2827905a6e3a0">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(<a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *plspace, WORD par, WORD checkLogType)</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>{</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    GETIDENTITY</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    LONG millitime, y = 0x7FFFFFFFL &gt;&gt; 1;</div>
@@ -849,7 +849,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>            DIFPOS(oldpos,position,oldpos);</div>
 <div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>            S-&gt;SpaceLeft = BASEPOSITION(oldpos);</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>            <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;oldpos,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>            <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;oldpos,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>            pp = oldpos;</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>            <span class="keywordflow">goto</span> RetRetval;</div>
 <div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        }</div>
@@ -866,7 +866,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    }</div>
 <div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    <span class="keywordflow">if</span> ( S == AT.S0 ) {</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>        <span class="keywordflow">if</span> ( S-&gt;lPatch &gt; 0 || S-&gt;file.handle &gt;= 0 ) {</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>            <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSSPLITMERGE,CHECKLOGTYPE);</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>            <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSSPLITMERGE,CHECKLOGTYPE);</div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>        }</div>
 <div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    }</div>
 <div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    <span class="keywordflow">if</span> ( par == 2 ) { AR.outfile = newout = AllocFileHandle(0,(<span class="keywordtype">char</span> *)0); }</div>
@@ -901,7 +901,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>                SeekFile(S-&gt;file.handle,&amp;pppp,SEEK_CUR);</div>
 <div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>                SeekFile(S-&gt;file.handle,&amp;pp,SEEK_END);</div>
 <div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>                SeekFile(S-&gt;file.handle,&amp;pppp,SEEK_SET);</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>                <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSMERGETOFILE,CHECKLOGTYPE);</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>                <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSMERGETOFILE,CHECKLOGTYPE);</div>
 <div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>                UpdateMaxSize();</div>
 <div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>            }</div>
 <div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>        }</div>
@@ -931,7 +931,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
 <div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>                    <span class="keywordflow">if</span> ( AS.MasterSort &amp;&amp; ( fout == AR.outfile ) ) <span class="keywordflow">goto</span> RetRetval;</div>
 <div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>                    <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>                    <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
 <div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>                    UpdateMaxSize();</div>
 <div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>                }</div>
 <div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>                <span class="keywordflow">else</span> {</div>
@@ -1028,7 +1028,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>                SeekFile(S-&gt;file.handle,&amp;pppp,SEEK_CUR);</div>
 <div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>                SeekFile(S-&gt;file.handle,&amp;pp,SEEK_END);</div>
 <div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>                SeekFile(S-&gt;file.handle,&amp;pppp,SEEK_SET);</div>
-<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>                <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSMERGETOFILE,CHECKLOGTYPE);</div>
+<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>                <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSMERGETOFILE,CHECKLOGTYPE);</div>
 <div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>            }</div>
 <div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span><span class="preprocessor">#ifdef WITHERRORXXX</span></div>
 <div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>            <span class="keywordflow">if</span> ( S != AT.S0 ) {</div>
@@ -1057,7 +1057,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>        MUNLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>        <span class="keywordflow">if</span> ( S-&gt;lPatch &lt;= 0 ) {</div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>            <a class="code hl_function" href="sort_8c.html#ad756bbef980a939c623c0f93c390e585">StageSort</a>(&amp;(S-&gt;file));</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>            <a class="code hl_function" href="sort_8c.html#ac94fcf69c74e92b60d423117e033bccd">StageSort</a>(&amp;(S-&gt;file));</div>
 <div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>            position = S-&gt;fPatches[S-&gt;fPatchN];</div>
 <div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>            ss = S-&gt;sPointer;</div>
 <div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>            <span class="keywordflow">if</span> ( *ss ) {</div>
@@ -1109,7 +1109,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>        pp = S-&gt;SizeInFile[0];</div>
 <div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>        MULPOS(pp,<span class="keyword">sizeof</span>(WORD));</div>
-<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>        <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>        <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSPOSTSORT,NOCHECKLOGTYPE);</div>
 <div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>        UpdateMaxSize();</div>
 <div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>    }</div>
 <div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>RetRetval:</div>
@@ -2017,7 +2017,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02081" name="l02081"></a><span class="lineno"> 2081</span>    s1 = *ps1;</div>
 <div class="line"><a id="l02082" name="l02082"></a><span class="lineno"> 2082</span>    j = *s1++ + i - l1;     <span class="comment">/* Space needed */</span></div>
 <div class="line"><a id="l02083" name="l02083"></a><span class="lineno"> 2083</span>    <span class="keywordflow">if</span> ( (S-&gt;sFill + j) &gt;= S-&gt;sTop2 ) {</div>
-<div class="line"><a id="l02084" name="l02084"></a><span class="lineno"> 2084</span>        <a class="code hl_function" href="sort_8c.html#a7ede99980b98cbd35000b39e0395a36a">GarbHand</a>();</div>
+<div class="line"><a id="l02084" name="l02084"></a><span class="lineno"> 2084</span>        <a class="code hl_function" href="sort_8c.html#a3d1950d9d2cfbcd7013b7c2290c21add">GarbHand</a>();</div>
 <div class="line"><a id="l02085" name="l02085"></a><span class="lineno"> 2085</span>        s1 = *ps1;</div>
 <div class="line"><a id="l02086" name="l02086"></a><span class="lineno"> 2086</span>        t = s1 + *s1 - 1;</div>
 <div class="line"><a id="l02087" name="l02087"></a><span class="lineno"> 2087</span>        j = *s1++ + i - l1;     <span class="comment">/* Space needed */</span></div>
@@ -2101,7 +2101,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02188" name="l02188"></a><span class="lineno"> 2188</span>            MesWork();</div>
 <div class="line"><a id="l02189" name="l02189"></a><span class="lineno"> 2189</span>            MUNLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l02190" name="l02190"></a><span class="lineno"> 2190</span>        }</div>
-<div class="line"><a id="l02191" name="l02191"></a><span class="lineno"> 2191</span>        <a class="code hl_function" href="sort_8c.html#ae36114ce5e26fea98876b640b3609cbf">AddArgs</a>(BHEAD s1,s2,w);</div>
+<div class="line"><a id="l02191" name="l02191"></a><span class="lineno"> 2191</span>        <a class="code hl_function" href="sort_8c.html#aa8d2b0318bdb43f8453d30160b7eb075">AddArgs</a>(BHEAD s1,s2,w);</div>
 <div class="line"><a id="l02192" name="l02192"></a><span class="lineno"> 2192</span>    }</div>
 <div class="line"><a id="l02193" name="l02193"></a><span class="lineno"> 2193</span><span class="comment">/*</span></div>
 <div class="line"><a id="l02194" name="l02194"></a><span class="lineno"> 2194</span><span class="comment">    Now we need to store the result in a convenient place.</span></div>
@@ -2132,7 +2132,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02219" name="l02219"></a><span class="lineno"> 2219</span>            MesPrint(<span class="stringliteral">&quot;------Garbage collection-------&quot;</span>);</div>
 <div class="line"><a id="l02220" name="l02220"></a><span class="lineno"> 2220</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l02221" name="l02221"></a><span class="lineno"> 2221</span>            AT.WorkPointer += w[1];</div>
-<div class="line"><a id="l02222" name="l02222"></a><span class="lineno"> 2222</span>            <a class="code hl_function" href="sort_8c.html#a7ede99980b98cbd35000b39e0395a36a">GarbHand</a>();</div>
+<div class="line"><a id="l02222" name="l02222"></a><span class="lineno"> 2222</span>            <a class="code hl_function" href="sort_8c.html#a3d1950d9d2cfbcd7013b7c2290c21add">GarbHand</a>();</div>
 <div class="line"><a id="l02223" name="l02223"></a><span class="lineno"> 2223</span>            AT.WorkPointer = w;</div>
 <div class="line"><a id="l02224" name="l02224"></a><span class="lineno"> 2224</span>            s1 = *ps1;</div>
 <div class="line"><a id="l02225" name="l02225"></a><span class="lineno"> 2225</span>            <span class="keywordflow">if</span> ( (S-&gt;sFill + (**ps1 + w[1] - s1[1])) &gt;= S-&gt;sTop2 ) {</div>
@@ -2212,13 +2212,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02298" name="l02298"></a><span class="lineno"> 2298</span> </div>
 <div class="line"><a id="l02299" name="l02299"></a><span class="lineno"> 2299</span><span class="comment">/*</span></div>
 <div class="line"><a id="l02300" name="l02300"></a><span class="lineno"> 2300</span><span class="comment">        #] AddPoly : </span></div>
-<div class="line"><a id="l02301" name="l02301"></a><span class="lineno"> 2301</span><span class="comment">        #[ AddArgs :                VOID AddArgs(arg1,arg2,to)</span></div>
+<div class="line"><a id="l02301" name="l02301"></a><span class="lineno"> 2301</span><span class="comment">        #[ AddArgs :                void AddArgs(arg1,arg2,to)</span></div>
 <div class="line"><a id="l02302" name="l02302"></a><span class="lineno"> 2302</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02303" name="l02303"></a><span class="lineno"> 2303</span> </div>
 <div class="line"><a id="l02304" name="l02304"></a><span class="lineno"> 2304</span><span class="preprocessor">#define INSLENGTH(x)  w[1] = FUNHEAD+ARGHEAD+x; w[FUNHEAD] = ARGHEAD+x;</span></div>
 <div class="line"><a id="l02305" name="l02305"></a><span class="lineno"> 2305</span> </div>
 <div class="foldopen" id="foldopen02313" data-start="{" data-end="}">
-<div class="line"><a id="l02313" name="l02313"></a><span class="lineno"><a class="line" href="declare_8h.html#aabebcb5e00418adf3644430224de0f77"> 2313</a></span>VOID <a class="code hl_function" href="sort_8c.html#ae36114ce5e26fea98876b640b3609cbf">AddArgs</a>(PHEAD WORD *s1, WORD *s2, WORD *m)</div>
+<div class="line"><a id="l02313" name="l02313"></a><span class="lineno"><a class="line" href="declare_8h.html#a050dbae749ed286b362d5b3b716ce229"> 2313</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#aa8d2b0318bdb43f8453d30160b7eb075">AddArgs</a>(PHEAD WORD *s1, WORD *s2, WORD *m)</div>
 <div class="line"><a id="l02314" name="l02314"></a><span class="lineno"> 2314</span>{</div>
 <div class="line"><a id="l02315" name="l02315"></a><span class="lineno"> 2315</span>    GETBIDENTITY</div>
 <div class="line"><a id="l02316" name="l02316"></a><span class="lineno"> 2316</span>    WORD i1, i2;</div>
@@ -3144,7 +3144,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03300" name="l03300"></a><span class="lineno"> 3300</span> </div>
 <div class="line"><a id="l03301" name="l03301"></a><span class="lineno"> 3301</span><span class="comment">/*</span></div>
 <div class="line"><a id="l03302" name="l03302"></a><span class="lineno"> 3302</span><span class="comment">        #] ComPress : </span></div>
-<div class="line"><a id="l03303" name="l03303"></a><span class="lineno"> 3303</span><span class="comment">        #[ SplitMerge :             VOID SplitMerge(Point,number)</span></div>
+<div class="line"><a id="l03303" name="l03303"></a><span class="lineno"> 3303</span><span class="comment">        #[ SplitMerge :             void SplitMerge(Point,number)</span></div>
 <div class="line"><a id="l03304" name="l03304"></a><span class="lineno"> 3304</span><span class="comment">*/</span></div>
 <div class="line"><a id="l03330" name="l03330"></a><span class="lineno"> 3330</span><span class="preprocessor">#ifdef NEWSPLITMERGE</span></div>
 <div class="line"><a id="l03331" name="l03331"></a><span class="lineno"> 3331</span> </div>
@@ -3413,10 +3413,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03592" name="l03592"></a><span class="lineno"> 3592</span> </div>
 <div class="line"><a id="l03593" name="l03593"></a><span class="lineno"> 3593</span><span class="comment">/*</span></div>
 <div class="line"><a id="l03594" name="l03594"></a><span class="lineno"> 3594</span><span class="comment">        #] SplitMerge : </span></div>
-<div class="line"><a id="l03595" name="l03595"></a><span class="lineno"> 3595</span><span class="comment">        #[ GarbHand :               VOID GarbHand()</span></div>
+<div class="line"><a id="l03595" name="l03595"></a><span class="lineno"> 3595</span><span class="comment">        #[ GarbHand :               void GarbHand()</span></div>
 <div class="line"><a id="l03596" name="l03596"></a><span class="lineno"> 3596</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen03612" data-start="{" data-end="}">
-<div class="line"><a id="l03612" name="l03612"></a><span class="lineno"><a class="line" href="declare_8h.html#a7ede99980b98cbd35000b39e0395a36a"> 3612</a></span>VOID <a class="code hl_function" href="sort_8c.html#a7ede99980b98cbd35000b39e0395a36a">GarbHand</a>(VOID)</div>
+<div class="line"><a id="l03612" name="l03612"></a><span class="lineno"><a class="line" href="declare_8h.html#a3d1950d9d2cfbcd7013b7c2290c21add"> 3612</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#a3d1950d9d2cfbcd7013b7c2290c21add">GarbHand</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l03613" name="l03613"></a><span class="lineno"> 3613</span>{</div>
 <div class="line"><a id="l03614" name="l03614"></a><span class="lineno"> 3614</span>    GETIDENTITY</div>
 <div class="line"><a id="l03615" name="l03615"></a><span class="lineno"> 3615</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT.SS;</div>
@@ -3586,7 +3586,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03793" name="l03793"></a><span class="lineno"> 3793</span>            PUTZERO(fout-&gt;POposition);</div>
 <div class="line"><a id="l03794" name="l03794"></a><span class="lineno"> 3794</span>        }</div>
 <div class="line"><a id="l03795" name="l03795"></a><span class="lineno"> 3795</span>ConMer:</div>
-<div class="line"><a id="l03796" name="l03796"></a><span class="lineno"> 3796</span>        <a class="code hl_function" href="sort_8c.html#ad756bbef980a939c623c0f93c390e585">StageSort</a>(fout);</div>
+<div class="line"><a id="l03796" name="l03796"></a><span class="lineno"> 3796</span>        <a class="code hl_function" href="sort_8c.html#ac94fcf69c74e92b60d423117e033bccd">StageSort</a>(fout);</div>
 <div class="line"><a id="l03797" name="l03797"></a><span class="lineno"> 3797</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
 <div class="line"><a id="l03798" name="l03798"></a><span class="lineno"> 3798</span>        <span class="keywordflow">if</span> ( S == AT.S0 &amp;&amp; AR.NoCompress == 0 &amp;&amp; AR.gzipCompress &gt; 0 )</div>
 <div class="line"><a id="l03799" name="l03799"></a><span class="lineno"> 3799</span>            S-&gt;fpcompressed[S-&gt;fPatchN] = 1;</div>
@@ -3947,7 +3947,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04154" name="l04154"></a><span class="lineno"> 4154</span>                                MUNLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l04155" name="l04155"></a><span class="lineno"> 4155</span>                                Terminate(-1);</div>
 <div class="line"><a id="l04156" name="l04156"></a><span class="lineno"> 4156</span>                            }</div>
-<div class="line"><a id="l04157" name="l04157"></a><span class="lineno"> 4157</span>                            <a class="code hl_function" href="sort_8c.html#ae36114ce5e26fea98876b640b3609cbf">AddArgs</a>(BHEAD m1,m2,w);</div>
+<div class="line"><a id="l04157" name="l04157"></a><span class="lineno"> 4157</span>                            <a class="code hl_function" href="sort_8c.html#aa8d2b0318bdb43f8453d30160b7eb075">AddArgs</a>(BHEAD m1,m2,w);</div>
 <div class="line"><a id="l04158" name="l04158"></a><span class="lineno"> 4158</span>                        }</div>
 <div class="line"><a id="l04159" name="l04159"></a><span class="lineno"> 4159</span>                        r1 = w[1];</div>
 <div class="line"><a id="l04160" name="l04160"></a><span class="lineno"> 4160</span>                        <span class="keywordflow">if</span> ( r1 &lt;= FUNHEAD</div>
@@ -4340,7 +4340,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04554" name="l04554"></a><span class="lineno"> 4554</span>            ADD2POS(pp,S-&gt;fPatches[S-&gt;fPatchN]);</div>
 <div class="line"><a id="l04555" name="l04555"></a><span class="lineno"> 4555</span>        }</div>
 <div class="line"><a id="l04556" name="l04556"></a><span class="lineno"> 4556</span>        <span class="keywordflow">if</span> ( S == AT.S0 ) { <span class="comment">/* Only statistics at ground level */</span></div>
-<div class="line"><a id="l04557" name="l04557"></a><span class="lineno"> 4557</span>            <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSSPLITMERGE,CHECKLOGTYPE);</div>
+<div class="line"><a id="l04557" name="l04557"></a><span class="lineno"> 4557</span>            <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSSPLITMERGE,CHECKLOGTYPE);</div>
 <div class="line"><a id="l04558" name="l04558"></a><span class="lineno"> 4558</span>        }</div>
 <div class="line"><a id="l04559" name="l04559"></a><span class="lineno"> 4559</span>        <span class="keywordflow">if</span> ( ( S-&gt;lPatch &gt;= S-&gt;MaxPatches ) ||</div>
 <div class="line"><a id="l04560" name="l04560"></a><span class="lineno"> 4560</span>            ( ( (WORD *)(((UBYTE *)(S-&gt;lFill + sSpace)) + 2*AM.MaxTer ) ) &gt;= S-&gt;lTop ) ) {</div>
@@ -4358,7 +4358,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04572" name="l04572"></a><span class="lineno"> 4572</span>            ADD2POS(pp,S-&gt;fPatches[S-&gt;fPatchN]);</div>
 <div class="line"><a id="l04573" name="l04573"></a><span class="lineno"> 4573</span> </div>
 <div class="line"><a id="l04574" name="l04574"></a><span class="lineno"> 4574</span>            <span class="keywordflow">if</span> ( S == AT.S0 ) { <span class="comment">/* Only statistics at ground level */</span></div>
-<div class="line"><a id="l04575" name="l04575"></a><span class="lineno"> 4575</span>                <a class="code hl_function" href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a>(&amp;pp,STATSMERGETOFILE,CHECKLOGTYPE);</div>
+<div class="line"><a id="l04575" name="l04575"></a><span class="lineno"> 4575</span>                <a class="code hl_function" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a>(&amp;pp,STATSMERGETOFILE,CHECKLOGTYPE);</div>
 <div class="line"><a id="l04576" name="l04576"></a><span class="lineno"> 4576</span>            }</div>
 <div class="line"><a id="l04577" name="l04577"></a><span class="lineno"> 4577</span>            S-&gt;lPatch = 0;</div>
 <div class="line"><a id="l04578" name="l04578"></a><span class="lineno"> 4578</span>            S-&gt;lFill = S-&gt;lBuffer;</div>
@@ -4400,10 +4400,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04613" name="l04613"></a><span class="lineno"> 4613</span> </div>
 <div class="line"><a id="l04614" name="l04614"></a><span class="lineno"> 4614</span><span class="comment">/*</span></div>
 <div class="line"><a id="l04615" name="l04615"></a><span class="lineno"> 4615</span><span class="comment">        #] StoreTerm : </span></div>
-<div class="line"><a id="l04616" name="l04616"></a><span class="lineno"> 4616</span><span class="comment">        #[ StageSort :              VOID StageSort(FILEHANDLE *fout)</span></div>
+<div class="line"><a id="l04616" name="l04616"></a><span class="lineno"> 4616</span><span class="comment">        #[ StageSort :              void StageSort(FILEHANDLE *fout)</span></div>
 <div class="line"><a id="l04617" name="l04617"></a><span class="lineno"> 4617</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen04624" data-start="{" data-end="}">
-<div class="line"><a id="l04624" name="l04624"></a><span class="lineno"><a class="line" href="declare_8h.html#a296a01dbf55792d8e316cd986b2d2f97"> 4624</a></span>VOID <a class="code hl_function" href="sort_8c.html#ad756bbef980a939c623c0f93c390e585">StageSort</a>(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fout)</div>
+<div class="line"><a id="l04624" name="l04624"></a><span class="lineno"><a class="line" href="declare_8h.html#a2a5b439228d8c554f903bbe3a4a7da62"> 4624</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#ac94fcf69c74e92b60d423117e033bccd">StageSort</a>(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fout)</div>
 <div class="line"><a id="l04625" name="l04625"></a><span class="lineno"> 4625</span>{</div>
 <div class="line"><a id="l04626" name="l04626"></a><span class="lineno"> 4626</span>    GETIDENTITY</div>
 <div class="line"><a id="l04627" name="l04627"></a><span class="lineno"> 4627</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT.SS;</div>
@@ -4578,7 +4578,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04806" name="l04806"></a><span class="lineno"> 4806</span> </div>
 <div class="line"><a id="l04807" name="l04807"></a><span class="lineno"> 4807</span><span class="comment">/*</span></div>
 <div class="line"><a id="l04808" name="l04808"></a><span class="lineno"> 4808</span><span class="comment">        #] SortWild : </span></div>
-<div class="line"><a id="l04809" name="l04809"></a><span class="lineno"> 4809</span><span class="comment">        #[ CleanUpSort :            VOID CleanUpSort(num)</span></div>
+<div class="line"><a id="l04809" name="l04809"></a><span class="lineno"> 4809</span><span class="comment">        #[ CleanUpSort :            void CleanUpSort(num)</span></div>
 <div class="line"><a id="l04810" name="l04810"></a><span class="lineno"> 4810</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen04815" data-start="{" data-end="}">
 <div class="line"><a id="l04815" name="l04815"></a><span class="lineno"><a class="line" href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea"> 4815</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#ab0bf76b7c13a32df1744703bb5585270">CleanUpSort</a>(<span class="keywordtype">int</span> num)</div>
@@ -4676,10 +4676,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04906" name="l04906"></a><span class="lineno"> 4906</span> </div>
 <div class="line"><a id="l04907" name="l04907"></a><span class="lineno"> 4907</span><span class="comment">/*</span></div>
 <div class="line"><a id="l04908" name="l04908"></a><span class="lineno"> 4908</span><span class="comment">        #] CleanUpSort : </span></div>
-<div class="line"><a id="l04909" name="l04909"></a><span class="lineno"> 4909</span><span class="comment">        #[ LowerSortLevel :         VOID LowerSortLevel()</span></div>
+<div class="line"><a id="l04909" name="l04909"></a><span class="lineno"> 4909</span><span class="comment">        #[ LowerSortLevel :         void LowerSortLevel()</span></div>
 <div class="line"><a id="l04910" name="l04910"></a><span class="lineno"> 4910</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen04915" data-start="{" data-end="}">
-<div class="line"><a id="l04915" name="l04915"></a><span class="lineno"><a class="line" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412"> 4915</a></span>VOID <a class="code hl_function" href="sort_8c.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(VOID)</div>
+<div class="line"><a id="l04915" name="l04915"></a><span class="lineno"><a class="line" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57"> 4915</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l04916" name="l04916"></a><span class="lineno"> 4916</span>{</div>
 <div class="line"><a id="l04917" name="l04917"></a><span class="lineno"> 4917</span>    GETIDENTITY</div>
 <div class="line"><a id="l04918" name="l04918"></a><span class="lineno"> 4918</span>    <span class="keywordflow">if</span> ( AR.sLevel &gt;= 0 ) {</div>
@@ -4799,7 +4799,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05031" name="l05031"></a><span class="lineno"> 5031</span><span class="comment">        Sorts an array of WORDs. No adding of equal objects.</span></div>
 <div class="line"><a id="l05032" name="l05032"></a><span class="lineno"> 5032</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05033" name="l05033"></a><span class="lineno"> 5033</span> </div>
-<div class="line"><a id="l05034" name="l05034"></a><span class="lineno"> 5034</span>VOID SimpleSplitMergeRec(WORD *array,WORD num,WORD *auxarray)</div>
+<div class="line"><a id="l05034" name="l05034"></a><span class="lineno"> 5034</span><span class="keywordtype">void</span> SimpleSplitMergeRec(WORD *array,WORD num,WORD *auxarray)</div>
 <div class="line"><a id="l05035" name="l05035"></a><span class="lineno"> 5035</span>{</div>
 <div class="line"><a id="l05036" name="l05036"></a><span class="lineno"> 5036</span>    WORD n1,n2,i,j,k,*t1,*t2;</div>
 <div class="line"><a id="l05037" name="l05037"></a><span class="lineno"> 5037</span>    <span class="keywordflow">if</span> ( num &lt; 2 ) <span class="keywordflow">return</span>;</div>
@@ -4827,7 +4827,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05059" name="l05059"></a><span class="lineno"> 5059</span><span class="comment">*/</span></div>
 <div class="line"><a id="l05060" name="l05060"></a><span class="lineno"> 5060</span>}</div>
 <div class="line"><a id="l05061" name="l05061"></a><span class="lineno"> 5061</span> </div>
-<div class="line"><a id="l05062" name="l05062"></a><span class="lineno"> 5062</span>VOID SimpleSplitMerge(WORD *array,WORD num)</div>
+<div class="line"><a id="l05062" name="l05062"></a><span class="lineno"> 5062</span><span class="keywordtype">void</span> SimpleSplitMerge(WORD *array,WORD num)</div>
 <div class="line"><a id="l05063" name="l05063"></a><span class="lineno"> 5063</span>{</div>
 <div class="line"><a id="l05064" name="l05064"></a><span class="lineno"> 5064</span>    WORD *auxarray = Malloc1(<span class="keyword">sizeof</span>(WORD)*num/2,<span class="stringliteral">&quot;SimpleSplitMerge&quot;</span>);</div>
 <div class="line"><a id="l05065" name="l05065"></a><span class="lineno"> 5065</span>    SimpleSplitMergeRec(array,num,auxarray);</div>
@@ -4882,21 +4882,21 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="asort_8c_html_a2e9216c6a29ab7719f0d37cb2b51d361"><div class="ttname"><a href="sort_8c.html#a2e9216c6a29ab7719f0d37cb2b51d361">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *buffer, int par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
 <div class="ttc" id="asort_8c_html_a2fbe76f255d33036140255457662930e"><div class="ttname"><a href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a></div><div class="ttdeci">WORD FlushOut(POSITION *position, FILEHANDLE *fi, int compr)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01798">sort.c:1798</a></div></div>
 <div class="ttc" id="asort_8c_html_a30d9949d945319a088d33b5969925e08"><div class="ttname"><a href="sort_8c.html#a30d9949d945319a088d33b5969925e08">SortWild</a></div><div class="ttdeci">WORD SortWild(WORD *w, WORD nw)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04723">sort.c:4723</a></div></div>
+<div class="ttc" id="asort_8c_html_a3d1950d9d2cfbcd7013b7c2290c21add"><div class="ttname"><a href="sort_8c.html#a3d1950d9d2cfbcd7013b7c2290c21add">GarbHand</a></div><div class="ttdeci">void GarbHand(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03612">sort.c:3612</a></div></div>
 <div class="ttc" id="asort_8c_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="sort_8c.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="asort_8c_html_a5fa16944756ec68a21da7fa95b92a5a8"><div class="ttname"><a href="sort_8c.html#a5fa16944756ec68a21da7fa95b92a5a8">CompareHSymbols</a></div><div class="ttdeci">WORD CompareHSymbols(PHEAD WORD *term1, WORD *term2, WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03113">sort.c:3113</a></div></div>
 <div class="ttc" id="asort_8c_html_a670aa98242104557b1bbbb5368cafe8e"><div class="ttname"><a href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a></div><div class="ttdeci">WORD MergePatches(WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03727">sort.c:3727</a></div></div>
 <div class="ttc" id="asort_8c_html_a6848642c1c54636cc54fbcec683607f5"><div class="ttname"><a href="sort_8c.html#a6848642c1c54636cc54fbcec683607f5">StoreTerm</a></div><div class="ttdeci">WORD StoreTerm(PHEAD WORD *term)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04510">sort.c:4510</a></div></div>
+<div class="ttc" id="asort_8c_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="sort_8c.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="asort_8c_html_a7171afcad3c9f5f529eaa94ba6175c2a"><div class="ttname"><a href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a></div><div class="ttdeci">WORD AddPoly(PHEAD WORD **ps1, WORD **ps2)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02141">sort.c:2141</a></div></div>
 <div class="ttc" id="asort_8c_html_a77e8fbe2d8d79e21021a924fa30e5d65"><div class="ttname"><a href="sort_8c.html#a77e8fbe2d8d79e21021a924fa30e5d65">ComPress</a></div><div class="ttdeci">LONG ComPress(WORD **ss, LONG *n)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03166">sort.c:3166</a></div></div>
-<div class="ttc" id="asort_8c_html_a7ede99980b98cbd35000b39e0395a36a"><div class="ttname"><a href="sort_8c.html#a7ede99980b98cbd35000b39e0395a36a">GarbHand</a></div><div class="ttdeci">VOID GarbHand(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03612">sort.c:3612</a></div></div>
-<div class="ttc" id="asort_8c_html_a8f9cae36d4f9a1db2aa4aa4c27a872a7"><div class="ttname"><a href="sort_8c.html#a8f9cae36d4f9a1db2aa4aa4c27a872a7">WriteStats</a></div><div class="ttdeci">VOID WriteStats(POSITION *plspace, WORD par, WORD checkLogType)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00101">sort.c:101</a></div></div>
 <div class="ttc" id="asort_8c_html_a911e7252a3311fdd541e91d7a874b56b"><div class="ttname"><a href="sort_8c.html#a911e7252a3311fdd541e91d7a874b56b">PutOut</a></div><div class="ttdeci">WORD PutOut(PHEAD WORD *term, POSITION *position, FILEHANDLE *fi, WORD ncomp)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01436">sort.c:1436</a></div></div>
+<div class="ttc" id="asort_8c_html_aa18c8b00749aab07385daf3ac71d3af9"><div class="ttname"><a href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a></div><div class="ttdeci">void WriteStats(POSITION *plspace, WORD par, WORD checkLogType)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00101">sort.c:101</a></div></div>
 <div class="ttc" id="asort_8c_html_aa36a4ad93dbde449e658716c583b5bab"><div class="ttname"><a href="sort_8c.html#aa36a4ad93dbde449e658716c583b5bab">CompareSymbols</a></div><div class="ttdeci">WORD CompareSymbols(PHEAD WORD *term1, WORD *term2, WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03070">sort.c:3070</a></div></div>
+<div class="ttc" id="asort_8c_html_aa8d2b0318bdb43f8453d30160b7eb075"><div class="ttname"><a href="sort_8c.html#aa8d2b0318bdb43f8453d30160b7eb075">AddArgs</a></div><div class="ttdeci">void AddArgs(PHEAD WORD *s1, WORD *s2, WORD *m)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02313">sort.c:2313</a></div></div>
 <div class="ttc" id="asort_8c_html_ab0bf76b7c13a32df1744703bb5585270"><div class="ttname"><a href="sort_8c.html#ab0bf76b7c13a32df1744703bb5585270">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int num)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04815">sort.c:4815</a></div></div>
-<div class="ttc" id="asort_8c_html_ad756bbef980a939c623c0f93c390e585"><div class="ttname"><a href="sort_8c.html#ad756bbef980a939c623c0f93c390e585">StageSort</a></div><div class="ttdeci">VOID StageSort(FILEHANDLE *fout)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04624">sort.c:4624</a></div></div>
-<div class="ttc" id="asort_8c_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="sort_8c.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
+<div class="ttc" id="asort_8c_html_ac94fcf69c74e92b60d423117e033bccd"><div class="ttname"><a href="sort_8c.html#ac94fcf69c74e92b60d423117e033bccd">StageSort</a></div><div class="ttdeci">void StageSort(FILEHANDLE *fout)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04624">sort.c:4624</a></div></div>
 <div class="ttc" id="asort_8c_html_ae0b20d2b5a97d8aeccd497d1adaa8302"><div class="ttname"><a href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a></div><div class="ttdeci">WORD AddCoef(PHEAD WORD **ps1, WORD **ps2)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02012">sort.c:2012</a></div></div>
-<div class="ttc" id="asort_8c_html_ae36114ce5e26fea98876b640b3609cbf"><div class="ttname"><a href="sort_8c.html#ae36114ce5e26fea98876b640b3609cbf">AddArgs</a></div><div class="ttdeci">VOID AddArgs(PHEAD WORD *s1, WORD *s2, WORD *m)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02313">sort.c:2313</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nf_o_html"><div class="ttname"><a href="struct_br_ac_ke_ti_nf_o.html">BrAcKeTiNfO</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00329">structs.h:329</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nf_o_html_a2998c38032579cf953557469fc5b83b5"><div class="ttname"><a href="struct_br_ac_ke_ti_nf_o.html#a2998c38032579cf953557469fc5b83b5">BrAcKeTiNfO::indexbuffer</a></div><div class="ttdeci">BRACKETINDEX * indexbuffer</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00330">structs.h:330</a></div></div>
 <div class="ttc" id="astruct_fi_le_html"><div class="ttname"><a href="struct_fi_le.html">FiLe</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00682">structs.h:682</a></div></div>

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -121,14 +121,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">        #] StrCopy : </span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">        #[ AddToLine :          VOID AddToLine(s)</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">        #[ AddToLine :          void AddToLine(s)</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"></span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">    Puts the characters of s in the outputline. If the line becomes</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    filled it is written.</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"></span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>VOID AddToLine(UBYTE *s)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> AddToLine(UBYTE *s)</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    UBYTE *Out;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    LONG num;</div>
@@ -225,10 +225,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">        #] AddToLine : </span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">        #[ FiniLine :           VOID FiniLine()</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">        #[ FiniLine :           void FiniLine()</span></div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>VOID FiniLine(VOID)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keywordtype">void</span> FiniLine(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>{</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    UBYTE *Out;</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    WORD i;</div>
@@ -307,13 +307,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">        #] FiniLine : </span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="comment">        #[ IniLine :            VOID IniLine(extrablank)</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="comment">        #[ IniLine :            void IniLine(extrablank)</span></div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="comment"></span> </div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">    Initializes the output line for the type of output</span></div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment"></span> </div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>VOID IniLine(WORD extrablank)</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="keywordtype">void</span> IniLine(WORD extrablank)</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>{</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    UBYTE *Out;</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    Out = AO.OutputLine;</div>
@@ -339,7 +339,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment">        #] IniLine : </span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment">        #[ LongToLine :         VOID LongToLine(a,na)</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment">        #[ LongToLine :         void LongToLine(a,na)</span></div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment"></span> </div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">    Puts a Long integer in the output line. If it is only a single</span></div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">    word long it is put in the line as a single token.</span></div>
@@ -349,7 +349,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keyword">static</span> UBYTE *LLscratch = 0;</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>VOID LongToLine(UWORD *a, WORD na)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keywordtype">void</span> LongToLine(UWORD *a, WORD na)</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>{</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    UBYTE *OutScratch;</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keywordflow">if</span> ( LLscratch == 0 ) {</div>
@@ -374,7 +374,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="comment">        #] LongToLine : </span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment">        #[ RatToLine :          VOID RatToLine(a,na)</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment">        #[ RatToLine :          void RatToLine(a,na)</span></div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment"></span> </div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">    Puts a rational number in the output line. The sign is ignored.</span></div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment"></span> </div>
@@ -383,7 +383,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="keyword">static</span> UBYTE *RLscratch = 0;</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="keyword">static</span> UWORD *RLscratE = 0;</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>VOID RatToLine(UWORD *a, WORD na)</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keywordtype">void</span> RatToLine(UWORD *a, WORD na)</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>{</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    GETIDENTITY</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    WORD adenom, anumer;</div>
@@ -560,7 +560,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span> </div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span><span class="comment">        #] RatToLine : </span></div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="comment">        #[ TalToLine :          VOID TalToLine(x)</span></div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="comment">        #[ TalToLine :          void TalToLine(x)</span></div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span><span class="comment"></span> </div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span><span class="comment">    Writes the unsigned number x to the output as a single token.</span></div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="comment">    Par indicates the number of leading blanks in the line.</span></div>
@@ -568,7 +568,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span><span class="comment"></span> </div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>VOID TalToLine(UWORD x)</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span><span class="keywordtype">void</span> TalToLine(UWORD x)</div>
 <div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>{</div>
 <div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    UBYTE t[BITSINWORD/3+1];</div>
 <div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    UBYTE *s;</div>
@@ -585,7 +585,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span> </div>
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span><span class="comment">        #] TalToLine : </span></div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span><span class="comment">        #[ TokenToLine :        VOID TokenToLine(s)</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span><span class="comment">        #[ TokenToLine :        void TokenToLine(s)</span></div>
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span><span class="comment"></span> </div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span><span class="comment">    Puts s in the output buffer. If it doesn&#39;t fit the buffer is</span></div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="comment">    flushed first. This routine keeps tokens as one unit.</span></div>
@@ -597,7 +597,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span><span class="comment">    digits!</span></div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span> </div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>VOID TokenToLine(UBYTE *s)</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span><span class="keywordtype">void</span> TokenToLine(UBYTE *s)</div>
 <div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>{</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    UBYTE *t, *Out;</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>    LONG num, i = 0, j;</div>
@@ -698,7 +698,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span> </div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="comment">        #] TokenToLine : </span></div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="comment">        #[ CodeToLine :         VOID CodeToLine(name,number,mode)</span></div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="comment">        #[ CodeToLine :         void CodeToLine(name,number,mode)</span></div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="comment"></span> </div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="comment">    Writes a name and possibly its number to output as a single token.</span></div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span><span class="comment"></span> </div>
@@ -717,7 +717,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="comment">        #[ MultiplyToLine :</span></div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="keywordtype">void</span> MultiplyToLine(VOID)</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="keywordtype">void</span> MultiplyToLine(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>{</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    <span class="keywordflow">if</span> ( AO.CurrentDictionary &gt; 0 &amp;&amp; AO.CurDictSpecials &gt; 0</div>
@@ -759,10 +759,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span> </div>
 <div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="comment">        #] AddArrayIndex : </span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="comment">        #[ PrtTerms :           VOID PrtTerms()</span></div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="comment">        #[ PrtTerms :           void PrtTerms()</span></div>
 <div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span> </div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>VOID PrtTerms(VOID)</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span><span class="keywordtype">void</span> PrtTerms(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>{</div>
 <div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>    UWORD a[2];</div>
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>    WORD na;</div>
@@ -843,7 +843,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span><span class="comment">        #] PrintTime : </span></div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="comment">    #] schryf-Utilities : </span></div>
 <div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">    #[ schryf-Writes :</span></div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="comment">        #[ WriteLists :         VOID WriteLists()</span></div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="comment">        #[ WriteLists :         void WriteLists()</span></div>
 <div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="comment"></span> </div>
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="comment">    Writes the namelists. If mode &gt; 0 also the internal codes are given.</span></div>
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="comment"></span> </div>
@@ -856,7 +856,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>     (UBYTE *)<span class="stringliteral">&quot;(-cyclic)&quot;</span>,(UBYTE *)<span class="stringliteral">&quot;(-reversecyclic)&quot;</span></div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    ,(UBYTE *)<span class="stringliteral">&quot;(-symmetric)&quot;</span>,(UBYTE *)<span class="stringliteral">&quot;(-antisymmetric)&quot;</span> };</div>
 <div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span> </div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>VOID WriteLists(VOID)</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="keywordtype">void</span> WriteLists(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>{</div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    GETIDENTITY</div>
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>    WORD i, j, k, *skip;</div>
@@ -1464,13 +1464,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span> </div>
 <div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span><span class="comment">        #] WriteDictionary : </span></div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span><span class="comment">        #[ WriteArgument :      VOID WriteArgument(WORD *t)</span></div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span><span class="comment">        #[ WriteArgument :      void WriteArgument(WORD *t)</span></div>
 <div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span><span class="comment"></span> </div>
 <div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span><span class="comment">        Write a single argument field. The general field goes to</span></div>
 <div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span><span class="comment">        WriteExpression and the fast field is dealt with here.</span></div>
 <div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span> </div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>VOID WriteArgument(WORD *t)</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="keywordtype">void</span> WriteArgument(WORD *t)</div>
 <div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>{</div>
 <div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>    UBYTE buffer[180];</div>
 <div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>    UBYTE *Out;</div>
@@ -2547,7 +2547,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span><span class="comment">        Writes all expressions that should be written</span></div>
 <div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span> </div>
-<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span>WORD WriteAll(VOID)</div>
+<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span>WORD WriteAll(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span>{</div>
 <div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span>    GETIDENTITY</div>
 <div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span>    WORD lbrac, first;</div>

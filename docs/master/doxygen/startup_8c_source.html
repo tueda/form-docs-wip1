@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -581,7 +581,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span><span class="comment">        .clear instructions if so desired without using interpretation</span></div>
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span> </div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="keywordtype">int</span> OpenInput(VOID)</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="keywordtype">int</span> OpenInput(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>{</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    <span class="keywordtype">int</span> oldNoShowInput = AC.NoShowInput;</div>
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    UBYTE c;</div>
@@ -705,7 +705,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span><span class="comment">   instead of the &quot;xxx&quot;. (Previously FORM used 5 digits and this value was 14) */</span></div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="preprocessor">#define DEFAULTFNAMELENGTH 16</span></div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span> </div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>VOID ReserveTempFiles(<span class="keywordtype">int</span> par)</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="keywordtype">void</span> ReserveTempFiles(<span class="keywordtype">int</span> par)</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>{</div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    GETIDENTITY</div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <a class="code hl_struct" href="struct_s_e_t_u_p_p_a_r_a_m_e_t_e_r_s.html">SETUPPARAMETERS</a> *sp;</div>
@@ -945,7 +945,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span> </div>
 <div class="foldopen" id="foldopen00905" data-start="{" data-end="}">
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno"><a class="line" href="declare_8h.html#a9f7b24d60d81fc7142fbdcdaab0ab665">  905</a></span>VOID <a class="code hl_function" href="startup_8c.html#a9f7b24d60d81fc7142fbdcdaab0ab665">StartVariables</a>(VOID)</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno"><a class="line" href="declare_8h.html#a7b5a42294fe36302dc91d20c8604f32c">  905</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="startup_8c.html#a7b5a42294fe36302dc91d20c8604f32c">StartVariables</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>{</div>
 <div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>    <span class="keywordtype">int</span> i, ii;</div>
 <div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>    PUTZERO(AM.zeropos);</div>
@@ -1104,20 +1104,20 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span><span class="comment">    Initialize the compiler:</span></div>
 <div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>    inictable();</div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>    AM.rbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Regular compiler buffer */</span></div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>    AM.rbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Regular compiler buffer */</span></div>
 <div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span><span class="preprocessor">#ifndef WITHPTHREADS</span></div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>    AT.ebufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Buffer for extras during execution */</span></div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>    AT.fbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Buffer for caching in factorization */</span></div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>    AT.allbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();      <span class="comment">/* Buffer for id,all */</span></div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>    AT.aebufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();       <span class="comment">/* Buffer for id,all */</span></div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>    AT.ebufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Buffer for extras during execution */</span></div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>    AT.fbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Buffer for caching in factorization */</span></div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>    AT.allbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();      <span class="comment">/* Buffer for id,all */</span></div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>    AT.aebufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();       <span class="comment">/* Buffer for id,all */</span></div>
 <div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>    AN.tryterm = 0;</div>
 <div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>    AS.MasterSort = 0;</div>
 <div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>    AM.dbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Buffer for dollar variables */</span></div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>    AM.sbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* Subterm buffer for polynomials and optimization */</span></div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>    AC.ffbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();       <span class="comment">/* Buffer number for user defined factorizations */</span></div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>    AM.zbufnum = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>();        <span class="comment">/* For very special values */</span></div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>    AM.dbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Buffer for dollar variables */</span></div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>    AM.sbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* Subterm buffer for polynomials and optimization */</span></div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>    AC.ffbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();       <span class="comment">/* Buffer number for user defined factorizations */</span></div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>    AM.zbufnum = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>();        <span class="comment">/* For very special values */</span></div>
 <div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    {</div>
 <div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>        <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf+AM.zbufnum;</div>
 <div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>        WORD one[5] = {4,1,1,3,0};</div>
@@ -1129,7 +1129,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>        AM.onerhs = C-&gt;numrhs;</div>
 <div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>        <a class="code hl_function" href="comtool_8c.html#ab9540604e742ad4b787c1bd5b93484b0">AddNtoC</a>(AM.zbufnum,5,one,17);</div>
 <div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>    }</div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>    AP.inside.inscbuf = <a class="code hl_function" href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a>(); <span class="comment">/* For the #inside instruction */</span></div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>    AP.inside.inscbuf = <a class="code hl_function" href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a>(); <span class="comment">/* For the #inside instruction */</span></div>
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span><span class="comment">    Enter the built in objects</span></div>
 <div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span><span class="comment">*/</span></div>
@@ -1357,7 +1357,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span><span class="comment">        #[ StartMore :</span></div>
 <div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span> </div>
-<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span>VOID StartMore(VOID)</div>
+<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span><span class="keywordtype">void</span> StartMore(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span>{</div>
 <div class="line"><a id="l01318" name="l01318"></a><span class="lineno"> 1318</span><span class="preprocessor">#ifdef WITHEXTERNALCHANNEL</span></div>
 <div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>    <span class="comment">/*If env.variable &quot;FORM_PIPES&quot; is defined, we have to initialize </span></div>
@@ -1395,7 +1395,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span><span class="comment">        This routine initializes the parameters that may change during the run.</span></div>
 <div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span> </div>
-<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>WORD IniVars(VOID)</div>
+<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>WORD IniVars(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>{</div>
 <div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
 <div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>    GETIDENTITY</div>
@@ -1637,7 +1637,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span><span class="preprocessor">#ifdef INTSIGHANDLER</span></div>
 <div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span><span class="keyword">static</span> <span class="keywordtype">int</span> onErrSig(<span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span><span class="keyword">static</span> VOID onErrSig(<span class="keywordtype">int</span> i)</div>
+<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span><span class="keyword">static</span> <span class="keywordtype">void</span> onErrSig(<span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>{</div>
 <div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span>    <span class="keywordflow">if</span> (exitInProgress){</div>
@@ -1655,9 +1655,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01611" name="l01611"></a><span class="lineno"> 1611</span>}</div>
 <div class="line"><a id="l01612" name="l01612"></a><span class="lineno"> 1612</span> </div>
 <div class="line"><a id="l01613" name="l01613"></a><span class="lineno"> 1613</span><span class="preprocessor">#ifdef INTSIGHANDLER</span></div>
-<div class="line"><a id="l01614" name="l01614"></a><span class="lineno"> 1614</span><span class="keyword">static</span> VOID setNewSig(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> (*handler)(<span class="keywordtype">int</span>))</div>
+<div class="line"><a id="l01614" name="l01614"></a><span class="lineno"> 1614</span><span class="keyword">static</span> <span class="keywordtype">void</span> setNewSig(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> (*handler)(<span class="keywordtype">int</span>))</div>
 <div class="line"><a id="l01615" name="l01615"></a><span class="lineno"> 1615</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01616" name="l01616"></a><span class="lineno"> 1616</span><span class="keyword">static</span> VOID setNewSig(<span class="keywordtype">int</span> i, <span class="keywordtype">void</span> (*handler)(<span class="keywordtype">int</span>))</div>
+<div class="line"><a id="l01616" name="l01616"></a><span class="lineno"> 1616</span><span class="keyword">static</span> <span class="keywordtype">void</span> setNewSig(<span class="keywordtype">int</span> i, <span class="keywordtype">void</span> (*handler)(<span class="keywordtype">int</span>))</div>
 <div class="line"><a id="l01617" name="l01617"></a><span class="lineno"> 1617</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01618" name="l01618"></a><span class="lineno"> 1618</span>{</div>
 <div class="line"><a id="l01619" name="l01619"></a><span class="lineno"> 1619</span>    <span class="keywordflow">if</span>(! (i&lt;NSIG) )<span class="comment">/* Invalid signal -- see comments in the file */</span></div>
@@ -1667,7 +1667,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01623" name="l01623"></a><span class="lineno"> 1623</span>        signal(i,handler);</div>
 <div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>}</div>
 <div class="line"><a id="l01625" name="l01625"></a><span class="lineno"> 1625</span> </div>
-<div class="line"><a id="l01626" name="l01626"></a><span class="lineno"> 1626</span>VOID setSignalHandlers(VOID)</div>
+<div class="line"><a id="l01626" name="l01626"></a><span class="lineno"> 1626</span><span class="keywordtype">void</span> setSignalHandlers(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01627" name="l01627"></a><span class="lineno"> 1627</span>{</div>
 <div class="line"><a id="l01628" name="l01628"></a><span class="lineno"> 1628</span>    <span class="comment">/* Reset various unrecoverable error signals:*/</span></div>
 <div class="line"><a id="l01629" name="l01629"></a><span class="lineno"> 1629</span>    setNewSig(SIGSEGV,onErrSig);</div>
@@ -1704,7 +1704,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01660" name="l01660"></a><span class="lineno"> 1660</span><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
 <div class="line"><a id="l01661" name="l01661"></a><span class="lineno"> 1661</span>{</div>
 <div class="line"><a id="l01662" name="l01662"></a><span class="lineno"> 1662</span>    <span class="keywordtype">int</span> retval;</div>
-<div class="line"><a id="l01663" name="l01663"></a><span class="lineno"> 1663</span>    bzero((VOID *)(&amp;A),<span class="keyword">sizeof</span>(A)); <span class="comment">/* make sure A is initialized at zero */</span></div>
+<div class="line"><a id="l01663" name="l01663"></a><span class="lineno"> 1663</span>    bzero((<span class="keywordtype">void</span> *)(&amp;A),<span class="keyword">sizeof</span>(A)); <span class="comment">/* make sure A is initialized at zero */</span></div>
 <div class="line"><a id="l01664" name="l01664"></a><span class="lineno"> 1664</span>    iniTools();</div>
 <div class="line"><a id="l01665" name="l01665"></a><span class="lineno"> 1665</span><span class="preprocessor">#ifdef TRAPSIGNALS</span></div>
 <div class="line"><a id="l01666" name="l01666"></a><span class="lineno"> 1666</span>    setSignalHandlers();</div>
@@ -1727,7 +1727,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01683" name="l01683"></a><span class="lineno"> 1683</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01684" name="l01684"></a><span class="lineno"> 1684</span> </div>
 <div class="line"><a id="l01685" name="l01685"></a><span class="lineno"> 1685</span>    StartFiles();</div>
-<div class="line"><a id="l01686" name="l01686"></a><span class="lineno"> 1686</span>    <a class="code hl_function" href="startup_8c.html#a9f7b24d60d81fc7142fbdcdaab0ab665">StartVariables</a>();</div>
+<div class="line"><a id="l01686" name="l01686"></a><span class="lineno"> 1686</span>    <a class="code hl_function" href="startup_8c.html#a7b5a42294fe36302dc91d20c8604f32c">StartVariables</a>();</div>
 <div class="line"><a id="l01687" name="l01687"></a><span class="lineno"> 1687</span><span class="preprocessor">#ifdef WITHMPI</span></div>
 <div class="line"><a id="l01688" name="l01688"></a><span class="lineno"> 1688</span>    <span class="comment">/*</span></div>
 <div class="line"><a id="l01689" name="l01689"></a><span class="lineno"> 1689</span><span class="comment">     * Here MesPrint() is ready. We turn on AS.printflag to print possible</span></div>
@@ -1764,8 +1764,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01720" name="l01720"></a><span class="lineno"> 1720</span>    <span class="keywordflow">if</span> ( TryFileSetups() ) Terminate(-2);</div>
 <div class="line"><a id="l01721" name="l01721"></a><span class="lineno"> 1721</span>    <span class="keywordflow">if</span> ( MakeSetupAllocs() ) Terminate(-2);</div>
 <div class="line"><a id="l01722" name="l01722"></a><span class="lineno"> 1722</span>    StartMore();</div>
-<div class="line"><a id="l01723" name="l01723"></a><span class="lineno"> 1723</span>    <a class="code hl_function" href="checkpoint_8c.html#a2e6c6dece865083e5cc91eff897fc2ab">InitRecovery</a>();</div>
-<div class="line"><a id="l01724" name="l01724"></a><span class="lineno"> 1724</span>    <a class="code hl_function" href="checkpoint_8c.html#aa721ba185dcbac9d5bcfc8ec83a3617e">CheckRecoveryFile</a>();</div>
+<div class="line"><a id="l01723" name="l01723"></a><span class="lineno"> 1723</span>    <a class="code hl_function" href="checkpoint_8c.html#a202bedc4bb922d2789d0e21efec93b55">InitRecovery</a>();</div>
+<div class="line"><a id="l01724" name="l01724"></a><span class="lineno"> 1724</span>    <a class="code hl_function" href="checkpoint_8c.html#a932379f46a7f51d159202214aef97b85">CheckRecoveryFile</a>();</div>
 <div class="line"><a id="l01725" name="l01725"></a><span class="lineno"> 1725</span>    <span class="keywordflow">if</span> ( AM.totalnumberofthreads == 0 ) AM.totalnumberofthreads = 1;</div>
 <div class="line"><a id="l01726" name="l01726"></a><span class="lineno"> 1726</span>    AS.MultiThreaded = 0;</div>
 <div class="line"><a id="l01727" name="l01727"></a><span class="lineno"> 1727</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
@@ -1800,7 +1800,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01756" name="l01756"></a><span class="lineno"> 1756</span><span class="comment"></span> </div>
 <div class="line"><a id="l01757" name="l01757"></a><span class="lineno"> 1757</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01758" name="l01758"></a><span class="lineno"> 1758</span> </div>
-<div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span>VOID CleanUp(WORD par)</div>
+<div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span><span class="keywordtype">void</span> CleanUp(WORD par)</div>
 <div class="line"><a id="l01760" name="l01760"></a><span class="lineno"> 1760</span>{</div>
 <div class="line"><a id="l01761" name="l01761"></a><span class="lineno"> 1761</span>    GETIDENTITY</div>
 <div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>    <span class="keywordtype">int</span> i;</div>
@@ -1867,7 +1867,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01823" name="l01823"></a><span class="lineno"> 1823</span><span class="comment">    Remove recovery file on exit if everything went well</span></div>
 <div class="line"><a id="l01824" name="l01824"></a><span class="lineno"> 1824</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01825" name="l01825"></a><span class="lineno"> 1825</span>    <span class="keywordflow">if</span> ( par == 0 ) {</div>
-<div class="line"><a id="l01826" name="l01826"></a><span class="lineno"> 1826</span>        <a class="code hl_function" href="checkpoint_8c.html#adaabd0c1c468b9245ec386e7ed77889e">DeleteRecoveryFile</a>();</div>
+<div class="line"><a id="l01826" name="l01826"></a><span class="lineno"> 1826</span>        <a class="code hl_function" href="checkpoint_8c.html#a28ce20e3c0242586858d7151e8288a2e">DeleteRecoveryFile</a>();</div>
 <div class="line"><a id="l01827" name="l01827"></a><span class="lineno"> 1827</span>    }</div>
 <div class="line"><a id="l01828" name="l01828"></a><span class="lineno"> 1828</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01829" name="l01829"></a><span class="lineno"> 1829</span><span class="comment">    Now the final message concerning the total time</span></div>
@@ -1889,7 +1889,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01845" name="l01845"></a><span class="lineno"> 1845</span> </div>
 <div class="line"><a id="l01846" name="l01846"></a><span class="lineno"> 1846</span><span class="keyword">static</span> <span class="keywordtype">int</span> firstterminate = 1;</div>
 <div class="line"><a id="l01847" name="l01847"></a><span class="lineno"> 1847</span> </div>
-<div class="line"><a id="l01848" name="l01848"></a><span class="lineno"> 1848</span>VOID TerminateImpl(<span class="keywordtype">int</span> errorcode, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span>* function)</div>
+<div class="line"><a id="l01848" name="l01848"></a><span class="lineno"> 1848</span><span class="keywordtype">void</span> TerminateImpl(<span class="keywordtype">int</span> errorcode, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span>* function)</div>
 <div class="line"><a id="l01849" name="l01849"></a><span class="lineno"> 1849</span>{</div>
 <div class="line"><a id="l01850" name="l01850"></a><span class="lineno"> 1850</span>    <span class="keywordflow">if</span> ( errorcode &amp;&amp; firstterminate ) {</div>
 <div class="line"><a id="l01851" name="l01851"></a><span class="lineno"> 1851</span>        firstterminate = 0;</div>
@@ -2122,7 +2122,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02082" name="l02082"></a><span class="lineno"> 2082</span><span class="comment">        #[ PrintRunningTime :</span></div>
 <div class="line"><a id="l02083" name="l02083"></a><span class="lineno"> 2083</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02084" name="l02084"></a><span class="lineno"> 2084</span> </div>
-<div class="line"><a id="l02085" name="l02085"></a><span class="lineno"> 2085</span>VOID PrintRunningTime(VOID)</div>
+<div class="line"><a id="l02085" name="l02085"></a><span class="lineno"> 2085</span><span class="keywordtype">void</span> PrintRunningTime(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02086" name="l02086"></a><span class="lineno"> 2086</span>{</div>
 <div class="line"><a id="l02087" name="l02087"></a><span class="lineno"> 2087</span><span class="preprocessor">#if (defined(WITHPTHREADS) &amp;&amp; (defined(WITHPOSIXCLOCK) || defined(WINDOWS))) || defined(WITHMPI)</span></div>
 <div class="line"><a id="l02088" name="l02088"></a><span class="lineno"> 2088</span>    LONG mastertime;</div>
@@ -2163,7 +2163,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02123" name="l02123"></a><span class="lineno"> 2123</span><span class="comment">        #[ GetRunningTime :</span></div>
 <div class="line"><a id="l02124" name="l02124"></a><span class="lineno"> 2124</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02125" name="l02125"></a><span class="lineno"> 2125</span> </div>
-<div class="line"><a id="l02126" name="l02126"></a><span class="lineno"> 2126</span>LONG GetRunningTime(VOID)</div>
+<div class="line"><a id="l02126" name="l02126"></a><span class="lineno"> 2126</span>LONG GetRunningTime(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02127" name="l02127"></a><span class="lineno"> 2127</span>{</div>
 <div class="line"><a id="l02128" name="l02128"></a><span class="lineno"> 2128</span><span class="preprocessor">#if defined(WITHPTHREADS) &amp;&amp; (defined(WITHPOSIXCLOCK) || defined(WINDOWS))</span></div>
 <div class="line"><a id="l02129" name="l02129"></a><span class="lineno"> 2129</span>    LONG mastertime;</div>
@@ -2200,13 +2200,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02160" name="l02160"></a><span class="lineno"> 2160</span><span class="comment">/*</span></div>
 <div class="line"><a id="l02161" name="l02161"></a><span class="lineno"> 2161</span><span class="comment">        #] GetRunningTime : </span></div>
 <div class="line"><a id="l02162" name="l02162"></a><span class="lineno"> 2162</span><span class="comment">*/</span></div>
-<div class="ttc" id="acheckpoint_8c_html_a2e6c6dece865083e5cc91eff897fc2ab"><div class="ttname"><a href="checkpoint_8c.html#a2e6c6dece865083e5cc91eff897fc2ab">InitRecovery</a></div><div class="ttdeci">void InitRecovery(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00399">checkpoint.c:399</a></div></div>
-<div class="ttc" id="acheckpoint_8c_html_aa721ba185dcbac9d5bcfc8ec83a3617e"><div class="ttname"><a href="checkpoint_8c.html#aa721ba185dcbac9d5bcfc8ec83a3617e">CheckRecoveryFile</a></div><div class="ttdeci">int CheckRecoveryFile(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00278">checkpoint.c:278</a></div></div>
-<div class="ttc" id="acheckpoint_8c_html_adaabd0c1c468b9245ec386e7ed77889e"><div class="ttname"><a href="checkpoint_8c.html#adaabd0c1c468b9245ec386e7ed77889e">DeleteRecoveryFile</a></div><div class="ttdeci">void DeleteRecoveryFile(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00333">checkpoint.c:333</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a202bedc4bb922d2789d0e21efec93b55"><div class="ttname"><a href="checkpoint_8c.html#a202bedc4bb922d2789d0e21efec93b55">InitRecovery</a></div><div class="ttdeci">void InitRecovery(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00399">checkpoint.c:399</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a28ce20e3c0242586858d7151e8288a2e"><div class="ttname"><a href="checkpoint_8c.html#a28ce20e3c0242586858d7151e8288a2e">DeleteRecoveryFile</a></div><div class="ttdeci">void DeleteRecoveryFile(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00333">checkpoint.c:333</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a932379f46a7f51d159202214aef97b85"><div class="ttname"><a href="checkpoint_8c.html#a932379f46a7f51d159202214aef97b85">CheckRecoveryFile</a></div><div class="ttdeci">int CheckRecoveryFile(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00278">checkpoint.c:278</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a26072cb500b84460ce5816cc247311f6"><div class="ttname"><a href="comtool_8c.html#a26072cb500b84460ce5816cc247311f6">AddRHS</a></div><div class="ttdeci">WORD * AddRHS(int num, int type)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00214">comtool.c:214</a></div></div>
+<div class="ttc" id="acomtool_8c_html_a3ad09bf828cf46a4a213b54269e34a3f"><div class="ttname"><a href="comtool_8c.html#a3ad09bf828cf46a4a213b54269e34a3f">inicbufs</a></div><div class="ttdeci">int inicbufs(void)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="acomtool_8c_html_aaa0838b0fca4643ea3d44dbde8341fb2"><div class="ttname"><a href="comtool_8c.html#aaa0838b0fca4643ea3d44dbde8341fb2">IniFbuffer</a></div><div class="ttdeci">int IniFbuffer(WORD bufnum)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00614">comtool.c:614</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ab9540604e742ad4b787c1bd5b93484b0"><div class="ttname"><a href="comtool_8c.html#ab9540604e742ad4b787c1bd5b93484b0">AddNtoC</a></div><div class="ttdeci">int AddNtoC(int bufnum, int n, WORD *array, int par)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00317">comtool.c:317</a></div></div>
-<div class="ttc" id="acomtool_8c_html_ad91faf677174dfde886e00d7e85a061d"><div class="ttname"><a href="comtool_8c.html#ad91faf677174dfde886e00d7e85a061d">inicbufs</a></div><div class="ttdeci">int inicbufs(VOID)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00047">comtool.c:47</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a3f839f0db36a7c08ae5fbf187ceabdea"><div class="ttname"><a href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04815">sort.c:4815</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a61aadbf93672ead01cecba3fccacf089"><div class="ttname"><a href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a></div><div class="ttdeci">LONG TimeWallClock(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03477">tools.c:3477</a></div></div>
 <div class="ttc" id="adeclare_8h_html_acce80d58dee0b9d618e9ea28894ef511"><div class="ttname"><a href="declare_8h.html#acce80d58dee0b9d618e9ea28894ef511">Compare1</a></div><div class="ttdeci">WORD Compare1(PHEAD WORD *, WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02606">sort.c:2606</a></div></div>
@@ -2220,7 +2220,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aparallel_8c_html_aaa6f2290ae527132b557e572636a7a20"><div class="ttname"><a href="parallel_8c.html#aaa6f2290ae527132b557e572636a7a20">PF_FlushStdOutBuffer</a></div><div class="ttdeci">void PF_FlushStdOutBuffer(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l04479">parallel.c:4479</a></div></div>
 <div class="ttc" id="aparallel_8c_html_ab17fe2cb9406a9962b7ae46f24c8b6b8"><div class="ttname"><a href="parallel_8c.html#ab17fe2cb9406a9962b7ae46f24c8b6b8">PF_BroadcastNumber</a></div><div class="ttdeci">LONG PF_BroadcastNumber(LONG x)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02094">parallel.c:2094</a></div></div>
 <div class="ttc" id="aportsignals_8h_html"><div class="ttname"><a href="portsignals_8h.html">portsignals.h</a></div></div>
-<div class="ttc" id="astartup_8c_html_a9f7b24d60d81fc7142fbdcdaab0ab665"><div class="ttname"><a href="startup_8c.html#a9f7b24d60d81fc7142fbdcdaab0ab665">StartVariables</a></div><div class="ttdeci">VOID StartVariables(VOID)</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l00905">startup.c:905</a></div></div>
+<div class="ttc" id="astartup_8c_html_a7b5a42294fe36302dc91d20c8604f32c"><div class="ttname"><a href="startup_8c.html#a7b5a42294fe36302dc91d20c8604f32c">StartVariables</a></div><div class="ttdeci">void StartVariables(void)</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l00905">startup.c:905</a></div></div>
 <div class="ttc" id="astartup_8c_html_aa248d87609f98ee3dcd04ecc4d322e60"><div class="ttname"><a href="startup_8c.html#aa248d87609f98ee3dcd04ecc4d322e60">PrintDeprecation</a></div><div class="ttdeci">void PrintDeprecation(const char *feature, const char *issue)</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l02061">startup.c:2061</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00992">structs.h:992</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html_aa4176dd4d869dcaec6a018b319ed764d"><div class="ttname"><a href="struct_cb_uf.html#aa4176dd4d869dcaec6a018b319ed764d">CbUf::Buffer</a></div><div class="ttdeci">WORD * Buffer</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00993">structs.h:993</a></div></div>

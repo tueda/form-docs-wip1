@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -911,7 +911,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>        RepVal = *RepSto;</div>
 <div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        <a class="code hl_function" href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a>(BHEAD0);</div>
 <div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD OldWork,AR.Cnumlhs) ) {</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>            *RepSto = RepVal;</div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>            AN.RepPoint = RepSto;</div>
 <div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>            AT.WorkPointer = OldWork;</div>
@@ -1080,7 +1080,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span><span class="comment">        #[ DoubleIfBuffers :</span></div>
 <div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span> </div>
-<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>VOID DoubleIfBuffers(VOID)</div>
+<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span><span class="keywordtype">void</span> DoubleIfBuffers(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>{</div>
 <div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>    <span class="keywordtype">int</span> newmax, i;</div>
 <div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>    WORD *newsumcheck;</div>
@@ -1182,7 +1182,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span><span class="comment">        #[ DoubleSwitchBuffers :</span></div>
 <div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span> </div>
-<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span><span class="keywordtype">int</span> DoubleSwitchBuffers(VOID)</div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span><span class="keywordtype">int</span> DoubleSwitchBuffers(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>{</div>
 <div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>    <span class="keywordtype">int</span> newmax, i;</div>
 <div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>    <a class="code hl_struct" href="struct_s_w_i_t_c_h.html">SWITCH</a> *newarray;</div>
@@ -1231,7 +1231,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span><span class="comment">        Sorts an array of WORDs. No adding of equal objects.</span></div>
 <div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span> </div>
-<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>VOID SwitchSplitMergeRec(<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *array,WORD num,<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *auxarray)</div>
+<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span><span class="keywordtype">void</span> SwitchSplitMergeRec(<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *array,WORD num,<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *auxarray)</div>
 <div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>{</div>
 <div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    WORD n1,n2,i,j,k;</div>
 <div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>    <a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *t1,*t2, t;</div>
@@ -1260,7 +1260,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>}</div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span> </div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>VOID SwitchSplitMerge(<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *array,WORD num)</div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span><span class="keywordtype">void</span> SwitchSplitMerge(<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *array,WORD num)</div>
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>{</div>
 <div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>    <a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *auxarray = (<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *)Malloc1(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a>)*num/2,<span class="stringliteral">&quot;SwitchSplitMerge&quot;</span>);</div>
 <div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>    SwitchSplitMergeRec(array,num,auxarray);</div>
@@ -1273,8 +1273,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span><span class="comment">*/</span></div>
 <div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_do_ll_ar_s_html"><div class="ttname"><a href="struct_do_ll_ar_s.html">DoLlArS</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00530">structs.h:530</a></div></div>
 <div class="ttc" id="astruct_s_w_i_t_c_h_html"><div class="ttname"><a href="struct_s_w_i_t_c_h.html">SWITCH</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01380">structs.h:1380</a></div></div>

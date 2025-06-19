@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -105,7 +105,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">        DICT_ALLNUMBERS, DICT_RATIONALONLY, DICT_INTEGERONLY, DICT_NONUMBERS</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>VOID TransformRational(UWORD *a, WORD na)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> TransformRational(UWORD *a, WORD na)</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_struct" href="struct_d_i_c_t_i_o_n_a_r_y.html">DICTIONARY</a> *dict;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    WORD i, j, nb, i1, i2; UWORD *b;</div>
@@ -252,7 +252,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">    #[ IsMultiplySign:</span></div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>UBYTE *IsMultiplySign(VOID)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>UBYTE *IsMultiplySign(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>{</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_struct" href="struct_d_i_c_t_i_o_n_a_r_y.html">DICTIONARY</a> *dict;</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordtype">int</span> i;</div>
@@ -272,7 +272,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">    #[ IsExponentSign:</span></div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>UBYTE *IsExponentSign(VOID)</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>UBYTE *IsExponentSign(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>{</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_struct" href="struct_d_i_c_t_i_o_n_a_r_y.html">DICTIONARY</a> *dict;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">int</span> i;</div>
@@ -635,17 +635,17 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>        AR.Cnumlhs = C-&gt;numlhs;</div>
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD ow,C-&gt;numlhs) ) {</div>
 <div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>            AR.Eside = oldEside;</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>            <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> IllLeft;</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> IllLeft;</div>
 <div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        }</div>
 <div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        AR.Eside = oldEside;</div>
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        AT.WorkPointer = w;</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD w,0) &lt; 0 ) { <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>(); <span class="keywordflow">goto</span> IllLeft; }</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD w,0) &lt; 0 ) { <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(); <span class="keywordflow">goto</span> IllLeft; }</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        <span class="keywordflow">if</span> ( *w == 0 || *(w+*w) != 0 ) {</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>            MesPrint(<span class="stringliteral">&quot;&amp;LHS must be one term&quot;</span>);</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>            AC.lhdollarflag = 0;</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>            <span class="keywordflow">return</span>(1);</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        }</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        <a class="code hl_function" href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a>();</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    }</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    AT.WorkPointer = w + *w;</div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    AC.DumNum = 0;</div>
@@ -917,7 +917,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span><span class="comment">    #[ UnSetDictionary :</span></div>
 <div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span> </div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span><span class="keywordtype">void</span> UnSetDictionary(VOID)</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span><span class="keywordtype">void</span> UnSetDictionary(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>{</div>
 <div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>    AO.CurrentDictionary = 0;</div>
 <div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>    AO.CurDictNumbers = -1;</div>
@@ -1219,9 +1219,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="acomtool_8c_html_ae9069b4533ceac646564659a6fc61ba2"><div class="ttname"><a href="comtool_8c.html#ae9069b4533ceac646564659a6fc61ba2">AddLHS</a></div><div class="ttdeci">WORD * AddLHS(int num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00188">comtool.c:188</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00614">sort.c:614</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00704">sort.c:704</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ad1138946c3fe173e5e46ce3bf110c7f4"><div class="ttname"><a href="declare_8h.html#ad1138946c3fe173e5e46ce3bf110c7f4">SortWild</a></div><div class="ttdeci">WORD SortWild(WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04723">sort.c:4723</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ae08e5ed1367868f7338f16f0b5d6b412"><div class="ttname"><a href="declare_8h.html#ae08e5ed1367868f7338f16f0b5d6b412">LowerSortLevel</a></div><div class="ttdeci">VOID LowerSortLevel(VOID)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04915">sort.c:4915</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00992">structs.h:992</a></div></div>
 <div class="ttc" id="astruct_d_i_c_t_i_o_n_a_r_y___e_l_e_m_e_n_t_html"><div class="ttname"><a href="struct_d_i_c_t_i_o_n_a_r_y___e_l_e_m_e_n_t.html">DICTIONARY_ELEMENT</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01354">structs.h:1354</a></div></div>

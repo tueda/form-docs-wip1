@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -348,7 +348,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">        Search in table 2 can be binary.</span></div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>VOID inictable(VOID)</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="keywordtype">void</span> inictable(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>{</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <a class="code hl_struct" href="struct_k_e_y_w_o_r_d.html">KEYWORD</a> *k = com1commands;</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordtype">int</span> i, j, ksize;</div>
@@ -707,7 +707,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="comment">        #[ TestTables :</span></div>
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="keywordtype">int</span> TestTables(VOID)</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="keywordtype">int</span> TestTables(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>{</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    <a class="code hl_struct" href="struct_fu_nc_ti_on.html">FUNCTIONS</a> f = functions;</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <a class="code hl_struct" href="struct_ta_bl_es.html">TABLES</a> t;</div>
@@ -830,8 +830,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>                Terminate(-1);</div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>            }</div>
 <div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>            <span class="keywordflow">if</span> ( subexpbuffers+insubexpbuffers &gt;= topsubexpbuffers ) {</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>                DoubleBuffer((<span class="keywordtype">void</span> **)((VOID *)(&amp;subexpbuffers))</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>                ,(<span class="keywordtype">void</span> **)((VOID *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>                DoubleBuffer((<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;subexpbuffers))</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>                ,(<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>            }</div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>            subexpbuffers[insubexpbuffers].subexpnum = num;</div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>            subexpbuffers[insubexpbuffers].buffernum = AC.cbufnum;</div>
@@ -2019,8 +2019,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01977" name="l01977"></a><span class="lineno"> 1977</span>                    Terminate(-1);</div>
 <div class="line"><a id="l01978" name="l01978"></a><span class="lineno"> 1978</span>                }</div>
 <div class="line"><a id="l01979" name="l01979"></a><span class="lineno"> 1979</span>                <span class="keywordflow">if</span> ( subexpbuffers+insubexpbuffers &gt;= topsubexpbuffers ) {</div>
-<div class="line"><a id="l01980" name="l01980"></a><span class="lineno"> 1980</span>                    DoubleBuffer((<span class="keywordtype">void</span> **)((VOID *)(&amp;subexpbuffers))</div>
-<div class="line"><a id="l01981" name="l01981"></a><span class="lineno"> 1981</span>                    ,(<span class="keywordtype">void</span> **)((VOID *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
+<div class="line"><a id="l01980" name="l01980"></a><span class="lineno"> 1980</span>                    DoubleBuffer((<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;subexpbuffers))</div>
+<div class="line"><a id="l01981" name="l01981"></a><span class="lineno"> 1981</span>                    ,(<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
 <div class="line"><a id="l01982" name="l01982"></a><span class="lineno"> 1982</span>                }</div>
 <div class="line"><a id="l01983" name="l01983"></a><span class="lineno"> 1983</span>                subexpbuffers[insubexpbuffers].subexpnum = subexp;</div>
 <div class="line"><a id="l01984" name="l01984"></a><span class="lineno"> 1984</span>                subexpbuffers[insubexpbuffers].buffernum = AC.cbufnum;</div>
@@ -2260,8 +2260,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02218" name="l02218"></a><span class="lineno"> 2218</span>        Terminate(-1);</div>
 <div class="line"><a id="l02219" name="l02219"></a><span class="lineno"> 2219</span>    }</div>
 <div class="line"><a id="l02220" name="l02220"></a><span class="lineno"> 2220</span>    <span class="keywordflow">if</span> ( subexpbuffers+insubexpbuffers &gt;= topsubexpbuffers ) {</div>
-<div class="line"><a id="l02221" name="l02221"></a><span class="lineno"> 2221</span>        DoubleBuffer((<span class="keywordtype">void</span> **)((VOID *)(&amp;subexpbuffers))</div>
-<div class="line"><a id="l02222" name="l02222"></a><span class="lineno"> 2222</span>        ,(<span class="keywordtype">void</span> **)((VOID *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
+<div class="line"><a id="l02221" name="l02221"></a><span class="lineno"> 2221</span>        DoubleBuffer((<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;subexpbuffers))</div>
+<div class="line"><a id="l02222" name="l02222"></a><span class="lineno"> 2222</span>        ,(<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
 <div class="line"><a id="l02223" name="l02223"></a><span class="lineno"> 2223</span>    }</div>
 <div class="line"><a id="l02224" name="l02224"></a><span class="lineno"> 2224</span>    subexpbuffers[insubexpbuffers].subexpnum = subexp;</div>
 <div class="line"><a id="l02225" name="l02225"></a><span class="lineno"> 2225</span>    subexpbuffers[insubexpbuffers].buffernum = AC.cbufnum;</div>
@@ -2307,8 +2307,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02265" name="l02265"></a><span class="lineno"> 2265</span>        Terminate(-1);</div>
 <div class="line"><a id="l02266" name="l02266"></a><span class="lineno"> 2266</span>    }</div>
 <div class="line"><a id="l02267" name="l02267"></a><span class="lineno"> 2267</span>    <span class="keywordflow">if</span> ( subexpbuffers+insubexpbuffers &gt;= topsubexpbuffers ) {</div>
-<div class="line"><a id="l02268" name="l02268"></a><span class="lineno"> 2268</span>        DoubleBuffer((<span class="keywordtype">void</span> **)((VOID *)(&amp;subexpbuffers))</div>
-<div class="line"><a id="l02269" name="l02269"></a><span class="lineno"> 2269</span>        ,(<span class="keywordtype">void</span> **)((VOID *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
+<div class="line"><a id="l02268" name="l02268"></a><span class="lineno"> 2268</span>        DoubleBuffer((<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;subexpbuffers))</div>
+<div class="line"><a id="l02269" name="l02269"></a><span class="lineno"> 2269</span>        ,(<span class="keywordtype">void</span> **)((<span class="keywordtype">void</span> *)(&amp;topsubexpbuffers)),<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);</div>
 <div class="line"><a id="l02270" name="l02270"></a><span class="lineno"> 2270</span>    }</div>
 <div class="line"><a id="l02271" name="l02271"></a><span class="lineno"> 2271</span>    subexpbuffers[insubexpbuffers].subexpnum = subexp;</div>
 <div class="line"><a id="l02272" name="l02272"></a><span class="lineno"> 2272</span>    subexpbuffers[insubexpbuffers].buffernum = AC.cbufnum;</div>

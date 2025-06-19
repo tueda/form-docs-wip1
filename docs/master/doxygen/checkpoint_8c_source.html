@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-180-g6abc477</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-191-gd3f7886</span>
    </div>
   </td>
  </tr>
@@ -195,7 +195,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                <span class="keywordflow">return</span>(0);<span class="comment">/*Ok, no recovery files at all.*/</span></div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="comment">/*The master recovery file exists but some slave files are absent*/</span></div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            MesPrint(<span class="stringliteral">&quot;The file %s exists but some of the slave recovery files are absent.&quot;</span>,</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                            <a class="code hl_function" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a>());</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                            <a class="code hl_function" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a>());</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        }<span class="comment">/*if(i!=PF.numtasks)*/</span></div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="comment">/*All the files are here.*/</span></div>
@@ -235,7 +235,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
 <div class="foldopen" id="foldopen00278" data-start="{" data-end="}">
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#aa721ba185dcbac9d5bcfc8ec83a3617e">  278</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="checkpoint_8c.html#aa721ba185dcbac9d5bcfc8ec83a3617e">CheckRecoveryFile</a>(VOID)</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#a932379f46a7f51d159202214aef97b85">  278</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="checkpoint_8c.html#a932379f46a7f51d159202214aef97b85">CheckRecoveryFile</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>{</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordtype">int</span> ret = 0;</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#ifdef WITHMPI</span></div>
@@ -257,13 +257,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#ifdef WITHMPI</span></div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordflow">if</span> ( PF.me == MASTER ) {</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            MesPrint(<span class="stringliteral">&quot;The recovery file %s exists, but the recovery option -R has not been given!&quot;</span>, <a class="code hl_function" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a>());</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            MesPrint(<span class="stringliteral">&quot;The recovery file %s exists, but the recovery option -R has not been given!&quot;</span>, <a class="code hl_function" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a>());</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            MesPrint(<span class="stringliteral">&quot;FORM will be terminated to avoid unintentional loss of data.&quot;</span>);</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            MesPrint(<span class="stringliteral">&quot;Delete the recovery file manually, if you want to start FORM without recovery.&quot;</span>);</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="preprocessor">#ifdef WITHMPI</span></div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            }</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            <span class="keywordflow">if</span>(PF.me != MASTER)</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                remove(<a class="code hl_function" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a>());</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                remove(<a class="code hl_function" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a>());</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            Terminate(-1);</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        }</div>
@@ -274,7 +274,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">#ifdef WITHMPI</span></div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keywordflow">if</span> ( PF.me == MASTER )</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            MesPrint(<span class="stringliteral">&quot;Option -R for recovery has been given, but the recovery file %s does not exist!&quot;</span>, <a class="code hl_function" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a>());</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            MesPrint(<span class="stringliteral">&quot;Option -R for recovery has been given, but the recovery file %s does not exist!&quot;</span>, <a class="code hl_function" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a>());</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            Terminate(-1);</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        }</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    }</div>
@@ -288,7 +288,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
 <div class="foldopen" id="foldopen00333" data-start="{" data-end="}">
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#adaabd0c1c468b9245ec386e7ed77889e">  333</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="checkpoint_8c.html#adaabd0c1c468b9245ec386e7ed77889e">DeleteRecoveryFile</a>(VOID)</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#a28ce20e3c0242586858d7151e8288a2e">  333</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="checkpoint_8c.html#a28ce20e3c0242586858d7151e8288a2e">DeleteRecoveryFile</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>{</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordflow">if</span> ( done_snapshot ) {</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        remove(recoveryfile);</div>
@@ -318,7 +318,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
 <div class="foldopen" id="foldopen00364" data-start="{" data-end="}">
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">  364</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a>(VOID)</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">  364</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>{</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="keywordflow">return</span>(recoveryfile);</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>}</div>
@@ -347,7 +347,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>}</div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span> </div>
 <div class="foldopen" id="foldopen00399" data-start="{" data-end="}">
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#a2e6c6dece865083e5cc91eff897fc2ab">  399</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="checkpoint_8c.html#a2e6c6dece865083e5cc91eff897fc2ab">InitRecovery</a>(VOID)</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno"><a class="line" href="checkpoint_8c.html#a202bedc4bb922d2789d0e21efec93b55">  399</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="checkpoint_8c.html#a202bedc4bb922d2789d0e21efec93b55">InitRecovery</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>{</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <span class="keywordtype">int</span> lenpath = AM.TempDir ? strlen((<span class="keywordtype">char</span>*)AM.TempDir)+1 : 0;</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="preprocessor">#ifdef WITHMPI</span></div>
@@ -2345,7 +2345,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02416" name="l02416"></a><span class="lineno"> 2416</span>            MesPrint(<span class="stringliteral">&quot;%d number of tasks expected instead of %d; use mpirun -np %d&quot;</span>,</div>
 <div class="line"><a id="l02417" name="l02417"></a><span class="lineno"> 2417</span>                            numtasks,PF.numtasks,numtasks);</div>
 <div class="line"><a id="l02418" name="l02418"></a><span class="lineno"> 2418</span>            <span class="keywordflow">if</span>(PF.me!=MASTER)</div>
-<div class="line"><a id="l02419" name="l02419"></a><span class="lineno"> 2419</span>                remove(<a class="code hl_function" href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a>());</div>
+<div class="line"><a id="l02419" name="l02419"></a><span class="lineno"> 2419</span>                remove(<a class="code hl_function" href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a>());</div>
 <div class="line"><a id="l02420" name="l02420"></a><span class="lineno"> 2420</span>            Terminate(-1);</div>
 <div class="line"><a id="l02421" name="l02421"></a><span class="lineno"> 2421</span>        }</div>
 <div class="line"><a id="l02422" name="l02422"></a><span class="lineno"> 2422</span>    }<span class="comment">/*Block*/</span></div>
@@ -3150,12 +3150,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03237" name="l03237"></a><span class="lineno"> 3237</span><span class="comment">/*</span></div>
 <div class="line"><a id="l03238" name="l03238"></a><span class="lineno"> 3238</span><span class="comment">    #] DoCheckpoint : </span></div>
 <div class="line"><a id="l03239" name="l03239"></a><span class="lineno"> 3239</span><span class="comment">*/</span></div>
-<div class="ttc" id="acheckpoint_8c_html_a2e6c6dece865083e5cc91eff897fc2ab"><div class="ttname"><a href="checkpoint_8c.html#a2e6c6dece865083e5cc91eff897fc2ab">InitRecovery</a></div><div class="ttdeci">void InitRecovery(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00399">checkpoint.c:399</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a202bedc4bb922d2789d0e21efec93b55"><div class="ttname"><a href="checkpoint_8c.html#a202bedc4bb922d2789d0e21efec93b55">InitRecovery</a></div><div class="ttdeci">void InitRecovery(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00399">checkpoint.c:399</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a28ce20e3c0242586858d7151e8288a2e"><div class="ttname"><a href="checkpoint_8c.html#a28ce20e3c0242586858d7151e8288a2e">DeleteRecoveryFile</a></div><div class="ttdeci">void DeleteRecoveryFile(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00333">checkpoint.c:333</a></div></div>
 <div class="ttc" id="acheckpoint_8c_html_a60d3513a65e83e59f4aa48421f7356e6"><div class="ttname"><a href="checkpoint_8c.html#a60d3513a65e83e59f4aa48421f7356e6">DoCheckpoint</a></div><div class="ttdeci">void DoCheckpoint(int moduletype)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l03111">checkpoint.c:3111</a></div></div>
-<div class="ttc" id="acheckpoint_8c_html_a8abf6d449f08b70d2e60621aeb86a6cd"><div class="ttname"><a href="checkpoint_8c.html#a8abf6d449f08b70d2e60621aeb86a6cd">RecoveryFilename</a></div><div class="ttdeci">char * RecoveryFilename(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00364">checkpoint.c:364</a></div></div>
 <div class="ttc" id="acheckpoint_8c_html_a9213bd2589bf698d8ee098f10bf12d65"><div class="ttname"><a href="checkpoint_8c.html#a9213bd2589bf698d8ee098f10bf12d65">DoRecovery</a></div><div class="ttdeci">int DoRecovery(int *moduletype)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l01402">checkpoint.c:1402</a></div></div>
-<div class="ttc" id="acheckpoint_8c_html_aa721ba185dcbac9d5bcfc8ec83a3617e"><div class="ttname"><a href="checkpoint_8c.html#aa721ba185dcbac9d5bcfc8ec83a3617e">CheckRecoveryFile</a></div><div class="ttdeci">int CheckRecoveryFile(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00278">checkpoint.c:278</a></div></div>
-<div class="ttc" id="acheckpoint_8c_html_adaabd0c1c468b9245ec386e7ed77889e"><div class="ttname"><a href="checkpoint_8c.html#adaabd0c1c468b9245ec386e7ed77889e">DeleteRecoveryFile</a></div><div class="ttdeci">void DeleteRecoveryFile(VOID)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00333">checkpoint.c:333</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a932379f46a7f51d159202214aef97b85"><div class="ttname"><a href="checkpoint_8c.html#a932379f46a7f51d159202214aef97b85">CheckRecoveryFile</a></div><div class="ttdeci">int CheckRecoveryFile(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00278">checkpoint.c:278</a></div></div>
+<div class="ttc" id="acheckpoint_8c_html_a95375ca5306fb559f5eb6ceb161f79c1"><div class="ttname"><a href="checkpoint_8c.html#a95375ca5306fb559f5eb6ceb161f79c1">RecoveryFilename</a></div><div class="ttdeci">char * RecoveryFilename(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00364">checkpoint.c:364</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a61aadbf93672ead01cecba3fccacf089"><div class="ttname"><a href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a></div><div class="ttdeci">LONG TimeWallClock(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03477">tools.c:3477</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a913e5128a17dc117776c06c35f550181"><div class="ttname"><a href="declare_8h.html#a913e5128a17dc117776c06c35f550181">CopyFile</a></div><div class="ttdeci">int CopyFile(char *, char *)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l01101">tools.c:1101</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03551">tools.c:3551</a></div></div>
