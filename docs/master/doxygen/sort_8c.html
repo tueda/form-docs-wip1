@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-197-gd9a3230</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-207-geebd42d</span>
    </div>
   </td>
  </tr>
@@ -100,11 +100,17 @@ Macros</h2></td></tr>
 <tr class="separator:a3cec6a8469c5202341e4ec3cd5b5158f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4235e9e51bac1bacdc8486d14e34f9a" id="r_ab4235e9e51bac1bacdc8486d14e34f9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#ab4235e9e51bac1bacdc8486d14e34f9a">NEWSPLITMERGETIMSORT</a></td></tr>
 <tr class="separator:ab4235e9e51bac1bacdc8486d14e34f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dcead3ec0e0b9dd1ff66eff221260bf" id="r_a7dcead3ec0e0b9dd1ff66eff221260bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a7dcead3ec0e0b9dd1ff66eff221260bf">HUMANSTRLEN</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:a7dcead3ec0e0b9dd1ff66eff221260bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a079a1c6c9fc869fcebd5aa83082623" id="r_a0a079a1c6c9fc869fcebd5aa83082623"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a0a079a1c6c9fc869fcebd5aa83082623">HUMANSUFFLEN</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a0a079a1c6c9fc869fcebd5aa83082623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb15c27bdc04b9176743f65d1ff3fd39" id="r_afb15c27bdc04b9176743f65d1ff3fd39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#afb15c27bdc04b9176743f65d1ff3fd39">INSLENGTH</a>(x)&#160;&#160;&#160;w[1] = FUNHEAD+ARGHEAD+x; w[FUNHEAD] = ARGHEAD+x;</td></tr>
 <tr class="separator:afb15c27bdc04b9176743f65d1ff3fd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a839783731dc7a11c4e90b418b2dd70cd" id="r_a839783731dc7a11c4e90b418b2dd70cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a839783731dc7a11c4e90b418b2dd70cd">HumanString</a> (char *string, float input, const char suffix[HUMANSUFFLEN][4])</td></tr>
+<tr class="separator:a839783731dc7a11c4e90b418b2dd70cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa18c8b00749aab07385daf3ac71d3af9" id="r_aa18c8b00749aab07385daf3ac71d3af9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a> (<a class="el" href="struct_po_si_ti_on.html">POSITION</a> *plspace, WORD par, WORD checkLogType)</td></tr>
 <tr class="separator:aa18c8b00749aab07385daf3ac71d3af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41a6fb48e7021f221c53df558baee3bc" id="r_a41a6fb48e7021f221c53df558baee3bc"><td class="memItemLeft" align="right" valign="top">WORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a> (PHEAD0)</td></tr>
@@ -164,6 +170,10 @@ Variables</h2></td></tr>
 <tr class="separator:ad8d9b43e3006411637608918d171ed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1173f5fb8610bfebbfa81d95727790" id="r_abc1173f5fb8610bfebbfa81d95727790"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#abc1173f5fb8610bfebbfa81d95727790">toterms</a> [] = { &quot; &quot;, &quot; &gt;&gt;&quot;, &quot;--&gt;&quot; }</td></tr>
 <tr class="separator:abc1173f5fb8610bfebbfa81d95727790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f392d35545e2b4427abf1010be68940" id="r_a9f392d35545e2b4427abf1010be68940"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a9f392d35545e2b4427abf1010be68940">humanTermsSuffix</a> [HUMANSUFFLEN][4] = {&quot;K &quot;,&quot;M &quot;,&quot;B &quot;,&quot;T &quot;}</td></tr>
+<tr class="separator:a9f392d35545e2b4427abf1010be68940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc0c72d72cda8ec3ba34ffdb3c4807fc" id="r_adc0c72d72cda8ec3ba34ffdb3c4807fc"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#adc0c72d72cda8ec3ba34ffdb3c4807fc">humanBytesSuffix</a> [HUMANSUFFLEN][4] = {&quot;KiB&quot;,&quot;MiB&quot;,&quot;GiB&quot;,&quot;TiB&quot;}</td></tr>
+<tr class="separator:adc0c72d72cda8ec3ba34ffdb3c4807fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the sort routines. We distinguish levels of sorting. The ground level is the sorting of terms in an expression. When a term has functions, the arguments can contain terms that need sorting, which this then done by raising the level. This can happen recursively. NewSort and EndSort automatically raise and lower the level. Because the ground level does some special things, sometimes we have to raise immediately to the second level skipping the ground level.</p>
@@ -203,6 +213,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a7dcead3ec0e0b9dd1ff66eff221260bf" name="a7dcead3ec0e0b9dd1ff66eff221260bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dcead3ec0e0b9dd1ff66eff221260bf">&#9670;&#160;</a></span>HUMANSTRLEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HUMANSTRLEN&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00085">85</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+
+</div>
+</div>
+<a id="a0a079a1c6c9fc869fcebd5aa83082623" name="a0a079a1c6c9fc869fcebd5aa83082623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a079a1c6c9fc869fcebd5aa83082623">&#9670;&#160;</a></span>HUMANSUFFLEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HUMANSUFFLEN&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00086">86</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+
+</div>
+</div>
 <a id="afb15c27bdc04b9176743f65d1ff3fd39" name="afb15c27bdc04b9176743f65d1ff3fd39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb15c27bdc04b9176743f65d1ff3fd39">&#9670;&#160;</a></span>INSLENGTH</h2>
 
@@ -219,11 +261,47 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02305">2305</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02334">2334</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a839783731dc7a11c4e90b418b2dd70cd" name="a839783731dc7a11c4e90b418b2dd70cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839783731dc7a11c4e90b418b2dd70cd">&#9670;&#160;</a></span>HumanString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HumanString </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>suffix</em>[HUMANSUFFLEN][4]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00089">89</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+
+</div>
+</div>
 <a id="aa18c8b00749aab07385daf3ac71d3af9" name="aa18c8b00749aab07385daf3ac71d3af9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa18c8b00749aab07385daf3ac71d3af9">&#9670;&#160;</a></span>WriteStats()</h2>
 
@@ -266,11 +344,11 @@ Variables</h2></td></tr>
 </dl>
 <p>current expression is to be found in AR.CurExpr. terms are in S-&gt;TermsLeft. S-&gt;GenTerms. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00101">101</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00121">121</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="tools_8c_source.html#l03551">TimeCPU()</a>, and <a class="el" href="tools_8c_source.html#l03477">TimeWallClock()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, and <a class="el" href="sort_8c_source.html#l04511">StoreTerm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, and <a class="el" href="sort_8c_source.html#l04540">StoreTerm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -304,9 +382,9 @@ Here is the call graph for this function:</div>
 <p>Starts a new sort. At the lowest level this is a 'main sort' with the struct according to the parameters in S0. At higher levels this is a sort for functions, subroutines or dollars. We prepare the arrays and structs.</p>
 <dl class="section return"><dt>Returns</dt><dd>Regular convention (OK -&gt; 0) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00614">614</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00643">643</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="dollar_8c_source.html#l03627">MakeDollarInteger()</a>, <a class="el" href="dollar_8c_source.html#l03801">MakeDollarMod()</a>, <a class="el" href="parallel_8c_source.html#l02506">PF_CollectModifiedDollars()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l01178">poly_factorize_expression()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="polywrap_8cc_source.html#l01535">poly_unfactorize_expression()</a>, <a class="el" href="proces_8c_source.html#l05354">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>, and <a class="el" href="pattern_8c_source.html#l00097">TestMatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="dollar_8c_source.html#l03627">MakeDollarInteger()</a>, <a class="el" href="dollar_8c_source.html#l03801">MakeDollarMod()</a>, <a class="el" href="parallel_8c_source.html#l02506">PF_CollectModifiedDollars()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l01178">poly_factorize_expression()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="polywrap_8cc_source.html#l01535">poly_unfactorize_expression()</a>, <a class="el" href="proces_8c_source.html#l05360">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>, and <a class="el" href="pattern_8c_source.html#l00097">TestMatch()</a>.</p>
 
 </div>
 </div>
@@ -345,11 +423,11 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If negative: error. If positive: number of words in output. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00704">704</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00733">733</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l03167">ComPress()</a>, <a class="el" href="sort_8c_source.html#l01799">FlushOut()</a>, <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>, <a class="el" href="parallel_8c_source.html#l00864">PF_EndSort()</a>, <a class="el" href="sort_8c_source.html#l01437">PutOut()</a>, <a class="el" href="sort_8c_source.html#l03333">SplitMerge()</a>, <a class="el" href="sort_8c_source.html#l04625">StageSort()</a>, and <a class="el" href="sort_8c_source.html#l00101">WriteStats()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l03196">ComPress()</a>, <a class="el" href="sort_8c_source.html#l01828">FlushOut()</a>, <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>, <a class="el" href="parallel_8c_source.html#l00864">PF_EndSort()</a>, <a class="el" href="sort_8c_source.html#l01466">PutOut()</a>, <a class="el" href="sort_8c_source.html#l03362">SplitMerge()</a>, <a class="el" href="sort_8c_source.html#l04654">StageSort()</a>, and <a class="el" href="sort_8c_source.html#l00121">WriteStats()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="dollar_8c_source.html#l03627">MakeDollarInteger()</a>, <a class="el" href="dollar_8c_source.html#l03801">MakeDollarMod()</a>, <a class="el" href="parallel_8c_source.html#l02506">PF_CollectModifiedDollars()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l01178">poly_factorize_expression()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="polywrap_8cc_source.html#l01535">poly_unfactorize_expression()</a>, <a class="el" href="proces_8c_source.html#l05354">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>, and <a class="el" href="pattern_8c_source.html#l00097">TestMatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="dollar_8c_source.html#l03627">MakeDollarInteger()</a>, <a class="el" href="dollar_8c_source.html#l03801">MakeDollarMod()</a>, <a class="el" href="parallel_8c_source.html#l02506">PF_CollectModifiedDollars()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l01178">poly_factorize_expression()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="polywrap_8cc_source.html#l01535">poly_unfactorize_expression()</a>, <a class="el" href="proces_8c_source.html#l05360">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>, and <a class="el" href="pattern_8c_source.html#l00097">TestMatch()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -490,11 +568,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01291">1291</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01320">1320</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>.</p>
 
 </div>
 </div>
@@ -521,11 +599,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01351">1351</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01380">1380</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>.</p>
 
 </div>
 </div>
@@ -578,11 +656,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01437">1437</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01466">1466</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>, and <a class="el" href="mpi_8c_source.html#l00261">PF_ISendSbuf()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>, <a class="el" href="parallel_8c_source.html#l00864">PF_EndSort()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, and <a class="el" href="proces_8c_source.html#l00064">Processor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>, <a class="el" href="parallel_8c_source.html#l00864">PF_EndSort()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, and <a class="el" href="proces_8c_source.html#l00064">Processor()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -638,11 +716,11 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Regular conventions (OK -&gt; 0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01799">1799</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l01828">1828</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>, <a class="el" href="structs_8h_source.html#l00330">BrAcKeTiNfO::indexbuffer</a>, and <a class="el" href="mpi_8c_source.html#l00261">PF_ISendSbuf()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>, <a class="el" href="parallel_8c_source.html#l00864">PF_EndSort()</a>, and <a class="el" href="proces_8c_source.html#l00064">Processor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>, <a class="el" href="parallel_8c_source.html#l00864">PF_EndSort()</a>, and <a class="el" href="proces_8c_source.html#l00064">Processor()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -685,11 +763,11 @@ Here is the call graph for this function:</div>
 <p>If the return value is zero the terms cancelled.</p>
 <p>The resulting term is left in *ps1. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02013">2013</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02042">2042</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l03613">GarbHand()</a>, and <a class="el" href="reken_8c_source.html#l01403">NormalModulus()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l03642">GarbHand()</a>, and <a class="el" href="reken_8c_source.html#l01403">NormalModulus()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03333">SplitMerge()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03362">SplitMerge()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -742,11 +820,11 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If zero the terms cancel. Otherwise the new term is in *ps1. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02142">2142</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02171">2171</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l02314">AddArgs()</a>, <a class="el" href="sort_8c_source.html#l03613">GarbHand()</a>, and <a class="el" href="polywrap_8cc_source.html#l00633">poly_ratfun_add()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l02343">AddArgs()</a>, <a class="el" href="sort_8c_source.html#l03642">GarbHand()</a>, and <a class="el" href="polywrap_8cc_source.html#l00633">poly_ratfun_add()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03333">SplitMerge()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l03362">SplitMerge()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -872,9 +950,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02314">2314</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02343">2343</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l02142">AddPoly()</a>, and <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l02171">AddPoly()</a>, and <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>.</p>
 
 </div>
 </div>
@@ -922,7 +1000,7 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>0 equal ( with exception of the coefficient if level == 0. ) &gt;0 term1 comes first. &lt;0 term2 comes first.</dd></dl>
 <p>When there are floating point numbers active (float_ = FLOATFUN) the presence of one or more float_ functions is returned in AT.SortFloatMode: 0: no float_ 1: float_ in term1 only 2: float_ in term2 only 3: float_ in both terms </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02607">2607</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l02636">2636</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="reken_8c_source.html#l03047">CompCoef()</a>.</p>
 
@@ -973,7 +1051,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Compares the terms, based on the value of AN.polysortflag. If term1 &lt; term2 the return value is -1 If term1 &gt; term2 the return value is 1 If term1 = term2 the return value is 0 The coefficients may differ. The terms contain only a single subterm of type SYMBOL. If AN.polysortflag = 0 it is a 'regular' compare. If AN.polysortflag = 1 the sum of the powers is more important par is a dummy parameter to make the parameter field identical to that of Compare1 which is the regular compare routine in <a class="el" href="sort_8c.html">sort.c</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03071">3071</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03100">3100</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, and <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>.</p>
 
@@ -1012,7 +1090,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Compares terms that can have only SYMBOL and HAAKJE subterms. If term1 &lt; term2 the return value is -1 If term1 &gt; term2 the return value is 1 If term1 = term2 the return value is 0 par is a dummy parameter to make the parameter field identical to that of Compare1 which is the regular compare routine in <a class="el" href="sort_8c.html">sort.c</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03114">3114</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03143">3143</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1052,9 +1130,9 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Total number of words needed for the compressed result. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03167">3167</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03196">3196</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, and <a class="el" href="sort_8c_source.html#l04511">StoreTerm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, and <a class="el" href="sort_8c_source.html#l04540">StoreTerm()</a>.</p>
 
 </div>
 </div>
@@ -1095,11 +1173,11 @@ Here is the call graph for this function:</div>
 </dl>
 <p>The terms are supposed to be sitting in the small buffer and there is supposed to be an extension to this buffer for when there are two terms that should be added and the result takes more space than each of the original terms. The notation guarantees that the result never needs more space than the sum of the spaces of the original terms. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03333">3333</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03362">3362</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l02013">AddCoef()</a>, <a class="el" href="sort_8c_source.html#l02142">AddPoly()</a>, and <a class="el" href="sort_8c_source.html#l03333">SplitMerge()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l02042">AddCoef()</a>, <a class="el" href="sort_8c_source.html#l02171">AddPoly()</a>, and <a class="el" href="sort_8c_source.html#l03362">SplitMerge()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, <a class="el" href="sort_8c_source.html#l03333">SplitMerge()</a>, and <a class="el" href="sort_8c_source.html#l04511">StoreTerm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, <a class="el" href="sort_8c_source.html#l03362">SplitMerge()</a>, and <a class="el" href="sort_8c_source.html#l04540">StoreTerm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1202,9 +1280,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Garbage collection that takes place when the small extension is full and we need to place more terms there. When this is the case there are many holes in the small buffer and the whole can be compactified. The major complication is the buffer for SplitMerge. There are to options for temporary memory: 1: find some buffer that has enough space (maybe in the large buffer). 2: allocate a buffer. Give it back afterwards of course. If the small extension is properly dimensioned this routine should be called very rarely. Most of the time it will be called when the polyfun or polyratfun is active. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03613">3613</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03642">3642</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l02013">AddCoef()</a>, and <a class="el" href="sort_8c_source.html#l02142">AddPoly()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l02042">AddCoef()</a>, and <a class="el" href="sort_8c_source.html#l02171">AddPoly()</a>.</p>
 
 </div>
 </div>
@@ -1231,11 +1309,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03728">3728</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l03757">3757</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l02314">AddArgs()</a>, <a class="el" href="sort_8c_source.html#l01799">FlushOut()</a>, <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>, <a class="el" href="reken_8c_source.html#l01403">NormalModulus()</a>, <a class="el" href="polywrap_8cc_source.html#l00633">poly_ratfun_add()</a>, <a class="el" href="sort_8c_source.html#l01291">PutIn()</a>, <a class="el" href="sort_8c_source.html#l01437">PutOut()</a>, <a class="el" href="sort_8c_source.html#l01351">Sflush()</a>, and <a class="el" href="sort_8c_source.html#l04625">StageSort()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l02343">AddArgs()</a>, <a class="el" href="sort_8c_source.html#l01828">FlushOut()</a>, <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>, <a class="el" href="reken_8c_source.html#l01403">NormalModulus()</a>, <a class="el" href="polywrap_8cc_source.html#l00633">poly_ratfun_add()</a>, <a class="el" href="sort_8c_source.html#l01320">PutIn()</a>, <a class="el" href="sort_8c_source.html#l01466">PutOut()</a>, <a class="el" href="sort_8c_source.html#l01380">Sflush()</a>, and <a class="el" href="sort_8c_source.html#l04654">StageSort()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, and <a class="el" href="sort_8c_source.html#l04511">StoreTerm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, and <a class="el" href="sort_8c_source.html#l04540">StoreTerm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1345,11 +1423,11 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Regular return conventions (OK -&gt; 0) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04511">4511</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04540">4540</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l03167">ComPress()</a>, <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>, <a class="el" href="sort_8c_source.html#l03333">SplitMerge()</a>, and <a class="el" href="sort_8c_source.html#l00101">WriteStats()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l03196">ComPress()</a>, <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>, <a class="el" href="sort_8c_source.html#l03362">SplitMerge()</a>, and <a class="el" href="sort_8c_source.html#l00121">WriteStats()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="proces_8c_source.html#l03266">Generator()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="proces_8c_source.html#l05354">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, and <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="proces_8c_source.html#l03266">Generator()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="proces_8c_source.html#l05360">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, and <a class="el" href="argument_8c_source.html#l02766">TakeArgContent()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1452,11 +1530,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Prepares a stage 4 or higher sort. Stage 4 sorts occur when the sort file contains more patches than can be merged in one pass. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04625">4625</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04654">4654</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 <p class="reference">References <a class="el" href="structs_8h_source.html#l00710">FiLe::handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00704">EndSort()</a>, and <a class="el" href="sort_8c_source.html#l03728">MergePatches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8c_source.html#l00733">EndSort()</a>, and <a class="el" href="sort_8c_source.html#l03757">MergePatches()</a>.</p>
 
 </div>
 </div>
@@ -1495,7 +1573,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Normal conventions (OK -&gt; 0) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04724">4724</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04753">4753</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1594,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Partially or completely frees function sort buffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04816">4816</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04845">4845</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1537,9 +1615,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Lowers the level in the sort system. </p>
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04916">4916</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04945">4945</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="parallel_8c_source.html#l02506">PF_CollectModifiedDollars()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l01178">poly_factorize_expression()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="polywrap_8cc_source.html#l01535">poly_unfactorize_expression()</a>, <a class="el" href="proces_8c_source.html#l05354">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, and <a class="el" href="pattern_8c_source.html#l00097">TestMatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="proces_8c_source.html#l02174">InFunction()</a>, <a class="el" href="parallel_8c_source.html#l02506">PF_CollectModifiedDollars()</a>, <a class="el" href="parallel_8c_source.html#l01540">PF_Processor()</a>, <a class="el" href="polywrap_8cc_source.html#l01178">poly_factorize_expression()</a>, <a class="el" href="polywrap_8cc_source.html#l00590">poly_sort()</a>, <a class="el" href="polywrap_8cc_source.html#l01535">poly_unfactorize_expression()</a>, <a class="el" href="proces_8c_source.html#l05360">PolyFunMul()</a>, <a class="el" href="proces_8c_source.html#l00064">Processor()</a>, and <a class="el" href="pattern_8c_source.html#l00097">TestMatch()</a>.</p>
 
 </div>
 </div>
@@ -1569,7 +1647,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04933">4933</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l04962">4962</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1605,7 +1683,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l05035">5035</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l05064">5064</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1635,7 +1713,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l05063">5063</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l05092">5092</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1671,7 +1749,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l05081">5081</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l05110">5110</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
@@ -1705,6 +1783,38 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00083">83</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+
+</div>
+</div>
+<a id="a9f392d35545e2b4427abf1010be68940" name="a9f392d35545e2b4427abf1010be68940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f392d35545e2b4427abf1010be68940">&#9670;&#160;</a></span>humanTermsSuffix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char humanTermsSuffix[HUMANSUFFLEN][4] = {&quot;K &quot;,&quot;M &quot;,&quot;B &quot;,&quot;T &quot;}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00087">87</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
+
+</div>
+</div>
+<a id="adc0c72d72cda8ec3ba34ffdb3c4807fc" name="adc0c72d72cda8ec3ba34ffdb3c4807fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0c72d72cda8ec3ba34ffdb3c4807fc">&#9670;&#160;</a></span>humanBytesSuffix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char humanBytesSuffix[HUMANSUFFLEN][4] = {&quot;KiB&quot;,&quot;MiB&quot;,&quot;GiB&quot;,&quot;TiB&quot;}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sort_8c_source.html#l00088">88</a> of file <a class="el" href="sort_8c_source.html">sort.c</a>.</p>
 
 </div>
 </div>
