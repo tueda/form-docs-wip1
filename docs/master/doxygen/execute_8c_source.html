@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-213-ge5c6050</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-217-g2099e07</span>
    </div>
   </td>
  </tr>
@@ -851,7 +851,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>            <span class="comment">/* The user switched off the parallel execution explicitly. */</span></div>
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>        }</div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( AC.mparallelflag &amp; NOPARALLEL_DOLLAR ) {</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>            <span class="keywordflow">if</span> ( AC.WarnFlag &gt;= 2 ) {  <span class="comment">/* HighWarning */</span></div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>            <span class="keywordflow">if</span> ( AC.WarnFlag &gt;= 1 ) {  <span class="comment">/* Warning */</span></div>
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>                <span class="keywordtype">int</span> i, j, k, n;</div>
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                UBYTE *s, *s1;</div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>                s = strDup1((UBYTE *)<span class="stringliteral">&quot;&quot;</span>,<span class="stringliteral">&quot;NOPARALLEL_DOLLAR s&quot;</span>);</div>
@@ -874,7 +874,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                    s1 = AddToString(s1,(UBYTE *)<span class="stringliteral">&quot;s&quot;</span>,0);</div>
 <div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                s1 = AddToString(s1,(UBYTE *)<span class="stringliteral">&quot;: &quot;</span>,0);</div>
 <div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                s1 = AddToString(s1,s,0);</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                HighWarning((<span class="keywordtype">char</span> *)s1);</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                Warning((<span class="keywordtype">char</span> *)s1);</div>
 <div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                M_free(s,<span class="stringliteral">&quot;NOPARALLEL_DOLLAR s&quot;</span>);</div>
 <div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                M_free(s1,<span class="stringliteral">&quot;NOPARALLEL_DOLLAR s1&quot;</span>);</div>
 <div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>            }</div>
