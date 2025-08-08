@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-217-g2099e07</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-222-gf63dcf4</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    to any of these sets.</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>WORD FindOnly(PHEAD WORD *term, WORD *pattern)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">int</span> FindOnly(PHEAD WORD *term, WORD *pattern)</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    GETBIDENTITY</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    WORD *t, *m;</div>
@@ -458,7 +458,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span><span class="comment"></span> </div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>WORD FindOnce(PHEAD WORD *term, WORD *pattern)</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="keywordtype">int</span> FindOnce(PHEAD WORD *term, WORD *pattern)</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>{</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    GETBIDENTITY</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    WORD *t, *m;</div>
@@ -1109,7 +1109,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span><span class="comment"></span> </div>
 <div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span> </div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>WORD FindRest(PHEAD WORD *term, WORD *pattern)</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span><span class="keywordtype">int</span> FindRest(PHEAD WORD *term, WORD *pattern)</div>
 <div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>{</div>
 <div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>    GETBIDENTITY</div>
 <div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>    WORD *t, *m, *tt, wild, regular;</div>

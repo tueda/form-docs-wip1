@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-217-g2099e07</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-222-gf63dcf4</span>
    </div>
   </td>
  </tr>
@@ -327,7 +327,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">        Note that the whole setup asks for recursions.</span></div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>WORD DoIfStatement(PHEAD WORD *ifcode, WORD *term)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="keywordtype">int</span> DoIfStatement(PHEAD WORD *ifcode, WORD *term)</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>{</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    GETBIDENTITY</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    WORD *ifstop, *ifp;</div>
@@ -909,8 +909,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>        AT.WorkPointer = ww;</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>        RepSto = AN.RepPoint;</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>        RepVal = *RepSto;</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        <a class="code hl_function" href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a>(BHEAD0);</div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD OldWork,AR.Cnumlhs) ) {</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        <a class="code hl_function" href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a>(BHEAD0);</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD OldWork,AR.Cnumlhs) ) {</div>
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>            <a class="code hl_function" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>();</div>
 <div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>            *RepSto = RepVal;</div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>            AN.RepPoint = RepSto;</div>
@@ -1125,7 +1125,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>    WORD numdollar = lhs[2];</div>
 <div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>    WORD ncase = DolToNumber(BHEAD numdollar);</div>
 <div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>    <a class="code hl_struct" href="struct_s_w_i_t_c_h_t_a_b_l_e.html">SWITCHTABLE</a> *swtab = FindCase(lhs[3],ncase);</div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    <span class="keywordflow">return</span>(<a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,swtab-&gt;value));</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    <span class="keywordflow">return</span>(<a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD term,swtab-&gt;value));</div>
 <div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>}</div>
 <div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span> </div>
 <div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span><span class="comment">/*</span></div>
@@ -1136,7 +1136,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span><span class="keywordtype">int</span> DoEndSwitch(PHEAD WORD *term, WORD *lhs)</div>
 <div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>{</div>
 <div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>    <a class="code hl_struct" href="struct_s_w_i_t_c_h.html">SWITCH</a> *sw = AC.SwitchArray+lhs[2];</div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>    <span class="keywordflow">return</span>(<a class="code hl_function" href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a>(BHEAD term,sw-&gt;endswitch.value+1));</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>    <span class="keywordflow">return</span>(<a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD term,sw-&gt;endswitch.value+1));</div>
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>}</div>
 <div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span> </div>
 <div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span><span class="comment">/*</span></div>
@@ -1271,10 +1271,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span><span class="comment">        #] SwitchSplitMerge : </span></div>
 <div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span><span class="comment">    #] Switch statement : </span></div>
 <div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span><span class="comment">*/</span></div>
-<div class="ttc" id="adeclare_8h_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00643">sort.c:643</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00733">sort.c:733</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04929">sort.c:4929</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a7852613b76ed504381c6dab10c47714b"><div class="ttname"><a href="declare_8h.html#a7852613b76ed504381c6dab10c47714b">Generator</a></div><div class="ttdeci">WORD Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03266">proces.c:3266</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03267">proces.c:3267</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04930">sort.c:4930</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a99ebcff357ae7956b0ab9ee2417a6af0"><div class="ttname"><a href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a></div><div class="ttdeci">int NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00643">sort.c:643</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_do_ll_ar_s_html"><div class="ttname"><a href="struct_do_ll_ar_s.html">DoLlArS</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00530">structs.h:530</a></div></div>
 <div class="ttc" id="astruct_s_w_i_t_c_h_html"><div class="ttname"><a href="struct_s_w_i_t_c_h.html">SWITCH</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01380">structs.h:1380</a></div></div>

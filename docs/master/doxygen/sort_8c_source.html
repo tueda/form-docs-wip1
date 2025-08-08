@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-217-g2099e07</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-222-gf63dcf4</span>
    </div>
   </td>
  </tr>
@@ -655,7 +655,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="comment">        #[ NewSort :                WORD NewSort()</span></div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen00643" data-start="{" data-end="}">
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno"><a class="line" href="declare_8h.html#a41a6fb48e7021f221c53df558baee3bc">  643</a></span>WORD <a class="code hl_function" href="sort_8c.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a>(PHEAD0)</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno"><a class="line" href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">  643</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a>(PHEAD0)</div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>{</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    GETBIDENTITY</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S, **newFS;</div>
@@ -863,7 +863,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>            <span class="keywordflow">if</span> ( AS.MasterSort &amp;&amp; ( fout == AR.outfile ) ) { PutToMaster(BHEAD 0); }</div>
 <div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a>(&amp;position,fout,1) ) {</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a>(&amp;position,fout,1) ) {</div>
 <div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>                retval = -1; <span class="keywordflow">goto</span> RetRetval;</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>            }</div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
@@ -912,7 +912,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>            MUNLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span> </div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a>(1) ) {</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a>(1) ) {</div>
 <div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>                MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>                MesCall(<span class="stringliteral">&quot;EndSort&quot;</span>);</div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>                MUNLOCK(ErrorMessageLock);</div>
@@ -948,7 +948,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>            *to++ = 0;</div>
 <div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>            S-&gt;lFill = to;</div>
 <div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>            <span class="keywordflow">if</span> ( S-&gt;file.handle &lt; 0 ) {</div>
-<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a>(2) ) {</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a>(2) ) {</div>
 <div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>                    MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>                    MesCall(<span class="stringliteral">&quot;EndSort&quot;</span>);</div>
 <div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>                    MUNLOCK(ErrorMessageLock);</div>
@@ -1024,7 +1024,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span>                }</div>
 <div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>                <span class="keywordflow">goto</span> RetRetval;</div>
 <div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>            }</div>
-<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a>(1) ) { <span class="comment">/* --&gt; SortFile */</span></div>
+<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a>(1) ) { <span class="comment">/* --&gt; SortFile */</span></div>
 <div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>                MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>                MesCall(<span class="stringliteral">&quot;EndSort&quot;</span>);</div>
 <div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>                MUNLOCK(ErrorMessageLock);</div>
@@ -1088,7 +1088,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>                        retval = -1; <span class="keywordflow">goto</span> RetRetval;</div>
 <div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>                    }</div>
 <div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>                }</div>
-<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a>(&amp;position,&amp;(S-&gt;file),1) ) {</div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a>(&amp;position,&amp;(S-&gt;file),1) ) {</div>
 <div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>                    retval = -1; <span class="keywordflow">goto</span> RetRetval;</div>
 <div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>                }</div>
 <div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>                ++(S-&gt;fPatchN);</div>
@@ -1111,7 +1111,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>        }</div>
 <div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>        UpdateMaxSize();</div>
-<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a>(0) ) {</div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a>(0) ) {</div>
 <div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>            MLOCK(ErrorMessageLock);</div>
 <div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>            MesCall(<span class="stringliteral">&quot;EndSort&quot;</span>);</div>
 <div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>            MUNLOCK(ErrorMessageLock);</div>
@@ -1336,7 +1336,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span><span class="comment">        #[ Sflush :                 WORD Sflush(file)</span></div>
 <div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen01364" data-start="{" data-end="}">
-<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"><a class="line" href="declare_8h.html#a976234bc65b350b1ee0efc886b84c103"> 1364</a></span>WORD <a class="code hl_function" href="sort_8c.html#a1c0b32dbf3df6772a6e730c26863a97e">Sflush</a>(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fi)</div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"><a class="line" href="declare_8h.html#af194f4dc483e6d6f950138f6922a562a"> 1364</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#afe2776f9084eaa1c88235c7e1c8a6e7c">Sflush</a>(<a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fi)</div>
 <div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>{</div>
 <div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>    LONG size, RetCode;</div>
 <div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
@@ -1757,7 +1757,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01801" name="l01801"></a><span class="lineno"> 1801</span><span class="comment">        #[ FlushOut :               WORD FlushOut(position,file,compr)</span></div>
 <div class="line"><a id="l01802" name="l01802"></a><span class="lineno"> 1802</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen01812" data-start="{" data-end="}">
-<div class="line"><a id="l01812" name="l01812"></a><span class="lineno"><a class="line" href="declare_8h.html#aceb7b03b4b4e8ec7c2e0f943545b5000"> 1812</a></span>WORD <a class="code hl_function" href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a>(<a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position, <a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fi, <span class="keywordtype">int</span> compr)</div>
+<div class="line"><a id="l01812" name="l01812"></a><span class="lineno"><a class="line" href="declare_8h.html#ac7a45ccfed7aa11042e2f5c259854882"> 1812</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a>(<a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> *position, <a class="code hl_struct" href="struct_fi_le.html">FILEHANDLE</a> *fi, <span class="keywordtype">int</span> compr)</div>
 <div class="line"><a id="l01813" name="l01813"></a><span class="lineno"> 1813</span>{</div>
 <div class="line"><a id="l01814" name="l01814"></a><span class="lineno"> 1814</span>    GETIDENTITY</div>
 <div class="line"><a id="l01815" name="l01815"></a><span class="lineno"> 1815</span>    LONG size, RetCode;</div>
@@ -1959,7 +1959,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02010" name="l02010"></a><span class="lineno"> 2010</span><span class="comment">        #[ AddCoef :                WORD AddCoef(pterm1,pterm2)</span></div>
 <div class="line"><a id="l02011" name="l02011"></a><span class="lineno"> 2011</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen02026" data-start="{" data-end="}">
-<div class="line"><a id="l02026" name="l02026"></a><span class="lineno"><a class="line" href="declare_8h.html#ab5e073664b935921fea5233b325a0a3b"> 2026</a></span>WORD <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(PHEAD WORD **ps1, WORD **ps2)</div>
+<div class="line"><a id="l02026" name="l02026"></a><span class="lineno"><a class="line" href="declare_8h.html#ac39d6310c47bb822f8d557b5c0142829"> 2026</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(PHEAD WORD **ps1, WORD **ps2)</div>
 <div class="line"><a id="l02027" name="l02027"></a><span class="lineno"> 2027</span>{</div>
 <div class="line"><a id="l02028" name="l02028"></a><span class="lineno"> 2028</span>    GETBIDENTITY</div>
 <div class="line"><a id="l02029" name="l02029"></a><span class="lineno"> 2029</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT.SS;</div>
@@ -2065,7 +2065,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02128" name="l02128"></a><span class="lineno"> 2128</span><span class="comment">        #[ AddPoly :                WORD AddPoly(pterm1,pterm2)</span></div>
 <div class="line"><a id="l02129" name="l02129"></a><span class="lineno"> 2129</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen02155" data-start="{" data-end="}">
-<div class="line"><a id="l02155" name="l02155"></a><span class="lineno"><a class="line" href="declare_8h.html#a6d6401037a28502677b0eb7276e18ccd"> 2155</a></span>WORD <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(PHEAD WORD **ps1, WORD **ps2)</div>
+<div class="line"><a id="l02155" name="l02155"></a><span class="lineno"><a class="line" href="declare_8h.html#ab49150ccca029a7ae8046a6af1404253"> 2155</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(PHEAD WORD **ps1, WORD **ps2)</div>
 <div class="line"><a id="l02156" name="l02156"></a><span class="lineno"> 2156</span>{</div>
 <div class="line"><a id="l02157" name="l02157"></a><span class="lineno"> 2157</span>    GETBIDENTITY</div>
 <div class="line"><a id="l02158" name="l02158"></a><span class="lineno"> 2158</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT.SS;</div>
@@ -3193,8 +3193,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03373" name="l03373"></a><span class="lineno"> 3373</span>        }</div>
 <div class="line"><a id="l03374" name="l03374"></a><span class="lineno"> 3374</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( i == 0 ) {</div>
 <div class="line"><a id="l03375" name="l03375"></a><span class="lineno"> 3375</span>            number--;</div>
-<div class="line"><a id="l03376" name="l03376"></a><span class="lineno"> 3376</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2) == 0 ) number = 0; }</div>
-<div class="line"><a id="l03377" name="l03377"></a><span class="lineno"> 3377</span>            <span class="keywordflow">else</span>               { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2) == 0 ) number = 0; }</div>
+<div class="line"><a id="l03376" name="l03376"></a><span class="lineno"> 3376</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2) == 0 ) number = 0; }</div>
+<div class="line"><a id="l03377" name="l03377"></a><span class="lineno"> 3377</span>            <span class="keywordflow">else</span>               { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2) == 0 ) number = 0; }</div>
 <div class="line"><a id="l03378" name="l03378"></a><span class="lineno"> 3378</span>        }</div>
 <div class="line"><a id="l03379" name="l03379"></a><span class="lineno"> 3379</span>        <span class="keywordflow">return</span>(number);</div>
 <div class="line"><a id="l03380" name="l03380"></a><span class="lineno"> 3380</span>    }</div>
@@ -3215,11 +3215,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03395" name="l03395"></a><span class="lineno"> 3395</span>        pp2 = Pointer+split; pp1 = Pointer+newleft-1;</div>
 <div class="line"><a id="l03396" name="l03396"></a><span class="lineno"> 3396</span>        <span class="keywordflow">if</span> ( i == 0 ) {</div>
 <div class="line"><a id="l03397" name="l03397"></a><span class="lineno"> 3397</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) {</div>
-<div class="line"><a id="l03398" name="l03398"></a><span class="lineno"> 3398</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
+<div class="line"><a id="l03398" name="l03398"></a><span class="lineno"> 3398</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
 <div class="line"><a id="l03399" name="l03399"></a><span class="lineno"> 3399</span>                <span class="keywordflow">else</span> newleft--;</div>
 <div class="line"><a id="l03400" name="l03400"></a><span class="lineno"> 3400</span>            }</div>
 <div class="line"><a id="l03401" name="l03401"></a><span class="lineno"> 3401</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03402" name="l03402"></a><span class="lineno"> 3402</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
+<div class="line"><a id="l03402" name="l03402"></a><span class="lineno"> 3402</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
 <div class="line"><a id="l03403" name="l03403"></a><span class="lineno"> 3403</span>                <span class="keywordflow">else</span> newleft--;</div>
 <div class="line"><a id="l03404" name="l03404"></a><span class="lineno"> 3404</span>            }</div>
 <div class="line"><a id="l03405" name="l03405"></a><span class="lineno"> 3405</span>            *pp2++ = 0; newright--;</div>
@@ -3266,8 +3266,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03446" name="l03446"></a><span class="lineno"> 3446</span>        }</div>
 <div class="line"><a id="l03447" name="l03447"></a><span class="lineno"> 3447</span>        newleft -= nnleft;</div>
 <div class="line"><a id="l03448" name="l03448"></a><span class="lineno"> 3448</span>        <span class="keywordflow">if</span> ( i == 0 ) {</div>
-<div class="line"><a id="l03449" name="l03449"></a><span class="lineno"> 3449</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { i = <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2); }</div>
-<div class="line"><a id="l03450" name="l03450"></a><span class="lineno"> 3450</span>            <span class="keywordflow">else</span>               { i = <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2); }</div>
+<div class="line"><a id="l03449" name="l03449"></a><span class="lineno"> 3449</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { i = <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2); }</div>
+<div class="line"><a id="l03450" name="l03450"></a><span class="lineno"> 3450</span>            <span class="keywordflow">else</span>               { i = <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2); }</div>
 <div class="line"><a id="l03451" name="l03451"></a><span class="lineno"> 3451</span>            <span class="keywordflow">if</span> ( i == 0 ) {</div>
 <div class="line"><a id="l03452" name="l03452"></a><span class="lineno"> 3452</span>                <span class="comment">/* The terms cancelled. The next term goes in *pp3. Don&#39;t move. */</span></div>
 <div class="line"><a id="l03453" name="l03453"></a><span class="lineno"> 3453</span>            }</div>
@@ -3297,8 +3297,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03477" name="l03477"></a><span class="lineno"> 3477</span>            newleft--;</div>
 <div class="line"><a id="l03478" name="l03478"></a><span class="lineno"> 3478</span>        }</div>
 <div class="line"><a id="l03479" name="l03479"></a><span class="lineno"> 3479</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03480" name="l03480"></a><span class="lineno"> 3480</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
-<div class="line"><a id="l03481" name="l03481"></a><span class="lineno"> 3481</span>            <span class="keywordflow">else</span> {               <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
+<div class="line"><a id="l03480" name="l03480"></a><span class="lineno"> 3480</span>            <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
+<div class="line"><a id="l03481" name="l03481"></a><span class="lineno"> 3481</span>            <span class="keywordflow">else</span> {               <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
 <div class="line"><a id="l03482" name="l03482"></a><span class="lineno"> 3482</span>            *pp1++ = 0; *pp2++ = 0; newleft--; newright--;</div>
 <div class="line"><a id="l03483" name="l03483"></a><span class="lineno"> 3483</span>        }</div>
 <div class="line"><a id="l03484" name="l03484"></a><span class="lineno"> 3484</span>    }</div>
@@ -3348,8 +3348,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03527" name="l03527"></a><span class="lineno"> 3527</span>        }</div>
 <div class="line"><a id="l03528" name="l03528"></a><span class="lineno"> 3528</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( i == 0 ) {</div>
 <div class="line"><a id="l03529" name="l03529"></a><span class="lineno"> 3529</span>          number--;</div>
-<div class="line"><a id="l03530" name="l03530"></a><span class="lineno"> 3530</span>          <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2) == 0 ) { number = 0; } }</div>
-<div class="line"><a id="l03531" name="l03531"></a><span class="lineno"> 3531</span>          <span class="keywordflow">else</span> {               <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2) == 0 ) { number = 0; } }</div>
+<div class="line"><a id="l03530" name="l03530"></a><span class="lineno"> 3530</span>          <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2) == 0 ) { number = 0; } }</div>
+<div class="line"><a id="l03531" name="l03531"></a><span class="lineno"> 3531</span>          <span class="keywordflow">else</span> {               <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2) == 0 ) { number = 0; } }</div>
 <div class="line"><a id="l03532" name="l03532"></a><span class="lineno"> 3532</span>        }</div>
 <div class="line"><a id="l03533" name="l03533"></a><span class="lineno"> 3533</span>        <span class="keywordflow">return</span>(number);</div>
 <div class="line"><a id="l03534" name="l03534"></a><span class="lineno"> 3534</span>    }</div>
@@ -3369,11 +3369,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03548" name="l03548"></a><span class="lineno"> 3548</span>        pp2 = Pointer+nleft; pp1 = Pointer+newleft-1;</div>
 <div class="line"><a id="l03549" name="l03549"></a><span class="lineno"> 3549</span>        <span class="keywordflow">if</span> ( i == 0 ) {</div>
 <div class="line"><a id="l03550" name="l03550"></a><span class="lineno"> 3550</span>          <span class="keywordflow">if</span> ( S-&gt;PolyWise ) {</div>
-<div class="line"><a id="l03551" name="l03551"></a><span class="lineno"> 3551</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
+<div class="line"><a id="l03551" name="l03551"></a><span class="lineno"> 3551</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
 <div class="line"><a id="l03552" name="l03552"></a><span class="lineno"> 3552</span>            <span class="keywordflow">else</span> newleft--;</div>
 <div class="line"><a id="l03553" name="l03553"></a><span class="lineno"> 3553</span>          }</div>
 <div class="line"><a id="l03554" name="l03554"></a><span class="lineno"> 3554</span>          <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03555" name="l03555"></a><span class="lineno"> 3555</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
+<div class="line"><a id="l03555" name="l03555"></a><span class="lineno"> 3555</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) pp1++;</div>
 <div class="line"><a id="l03556" name="l03556"></a><span class="lineno"> 3556</span>            <span class="keywordflow">else</span> newleft--;</div>
 <div class="line"><a id="l03557" name="l03557"></a><span class="lineno"> 3557</span>          }</div>
 <div class="line"><a id="l03558" name="l03558"></a><span class="lineno"> 3558</span>          *pp2++ = 0; newright--;</div>
@@ -3410,8 +3410,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03589" name="l03589"></a><span class="lineno"> 3589</span>            nleft--;</div>
 <div class="line"><a id="l03590" name="l03590"></a><span class="lineno"> 3590</span>        }</div>
 <div class="line"><a id="l03591" name="l03591"></a><span class="lineno"> 3591</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03592" name="l03592"></a><span class="lineno"> 3592</span>          <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
-<div class="line"><a id="l03593" name="l03593"></a><span class="lineno"> 3593</span>          <span class="keywordflow">else</span> {               <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
+<div class="line"><a id="l03592" name="l03592"></a><span class="lineno"> 3592</span>          <span class="keywordflow">if</span> ( S-&gt;PolyWise ) { <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
+<div class="line"><a id="l03593" name="l03593"></a><span class="lineno"> 3593</span>          <span class="keywordflow">else</span> {               <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a>(BHEAD pp1,pp2) &gt; 0 ) *pp3++ = *pp1; }</div>
 <div class="line"><a id="l03594" name="l03594"></a><span class="lineno"> 3594</span>          *pp1++ = 0; *pp2++ = 0; nleft--; nright--;</div>
 <div class="line"><a id="l03595" name="l03595"></a><span class="lineno"> 3595</span>        }</div>
 <div class="line"><a id="l03596" name="l03596"></a><span class="lineno"> 3596</span>    }</div>
@@ -3531,7 +3531,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03723" name="l03723"></a><span class="lineno"> 3723</span><span class="comment">        #[ MergePatches :           WORD MergePatches(par)</span></div>
 <div class="line"><a id="l03724" name="l03724"></a><span class="lineno"> 3724</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen03741" data-start="{" data-end="}">
-<div class="line"><a id="l03741" name="l03741"></a><span class="lineno"><a class="line" href="declare_8h.html#a6e603a4a13fc33993554e048f9a4b8b7"> 3741</a></span>WORD <a class="code hl_function" href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a>(WORD par)</div>
+<div class="line"><a id="l03741" name="l03741"></a><span class="lineno"><a class="line" href="declare_8h.html#a27b650ac42a29b6b0c9527da2436e3c0"> 3741</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a>(WORD par)</div>
 <div class="line"><a id="l03742" name="l03742"></a><span class="lineno"> 3742</span>{</div>
 <div class="line"><a id="l03743" name="l03743"></a><span class="lineno"> 3743</span>    GETIDENTITY</div>
 <div class="line"><a id="l03744" name="l03744"></a><span class="lineno"> 3744</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT.SS;</div>
@@ -3723,7 +3723,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03930" name="l03930"></a><span class="lineno"> 3930</span>    <span class="keywordflow">if</span> ( S-&gt;lPatch == 1 ) { <span class="comment">/* Single patch --&gt; direct copy. Very rare. */</span></div>
 <div class="line"><a id="l03931" name="l03931"></a><span class="lineno"> 3931</span>        LONG length;</div>
 <div class="line"><a id="l03932" name="l03932"></a><span class="lineno"> 3932</span> </div>
-<div class="line"><a id="l03933" name="l03933"></a><span class="lineno"> 3933</span>        <span class="keywordflow">if</span> ( fout-&gt;<a class="code hl_variable" href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">handle</a> &lt; 0 ) <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a1c0b32dbf3df6772a6e730c26863a97e">Sflush</a>(fout) ) <span class="keywordflow">goto</span> PatCall;</div>
+<div class="line"><a id="l03933" name="l03933"></a><span class="lineno"> 3933</span>        <span class="keywordflow">if</span> ( fout-&gt;<a class="code hl_variable" href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">handle</a> &lt; 0 ) <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#afe2776f9084eaa1c88235c7e1c8a6e7c">Sflush</a>(fout) ) <span class="keywordflow">goto</span> PatCall;</div>
 <div class="line"><a id="l03934" name="l03934"></a><span class="lineno"> 3934</span>        <span class="keywordflow">if</span> ( par ) {        <span class="comment">/* Memory to file */</span></div>
 <div class="line"><a id="l03935" name="l03935"></a><span class="lineno"> 3935</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
 <div class="line"><a id="l03936" name="l03936"></a><span class="lineno"> 3936</span><span class="comment">/*</span></div>
@@ -3760,7 +3760,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03967" name="l03967"></a><span class="lineno"> 3967</span>            }</div>
 <div class="line"><a id="l03968" name="l03968"></a><span class="lineno"> 3968</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03969" name="l03969"></a><span class="lineno"> 3969</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l03970" name="l03970"></a><span class="lineno"> 3970</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a>(&amp;position,fout,1) ) <span class="keywordflow">goto</span> ReturnError;</div>
+<div class="line"><a id="l03970" name="l03970"></a><span class="lineno"> 3970</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a>(&amp;position,fout,1) ) <span class="keywordflow">goto</span> ReturnError;</div>
 <div class="line"><a id="l03971" name="l03971"></a><span class="lineno"> 3971</span>            ADDPOS(S-&gt;SizeInFile[par],1);</div>
 <div class="line"><a id="l03972" name="l03972"></a><span class="lineno"> 3972</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l03973" name="l03973"></a><span class="lineno"> 3973</span><span class="comment">/* old code */</span></div>
@@ -3835,7 +3835,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04042" name="l04042"></a><span class="lineno"> 4042</span>            }</div>
 <div class="line"><a id="l04043" name="l04043"></a><span class="lineno"> 4043</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l04044" name="l04044"></a><span class="lineno"> 4044</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04045" name="l04045"></a><span class="lineno"> 4045</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a>(&amp;position,fout,1) ) <span class="keywordflow">goto</span> ReturnError;</div>
+<div class="line"><a id="l04045" name="l04045"></a><span class="lineno"> 4045</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a>(&amp;position,fout,1) ) <span class="keywordflow">goto</span> ReturnError;</div>
 <div class="line"><a id="l04046" name="l04046"></a><span class="lineno"> 4046</span>            ADDPOS(S-&gt;SizeInFile[par],1);</div>
 <div class="line"><a id="l04047" name="l04047"></a><span class="lineno"> 4047</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l04048" name="l04048"></a><span class="lineno"> 4048</span><span class="comment">/* old code */</span></div>
@@ -4174,7 +4174,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04381" name="l04381"></a><span class="lineno"> 4381</span>        }</div>
 <div class="line"><a id="l04382" name="l04382"></a><span class="lineno"> 4382</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l04383" name="l04383"></a><span class="lineno"> 4383</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04384" name="l04384"></a><span class="lineno"> 4384</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a>(&amp;position,fout,1) ) <span class="keywordflow">goto</span> ReturnError;</div>
+<div class="line"><a id="l04384" name="l04384"></a><span class="lineno"> 4384</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a>(&amp;position,fout,1) ) <span class="keywordflow">goto</span> ReturnError;</div>
 <div class="line"><a id="l04385" name="l04385"></a><span class="lineno"> 4385</span>    ADDPOS(S-&gt;SizeInFile[par],1);</div>
 <div class="line"><a id="l04386" name="l04386"></a><span class="lineno"> 4386</span>EndOfAll:</div>
 <div class="line"><a id="l04387" name="l04387"></a><span class="lineno"> 4387</span>    <span class="keywordflow">if</span> ( par == 1 ) {   <span class="comment">/* Set the fpatch pointers */</span></div>
@@ -4307,7 +4307,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04513" name="l04513"></a><span class="lineno"> 4513</span><span class="comment">        #[ StoreTerm :              WORD StoreTerm(term)</span></div>
 <div class="line"><a id="l04514" name="l04514"></a><span class="lineno"> 4514</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen04524" data-start="{" data-end="}">
-<div class="line"><a id="l04524" name="l04524"></a><span class="lineno"><a class="line" href="declare_8h.html#a7e217b02e4ed9474e16b0d19e6aee30d"> 4524</a></span>WORD <a class="code hl_function" href="sort_8c.html#a6848642c1c54636cc54fbcec683607f5">StoreTerm</a>(PHEAD WORD *term)</div>
+<div class="line"><a id="l04524" name="l04524"></a><span class="lineno"><a class="line" href="declare_8h.html#a810ffd40ad0b36edaa9c5ce818f3de26"> 4524</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#a91bab1de98b7c2d8c06e4d8484c4b6aa">StoreTerm</a>(PHEAD WORD *term)</div>
 <div class="line"><a id="l04525" name="l04525"></a><span class="lineno"> 4525</span>{</div>
 <div class="line"><a id="l04526" name="l04526"></a><span class="lineno"> 4526</span>    GETBIDENTITY</div>
 <div class="line"><a id="l04527" name="l04527"></a><span class="lineno"> 4527</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S = AT.SS;</div>
@@ -4361,7 +4361,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04575" name="l04575"></a><span class="lineno"> 4575</span><span class="comment">/*</span></div>
 <div class="line"><a id="l04576" name="l04576"></a><span class="lineno"> 4576</span><span class="comment">            The large buffer is too full. Merge and write it</span></div>
 <div class="line"><a id="l04577" name="l04577"></a><span class="lineno"> 4577</span><span class="comment">*/</span></div>
-<div class="line"><a id="l04578" name="l04578"></a><span class="lineno"> 4578</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a>(1) ) <span class="keywordflow">goto</span> StoreCall;</div>
+<div class="line"><a id="l04578" name="l04578"></a><span class="lineno"> 4578</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a>(1) ) <span class="keywordflow">goto</span> StoreCall;</div>
 <div class="line"><a id="l04579" name="l04579"></a><span class="lineno"> 4579</span><span class="comment">/*</span></div>
 <div class="line"><a id="l04580" name="l04580"></a><span class="lineno"> 4580</span><span class="comment">            pp = S-&gt;SizeInFile[1];</span></div>
 <div class="line"><a id="l04581" name="l04581"></a><span class="lineno"> 4581</span><span class="comment">            ADDPOS(pp,sSpace);</span></div>
@@ -4505,417 +4505,418 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04722" name="l04722"></a><span class="lineno"> 4722</span><span class="comment">        #[ SortWild :               WORD SortWild(w,nw)</span></div>
 <div class="line"><a id="l04723" name="l04723"></a><span class="lineno"> 4723</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen04737" data-start="{" data-end="}">
-<div class="line"><a id="l04737" name="l04737"></a><span class="lineno"><a class="line" href="declare_8h.html#ad1138946c3fe173e5e46ce3bf110c7f4"> 4737</a></span>WORD <a class="code hl_function" href="sort_8c.html#a30d9949d945319a088d33b5969925e08">SortWild</a>(WORD *w, WORD nw)</div>
+<div class="line"><a id="l04737" name="l04737"></a><span class="lineno"><a class="line" href="declare_8h.html#a233585272ceff89c858e46cf29de1096"> 4737</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="sort_8c.html#a9c542df38db7328ac7822e76c1024aef">SortWild</a>(WORD *w, WORD nw)</div>
 <div class="line"><a id="l04738" name="l04738"></a><span class="lineno"> 4738</span>{</div>
 <div class="line"><a id="l04739" name="l04739"></a><span class="lineno"> 4739</span>    GETIDENTITY</div>
 <div class="line"><a id="l04740" name="l04740"></a><span class="lineno"> 4740</span>    WORD *v, *s, *m, k, i;</div>
-<div class="line"><a id="l04741" name="l04741"></a><span class="lineno"> 4741</span>    WORD *pScrat, *stop, *sv, error = 0;</div>
-<div class="line"><a id="l04742" name="l04742"></a><span class="lineno"> 4742</span>    pScrat = AT.WorkPointer;</div>
-<div class="line"><a id="l04743" name="l04743"></a><span class="lineno"> 4743</span>    <span class="keywordflow">if</span> ( ( AT.WorkPointer + 8 * AM.MaxWildcards ) &gt;= AT.WorkTop ) {</div>
-<div class="line"><a id="l04744" name="l04744"></a><span class="lineno"> 4744</span>        MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04745" name="l04745"></a><span class="lineno"> 4745</span>        MesWork();</div>
-<div class="line"><a id="l04746" name="l04746"></a><span class="lineno"> 4746</span>        MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04747" name="l04747"></a><span class="lineno"> 4747</span>        <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l04748" name="l04748"></a><span class="lineno"> 4748</span>    }</div>
-<div class="line"><a id="l04749" name="l04749"></a><span class="lineno"> 4749</span>    stop = w + nw;</div>
-<div class="line"><a id="l04750" name="l04750"></a><span class="lineno"> 4750</span>    i = 0;</div>
-<div class="line"><a id="l04751" name="l04751"></a><span class="lineno"> 4751</span>    <span class="keywordflow">while</span> ( i &lt; nw ) {</div>
-<div class="line"><a id="l04752" name="l04752"></a><span class="lineno"> 4752</span>        m = w + i;</div>
-<div class="line"><a id="l04753" name="l04753"></a><span class="lineno"> 4753</span>        v = m + m[1];</div>
-<div class="line"><a id="l04754" name="l04754"></a><span class="lineno"> 4754</span>        <span class="keywordflow">while</span> ( v &lt; stop &amp;&amp; (</div>
-<div class="line"><a id="l04755" name="l04755"></a><span class="lineno"> 4755</span>             *v == FROMSET || *v == SETTONUM || *v == LOADDOLLAR ) ) v += v[1];</div>
-<div class="line"><a id="l04756" name="l04756"></a><span class="lineno"> 4756</span>        <span class="keywordflow">while</span> ( v &lt; stop ) {</div>
-<div class="line"><a id="l04757" name="l04757"></a><span class="lineno"> 4757</span>            <span class="keywordflow">if</span> ( *v &gt;= 0 ) {</div>
-<div class="line"><a id="l04758" name="l04758"></a><span class="lineno"> 4758</span>                <span class="keywordflow">if</span> ( AM.Ordering[*v] &lt; AM.Ordering[*m] ) {</div>
-<div class="line"><a id="l04759" name="l04759"></a><span class="lineno"> 4759</span>                    m = v;</div>
-<div class="line"><a id="l04760" name="l04760"></a><span class="lineno"> 4760</span>                }</div>
-<div class="line"><a id="l04761" name="l04761"></a><span class="lineno"> 4761</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *v == *m ) {</div>
-<div class="line"><a id="l04762" name="l04762"></a><span class="lineno"> 4762</span>                    <span class="keywordflow">if</span> ( v[2] &lt; m[2] ) {</div>
-<div class="line"><a id="l04763" name="l04763"></a><span class="lineno"> 4763</span>                        m = v;</div>
-<div class="line"><a id="l04764" name="l04764"></a><span class="lineno"> 4764</span>                    }</div>
-<div class="line"><a id="l04765" name="l04765"></a><span class="lineno"> 4765</span>                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( v[2] == m[2] ) {</div>
-<div class="line"><a id="l04766" name="l04766"></a><span class="lineno"> 4766</span>                        s = m + m[1];</div>
-<div class="line"><a id="l04767" name="l04767"></a><span class="lineno"> 4767</span>                        sv = v + v[1];</div>
-<div class="line"><a id="l04768" name="l04768"></a><span class="lineno"> 4768</span>                        <span class="keywordflow">if</span> ( s &lt; stop &amp;&amp; ( *s == FROMSET</div>
-<div class="line"><a id="l04769" name="l04769"></a><span class="lineno"> 4769</span>                         || *s == SETTONUM || *s == LOADDOLLAR ) ) {</div>
-<div class="line"><a id="l04770" name="l04770"></a><span class="lineno"> 4770</span>                            <span class="keywordflow">if</span> ( sv &lt; stop &amp;&amp; ( *sv == FROMSET</div>
-<div class="line"><a id="l04771" name="l04771"></a><span class="lineno"> 4771</span>                            || *sv == SETTONUM || *sv == LOADDOLLAR ) ) {</div>
-<div class="line"><a id="l04772" name="l04772"></a><span class="lineno"> 4772</span>                                <span class="keywordflow">if</span> ( s[2] != sv[2] ) {</div>
-<div class="line"><a id="l04773" name="l04773"></a><span class="lineno"> 4773</span>                                    error = -1;</div>
-<div class="line"><a id="l04774" name="l04774"></a><span class="lineno"> 4774</span>                                    MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04775" name="l04775"></a><span class="lineno"> 4775</span>                                    MesPrint(<span class="stringliteral">&quot;&amp;Wildcard set conflict&quot;</span>);</div>
-<div class="line"><a id="l04776" name="l04776"></a><span class="lineno"> 4776</span>                                    MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04777" name="l04777"></a><span class="lineno"> 4777</span>                                }</div>
-<div class="line"><a id="l04778" name="l04778"></a><span class="lineno"> 4778</span>                            }</div>
-<div class="line"><a id="l04779" name="l04779"></a><span class="lineno"> 4779</span>                            *v = -1;</div>
-<div class="line"><a id="l04780" name="l04780"></a><span class="lineno"> 4780</span>                        }</div>
-<div class="line"><a id="l04781" name="l04781"></a><span class="lineno"> 4781</span>                        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04782" name="l04782"></a><span class="lineno"> 4782</span>                            <span class="keywordflow">if</span> ( sv &lt; stop &amp;&amp; ( *sv == FROMSET</div>
-<div class="line"><a id="l04783" name="l04783"></a><span class="lineno"> 4783</span>                            || *sv == SETTONUM || *sv == LOADDOLLAR ) ) {</div>
-<div class="line"><a id="l04784" name="l04784"></a><span class="lineno"> 4784</span>                                *m = -1;</div>
-<div class="line"><a id="l04785" name="l04785"></a><span class="lineno"> 4785</span>                                m = v;</div>
-<div class="line"><a id="l04786" name="l04786"></a><span class="lineno"> 4786</span>                            }</div>
-<div class="line"><a id="l04787" name="l04787"></a><span class="lineno"> 4787</span>                            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04788" name="l04788"></a><span class="lineno"> 4788</span>                                *v = -1;</div>
-<div class="line"><a id="l04789" name="l04789"></a><span class="lineno"> 4789</span>                            }</div>
-<div class="line"><a id="l04790" name="l04790"></a><span class="lineno"> 4790</span>                        }</div>
-<div class="line"><a id="l04791" name="l04791"></a><span class="lineno"> 4791</span>                    }</div>
-<div class="line"><a id="l04792" name="l04792"></a><span class="lineno"> 4792</span>                }</div>
-<div class="line"><a id="l04793" name="l04793"></a><span class="lineno"> 4793</span>            }</div>
-<div class="line"><a id="l04794" name="l04794"></a><span class="lineno"> 4794</span>            v += v[1];</div>
-<div class="line"><a id="l04795" name="l04795"></a><span class="lineno"> 4795</span>            <span class="keywordflow">while</span> ( v &lt; stop &amp;&amp; ( *v == FROMSET</div>
-<div class="line"><a id="l04796" name="l04796"></a><span class="lineno"> 4796</span>             || *v == SETTONUM || *v == LOADDOLLAR ) ) v += v[1];</div>
-<div class="line"><a id="l04797" name="l04797"></a><span class="lineno"> 4797</span>        }</div>
-<div class="line"><a id="l04798" name="l04798"></a><span class="lineno"> 4798</span>        s = pScrat;</div>
-<div class="line"><a id="l04799" name="l04799"></a><span class="lineno"> 4799</span>        v = m;</div>
-<div class="line"><a id="l04800" name="l04800"></a><span class="lineno"> 4800</span>        k = m[1];</div>
-<div class="line"><a id="l04801" name="l04801"></a><span class="lineno"> 4801</span>        NCOPY(s,m,k);</div>
-<div class="line"><a id="l04802" name="l04802"></a><span class="lineno"> 4802</span>        <span class="keywordflow">while</span> ( m &lt; stop &amp;&amp; ( *m == FROMSET</div>
-<div class="line"><a id="l04803" name="l04803"></a><span class="lineno"> 4803</span>         || *m == SETTONUM || *m == LOADDOLLAR ) ) {</div>
-<div class="line"><a id="l04804" name="l04804"></a><span class="lineno"> 4804</span>            k = m[1];</div>
-<div class="line"><a id="l04805" name="l04805"></a><span class="lineno"> 4805</span>            NCOPY(s,m,k);</div>
-<div class="line"><a id="l04806" name="l04806"></a><span class="lineno"> 4806</span>        }</div>
-<div class="line"><a id="l04807" name="l04807"></a><span class="lineno"> 4807</span>        *v = -1;</div>
-<div class="line"><a id="l04808" name="l04808"></a><span class="lineno"> 4808</span>        pScrat = s;</div>
-<div class="line"><a id="l04809" name="l04809"></a><span class="lineno"> 4809</span>        i = 0;</div>
-<div class="line"><a id="l04810" name="l04810"></a><span class="lineno"> 4810</span>        <span class="keywordflow">while</span> ( i &lt; nw &amp;&amp; ( w[i] &lt; 0 || w[i] == FROMSET</div>
-<div class="line"><a id="l04811" name="l04811"></a><span class="lineno"> 4811</span>        || w[i] == SETTONUM || w[i] == LOADDOLLAR ) ) i += w[i+1];</div>
-<div class="line"><a id="l04812" name="l04812"></a><span class="lineno"> 4812</span>    }</div>
-<div class="line"><a id="l04813" name="l04813"></a><span class="lineno"> 4813</span>    AC.NwildC = k = WORDDIF(pScrat,AT.WorkPointer);</div>
-<div class="line"><a id="l04814" name="l04814"></a><span class="lineno"> 4814</span>    s = AT.WorkPointer;</div>
-<div class="line"><a id="l04815" name="l04815"></a><span class="lineno"> 4815</span>    m = w;</div>
-<div class="line"><a id="l04816" name="l04816"></a><span class="lineno"> 4816</span>    NCOPY(m,s,k);</div>
-<div class="line"><a id="l04817" name="l04817"></a><span class="lineno"> 4817</span>    AC.WildC = m;</div>
-<div class="line"><a id="l04818" name="l04818"></a><span class="lineno"> 4818</span>    <span class="keywordflow">return</span>(error);</div>
-<div class="line"><a id="l04819" name="l04819"></a><span class="lineno"> 4819</span>}</div>
+<div class="line"><a id="l04741" name="l04741"></a><span class="lineno"> 4741</span>    WORD *pScrat, *stop, *sv;</div>
+<div class="line"><a id="l04742" name="l04742"></a><span class="lineno"> 4742</span>    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a id="l04743" name="l04743"></a><span class="lineno"> 4743</span>    pScrat = AT.WorkPointer;</div>
+<div class="line"><a id="l04744" name="l04744"></a><span class="lineno"> 4744</span>    <span class="keywordflow">if</span> ( ( AT.WorkPointer + 8 * AM.MaxWildcards ) &gt;= AT.WorkTop ) {</div>
+<div class="line"><a id="l04745" name="l04745"></a><span class="lineno"> 4745</span>        MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04746" name="l04746"></a><span class="lineno"> 4746</span>        MesWork();</div>
+<div class="line"><a id="l04747" name="l04747"></a><span class="lineno"> 4747</span>        MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04748" name="l04748"></a><span class="lineno"> 4748</span>        <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l04749" name="l04749"></a><span class="lineno"> 4749</span>    }</div>
+<div class="line"><a id="l04750" name="l04750"></a><span class="lineno"> 4750</span>    stop = w + nw;</div>
+<div class="line"><a id="l04751" name="l04751"></a><span class="lineno"> 4751</span>    i = 0;</div>
+<div class="line"><a id="l04752" name="l04752"></a><span class="lineno"> 4752</span>    <span class="keywordflow">while</span> ( i &lt; nw ) {</div>
+<div class="line"><a id="l04753" name="l04753"></a><span class="lineno"> 4753</span>        m = w + i;</div>
+<div class="line"><a id="l04754" name="l04754"></a><span class="lineno"> 4754</span>        v = m + m[1];</div>
+<div class="line"><a id="l04755" name="l04755"></a><span class="lineno"> 4755</span>        <span class="keywordflow">while</span> ( v &lt; stop &amp;&amp; (</div>
+<div class="line"><a id="l04756" name="l04756"></a><span class="lineno"> 4756</span>             *v == FROMSET || *v == SETTONUM || *v == LOADDOLLAR ) ) v += v[1];</div>
+<div class="line"><a id="l04757" name="l04757"></a><span class="lineno"> 4757</span>        <span class="keywordflow">while</span> ( v &lt; stop ) {</div>
+<div class="line"><a id="l04758" name="l04758"></a><span class="lineno"> 4758</span>            <span class="keywordflow">if</span> ( *v &gt;= 0 ) {</div>
+<div class="line"><a id="l04759" name="l04759"></a><span class="lineno"> 4759</span>                <span class="keywordflow">if</span> ( AM.Ordering[*v] &lt; AM.Ordering[*m] ) {</div>
+<div class="line"><a id="l04760" name="l04760"></a><span class="lineno"> 4760</span>                    m = v;</div>
+<div class="line"><a id="l04761" name="l04761"></a><span class="lineno"> 4761</span>                }</div>
+<div class="line"><a id="l04762" name="l04762"></a><span class="lineno"> 4762</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *v == *m ) {</div>
+<div class="line"><a id="l04763" name="l04763"></a><span class="lineno"> 4763</span>                    <span class="keywordflow">if</span> ( v[2] &lt; m[2] ) {</div>
+<div class="line"><a id="l04764" name="l04764"></a><span class="lineno"> 4764</span>                        m = v;</div>
+<div class="line"><a id="l04765" name="l04765"></a><span class="lineno"> 4765</span>                    }</div>
+<div class="line"><a id="l04766" name="l04766"></a><span class="lineno"> 4766</span>                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( v[2] == m[2] ) {</div>
+<div class="line"><a id="l04767" name="l04767"></a><span class="lineno"> 4767</span>                        s = m + m[1];</div>
+<div class="line"><a id="l04768" name="l04768"></a><span class="lineno"> 4768</span>                        sv = v + v[1];</div>
+<div class="line"><a id="l04769" name="l04769"></a><span class="lineno"> 4769</span>                        <span class="keywordflow">if</span> ( s &lt; stop &amp;&amp; ( *s == FROMSET</div>
+<div class="line"><a id="l04770" name="l04770"></a><span class="lineno"> 4770</span>                         || *s == SETTONUM || *s == LOADDOLLAR ) ) {</div>
+<div class="line"><a id="l04771" name="l04771"></a><span class="lineno"> 4771</span>                            <span class="keywordflow">if</span> ( sv &lt; stop &amp;&amp; ( *sv == FROMSET</div>
+<div class="line"><a id="l04772" name="l04772"></a><span class="lineno"> 4772</span>                            || *sv == SETTONUM || *sv == LOADDOLLAR ) ) {</div>
+<div class="line"><a id="l04773" name="l04773"></a><span class="lineno"> 4773</span>                                <span class="keywordflow">if</span> ( s[2] != sv[2] ) {</div>
+<div class="line"><a id="l04774" name="l04774"></a><span class="lineno"> 4774</span>                                    error = -1;</div>
+<div class="line"><a id="l04775" name="l04775"></a><span class="lineno"> 4775</span>                                    MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04776" name="l04776"></a><span class="lineno"> 4776</span>                                    MesPrint(<span class="stringliteral">&quot;&amp;Wildcard set conflict&quot;</span>);</div>
+<div class="line"><a id="l04777" name="l04777"></a><span class="lineno"> 4777</span>                                    MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04778" name="l04778"></a><span class="lineno"> 4778</span>                                }</div>
+<div class="line"><a id="l04779" name="l04779"></a><span class="lineno"> 4779</span>                            }</div>
+<div class="line"><a id="l04780" name="l04780"></a><span class="lineno"> 4780</span>                            *v = -1;</div>
+<div class="line"><a id="l04781" name="l04781"></a><span class="lineno"> 4781</span>                        }</div>
+<div class="line"><a id="l04782" name="l04782"></a><span class="lineno"> 4782</span>                        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l04783" name="l04783"></a><span class="lineno"> 4783</span>                            <span class="keywordflow">if</span> ( sv &lt; stop &amp;&amp; ( *sv == FROMSET</div>
+<div class="line"><a id="l04784" name="l04784"></a><span class="lineno"> 4784</span>                            || *sv == SETTONUM || *sv == LOADDOLLAR ) ) {</div>
+<div class="line"><a id="l04785" name="l04785"></a><span class="lineno"> 4785</span>                                *m = -1;</div>
+<div class="line"><a id="l04786" name="l04786"></a><span class="lineno"> 4786</span>                                m = v;</div>
+<div class="line"><a id="l04787" name="l04787"></a><span class="lineno"> 4787</span>                            }</div>
+<div class="line"><a id="l04788" name="l04788"></a><span class="lineno"> 4788</span>                            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l04789" name="l04789"></a><span class="lineno"> 4789</span>                                *v = -1;</div>
+<div class="line"><a id="l04790" name="l04790"></a><span class="lineno"> 4790</span>                            }</div>
+<div class="line"><a id="l04791" name="l04791"></a><span class="lineno"> 4791</span>                        }</div>
+<div class="line"><a id="l04792" name="l04792"></a><span class="lineno"> 4792</span>                    }</div>
+<div class="line"><a id="l04793" name="l04793"></a><span class="lineno"> 4793</span>                }</div>
+<div class="line"><a id="l04794" name="l04794"></a><span class="lineno"> 4794</span>            }</div>
+<div class="line"><a id="l04795" name="l04795"></a><span class="lineno"> 4795</span>            v += v[1];</div>
+<div class="line"><a id="l04796" name="l04796"></a><span class="lineno"> 4796</span>            <span class="keywordflow">while</span> ( v &lt; stop &amp;&amp; ( *v == FROMSET</div>
+<div class="line"><a id="l04797" name="l04797"></a><span class="lineno"> 4797</span>             || *v == SETTONUM || *v == LOADDOLLAR ) ) v += v[1];</div>
+<div class="line"><a id="l04798" name="l04798"></a><span class="lineno"> 4798</span>        }</div>
+<div class="line"><a id="l04799" name="l04799"></a><span class="lineno"> 4799</span>        s = pScrat;</div>
+<div class="line"><a id="l04800" name="l04800"></a><span class="lineno"> 4800</span>        v = m;</div>
+<div class="line"><a id="l04801" name="l04801"></a><span class="lineno"> 4801</span>        k = m[1];</div>
+<div class="line"><a id="l04802" name="l04802"></a><span class="lineno"> 4802</span>        NCOPY(s,m,k);</div>
+<div class="line"><a id="l04803" name="l04803"></a><span class="lineno"> 4803</span>        <span class="keywordflow">while</span> ( m &lt; stop &amp;&amp; ( *m == FROMSET</div>
+<div class="line"><a id="l04804" name="l04804"></a><span class="lineno"> 4804</span>         || *m == SETTONUM || *m == LOADDOLLAR ) ) {</div>
+<div class="line"><a id="l04805" name="l04805"></a><span class="lineno"> 4805</span>            k = m[1];</div>
+<div class="line"><a id="l04806" name="l04806"></a><span class="lineno"> 4806</span>            NCOPY(s,m,k);</div>
+<div class="line"><a id="l04807" name="l04807"></a><span class="lineno"> 4807</span>        }</div>
+<div class="line"><a id="l04808" name="l04808"></a><span class="lineno"> 4808</span>        *v = -1;</div>
+<div class="line"><a id="l04809" name="l04809"></a><span class="lineno"> 4809</span>        pScrat = s;</div>
+<div class="line"><a id="l04810" name="l04810"></a><span class="lineno"> 4810</span>        i = 0;</div>
+<div class="line"><a id="l04811" name="l04811"></a><span class="lineno"> 4811</span>        <span class="keywordflow">while</span> ( i &lt; nw &amp;&amp; ( w[i] &lt; 0 || w[i] == FROMSET</div>
+<div class="line"><a id="l04812" name="l04812"></a><span class="lineno"> 4812</span>        || w[i] == SETTONUM || w[i] == LOADDOLLAR ) ) i += w[i+1];</div>
+<div class="line"><a id="l04813" name="l04813"></a><span class="lineno"> 4813</span>    }</div>
+<div class="line"><a id="l04814" name="l04814"></a><span class="lineno"> 4814</span>    AC.NwildC = k = WORDDIF(pScrat,AT.WorkPointer);</div>
+<div class="line"><a id="l04815" name="l04815"></a><span class="lineno"> 4815</span>    s = AT.WorkPointer;</div>
+<div class="line"><a id="l04816" name="l04816"></a><span class="lineno"> 4816</span>    m = w;</div>
+<div class="line"><a id="l04817" name="l04817"></a><span class="lineno"> 4817</span>    NCOPY(m,s,k);</div>
+<div class="line"><a id="l04818" name="l04818"></a><span class="lineno"> 4818</span>    AC.WildC = m;</div>
+<div class="line"><a id="l04819" name="l04819"></a><span class="lineno"> 4819</span>    <span class="keywordflow">return</span>(error);</div>
+<div class="line"><a id="l04820" name="l04820"></a><span class="lineno"> 4820</span>}</div>
 </div>
-<div class="line"><a id="l04820" name="l04820"></a><span class="lineno"> 4820</span> </div>
-<div class="line"><a id="l04821" name="l04821"></a><span class="lineno"> 4821</span><span class="comment">/*</span></div>
-<div class="line"><a id="l04822" name="l04822"></a><span class="lineno"> 4822</span><span class="comment">        #] SortWild : </span></div>
-<div class="line"><a id="l04823" name="l04823"></a><span class="lineno"> 4823</span><span class="comment">        #[ CleanUpSort :            void CleanUpSort(num)</span></div>
-<div class="line"><a id="l04824" name="l04824"></a><span class="lineno"> 4824</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen04829" data-start="{" data-end="}">
-<div class="line"><a id="l04829" name="l04829"></a><span class="lineno"><a class="line" href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea"> 4829</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#ab0bf76b7c13a32df1744703bb5585270">CleanUpSort</a>(<span class="keywordtype">int</span> num)</div>
-<div class="line"><a id="l04830" name="l04830"></a><span class="lineno"> 4830</span>{</div>
-<div class="line"><a id="l04831" name="l04831"></a><span class="lineno"> 4831</span>    GETIDENTITY</div>
-<div class="line"><a id="l04832" name="l04832"></a><span class="lineno"> 4832</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S;</div>
-<div class="line"><a id="l04833" name="l04833"></a><span class="lineno"> 4833</span>    <span class="keywordtype">int</span> minnum = num, i;</div>
-<div class="line"><a id="l04834" name="l04834"></a><span class="lineno"> 4834</span>    <span class="keywordflow">if</span> ( AN.FunSorts ) {</div>
-<div class="line"><a id="l04835" name="l04835"></a><span class="lineno"> 4835</span>        <span class="keywordflow">if</span> ( num == -1 ) {</div>
-<div class="line"><a id="l04836" name="l04836"></a><span class="lineno"> 4836</span>            <span class="keywordflow">if</span> ( AN.MaxFunSorts &gt; 3 ) {</div>
-<div class="line"><a id="l04837" name="l04837"></a><span class="lineno"> 4837</span>                minnum = (AN.MaxFunSorts+4)/2;</div>
-<div class="line"><a id="l04838" name="l04838"></a><span class="lineno"> 4838</span>            }</div>
-<div class="line"><a id="l04839" name="l04839"></a><span class="lineno"> 4839</span>            <span class="keywordflow">else</span> minnum = 4;</div>
-<div class="line"><a id="l04840" name="l04840"></a><span class="lineno"> 4840</span>        }</div>
-<div class="line"><a id="l04841" name="l04841"></a><span class="lineno"> 4841</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( minnum == 0 ) minnum = 1;</div>
-<div class="line"><a id="l04842" name="l04842"></a><span class="lineno"> 4842</span>        <span class="keywordflow">for</span> ( i = minnum; i &lt; AN.NumFunSorts; i++ ) {</div>
-<div class="line"><a id="l04843" name="l04843"></a><span class="lineno"> 4843</span>            S = AN.FunSorts[i];</div>
-<div class="line"><a id="l04844" name="l04844"></a><span class="lineno"> 4844</span>            <span class="keywordflow">if</span> ( S ) {</div>
-<div class="line"><a id="l04845" name="l04845"></a><span class="lineno"> 4845</span>                <span class="keywordflow">if</span> ( S-&gt;file.handle &gt;= 0 ) {</div>
-<div class="line"><a id="l04846" name="l04846"></a><span class="lineno"> 4846</span><span class="comment">/*                  TruncateFile(S-&gt;file.handle); */</span></div>
-<div class="line"><a id="l04847" name="l04847"></a><span class="lineno"> 4847</span>                    UpdateMaxSize();</div>
-<div class="line"><a id="l04848" name="l04848"></a><span class="lineno"> 4848</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
-<div class="line"><a id="l04849" name="l04849"></a><span class="lineno"> 4849</span>                    ClearSortGZIP(&amp;(S-&gt;file));</div>
-<div class="line"><a id="l04850" name="l04850"></a><span class="lineno"> 4850</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04851" name="l04851"></a><span class="lineno"> 4851</span>                    CloseFile(S-&gt;file.handle);</div>
-<div class="line"><a id="l04852" name="l04852"></a><span class="lineno"> 4852</span>                    S-&gt;file.handle = -1;</div>
-<div class="line"><a id="l04853" name="l04853"></a><span class="lineno"> 4853</span>                    remove(S-&gt;file.name);</div>
-<div class="line"><a id="l04854" name="l04854"></a><span class="lineno"> 4854</span><span class="preprocessor">#ifdef GZIPDEBUG</span></div>
-<div class="line"><a id="l04855" name="l04855"></a><span class="lineno"> 4855</span>                    MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04856" name="l04856"></a><span class="lineno"> 4856</span>                    MesPrint(<span class="stringliteral">&quot;%w CleanUpSort removed file %s&quot;</span>,S-&gt;file.name);</div>
-<div class="line"><a id="l04857" name="l04857"></a><span class="lineno"> 4857</span>                    MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04858" name="l04858"></a><span class="lineno"> 4858</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04859" name="l04859"></a><span class="lineno"> 4859</span>                }</div>
-<div class="line"><a id="l04860" name="l04860"></a><span class="lineno"> 4860</span>                M_free(S-&gt;sPointer, <span class="stringliteral">&quot;CleanUpSort: sPointer&quot;</span>);</div>
-<div class="line"><a id="l04861" name="l04861"></a><span class="lineno"> 4861</span>                M_free(S-&gt;Patches, <span class="stringliteral">&quot;CleanUpSort: Patches&quot;</span>);</div>
-<div class="line"><a id="l04862" name="l04862"></a><span class="lineno"> 4862</span>                M_free(S-&gt;pStop, <span class="stringliteral">&quot;CleanUpSort: pStop&quot;</span>);</div>
-<div class="line"><a id="l04863" name="l04863"></a><span class="lineno"> 4863</span>                M_free(S-&gt;poina, <span class="stringliteral">&quot;CleanUpSort: poina&quot;</span>);</div>
-<div class="line"><a id="l04864" name="l04864"></a><span class="lineno"> 4864</span>                M_free(S-&gt;poin2a, <span class="stringliteral">&quot;CleanUpSort: poin2a&quot;</span>);</div>
-<div class="line"><a id="l04865" name="l04865"></a><span class="lineno"> 4865</span>                M_free(S-&gt;fPatches, <span class="stringliteral">&quot;CleanUpSort: fPatches&quot;</span>);</div>
-<div class="line"><a id="l04866" name="l04866"></a><span class="lineno"> 4866</span>                M_free(S-&gt;fPatchesStop, <span class="stringliteral">&quot;CleanUpSort: fPatchesStop&quot;</span>);</div>
-<div class="line"><a id="l04867" name="l04867"></a><span class="lineno"> 4867</span>                M_free(S-&gt;inPatches, <span class="stringliteral">&quot;CleanUpSort: inPatches&quot;</span>);</div>
-<div class="line"><a id="l04868" name="l04868"></a><span class="lineno"> 4868</span>                M_free(S-&gt;tree, <span class="stringliteral">&quot;CleanUpSort: tree&quot;</span>);</div>
-<div class="line"><a id="l04869" name="l04869"></a><span class="lineno"> 4869</span>                M_free(S-&gt;used, <span class="stringliteral">&quot;CleanUpSort: used&quot;</span>);</div>
-<div class="line"><a id="l04870" name="l04870"></a><span class="lineno"> 4870</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
-<div class="line"><a id="l04871" name="l04871"></a><span class="lineno"> 4871</span>                M_free(S-&gt;fpcompressed, <span class="stringliteral">&quot;CleanUpSort: fpcompressed&quot;</span>);</div>
-<div class="line"><a id="l04872" name="l04872"></a><span class="lineno"> 4872</span>                M_free(S-&gt;fpincompressed, <span class="stringliteral">&quot;CleanUpSort: fpincompressed&quot;</span>);</div>
-<div class="line"><a id="l04873" name="l04873"></a><span class="lineno"> 4873</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04874" name="l04874"></a><span class="lineno"> 4874</span>                M_free(S-&gt;ktoi, <span class="stringliteral">&quot;CleanUpSort: ktoi&quot;</span>);</div>
-<div class="line"><a id="l04875" name="l04875"></a><span class="lineno"> 4875</span>                M_free(S-&gt;lBuffer, <span class="stringliteral">&quot;CleanUpSort: lBuffer+sBuffer&quot;</span>);</div>
-<div class="line"><a id="l04876" name="l04876"></a><span class="lineno"> 4876</span>                M_free(S-&gt;file.PObuffer, <span class="stringliteral">&quot;CleanUpSort: PObuffer&quot;</span>);</div>
-<div class="line"><a id="l04877" name="l04877"></a><span class="lineno"> 4877</span>                M_free(S, <span class="stringliteral">&quot;CleanUpSort: sorting struct&quot;</span>);</div>
-<div class="line"><a id="l04878" name="l04878"></a><span class="lineno"> 4878</span>            }</div>
-<div class="line"><a id="l04879" name="l04879"></a><span class="lineno"> 4879</span>            AN.FunSorts[i] = 0;</div>
-<div class="line"><a id="l04880" name="l04880"></a><span class="lineno"> 4880</span>        }</div>
-<div class="line"><a id="l04881" name="l04881"></a><span class="lineno"> 4881</span>        AN.MaxFunSorts = minnum;</div>
-<div class="line"><a id="l04882" name="l04882"></a><span class="lineno"> 4882</span>        <span class="keywordflow">if</span> ( num == 0 ) {</div>
-<div class="line"><a id="l04883" name="l04883"></a><span class="lineno"> 4883</span>            S = AN.FunSorts[0];</div>
-<div class="line"><a id="l04884" name="l04884"></a><span class="lineno"> 4884</span>            <span class="keywordflow">if</span> ( S ) {</div>
-<div class="line"><a id="l04885" name="l04885"></a><span class="lineno"> 4885</span>                <span class="keywordflow">if</span> ( S-&gt;file.handle &gt;= 0 ) {</div>
-<div class="line"><a id="l04886" name="l04886"></a><span class="lineno"> 4886</span><span class="comment">/*                  TruncateFile(S-&gt;file.handle); */</span></div>
-<div class="line"><a id="l04887" name="l04887"></a><span class="lineno"> 4887</span>                    UpdateMaxSize();</div>
-<div class="line"><a id="l04888" name="l04888"></a><span class="lineno"> 4888</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
-<div class="line"><a id="l04889" name="l04889"></a><span class="lineno"> 4889</span>                    ClearSortGZIP(&amp;(S-&gt;file));</div>
-<div class="line"><a id="l04890" name="l04890"></a><span class="lineno"> 4890</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04891" name="l04891"></a><span class="lineno"> 4891</span>                    CloseFile(S-&gt;file.handle);</div>
-<div class="line"><a id="l04892" name="l04892"></a><span class="lineno"> 4892</span>                    S-&gt;file.handle = -1;</div>
-<div class="line"><a id="l04893" name="l04893"></a><span class="lineno"> 4893</span>                    remove(S-&gt;file.name);</div>
-<div class="line"><a id="l04894" name="l04894"></a><span class="lineno"> 4894</span><span class="preprocessor">#ifdef GZIPDEBUG</span></div>
-<div class="line"><a id="l04895" name="l04895"></a><span class="lineno"> 4895</span>                    MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04896" name="l04896"></a><span class="lineno"> 4896</span>                    MesPrint(<span class="stringliteral">&quot;%w CleanUpSort removed file %s&quot;</span>,S-&gt;file.name);</div>
-<div class="line"><a id="l04897" name="l04897"></a><span class="lineno"> 4897</span>                    MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04898" name="l04898"></a><span class="lineno"> 4898</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04899" name="l04899"></a><span class="lineno"> 4899</span>                }</div>
-<div class="line"><a id="l04900" name="l04900"></a><span class="lineno"> 4900</span>            }</div>
-<div class="line"><a id="l04901" name="l04901"></a><span class="lineno"> 4901</span>        }</div>
-<div class="line"><a id="l04902" name="l04902"></a><span class="lineno"> 4902</span>    }</div>
-<div class="line"><a id="l04903" name="l04903"></a><span class="lineno"> 4903</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; 2; i++ ) {</div>
-<div class="line"><a id="l04904" name="l04904"></a><span class="lineno"> 4904</span>        <span class="keywordflow">if</span> ( AR.FoStage4[i].handle &gt;= 0 ) {</div>
-<div class="line"><a id="l04905" name="l04905"></a><span class="lineno"> 4905</span>            UpdateMaxSize();</div>
-<div class="line"><a id="l04906" name="l04906"></a><span class="lineno"> 4906</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
-<div class="line"><a id="l04907" name="l04907"></a><span class="lineno"> 4907</span>            ClearSortGZIP(&amp;(AR.FoStage4[i]));</div>
-<div class="line"><a id="l04908" name="l04908"></a><span class="lineno"> 4908</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04909" name="l04909"></a><span class="lineno"> 4909</span>            CloseFile(AR.FoStage4[i].handle);</div>
-<div class="line"><a id="l04910" name="l04910"></a><span class="lineno"> 4910</span>            remove(AR.FoStage4[i].name);</div>
-<div class="line"><a id="l04911" name="l04911"></a><span class="lineno"> 4911</span>            AR.FoStage4[i].handle = -1;</div>
-<div class="line"><a id="l04912" name="l04912"></a><span class="lineno"> 4912</span><span class="preprocessor">#ifdef GZIPDEBUG</span></div>
-<div class="line"><a id="l04913" name="l04913"></a><span class="lineno"> 4913</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04914" name="l04914"></a><span class="lineno"> 4914</span>            MesPrint(<span class="stringliteral">&quot;%w CleanUpSort removed stage4 file %s&quot;</span>,AR.FoStage4[i].name);</div>
-<div class="line"><a id="l04915" name="l04915"></a><span class="lineno"> 4915</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l04916" name="l04916"></a><span class="lineno"> 4916</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04917" name="l04917"></a><span class="lineno"> 4917</span>        }</div>
-<div class="line"><a id="l04918" name="l04918"></a><span class="lineno"> 4918</span>    }</div>
-<div class="line"><a id="l04919" name="l04919"></a><span class="lineno"> 4919</span>}</div>
+<div class="line"><a id="l04821" name="l04821"></a><span class="lineno"> 4821</span> </div>
+<div class="line"><a id="l04822" name="l04822"></a><span class="lineno"> 4822</span><span class="comment">/*</span></div>
+<div class="line"><a id="l04823" name="l04823"></a><span class="lineno"> 4823</span><span class="comment">        #] SortWild : </span></div>
+<div class="line"><a id="l04824" name="l04824"></a><span class="lineno"> 4824</span><span class="comment">        #[ CleanUpSort :            void CleanUpSort(num)</span></div>
+<div class="line"><a id="l04825" name="l04825"></a><span class="lineno"> 4825</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen04830" data-start="{" data-end="}">
+<div class="line"><a id="l04830" name="l04830"></a><span class="lineno"><a class="line" href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea"> 4830</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#ab0bf76b7c13a32df1744703bb5585270">CleanUpSort</a>(<span class="keywordtype">int</span> num)</div>
+<div class="line"><a id="l04831" name="l04831"></a><span class="lineno"> 4831</span>{</div>
+<div class="line"><a id="l04832" name="l04832"></a><span class="lineno"> 4832</span>    GETIDENTITY</div>
+<div class="line"><a id="l04833" name="l04833"></a><span class="lineno"> 4833</span>    <a class="code hl_struct" href="structs_or_t.html">SORTING</a> *S;</div>
+<div class="line"><a id="l04834" name="l04834"></a><span class="lineno"> 4834</span>    <span class="keywordtype">int</span> minnum = num, i;</div>
+<div class="line"><a id="l04835" name="l04835"></a><span class="lineno"> 4835</span>    <span class="keywordflow">if</span> ( AN.FunSorts ) {</div>
+<div class="line"><a id="l04836" name="l04836"></a><span class="lineno"> 4836</span>        <span class="keywordflow">if</span> ( num == -1 ) {</div>
+<div class="line"><a id="l04837" name="l04837"></a><span class="lineno"> 4837</span>            <span class="keywordflow">if</span> ( AN.MaxFunSorts &gt; 3 ) {</div>
+<div class="line"><a id="l04838" name="l04838"></a><span class="lineno"> 4838</span>                minnum = (AN.MaxFunSorts+4)/2;</div>
+<div class="line"><a id="l04839" name="l04839"></a><span class="lineno"> 4839</span>            }</div>
+<div class="line"><a id="l04840" name="l04840"></a><span class="lineno"> 4840</span>            <span class="keywordflow">else</span> minnum = 4;</div>
+<div class="line"><a id="l04841" name="l04841"></a><span class="lineno"> 4841</span>        }</div>
+<div class="line"><a id="l04842" name="l04842"></a><span class="lineno"> 4842</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( minnum == 0 ) minnum = 1;</div>
+<div class="line"><a id="l04843" name="l04843"></a><span class="lineno"> 4843</span>        <span class="keywordflow">for</span> ( i = minnum; i &lt; AN.NumFunSorts; i++ ) {</div>
+<div class="line"><a id="l04844" name="l04844"></a><span class="lineno"> 4844</span>            S = AN.FunSorts[i];</div>
+<div class="line"><a id="l04845" name="l04845"></a><span class="lineno"> 4845</span>            <span class="keywordflow">if</span> ( S ) {</div>
+<div class="line"><a id="l04846" name="l04846"></a><span class="lineno"> 4846</span>                <span class="keywordflow">if</span> ( S-&gt;file.handle &gt;= 0 ) {</div>
+<div class="line"><a id="l04847" name="l04847"></a><span class="lineno"> 4847</span><span class="comment">/*                  TruncateFile(S-&gt;file.handle); */</span></div>
+<div class="line"><a id="l04848" name="l04848"></a><span class="lineno"> 4848</span>                    UpdateMaxSize();</div>
+<div class="line"><a id="l04849" name="l04849"></a><span class="lineno"> 4849</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
+<div class="line"><a id="l04850" name="l04850"></a><span class="lineno"> 4850</span>                    ClearSortGZIP(&amp;(S-&gt;file));</div>
+<div class="line"><a id="l04851" name="l04851"></a><span class="lineno"> 4851</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04852" name="l04852"></a><span class="lineno"> 4852</span>                    CloseFile(S-&gt;file.handle);</div>
+<div class="line"><a id="l04853" name="l04853"></a><span class="lineno"> 4853</span>                    S-&gt;file.handle = -1;</div>
+<div class="line"><a id="l04854" name="l04854"></a><span class="lineno"> 4854</span>                    remove(S-&gt;file.name);</div>
+<div class="line"><a id="l04855" name="l04855"></a><span class="lineno"> 4855</span><span class="preprocessor">#ifdef GZIPDEBUG</span></div>
+<div class="line"><a id="l04856" name="l04856"></a><span class="lineno"> 4856</span>                    MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04857" name="l04857"></a><span class="lineno"> 4857</span>                    MesPrint(<span class="stringliteral">&quot;%w CleanUpSort removed file %s&quot;</span>,S-&gt;file.name);</div>
+<div class="line"><a id="l04858" name="l04858"></a><span class="lineno"> 4858</span>                    MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04859" name="l04859"></a><span class="lineno"> 4859</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04860" name="l04860"></a><span class="lineno"> 4860</span>                }</div>
+<div class="line"><a id="l04861" name="l04861"></a><span class="lineno"> 4861</span>                M_free(S-&gt;sPointer, <span class="stringliteral">&quot;CleanUpSort: sPointer&quot;</span>);</div>
+<div class="line"><a id="l04862" name="l04862"></a><span class="lineno"> 4862</span>                M_free(S-&gt;Patches, <span class="stringliteral">&quot;CleanUpSort: Patches&quot;</span>);</div>
+<div class="line"><a id="l04863" name="l04863"></a><span class="lineno"> 4863</span>                M_free(S-&gt;pStop, <span class="stringliteral">&quot;CleanUpSort: pStop&quot;</span>);</div>
+<div class="line"><a id="l04864" name="l04864"></a><span class="lineno"> 4864</span>                M_free(S-&gt;poina, <span class="stringliteral">&quot;CleanUpSort: poina&quot;</span>);</div>
+<div class="line"><a id="l04865" name="l04865"></a><span class="lineno"> 4865</span>                M_free(S-&gt;poin2a, <span class="stringliteral">&quot;CleanUpSort: poin2a&quot;</span>);</div>
+<div class="line"><a id="l04866" name="l04866"></a><span class="lineno"> 4866</span>                M_free(S-&gt;fPatches, <span class="stringliteral">&quot;CleanUpSort: fPatches&quot;</span>);</div>
+<div class="line"><a id="l04867" name="l04867"></a><span class="lineno"> 4867</span>                M_free(S-&gt;fPatchesStop, <span class="stringliteral">&quot;CleanUpSort: fPatchesStop&quot;</span>);</div>
+<div class="line"><a id="l04868" name="l04868"></a><span class="lineno"> 4868</span>                M_free(S-&gt;inPatches, <span class="stringliteral">&quot;CleanUpSort: inPatches&quot;</span>);</div>
+<div class="line"><a id="l04869" name="l04869"></a><span class="lineno"> 4869</span>                M_free(S-&gt;tree, <span class="stringliteral">&quot;CleanUpSort: tree&quot;</span>);</div>
+<div class="line"><a id="l04870" name="l04870"></a><span class="lineno"> 4870</span>                M_free(S-&gt;used, <span class="stringliteral">&quot;CleanUpSort: used&quot;</span>);</div>
+<div class="line"><a id="l04871" name="l04871"></a><span class="lineno"> 4871</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
+<div class="line"><a id="l04872" name="l04872"></a><span class="lineno"> 4872</span>                M_free(S-&gt;fpcompressed, <span class="stringliteral">&quot;CleanUpSort: fpcompressed&quot;</span>);</div>
+<div class="line"><a id="l04873" name="l04873"></a><span class="lineno"> 4873</span>                M_free(S-&gt;fpincompressed, <span class="stringliteral">&quot;CleanUpSort: fpincompressed&quot;</span>);</div>
+<div class="line"><a id="l04874" name="l04874"></a><span class="lineno"> 4874</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04875" name="l04875"></a><span class="lineno"> 4875</span>                M_free(S-&gt;ktoi, <span class="stringliteral">&quot;CleanUpSort: ktoi&quot;</span>);</div>
+<div class="line"><a id="l04876" name="l04876"></a><span class="lineno"> 4876</span>                M_free(S-&gt;lBuffer, <span class="stringliteral">&quot;CleanUpSort: lBuffer+sBuffer&quot;</span>);</div>
+<div class="line"><a id="l04877" name="l04877"></a><span class="lineno"> 4877</span>                M_free(S-&gt;file.PObuffer, <span class="stringliteral">&quot;CleanUpSort: PObuffer&quot;</span>);</div>
+<div class="line"><a id="l04878" name="l04878"></a><span class="lineno"> 4878</span>                M_free(S, <span class="stringliteral">&quot;CleanUpSort: sorting struct&quot;</span>);</div>
+<div class="line"><a id="l04879" name="l04879"></a><span class="lineno"> 4879</span>            }</div>
+<div class="line"><a id="l04880" name="l04880"></a><span class="lineno"> 4880</span>            AN.FunSorts[i] = 0;</div>
+<div class="line"><a id="l04881" name="l04881"></a><span class="lineno"> 4881</span>        }</div>
+<div class="line"><a id="l04882" name="l04882"></a><span class="lineno"> 4882</span>        AN.MaxFunSorts = minnum;</div>
+<div class="line"><a id="l04883" name="l04883"></a><span class="lineno"> 4883</span>        <span class="keywordflow">if</span> ( num == 0 ) {</div>
+<div class="line"><a id="l04884" name="l04884"></a><span class="lineno"> 4884</span>            S = AN.FunSorts[0];</div>
+<div class="line"><a id="l04885" name="l04885"></a><span class="lineno"> 4885</span>            <span class="keywordflow">if</span> ( S ) {</div>
+<div class="line"><a id="l04886" name="l04886"></a><span class="lineno"> 4886</span>                <span class="keywordflow">if</span> ( S-&gt;file.handle &gt;= 0 ) {</div>
+<div class="line"><a id="l04887" name="l04887"></a><span class="lineno"> 4887</span><span class="comment">/*                  TruncateFile(S-&gt;file.handle); */</span></div>
+<div class="line"><a id="l04888" name="l04888"></a><span class="lineno"> 4888</span>                    UpdateMaxSize();</div>
+<div class="line"><a id="l04889" name="l04889"></a><span class="lineno"> 4889</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
+<div class="line"><a id="l04890" name="l04890"></a><span class="lineno"> 4890</span>                    ClearSortGZIP(&amp;(S-&gt;file));</div>
+<div class="line"><a id="l04891" name="l04891"></a><span class="lineno"> 4891</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04892" name="l04892"></a><span class="lineno"> 4892</span>                    CloseFile(S-&gt;file.handle);</div>
+<div class="line"><a id="l04893" name="l04893"></a><span class="lineno"> 4893</span>                    S-&gt;file.handle = -1;</div>
+<div class="line"><a id="l04894" name="l04894"></a><span class="lineno"> 4894</span>                    remove(S-&gt;file.name);</div>
+<div class="line"><a id="l04895" name="l04895"></a><span class="lineno"> 4895</span><span class="preprocessor">#ifdef GZIPDEBUG</span></div>
+<div class="line"><a id="l04896" name="l04896"></a><span class="lineno"> 4896</span>                    MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04897" name="l04897"></a><span class="lineno"> 4897</span>                    MesPrint(<span class="stringliteral">&quot;%w CleanUpSort removed file %s&quot;</span>,S-&gt;file.name);</div>
+<div class="line"><a id="l04898" name="l04898"></a><span class="lineno"> 4898</span>                    MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04899" name="l04899"></a><span class="lineno"> 4899</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04900" name="l04900"></a><span class="lineno"> 4900</span>                }</div>
+<div class="line"><a id="l04901" name="l04901"></a><span class="lineno"> 4901</span>            }</div>
+<div class="line"><a id="l04902" name="l04902"></a><span class="lineno"> 4902</span>        }</div>
+<div class="line"><a id="l04903" name="l04903"></a><span class="lineno"> 4903</span>    }</div>
+<div class="line"><a id="l04904" name="l04904"></a><span class="lineno"> 4904</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; 2; i++ ) {</div>
+<div class="line"><a id="l04905" name="l04905"></a><span class="lineno"> 4905</span>        <span class="keywordflow">if</span> ( AR.FoStage4[i].handle &gt;= 0 ) {</div>
+<div class="line"><a id="l04906" name="l04906"></a><span class="lineno"> 4906</span>            UpdateMaxSize();</div>
+<div class="line"><a id="l04907" name="l04907"></a><span class="lineno"> 4907</span><span class="preprocessor">#ifdef WITHZLIB</span></div>
+<div class="line"><a id="l04908" name="l04908"></a><span class="lineno"> 4908</span>            ClearSortGZIP(&amp;(AR.FoStage4[i]));</div>
+<div class="line"><a id="l04909" name="l04909"></a><span class="lineno"> 4909</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04910" name="l04910"></a><span class="lineno"> 4910</span>            CloseFile(AR.FoStage4[i].handle);</div>
+<div class="line"><a id="l04911" name="l04911"></a><span class="lineno"> 4911</span>            remove(AR.FoStage4[i].name);</div>
+<div class="line"><a id="l04912" name="l04912"></a><span class="lineno"> 4912</span>            AR.FoStage4[i].handle = -1;</div>
+<div class="line"><a id="l04913" name="l04913"></a><span class="lineno"> 4913</span><span class="preprocessor">#ifdef GZIPDEBUG</span></div>
+<div class="line"><a id="l04914" name="l04914"></a><span class="lineno"> 4914</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04915" name="l04915"></a><span class="lineno"> 4915</span>            MesPrint(<span class="stringliteral">&quot;%w CleanUpSort removed stage4 file %s&quot;</span>,AR.FoStage4[i].name);</div>
+<div class="line"><a id="l04916" name="l04916"></a><span class="lineno"> 4916</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l04917" name="l04917"></a><span class="lineno"> 4917</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04918" name="l04918"></a><span class="lineno"> 4918</span>        }</div>
+<div class="line"><a id="l04919" name="l04919"></a><span class="lineno"> 4919</span>    }</div>
+<div class="line"><a id="l04920" name="l04920"></a><span class="lineno"> 4920</span>}</div>
 </div>
-<div class="line"><a id="l04920" name="l04920"></a><span class="lineno"> 4920</span> </div>
-<div class="line"><a id="l04921" name="l04921"></a><span class="lineno"> 4921</span><span class="comment">/*</span></div>
-<div class="line"><a id="l04922" name="l04922"></a><span class="lineno"> 4922</span><span class="comment">        #] CleanUpSort : </span></div>
-<div class="line"><a id="l04923" name="l04923"></a><span class="lineno"> 4923</span><span class="comment">        #[ LowerSortLevel :         void LowerSortLevel()</span></div>
-<div class="line"><a id="l04924" name="l04924"></a><span class="lineno"> 4924</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen04929" data-start="{" data-end="}">
-<div class="line"><a id="l04929" name="l04929"></a><span class="lineno"><a class="line" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57"> 4929</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l04930" name="l04930"></a><span class="lineno"> 4930</span>{</div>
-<div class="line"><a id="l04931" name="l04931"></a><span class="lineno"> 4931</span>    GETIDENTITY</div>
-<div class="line"><a id="l04932" name="l04932"></a><span class="lineno"> 4932</span>    <span class="keywordflow">if</span> ( AR.sLevel &gt;= 0 ) {</div>
-<div class="line"><a id="l04933" name="l04933"></a><span class="lineno"> 4933</span>        AR.sLevel--;</div>
-<div class="line"><a id="l04934" name="l04934"></a><span class="lineno"> 4934</span>        <span class="keywordflow">if</span> ( AR.sLevel &gt;= 0 ) AT.SS = AN.FunSorts[AR.sLevel];</div>
-<div class="line"><a id="l04935" name="l04935"></a><span class="lineno"> 4935</span>    }</div>
-<div class="line"><a id="l04936" name="l04936"></a><span class="lineno"> 4936</span>}</div>
+<div class="line"><a id="l04921" name="l04921"></a><span class="lineno"> 4921</span> </div>
+<div class="line"><a id="l04922" name="l04922"></a><span class="lineno"> 4922</span><span class="comment">/*</span></div>
+<div class="line"><a id="l04923" name="l04923"></a><span class="lineno"> 4923</span><span class="comment">        #] CleanUpSort : </span></div>
+<div class="line"><a id="l04924" name="l04924"></a><span class="lineno"> 4924</span><span class="comment">        #[ LowerSortLevel :         void LowerSortLevel()</span></div>
+<div class="line"><a id="l04925" name="l04925"></a><span class="lineno"> 4925</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen04930" data-start="{" data-end="}">
+<div class="line"><a id="l04930" name="l04930"></a><span class="lineno"><a class="line" href="declare_8h.html#a69497409061c881ca2d83db4a6933d57"> 4930</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sort_8c.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l04931" name="l04931"></a><span class="lineno"> 4931</span>{</div>
+<div class="line"><a id="l04932" name="l04932"></a><span class="lineno"> 4932</span>    GETIDENTITY</div>
+<div class="line"><a id="l04933" name="l04933"></a><span class="lineno"> 4933</span>    <span class="keywordflow">if</span> ( AR.sLevel &gt;= 0 ) {</div>
+<div class="line"><a id="l04934" name="l04934"></a><span class="lineno"> 4934</span>        AR.sLevel--;</div>
+<div class="line"><a id="l04935" name="l04935"></a><span class="lineno"> 4935</span>        <span class="keywordflow">if</span> ( AR.sLevel &gt;= 0 ) AT.SS = AN.FunSorts[AR.sLevel];</div>
+<div class="line"><a id="l04936" name="l04936"></a><span class="lineno"> 4936</span>    }</div>
+<div class="line"><a id="l04937" name="l04937"></a><span class="lineno"> 4937</span>}</div>
 </div>
-<div class="line"><a id="l04937" name="l04937"></a><span class="lineno"> 4937</span> </div>
-<div class="line"><a id="l04938" name="l04938"></a><span class="lineno"> 4938</span><span class="comment">/*</span></div>
-<div class="line"><a id="l04939" name="l04939"></a><span class="lineno"> 4939</span><span class="comment">        #] LowerSortLevel : </span></div>
-<div class="line"><a id="l04940" name="l04940"></a><span class="lineno"> 4940</span><span class="comment">        #[ PolyRatFunSpecial :</span></div>
-<div class="line"><a id="l04941" name="l04941"></a><span class="lineno"> 4941</span><span class="comment"></span> </div>
-<div class="line"><a id="l04942" name="l04942"></a><span class="lineno"> 4942</span><span class="comment">        Keeps only the most divergent term in AR.PolyFunVar</span></div>
-<div class="line"><a id="l04943" name="l04943"></a><span class="lineno"> 4943</span><span class="comment">        We assume that the terms are already in that notation.</span></div>
-<div class="line"><a id="l04944" name="l04944"></a><span class="lineno"> 4944</span><span class="comment">*/</span></div>
-<div class="line"><a id="l04945" name="l04945"></a><span class="lineno"> 4945</span> </div>
-<div class="line"><a id="l04946" name="l04946"></a><span class="lineno"> 4946</span>WORD *PolyRatFunSpecial(PHEAD WORD *t1, WORD *t2)</div>
-<div class="line"><a id="l04947" name="l04947"></a><span class="lineno"> 4947</span>{</div>
-<div class="line"><a id="l04948" name="l04948"></a><span class="lineno"> 4948</span>    WORD *oldworkpointer = AT.WorkPointer, *t, *r;</div>
-<div class="line"><a id="l04949" name="l04949"></a><span class="lineno"> 4949</span>    WORD exp1, exp2;</div>
-<div class="line"><a id="l04950" name="l04950"></a><span class="lineno"> 4950</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a id="l04951" name="l04951"></a><span class="lineno"> 4951</span>    t = t1+FUNHEAD;</div>
-<div class="line"><a id="l04952" name="l04952"></a><span class="lineno"> 4952</span>    <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
-<div class="line"><a id="l04953" name="l04953"></a><span class="lineno"> 4953</span>        <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04954" name="l04954"></a><span class="lineno"> 4954</span>        exp1 = 1;</div>
-<div class="line"><a id="l04955" name="l04955"></a><span class="lineno"> 4955</span>        <span class="keywordflow">if</span> ( t[2] != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04956" name="l04956"></a><span class="lineno"> 4956</span>        t[3] = 1;</div>
-<div class="line"><a id="l04957" name="l04957"></a><span class="lineno"> 4957</span>    }</div>
-<div class="line"><a id="l04958" name="l04958"></a><span class="lineno"> 4958</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
-<div class="line"><a id="l04959" name="l04959"></a><span class="lineno"> 4959</span>        t[1] = 1;</div>
-<div class="line"><a id="l04960" name="l04960"></a><span class="lineno"> 4960</span>        t += 2;</div>
-<div class="line"><a id="l04961" name="l04961"></a><span class="lineno"> 4961</span>        <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
-<div class="line"><a id="l04962" name="l04962"></a><span class="lineno"> 4962</span>            <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04963" name="l04963"></a><span class="lineno"> 4963</span>            exp1 = -1;</div>
-<div class="line"><a id="l04964" name="l04964"></a><span class="lineno"> 4964</span>        }</div>
-<div class="line"><a id="l04965" name="l04965"></a><span class="lineno"> 4965</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
-<div class="line"><a id="l04966" name="l04966"></a><span class="lineno"> 4966</span>            t[1] = 1;</div>
-<div class="line"><a id="l04967" name="l04967"></a><span class="lineno"> 4967</span>            exp1 = 0;</div>
-<div class="line"><a id="l04968" name="l04968"></a><span class="lineno"> 4968</span>        }</div>
-<div class="line"><a id="l04969" name="l04969"></a><span class="lineno"> 4969</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
-<div class="line"><a id="l04970" name="l04970"></a><span class="lineno"> 4970</span>            &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
-<div class="line"><a id="l04971" name="l04971"></a><span class="lineno"> 4971</span>            t[ARGHEAD+5] = 1;</div>
-<div class="line"><a id="l04972" name="l04972"></a><span class="lineno"> 4972</span>            t[ARGHEAD+6] = 1;</div>
-<div class="line"><a id="l04973" name="l04973"></a><span class="lineno"> 4973</span>            t[ARGHEAD+7] = 3;</div>
-<div class="line"><a id="l04974" name="l04974"></a><span class="lineno"> 4974</span>            exp1 = -t[ARGHEAD+4];</div>
-<div class="line"><a id="l04975" name="l04975"></a><span class="lineno"> 4975</span>        }</div>
-<div class="line"><a id="l04976" name="l04976"></a><span class="lineno"> 4976</span>        <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04977" name="l04977"></a><span class="lineno"> 4977</span>    }</div>
-<div class="line"><a id="l04978" name="l04978"></a><span class="lineno"> 4978</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
-<div class="line"><a id="l04979" name="l04979"></a><span class="lineno"> 4979</span>        &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
-<div class="line"><a id="l04980" name="l04980"></a><span class="lineno"> 4980</span>        t[ARGHEAD+5] = 1;</div>
-<div class="line"><a id="l04981" name="l04981"></a><span class="lineno"> 4981</span>        t[ARGHEAD+6] = 1;</div>
-<div class="line"><a id="l04982" name="l04982"></a><span class="lineno"> 4982</span>        t[ARGHEAD+7] = 3;</div>
-<div class="line"><a id="l04983" name="l04983"></a><span class="lineno"> 4983</span>        exp1 = t[ARGHEAD+4];</div>
-<div class="line"><a id="l04984" name="l04984"></a><span class="lineno"> 4984</span>        t += *t;</div>
-<div class="line"><a id="l04985" name="l04985"></a><span class="lineno"> 4985</span>        <span class="keywordflow">if</span> ( *t != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04986" name="l04986"></a><span class="lineno"> 4986</span>        t[1] = 1;</div>
-<div class="line"><a id="l04987" name="l04987"></a><span class="lineno"> 4987</span>    }</div>
-<div class="line"><a id="l04988" name="l04988"></a><span class="lineno"> 4988</span>    <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04989" name="l04989"></a><span class="lineno"> 4989</span> </div>
-<div class="line"><a id="l04990" name="l04990"></a><span class="lineno"> 4990</span>    t = t2+FUNHEAD;</div>
-<div class="line"><a id="l04991" name="l04991"></a><span class="lineno"> 4991</span>    <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
-<div class="line"><a id="l04992" name="l04992"></a><span class="lineno"> 4992</span>        <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04993" name="l04993"></a><span class="lineno"> 4993</span>        exp2 = 1;</div>
-<div class="line"><a id="l04994" name="l04994"></a><span class="lineno"> 4994</span>        <span class="keywordflow">if</span> ( t[2] != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l04995" name="l04995"></a><span class="lineno"> 4995</span>        t[3] = 1;</div>
-<div class="line"><a id="l04996" name="l04996"></a><span class="lineno"> 4996</span>    }</div>
-<div class="line"><a id="l04997" name="l04997"></a><span class="lineno"> 4997</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
-<div class="line"><a id="l04998" name="l04998"></a><span class="lineno"> 4998</span>        t[1] = 1;</div>
-<div class="line"><a id="l04999" name="l04999"></a><span class="lineno"> 4999</span>        t += 2;</div>
-<div class="line"><a id="l05000" name="l05000"></a><span class="lineno"> 5000</span>        <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
-<div class="line"><a id="l05001" name="l05001"></a><span class="lineno"> 5001</span>            <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l05002" name="l05002"></a><span class="lineno"> 5002</span>            exp2 = -1;</div>
-<div class="line"><a id="l05003" name="l05003"></a><span class="lineno"> 5003</span>        }</div>
-<div class="line"><a id="l05004" name="l05004"></a><span class="lineno"> 5004</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
-<div class="line"><a id="l05005" name="l05005"></a><span class="lineno"> 5005</span>            t[1] = 1;</div>
-<div class="line"><a id="l05006" name="l05006"></a><span class="lineno"> 5006</span>            exp2 = 0;</div>
-<div class="line"><a id="l05007" name="l05007"></a><span class="lineno"> 5007</span>        }</div>
-<div class="line"><a id="l05008" name="l05008"></a><span class="lineno"> 5008</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
-<div class="line"><a id="l05009" name="l05009"></a><span class="lineno"> 5009</span>            &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
-<div class="line"><a id="l05010" name="l05010"></a><span class="lineno"> 5010</span>            t[ARGHEAD+5] = 1;</div>
-<div class="line"><a id="l05011" name="l05011"></a><span class="lineno"> 5011</span>            t[ARGHEAD+6] = 1;</div>
-<div class="line"><a id="l05012" name="l05012"></a><span class="lineno"> 5012</span>            t[ARGHEAD+7] = 3;</div>
-<div class="line"><a id="l05013" name="l05013"></a><span class="lineno"> 5013</span>            exp2 = -t[ARGHEAD+4];</div>
-<div class="line"><a id="l05014" name="l05014"></a><span class="lineno"> 5014</span>        }</div>
-<div class="line"><a id="l05015" name="l05015"></a><span class="lineno"> 5015</span>        <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l05016" name="l05016"></a><span class="lineno"> 5016</span>    }</div>
-<div class="line"><a id="l05017" name="l05017"></a><span class="lineno"> 5017</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
-<div class="line"><a id="l05018" name="l05018"></a><span class="lineno"> 5018</span>        &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
-<div class="line"><a id="l05019" name="l05019"></a><span class="lineno"> 5019</span>        t[ARGHEAD+5] = 1;</div>
-<div class="line"><a id="l05020" name="l05020"></a><span class="lineno"> 5020</span>        t[ARGHEAD+6] = 1;</div>
-<div class="line"><a id="l05021" name="l05021"></a><span class="lineno"> 5021</span>        t[ARGHEAD+7] = 3;</div>
-<div class="line"><a id="l05022" name="l05022"></a><span class="lineno"> 5022</span>        exp2 = t[ARGHEAD+4];</div>
-<div class="line"><a id="l05023" name="l05023"></a><span class="lineno"> 5023</span>        t += *t;</div>
-<div class="line"><a id="l05024" name="l05024"></a><span class="lineno"> 5024</span>        <span class="keywordflow">if</span> ( *t != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l05025" name="l05025"></a><span class="lineno"> 5025</span>        t[1] = 1;</div>
-<div class="line"><a id="l05026" name="l05026"></a><span class="lineno"> 5026</span>    }</div>
-<div class="line"><a id="l05027" name="l05027"></a><span class="lineno"> 5027</span>    <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
-<div class="line"><a id="l05028" name="l05028"></a><span class="lineno"> 5028</span> </div>
-<div class="line"><a id="l05029" name="l05029"></a><span class="lineno"> 5029</span>    <span class="keywordflow">if</span> ( exp1 &lt;= exp2 ) { i = t1[1]; r = t1; }</div>
-<div class="line"><a id="l05030" name="l05030"></a><span class="lineno"> 5030</span>    <span class="keywordflow">else</span>                { i = t2[1]; r = t2; }</div>
-<div class="line"><a id="l05031" name="l05031"></a><span class="lineno"> 5031</span>    t = oldworkpointer;</div>
-<div class="line"><a id="l05032" name="l05032"></a><span class="lineno"> 5032</span>    NCOPY(t,r,i)</div>
-<div class="line"><a id="l05033" name="l05033"></a><span class="lineno"> 5033</span> </div>
-<div class="line"><a id="l05034" name="l05034"></a><span class="lineno"> 5034</span>    <span class="keywordflow">return</span>(oldworkpointer);</div>
-<div class="line"><a id="l05035" name="l05035"></a><span class="lineno"> 5035</span>Illegal:</div>
-<div class="line"><a id="l05036" name="l05036"></a><span class="lineno"> 5036</span>    MesPrint(<span class="stringliteral">&quot;Illegal occurrence of PolyRatFun with divergent option&quot;</span>);</div>
-<div class="line"><a id="l05037" name="l05037"></a><span class="lineno"> 5037</span>    Terminate(-1);</div>
-<div class="line"><a id="l05038" name="l05038"></a><span class="lineno"> 5038</span>    <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a id="l05039" name="l05039"></a><span class="lineno"> 5039</span>}</div>
-<div class="line"><a id="l05040" name="l05040"></a><span class="lineno"> 5040</span> </div>
-<div class="line"><a id="l05041" name="l05041"></a><span class="lineno"> 5041</span><span class="comment">/*</span></div>
-<div class="line"><a id="l05042" name="l05042"></a><span class="lineno"> 5042</span><span class="comment">        #] PolyRatFunSpecial : </span></div>
-<div class="line"><a id="l05043" name="l05043"></a><span class="lineno"> 5043</span><span class="comment">        #[ SimpleSplitMerge :</span></div>
-<div class="line"><a id="l05044" name="l05044"></a><span class="lineno"> 5044</span><span class="comment"></span> </div>
-<div class="line"><a id="l05045" name="l05045"></a><span class="lineno"> 5045</span><span class="comment">        Sorts an array of WORDs. No adding of equal objects.</span></div>
-<div class="line"><a id="l05046" name="l05046"></a><span class="lineno"> 5046</span><span class="comment">*/</span></div>
-<div class="line"><a id="l05047" name="l05047"></a><span class="lineno"> 5047</span> </div>
-<div class="line"><a id="l05048" name="l05048"></a><span class="lineno"> 5048</span><span class="keywordtype">void</span> SimpleSplitMergeRec(WORD *array,WORD num,WORD *auxarray)</div>
-<div class="line"><a id="l05049" name="l05049"></a><span class="lineno"> 5049</span>{</div>
-<div class="line"><a id="l05050" name="l05050"></a><span class="lineno"> 5050</span>    WORD n1,n2,i,j,k,*t1,*t2;</div>
-<div class="line"><a id="l05051" name="l05051"></a><span class="lineno"> 5051</span>    <span class="keywordflow">if</span> ( num &lt; 2 ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l05052" name="l05052"></a><span class="lineno"> 5052</span>    <span class="keywordflow">if</span> ( num == 2 ) {</div>
-<div class="line"><a id="l05053" name="l05053"></a><span class="lineno"> 5053</span>        <span class="keywordflow">if</span> ( array[0] &gt; array[1] ) {</div>
-<div class="line"><a id="l05054" name="l05054"></a><span class="lineno"> 5054</span>            EXCH(array[0],array[1])</div>
-<div class="line"><a id="l05055" name="l05055"></a><span class="lineno"> 5055</span>        }</div>
-<div class="line"><a id="l05056" name="l05056"></a><span class="lineno"> 5056</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l05057" name="l05057"></a><span class="lineno"> 5057</span>    }</div>
-<div class="line"><a id="l05058" name="l05058"></a><span class="lineno"> 5058</span>    n1 = num/2;</div>
-<div class="line"><a id="l05059" name="l05059"></a><span class="lineno"> 5059</span>    n2 = num - n1;</div>
-<div class="line"><a id="l05060" name="l05060"></a><span class="lineno"> 5060</span>    SimpleSplitMergeRec(array,n1,auxarray);</div>
-<div class="line"><a id="l05061" name="l05061"></a><span class="lineno"> 5061</span>    SimpleSplitMergeRec(array+n1,n2,auxarray);</div>
-<div class="line"><a id="l05062" name="l05062"></a><span class="lineno"> 5062</span>    <span class="keywordflow">if</span> ( array[n1-1] &lt;= array[n1] ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l05063" name="l05063"></a><span class="lineno"> 5063</span> </div>
-<div class="line"><a id="l05064" name="l05064"></a><span class="lineno"> 5064</span>    t1 = array; t2 = auxarray; i = n1; NCOPY(t2,t1,i);</div>
-<div class="line"><a id="l05065" name="l05065"></a><span class="lineno"> 5065</span>    i = 0; j = n1; k = 0;</div>
-<div class="line"><a id="l05066" name="l05066"></a><span class="lineno"> 5066</span>    <span class="keywordflow">while</span> ( i &lt; n1 &amp;&amp; j &lt; num ) {</div>
-<div class="line"><a id="l05067" name="l05067"></a><span class="lineno"> 5067</span>        <span class="keywordflow">if</span> ( auxarray[i] &lt;= array[j] ) { array[k++] = auxarray[i++]; }</div>
-<div class="line"><a id="l05068" name="l05068"></a><span class="lineno"> 5068</span>        <span class="keywordflow">else</span> { array[k++] = array[j++]; }</div>
-<div class="line"><a id="l05069" name="l05069"></a><span class="lineno"> 5069</span>    }</div>
-<div class="line"><a id="l05070" name="l05070"></a><span class="lineno"> 5070</span>    <span class="keywordflow">while</span> ( i &lt; n1 ) array[k++] = auxarray[i++];</div>
-<div class="line"><a id="l05071" name="l05071"></a><span class="lineno"> 5071</span><span class="comment">/*</span></div>
-<div class="line"><a id="l05072" name="l05072"></a><span class="lineno"> 5072</span><span class="comment">    Remember: remnants of j are still in place!</span></div>
-<div class="line"><a id="l05073" name="l05073"></a><span class="lineno"> 5073</span><span class="comment">*/</span></div>
-<div class="line"><a id="l05074" name="l05074"></a><span class="lineno"> 5074</span>}</div>
-<div class="line"><a id="l05075" name="l05075"></a><span class="lineno"> 5075</span> </div>
-<div class="line"><a id="l05076" name="l05076"></a><span class="lineno"> 5076</span><span class="keywordtype">void</span> SimpleSplitMerge(WORD *array,WORD num)</div>
-<div class="line"><a id="l05077" name="l05077"></a><span class="lineno"> 5077</span>{</div>
-<div class="line"><a id="l05078" name="l05078"></a><span class="lineno"> 5078</span>    WORD *auxarray = Malloc1(<span class="keyword">sizeof</span>(WORD)*num/2,<span class="stringliteral">&quot;SimpleSplitMerge&quot;</span>);</div>
-<div class="line"><a id="l05079" name="l05079"></a><span class="lineno"> 5079</span>    SimpleSplitMergeRec(array,num,auxarray);</div>
-<div class="line"><a id="l05080" name="l05080"></a><span class="lineno"> 5080</span>    M_free(auxarray,<span class="stringliteral">&quot;SimpleSplitMerge&quot;</span>);</div>
-<div class="line"><a id="l05081" name="l05081"></a><span class="lineno"> 5081</span>}</div>
-<div class="line"><a id="l05082" name="l05082"></a><span class="lineno"> 5082</span> </div>
-<div class="line"><a id="l05083" name="l05083"></a><span class="lineno"> 5083</span><span class="comment">/*</span></div>
-<div class="line"><a id="l05084" name="l05084"></a><span class="lineno"> 5084</span><span class="comment">        #] SimpleSplitMerge : </span></div>
-<div class="line"><a id="l05085" name="l05085"></a><span class="lineno"> 5085</span><span class="comment">        #[ BinarySearch :</span></div>
-<div class="line"><a id="l05086" name="l05086"></a><span class="lineno"> 5086</span><span class="comment"></span> </div>
-<div class="line"><a id="l05087" name="l05087"></a><span class="lineno"> 5087</span><span class="comment">        Searches in the sorted array with length num for the object x.</span></div>
-<div class="line"><a id="l05088" name="l05088"></a><span class="lineno"> 5088</span><span class="comment">        If x is in the list, it returns the number of the array element</span></div>
-<div class="line"><a id="l05089" name="l05089"></a><span class="lineno"> 5089</span><span class="comment">        that matched. If it is not in the list, it returns -1.</span></div>
-<div class="line"><a id="l05090" name="l05090"></a><span class="lineno"> 5090</span><span class="comment">        If there are identical objects in the list, which one will</span></div>
-<div class="line"><a id="l05091" name="l05091"></a><span class="lineno"> 5091</span><span class="comment">        match is quasi random.</span></div>
-<div class="line"><a id="l05092" name="l05092"></a><span class="lineno"> 5092</span><span class="comment">*/</span></div>
-<div class="line"><a id="l05093" name="l05093"></a><span class="lineno"> 5093</span> </div>
-<div class="line"><a id="l05094" name="l05094"></a><span class="lineno"> 5094</span>WORD BinarySearch(WORD *array,WORD num,WORD x)</div>
-<div class="line"><a id="l05095" name="l05095"></a><span class="lineno"> 5095</span>{</div>
-<div class="line"><a id="l05096" name="l05096"></a><span class="lineno"> 5096</span>    WORD i, bot, top, med;</div>
-<div class="line"><a id="l05097" name="l05097"></a><span class="lineno"> 5097</span>    <span class="keywordflow">if</span> ( num &lt; 8 ) {</div>
-<div class="line"><a id="l05098" name="l05098"></a><span class="lineno"> 5098</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; num; i++ ) <span class="keywordflow">if</span> ( array[i] == x ) <span class="keywordflow">return</span>(i);</div>
-<div class="line"><a id="l05099" name="l05099"></a><span class="lineno"> 5099</span>        <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l05100" name="l05100"></a><span class="lineno"> 5100</span>    }</div>
-<div class="line"><a id="l05101" name="l05101"></a><span class="lineno"> 5101</span>    <span class="keywordflow">if</span> ( array[0] &gt; x || array[num-1] &lt; x ) <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l05102" name="l05102"></a><span class="lineno"> 5102</span>    bot = 0; top = num-1; med = (top+bot)/2;</div>
-<div class="line"><a id="l05103" name="l05103"></a><span class="lineno"> 5103</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l05104" name="l05104"></a><span class="lineno"> 5104</span>        <span class="keywordflow">if</span> ( array[med] == x ) <span class="keywordflow">return</span>(med);</div>
-<div class="line"><a id="l05105" name="l05105"></a><span class="lineno"> 5105</span>        <span class="keywordflow">if</span> ( array[med] &lt; x ) { bot = med+1; }</div>
-<div class="line"><a id="l05106" name="l05106"></a><span class="lineno"> 5106</span>        <span class="keywordflow">else</span> { top = med-1; }</div>
-<div class="line"><a id="l05107" name="l05107"></a><span class="lineno"> 5107</span>        med = (top+bot)/2;</div>
-<div class="line"><a id="l05108" name="l05108"></a><span class="lineno"> 5108</span>    } <span class="keywordflow">while</span> ( med &gt;= bot &amp;&amp; med &lt;= top );</div>
-<div class="line"><a id="l05109" name="l05109"></a><span class="lineno"> 5109</span>    <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l05110" name="l05110"></a><span class="lineno"> 5110</span>}</div>
-<div class="line"><a id="l05111" name="l05111"></a><span class="lineno"> 5111</span> </div>
-<div class="line"><a id="l05112" name="l05112"></a><span class="lineno"> 5112</span><span class="comment">/*</span></div>
-<div class="line"><a id="l05113" name="l05113"></a><span class="lineno"> 5113</span><span class="comment">        #] BinarySearch : </span></div>
-<div class="line"><a id="l05114" name="l05114"></a><span class="lineno"> 5114</span><span class="comment">    #] SortUtilities :</span></div>
-<div class="line"><a id="l05115" name="l05115"></a><span class="lineno"> 5115</span><span class="comment">*/</span></div>
+<div class="line"><a id="l04938" name="l04938"></a><span class="lineno"> 4938</span> </div>
+<div class="line"><a id="l04939" name="l04939"></a><span class="lineno"> 4939</span><span class="comment">/*</span></div>
+<div class="line"><a id="l04940" name="l04940"></a><span class="lineno"> 4940</span><span class="comment">        #] LowerSortLevel : </span></div>
+<div class="line"><a id="l04941" name="l04941"></a><span class="lineno"> 4941</span><span class="comment">        #[ PolyRatFunSpecial :</span></div>
+<div class="line"><a id="l04942" name="l04942"></a><span class="lineno"> 4942</span><span class="comment"></span> </div>
+<div class="line"><a id="l04943" name="l04943"></a><span class="lineno"> 4943</span><span class="comment">        Keeps only the most divergent term in AR.PolyFunVar</span></div>
+<div class="line"><a id="l04944" name="l04944"></a><span class="lineno"> 4944</span><span class="comment">        We assume that the terms are already in that notation.</span></div>
+<div class="line"><a id="l04945" name="l04945"></a><span class="lineno"> 4945</span><span class="comment">*/</span></div>
+<div class="line"><a id="l04946" name="l04946"></a><span class="lineno"> 4946</span> </div>
+<div class="line"><a id="l04947" name="l04947"></a><span class="lineno"> 4947</span>WORD *PolyRatFunSpecial(PHEAD WORD *t1, WORD *t2)</div>
+<div class="line"><a id="l04948" name="l04948"></a><span class="lineno"> 4948</span>{</div>
+<div class="line"><a id="l04949" name="l04949"></a><span class="lineno"> 4949</span>    WORD *oldworkpointer = AT.WorkPointer, *t, *r;</div>
+<div class="line"><a id="l04950" name="l04950"></a><span class="lineno"> 4950</span>    WORD exp1, exp2;</div>
+<div class="line"><a id="l04951" name="l04951"></a><span class="lineno"> 4951</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a id="l04952" name="l04952"></a><span class="lineno"> 4952</span>    t = t1+FUNHEAD;</div>
+<div class="line"><a id="l04953" name="l04953"></a><span class="lineno"> 4953</span>    <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
+<div class="line"><a id="l04954" name="l04954"></a><span class="lineno"> 4954</span>        <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04955" name="l04955"></a><span class="lineno"> 4955</span>        exp1 = 1;</div>
+<div class="line"><a id="l04956" name="l04956"></a><span class="lineno"> 4956</span>        <span class="keywordflow">if</span> ( t[2] != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04957" name="l04957"></a><span class="lineno"> 4957</span>        t[3] = 1;</div>
+<div class="line"><a id="l04958" name="l04958"></a><span class="lineno"> 4958</span>    }</div>
+<div class="line"><a id="l04959" name="l04959"></a><span class="lineno"> 4959</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
+<div class="line"><a id="l04960" name="l04960"></a><span class="lineno"> 4960</span>        t[1] = 1;</div>
+<div class="line"><a id="l04961" name="l04961"></a><span class="lineno"> 4961</span>        t += 2;</div>
+<div class="line"><a id="l04962" name="l04962"></a><span class="lineno"> 4962</span>        <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
+<div class="line"><a id="l04963" name="l04963"></a><span class="lineno"> 4963</span>            <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04964" name="l04964"></a><span class="lineno"> 4964</span>            exp1 = -1;</div>
+<div class="line"><a id="l04965" name="l04965"></a><span class="lineno"> 4965</span>        }</div>
+<div class="line"><a id="l04966" name="l04966"></a><span class="lineno"> 4966</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
+<div class="line"><a id="l04967" name="l04967"></a><span class="lineno"> 4967</span>            t[1] = 1;</div>
+<div class="line"><a id="l04968" name="l04968"></a><span class="lineno"> 4968</span>            exp1 = 0;</div>
+<div class="line"><a id="l04969" name="l04969"></a><span class="lineno"> 4969</span>        }</div>
+<div class="line"><a id="l04970" name="l04970"></a><span class="lineno"> 4970</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
+<div class="line"><a id="l04971" name="l04971"></a><span class="lineno"> 4971</span>            &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
+<div class="line"><a id="l04972" name="l04972"></a><span class="lineno"> 4972</span>            t[ARGHEAD+5] = 1;</div>
+<div class="line"><a id="l04973" name="l04973"></a><span class="lineno"> 4973</span>            t[ARGHEAD+6] = 1;</div>
+<div class="line"><a id="l04974" name="l04974"></a><span class="lineno"> 4974</span>            t[ARGHEAD+7] = 3;</div>
+<div class="line"><a id="l04975" name="l04975"></a><span class="lineno"> 4975</span>            exp1 = -t[ARGHEAD+4];</div>
+<div class="line"><a id="l04976" name="l04976"></a><span class="lineno"> 4976</span>        }</div>
+<div class="line"><a id="l04977" name="l04977"></a><span class="lineno"> 4977</span>        <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04978" name="l04978"></a><span class="lineno"> 4978</span>    }</div>
+<div class="line"><a id="l04979" name="l04979"></a><span class="lineno"> 4979</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
+<div class="line"><a id="l04980" name="l04980"></a><span class="lineno"> 4980</span>        &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
+<div class="line"><a id="l04981" name="l04981"></a><span class="lineno"> 4981</span>        t[ARGHEAD+5] = 1;</div>
+<div class="line"><a id="l04982" name="l04982"></a><span class="lineno"> 4982</span>        t[ARGHEAD+6] = 1;</div>
+<div class="line"><a id="l04983" name="l04983"></a><span class="lineno"> 4983</span>        t[ARGHEAD+7] = 3;</div>
+<div class="line"><a id="l04984" name="l04984"></a><span class="lineno"> 4984</span>        exp1 = t[ARGHEAD+4];</div>
+<div class="line"><a id="l04985" name="l04985"></a><span class="lineno"> 4985</span>        t += *t;</div>
+<div class="line"><a id="l04986" name="l04986"></a><span class="lineno"> 4986</span>        <span class="keywordflow">if</span> ( *t != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04987" name="l04987"></a><span class="lineno"> 4987</span>        t[1] = 1;</div>
+<div class="line"><a id="l04988" name="l04988"></a><span class="lineno"> 4988</span>    }</div>
+<div class="line"><a id="l04989" name="l04989"></a><span class="lineno"> 4989</span>    <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04990" name="l04990"></a><span class="lineno"> 4990</span> </div>
+<div class="line"><a id="l04991" name="l04991"></a><span class="lineno"> 4991</span>    t = t2+FUNHEAD;</div>
+<div class="line"><a id="l04992" name="l04992"></a><span class="lineno"> 4992</span>    <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
+<div class="line"><a id="l04993" name="l04993"></a><span class="lineno"> 4993</span>        <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04994" name="l04994"></a><span class="lineno"> 4994</span>        exp2 = 1;</div>
+<div class="line"><a id="l04995" name="l04995"></a><span class="lineno"> 4995</span>        <span class="keywordflow">if</span> ( t[2] != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l04996" name="l04996"></a><span class="lineno"> 4996</span>        t[3] = 1;</div>
+<div class="line"><a id="l04997" name="l04997"></a><span class="lineno"> 4997</span>    }</div>
+<div class="line"><a id="l04998" name="l04998"></a><span class="lineno"> 4998</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
+<div class="line"><a id="l04999" name="l04999"></a><span class="lineno"> 4999</span>        t[1] = 1;</div>
+<div class="line"><a id="l05000" name="l05000"></a><span class="lineno"> 5000</span>        t += 2;</div>
+<div class="line"><a id="l05001" name="l05001"></a><span class="lineno"> 5001</span>        <span class="keywordflow">if</span> ( *t == -SYMBOL ) {</div>
+<div class="line"><a id="l05002" name="l05002"></a><span class="lineno"> 5002</span>            <span class="keywordflow">if</span> ( t[1] != AR.PolyFunVar ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l05003" name="l05003"></a><span class="lineno"> 5003</span>            exp2 = -1;</div>
+<div class="line"><a id="l05004" name="l05004"></a><span class="lineno"> 5004</span>        }</div>
+<div class="line"><a id="l05005" name="l05005"></a><span class="lineno"> 5005</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == -SNUMBER ) {</div>
+<div class="line"><a id="l05006" name="l05006"></a><span class="lineno"> 5006</span>            t[1] = 1;</div>
+<div class="line"><a id="l05007" name="l05007"></a><span class="lineno"> 5007</span>            exp2 = 0;</div>
+<div class="line"><a id="l05008" name="l05008"></a><span class="lineno"> 5008</span>        }</div>
+<div class="line"><a id="l05009" name="l05009"></a><span class="lineno"> 5009</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
+<div class="line"><a id="l05010" name="l05010"></a><span class="lineno"> 5010</span>            &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
+<div class="line"><a id="l05011" name="l05011"></a><span class="lineno"> 5011</span>            t[ARGHEAD+5] = 1;</div>
+<div class="line"><a id="l05012" name="l05012"></a><span class="lineno"> 5012</span>            t[ARGHEAD+6] = 1;</div>
+<div class="line"><a id="l05013" name="l05013"></a><span class="lineno"> 5013</span>            t[ARGHEAD+7] = 3;</div>
+<div class="line"><a id="l05014" name="l05014"></a><span class="lineno"> 5014</span>            exp2 = -t[ARGHEAD+4];</div>
+<div class="line"><a id="l05015" name="l05015"></a><span class="lineno"> 5015</span>        }</div>
+<div class="line"><a id="l05016" name="l05016"></a><span class="lineno"> 5016</span>        <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l05017" name="l05017"></a><span class="lineno"> 5017</span>    }</div>
+<div class="line"><a id="l05018" name="l05018"></a><span class="lineno"> 5018</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *t == ARGHEAD+8 &amp;&amp; t[ARGHEAD] == 8 &amp;&amp; t[ARGHEAD+1] == SYMBOL</div>
+<div class="line"><a id="l05019" name="l05019"></a><span class="lineno"> 5019</span>        &amp;&amp; t[ARGHEAD+3] == AR.PolyFunVar ) {</div>
+<div class="line"><a id="l05020" name="l05020"></a><span class="lineno"> 5020</span>        t[ARGHEAD+5] = 1;</div>
+<div class="line"><a id="l05021" name="l05021"></a><span class="lineno"> 5021</span>        t[ARGHEAD+6] = 1;</div>
+<div class="line"><a id="l05022" name="l05022"></a><span class="lineno"> 5022</span>        t[ARGHEAD+7] = 3;</div>
+<div class="line"><a id="l05023" name="l05023"></a><span class="lineno"> 5023</span>        exp2 = t[ARGHEAD+4];</div>
+<div class="line"><a id="l05024" name="l05024"></a><span class="lineno"> 5024</span>        t += *t;</div>
+<div class="line"><a id="l05025" name="l05025"></a><span class="lineno"> 5025</span>        <span class="keywordflow">if</span> ( *t != -SNUMBER ) <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l05026" name="l05026"></a><span class="lineno"> 5026</span>        t[1] = 1;</div>
+<div class="line"><a id="l05027" name="l05027"></a><span class="lineno"> 5027</span>    }</div>
+<div class="line"><a id="l05028" name="l05028"></a><span class="lineno"> 5028</span>    <span class="keywordflow">else</span> <span class="keywordflow">goto</span> Illegal;</div>
+<div class="line"><a id="l05029" name="l05029"></a><span class="lineno"> 5029</span> </div>
+<div class="line"><a id="l05030" name="l05030"></a><span class="lineno"> 5030</span>    <span class="keywordflow">if</span> ( exp1 &lt;= exp2 ) { i = t1[1]; r = t1; }</div>
+<div class="line"><a id="l05031" name="l05031"></a><span class="lineno"> 5031</span>    <span class="keywordflow">else</span>                { i = t2[1]; r = t2; }</div>
+<div class="line"><a id="l05032" name="l05032"></a><span class="lineno"> 5032</span>    t = oldworkpointer;</div>
+<div class="line"><a id="l05033" name="l05033"></a><span class="lineno"> 5033</span>    NCOPY(t,r,i)</div>
+<div class="line"><a id="l05034" name="l05034"></a><span class="lineno"> 5034</span> </div>
+<div class="line"><a id="l05035" name="l05035"></a><span class="lineno"> 5035</span>    <span class="keywordflow">return</span>(oldworkpointer);</div>
+<div class="line"><a id="l05036" name="l05036"></a><span class="lineno"> 5036</span>Illegal:</div>
+<div class="line"><a id="l05037" name="l05037"></a><span class="lineno"> 5037</span>    MesPrint(<span class="stringliteral">&quot;Illegal occurrence of PolyRatFun with divergent option&quot;</span>);</div>
+<div class="line"><a id="l05038" name="l05038"></a><span class="lineno"> 5038</span>    Terminate(-1);</div>
+<div class="line"><a id="l05039" name="l05039"></a><span class="lineno"> 5039</span>    <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a id="l05040" name="l05040"></a><span class="lineno"> 5040</span>}</div>
+<div class="line"><a id="l05041" name="l05041"></a><span class="lineno"> 5041</span> </div>
+<div class="line"><a id="l05042" name="l05042"></a><span class="lineno"> 5042</span><span class="comment">/*</span></div>
+<div class="line"><a id="l05043" name="l05043"></a><span class="lineno"> 5043</span><span class="comment">        #] PolyRatFunSpecial : </span></div>
+<div class="line"><a id="l05044" name="l05044"></a><span class="lineno"> 5044</span><span class="comment">        #[ SimpleSplitMerge :</span></div>
+<div class="line"><a id="l05045" name="l05045"></a><span class="lineno"> 5045</span><span class="comment"></span> </div>
+<div class="line"><a id="l05046" name="l05046"></a><span class="lineno"> 5046</span><span class="comment">        Sorts an array of WORDs. No adding of equal objects.</span></div>
+<div class="line"><a id="l05047" name="l05047"></a><span class="lineno"> 5047</span><span class="comment">*/</span></div>
+<div class="line"><a id="l05048" name="l05048"></a><span class="lineno"> 5048</span> </div>
+<div class="line"><a id="l05049" name="l05049"></a><span class="lineno"> 5049</span><span class="keywordtype">void</span> SimpleSplitMergeRec(WORD *array,WORD num,WORD *auxarray)</div>
+<div class="line"><a id="l05050" name="l05050"></a><span class="lineno"> 5050</span>{</div>
+<div class="line"><a id="l05051" name="l05051"></a><span class="lineno"> 5051</span>    WORD n1,n2,i,j,k,*t1,*t2;</div>
+<div class="line"><a id="l05052" name="l05052"></a><span class="lineno"> 5052</span>    <span class="keywordflow">if</span> ( num &lt; 2 ) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l05053" name="l05053"></a><span class="lineno"> 5053</span>    <span class="keywordflow">if</span> ( num == 2 ) {</div>
+<div class="line"><a id="l05054" name="l05054"></a><span class="lineno"> 5054</span>        <span class="keywordflow">if</span> ( array[0] &gt; array[1] ) {</div>
+<div class="line"><a id="l05055" name="l05055"></a><span class="lineno"> 5055</span>            EXCH(array[0],array[1])</div>
+<div class="line"><a id="l05056" name="l05056"></a><span class="lineno"> 5056</span>        }</div>
+<div class="line"><a id="l05057" name="l05057"></a><span class="lineno"> 5057</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l05058" name="l05058"></a><span class="lineno"> 5058</span>    }</div>
+<div class="line"><a id="l05059" name="l05059"></a><span class="lineno"> 5059</span>    n1 = num/2;</div>
+<div class="line"><a id="l05060" name="l05060"></a><span class="lineno"> 5060</span>    n2 = num - n1;</div>
+<div class="line"><a id="l05061" name="l05061"></a><span class="lineno"> 5061</span>    SimpleSplitMergeRec(array,n1,auxarray);</div>
+<div class="line"><a id="l05062" name="l05062"></a><span class="lineno"> 5062</span>    SimpleSplitMergeRec(array+n1,n2,auxarray);</div>
+<div class="line"><a id="l05063" name="l05063"></a><span class="lineno"> 5063</span>    <span class="keywordflow">if</span> ( array[n1-1] &lt;= array[n1] ) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l05064" name="l05064"></a><span class="lineno"> 5064</span> </div>
+<div class="line"><a id="l05065" name="l05065"></a><span class="lineno"> 5065</span>    t1 = array; t2 = auxarray; i = n1; NCOPY(t2,t1,i);</div>
+<div class="line"><a id="l05066" name="l05066"></a><span class="lineno"> 5066</span>    i = 0; j = n1; k = 0;</div>
+<div class="line"><a id="l05067" name="l05067"></a><span class="lineno"> 5067</span>    <span class="keywordflow">while</span> ( i &lt; n1 &amp;&amp; j &lt; num ) {</div>
+<div class="line"><a id="l05068" name="l05068"></a><span class="lineno"> 5068</span>        <span class="keywordflow">if</span> ( auxarray[i] &lt;= array[j] ) { array[k++] = auxarray[i++]; }</div>
+<div class="line"><a id="l05069" name="l05069"></a><span class="lineno"> 5069</span>        <span class="keywordflow">else</span> { array[k++] = array[j++]; }</div>
+<div class="line"><a id="l05070" name="l05070"></a><span class="lineno"> 5070</span>    }</div>
+<div class="line"><a id="l05071" name="l05071"></a><span class="lineno"> 5071</span>    <span class="keywordflow">while</span> ( i &lt; n1 ) array[k++] = auxarray[i++];</div>
+<div class="line"><a id="l05072" name="l05072"></a><span class="lineno"> 5072</span><span class="comment">/*</span></div>
+<div class="line"><a id="l05073" name="l05073"></a><span class="lineno"> 5073</span><span class="comment">    Remember: remnants of j are still in place!</span></div>
+<div class="line"><a id="l05074" name="l05074"></a><span class="lineno"> 5074</span><span class="comment">*/</span></div>
+<div class="line"><a id="l05075" name="l05075"></a><span class="lineno"> 5075</span>}</div>
+<div class="line"><a id="l05076" name="l05076"></a><span class="lineno"> 5076</span> </div>
+<div class="line"><a id="l05077" name="l05077"></a><span class="lineno"> 5077</span><span class="keywordtype">void</span> SimpleSplitMerge(WORD *array,WORD num)</div>
+<div class="line"><a id="l05078" name="l05078"></a><span class="lineno"> 5078</span>{</div>
+<div class="line"><a id="l05079" name="l05079"></a><span class="lineno"> 5079</span>    WORD *auxarray = Malloc1(<span class="keyword">sizeof</span>(WORD)*num/2,<span class="stringliteral">&quot;SimpleSplitMerge&quot;</span>);</div>
+<div class="line"><a id="l05080" name="l05080"></a><span class="lineno"> 5080</span>    SimpleSplitMergeRec(array,num,auxarray);</div>
+<div class="line"><a id="l05081" name="l05081"></a><span class="lineno"> 5081</span>    M_free(auxarray,<span class="stringliteral">&quot;SimpleSplitMerge&quot;</span>);</div>
+<div class="line"><a id="l05082" name="l05082"></a><span class="lineno"> 5082</span>}</div>
+<div class="line"><a id="l05083" name="l05083"></a><span class="lineno"> 5083</span> </div>
+<div class="line"><a id="l05084" name="l05084"></a><span class="lineno"> 5084</span><span class="comment">/*</span></div>
+<div class="line"><a id="l05085" name="l05085"></a><span class="lineno"> 5085</span><span class="comment">        #] SimpleSplitMerge : </span></div>
+<div class="line"><a id="l05086" name="l05086"></a><span class="lineno"> 5086</span><span class="comment">        #[ BinarySearch :</span></div>
+<div class="line"><a id="l05087" name="l05087"></a><span class="lineno"> 5087</span><span class="comment"></span> </div>
+<div class="line"><a id="l05088" name="l05088"></a><span class="lineno"> 5088</span><span class="comment">        Searches in the sorted array with length num for the object x.</span></div>
+<div class="line"><a id="l05089" name="l05089"></a><span class="lineno"> 5089</span><span class="comment">        If x is in the list, it returns the number of the array element</span></div>
+<div class="line"><a id="l05090" name="l05090"></a><span class="lineno"> 5090</span><span class="comment">        that matched. If it is not in the list, it returns -1.</span></div>
+<div class="line"><a id="l05091" name="l05091"></a><span class="lineno"> 5091</span><span class="comment">        If there are identical objects in the list, which one will</span></div>
+<div class="line"><a id="l05092" name="l05092"></a><span class="lineno"> 5092</span><span class="comment">        match is quasi random.</span></div>
+<div class="line"><a id="l05093" name="l05093"></a><span class="lineno"> 5093</span><span class="comment">*/</span></div>
+<div class="line"><a id="l05094" name="l05094"></a><span class="lineno"> 5094</span> </div>
+<div class="line"><a id="l05095" name="l05095"></a><span class="lineno"> 5095</span>WORD BinarySearch(WORD *array,WORD num,WORD x)</div>
+<div class="line"><a id="l05096" name="l05096"></a><span class="lineno"> 5096</span>{</div>
+<div class="line"><a id="l05097" name="l05097"></a><span class="lineno"> 5097</span>    WORD i, bot, top, med;</div>
+<div class="line"><a id="l05098" name="l05098"></a><span class="lineno"> 5098</span>    <span class="keywordflow">if</span> ( num &lt; 8 ) {</div>
+<div class="line"><a id="l05099" name="l05099"></a><span class="lineno"> 5099</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; num; i++ ) <span class="keywordflow">if</span> ( array[i] == x ) <span class="keywordflow">return</span>(i);</div>
+<div class="line"><a id="l05100" name="l05100"></a><span class="lineno"> 5100</span>        <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l05101" name="l05101"></a><span class="lineno"> 5101</span>    }</div>
+<div class="line"><a id="l05102" name="l05102"></a><span class="lineno"> 5102</span>    <span class="keywordflow">if</span> ( array[0] &gt; x || array[num-1] &lt; x ) <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l05103" name="l05103"></a><span class="lineno"> 5103</span>    bot = 0; top = num-1; med = (top+bot)/2;</div>
+<div class="line"><a id="l05104" name="l05104"></a><span class="lineno"> 5104</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l05105" name="l05105"></a><span class="lineno"> 5105</span>        <span class="keywordflow">if</span> ( array[med] == x ) <span class="keywordflow">return</span>(med);</div>
+<div class="line"><a id="l05106" name="l05106"></a><span class="lineno"> 5106</span>        <span class="keywordflow">if</span> ( array[med] &lt; x ) { bot = med+1; }</div>
+<div class="line"><a id="l05107" name="l05107"></a><span class="lineno"> 5107</span>        <span class="keywordflow">else</span> { top = med-1; }</div>
+<div class="line"><a id="l05108" name="l05108"></a><span class="lineno"> 5108</span>        med = (top+bot)/2;</div>
+<div class="line"><a id="l05109" name="l05109"></a><span class="lineno"> 5109</span>    } <span class="keywordflow">while</span> ( med &gt;= bot &amp;&amp; med &lt;= top );</div>
+<div class="line"><a id="l05110" name="l05110"></a><span class="lineno"> 5110</span>    <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l05111" name="l05111"></a><span class="lineno"> 5111</span>}</div>
+<div class="line"><a id="l05112" name="l05112"></a><span class="lineno"> 5112</span> </div>
+<div class="line"><a id="l05113" name="l05113"></a><span class="lineno"> 5113</span><span class="comment">/*</span></div>
+<div class="line"><a id="l05114" name="l05114"></a><span class="lineno"> 5114</span><span class="comment">        #] BinarySearch : </span></div>
+<div class="line"><a id="l05115" name="l05115"></a><span class="lineno"> 5115</span><span class="comment">    #] SortUtilities :</span></div>
+<div class="line"><a id="l05116" name="l05116"></a><span class="lineno"> 5116</span><span class="comment">*/</span></div>
 <div class="ttc" id="adeclare_8h_html_a0afea81369a5a77116e95b2f9263a61a"><div class="ttname"><a href="declare_8h.html#a0afea81369a5a77116e95b2f9263a61a">poly_ratfun_add</a></div><div class="ttdeci">WORD * poly_ratfun_add(PHEAD WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="polywrap_8cc_source.html#l00633">polywrap.cc:633</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a2c1749e0616689062a64c6223f0da044"><div class="ttname"><a href="declare_8h.html#a2c1749e0616689062a64c6223f0da044">CompCoef</a></div><div class="ttdeci">WORD CompCoef(WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l03047">reken.c:3047</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a61aadbf93672ead01cecba3fccacf089"><div class="ttname"><a href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a></div><div class="ttdeci">LONG TimeWallClock(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03477">tools.c:3477</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ac492c314b777983902bc21d9d0827103"><div class="ttname"><a href="declare_8h.html#ac492c314b777983902bc21d9d0827103">NormalModulus</a></div><div class="ttdeci">int NormalModulus(UWORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01403">reken.c:1403</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03551">tools.c:3551</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a2c1749e0616689062a64c6223f0da044"><div class="ttname"><a href="declare_8h.html#a2c1749e0616689062a64c6223f0da044">CompCoef</a></div><div class="ttdeci">WORD CompCoef(WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l03048">reken.c:3048</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a61aadbf93672ead01cecba3fccacf089"><div class="ttname"><a href="declare_8h.html#a61aadbf93672ead01cecba3fccacf089">TimeWallClock</a></div><div class="ttdeci">LONG TimeWallClock(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03396">tools.c:3396</a></div></div>
+<div class="ttc" id="adeclare_8h_html_ac492c314b777983902bc21d9d0827103"><div class="ttname"><a href="declare_8h.html#ac492c314b777983902bc21d9d0827103">NormalModulus</a></div><div class="ttdeci">int NormalModulus(UWORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01404">reken.c:1404</a></div></div>
+<div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03470">tools.c:3470</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="ampi_8c_html_ad98e922db7e56af48cd8e15b76966a87"><div class="ttname"><a href="mpi_8c.html#ad98e922db7e56af48cd8e15b76966a87">PF_ISendSbuf</a></div><div class="ttdeci">int PF_ISendSbuf(int to, int tag)</div><div class="ttdef"><b>Definition</b> <a href="mpi_8c_source.html#l00261">mpi.c:261</a></div></div>
 <div class="ttc" id="aparallel_8c_html_abc56c3ae41cd94a0ee0e1c900c2ee4d3"><div class="ttname"><a href="parallel_8c.html#abc56c3ae41cd94a0ee0e1c900c2ee4d3">PF_EndSort</a></div><div class="ttdeci">int PF_EndSort(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l00864">parallel.c:864</a></div></div>
+<div class="ttc" id="asort_8c_html_a062d1c83ee521f87add7540445bc6bb6"><div class="ttname"><a href="sort_8c.html#a062d1c83ee521f87add7540445bc6bb6">FlushOut</a></div><div class="ttdeci">int FlushOut(POSITION *position, FILEHANDLE *fi, int compr)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01812">sort.c:1812</a></div></div>
 <div class="ttc" id="asort_8c_html_a0c7178b3e8a23956c3f252af74948681"><div class="ttname"><a href="sort_8c.html#a0c7178b3e8a23956c3f252af74948681">PutIn</a></div><div class="ttdeci">LONG PutIn(FILEHANDLE *file, POSITION *position, WORD *buffer, WORD **take, int npat)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01304">sort.c:1304</a></div></div>
 <div class="ttc" id="asort_8c_html_a1406ab273f5f7b7dfed046e1b243bb1e"><div class="ttname"><a href="sort_8c.html#a1406ab273f5f7b7dfed046e1b243bb1e">SplitMerge</a></div><div class="ttdeci">LONG SplitMerge(PHEAD WORD **Pointer, LONG number)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03346">sort.c:3346</a></div></div>
-<div class="ttc" id="asort_8c_html_a1c0b32dbf3df6772a6e730c26863a97e"><div class="ttname"><a href="sort_8c.html#a1c0b32dbf3df6772a6e730c26863a97e">Sflush</a></div><div class="ttdeci">WORD Sflush(FILEHANDLE *fi)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01364">sort.c:1364</a></div></div>
 <div class="ttc" id="asort_8c_html_a2be00b4e77fb9aadece75551388fd07a"><div class="ttname"><a href="sort_8c.html#a2be00b4e77fb9aadece75551388fd07a">Compare1</a></div><div class="ttdeci">WORD Compare1(PHEAD WORD *term1, WORD *term2, WORD level)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02620">sort.c:2620</a></div></div>
 <div class="ttc" id="asort_8c_html_a2e9216c6a29ab7719f0d37cb2b51d361"><div class="ttname"><a href="sort_8c.html#a2e9216c6a29ab7719f0d37cb2b51d361">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *buffer, int par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00733">sort.c:733</a></div></div>
-<div class="ttc" id="asort_8c_html_a2fbe76f255d33036140255457662930e"><div class="ttname"><a href="sort_8c.html#a2fbe76f255d33036140255457662930e">FlushOut</a></div><div class="ttdeci">WORD FlushOut(POSITION *position, FILEHANDLE *fi, int compr)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01812">sort.c:1812</a></div></div>
-<div class="ttc" id="asort_8c_html_a30d9949d945319a088d33b5969925e08"><div class="ttname"><a href="sort_8c.html#a30d9949d945319a088d33b5969925e08">SortWild</a></div><div class="ttdeci">WORD SortWild(WORD *w, WORD nw)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04737">sort.c:4737</a></div></div>
 <div class="ttc" id="asort_8c_html_a3d1950d9d2cfbcd7013b7c2290c21add"><div class="ttname"><a href="sort_8c.html#a3d1950d9d2cfbcd7013b7c2290c21add">GarbHand</a></div><div class="ttdeci">void GarbHand(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03626">sort.c:3626</a></div></div>
-<div class="ttc" id="asort_8c_html_a41a6fb48e7021f221c53df558baee3bc"><div class="ttname"><a href="sort_8c.html#a41a6fb48e7021f221c53df558baee3bc">NewSort</a></div><div class="ttdeci">WORD NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00643">sort.c:643</a></div></div>
 <div class="ttc" id="asort_8c_html_a5fa16944756ec68a21da7fa95b92a5a8"><div class="ttname"><a href="sort_8c.html#a5fa16944756ec68a21da7fa95b92a5a8">CompareHSymbols</a></div><div class="ttdeci">WORD CompareHSymbols(PHEAD WORD *term1, WORD *term2, WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03127">sort.c:3127</a></div></div>
-<div class="ttc" id="asort_8c_html_a670aa98242104557b1bbbb5368cafe8e"><div class="ttname"><a href="sort_8c.html#a670aa98242104557b1bbbb5368cafe8e">MergePatches</a></div><div class="ttdeci">WORD MergePatches(WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03741">sort.c:3741</a></div></div>
-<div class="ttc" id="asort_8c_html_a6848642c1c54636cc54fbcec683607f5"><div class="ttname"><a href="sort_8c.html#a6848642c1c54636cc54fbcec683607f5">StoreTerm</a></div><div class="ttdeci">WORD StoreTerm(PHEAD WORD *term)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04524">sort.c:4524</a></div></div>
-<div class="ttc" id="asort_8c_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="sort_8c.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04929">sort.c:4929</a></div></div>
-<div class="ttc" id="asort_8c_html_a7171afcad3c9f5f529eaa94ba6175c2a"><div class="ttname"><a href="sort_8c.html#a7171afcad3c9f5f529eaa94ba6175c2a">AddPoly</a></div><div class="ttdeci">WORD AddPoly(PHEAD WORD **ps1, WORD **ps2)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02155">sort.c:2155</a></div></div>
+<div class="ttc" id="asort_8c_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="sort_8c.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04930">sort.c:4930</a></div></div>
 <div class="ttc" id="asort_8c_html_a77e8fbe2d8d79e21021a924fa30e5d65"><div class="ttname"><a href="sort_8c.html#a77e8fbe2d8d79e21021a924fa30e5d65">ComPress</a></div><div class="ttdeci">LONG ComPress(WORD **ss, LONG *n)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03180">sort.c:3180</a></div></div>
+<div class="ttc" id="asort_8c_html_a8c83b76df9e5da8f1a87cf1eecb1ef87"><div class="ttname"><a href="sort_8c.html#a8c83b76df9e5da8f1a87cf1eecb1ef87">AddCoef</a></div><div class="ttdeci">int AddCoef(PHEAD WORD **ps1, WORD **ps2)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02026">sort.c:2026</a></div></div>
 <div class="ttc" id="asort_8c_html_a911e7252a3311fdd541e91d7a874b56b"><div class="ttname"><a href="sort_8c.html#a911e7252a3311fdd541e91d7a874b56b">PutOut</a></div><div class="ttdeci">WORD PutOut(PHEAD WORD *term, POSITION *position, FILEHANDLE *fi, WORD ncomp)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01450">sort.c:1450</a></div></div>
+<div class="ttc" id="asort_8c_html_a91bab1de98b7c2d8c06e4d8484c4b6aa"><div class="ttname"><a href="sort_8c.html#a91bab1de98b7c2d8c06e4d8484c4b6aa">StoreTerm</a></div><div class="ttdeci">int StoreTerm(PHEAD WORD *term)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04524">sort.c:4524</a></div></div>
+<div class="ttc" id="asort_8c_html_a99ebcff357ae7956b0ab9ee2417a6af0"><div class="ttname"><a href="sort_8c.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a></div><div class="ttdeci">int NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00643">sort.c:643</a></div></div>
+<div class="ttc" id="asort_8c_html_a9c542df38db7328ac7822e76c1024aef"><div class="ttname"><a href="sort_8c.html#a9c542df38db7328ac7822e76c1024aef">SortWild</a></div><div class="ttdeci">int SortWild(WORD *w, WORD nw)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04737">sort.c:4737</a></div></div>
 <div class="ttc" id="asort_8c_html_aa18c8b00749aab07385daf3ac71d3af9"><div class="ttname"><a href="sort_8c.html#aa18c8b00749aab07385daf3ac71d3af9">WriteStats</a></div><div class="ttdeci">void WriteStats(POSITION *plspace, WORD par, WORD checkLogType)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00121">sort.c:121</a></div></div>
 <div class="ttc" id="asort_8c_html_aa36a4ad93dbde449e658716c583b5bab"><div class="ttname"><a href="sort_8c.html#aa36a4ad93dbde449e658716c583b5bab">CompareSymbols</a></div><div class="ttdeci">WORD CompareSymbols(PHEAD WORD *term1, WORD *term2, WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03084">sort.c:3084</a></div></div>
 <div class="ttc" id="asort_8c_html_aa8d2b0318bdb43f8453d30160b7eb075"><div class="ttname"><a href="sort_8c.html#aa8d2b0318bdb43f8453d30160b7eb075">AddArgs</a></div><div class="ttdeci">void AddArgs(PHEAD WORD *s1, WORD *s2, WORD *m)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02327">sort.c:2327</a></div></div>
-<div class="ttc" id="asort_8c_html_ab0bf76b7c13a32df1744703bb5585270"><div class="ttname"><a href="sort_8c.html#ab0bf76b7c13a32df1744703bb5585270">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int num)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04829">sort.c:4829</a></div></div>
+<div class="ttc" id="asort_8c_html_ab0bf76b7c13a32df1744703bb5585270"><div class="ttname"><a href="sort_8c.html#ab0bf76b7c13a32df1744703bb5585270">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int num)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04830">sort.c:4830</a></div></div>
 <div class="ttc" id="asort_8c_html_ac94fcf69c74e92b60d423117e033bccd"><div class="ttname"><a href="sort_8c.html#ac94fcf69c74e92b60d423117e033bccd">StageSort</a></div><div class="ttdeci">void StageSort(FILEHANDLE *fout)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04638">sort.c:4638</a></div></div>
-<div class="ttc" id="asort_8c_html_ae0b20d2b5a97d8aeccd497d1adaa8302"><div class="ttname"><a href="sort_8c.html#ae0b20d2b5a97d8aeccd497d1adaa8302">AddCoef</a></div><div class="ttdeci">WORD AddCoef(PHEAD WORD **ps1, WORD **ps2)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02026">sort.c:2026</a></div></div>
+<div class="ttc" id="asort_8c_html_acfd51452dcde8df2cbfcee84aa5199f3"><div class="ttname"><a href="sort_8c.html#acfd51452dcde8df2cbfcee84aa5199f3">MergePatches</a></div><div class="ttdeci">int MergePatches(WORD par)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03741">sort.c:3741</a></div></div>
+<div class="ttc" id="asort_8c_html_af3c703c0e3e60e0862b9f0b9e66fb6d7"><div class="ttname"><a href="sort_8c.html#af3c703c0e3e60e0862b9f0b9e66fb6d7">AddPoly</a></div><div class="ttdeci">int AddPoly(PHEAD WORD **ps1, WORD **ps2)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02155">sort.c:2155</a></div></div>
+<div class="ttc" id="asort_8c_html_afe2776f9084eaa1c88235c7e1c8a6e7c"><div class="ttname"><a href="sort_8c.html#afe2776f9084eaa1c88235c7e1c8a6e7c">Sflush</a></div><div class="ttdeci">int Sflush(FILEHANDLE *fi)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01364">sort.c:1364</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nf_o_html"><div class="ttname"><a href="struct_br_ac_ke_ti_nf_o.html">BrAcKeTiNfO</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00329">structs.h:329</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nf_o_html_a2998c38032579cf953557469fc5b83b5"><div class="ttname"><a href="struct_br_ac_ke_ti_nf_o.html#a2998c38032579cf953557469fc5b83b5">BrAcKeTiNfO::indexbuffer</a></div><div class="ttdeci">BRACKETINDEX * indexbuffer</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00330">structs.h:330</a></div></div>
 <div class="ttc" id="astruct_fi_le_html"><div class="ttname"><a href="struct_fi_le.html">FiLe</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00682">structs.h:682</a></div></div>
 <div class="ttc" id="astruct_fi_le_html_a3127ebf018e9da62fa464d348352037d"><div class="ttname"><a href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">FiLe::handle</a></div><div class="ttdeci">int handle</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00710">structs.h:710</a></div></div>
-<div class="ttc" id="astruct_p_f___b_u_f_f_e_r_html"><div class="ttname"><a href="struct_p_f___b_u_f_f_e_r.html">PF_BUFFER</a></div><div class="ttdef"><b>Definition</b> <a href="parallel_8h_source.html#l00148">parallel.h:148</a></div></div>
+<div class="ttc" id="astruct_p_f___b_u_f_f_e_r_html"><div class="ttname"><a href="struct_p_f___b_u_f_f_e_r.html">PF_BUFFER</a></div><div class="ttdef"><b>Definition</b> <a href="parallel_8h_source.html#l00147">parallel.h:147</a></div></div>
 <div class="ttc" id="astruct_po_si_ti_on_html"><div class="ttname"><a href="struct_po_si_ti_on.html">PoSiTiOn</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00059">structs.h:59</a></div></div>
 <div class="ttc" id="astructs_or_t_html"><div class="ttname"><a href="structs_or_t.html">sOrT</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01140">structs.h:1140</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

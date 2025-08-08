@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-217-g2099e07</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-222-gf63dcf4</span>
    </div>
   </td>
  </tr>
@@ -1588,7 +1588,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span><span class="comment">    , (UBYTE *)&quot;invfac&quot; };</span></div>
 <div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span> </div>
-<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>WORD WriteSubTerm(WORD *sterm, WORD first)</div>
+<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span><span class="keywordtype">int</span> WriteSubTerm(WORD *sterm, WORD first)</div>
 <div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span>{</div>
 <div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span>    UBYTE buffer[80];</div>
 <div class="line"><a id="l01545" name="l01545"></a><span class="lineno"> 1545</span>    UBYTE *Out, closepar[2] = { (UBYTE)<span class="charliteral">&#39;)&#39;</span>, 0};</div>
@@ -1997,7 +1997,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01948" name="l01948"></a><span class="lineno"> 1948</span><span class="comment"></span> </div>
 <div class="line"><a id="l01949" name="l01949"></a><span class="lineno"> 1949</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01950" name="l01950"></a><span class="lineno"> 1950</span> </div>
-<div class="line"><a id="l01951" name="l01951"></a><span class="lineno"> 1951</span>WORD WriteInnerTerm(WORD *term, WORD first)</div>
+<div class="line"><a id="l01951" name="l01951"></a><span class="lineno"> 1951</span><span class="keywordtype">int</span> WriteInnerTerm(WORD *term, WORD first)</div>
 <div class="line"><a id="l01952" name="l01952"></a><span class="lineno"> 1952</span>{</div>
 <div class="line"><a id="l01953" name="l01953"></a><span class="lineno"> 1953</span>    WORD *t, *s, *s1, *s2, n, i, pow;</div>
 <div class="line"><a id="l01954" name="l01954"></a><span class="lineno"> 1954</span><span class="preprocessor">#ifdef WITHFLOAT</span></div>
@@ -2194,7 +2194,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02145" name="l02145"></a><span class="lineno"> 2145</span><span class="comment"></span> </div>
 <div class="line"><a id="l02146" name="l02146"></a><span class="lineno"> 2146</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02147" name="l02147"></a><span class="lineno"> 2147</span> </div>
-<div class="line"><a id="l02148" name="l02148"></a><span class="lineno"> 2148</span>WORD WriteTerm(WORD *term, WORD *lbrac, WORD first, WORD prtf, WORD br)</div>
+<div class="line"><a id="l02148" name="l02148"></a><span class="lineno"> 2148</span><span class="keywordtype">int</span> WriteTerm(WORD *term, WORD *lbrac, WORD first, WORD prtf, WORD br)</div>
 <div class="line"><a id="l02149" name="l02149"></a><span class="lineno"> 2149</span>{</div>
 <div class="line"><a id="l02150" name="l02150"></a><span class="lineno"> 2150</span>    WORD *t, *stopper, *b, n;</div>
 <div class="line"><a id="l02151" name="l02151"></a><span class="lineno"> 2151</span>    <span class="keywordtype">int</span> oldIsFortran90 = AC.IsFortran90, i;</div>
@@ -2516,7 +2516,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span><span class="comment"></span> </div>
 <div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span> </div>
-<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>WORD WriteExpression(WORD *terms, LONG ltot)</div>
+<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span><span class="keywordtype">int</span> WriteExpression(WORD *terms, LONG ltot)</div>
 <div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>{</div>
 <div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span>    WORD *stopper;</div>
 <div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    WORD first, btot;</div>
@@ -2547,7 +2547,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span><span class="comment">        Writes all expressions that should be written</span></div>
 <div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span> </div>
-<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span>WORD WriteAll(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span><span class="keywordtype">int</span> WriteAll(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span>{</div>
 <div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span>    GETIDENTITY</div>
 <div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span>    WORD lbrac, first;</div>
@@ -2773,7 +2773,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02724" name="l02724"></a><span class="lineno"> 2724</span><span class="comment">        Writes one expression from the preprocessor</span></div>
 <div class="line"><a id="l02725" name="l02725"></a><span class="lineno"> 2725</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02726" name="l02726"></a><span class="lineno"> 2726</span> </div>
-<div class="line"><a id="l02727" name="l02727"></a><span class="lineno"> 2727</span>WORD WriteOne(UBYTE *name, <span class="keywordtype">int</span> alreadyinline, <span class="keywordtype">int</span> nosemi, WORD plus)</div>
+<div class="line"><a id="l02727" name="l02727"></a><span class="lineno"> 2727</span><span class="keywordtype">int</span> WriteOne(UBYTE *name, <span class="keywordtype">int</span> alreadyinline, <span class="keywordtype">int</span> nosemi, WORD plus)</div>
 <div class="line"><a id="l02728" name="l02728"></a><span class="lineno"> 2728</span>{</div>
 <div class="line"><a id="l02729" name="l02729"></a><span class="lineno"> 2729</span>    GETIDENTITY</div>
 <div class="line"><a id="l02730" name="l02730"></a><span class="lineno"> 2730</span>    WORD number;</div>
@@ -2938,7 +2938,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02889" name="l02889"></a><span class="lineno"> 2889</span><span class="comment">    #] schryf-Writes : </span></div>
 <div class="line"><a id="l02890" name="l02890"></a><span class="lineno"> 2890</span><span class="comment">*/</span></div>
 <div class="ttc" id="adeclare_8h_html_a9be311915f0822785e9270f60f116e09"><div class="ttname"><a href="declare_8h.html#a9be311915f0822785e9270f60f116e09">Optimize</a></div><div class="ttdeci">int Optimize(WORD, int)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04638">optimize.cc:4638</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03551">tools.c:3551</a></div></div>
+<div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03470">tools.c:3470</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ae8767d17b791ee81795da7cb7f91c725"><div class="ttname"><a href="declare_8h.html#ae8767d17b791ee81795da7cb7f91c725">PutPreVar</a></div><div class="ttdeci">int PutPreVar(UBYTE *, UBYTE *, UBYTE *, int)</div><div class="ttdef"><b>Definition</b> <a href="pre_8c_source.html#l00718">pre.c:718</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00992">structs.h:992</a></div></div>
