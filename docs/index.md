@@ -2,10 +2,10 @@
 layout: default
 ---
 
-## [Nightly Build (master branch)](https://github.com/form-dev/form/tree/e3eeea38a20c7564de1c5402643656b0812068a4)
-- [FORM 5.0.0-beta.1-227-ge3eeea3 Reference manual](master/manual) (also in [PDF](master/form-5.0.0-beta.1-227-ge3eeea3-manual.pdf) or [an HTML tarball](master/form-5.0.0-beta.1-227-ge3eeea3-manual-html.tar.gz))
-- [FORM 5.0.0-beta.1-227-ge3eeea3 Developer's reference manual](master/devref) (also in [PDF](master/form-5.0.0-beta.1-227-ge3eeea3-devref.pdf) or [an HTML tarball](master/form-5.0.0-beta.1-227-ge3eeea3-devref-html.tar.gz))
-- [FORM 5.0.0-beta.1-227-ge3eeea3 API reference](master/doxygen) (also in [PDF](master/form-5.0.0-beta.1-227-ge3eeea3-doxygen.pdf) or [an HTML tarball](master/form-5.0.0-beta.1-227-ge3eeea3-doxygen-html.tar.gz))
+## [Nightly Build (master branch)](https://github.com/form-dev/form/tree/93f976e7d32e0613e376a2348a2fb3645b9c13e9)
+- [FORM 5.0.0-beta.1-229-g93f976e Reference manual](master/manual) (also in [PDF](master/form-5.0.0-beta.1-229-g93f976e-manual.pdf) or [an HTML tarball](master/form-5.0.0-beta.1-229-g93f976e-manual-html.tar.gz))
+- [FORM 5.0.0-beta.1-229-g93f976e Developer's reference manual](master/devref) (also in [PDF](master/form-5.0.0-beta.1-229-g93f976e-devref.pdf) or [an HTML tarball](master/form-5.0.0-beta.1-229-g93f976e-devref-html.tar.gz))
+- [FORM 5.0.0-beta.1-229-g93f976e API reference](master/doxygen) (also in [PDF](master/form-5.0.0-beta.1-229-g93f976e-doxygen.pdf) or [an HTML tarball](master/form-5.0.0-beta.1-229-g93f976e-doxygen-html.tar.gz))
 
 ## [Nightly Build (4.3 branch)](https://github.com/form-dev/form/tree/0f34f82f6b70f6c51ab82f9752ce8da36bb25d34)
 - [FORM 4.3.1-123-g0f34f82 Reference manual](4.3/manual) (also in [PDF](4.3/form-4.3.1-123-g0f34f82-manual.pdf) or [an HTML tarball](4.3/form-4.3.1-123-g0f34f82-manual-html.tar.gz))
