@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-238-g7fa4cef</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-246-g7ed2880</span>
    </div>
   </td>
  </tr>
@@ -295,7 +295,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00180">180</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00179">179</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -331,9 +331,9 @@ template&lt;class RandomAccessIterator &gt; </div>
 Description</h1>
 <p>Randomly permutes elements in the range [fr,to). Functionality is the same as C++'s "random_shuffle", but it uses Form's "wranf". </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00202">202</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00201">201</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l02255">find_Horner_MCTS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l02254">find_Horner_MCTS()</a>.</p>
 
 </div>
 </div>
@@ -358,11 +358,11 @@ Description</h1>
 <p>Reads an expression from the input file into a buffer (called optimize_expr). This buffer is used during the optimization process. Non-symbols are removed by ConvertToPoly and are put in temporary symbols.</p>
 <p>The return value is the length of the expression in WORDs, or a negative number if it failed. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00226">226</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00225">225</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="sort_8c_source.html#l00745">EndSort()</a>, <a class="el" href="sort_8c_source.html#l04956">LowerSortLevel()</a>, <a class="el" href="sort_8c_source.html#l00649">NewSort()</a>, and <a class="el" href="sort_8c_source.html#l04550">StoreTerm()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -473,9 +473,9 @@ Description</h1>
 <p>Checks whether the input expression (stored in optimize_expr) contains brackets. If so, this method replaces terms outside brackets by powers of SEPERATESYMBOL (equal brackets have equal powers) and the brackets are returned. If not, the result is empty.</p>
 <p>Brackets are used for simultaneous optimization. The symbol SEPARATESYMBOL is always the first one used in a Horner scheme. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00303">303</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00302">302</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 
 </div>
 </div>
@@ -509,9 +509,9 @@ Description</h1>
 Description</h1>
 <p>Counts the number of operators in a Form-style expression. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00423">423</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00422">422</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l02255">find_Horner_MCTS()</a>, <a class="el" href="optimize_8cc_source.html#l01133">generate_instructions()</a>, <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>, <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>, and <a class="el" href="optimize_8cc_source.html#l03774">optimize_greedy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l02254">find_Horner_MCTS()</a>, <a class="el" href="optimize_8cc_source.html#l01132">generate_instructions()</a>, <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>, <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>, and <a class="el" href="optimize_8cc_source.html#l03773">optimize_greedy()</a>.</p>
 
 </div>
 </div>
@@ -545,7 +545,7 @@ Description</h1>
 Description</h1>
 <p>Counts the number of operators in a vector of instructions </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00477">477</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00476">476</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -579,9 +579,9 @@ Description</h1>
 Description</h1>
 <p>Extracts all variables from an expression and sorts them with most occurring first (or last, with rev=true) </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00520">520</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00519">519</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 
 </div>
 </div>
@@ -635,9 +635,9 @@ Note</h1>
 Description</h1>
 <p>Returns the power of the variable "var", which is at position "pos" in this term, if it is present. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00601">601</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00600">600</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l00653">build_Horner_tree()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l00652">build_Horner_tree()</a>.</p>
 
 </div>
 </div>
@@ -671,7 +671,7 @@ Description</h1>
 Description</h1>
 <p>These method remove leading zeroes, so that GcdLong and DivLong can safely be called. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00615">615</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00614">614</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -725,7 +725,7 @@ Description</h1>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00621">621</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00620">620</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -791,7 +791,7 @@ Description</h1>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00627">627</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00626">626</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -851,11 +851,11 @@ Description</h1>
 <p>"terms" is a pointer to the starts of the terms. "numterms" is the number of terms to be processed. "var" is the next variable to be processed (index between 0 and #maxvar) and "maxvar" is the last variable to be processed, so that partial Horner trees can also be constructed. "pos" is the position that the power of "var" should be in (one level further in the recursion, "pos" has increased by 0 or 1 depending on whether the previous power was 0 or not). The result is written at the pointer "res".</p>
 <p>This method also factors out gcds of the coefficients. The result should end with "gcd OPER_MUL" at all times, so that one level higher gcds can be extracted again. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00653">653</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00652">652</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00653">build_Horner_tree()</a>, and <a class="el" href="optimize_8cc_source.html#l00601">getpower()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00652">build_Horner_tree()</a>, and <a class="el" href="optimize_8cc_source.html#l00600">getpower()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l00653">build_Horner_tree()</a>, and <a class="el" href="optimize_8cc_source.html#l00874">Horner_tree()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l00652">build_Horner_tree()</a>, and <a class="el" href="optimize_8cc_source.html#l00873">Horner_tree()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -901,9 +901,9 @@ Description</h1>
 <p>Compares two terms of the form "L SYM 4 x n coeff" or "L
 coeff". Lower powers of lower-indexed symbols come first. This is used to sort the terms in correct order. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00853">853</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00852">852</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l00874">Horner_tree()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l00873">Horner_tree()</a>.</p>
 
 </div>
 </div>
@@ -937,11 +937,11 @@ coeff". Lower powers of lower-indexed symbols come first. This is used to sort t
 Description</h1>
 <p>This method renumbers the variables to 0...#vars-1 according to the specified order. Next, it stored pointer to individual terms and sorts the terms with higher power first. Then the sorted lists of power is used for the construction of the Horner tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00874">874</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00873">873</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00653">build_Horner_tree()</a>, and <a class="el" href="optimize_8cc_source.html#l00853">term_compare()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00652">build_Horner_tree()</a>, and <a class="el" href="optimize_8cc_source.html#l00852">term_compare()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -976,7 +976,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01002">1002</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01001">1001</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1008,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01071">1071</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01070">1070</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1059,11 +1059,11 @@ Implementation details</h1>
 <p>There is currently a bug. The notation cannot tell if there is a single bracket and then ignores the bracket.</p>
 <p>TODO: check if this method performs properly if do_CSE=false </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01133">1133</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01132">1132</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00423">count_operators()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00422">count_operators()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1095,7 +1095,7 @@ Here is the call graph for this function:</div>
 <p>Count number of operators in a binary tree, while removing CSEs on the fly. The instruction set is not created, which makes this method slightly faster.</p>
 <p>A hash is created on the fly and is passed through the stack. TODO: find better hash functions </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01342">1342</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01341">1341</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1115,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01564">1564</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01563">1563</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1135,7 +1135,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01626">1626</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01625">1625</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1154,7 +1154,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01681">1681</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l01680">1680</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1173,7 +1173,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02054">2054</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02053">2053</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -1196,11 +1196,11 @@ Here is the call graph for this function:</div>
 Description</h1>
 <p>The method governs the MCTS for the best Horner schemes. It does some pre-processing, calls "find_Horner_MCTS_expand_tree" a number of times and does some post-processing. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02255">2255</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02254">2254</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00423">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l00202">my_random_shuffle()</a>, and <a class="el" href="tools_8c_source.html#l03396">TimeWallClock()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00422">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l00201">my_random_shuffle()</a>, and <a class="el" href="tools_8c_source.html#l03394">TimeWallClock()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1266,9 +1266,9 @@ Implementation details</h1>
 <p>after substituting Z1 = 2*Z3 + x, the parent expression for Z4 becomes Z3 instead of Z2. This is where renum_par[i] comes in.</p>
 <p>Finally, once a coefficient has been moved, skip_coeff[i] is set and this coefficient is copied into the new expression anymore. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02403">2403</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02402">2402</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>.</p>
 
 </div>
 </div>
@@ -1293,9 +1293,9 @@ Description</h1>
 <p>This method find all optimization of the form described in "class
 Optimization". It process every equation, looking for possible optimizations and stores them in a fast-access data structure to count the total improvement of an optimization. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02698">2698</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02697">2697</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l03774">optimize_greedy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l03773">optimize_greedy()</a>.</p>
 
 </div>
 </div>
@@ -1336,9 +1336,9 @@ Description</h1>
 <p>This method performs an optimization. It scans through the equations of "optim.eqnidxs" and looks in which this optimization can still be performed (due to other performed optimizations this isn't always the case). If possible, it substitutes the common subexpression by a new extra symbol numbered "newid". Finally, the new extrasymbol is defined accordingly.</p>
 <p>Substitutions may lead to trivial equations of the form "Zi=Zj", but these are removed in the end of the method. The method returns whether the substitution has been done once or more (or not). </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02931">2931</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l02930">2930</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l03774">optimize_greedy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l03773">optimize_greedy()</a>.</p>
 
 </div>
 </div>
@@ -1382,9 +1382,9 @@ Description</h1>
 <p>Z1 = a*b Z2 = c*d*e Z3 = Zj + more Zi = 2 + Z1 + Z2 Zj = x*Zi</p>
 <p>Here it is necessary that no other equations refer to Z1 and Z2. The generation of trivial instructions (Zi=Zj or Zi=x) is prevented. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l03480">3480</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l03479">3479</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l03774">optimize_greedy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l03773">optimize_greedy()</a>.</p>
 
 </div>
 </div>
@@ -1420,11 +1420,11 @@ Description</h1>
 <p>How many different optimization are done, before "find_optimization" is called again, is determined by the settings "greedyminnum" and "greedymaxperc".</p>
 <p>During the optimization process, sequences of zeroes are introduced in the instructions, since moving all instructions when one gets optimized, is very costly. Therefore, in the end, the instructions are "compressed" again to remove these extra zeroes. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l03774">3774</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l03773">3773</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00423">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l02931">do_optimization()</a>, <a class="el" href="optimize_8cc_source.html#l02698">find_optimizations()</a>, <a class="el" href="optimize_8cc_source.html#l03480">partial_factorize()</a>, and <a class="el" href="tools_8c_source.html#l03396">TimeWallClock()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00422">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l02930">do_optimization()</a>, <a class="el" href="optimize_8cc_source.html#l02697">find_optimizations()</a>, <a class="el" href="optimize_8cc_source.html#l03479">partial_factorize()</a>, and <a class="el" href="tools_8c_source.html#l03394">TimeWallClock()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1472,9 +1472,9 @@ Implementation details</h1>
 <p>with ch_i(x) the i-th child of x, where the childs are ordered w.r.t. #vars(ch_i). This formula is exact if the input forms a tree, and otherwise gives a reasonable estimate.</p>
 <p>Then, the instructions are reordered in a depth-first order with childs ordered w.r.t. #vars. Next, the times that variables become obsolete are found. Each LHS of an instruction is renumbered to the lowest-numbered temporary variable that is available at that time. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l03914">3914</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l03913">3913</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>.</p>
 
 </div>
 </div>
@@ -1499,11 +1499,11 @@ Description</h1>
 <p>CSE is fast, while greedy might be slow. CSE followed by greedy is faster than greedy alone, but typically results in slightly worse code (not proven; just observed). </p>
 <p>eventually do greedy optimizations</p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04061">4061</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04060">4060</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00423">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l01133">generate_instructions()</a>, <a class="el" href="optimize_8cc_source.html#l00874">Horner_tree()</a>, <a class="el" href="optimize_8cc_source.html#l02403">merge_operators()</a>, <a class="el" href="optimize_8cc_source.html#l03774">optimize_greedy()</a>, <a class="el" href="optimize_8cc_source.html#l03914">recycle_variables()</a>, and <a class="el" href="tools_8c_source.html#l03396">TimeWallClock()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l00422">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l01132">generate_instructions()</a>, <a class="el" href="optimize_8cc_source.html#l00873">Horner_tree()</a>, <a class="el" href="optimize_8cc_source.html#l02402">merge_operators()</a>, <a class="el" href="optimize_8cc_source.html#l03773">optimize_greedy()</a>, <a class="el" href="optimize_8cc_source.html#l03913">recycle_variables()</a>, and <a class="el" href="tools_8c_source.html#l03394">TimeWallClock()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1587,9 +1587,9 @@ Here is the call graph for this function:</div>
 Description</h1>
 <p>This method prepares the instructions for printing. They are stored in Form format, so that they can be printed by "PrintExtraSymbol". The results are stored in the buffer AO.OptimizeResult. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04292">4292</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04291">4291</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 
 </div>
 </div>
@@ -1613,11 +1613,11 @@ Description</h1>
 Description</h1>
 <p>This method modifies the original optimized expression by an expression with extra symbols. This is used for "#Optimize". </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04441">4441</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04440">4440</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="sort_8c_source.html#l00745">EndSort()</a>, <a class="el" href="proces_8c_source.html#l03267">Generator()</a>, <a class="el" href="sort_8c_source.html#l04956">LowerSortLevel()</a>, <a class="el" href="sort_8c_source.html#l00649">NewSort()</a>, and <a class="el" href="sort_8c_source.html#l01470">PutOut()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1790,9 +1790,9 @@ Description</h1>
 <p>This method prints the optimized code via "PrintExtraSymbol". Depending on the flag, the original expression is printed (for "Print") or not (for "#Optimize /
 #write "O"). </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04525">4525</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04524">4524</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 
 </div>
 </div>
@@ -1837,9 +1837,9 @@ Description</h1>
 <p>(3) and (4) find_Horner_MCTS and optimize_expression_given_Horner are parallelized.</p>
 <p>(5), (6a) and (6b) are needed only on the master. </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04638">4638</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04637">4637</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="optimize_8cc_source.html#l04975">ClearOptimize()</a>, <a class="el" href="optimize_8cc_source.html#l00423">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l02255">find_Horner_MCTS()</a>, <a class="el" href="optimize_8cc_source.html#l04441">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l04292">generate_output()</a>, <a class="el" href="optimize_8cc_source.html#l00303">get_brackets()</a>, <a class="el" href="optimize_8cc_source.html#l00226">get_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00520">occurrence_order()</a>, <a class="el" href="optimize_8cc_source.html#l04061">optimize_expression_given_Horner()</a>, <a class="el" href="optimize_8cc_source.html#l04525">optimize_print_code()</a>, <a class="el" href="mpi_8c_source.html#l00883">PF_Broadcast()</a>, <a class="el" href="mpi_8c_source.html#l01807">PF_LongMultiBroadcast()</a>, <a class="el" href="mpi_8c_source.html#l00642">PF_Pack()</a>, <a class="el" href="mpi_8c_source.html#l01643">PF_PrepareLongMultiPack()</a>, <a class="el" href="mpi_8c_source.html#l00624">PF_PreparePack()</a>, <a class="el" href="mpi_8c_source.html#l00671">PF_Unpack()</a>, and <a class="el" href="pre_8c_source.html#l00721">PutPreVar()</a>.</p>
+<p class="reference">References <a class="el" href="optimize_8cc_source.html#l04974">ClearOptimize()</a>, <a class="el" href="optimize_8cc_source.html#l00422">count_operators()</a>, <a class="el" href="optimize_8cc_source.html#l02254">find_Horner_MCTS()</a>, <a class="el" href="optimize_8cc_source.html#l04440">generate_expression()</a>, <a class="el" href="optimize_8cc_source.html#l04291">generate_output()</a>, <a class="el" href="optimize_8cc_source.html#l00302">get_brackets()</a>, <a class="el" href="optimize_8cc_source.html#l00225">get_expression()</a>, <a class="el" href="optimize_8cc_source.html#l00519">occurrence_order()</a>, <a class="el" href="optimize_8cc_source.html#l04060">optimize_expression_given_Horner()</a>, <a class="el" href="optimize_8cc_source.html#l04524">optimize_print_code()</a>, <a class="el" href="mpi_8c_source.html#l00883">PF_Broadcast()</a>, <a class="el" href="mpi_8c_source.html#l01807">PF_LongMultiBroadcast()</a>, <a class="el" href="mpi_8c_source.html#l00642">PF_Pack()</a>, <a class="el" href="mpi_8c_source.html#l01643">PF_PrepareLongMultiPack()</a>, <a class="el" href="mpi_8c_source.html#l00624">PF_PreparePack()</a>, <a class="el" href="mpi_8c_source.html#l00671">PF_Unpack()</a>, and <a class="el" href="pre_8c_source.html#l00721">PutPreVar()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2015,11 +2015,11 @@ Here is the call graph for this function:</div>
 Description</h1>
 <p>Clears the buffers that were used for optimization output. Clears the expression from the buffers (marks it to be dropped). Note: we need to use the expression by its name, because numbers may change if we drop other expressions between when we do the optimizations and clear the results (in <a class="el" href="execute_8c.html">execute.c</a>). Also this is not 100% safe, because we could overwrite the optimized expression. But that can be done only in a Local or Global statement and hence we only have to test there that we might have to call ClearOptimize first. (in file <a class="el" href="comexpr_8c.html">comexpr.c</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04975">4975</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l04974">4974</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="pre_8c_source.html#l00721">PutPreVar()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04638">Optimize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cc_source.html#l04637">Optimize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2094,7 +2094,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00157">157</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00156">156</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2110,7 +2110,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00158">158</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00157">157</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2126,7 +2126,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00159">159</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00158">158</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2142,7 +2142,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00160">160</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00159">159</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2158,7 +2158,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00161">161</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00160">160</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2174,7 +2174,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00162">162</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00161">161</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2190,7 +2190,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00165">165</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00164">164</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2206,7 +2206,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00165">165</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00164">164</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2222,7 +2222,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00166">166</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00165">165</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2238,7 +2238,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00167">167</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00166">166</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2254,7 +2254,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00168">168</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00167">167</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>
@@ -2270,7 +2270,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00169">169</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimize_8cc_source.html#l00168">168</a> of file <a class="el" href="optimize_8cc_source.html">optimize.cc</a>.</p>
 
 </div>
 </div>

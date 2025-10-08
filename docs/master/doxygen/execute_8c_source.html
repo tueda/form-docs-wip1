@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-238-g7fa4cef</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-246-g7ed2880</span>
    </div>
   </td>
  </tr>
@@ -2470,352 +2470,351 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02428" name="l02428"></a><span class="lineno"> 2428</span>            oldw = AS.Oldvflags;</div>
 <div class="line"><a id="l02429" name="l02429"></a><span class="lineno"> 2429</span>            AS.Oldvflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;vflags pointers&quot;</span>);</div>
 <div class="line"><a id="l02430" name="l02430"></a><span class="lineno"> 2430</span>            <span class="keywordflow">for</span> ( i = 0; i &lt; AS.NumOldNumFactors; i++ ) AS.Oldvflags[i] = oldw[i];</div>
-<div class="line"><a id="l02431" name="l02431"></a><span class="lineno"> 2431</span>            AS.NumOldNumFactors = NumExpressions;</div>
-<div class="line"><a id="l02432" name="l02432"></a><span class="lineno"> 2432</span>            M_free(oldw,<span class="stringliteral">&quot;vflags pointers&quot;</span>);</div>
-<div class="line"><a id="l02433" name="l02433"></a><span class="lineno"> 2433</span>            oldw = AS.Olduflags;</div>
-<div class="line"><a id="l02434" name="l02434"></a><span class="lineno"> 2434</span>            AS.Olduflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;uflags pointers&quot;</span>);</div>
-<div class="line"><a id="l02435" name="l02435"></a><span class="lineno"> 2435</span>            <span class="keywordflow">for</span> ( i = 0; i &lt; AS.NumOldNumFactors; i++ ) AS.Olduflags[i] = oldw[i];</div>
+<div class="line"><a id="l02431" name="l02431"></a><span class="lineno"> 2431</span>            M_free(oldw,<span class="stringliteral">&quot;vflags pointers&quot;</span>);</div>
+<div class="line"><a id="l02432" name="l02432"></a><span class="lineno"> 2432</span>            oldw = AS.Olduflags;</div>
+<div class="line"><a id="l02433" name="l02433"></a><span class="lineno"> 2433</span>            AS.Olduflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;uflags pointers&quot;</span>);</div>
+<div class="line"><a id="l02434" name="l02434"></a><span class="lineno"> 2434</span>            <span class="keywordflow">for</span> ( i = 0; i &lt; AS.NumOldNumFactors; i++ ) AS.Olduflags[i] = oldw[i];</div>
+<div class="line"><a id="l02435" name="l02435"></a><span class="lineno"> 2435</span>            M_free(oldw,<span class="stringliteral">&quot;uflags pointers&quot;</span>);</div>
 <div class="line"><a id="l02436" name="l02436"></a><span class="lineno"> 2436</span>            AS.NumOldNumFactors = NumExpressions;</div>
-<div class="line"><a id="l02437" name="l02437"></a><span class="lineno"> 2437</span>            M_free(oldw,<span class="stringliteral">&quot;uflags pointers&quot;</span>);</div>
-<div class="line"><a id="l02438" name="l02438"></a><span class="lineno"> 2438</span>        }</div>
-<div class="line"><a id="l02439" name="l02439"></a><span class="lineno"> 2439</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02440" name="l02440"></a><span class="lineno"> 2440</span>            AS.OldNumFactors = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;numfactors pointers&quot;</span>);</div>
-<div class="line"><a id="l02441" name="l02441"></a><span class="lineno"> 2441</span>            AS.Oldvflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;vflags pointers&quot;</span>);</div>
-<div class="line"><a id="l02442" name="l02442"></a><span class="lineno"> 2442</span>            AS.Olduflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;uflags pointers&quot;</span>);</div>
-<div class="line"><a id="l02443" name="l02443"></a><span class="lineno"> 2443</span>            AS.NumOldNumFactors = NumExpressions;</div>
-<div class="line"><a id="l02444" name="l02444"></a><span class="lineno"> 2444</span>        }</div>
-<div class="line"><a id="l02445" name="l02445"></a><span class="lineno"> 2445</span>    }</div>
-<div class="line"><a id="l02446" name="l02446"></a><span class="lineno"> 2446</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; NumExpressions; i++ ) {</div>
-<div class="line"><a id="l02447" name="l02447"></a><span class="lineno"> 2447</span>        AS.OldOnFile[i] = e[i].onfile;</div>
-<div class="line"><a id="l02448" name="l02448"></a><span class="lineno"> 2448</span>        AS.OldNumFactors[i] = e[i].numfactors;</div>
-<div class="line"><a id="l02449" name="l02449"></a><span class="lineno"> 2449</span>        AS.Oldvflags[i] = e[i].vflags;</div>
-<div class="line"><a id="l02450" name="l02450"></a><span class="lineno"> 2450</span>        AS.Olduflags[i] = e[i].uflags;</div>
-<div class="line"><a id="l02451" name="l02451"></a><span class="lineno"> 2451</span>    }</div>
-<div class="line"><a id="l02452" name="l02452"></a><span class="lineno"> 2452</span>}</div>
-<div class="line"><a id="l02453" name="l02453"></a><span class="lineno"> 2453</span> </div>
-<div class="line"><a id="l02454" name="l02454"></a><span class="lineno"> 2454</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02455" name="l02455"></a><span class="lineno"> 2455</span><span class="comment">        #] UpdatePositions : </span></div>
-<div class="line"><a id="l02456" name="l02456"></a><span class="lineno"> 2456</span><span class="comment">        #[ CountTerms1 :        LONG CountTerms1()</span></div>
-<div class="line"><a id="l02457" name="l02457"></a><span class="lineno"> 2457</span><span class="comment"></span> </div>
-<div class="line"><a id="l02458" name="l02458"></a><span class="lineno"> 2458</span><span class="comment">        Counts the terms in the current deferred bracket</span></div>
-<div class="line"><a id="l02459" name="l02459"></a><span class="lineno"> 2459</span><span class="comment">        Is mainly an adaptation of the routine Deferred in proces.c</span></div>
-<div class="line"><a id="l02460" name="l02460"></a><span class="lineno"> 2460</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02461" name="l02461"></a><span class="lineno"> 2461</span> </div>
-<div class="line"><a id="l02462" name="l02462"></a><span class="lineno"> 2462</span>LONG CountTerms1(PHEAD0)</div>
-<div class="line"><a id="l02463" name="l02463"></a><span class="lineno"> 2463</span>{</div>
-<div class="line"><a id="l02464" name="l02464"></a><span class="lineno"> 2464</span>    GETBIDENTITY</div>
-<div class="line"><a id="l02465" name="l02465"></a><span class="lineno"> 2465</span>    <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> oldposition, startposition;</div>
-<div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span>    WORD *t, *m, *mstop, decr, i, *oldwork, retval;</div>
-<div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span>    WORD *oldipointer = AR.CompressPointer;</div>
-<div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span>    WORD oldGetOneFile = AR.GetOneFile, olddeferflag = AR.DeferFlag;</div>
-<div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span>    LONG numterms = 0;</div>
-<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>    AR.GetOneFile = 1;</div>
-<div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>    oldwork = AT.WorkPointer;</div>
-<div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span>    AT.WorkPointer = (WORD *)(((UBYTE *)(AT.WorkPointer)) + AM.MaxTer);</div>
-<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    AR.DeferFlag = 0;</div>
-<div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span>    startposition = AR.DefPosition;</div>
-<div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span><span class="comment">        Store old position</span></div>
-<div class="line"><a id="l02477" name="l02477"></a><span class="lineno"> 2477</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02478" name="l02478"></a><span class="lineno"> 2478</span>    <span class="keywordflow">if</span> ( AR.infile-&gt;handle &gt;= 0 ) {</div>
-<div class="line"><a id="l02479" name="l02479"></a><span class="lineno"> 2479</span>        PUTZERO(oldposition);</div>
-<div class="line"><a id="l02480" name="l02480"></a><span class="lineno"> 2480</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02481" name="l02481"></a><span class="lineno"> 2481</span><span class="comment">        SeekFile(AR.infile-&gt;handle,&amp;oldposition,SEEK_CUR);</span></div>
-<div class="line"><a id="l02482" name="l02482"></a><span class="lineno"> 2482</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02483" name="l02483"></a><span class="lineno"> 2483</span>    }</div>
-<div class="line"><a id="l02484" name="l02484"></a><span class="lineno"> 2484</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02485" name="l02485"></a><span class="lineno"> 2485</span>        SETBASEPOSITION(oldposition,AR.infile-&gt;POfill-AR.infile-&gt;PObuffer);</div>
-<div class="line"><a id="l02486" name="l02486"></a><span class="lineno"> 2486</span>        AR.infile-&gt;POfill = (WORD *)((UBYTE *)(AR.infile-&gt;PObuffer)</div>
-<div class="line"><a id="l02487" name="l02487"></a><span class="lineno"> 2487</span>                    +BASEPOSITION(startposition));</div>
-<div class="line"><a id="l02488" name="l02488"></a><span class="lineno"> 2488</span>    }</div>
-<div class="line"><a id="l02489" name="l02489"></a><span class="lineno"> 2489</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02490" name="l02490"></a><span class="lineno"> 2490</span><span class="comment">        Look in the CompressBuffer where the bracket contents start</span></div>
-<div class="line"><a id="l02491" name="l02491"></a><span class="lineno"> 2491</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02492" name="l02492"></a><span class="lineno"> 2492</span>    t = m = AR.CompressBuffer;</div>
-<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span>    t += *t;</div>
-<div class="line"><a id="l02494" name="l02494"></a><span class="lineno"> 2494</span>    mstop = t - ABS(t[-1]);</div>
-<div class="line"><a id="l02495" name="l02495"></a><span class="lineno"> 2495</span>    m++;</div>
-<div class="line"><a id="l02496" name="l02496"></a><span class="lineno"> 2496</span>    <span class="keywordflow">while</span> ( *m != HAAKJE &amp;&amp; m &lt; mstop ) m += m[1];</div>
-<div class="line"><a id="l02497" name="l02497"></a><span class="lineno"> 2497</span>    <span class="keywordflow">if</span> ( m &gt;= mstop ) { <span class="comment">/* No deferred action! */</span></div>
-<div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span>        numterms = 1;</div>
-<div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span>        AR.DeferFlag = olddeferflag;</div>
-<div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span>        AT.WorkPointer = oldwork;</div>
-<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span>        AR.GetOneFile = oldGetOneFile;</div>
-<div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span>        <span class="keywordflow">return</span>(numterms);</div>
-<div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span>    }</div>
-<div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span>    mstop = m + m[1];</div>
-<div class="line"><a id="l02505" name="l02505"></a><span class="lineno"> 2505</span>    decr = WORDDIF(mstop,AR.CompressBuffer)-1;</div>
-<div class="line"><a id="l02506" name="l02506"></a><span class="lineno"> 2506</span> </div>
-<div class="line"><a id="l02507" name="l02507"></a><span class="lineno"> 2507</span>    m = AR.CompressBuffer;</div>
-<div class="line"><a id="l02508" name="l02508"></a><span class="lineno"> 2508</span>    t = AR.CompressPointer;</div>
-<div class="line"><a id="l02509" name="l02509"></a><span class="lineno"> 2509</span>    i = *m;</div>
-<div class="line"><a id="l02510" name="l02510"></a><span class="lineno"> 2510</span>    NCOPY(t,m,i);</div>
-<div class="line"><a id="l02511" name="l02511"></a><span class="lineno"> 2511</span>    AR.TePos = 0;</div>
-<div class="line"><a id="l02512" name="l02512"></a><span class="lineno"> 2512</span>    AN.TeSuOut = 0;</div>
-<div class="line"><a id="l02513" name="l02513"></a><span class="lineno"> 2513</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02514" name="l02514"></a><span class="lineno"> 2514</span><span class="comment">        Status:</span></div>
-<div class="line"><a id="l02515" name="l02515"></a><span class="lineno"> 2515</span><span class="comment">        First bracket content starts at mstop.</span></div>
-<div class="line"><a id="l02516" name="l02516"></a><span class="lineno"> 2516</span><span class="comment">        Next term starts at startposition.</span></div>
-<div class="line"><a id="l02517" name="l02517"></a><span class="lineno"> 2517</span><span class="comment">        Decompression information is in AR.CompressPointer.</span></div>
-<div class="line"><a id="l02518" name="l02518"></a><span class="lineno"> 2518</span><span class="comment">        The outside of the bracket runs from AR.CompressBuffer+1 to mstop.</span></div>
-<div class="line"><a id="l02519" name="l02519"></a><span class="lineno"> 2519</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02520" name="l02520"></a><span class="lineno"> 2520</span>    AR.CompressPointer = oldipointer;</div>
-<div class="line"><a id="l02521" name="l02521"></a><span class="lineno"> 2521</span>    <span class="keywordflow">for</span>(;;) {</div>
-<div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span>        numterms++;</div>
-<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>        retval = GetOneTerm(BHEAD AT.WorkPointer,AR.infile,&amp;startposition,0);</div>
-<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>        <span class="keywordflow">if</span> ( retval &gt;= 0 ) AR.CompressPointer = oldipointer;</div>
-<div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>        <span class="keywordflow">if</span> ( retval &lt;= 0 ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>        t = AR.CompressPointer;</div>
-<div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>        <span class="keywordflow">if</span> ( *t &lt; (1 + decr + ABS(*(t+*t-1))) ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>        t++;</div>
-<div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>        m = AR.CompressBuffer+1;</div>
-<div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span>        <span class="keywordflow">while</span> ( m &lt; mstop ) {</div>
-<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span>            <span class="keywordflow">if</span> ( *m != *t ) <span class="keywordflow">goto</span> Thatsit;</div>
-<div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span>            m++; t++;</div>
-<div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span>        }</div>
-<div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span>    }</div>
-<div class="line"><a id="l02535" name="l02535"></a><span class="lineno"> 2535</span>Thatsit:;</div>
-<div class="line"><a id="l02536" name="l02536"></a><span class="lineno"> 2536</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02537" name="l02537"></a><span class="lineno"> 2537</span><span class="comment">        Finished. Reposition the file, restore information and return.</span></div>
-<div class="line"><a id="l02538" name="l02538"></a><span class="lineno"> 2538</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02539" name="l02539"></a><span class="lineno"> 2539</span>    AT.WorkPointer = oldwork;</div>
-<div class="line"><a id="l02540" name="l02540"></a><span class="lineno"> 2540</span>    <span class="keywordflow">if</span> ( AR.infile-&gt;handle &gt;= 0 ) {</div>
-<div class="line"><a id="l02541" name="l02541"></a><span class="lineno"> 2541</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02542" name="l02542"></a><span class="lineno"> 2542</span><span class="comment">        SeekFile(AR.infile-&gt;handle,&amp;oldposition,SEEK_SET);</span></div>
-<div class="line"><a id="l02543" name="l02543"></a><span class="lineno"> 2543</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02544" name="l02544"></a><span class="lineno"> 2544</span>    }</div>
-<div class="line"><a id="l02545" name="l02545"></a><span class="lineno"> 2545</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02546" name="l02546"></a><span class="lineno"> 2546</span>        AR.infile-&gt;POfill = AR.infile-&gt;PObuffer + BASEPOSITION(oldposition);</div>
-<div class="line"><a id="l02547" name="l02547"></a><span class="lineno"> 2547</span>    }</div>
-<div class="line"><a id="l02548" name="l02548"></a><span class="lineno"> 2548</span>    AR.DeferFlag = olddeferflag;</div>
-<div class="line"><a id="l02549" name="l02549"></a><span class="lineno"> 2549</span>    AR.GetOneFile = oldGetOneFile;</div>
-<div class="line"><a id="l02550" name="l02550"></a><span class="lineno"> 2550</span>    <span class="keywordflow">return</span>(numterms);</div>
-<div class="line"><a id="l02551" name="l02551"></a><span class="lineno"> 2551</span>}</div>
-<div class="line"><a id="l02552" name="l02552"></a><span class="lineno"> 2552</span> </div>
-<div class="line"><a id="l02553" name="l02553"></a><span class="lineno"> 2553</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02554" name="l02554"></a><span class="lineno"> 2554</span><span class="comment">        #] CountTerms1 : </span></div>
-<div class="line"><a id="l02555" name="l02555"></a><span class="lineno"> 2555</span><span class="comment">        #[ TermsInBracket :     LONG TermsInBracket(term,level)</span></div>
-<div class="line"><a id="l02556" name="l02556"></a><span class="lineno"> 2556</span><span class="comment"></span> </div>
-<div class="line"><a id="l02557" name="l02557"></a><span class="lineno"> 2557</span><span class="comment">    The function TermsInBracket_()</span></div>
-<div class="line"><a id="l02558" name="l02558"></a><span class="lineno"> 2558</span><span class="comment">    Syntax:</span></div>
-<div class="line"><a id="l02559" name="l02559"></a><span class="lineno"> 2559</span><span class="comment">        TermsInBracket_() : The current bracket in a Keep Brackets</span></div>
-<div class="line"><a id="l02560" name="l02560"></a><span class="lineno"> 2560</span><span class="comment">        TermsInBracket_(bracket) : This bracket in the current expression</span></div>
-<div class="line"><a id="l02561" name="l02561"></a><span class="lineno"> 2561</span><span class="comment">        TermsInBracket_(expression,bracket) : This bracket in the given expression</span></div>
-<div class="line"><a id="l02562" name="l02562"></a><span class="lineno"> 2562</span><span class="comment">    All other specifications don&#39;t have any effect.</span></div>
-<div class="line"><a id="l02563" name="l02563"></a><span class="lineno"> 2563</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02564" name="l02564"></a><span class="lineno"> 2564</span> </div>
-<div class="line"><a id="l02565" name="l02565"></a><span class="lineno"> 2565</span><span class="preprocessor">#define CURRENTBRACKET 1</span></div>
-<div class="line"><a id="l02566" name="l02566"></a><span class="lineno"> 2566</span><span class="preprocessor">#define BRACKETCURRENTEXPR 2</span></div>
-<div class="line"><a id="l02567" name="l02567"></a><span class="lineno"> 2567</span><span class="preprocessor">#define BRACKETOTHEREXPR 3</span></div>
-<div class="line"><a id="l02568" name="l02568"></a><span class="lineno"> 2568</span><span class="preprocessor">#define NOBRACKETACTIVE 4</span></div>
-<div class="line"><a id="l02569" name="l02569"></a><span class="lineno"> 2569</span> </div>
-<div class="line"><a id="l02570" name="l02570"></a><span class="lineno"> 2570</span>LONG TermsInBracket(PHEAD WORD *term, WORD level)</div>
-<div class="line"><a id="l02571" name="l02571"></a><span class="lineno"> 2571</span>{</div>
-<div class="line"><a id="l02572" name="l02572"></a><span class="lineno"> 2572</span>    WORD *t, *tstop, *b, *tt, *n1, *n2;</div>
-<div class="line"><a id="l02573" name="l02573"></a><span class="lineno"> 2573</span>    <span class="keywordtype">int</span> type = 0, i, num;</div>
-<div class="line"><a id="l02574" name="l02574"></a><span class="lineno"> 2574</span>    LONG numterms = 0;</div>
-<div class="line"><a id="l02575" name="l02575"></a><span class="lineno"> 2575</span>    WORD *bracketbuffer = AT.WorkPointer;</div>
-<div class="line"><a id="l02576" name="l02576"></a><span class="lineno"> 2576</span>    t = term; GETSTOP(t,tstop);</div>
-<div class="line"><a id="l02577" name="l02577"></a><span class="lineno"> 2577</span>    t++; b = bracketbuffer;</div>
-<div class="line"><a id="l02578" name="l02578"></a><span class="lineno"> 2578</span>    <span class="keywordflow">while</span> ( t &lt; tstop ) {</div>
-<div class="line"><a id="l02579" name="l02579"></a><span class="lineno"> 2579</span>        <span class="keywordflow">if</span> ( *t != TERMSINBRACKET ) { t += t[1]; <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a id="l02580" name="l02580"></a><span class="lineno"> 2580</span>        <span class="keywordflow">if</span> ( t[1] == FUNHEAD || (</div>
-<div class="line"><a id="l02581" name="l02581"></a><span class="lineno"> 2581</span>             t[1] == FUNHEAD+2</div>
-<div class="line"><a id="l02582" name="l02582"></a><span class="lineno"> 2582</span>            &amp;&amp; t[FUNHEAD] == -SNUMBER</div>
-<div class="line"><a id="l02583" name="l02583"></a><span class="lineno"> 2583</span>            &amp;&amp; t[FUNHEAD+1] == 0</div>
-<div class="line"><a id="l02584" name="l02584"></a><span class="lineno"> 2584</span>         ) ) {</div>
-<div class="line"><a id="l02585" name="l02585"></a><span class="lineno"> 2585</span>            <span class="keywordflow">if</span> ( AC.ComDefer == 0 ) {</div>
-<div class="line"><a id="l02586" name="l02586"></a><span class="lineno"> 2586</span>                type = NOBRACKETACTIVE;</div>
-<div class="line"><a id="l02587" name="l02587"></a><span class="lineno"> 2587</span>            }</div>
-<div class="line"><a id="l02588" name="l02588"></a><span class="lineno"> 2588</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02589" name="l02589"></a><span class="lineno"> 2589</span>                type = CURRENTBRACKET;</div>
-<div class="line"><a id="l02590" name="l02590"></a><span class="lineno"> 2590</span>            }</div>
-<div class="line"><a id="l02591" name="l02591"></a><span class="lineno"> 2591</span>            *b = 0;</div>
-<div class="line"><a id="l02592" name="l02592"></a><span class="lineno"> 2592</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02593" name="l02593"></a><span class="lineno"> 2593</span>        }</div>
-<div class="line"><a id="l02594" name="l02594"></a><span class="lineno"> 2594</span>        <span class="keywordflow">if</span> ( t[FUNHEAD] == -EXPRESSION ) {</div>
-<div class="line"><a id="l02595" name="l02595"></a><span class="lineno"> 2595</span>            <span class="keywordflow">if</span> ( t[FUNHEAD+2] &lt; 0 ) {</div>
-<div class="line"><a id="l02596" name="l02596"></a><span class="lineno"> 2596</span>                <span class="keywordflow">if</span> ( ( t[FUNHEAD+2] &lt;= -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+3 ) ) {</div>
-<div class="line"><a id="l02597" name="l02597"></a><span class="lineno"> 2597</span>                    type = BRACKETOTHEREXPR;</div>
-<div class="line"><a id="l02598" name="l02598"></a><span class="lineno"> 2598</span>                    *b++ = FUNHEAD+4; *b++ = -t[FUNHEAD+2]; *b++ = FUNHEAD;</div>
-<div class="line"><a id="l02599" name="l02599"></a><span class="lineno"> 2599</span>                    <span class="keywordflow">for</span> ( i = 2; i &lt; FUNHEAD; i++ ) *b++ = 0;</div>
-<div class="line"><a id="l02600" name="l02600"></a><span class="lineno"> 2600</span>                    *b++ = 1; *b++ = 1; *b++ = 3;</div>
-<div class="line"><a id="l02601" name="l02601"></a><span class="lineno"> 2601</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02602" name="l02602"></a><span class="lineno"> 2602</span>                }</div>
-<div class="line"><a id="l02603" name="l02603"></a><span class="lineno"> 2603</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD+2] &gt; -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+4 ) ) {</div>
-<div class="line"><a id="l02604" name="l02604"></a><span class="lineno"> 2604</span>                    type = BRACKETOTHEREXPR;</div>
-<div class="line"><a id="l02605" name="l02605"></a><span class="lineno"> 2605</span>                    tt = t + FUNHEAD+2;</div>
-<div class="line"><a id="l02606" name="l02606"></a><span class="lineno"> 2606</span>                    <span class="keywordflow">switch</span> ( *tt ) {</div>
-<div class="line"><a id="l02607" name="l02607"></a><span class="lineno"> 2607</span>                        <span class="keywordflow">case</span> -SYMBOL:</div>
-<div class="line"><a id="l02608" name="l02608"></a><span class="lineno"> 2608</span>                            *b++ = 8; *b++ = SYMBOL; *b++ = 4; *b++ = tt[1];</div>
-<div class="line"><a id="l02609" name="l02609"></a><span class="lineno"> 2609</span>                            *b++ = 1; *b++ = 1; *b++ = 1; *b++ = 3;</div>
-<div class="line"><a id="l02610" name="l02610"></a><span class="lineno"> 2610</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02611" name="l02611"></a><span class="lineno"> 2611</span>                        <span class="keywordflow">case</span> -SNUMBER:</div>
-<div class="line"><a id="l02612" name="l02612"></a><span class="lineno"> 2612</span>                            <span class="keywordflow">if</span> ( tt[1] == 1 ) {</div>
-<div class="line"><a id="l02613" name="l02613"></a><span class="lineno"> 2613</span>                                *b++ = 4; *b++ = 1; *b++ = 1; *b++ = 3;</div>
-<div class="line"><a id="l02614" name="l02614"></a><span class="lineno"> 2614</span>                            }</div>
-<div class="line"><a id="l02615" name="l02615"></a><span class="lineno"> 2615</span>                            <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllBraReq;</div>
-<div class="line"><a id="l02616" name="l02616"></a><span class="lineno"> 2616</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02617" name="l02617"></a><span class="lineno"> 2617</span>                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l02618" name="l02618"></a><span class="lineno"> 2618</span>                            <span class="keywordflow">goto</span> IllBraReq;</div>
-<div class="line"><a id="l02619" name="l02619"></a><span class="lineno"> 2619</span>                    }</div>
-<div class="line"><a id="l02620" name="l02620"></a><span class="lineno"> 2620</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02621" name="l02621"></a><span class="lineno"> 2621</span>                }</div>
-<div class="line"><a id="l02622" name="l02622"></a><span class="lineno"> 2622</span>            }</div>
-<div class="line"><a id="l02623" name="l02623"></a><span class="lineno"> 2623</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD+2] == (t[1]-FUNHEAD-2) ) &amp;&amp;</div>
-<div class="line"><a id="l02624" name="l02624"></a><span class="lineno"> 2624</span>                      ( t[FUNHEAD+2+ARGHEAD] == (t[FUNHEAD+2]-ARGHEAD) ) ) {</div>
-<div class="line"><a id="l02625" name="l02625"></a><span class="lineno"> 2625</span>                type = BRACKETOTHEREXPR;</div>
-<div class="line"><a id="l02626" name="l02626"></a><span class="lineno"> 2626</span>                tt = t + FUNHEAD + ARGHEAD; num = *tt;</div>
-<div class="line"><a id="l02627" name="l02627"></a><span class="lineno"> 2627</span>                <span class="keywordflow">for</span> ( i = 0; i &lt; num; i++ ) *b++ = *tt++;</div>
-<div class="line"><a id="l02628" name="l02628"></a><span class="lineno"> 2628</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02629" name="l02629"></a><span class="lineno"> 2629</span>            }</div>
-<div class="line"><a id="l02630" name="l02630"></a><span class="lineno"> 2630</span>        }</div>
-<div class="line"><a id="l02631" name="l02631"></a><span class="lineno"> 2631</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02632" name="l02632"></a><span class="lineno"> 2632</span>            <span class="keywordflow">if</span> ( t[FUNHEAD] &lt; 0 ) {</div>
-<div class="line"><a id="l02633" name="l02633"></a><span class="lineno"> 2633</span>                <span class="keywordflow">if</span> ( ( t[FUNHEAD] &lt;= -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+1 ) ) {</div>
-<div class="line"><a id="l02634" name="l02634"></a><span class="lineno"> 2634</span>                    type = BRACKETCURRENTEXPR;</div>
-<div class="line"><a id="l02635" name="l02635"></a><span class="lineno"> 2635</span>                    *b++ = FUNHEAD+4; *b++ = -t[FUNHEAD+2]; *b++ = FUNHEAD;</div>
-<div class="line"><a id="l02636" name="l02636"></a><span class="lineno"> 2636</span>                    <span class="keywordflow">for</span> ( i = 2; i &lt; FUNHEAD; i++ ) *b++ = 0;</div>
-<div class="line"><a id="l02637" name="l02637"></a><span class="lineno"> 2637</span>                    *b++ = 1; *b++ = 1; *b++ = 3; *b = 0;</div>
-<div class="line"><a id="l02638" name="l02638"></a><span class="lineno"> 2638</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02639" name="l02639"></a><span class="lineno"> 2639</span>                }</div>
-<div class="line"><a id="l02640" name="l02640"></a><span class="lineno"> 2640</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD] &gt; -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+2 ) ) {</div>
-<div class="line"><a id="l02641" name="l02641"></a><span class="lineno"> 2641</span>                    type = BRACKETCURRENTEXPR;</div>
-<div class="line"><a id="l02642" name="l02642"></a><span class="lineno"> 2642</span>                    tt = t + FUNHEAD+2;</div>
-<div class="line"><a id="l02643" name="l02643"></a><span class="lineno"> 2643</span>                    <span class="keywordflow">switch</span> ( *tt ) {</div>
-<div class="line"><a id="l02644" name="l02644"></a><span class="lineno"> 2644</span>                        <span class="keywordflow">case</span> -SYMBOL:</div>
-<div class="line"><a id="l02645" name="l02645"></a><span class="lineno"> 2645</span>                            *b++ = 8; *b++ = SYMBOL; *b++ = 4; *b++ = tt[1];</div>
-<div class="line"><a id="l02646" name="l02646"></a><span class="lineno"> 2646</span>                            *b++ = 1; *b++ = 1; *b++ = 1; *b++ = 3;</div>
-<div class="line"><a id="l02647" name="l02647"></a><span class="lineno"> 2647</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02648" name="l02648"></a><span class="lineno"> 2648</span>                        <span class="keywordflow">case</span> -SNUMBER:</div>
-<div class="line"><a id="l02649" name="l02649"></a><span class="lineno"> 2649</span>                            <span class="keywordflow">if</span> ( tt[1] == 1 ) {</div>
-<div class="line"><a id="l02650" name="l02650"></a><span class="lineno"> 2650</span>                                *b++ = 4; *b++ = 1; *b++ = 1; *b++ = 3;</div>
-<div class="line"><a id="l02651" name="l02651"></a><span class="lineno"> 2651</span>                            }</div>
-<div class="line"><a id="l02652" name="l02652"></a><span class="lineno"> 2652</span>                            <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllBraReq;</div>
-<div class="line"><a id="l02653" name="l02653"></a><span class="lineno"> 2653</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02654" name="l02654"></a><span class="lineno"> 2654</span>                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l02655" name="l02655"></a><span class="lineno"> 2655</span>                            <span class="keywordflow">goto</span> IllBraReq;</div>
-<div class="line"><a id="l02656" name="l02656"></a><span class="lineno"> 2656</span>                    }</div>
-<div class="line"><a id="l02657" name="l02657"></a><span class="lineno"> 2657</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02658" name="l02658"></a><span class="lineno"> 2658</span>                }</div>
-<div class="line"><a id="l02659" name="l02659"></a><span class="lineno"> 2659</span>            }</div>
-<div class="line"><a id="l02660" name="l02660"></a><span class="lineno"> 2660</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD] == (t[1]-FUNHEAD) ) &amp;&amp;</div>
-<div class="line"><a id="l02661" name="l02661"></a><span class="lineno"> 2661</span>                      ( t[FUNHEAD+ARGHEAD] == (t[FUNHEAD]-ARGHEAD) ) ) {</div>
-<div class="line"><a id="l02662" name="l02662"></a><span class="lineno"> 2662</span>                type = BRACKETCURRENTEXPR;</div>
-<div class="line"><a id="l02663" name="l02663"></a><span class="lineno"> 2663</span>                tt = t + FUNHEAD + ARGHEAD; num = *tt;</div>
-<div class="line"><a id="l02664" name="l02664"></a><span class="lineno"> 2664</span>                <span class="keywordflow">for</span> ( i = 0; i &lt; num; i++ ) *b++ = *tt++;</div>
-<div class="line"><a id="l02665" name="l02665"></a><span class="lineno"> 2665</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02666" name="l02666"></a><span class="lineno"> 2666</span>            }</div>
-<div class="line"><a id="l02667" name="l02667"></a><span class="lineno"> 2667</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02668" name="l02668"></a><span class="lineno"> 2668</span>IllBraReq:;</div>
-<div class="line"><a id="l02669" name="l02669"></a><span class="lineno"> 2669</span>                MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02670" name="l02670"></a><span class="lineno"> 2670</span>                MesPrint(<span class="stringliteral">&quot;Illegal bracket request in termsinbracket_ function.&quot;</span>);</div>
-<div class="line"><a id="l02671" name="l02671"></a><span class="lineno"> 2671</span>                MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02672" name="l02672"></a><span class="lineno"> 2672</span>                Terminate(-1);</div>
-<div class="line"><a id="l02673" name="l02673"></a><span class="lineno"> 2673</span>            }</div>
-<div class="line"><a id="l02674" name="l02674"></a><span class="lineno"> 2674</span>        }</div>
-<div class="line"><a id="l02675" name="l02675"></a><span class="lineno"> 2675</span>        t += t[1];</div>
-<div class="line"><a id="l02676" name="l02676"></a><span class="lineno"> 2676</span>    }</div>
-<div class="line"><a id="l02677" name="l02677"></a><span class="lineno"> 2677</span>    AT.WorkPointer = b;</div>
-<div class="line"><a id="l02678" name="l02678"></a><span class="lineno"> 2678</span>    <span class="keywordflow">if</span> ( AT.WorkPointer + *term +4 &gt; AT.WorkTop ) {</div>
-<div class="line"><a id="l02679" name="l02679"></a><span class="lineno"> 2679</span>        MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02680" name="l02680"></a><span class="lineno"> 2680</span>        MesWork();</div>
-<div class="line"><a id="l02681" name="l02681"></a><span class="lineno"> 2681</span>        MesPrint(<span class="stringliteral">&quot;Called from termsinbracket_ function.&quot;</span>);</div>
-<div class="line"><a id="l02682" name="l02682"></a><span class="lineno"> 2682</span>        MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02683" name="l02683"></a><span class="lineno"> 2683</span>        <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l02684" name="l02684"></a><span class="lineno"> 2684</span>    }</div>
-<div class="line"><a id="l02685" name="l02685"></a><span class="lineno"> 2685</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02686" name="l02686"></a><span class="lineno"> 2686</span><span class="comment">    We are now in the position to look for the bracket</span></div>
-<div class="line"><a id="l02687" name="l02687"></a><span class="lineno"> 2687</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02688" name="l02688"></a><span class="lineno"> 2688</span>    <span class="keywordflow">switch</span> ( type ) {</div>
-<div class="line"><a id="l02689" name="l02689"></a><span class="lineno"> 2689</span>        <span class="keywordflow">case</span> CURRENTBRACKET:</div>
-<div class="line"><a id="l02690" name="l02690"></a><span class="lineno"> 2690</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02691" name="l02691"></a><span class="lineno"> 2691</span><span class="comment">            The code here should be rather similar to when we pick up</span></div>
-<div class="line"><a id="l02692" name="l02692"></a><span class="lineno"> 2692</span><span class="comment">            the contents of the bracket. In our case we only count the</span></div>
-<div class="line"><a id="l02693" name="l02693"></a><span class="lineno"> 2693</span><span class="comment">            terms though.</span></div>
-<div class="line"><a id="l02694" name="l02694"></a><span class="lineno"> 2694</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02695" name="l02695"></a><span class="lineno"> 2695</span>            numterms = CountTerms1(BHEAD0);</div>
-<div class="line"><a id="l02696" name="l02696"></a><span class="lineno"> 2696</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02697" name="l02697"></a><span class="lineno"> 2697</span>        <span class="keywordflow">case</span> BRACKETCURRENTEXPR:</div>
-<div class="line"><a id="l02698" name="l02698"></a><span class="lineno"> 2698</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02699" name="l02699"></a><span class="lineno"> 2699</span><span class="comment">            Not implemented yet.</span></div>
-<div class="line"><a id="l02700" name="l02700"></a><span class="lineno"> 2700</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02701" name="l02701"></a><span class="lineno"> 2701</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02702" name="l02702"></a><span class="lineno"> 2702</span>            MesPrint(<span class="stringliteral">&quot;termsinbracket_ function currently only handles Keep Brackets.&quot;</span>);</div>
-<div class="line"><a id="l02703" name="l02703"></a><span class="lineno"> 2703</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02704" name="l02704"></a><span class="lineno"> 2704</span>            <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l02705" name="l02705"></a><span class="lineno"> 2705</span>        <span class="keywordflow">case</span> BRACKETOTHEREXPR:</div>
-<div class="line"><a id="l02706" name="l02706"></a><span class="lineno"> 2706</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02707" name="l02707"></a><span class="lineno"> 2707</span>            MesPrint(<span class="stringliteral">&quot;termsinbracket_ function currently only handles Keep Brackets.&quot;</span>);</div>
-<div class="line"><a id="l02708" name="l02708"></a><span class="lineno"> 2708</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02709" name="l02709"></a><span class="lineno"> 2709</span>            <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l02710" name="l02710"></a><span class="lineno"> 2710</span>        <span class="keywordflow">case</span> NOBRACKETACTIVE:</div>
-<div class="line"><a id="l02711" name="l02711"></a><span class="lineno"> 2711</span>            numterms = 1;</div>
-<div class="line"><a id="l02712" name="l02712"></a><span class="lineno"> 2712</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02713" name="l02713"></a><span class="lineno"> 2713</span>    }</div>
-<div class="line"><a id="l02714" name="l02714"></a><span class="lineno"> 2714</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02715" name="l02715"></a><span class="lineno"> 2715</span><span class="comment">    Now we have the number in numterms. We replace the function by it.</span></div>
-<div class="line"><a id="l02716" name="l02716"></a><span class="lineno"> 2716</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02717" name="l02717"></a><span class="lineno"> 2717</span>    n1 = term; n2 = AT.WorkPointer; tstop = n1 + *n1;</div>
-<div class="line"><a id="l02718" name="l02718"></a><span class="lineno"> 2718</span>    <span class="keywordflow">while</span> ( n1 &lt; t ) *n2++ = *n1++;</div>
-<div class="line"><a id="l02719" name="l02719"></a><span class="lineno"> 2719</span>    i = numterms &gt;&gt; BITSINWORD;</div>
-<div class="line"><a id="l02720" name="l02720"></a><span class="lineno"> 2720</span>    <span class="keywordflow">if</span> ( i == 0 ) {</div>
-<div class="line"><a id="l02721" name="l02721"></a><span class="lineno"> 2721</span>        *n2++ = LNUMBER; *n2++ = 4; *n2++ = 1; *n2++ = (WORD)(numterms &amp; WORDMASK);</div>
-<div class="line"><a id="l02722" name="l02722"></a><span class="lineno"> 2722</span>    }</div>
-<div class="line"><a id="l02723" name="l02723"></a><span class="lineno"> 2723</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02724" name="l02724"></a><span class="lineno"> 2724</span>        *n2++ = LNUMBER; *n2++ = 5; *n2++ = 2;</div>
-<div class="line"><a id="l02725" name="l02725"></a><span class="lineno"> 2725</span>        *n2++ = (WORD)(numterms &amp; WORDMASK); *n2++ = i;</div>
-<div class="line"><a id="l02726" name="l02726"></a><span class="lineno"> 2726</span>    }</div>
-<div class="line"><a id="l02727" name="l02727"></a><span class="lineno"> 2727</span>    n1 += n1[1];</div>
-<div class="line"><a id="l02728" name="l02728"></a><span class="lineno"> 2728</span>    <span class="keywordflow">while</span> ( n1 &lt; tstop ) *n2++ = *n1++;</div>
-<div class="line"><a id="l02729" name="l02729"></a><span class="lineno"> 2729</span>    AT.WorkPointer[0] = n2 - AT.WorkPointer;</div>
-<div class="line"><a id="l02730" name="l02730"></a><span class="lineno"> 2730</span>    AT.WorkPointer = n2;</div>
-<div class="line"><a id="l02731" name="l02731"></a><span class="lineno"> 2731</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD n1,level) &lt; 0 ) {</div>
-<div class="line"><a id="l02732" name="l02732"></a><span class="lineno"> 2732</span>        AT.WorkPointer = bracketbuffer;</div>
-<div class="line"><a id="l02733" name="l02733"></a><span class="lineno"> 2733</span>        MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02734" name="l02734"></a><span class="lineno"> 2734</span>        MesPrint(<span class="stringliteral">&quot;Called from termsinbracket_ function.&quot;</span>);</div>
-<div class="line"><a id="l02735" name="l02735"></a><span class="lineno"> 2735</span>        MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l02736" name="l02736"></a><span class="lineno"> 2736</span>        <span class="keywordflow">return</span>(-1);</div>
-<div class="line"><a id="l02737" name="l02737"></a><span class="lineno"> 2737</span>    }</div>
-<div class="line"><a id="l02738" name="l02738"></a><span class="lineno"> 2738</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02739" name="l02739"></a><span class="lineno"> 2739</span><span class="comment">    Finished. Reset things and return.</span></div>
-<div class="line"><a id="l02740" name="l02740"></a><span class="lineno"> 2740</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02741" name="l02741"></a><span class="lineno"> 2741</span>    AT.WorkPointer = bracketbuffer;</div>
-<div class="line"><a id="l02742" name="l02742"></a><span class="lineno"> 2742</span>    <span class="keywordflow">return</span>(numterms);</div>
-<div class="line"><a id="l02743" name="l02743"></a><span class="lineno"> 2743</span>}</div>
-<div class="line"><a id="l02744" name="l02744"></a><span class="lineno"> 2744</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02745" name="l02745"></a><span class="lineno"> 2745</span><span class="comment">        #] TermsInBracket :     LONG TermsInBracket(term,level) </span></div>
-<div class="line"><a id="l02746" name="l02746"></a><span class="lineno"> 2746</span><span class="comment">    #] Expressions :</span></div>
-<div class="line"><a id="l02747" name="l02747"></a><span class="lineno"> 2747</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02437" name="l02437"></a><span class="lineno"> 2437</span>        }</div>
+<div class="line"><a id="l02438" name="l02438"></a><span class="lineno"> 2438</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02439" name="l02439"></a><span class="lineno"> 2439</span>            AS.OldNumFactors = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;numfactors pointers&quot;</span>);</div>
+<div class="line"><a id="l02440" name="l02440"></a><span class="lineno"> 2440</span>            AS.Oldvflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;vflags pointers&quot;</span>);</div>
+<div class="line"><a id="l02441" name="l02441"></a><span class="lineno"> 2441</span>            AS.Olduflags = (WORD *)Malloc1(NumExpressions*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;uflags pointers&quot;</span>);</div>
+<div class="line"><a id="l02442" name="l02442"></a><span class="lineno"> 2442</span>            AS.NumOldNumFactors = NumExpressions;</div>
+<div class="line"><a id="l02443" name="l02443"></a><span class="lineno"> 2443</span>        }</div>
+<div class="line"><a id="l02444" name="l02444"></a><span class="lineno"> 2444</span>    }</div>
+<div class="line"><a id="l02445" name="l02445"></a><span class="lineno"> 2445</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; NumExpressions; i++ ) {</div>
+<div class="line"><a id="l02446" name="l02446"></a><span class="lineno"> 2446</span>        AS.OldOnFile[i] = e[i].onfile;</div>
+<div class="line"><a id="l02447" name="l02447"></a><span class="lineno"> 2447</span>        AS.OldNumFactors[i] = e[i].numfactors;</div>
+<div class="line"><a id="l02448" name="l02448"></a><span class="lineno"> 2448</span>        AS.Oldvflags[i] = e[i].vflags;</div>
+<div class="line"><a id="l02449" name="l02449"></a><span class="lineno"> 2449</span>        AS.Olduflags[i] = e[i].uflags;</div>
+<div class="line"><a id="l02450" name="l02450"></a><span class="lineno"> 2450</span>    }</div>
+<div class="line"><a id="l02451" name="l02451"></a><span class="lineno"> 2451</span>}</div>
+<div class="line"><a id="l02452" name="l02452"></a><span class="lineno"> 2452</span> </div>
+<div class="line"><a id="l02453" name="l02453"></a><span class="lineno"> 2453</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02454" name="l02454"></a><span class="lineno"> 2454</span><span class="comment">        #] UpdatePositions : </span></div>
+<div class="line"><a id="l02455" name="l02455"></a><span class="lineno"> 2455</span><span class="comment">        #[ CountTerms1 :        LONG CountTerms1()</span></div>
+<div class="line"><a id="l02456" name="l02456"></a><span class="lineno"> 2456</span><span class="comment"></span> </div>
+<div class="line"><a id="l02457" name="l02457"></a><span class="lineno"> 2457</span><span class="comment">        Counts the terms in the current deferred bracket</span></div>
+<div class="line"><a id="l02458" name="l02458"></a><span class="lineno"> 2458</span><span class="comment">        Is mainly an adaptation of the routine Deferred in proces.c</span></div>
+<div class="line"><a id="l02459" name="l02459"></a><span class="lineno"> 2459</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02460" name="l02460"></a><span class="lineno"> 2460</span> </div>
+<div class="line"><a id="l02461" name="l02461"></a><span class="lineno"> 2461</span>LONG CountTerms1(PHEAD0)</div>
+<div class="line"><a id="l02462" name="l02462"></a><span class="lineno"> 2462</span>{</div>
+<div class="line"><a id="l02463" name="l02463"></a><span class="lineno"> 2463</span>    GETBIDENTITY</div>
+<div class="line"><a id="l02464" name="l02464"></a><span class="lineno"> 2464</span>    <a class="code hl_struct" href="struct_po_si_ti_on.html">POSITION</a> oldposition, startposition;</div>
+<div class="line"><a id="l02465" name="l02465"></a><span class="lineno"> 2465</span>    WORD *t, *m, *mstop, decr, i, *oldwork, retval;</div>
+<div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span>    WORD *oldipointer = AR.CompressPointer;</div>
+<div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span>    WORD oldGetOneFile = AR.GetOneFile, olddeferflag = AR.DeferFlag;</div>
+<div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span>    LONG numterms = 0;</div>
+<div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span>    AR.GetOneFile = 1;</div>
+<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>    oldwork = AT.WorkPointer;</div>
+<div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>    AT.WorkPointer = (WORD *)(((UBYTE *)(AT.WorkPointer)) + AM.MaxTer);</div>
+<div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span>    AR.DeferFlag = 0;</div>
+<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    startposition = AR.DefPosition;</div>
+<div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span><span class="comment">        Store old position</span></div>
+<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02477" name="l02477"></a><span class="lineno"> 2477</span>    <span class="keywordflow">if</span> ( AR.infile-&gt;handle &gt;= 0 ) {</div>
+<div class="line"><a id="l02478" name="l02478"></a><span class="lineno"> 2478</span>        PUTZERO(oldposition);</div>
+<div class="line"><a id="l02479" name="l02479"></a><span class="lineno"> 2479</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02480" name="l02480"></a><span class="lineno"> 2480</span><span class="comment">        SeekFile(AR.infile-&gt;handle,&amp;oldposition,SEEK_CUR);</span></div>
+<div class="line"><a id="l02481" name="l02481"></a><span class="lineno"> 2481</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02482" name="l02482"></a><span class="lineno"> 2482</span>    }</div>
+<div class="line"><a id="l02483" name="l02483"></a><span class="lineno"> 2483</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02484" name="l02484"></a><span class="lineno"> 2484</span>        SETBASEPOSITION(oldposition,AR.infile-&gt;POfill-AR.infile-&gt;PObuffer);</div>
+<div class="line"><a id="l02485" name="l02485"></a><span class="lineno"> 2485</span>        AR.infile-&gt;POfill = (WORD *)((UBYTE *)(AR.infile-&gt;PObuffer)</div>
+<div class="line"><a id="l02486" name="l02486"></a><span class="lineno"> 2486</span>                    +BASEPOSITION(startposition));</div>
+<div class="line"><a id="l02487" name="l02487"></a><span class="lineno"> 2487</span>    }</div>
+<div class="line"><a id="l02488" name="l02488"></a><span class="lineno"> 2488</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02489" name="l02489"></a><span class="lineno"> 2489</span><span class="comment">        Look in the CompressBuffer where the bracket contents start</span></div>
+<div class="line"><a id="l02490" name="l02490"></a><span class="lineno"> 2490</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02491" name="l02491"></a><span class="lineno"> 2491</span>    t = m = AR.CompressBuffer;</div>
+<div class="line"><a id="l02492" name="l02492"></a><span class="lineno"> 2492</span>    t += *t;</div>
+<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span>    mstop = t - ABS(t[-1]);</div>
+<div class="line"><a id="l02494" name="l02494"></a><span class="lineno"> 2494</span>    m++;</div>
+<div class="line"><a id="l02495" name="l02495"></a><span class="lineno"> 2495</span>    <span class="keywordflow">while</span> ( *m != HAAKJE &amp;&amp; m &lt; mstop ) m += m[1];</div>
+<div class="line"><a id="l02496" name="l02496"></a><span class="lineno"> 2496</span>    <span class="keywordflow">if</span> ( m &gt;= mstop ) { <span class="comment">/* No deferred action! */</span></div>
+<div class="line"><a id="l02497" name="l02497"></a><span class="lineno"> 2497</span>        numterms = 1;</div>
+<div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span>        AR.DeferFlag = olddeferflag;</div>
+<div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span>        AT.WorkPointer = oldwork;</div>
+<div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span>        AR.GetOneFile = oldGetOneFile;</div>
+<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span>        <span class="keywordflow">return</span>(numterms);</div>
+<div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span>    }</div>
+<div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span>    mstop = m + m[1];</div>
+<div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span>    decr = WORDDIF(mstop,AR.CompressBuffer)-1;</div>
+<div class="line"><a id="l02505" name="l02505"></a><span class="lineno"> 2505</span> </div>
+<div class="line"><a id="l02506" name="l02506"></a><span class="lineno"> 2506</span>    m = AR.CompressBuffer;</div>
+<div class="line"><a id="l02507" name="l02507"></a><span class="lineno"> 2507</span>    t = AR.CompressPointer;</div>
+<div class="line"><a id="l02508" name="l02508"></a><span class="lineno"> 2508</span>    i = *m;</div>
+<div class="line"><a id="l02509" name="l02509"></a><span class="lineno"> 2509</span>    NCOPY(t,m,i);</div>
+<div class="line"><a id="l02510" name="l02510"></a><span class="lineno"> 2510</span>    AR.TePos = 0;</div>
+<div class="line"><a id="l02511" name="l02511"></a><span class="lineno"> 2511</span>    AN.TeSuOut = 0;</div>
+<div class="line"><a id="l02512" name="l02512"></a><span class="lineno"> 2512</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02513" name="l02513"></a><span class="lineno"> 2513</span><span class="comment">        Status:</span></div>
+<div class="line"><a id="l02514" name="l02514"></a><span class="lineno"> 2514</span><span class="comment">        First bracket content starts at mstop.</span></div>
+<div class="line"><a id="l02515" name="l02515"></a><span class="lineno"> 2515</span><span class="comment">        Next term starts at startposition.</span></div>
+<div class="line"><a id="l02516" name="l02516"></a><span class="lineno"> 2516</span><span class="comment">        Decompression information is in AR.CompressPointer.</span></div>
+<div class="line"><a id="l02517" name="l02517"></a><span class="lineno"> 2517</span><span class="comment">        The outside of the bracket runs from AR.CompressBuffer+1 to mstop.</span></div>
+<div class="line"><a id="l02518" name="l02518"></a><span class="lineno"> 2518</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02519" name="l02519"></a><span class="lineno"> 2519</span>    AR.CompressPointer = oldipointer;</div>
+<div class="line"><a id="l02520" name="l02520"></a><span class="lineno"> 2520</span>    <span class="keywordflow">for</span>(;;) {</div>
+<div class="line"><a id="l02521" name="l02521"></a><span class="lineno"> 2521</span>        numterms++;</div>
+<div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span>        retval = GetOneTerm(BHEAD AT.WorkPointer,AR.infile,&amp;startposition,0);</div>
+<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>        <span class="keywordflow">if</span> ( retval &gt;= 0 ) AR.CompressPointer = oldipointer;</div>
+<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>        <span class="keywordflow">if</span> ( retval &lt;= 0 ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>        t = AR.CompressPointer;</div>
+<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>        <span class="keywordflow">if</span> ( *t &lt; (1 + decr + ABS(*(t+*t-1))) ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>        t++;</div>
+<div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>        m = AR.CompressBuffer+1;</div>
+<div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>        <span class="keywordflow">while</span> ( m &lt; mstop ) {</div>
+<div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span>            <span class="keywordflow">if</span> ( *m != *t ) <span class="keywordflow">goto</span> Thatsit;</div>
+<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span>            m++; t++;</div>
+<div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span>        }</div>
+<div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span>    }</div>
+<div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span>Thatsit:;</div>
+<div class="line"><a id="l02535" name="l02535"></a><span class="lineno"> 2535</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02536" name="l02536"></a><span class="lineno"> 2536</span><span class="comment">        Finished. Reposition the file, restore information and return.</span></div>
+<div class="line"><a id="l02537" name="l02537"></a><span class="lineno"> 2537</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02538" name="l02538"></a><span class="lineno"> 2538</span>    AT.WorkPointer = oldwork;</div>
+<div class="line"><a id="l02539" name="l02539"></a><span class="lineno"> 2539</span>    <span class="keywordflow">if</span> ( AR.infile-&gt;handle &gt;= 0 ) {</div>
+<div class="line"><a id="l02540" name="l02540"></a><span class="lineno"> 2540</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02541" name="l02541"></a><span class="lineno"> 2541</span><span class="comment">        SeekFile(AR.infile-&gt;handle,&amp;oldposition,SEEK_SET);</span></div>
+<div class="line"><a id="l02542" name="l02542"></a><span class="lineno"> 2542</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02543" name="l02543"></a><span class="lineno"> 2543</span>    }</div>
+<div class="line"><a id="l02544" name="l02544"></a><span class="lineno"> 2544</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02545" name="l02545"></a><span class="lineno"> 2545</span>        AR.infile-&gt;POfill = AR.infile-&gt;PObuffer + BASEPOSITION(oldposition);</div>
+<div class="line"><a id="l02546" name="l02546"></a><span class="lineno"> 2546</span>    }</div>
+<div class="line"><a id="l02547" name="l02547"></a><span class="lineno"> 2547</span>    AR.DeferFlag = olddeferflag;</div>
+<div class="line"><a id="l02548" name="l02548"></a><span class="lineno"> 2548</span>    AR.GetOneFile = oldGetOneFile;</div>
+<div class="line"><a id="l02549" name="l02549"></a><span class="lineno"> 2549</span>    <span class="keywordflow">return</span>(numterms);</div>
+<div class="line"><a id="l02550" name="l02550"></a><span class="lineno"> 2550</span>}</div>
+<div class="line"><a id="l02551" name="l02551"></a><span class="lineno"> 2551</span> </div>
+<div class="line"><a id="l02552" name="l02552"></a><span class="lineno"> 2552</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02553" name="l02553"></a><span class="lineno"> 2553</span><span class="comment">        #] CountTerms1 : </span></div>
+<div class="line"><a id="l02554" name="l02554"></a><span class="lineno"> 2554</span><span class="comment">        #[ TermsInBracket :     LONG TermsInBracket(term,level)</span></div>
+<div class="line"><a id="l02555" name="l02555"></a><span class="lineno"> 2555</span><span class="comment"></span> </div>
+<div class="line"><a id="l02556" name="l02556"></a><span class="lineno"> 2556</span><span class="comment">    The function TermsInBracket_()</span></div>
+<div class="line"><a id="l02557" name="l02557"></a><span class="lineno"> 2557</span><span class="comment">    Syntax:</span></div>
+<div class="line"><a id="l02558" name="l02558"></a><span class="lineno"> 2558</span><span class="comment">        TermsInBracket_() : The current bracket in a Keep Brackets</span></div>
+<div class="line"><a id="l02559" name="l02559"></a><span class="lineno"> 2559</span><span class="comment">        TermsInBracket_(bracket) : This bracket in the current expression</span></div>
+<div class="line"><a id="l02560" name="l02560"></a><span class="lineno"> 2560</span><span class="comment">        TermsInBracket_(expression,bracket) : This bracket in the given expression</span></div>
+<div class="line"><a id="l02561" name="l02561"></a><span class="lineno"> 2561</span><span class="comment">    All other specifications don&#39;t have any effect.</span></div>
+<div class="line"><a id="l02562" name="l02562"></a><span class="lineno"> 2562</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02563" name="l02563"></a><span class="lineno"> 2563</span> </div>
+<div class="line"><a id="l02564" name="l02564"></a><span class="lineno"> 2564</span><span class="preprocessor">#define CURRENTBRACKET 1</span></div>
+<div class="line"><a id="l02565" name="l02565"></a><span class="lineno"> 2565</span><span class="preprocessor">#define BRACKETCURRENTEXPR 2</span></div>
+<div class="line"><a id="l02566" name="l02566"></a><span class="lineno"> 2566</span><span class="preprocessor">#define BRACKETOTHEREXPR 3</span></div>
+<div class="line"><a id="l02567" name="l02567"></a><span class="lineno"> 2567</span><span class="preprocessor">#define NOBRACKETACTIVE 4</span></div>
+<div class="line"><a id="l02568" name="l02568"></a><span class="lineno"> 2568</span> </div>
+<div class="line"><a id="l02569" name="l02569"></a><span class="lineno"> 2569</span>LONG TermsInBracket(PHEAD WORD *term, WORD level)</div>
+<div class="line"><a id="l02570" name="l02570"></a><span class="lineno"> 2570</span>{</div>
+<div class="line"><a id="l02571" name="l02571"></a><span class="lineno"> 2571</span>    WORD *t, *tstop, *b, *tt, *n1, *n2;</div>
+<div class="line"><a id="l02572" name="l02572"></a><span class="lineno"> 2572</span>    <span class="keywordtype">int</span> type = 0, i, num;</div>
+<div class="line"><a id="l02573" name="l02573"></a><span class="lineno"> 2573</span>    LONG numterms = 0;</div>
+<div class="line"><a id="l02574" name="l02574"></a><span class="lineno"> 2574</span>    WORD *bracketbuffer = AT.WorkPointer;</div>
+<div class="line"><a id="l02575" name="l02575"></a><span class="lineno"> 2575</span>    t = term; GETSTOP(t,tstop);</div>
+<div class="line"><a id="l02576" name="l02576"></a><span class="lineno"> 2576</span>    t++; b = bracketbuffer;</div>
+<div class="line"><a id="l02577" name="l02577"></a><span class="lineno"> 2577</span>    <span class="keywordflow">while</span> ( t &lt; tstop ) {</div>
+<div class="line"><a id="l02578" name="l02578"></a><span class="lineno"> 2578</span>        <span class="keywordflow">if</span> ( *t != TERMSINBRACKET ) { t += t[1]; <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l02579" name="l02579"></a><span class="lineno"> 2579</span>        <span class="keywordflow">if</span> ( t[1] == FUNHEAD || (</div>
+<div class="line"><a id="l02580" name="l02580"></a><span class="lineno"> 2580</span>             t[1] == FUNHEAD+2</div>
+<div class="line"><a id="l02581" name="l02581"></a><span class="lineno"> 2581</span>            &amp;&amp; t[FUNHEAD] == -SNUMBER</div>
+<div class="line"><a id="l02582" name="l02582"></a><span class="lineno"> 2582</span>            &amp;&amp; t[FUNHEAD+1] == 0</div>
+<div class="line"><a id="l02583" name="l02583"></a><span class="lineno"> 2583</span>         ) ) {</div>
+<div class="line"><a id="l02584" name="l02584"></a><span class="lineno"> 2584</span>            <span class="keywordflow">if</span> ( AC.ComDefer == 0 ) {</div>
+<div class="line"><a id="l02585" name="l02585"></a><span class="lineno"> 2585</span>                type = NOBRACKETACTIVE;</div>
+<div class="line"><a id="l02586" name="l02586"></a><span class="lineno"> 2586</span>            }</div>
+<div class="line"><a id="l02587" name="l02587"></a><span class="lineno"> 2587</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02588" name="l02588"></a><span class="lineno"> 2588</span>                type = CURRENTBRACKET;</div>
+<div class="line"><a id="l02589" name="l02589"></a><span class="lineno"> 2589</span>            }</div>
+<div class="line"><a id="l02590" name="l02590"></a><span class="lineno"> 2590</span>            *b = 0;</div>
+<div class="line"><a id="l02591" name="l02591"></a><span class="lineno"> 2591</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02592" name="l02592"></a><span class="lineno"> 2592</span>        }</div>
+<div class="line"><a id="l02593" name="l02593"></a><span class="lineno"> 2593</span>        <span class="keywordflow">if</span> ( t[FUNHEAD] == -EXPRESSION ) {</div>
+<div class="line"><a id="l02594" name="l02594"></a><span class="lineno"> 2594</span>            <span class="keywordflow">if</span> ( t[FUNHEAD+2] &lt; 0 ) {</div>
+<div class="line"><a id="l02595" name="l02595"></a><span class="lineno"> 2595</span>                <span class="keywordflow">if</span> ( ( t[FUNHEAD+2] &lt;= -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+3 ) ) {</div>
+<div class="line"><a id="l02596" name="l02596"></a><span class="lineno"> 2596</span>                    type = BRACKETOTHEREXPR;</div>
+<div class="line"><a id="l02597" name="l02597"></a><span class="lineno"> 2597</span>                    *b++ = FUNHEAD+4; *b++ = -t[FUNHEAD+2]; *b++ = FUNHEAD;</div>
+<div class="line"><a id="l02598" name="l02598"></a><span class="lineno"> 2598</span>                    <span class="keywordflow">for</span> ( i = 2; i &lt; FUNHEAD; i++ ) *b++ = 0;</div>
+<div class="line"><a id="l02599" name="l02599"></a><span class="lineno"> 2599</span>                    *b++ = 1; *b++ = 1; *b++ = 3;</div>
+<div class="line"><a id="l02600" name="l02600"></a><span class="lineno"> 2600</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02601" name="l02601"></a><span class="lineno"> 2601</span>                }</div>
+<div class="line"><a id="l02602" name="l02602"></a><span class="lineno"> 2602</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD+2] &gt; -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+4 ) ) {</div>
+<div class="line"><a id="l02603" name="l02603"></a><span class="lineno"> 2603</span>                    type = BRACKETOTHEREXPR;</div>
+<div class="line"><a id="l02604" name="l02604"></a><span class="lineno"> 2604</span>                    tt = t + FUNHEAD+2;</div>
+<div class="line"><a id="l02605" name="l02605"></a><span class="lineno"> 2605</span>                    <span class="keywordflow">switch</span> ( *tt ) {</div>
+<div class="line"><a id="l02606" name="l02606"></a><span class="lineno"> 2606</span>                        <span class="keywordflow">case</span> -SYMBOL:</div>
+<div class="line"><a id="l02607" name="l02607"></a><span class="lineno"> 2607</span>                            *b++ = 8; *b++ = SYMBOL; *b++ = 4; *b++ = tt[1];</div>
+<div class="line"><a id="l02608" name="l02608"></a><span class="lineno"> 2608</span>                            *b++ = 1; *b++ = 1; *b++ = 1; *b++ = 3;</div>
+<div class="line"><a id="l02609" name="l02609"></a><span class="lineno"> 2609</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02610" name="l02610"></a><span class="lineno"> 2610</span>                        <span class="keywordflow">case</span> -SNUMBER:</div>
+<div class="line"><a id="l02611" name="l02611"></a><span class="lineno"> 2611</span>                            <span class="keywordflow">if</span> ( tt[1] == 1 ) {</div>
+<div class="line"><a id="l02612" name="l02612"></a><span class="lineno"> 2612</span>                                *b++ = 4; *b++ = 1; *b++ = 1; *b++ = 3;</div>
+<div class="line"><a id="l02613" name="l02613"></a><span class="lineno"> 2613</span>                            }</div>
+<div class="line"><a id="l02614" name="l02614"></a><span class="lineno"> 2614</span>                            <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllBraReq;</div>
+<div class="line"><a id="l02615" name="l02615"></a><span class="lineno"> 2615</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02616" name="l02616"></a><span class="lineno"> 2616</span>                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l02617" name="l02617"></a><span class="lineno"> 2617</span>                            <span class="keywordflow">goto</span> IllBraReq;</div>
+<div class="line"><a id="l02618" name="l02618"></a><span class="lineno"> 2618</span>                    }</div>
+<div class="line"><a id="l02619" name="l02619"></a><span class="lineno"> 2619</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02620" name="l02620"></a><span class="lineno"> 2620</span>                }</div>
+<div class="line"><a id="l02621" name="l02621"></a><span class="lineno"> 2621</span>            }</div>
+<div class="line"><a id="l02622" name="l02622"></a><span class="lineno"> 2622</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD+2] == (t[1]-FUNHEAD-2) ) &amp;&amp;</div>
+<div class="line"><a id="l02623" name="l02623"></a><span class="lineno"> 2623</span>                      ( t[FUNHEAD+2+ARGHEAD] == (t[FUNHEAD+2]-ARGHEAD) ) ) {</div>
+<div class="line"><a id="l02624" name="l02624"></a><span class="lineno"> 2624</span>                type = BRACKETOTHEREXPR;</div>
+<div class="line"><a id="l02625" name="l02625"></a><span class="lineno"> 2625</span>                tt = t + FUNHEAD + ARGHEAD; num = *tt;</div>
+<div class="line"><a id="l02626" name="l02626"></a><span class="lineno"> 2626</span>                <span class="keywordflow">for</span> ( i = 0; i &lt; num; i++ ) *b++ = *tt++;</div>
+<div class="line"><a id="l02627" name="l02627"></a><span class="lineno"> 2627</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02628" name="l02628"></a><span class="lineno"> 2628</span>            }</div>
+<div class="line"><a id="l02629" name="l02629"></a><span class="lineno"> 2629</span>        }</div>
+<div class="line"><a id="l02630" name="l02630"></a><span class="lineno"> 2630</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02631" name="l02631"></a><span class="lineno"> 2631</span>            <span class="keywordflow">if</span> ( t[FUNHEAD] &lt; 0 ) {</div>
+<div class="line"><a id="l02632" name="l02632"></a><span class="lineno"> 2632</span>                <span class="keywordflow">if</span> ( ( t[FUNHEAD] &lt;= -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+1 ) ) {</div>
+<div class="line"><a id="l02633" name="l02633"></a><span class="lineno"> 2633</span>                    type = BRACKETCURRENTEXPR;</div>
+<div class="line"><a id="l02634" name="l02634"></a><span class="lineno"> 2634</span>                    *b++ = FUNHEAD+4; *b++ = -t[FUNHEAD+2]; *b++ = FUNHEAD;</div>
+<div class="line"><a id="l02635" name="l02635"></a><span class="lineno"> 2635</span>                    <span class="keywordflow">for</span> ( i = 2; i &lt; FUNHEAD; i++ ) *b++ = 0;</div>
+<div class="line"><a id="l02636" name="l02636"></a><span class="lineno"> 2636</span>                    *b++ = 1; *b++ = 1; *b++ = 3; *b = 0;</div>
+<div class="line"><a id="l02637" name="l02637"></a><span class="lineno"> 2637</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02638" name="l02638"></a><span class="lineno"> 2638</span>                }</div>
+<div class="line"><a id="l02639" name="l02639"></a><span class="lineno"> 2639</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD] &gt; -FUNCTION ) &amp;&amp; ( t[1] == FUNHEAD+2 ) ) {</div>
+<div class="line"><a id="l02640" name="l02640"></a><span class="lineno"> 2640</span>                    type = BRACKETCURRENTEXPR;</div>
+<div class="line"><a id="l02641" name="l02641"></a><span class="lineno"> 2641</span>                    tt = t + FUNHEAD+2;</div>
+<div class="line"><a id="l02642" name="l02642"></a><span class="lineno"> 2642</span>                    <span class="keywordflow">switch</span> ( *tt ) {</div>
+<div class="line"><a id="l02643" name="l02643"></a><span class="lineno"> 2643</span>                        <span class="keywordflow">case</span> -SYMBOL:</div>
+<div class="line"><a id="l02644" name="l02644"></a><span class="lineno"> 2644</span>                            *b++ = 8; *b++ = SYMBOL; *b++ = 4; *b++ = tt[1];</div>
+<div class="line"><a id="l02645" name="l02645"></a><span class="lineno"> 2645</span>                            *b++ = 1; *b++ = 1; *b++ = 1; *b++ = 3;</div>
+<div class="line"><a id="l02646" name="l02646"></a><span class="lineno"> 2646</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02647" name="l02647"></a><span class="lineno"> 2647</span>                        <span class="keywordflow">case</span> -SNUMBER:</div>
+<div class="line"><a id="l02648" name="l02648"></a><span class="lineno"> 2648</span>                            <span class="keywordflow">if</span> ( tt[1] == 1 ) {</div>
+<div class="line"><a id="l02649" name="l02649"></a><span class="lineno"> 2649</span>                                *b++ = 4; *b++ = 1; *b++ = 1; *b++ = 3;</div>
+<div class="line"><a id="l02650" name="l02650"></a><span class="lineno"> 2650</span>                            }</div>
+<div class="line"><a id="l02651" name="l02651"></a><span class="lineno"> 2651</span>                            <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllBraReq;</div>
+<div class="line"><a id="l02652" name="l02652"></a><span class="lineno"> 2652</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02653" name="l02653"></a><span class="lineno"> 2653</span>                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l02654" name="l02654"></a><span class="lineno"> 2654</span>                            <span class="keywordflow">goto</span> IllBraReq;</div>
+<div class="line"><a id="l02655" name="l02655"></a><span class="lineno"> 2655</span>                    }</div>
+<div class="line"><a id="l02656" name="l02656"></a><span class="lineno"> 2656</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02657" name="l02657"></a><span class="lineno"> 2657</span>                }</div>
+<div class="line"><a id="l02658" name="l02658"></a><span class="lineno"> 2658</span>            }</div>
+<div class="line"><a id="l02659" name="l02659"></a><span class="lineno"> 2659</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( t[FUNHEAD] == (t[1]-FUNHEAD) ) &amp;&amp;</div>
+<div class="line"><a id="l02660" name="l02660"></a><span class="lineno"> 2660</span>                      ( t[FUNHEAD+ARGHEAD] == (t[FUNHEAD]-ARGHEAD) ) ) {</div>
+<div class="line"><a id="l02661" name="l02661"></a><span class="lineno"> 2661</span>                type = BRACKETCURRENTEXPR;</div>
+<div class="line"><a id="l02662" name="l02662"></a><span class="lineno"> 2662</span>                tt = t + FUNHEAD + ARGHEAD; num = *tt;</div>
+<div class="line"><a id="l02663" name="l02663"></a><span class="lineno"> 2663</span>                <span class="keywordflow">for</span> ( i = 0; i &lt; num; i++ ) *b++ = *tt++;</div>
+<div class="line"><a id="l02664" name="l02664"></a><span class="lineno"> 2664</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02665" name="l02665"></a><span class="lineno"> 2665</span>            }</div>
+<div class="line"><a id="l02666" name="l02666"></a><span class="lineno"> 2666</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02667" name="l02667"></a><span class="lineno"> 2667</span>IllBraReq:;</div>
+<div class="line"><a id="l02668" name="l02668"></a><span class="lineno"> 2668</span>                MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02669" name="l02669"></a><span class="lineno"> 2669</span>                MesPrint(<span class="stringliteral">&quot;Illegal bracket request in termsinbracket_ function.&quot;</span>);</div>
+<div class="line"><a id="l02670" name="l02670"></a><span class="lineno"> 2670</span>                MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02671" name="l02671"></a><span class="lineno"> 2671</span>                Terminate(-1);</div>
+<div class="line"><a id="l02672" name="l02672"></a><span class="lineno"> 2672</span>            }</div>
+<div class="line"><a id="l02673" name="l02673"></a><span class="lineno"> 2673</span>        }</div>
+<div class="line"><a id="l02674" name="l02674"></a><span class="lineno"> 2674</span>        t += t[1];</div>
+<div class="line"><a id="l02675" name="l02675"></a><span class="lineno"> 2675</span>    }</div>
+<div class="line"><a id="l02676" name="l02676"></a><span class="lineno"> 2676</span>    AT.WorkPointer = b;</div>
+<div class="line"><a id="l02677" name="l02677"></a><span class="lineno"> 2677</span>    <span class="keywordflow">if</span> ( AT.WorkPointer + *term +4 &gt; AT.WorkTop ) {</div>
+<div class="line"><a id="l02678" name="l02678"></a><span class="lineno"> 2678</span>        MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02679" name="l02679"></a><span class="lineno"> 2679</span>        MesWork();</div>
+<div class="line"><a id="l02680" name="l02680"></a><span class="lineno"> 2680</span>        MesPrint(<span class="stringliteral">&quot;Called from termsinbracket_ function.&quot;</span>);</div>
+<div class="line"><a id="l02681" name="l02681"></a><span class="lineno"> 2681</span>        MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02682" name="l02682"></a><span class="lineno"> 2682</span>        <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l02683" name="l02683"></a><span class="lineno"> 2683</span>    }</div>
+<div class="line"><a id="l02684" name="l02684"></a><span class="lineno"> 2684</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02685" name="l02685"></a><span class="lineno"> 2685</span><span class="comment">    We are now in the position to look for the bracket</span></div>
+<div class="line"><a id="l02686" name="l02686"></a><span class="lineno"> 2686</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02687" name="l02687"></a><span class="lineno"> 2687</span>    <span class="keywordflow">switch</span> ( type ) {</div>
+<div class="line"><a id="l02688" name="l02688"></a><span class="lineno"> 2688</span>        <span class="keywordflow">case</span> CURRENTBRACKET:</div>
+<div class="line"><a id="l02689" name="l02689"></a><span class="lineno"> 2689</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02690" name="l02690"></a><span class="lineno"> 2690</span><span class="comment">            The code here should be rather similar to when we pick up</span></div>
+<div class="line"><a id="l02691" name="l02691"></a><span class="lineno"> 2691</span><span class="comment">            the contents of the bracket. In our case we only count the</span></div>
+<div class="line"><a id="l02692" name="l02692"></a><span class="lineno"> 2692</span><span class="comment">            terms though.</span></div>
+<div class="line"><a id="l02693" name="l02693"></a><span class="lineno"> 2693</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02694" name="l02694"></a><span class="lineno"> 2694</span>            numterms = CountTerms1(BHEAD0);</div>
+<div class="line"><a id="l02695" name="l02695"></a><span class="lineno"> 2695</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02696" name="l02696"></a><span class="lineno"> 2696</span>        <span class="keywordflow">case</span> BRACKETCURRENTEXPR:</div>
+<div class="line"><a id="l02697" name="l02697"></a><span class="lineno"> 2697</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02698" name="l02698"></a><span class="lineno"> 2698</span><span class="comment">            Not implemented yet.</span></div>
+<div class="line"><a id="l02699" name="l02699"></a><span class="lineno"> 2699</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02700" name="l02700"></a><span class="lineno"> 2700</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02701" name="l02701"></a><span class="lineno"> 2701</span>            MesPrint(<span class="stringliteral">&quot;termsinbracket_ function currently only handles Keep Brackets.&quot;</span>);</div>
+<div class="line"><a id="l02702" name="l02702"></a><span class="lineno"> 2702</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02703" name="l02703"></a><span class="lineno"> 2703</span>            <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l02704" name="l02704"></a><span class="lineno"> 2704</span>        <span class="keywordflow">case</span> BRACKETOTHEREXPR:</div>
+<div class="line"><a id="l02705" name="l02705"></a><span class="lineno"> 2705</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02706" name="l02706"></a><span class="lineno"> 2706</span>            MesPrint(<span class="stringliteral">&quot;termsinbracket_ function currently only handles Keep Brackets.&quot;</span>);</div>
+<div class="line"><a id="l02707" name="l02707"></a><span class="lineno"> 2707</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02708" name="l02708"></a><span class="lineno"> 2708</span>            <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l02709" name="l02709"></a><span class="lineno"> 2709</span>        <span class="keywordflow">case</span> NOBRACKETACTIVE:</div>
+<div class="line"><a id="l02710" name="l02710"></a><span class="lineno"> 2710</span>            numterms = 1;</div>
+<div class="line"><a id="l02711" name="l02711"></a><span class="lineno"> 2711</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02712" name="l02712"></a><span class="lineno"> 2712</span>    }</div>
+<div class="line"><a id="l02713" name="l02713"></a><span class="lineno"> 2713</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02714" name="l02714"></a><span class="lineno"> 2714</span><span class="comment">    Now we have the number in numterms. We replace the function by it.</span></div>
+<div class="line"><a id="l02715" name="l02715"></a><span class="lineno"> 2715</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02716" name="l02716"></a><span class="lineno"> 2716</span>    n1 = term; n2 = AT.WorkPointer; tstop = n1 + *n1;</div>
+<div class="line"><a id="l02717" name="l02717"></a><span class="lineno"> 2717</span>    <span class="keywordflow">while</span> ( n1 &lt; t ) *n2++ = *n1++;</div>
+<div class="line"><a id="l02718" name="l02718"></a><span class="lineno"> 2718</span>    i = numterms &gt;&gt; BITSINWORD;</div>
+<div class="line"><a id="l02719" name="l02719"></a><span class="lineno"> 2719</span>    <span class="keywordflow">if</span> ( i == 0 ) {</div>
+<div class="line"><a id="l02720" name="l02720"></a><span class="lineno"> 2720</span>        *n2++ = LNUMBER; *n2++ = 4; *n2++ = 1; *n2++ = (WORD)(numterms &amp; WORDMASK);</div>
+<div class="line"><a id="l02721" name="l02721"></a><span class="lineno"> 2721</span>    }</div>
+<div class="line"><a id="l02722" name="l02722"></a><span class="lineno"> 2722</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02723" name="l02723"></a><span class="lineno"> 2723</span>        *n2++ = LNUMBER; *n2++ = 5; *n2++ = 2;</div>
+<div class="line"><a id="l02724" name="l02724"></a><span class="lineno"> 2724</span>        *n2++ = (WORD)(numterms &amp; WORDMASK); *n2++ = i;</div>
+<div class="line"><a id="l02725" name="l02725"></a><span class="lineno"> 2725</span>    }</div>
+<div class="line"><a id="l02726" name="l02726"></a><span class="lineno"> 2726</span>    n1 += n1[1];</div>
+<div class="line"><a id="l02727" name="l02727"></a><span class="lineno"> 2727</span>    <span class="keywordflow">while</span> ( n1 &lt; tstop ) *n2++ = *n1++;</div>
+<div class="line"><a id="l02728" name="l02728"></a><span class="lineno"> 2728</span>    AT.WorkPointer[0] = n2 - AT.WorkPointer;</div>
+<div class="line"><a id="l02729" name="l02729"></a><span class="lineno"> 2729</span>    AT.WorkPointer = n2;</div>
+<div class="line"><a id="l02730" name="l02730"></a><span class="lineno"> 2730</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD n1,level) &lt; 0 ) {</div>
+<div class="line"><a id="l02731" name="l02731"></a><span class="lineno"> 2731</span>        AT.WorkPointer = bracketbuffer;</div>
+<div class="line"><a id="l02732" name="l02732"></a><span class="lineno"> 2732</span>        MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02733" name="l02733"></a><span class="lineno"> 2733</span>        MesPrint(<span class="stringliteral">&quot;Called from termsinbracket_ function.&quot;</span>);</div>
+<div class="line"><a id="l02734" name="l02734"></a><span class="lineno"> 2734</span>        MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l02735" name="l02735"></a><span class="lineno"> 2735</span>        <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a id="l02736" name="l02736"></a><span class="lineno"> 2736</span>    }</div>
+<div class="line"><a id="l02737" name="l02737"></a><span class="lineno"> 2737</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02738" name="l02738"></a><span class="lineno"> 2738</span><span class="comment">    Finished. Reset things and return.</span></div>
+<div class="line"><a id="l02739" name="l02739"></a><span class="lineno"> 2739</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02740" name="l02740"></a><span class="lineno"> 2740</span>    AT.WorkPointer = bracketbuffer;</div>
+<div class="line"><a id="l02741" name="l02741"></a><span class="lineno"> 2741</span>    <span class="keywordflow">return</span>(numterms);</div>
+<div class="line"><a id="l02742" name="l02742"></a><span class="lineno"> 2742</span>}</div>
+<div class="line"><a id="l02743" name="l02743"></a><span class="lineno"> 2743</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02744" name="l02744"></a><span class="lineno"> 2744</span><span class="comment">        #] TermsInBracket :     LONG TermsInBracket(term,level) </span></div>
+<div class="line"><a id="l02745" name="l02745"></a><span class="lineno"> 2745</span><span class="comment">    #] Expressions :</span></div>
+<div class="line"><a id="l02746" name="l02746"></a><span class="lineno"> 2746</span><span class="comment">*/</span></div>
 <div class="ttc" id="acomtool_8c_html_ad6f6e76a3969acee0be0a3c9a7c2a36a"><div class="ttname"><a href="comtool_8c.html#ad6f6e76a3969acee0be0a3c9a7c2a36a">clearcbuf</a></div><div class="ttdeci">void clearcbuf(WORD num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00116">comtool.c:116</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a3f839f0db36a7c08ae5fbf187ceabdea"><div class="ttname"><a href="declare_8h.html#a3f839f0db36a7c08ae5fbf187ceabdea">CleanUpSort</a></div><div class="ttdeci">void CleanUpSort(int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04856">sort.c:4856</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03267">proces.c:3267</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a7a0f6c87d09f682587645c1e79ea6fda"><div class="ttname"><a href="declare_8h.html#a7a0f6c87d09f682587645c1e79ea6fda">Processor</a></div><div class="ttdeci">int Processor(void)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l00064">proces.c:64</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a90fab21487809d64e64f115845dcdde9"><div class="ttname"><a href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a></div><div class="ttdeci">int ClearOptimize(void)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04975">optimize.cc:4975</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a90fab21487809d64e64f115845dcdde9"><div class="ttname"><a href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a></div><div class="ttdeci">int ClearOptimize(void)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04974">optimize.cc:4974</a></div></div>
 <div class="ttc" id="adeclare_8h_html_abe00108d38230c054397074efa88b0e5"><div class="ttname"><a href="declare_8h.html#abe00108d38230c054397074efa88b0e5">MakeInverses</a></div><div class="ttdeci">int MakeInverses(void)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01441">reken.c:1441</a></div></div>
 <div class="ttc" id="aexecute_8c_html_a44fe816e000ff093b0b60461a78e2534"><div class="ttname"><a href="execute_8c.html#a44fe816e000ff093b0b60461a78e2534">GetFirstTerm</a></div><div class="ttdeci">int GetFirstTerm(WORD *term, int num, int pre)</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l01864">execute.c:1864</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
-<div class="ttc" id="aparallel_8c_html_a4e4d2578b246a72a2b5ae83264e0c1eb"><div class="ttname"><a href="parallel_8c.html#a4e4d2578b246a72a2b5ae83264e0c1eb">PF_BroadcastExpFlags</a></div><div class="ttdeci">int PF_BroadcastExpFlags(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03255">parallel.c:3255</a></div></div>
-<div class="ttc" id="aparallel_8c_html_a5efb548dd947c719005be2da0d79e114"><div class="ttname"><a href="parallel_8c.html#a5efb548dd947c719005be2da0d79e114">PF_BroadcastModifiedDollars</a></div><div class="ttdeci">int PF_BroadcastModifiedDollars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02785">parallel.c:2785</a></div></div>
-<div class="ttc" id="aparallel_8c_html_a6eca5eb317338d7f924c1b30efa3bb04"><div class="ttname"><a href="parallel_8c.html#a6eca5eb317338d7f924c1b30efa3bb04">PF_BroadcastCBuf</a></div><div class="ttdeci">int PF_BroadcastCBuf(int bufnum)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03144">parallel.c:3144</a></div></div>
-<div class="ttc" id="aparallel_8c_html_a7bb2cc34f85ec08289eb6be4a16d29d1"><div class="ttname"><a href="parallel_8c.html#a7bb2cc34f85ec08289eb6be4a16d29d1">PF_CollectModifiedDollars</a></div><div class="ttdeci">int PF_CollectModifiedDollars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02506">parallel.c:2506</a></div></div>
-<div class="ttc" id="aparallel_8c_html_aef563d0e7aceb926dc0c91cc38267b79"><div class="ttname"><a href="parallel_8c.html#aef563d0e7aceb926dc0c91cc38267b79">PF_BroadcastExpr</a></div><div class="ttdeci">int PF_BroadcastExpr(EXPRESSIONS e, FILEHANDLE *file)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03549">parallel.c:3549</a></div></div>
-<div class="ttc" id="astruct_do_ll_ar_s_html"><div class="ttname"><a href="struct_do_ll_ar_s.html">DoLlArS</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00530">structs.h:530</a></div></div>
-<div class="ttc" id="astruct_ex_pr_es_si_on_html"><div class="ttname"><a href="struct_ex_pr_es_si_on.html">ExPrEsSiOn</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00391">structs.h:391</a></div></div>
-<div class="ttc" id="astruct_ex_pr_es_si_on_html_a44ba524d78554bd229aa3f56b8748067"><div class="ttname"><a href="struct_ex_pr_es_si_on.html#a44ba524d78554bd229aa3f56b8748067">ExPrEsSiOn::renumlists</a></div><div class="ttdeci">WORD * renumlists</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00398">structs.h:398</a></div></div>
-<div class="ttc" id="astruct_fi_le_html"><div class="ttname"><a href="struct_fi_le.html">FiLe</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00682">structs.h:682</a></div></div>
-<div class="ttc" id="astruct_fi_le_html_a3127ebf018e9da62fa464d348352037d"><div class="ttname"><a href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">FiLe::handle</a></div><div class="ttdeci">int handle</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00710">structs.h:710</a></div></div>
+<div class="ttc" id="aparallel_8c_html_a4e4d2578b246a72a2b5ae83264e0c1eb"><div class="ttname"><a href="parallel_8c.html#a4e4d2578b246a72a2b5ae83264e0c1eb">PF_BroadcastExpFlags</a></div><div class="ttdeci">int PF_BroadcastExpFlags(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03254">parallel.c:3254</a></div></div>
+<div class="ttc" id="aparallel_8c_html_a5efb548dd947c719005be2da0d79e114"><div class="ttname"><a href="parallel_8c.html#a5efb548dd947c719005be2da0d79e114">PF_BroadcastModifiedDollars</a></div><div class="ttdeci">int PF_BroadcastModifiedDollars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02784">parallel.c:2784</a></div></div>
+<div class="ttc" id="aparallel_8c_html_a6eca5eb317338d7f924c1b30efa3bb04"><div class="ttname"><a href="parallel_8c.html#a6eca5eb317338d7f924c1b30efa3bb04">PF_BroadcastCBuf</a></div><div class="ttdeci">int PF_BroadcastCBuf(int bufnum)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03143">parallel.c:3143</a></div></div>
+<div class="ttc" id="aparallel_8c_html_a7bb2cc34f85ec08289eb6be4a16d29d1"><div class="ttname"><a href="parallel_8c.html#a7bb2cc34f85ec08289eb6be4a16d29d1">PF_CollectModifiedDollars</a></div><div class="ttdeci">int PF_CollectModifiedDollars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02505">parallel.c:2505</a></div></div>
+<div class="ttc" id="aparallel_8c_html_aef563d0e7aceb926dc0c91cc38267b79"><div class="ttname"><a href="parallel_8c.html#aef563d0e7aceb926dc0c91cc38267b79">PF_BroadcastExpr</a></div><div class="ttdeci">int PF_BroadcastExpr(EXPRESSIONS e, FILEHANDLE *file)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03548">parallel.c:3548</a></div></div>
+<div class="ttc" id="astruct_do_ll_ar_s_html"><div class="ttname"><a href="struct_do_ll_ar_s.html">DoLlArS</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00511">structs.h:511</a></div></div>
+<div class="ttc" id="astruct_ex_pr_es_si_on_html"><div class="ttname"><a href="struct_ex_pr_es_si_on.html">ExPrEsSiOn</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00382">structs.h:382</a></div></div>
+<div class="ttc" id="astruct_ex_pr_es_si_on_html_a44ba524d78554bd229aa3f56b8748067"><div class="ttname"><a href="struct_ex_pr_es_si_on.html#a44ba524d78554bd229aa3f56b8748067">ExPrEsSiOn::renumlists</a></div><div class="ttdeci">WORD * renumlists</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00389">structs.h:389</a></div></div>
+<div class="ttc" id="astruct_fi_le_html"><div class="ttname"><a href="struct_fi_le.html">FiLe</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00652">structs.h:652</a></div></div>
+<div class="ttc" id="astruct_fi_le_html_a3127ebf018e9da62fa464d348352037d"><div class="ttname"><a href="struct_fi_le.html#a3127ebf018e9da62fa464d348352037d">FiLe::handle</a></div><div class="ttdeci">int handle</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00680">structs.h:680</a></div></div>
 <div class="ttc" id="astruct_in_de_xe_nt_ry_html"><div class="ttname"><a href="struct_in_de_xe_nt_ry.html">InDeXeNtRy</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00100">structs.h:100</a></div></div>
 <div class="ttc" id="astruct_in_de_xe_nt_ry_html_af98828a1b52a105ec1ca5945d6f62e0a"><div class="ttname"><a href="struct_in_de_xe_nt_ry.html#af98828a1b52a105ec1ca5945d6f62e0a">InDeXeNtRy::name</a></div><div class="ttdeci">SBYTE name[MAXENAME+1]</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00110">structs.h:110</a></div></div>
-<div class="ttc" id="astruct_na_me_node_html"><div class="ttname"><a href="struct_na_me_node.html">NaMeNode</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00247">structs.h:247</a></div></div>
+<div class="ttc" id="astruct_na_me_node_html"><div class="ttname"><a href="struct_na_me_node.html">NaMeNode</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00243">structs.h:243</a></div></div>
 <div class="ttc" id="astruct_po_si_ti_on_html"><div class="ttname"><a href="struct_po_si_ti_on.html">PoSiTiOn</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00059">structs.h:59</a></div></div>
-<div class="ttc" id="astruct_re_nu_mb_er_html"><div class="ttname"><a href="struct_re_nu_mb_er.html">ReNuMbEr</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00178">structs.h:178</a></div></div>
-<div class="ttc" id="astruct_re_nu_mb_er_html_acb3e5eca237e31dcf87971b38810a87c"><div class="ttname"><a href="struct_re_nu_mb_er.html#acb3e5eca237e31dcf87971b38810a87c">ReNuMbEr::symb</a></div><div class="ttdeci">VARRENUM symb</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00181">structs.h:181</a></div></div>
-<div class="ttc" id="astruct_s_w_i_t_c_h_html"><div class="ttname"><a href="struct_s_w_i_t_c_h.html">SWITCH</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01380">structs.h:1380</a></div></div>
-<div class="ttc" id="astruct_se_ts_html"><div class="ttname"><a href="struct_se_ts.html">SeTs</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00499">structs.h:499</a></div></div>
-<div class="ttc" id="astruct_va_rr_en_um_html_abc48e793f33da4dcba5e1fce864cf325"><div class="ttname"><a href="struct_va_rr_en_um.html#abc48e793f33da4dcba5e1fce864cf325">VaRrEnUm::lo</a></div><div class="ttdeci">WORD * lo</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00168">structs.h:168</a></div></div>
-<div class="ttc" id="astructnode_html"><div class="ttname"><a href="structnode.html">node</a></div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l01496">optimize.cc:1496</a></div></div>
-<div class="ttc" id="astructs_or_t_html"><div class="ttname"><a href="structs_or_t.html">sOrT</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01140">structs.h:1140</a></div></div>
+<div class="ttc" id="astruct_re_nu_mb_er_html"><div class="ttname"><a href="struct_re_nu_mb_er.html">ReNuMbEr</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00176">structs.h:176</a></div></div>
+<div class="ttc" id="astruct_re_nu_mb_er_html_acb3e5eca237e31dcf87971b38810a87c"><div class="ttname"><a href="struct_re_nu_mb_er.html#acb3e5eca237e31dcf87971b38810a87c">ReNuMbEr::symb</a></div><div class="ttdeci">VARRENUM symb</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00179">structs.h:179</a></div></div>
+<div class="ttc" id="astruct_s_w_i_t_c_h_html"><div class="ttname"><a href="struct_s_w_i_t_c_h.html">SWITCH</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01315">structs.h:1315</a></div></div>
+<div class="ttc" id="astruct_se_ts_html"><div class="ttname"><a href="struct_se_ts.html">SeTs</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00483">structs.h:483</a></div></div>
+<div class="ttc" id="astruct_va_rr_en_um_html_abc48e793f33da4dcba5e1fce864cf325"><div class="ttname"><a href="struct_va_rr_en_um.html#abc48e793f33da4dcba5e1fce864cf325">VaRrEnUm::lo</a></div><div class="ttdeci">WORD * lo</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00166">structs.h:166</a></div></div>
+<div class="ttc" id="astructnode_html"><div class="ttname"><a href="structnode.html">node</a></div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l01495">optimize.cc:1495</a></div></div>
+<div class="ttc" id="astructs_or_t_html"><div class="ttname"><a href="structs_or_t.html">sOrT</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01085">structs.h:1085</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
