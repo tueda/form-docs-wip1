@@ -1,9 +1,11 @@
 <map id="MConn" name="MConn">
-<area shape="rect" id="Node000001" title=" " alt="" coords="105,93,171,119"/>
-<area shape="rect" id="Node000002" href="$class_m_c_opi.html" title=" " alt="" coords="5,5,71,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,38,96,67,125,91,121,95,92,71,59,42"/>
-<area shape="rect" id="Node000003" href="$class_m_c_bridge.html" title=" " alt="" coords="95,5,181,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,45,141,93,135,93,135,45"/>
-<area shape="rect" id="Node000004" href="$class_m_c_block.html" title=" " alt="" coords="205,5,284,31"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,43,198,71,162,95,159,91,195,67,224,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,93,220,119"/>
+<area shape="rect" id="Node000002" href="$class_m_c_edge.html" title=" " alt="" coords="5,5,80,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,38,104,67,154,91,152,96,101,72,63,42"/>
+<area shape="rect" id="Node000003" href="$class_m_c_opi.html" title=" " alt="" coords="105,5,170,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,41,182,91,177,94,148,44"/>
+<area shape="rect" id="Node000004" href="$class_m_c_bridge.html" title=" " alt="" coords="195,5,280,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,44,210,71,196,94,192,92,206,68,221,41"/>
+<area shape="rect" id="Node000005" href="$class_m_c_block.html" title=" " alt="" coords="305,5,383,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="321,41,276,72,221,96,219,91,273,67,318,37"/>
 </map>
