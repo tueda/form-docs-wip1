@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-247-g2aba64b</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-255-gafebe66</span>
    </div>
   </td>
  </tr>
@@ -108,12 +108,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> SingleTable(mpf_t *tabl, <span class="keywordtype">int</span> N, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> pow);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> DoubleTable(mpf_t *tabout, mpf_t *tabin, <span class="keywordtype">int</span> N, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> pow);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> EndTable(mpf_t sum, mpf_t *tabin, <span class="keywordtype">int</span> N, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> pow);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> deltaMZV(mpf_t, <span class="keywordtype">int</span> *, <span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> deltaEuler(mpf_t, <span class="keywordtype">int</span> *, <span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">void</span> deltaEulerC(mpf_t, <span class="keywordtype">int</span> *, <span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> CalculateMZVhalf(mpf_t, <span class="keywordtype">int</span> *, <span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> CalculateMZV(mpf_t, <span class="keywordtype">int</span> *, <span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> CalculateEuler(mpf_t, <span class="keywordtype">int</span> *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> deltaMZV(mpf_t, WORD *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> deltaEuler(mpf_t, WORD *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">void</span> deltaEulerC(mpf_t, WORD *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> CalculateMZVhalf(mpf_t, WORD *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> CalculateMZV(mpf_t, WORD *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> CalculateEuler(mpf_t, WORD *, <span class="keywordtype">int</span>);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">int</span> ExpandMZV(WORD *term, WORD level);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">int</span> ExpandEuler(WORD *term, WORD level);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">int</span> PackFloat(WORD *,mpf_t);</div>
@@ -1245,7 +1245,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>        a = (mpf_t *)AB[<span class="keywordtype">id</span>]-&gt;T.aux_;</div>
 <div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>        mpf_inits(a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],(mpf_ptr)0);</div>
 <div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>        <span class="keywordflow">if</span> ( AB[<span class="keywordtype">id</span>]-&gt;T.indi1 ) M_free(AB[<span class="keywordtype">id</span>]-&gt;T.indi1,<span class="stringliteral">&quot;indi1&quot;</span>);</div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>        AB[id]-&gt;T.indi1 = (<span class="keywordtype">int</span> *)Malloc1(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)*AC.MaxWeight*2,<span class="stringliteral">&quot;indi1&quot;</span>);</div>
+<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>        AB[id]-&gt;T.indi1 = (WORD *)Malloc1(<span class="keyword">sizeof</span>(WORD)*AC.MaxWeight*2,<span class="stringliteral">&quot;indi1&quot;</span>);</div>
 <div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>        AB[id]-&gt;T.indi2 = AB[id]-&gt;T.indi1 + AC.MaxWeight;</div>
 <div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>    }</div>
 <div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span><span class="preprocessor">#else</span></div>
@@ -1259,7 +1259,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>    AT.aux_ = (<span class="keywordtype">void</span> *)Malloc1(<span class="keyword">sizeof</span>(mpf_t)*8,<span class="stringliteral">&quot;AT.aux_&quot;</span>);</div>
 <div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>    mpf_inits(aux1,aux2,aux3,aux4,aux5,auxjm,auxjjm,auxsum,(mpf_ptr)0);</div>
 <div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>    <span class="keywordflow">if</span> ( AT.indi1 ) M_free(AT.indi1,<span class="stringliteral">&quot;indi1&quot;</span>);</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>    AT.indi1 = (<span class="keywordtype">int</span> *)Malloc1(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)*AC.MaxWeight*2,<span class="stringliteral">&quot;indi1&quot;</span>);</div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>    AT.indi1 = (WORD *)Malloc1(<span class="keyword">sizeof</span>(WORD)*AC.MaxWeight*2,<span class="stringliteral">&quot;indi1&quot;</span>);</div>
 <div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>    AT.indi2 = AT.indi1 + AC.MaxWeight;</div>
 <div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span><span class="comment">/*</span></div>
@@ -1982,7 +1982,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01938" name="l01938"></a><span class="lineno"> 1938</span><span class="comment">        #[ deltaMZV :</span></div>
 <div class="line"><a id="l01939" name="l01939"></a><span class="lineno"> 1939</span><span class="comment">*/</span></div>
 <div class="line"><a id="l01940" name="l01940"></a><span class="lineno"> 1940</span> </div>
-<div class="line"><a id="l01941" name="l01941"></a><span class="lineno"> 1941</span><span class="keywordtype">void</span> deltaMZV(mpf_t result, <span class="keywordtype">int</span> *indexes, <span class="keywordtype">int</span> depth)</div>
+<div class="line"><a id="l01941" name="l01941"></a><span class="lineno"> 1941</span><span class="keywordtype">void</span> deltaMZV(mpf_t result, WORD *indexes, <span class="keywordtype">int</span> depth)</div>
 <div class="line"><a id="l01942" name="l01942"></a><span class="lineno"> 1942</span>{</div>
 <div class="line"><a id="l01943" name="l01943"></a><span class="lineno"> 1943</span>    GETIDENTITY</div>
 <div class="line"><a id="l01944" name="l01944"></a><span class="lineno"> 1944</span><span class="comment">/*</span></div>
@@ -2049,7 +2049,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02005" name="l02005"></a><span class="lineno"> 2005</span><span class="comment">        Regular Euler delta with - signs, but everywhere 1/2^j</span></div>
 <div class="line"><a id="l02006" name="l02006"></a><span class="lineno"> 2006</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02007" name="l02007"></a><span class="lineno"> 2007</span> </div>
-<div class="line"><a id="l02008" name="l02008"></a><span class="lineno"> 2008</span><span class="keywordtype">void</span> deltaEuler(mpf_t result, <span class="keywordtype">int</span> *indexes, <span class="keywordtype">int</span> depth)</div>
+<div class="line"><a id="l02008" name="l02008"></a><span class="lineno"> 2008</span><span class="keywordtype">void</span> deltaEuler(mpf_t result, WORD *indexes, <span class="keywordtype">int</span> depth)</div>
 <div class="line"><a id="l02009" name="l02009"></a><span class="lineno"> 2009</span>{</div>
 <div class="line"><a id="l02010" name="l02010"></a><span class="lineno"> 2010</span>    GETIDENTITY</div>
 <div class="line"><a id="l02011" name="l02011"></a><span class="lineno"> 2011</span>    <span class="keywordtype">int</span> m;</div>
@@ -2105,7 +2105,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02061" name="l02061"></a><span class="lineno"> 2061</span><span class="comment">        When there is a - in the string we have 1/4.</span></div>
 <div class="line"><a id="l02062" name="l02062"></a><span class="lineno"> 2062</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02063" name="l02063"></a><span class="lineno"> 2063</span> </div>
-<div class="line"><a id="l02064" name="l02064"></a><span class="lineno"> 2064</span><span class="keywordtype">void</span> deltaEulerC(mpf_t result, <span class="keywordtype">int</span> *indexes, <span class="keywordtype">int</span> depth)</div>
+<div class="line"><a id="l02064" name="l02064"></a><span class="lineno"> 2064</span><span class="keywordtype">void</span> deltaEulerC(mpf_t result, WORD *indexes, <span class="keywordtype">int</span> depth)</div>
 <div class="line"><a id="l02065" name="l02065"></a><span class="lineno"> 2065</span>{</div>
 <div class="line"><a id="l02066" name="l02066"></a><span class="lineno"> 2066</span>    GETIDENTITY</div>
 <div class="line"><a id="l02067" name="l02067"></a><span class="lineno"> 2067</span>    <span class="keywordtype">int</span> m;</div>
@@ -2178,7 +2178,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02134" name="l02134"></a><span class="lineno"> 2134</span><span class="comment">        MZV&#39;s have to be calculated at the same time.</span></div>
 <div class="line"><a id="l02135" name="l02135"></a><span class="lineno"> 2135</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02136" name="l02136"></a><span class="lineno"> 2136</span> </div>
-<div class="line"><a id="l02137" name="l02137"></a><span class="lineno"> 2137</span><span class="keywordtype">void</span> CalculateMZVhalf(mpf_t result, <span class="keywordtype">int</span> *indexes, <span class="keywordtype">int</span> depth)</div>
+<div class="line"><a id="l02137" name="l02137"></a><span class="lineno"> 2137</span><span class="keywordtype">void</span> CalculateMZVhalf(mpf_t result, WORD *indexes, <span class="keywordtype">int</span> depth)</div>
 <div class="line"><a id="l02138" name="l02138"></a><span class="lineno"> 2138</span>{</div>
 <div class="line"><a id="l02139" name="l02139"></a><span class="lineno"> 2139</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l02140" name="l02140"></a><span class="lineno"> 2140</span>    <span class="keywordflow">if</span> ( depth &lt; 0 ) {</div>
@@ -2199,7 +2199,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02155" name="l02155"></a><span class="lineno"> 2155</span><span class="comment">        #[ CalculateMZV :</span></div>
 <div class="line"><a id="l02156" name="l02156"></a><span class="lineno"> 2156</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02157" name="l02157"></a><span class="lineno"> 2157</span> </div>
-<div class="line"><a id="l02158" name="l02158"></a><span class="lineno"> 2158</span><span class="keywordtype">void</span> CalculateMZV(mpf_t result, <span class="keywordtype">int</span> *indexes, <span class="keywordtype">int</span> depth)</div>
+<div class="line"><a id="l02158" name="l02158"></a><span class="lineno"> 2158</span><span class="keywordtype">void</span> CalculateMZV(mpf_t result, WORD *indexes, <span class="keywordtype">int</span> depth)</div>
 <div class="line"><a id="l02159" name="l02159"></a><span class="lineno"> 2159</span>{</div>
 <div class="line"><a id="l02160" name="l02160"></a><span class="lineno"> 2160</span>    GETIDENTITY</div>
 <div class="line"><a id="l02161" name="l02161"></a><span class="lineno"> 2161</span>    <span class="keywordtype">int</span> num1, num2 = 0, i, j = 0;</div>
@@ -2264,12 +2264,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02220" name="l02220"></a><span class="lineno"> 2220</span><span class="comment">        Hence we start with a conversion.</span></div>
 <div class="line"><a id="l02221" name="l02221"></a><span class="lineno"> 2221</span><span class="comment">*/</span></div>
 <div class="line"><a id="l02222" name="l02222"></a><span class="lineno"> 2222</span> </div>
-<div class="line"><a id="l02223" name="l02223"></a><span class="lineno"> 2223</span><span class="keywordtype">void</span> CalculateEuler(mpf_t result, <span class="keywordtype">int</span> *Zindexes, <span class="keywordtype">int</span> depth)</div>
+<div class="line"><a id="l02223" name="l02223"></a><span class="lineno"> 2223</span><span class="keywordtype">void</span> CalculateEuler(mpf_t result, WORD *Zindexes, <span class="keywordtype">int</span> depth)</div>
 <div class="line"><a id="l02224" name="l02224"></a><span class="lineno"> 2224</span>{</div>
 <div class="line"><a id="l02225" name="l02225"></a><span class="lineno"> 2225</span>    GETIDENTITY</div>
 <div class="line"><a id="l02226" name="l02226"></a><span class="lineno"> 2226</span>    <span class="keywordtype">int</span> s1, num1, num2, i, j;</div>
 <div class="line"><a id="l02227" name="l02227"></a><span class="lineno"> 2227</span> </div>
-<div class="line"><a id="l02228" name="l02228"></a><span class="lineno"> 2228</span>    <span class="keywordtype">int</span> *indexes = (<span class="keywordtype">int</span> *)(AT.WorkPointer);</div>
+<div class="line"><a id="l02228" name="l02228"></a><span class="lineno"> 2228</span>    WORD *indexes = AT.WorkPointer;</div>
 <div class="line"><a id="l02229" name="l02229"></a><span class="lineno"> 2229</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; depth; i++ ) indexes[i] = Zindexes[i];</div>
 <div class="line"><a id="l02230" name="l02230"></a><span class="lineno"> 2230</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; depth-1; i++ ) {</div>
 <div class="line"><a id="l02231" name="l02231"></a><span class="lineno"> 2231</span>        <span class="keywordflow">if</span> ( Zindexes[i] &lt; 0 ) {</div>
@@ -2595,7 +2595,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="adeclare_8h_html_a3d1950d9d2cfbcd7013b7c2290c21add"><div class="ttname"><a href="declare_8h.html#a3d1950d9d2cfbcd7013b7c2290c21add">GarbHand</a></div><div class="ttdeci">void GarbHand(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03652">sort.c:3652</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03267">proces.c:3267</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
-<div class="ttc" id="astructs_or_t_html"><div class="ttname"><a href="structs_or_t.html">sOrT</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01085">structs.h:1085</a></div></div>
+<div class="ttc" id="astructs_or_t_html"><div class="ttname"><a href="structs_or_t.html">sOrT</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l01115">structs.h:1115</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
