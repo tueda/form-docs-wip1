@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-255-gafebe66</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-261-g42d314c</span>
    </div>
   </td>
  </tr>
@@ -1765,23 +1765,27 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01732" name="l01732"></a><span class="lineno"> 1732</span><span class="keywordtype">int</span> PrintFloat(WORD *fun,<span class="keywordtype">int</span> numdigits);</div>
 <div class="line"><a id="l01733" name="l01733"></a><span class="lineno"> 1733</span><span class="keywordtype">int</span> CoToRat(UBYTE *);</div>
 <div class="line"><a id="l01734" name="l01734"></a><span class="lineno"> 1734</span><span class="keywordtype">int</span> CoToFloat(UBYTE *);</div>
-<div class="line"><a id="l01735" name="l01735"></a><span class="lineno"> 1735</span><span class="keywordtype">int</span> ToRat(PHEAD WORD *,WORD);</div>
-<div class="line"><a id="l01736" name="l01736"></a><span class="lineno"> 1736</span><span class="keywordtype">int</span> ToFloat(PHEAD WORD *,WORD);</div>
-<div class="line"><a id="l01737" name="l01737"></a><span class="lineno"> 1737</span>WORD FloatFunToRat(PHEAD UWORD *,WORD *);</div>
-<div class="line"><a id="l01738" name="l01738"></a><span class="lineno"> 1738</span><span class="keywordtype">int</span> AddWithFloat(PHEAD WORD **,WORD **);</div>
-<div class="line"><a id="l01739" name="l01739"></a><span class="lineno"> 1739</span><span class="keywordtype">int</span> MergeWithFloat(PHEAD WORD **,WORD **);</div>
-<div class="line"><a id="l01740" name="l01740"></a><span class="lineno"> 1740</span><span class="keywordtype">void</span> ClearfFloat(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l01741" name="l01741"></a><span class="lineno"> 1741</span><span class="keywordtype">int</span> TestFloat(WORD *);</div>
-<div class="line"><a id="l01742" name="l01742"></a><span class="lineno"> 1742</span>SBYTE *ReadFloat(SBYTE *);</div>
-<div class="line"><a id="l01743" name="l01743"></a><span class="lineno"> 1743</span>UBYTE *CheckFloat(UBYTE *,<span class="keywordtype">int</span> *);</div>
-<div class="line"><a id="l01744" name="l01744"></a><span class="lineno"> 1744</span><span class="keywordtype">void</span> SetfFloatPrecision(LONG);</div>
-<div class="line"><a id="l01745" name="l01745"></a><span class="lineno"> 1745</span><span class="keywordtype">int</span> EvaluateFun(PHEAD WORD *, WORD, WORD *);</div>
-<div class="line"><a id="l01746" name="l01746"></a><span class="lineno"> 1746</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01747" name="l01747"></a><span class="lineno"> 1747</span> </div>
-<div class="line"><a id="l01748" name="l01748"></a><span class="lineno"> 1748</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01749" name="l01749"></a><span class="lineno"> 1749</span><span class="comment">    #] Declarations : </span></div>
-<div class="line"><a id="l01750" name="l01750"></a><span class="lineno"> 1750</span><span class="comment">*/</span></div>
-<div class="line"><a id="l01751" name="l01751"></a><span class="lineno"> 1751</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01735" name="l01735"></a><span class="lineno"> 1735</span><span class="keywordtype">int</span> CoChop(UBYTE *);</div>
+<div class="line"><a id="l01736" name="l01736"></a><span class="lineno"> 1736</span><span class="keywordtype">int</span> ToRat(PHEAD WORD *,WORD);</div>
+<div class="line"><a id="l01737" name="l01737"></a><span class="lineno"> 1737</span><span class="keywordtype">int</span> ToFloat(PHEAD WORD *,WORD);</div>
+<div class="line"><a id="l01738" name="l01738"></a><span class="lineno"> 1738</span><span class="keywordtype">int</span> Chop(PHEAD WORD *, WORD);</div>
+<div class="line"><a id="l01739" name="l01739"></a><span class="lineno"> 1739</span>WORD FloatFunToRat(PHEAD UWORD *,WORD *);</div>
+<div class="line"><a id="l01740" name="l01740"></a><span class="lineno"> 1740</span><span class="keywordtype">int</span> AddWithFloat(PHEAD WORD **,WORD **);</div>
+<div class="line"><a id="l01741" name="l01741"></a><span class="lineno"> 1741</span><span class="keywordtype">int</span> MergeWithFloat(PHEAD WORD **,WORD **);</div>
+<div class="line"><a id="l01742" name="l01742"></a><span class="lineno"> 1742</span><span class="keywordtype">void</span> ClearfFloat(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l01743" name="l01743"></a><span class="lineno"> 1743</span><span class="keywordtype">int</span> TestFloat(WORD *);</div>
+<div class="line"><a id="l01744" name="l01744"></a><span class="lineno"> 1744</span>SBYTE *ReadFloat(SBYTE *);</div>
+<div class="line"><a id="l01745" name="l01745"></a><span class="lineno"> 1745</span>UBYTE *CheckFloat(UBYTE *,<span class="keywordtype">int</span> *);</div>
+<div class="line"><a id="l01746" name="l01746"></a><span class="lineno"> 1746</span><span class="keywordtype">void</span> SetfFloatPrecision(LONG);</div>
+<div class="line"><a id="l01747" name="l01747"></a><span class="lineno"> 1747</span><span class="keywordtype">int</span> EvaluateFun(PHEAD WORD *, WORD, WORD *);</div>
+<div class="line"><a id="l01748" name="l01748"></a><span class="lineno"> 1748</span><span class="keywordtype">int</span> CoStrictRounding(UBYTE *);</div>
+<div class="line"><a id="l01749" name="l01749"></a><span class="lineno"> 1749</span><span class="keywordtype">int</span> StrictRounding(PHEAD WORD *, WORD, WORD, WORD);</div>
+<div class="line"><a id="l01750" name="l01750"></a><span class="lineno"> 1750</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01751" name="l01751"></a><span class="lineno"> 1751</span> </div>
+<div class="line"><a id="l01752" name="l01752"></a><span class="lineno"> 1752</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01753" name="l01753"></a><span class="lineno"> 1753</span><span class="comment">    #] Declarations : </span></div>
+<div class="line"><a id="l01754" name="l01754"></a><span class="lineno"> 1754</span><span class="comment">*/</span></div>
+<div class="line"><a id="l01755" name="l01755"></a><span class="lineno"> 1755</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="adeclare_8h_html_a042431ed95b834a53058585b68b3bf5a"><div class="ttname"><a href="declare_8h.html#a042431ed95b834a53058585b68b3bf5a">MakeMod</a></div><div class="ttdeci">WORD * MakeMod(PHEAD WORD *, WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="argument_8c_source.html#l03484">argument.c:3484</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a042fad0972c0cddb9af637259d477ba6"><div class="ttname"><a href="declare_8h.html#a042fad0972c0cddb9af637259d477ba6">FindArg</a></div><div class="ttdeci">WORD FindArg(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="argument_8c_source.html#l02514">argument.c:2514</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a050dbae749ed286b362d5b3b716ce229"><div class="ttname"><a href="declare_8h.html#a050dbae749ed286b362d5b3b716ce229">AddArgs</a></div><div class="ttdeci">void AddArgs(PHEAD WORD *, WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l02347">sort.c:2347</a></div></div>
@@ -1795,13 +1799,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="adeclare_8h_html_a202bedc4bb922d2789d0e21efec93b55"><div class="ttname"><a href="declare_8h.html#a202bedc4bb922d2789d0e21efec93b55">InitRecovery</a></div><div class="ttdeci">void InitRecovery(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00399">checkpoint.c:399</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a21657d7cfe5d40d7826607a01118e9c2"><div class="ttname"><a href="declare_8h.html#a21657d7cfe5d40d7826607a01118e9c2">optimize_print_code</a></div><div class="ttdeci">void optimize_print_code(int)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04524">optimize.cc:4524</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a233585272ceff89c858e46cf29de1096"><div class="ttname"><a href="declare_8h.html#a233585272ceff89c858e46cf29de1096">SortWild</a></div><div class="ttdeci">int SortWild(WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04763">sort.c:4763</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a236ae787a7a3af7177265362c54a66eb"><div class="ttname"><a href="declare_8h.html#a236ae787a7a3af7177265362c54a66eb">PrepPoly</a></div><div class="ttdeci">int PrepPoly(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l04974">proces.c:4974</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a236ae787a7a3af7177265362c54a66eb"><div class="ttname"><a href="declare_8h.html#a236ae787a7a3af7177265362c54a66eb">PrepPoly</a></div><div class="ttdeci">int PrepPoly(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l04986">proces.c:4986</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a24465fa9b8c5483106bc5a91535aa472"><div class="ttname"><a href="declare_8h.html#a24465fa9b8c5483106bc5a91535aa472">PrintDeprecation</a></div><div class="ttdeci">void PrintDeprecation(const char *, const char *)</div><div class="ttdef"><b>Definition</b> <a href="startup_8c_source.html#l02065">startup.c:2065</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a267b187c9b42aa8f826bc6fdb29e06b8"><div class="ttname"><a href="declare_8h.html#a267b187c9b42aa8f826bc6fdb29e06b8">PolyFunMul</a></div><div class="ttdeci">int PolyFunMul(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l05362">proces.c:5362</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a267b187c9b42aa8f826bc6fdb29e06b8"><div class="ttname"><a href="declare_8h.html#a267b187c9b42aa8f826bc6fdb29e06b8">PolyFunMul</a></div><div class="ttdeci">int PolyFunMul(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l05374">proces.c:5374</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a27b650ac42a29b6b0c9527da2436e3c0"><div class="ttname"><a href="declare_8h.html#a27b650ac42a29b6b0c9527da2436e3c0">MergePatches</a></div><div class="ttdeci">int MergePatches(WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03767">sort.c:3767</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a285fd3a737f4f5918703ec97d8887805"><div class="ttname"><a href="declare_8h.html#a285fd3a737f4f5918703ec97d8887805">Deferred</a></div><div class="ttdeci">int Deferred(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l04846">proces.c:4846</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a285fd3a737f4f5918703ec97d8887805"><div class="ttname"><a href="declare_8h.html#a285fd3a737f4f5918703ec97d8887805">Deferred</a></div><div class="ttdeci">int Deferred(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l04858">proces.c:4858</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a28ce20e3c0242586858d7151e8288a2e"><div class="ttname"><a href="declare_8h.html#a28ce20e3c0242586858d7151e8288a2e">DeleteRecoveryFile</a></div><div class="ttdeci">void DeleteRecoveryFile(void)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l00333">checkpoint.c:333</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a298bb734d060c23817fc22a72ef26035"><div class="ttname"><a href="declare_8h.html#a298bb734d060c23817fc22a72ef26035">DoOnePow</a></div><div class="ttdeci">int DoOnePow(PHEAD WORD *, WORD, WORD, WORD *, WORD *, WORD, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l04625">proces.c:4625</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a298bb734d060c23817fc22a72ef26035"><div class="ttname"><a href="declare_8h.html#a298bb734d060c23817fc22a72ef26035">DoOnePow</a></div><div class="ttdeci">int DoOnePow(PHEAD WORD *, WORD, WORD, WORD *, WORD *, WORD, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l04637">proces.c:4637</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a2a5b439228d8c554f903bbe3a4a7da62"><div class="ttname"><a href="declare_8h.html#a2a5b439228d8c554f903bbe3a4a7da62">StageSort</a></div><div class="ttdeci">void StageSort(FILEHANDLE *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04664">sort.c:4664</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a2c1749e0616689062a64c6223f0da044"><div class="ttname"><a href="declare_8h.html#a2c1749e0616689062a64c6223f0da044">CompCoef</a></div><div class="ttdeci">WORD CompCoef(WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l03048">reken.c:3048</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a2c3e58bca09bc049f27bf372064b8133"><div class="ttname"><a href="declare_8h.html#a2c3e58bca09bc049f27bf372064b8133">ComPress</a></div><div class="ttdeci">LONG ComPress(WORD **, LONG *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l03206">sort.c:3206</a></div></div>
