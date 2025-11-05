@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-261-g42d314c</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-265-ga405343</span>
    </div>
   </td>
  </tr>
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <p>The notation of the output should be a string of arguments terminated by the number zero.</p>
 <p>Originally we sorted in a way that the constants came last. This gave conflicts with the dollar and expression factorizations (in the expressions we wanted the zero first and then followed by the constants). </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02059">2059</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02064">2064</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01770">1770</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01775">1775</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -242,7 +242,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01846">1846</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01851">1851</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -272,7 +272,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01950">1950</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l01955">1955</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02061">2061</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02066">2066</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -323,7 +323,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Looks the argument up in the (workers) table. If it is found the number in the table is returned (plus one to make it positive). If it is not found we look in the compiler provided table. If it is found - the number in the table is returned (minus one to make it negative). If in neither table we return zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02514">2514</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02519">2519</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -360,9 +360,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Inserts the argument into the (workers) table. If the table is too full we eliminate half of it. The eliminated elements are the ones that have not been used most recently, weighted by their total use and age(?). If par == 0 it inserts in the regular factorization cache If par == 1 it inserts in the cache defined with the FactorCache statement </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02538">2538</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02543">2543</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="comtool_8c_source.html#l00317">AddNtoC()</a>, <a class="el" href="comtool_8c_source.html#l00214">AddRHS()</a>, and <a class="el" href="argument_8c_source.html#l02573">CleanupArgCache()</a>.</p>
+<p class="reference">References <a class="el" href="comtool_8c_source.html#l00317">AddNtoC()</a>, <a class="el" href="comtool_8c_source.html#l00214">AddRHS()</a>, and <a class="el" href="argument_8c_source.html#l02578">CleanupArgCache()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -404,11 +404,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Cleans up the argument factorization cache. We throw half the elements. For a weight of what we want to keep we use the product of usage and the number in the buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02573">2573</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02578">2578</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="structs_8h_source.html#l00981">CbUf::boomlijst</a>, <a class="el" href="structs_8h_source.html#l00972">CbUf::Buffer</a>, <a class="el" href="structs_8h_source.html#l00974">CbUf::Pointer</a>, <a class="el" href="structs_8h_source.html#l00976">CbUf::rhs</a>, <a class="el" href="argument_8c_source.html#l03529">SortWeights()</a>, and <a class="el" href="structs_8h_source.html#l00294">tree::usage</a>.</p>
+<p class="reference">References <a class="el" href="structs_8h_source.html#l00981">CbUf::boomlijst</a>, <a class="el" href="structs_8h_source.html#l00972">CbUf::Buffer</a>, <a class="el" href="structs_8h_source.html#l00974">CbUf::Pointer</a>, <a class="el" href="structs_8h_source.html#l00976">CbUf::rhs</a>, <a class="el" href="argument_8c_source.html#l03534">SortWeights()</a>, and <a class="el" href="structs_8h_source.html#l00294">tree::usage</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02538">InsertArg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02543">InsertArg()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -449,7 +449,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02644">2644</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02649">2649</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -479,7 +479,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02699">2699</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02704">2704</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 </div>
 </div>
@@ -510,9 +510,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Implements part of the old ExecArg in which we take common factors from arguments with more than one term. The common pieces are put in argout as a sequence of arguments. The part with the multiple terms that are now relative prime is put in argfree which is allocated via TermMalloc and is given as the return value. The difference with the old code is that negative powers are always removed. Hence it is as in MakeInteger in which only numerators will be left: now only zero or positive powers will be remaining. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02767">2767</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l02772">2772</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sort_8c_source.html#l00745">EndSort()</a>, <a class="el" href="argument_8c_source.html#l03313">MakeInteger()</a>, <a class="el" href="argument_8c_source.html#l03484">MakeMod()</a>, <a class="el" href="sort_8c_source.html#l00649">NewSort()</a>, and <a class="el" href="sort_8c_source.html#l04550">StoreTerm()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8c_source.html#l00745">EndSort()</a>, <a class="el" href="argument_8c_source.html#l03318">MakeInteger()</a>, <a class="el" href="argument_8c_source.html#l03489">MakeMod()</a>, <a class="el" href="sort_8c_source.html#l00649">NewSort()</a>, and <a class="el" href="sort_8c_source.html#l04550">StoreTerm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -641,9 +641,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>For normalizing everything to integers we have to determine for all elements of this argument the LCM of the denominators and the GCD of the numerators. The input argument is in argin. The number that comes out should go to argout. The new pointer in the argout buffer is the return value. The normalized argument is in argfree. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03313">3313</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03318">3318</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02767">TakeArgContent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02772">TakeArgContent()</a>.</p>
 
 </div>
 </div>
@@ -680,11 +680,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Similar to MakeInteger but now with modulus arithmetic using only a one WORD 'prime'. We make the coefficient of the first term in the argument equal to one. Already the coefficients are taken modulus AN.cmod and AN.ncmod == 1 </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03484">3484</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03489">3489</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
 <p class="reference">References <a class="el" href="reken_8c_source.html#l01477">GetModInverses()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02767">TakeArgContent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02772">TakeArgContent()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -731,11 +731,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Sorts an array of LONGS in the same way SplitMerge (in <a class="el" href="sort_8c.html">sort.c</a>) works We use gradual division in two. </p>
 
-<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03529">3529</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="argument_8c_source.html#l03534">3534</a> of file <a class="el" href="argument_8c_source.html">argument.c</a>.</p>
 
-<p class="reference">References <a class="el" href="argument_8c_source.html#l03529">SortWeights()</a>.</p>
+<p class="reference">References <a class="el" href="argument_8c_source.html#l03534">SortWeights()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02573">CleanupArgCache()</a>, and <a class="el" href="argument_8c_source.html#l03529">SortWeights()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="argument_8c_source.html#l02578">CleanupArgCache()</a>, and <a class="el" href="argument_8c_source.html#l03534">SortWeights()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
