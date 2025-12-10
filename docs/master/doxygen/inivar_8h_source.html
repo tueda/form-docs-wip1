@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-265-ga405343</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-284-gc6f4a40</span>
    </div>
   </td>
  </tr>
@@ -291,42 +291,43 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    ,{<span class="stringliteral">&quot;block_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* BLOCK */</span></div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    ,{<span class="stringliteral">&quot;onepi_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* ONEPI */</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    ,{<span class="stringliteral">&quot;phi_&quot;</span>        ,0 ,VERTEXFUNCTION,0               ,0} <span class="comment">/* PHI */</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#ifdef WITHFLOAT</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    ,{<span class="stringliteral">&quot;float_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* FLOATFUN */</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    ,{<span class="stringliteral">&quot;tofloat_&quot;</span>    ,0 ,0             ,0               ,0} <span class="comment">/* TOFLOAT */</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    ,{<span class="stringliteral">&quot;torat_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* TORAT */</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    ,{<span class="stringliteral">&quot;mzv_&quot;</span>        ,0 ,0             ,0               ,0} <span class="comment">/* MZV */</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    ,{<span class="stringliteral">&quot;euler_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* EULER */</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    ,{<span class="stringliteral">&quot;mzvhalf_&quot;</span>    ,0 ,0             ,0               ,0} <span class="comment">/* MZVHALF */</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    ,{<span class="stringliteral">&quot;agm_&quot;</span>        ,0 ,0             ,0               ,0} <span class="comment">/* AGMFUNCTION */</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    ,{<span class="stringliteral">&quot;gamma_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* GAMMAFUN */</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>};</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><a class="code hl_struct" href="structfixedset.html">FIXEDSET</a> fixedsets[] = {</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>     {<span class="stringliteral">&quot;pos_&quot;</span>,   <span class="stringliteral">&quot;integers &gt; 0&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* POS_    0  */</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    ,{<span class="stringliteral">&quot;pos0_&quot;</span>,  <span class="stringliteral">&quot;integers &gt;= 0&quot;</span>, CSYMBOL, 0}  <span class="comment">/* POS0_   1  */</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    ,{<span class="stringliteral">&quot;neg_&quot;</span>,   <span class="stringliteral">&quot;integers &lt; 0&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* NEG_    2  */</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    ,{<span class="stringliteral">&quot;neg0_&quot;</span>,  <span class="stringliteral">&quot;integers &lt;= 0&quot;</span>, CSYMBOL, 0}  <span class="comment">/* NEG0_   3  */</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    ,{<span class="stringliteral">&quot;even_&quot;</span>,  <span class="stringliteral">&quot;even integers&quot;</span>, CSYMBOL, 0}  <span class="comment">/* EVEN_   4  */</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    ,{<span class="stringliteral">&quot;odd_&quot;</span>,   <span class="stringliteral">&quot;odd integers&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* ODD_    5  */</span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    ,{<span class="stringliteral">&quot;int_&quot;</span>,   <span class="stringliteral">&quot;all integers&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* Z_      6  */</span></div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    ,{<span class="stringliteral">&quot;symbol_&quot;</span>,<span class="stringliteral">&quot;only symbols&quot;</span>,  CSYMBOL, MAXPOSITIVE}  <span class="comment">/* SYMBOL_ 7  */</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    ,{<span class="stringliteral">&quot;fixed_&quot;</span>, <span class="stringliteral">&quot;fixed indices&quot;</span>, CINDEX, 0}   <span class="comment">/* FIXED_  8  */</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    ,{<span class="stringliteral">&quot;index_&quot;</span>, <span class="stringliteral">&quot;all indices&quot;</span>,   CINDEX, 0}   <span class="comment">/* INDEX_  9  */</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    ,{<span class="stringliteral">&quot;number_&quot;</span>,<span class="stringliteral">&quot;all rationals&quot;</span>, CSYMBOL, 0}  <span class="comment">/* Q_     10  */</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    ,{<span class="stringliteral">&quot;dummyindices_&quot;</span>, <span class="stringliteral">&quot;dummy indices&quot;</span>, CINDEX, 0}   <span class="comment">/* DUMMYINDEX_ 11  */</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    ,{<span class="stringliteral">&quot;vector_&quot;</span>,<span class="stringliteral">&quot;only vectors&quot;</span>,  CVECTOR, 0}  <span class="comment">/* VECTOR_ 12  */</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>};</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>UBYTE BufferForOutput[MAXLINELENGTH+14];</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keywordtype">char</span> *setupfilename = <span class="stringliteral">&quot;form.set&quot;</span>;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>INILOCK(ErrorMessageLock)</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>INILOCK(FileReadLock)</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    ,{<span class="stringliteral">&quot;float_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* FLOATFUN */</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    ,{<span class="stringliteral">&quot;tofloat_&quot;</span>    ,0 ,0             ,0               ,0} <span class="comment">/* TOFLOAT */</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    ,{<span class="stringliteral">&quot;torat_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* TORAT */</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    ,{<span class="stringliteral">&quot;mzv_&quot;</span>        ,0 ,0             ,0               ,0} <span class="comment">/* MZV */</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    ,{<span class="stringliteral">&quot;euler_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* EULER */</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    ,{<span class="stringliteral">&quot;mzvhalf_&quot;</span>    ,0 ,0             ,0               ,0} <span class="comment">/* MZVHALF */</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    ,{<span class="stringliteral">&quot;agm_&quot;</span>        ,0 ,0             ,0               ,0} <span class="comment">/* AGMFUNCTION */</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    ,{<span class="stringliteral">&quot;gamma_&quot;</span>      ,0 ,0             ,0               ,0} <span class="comment">/* GAMMAFUN */</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    ,{<span class="stringliteral">&quot;eexp_&quot;</span>       ,0 ,0             ,0               ,0} <span class="comment">/* EXPFUNCTION */</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    ,{<span class="stringliteral">&quot;hpl_&quot;</span>        ,0 ,0             ,0               ,0} <span class="comment">/* HPLFUNCTION */</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    ,{<span class="stringliteral">&quot;mpl_&quot;</span>        ,0 ,0             ,0               ,0} <span class="comment">/* MPLFUNCTION */</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>};</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><a class="code hl_struct" href="structfixedset.html">FIXEDSET</a> fixedsets[] = {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>     {<span class="stringliteral">&quot;pos_&quot;</span>,   <span class="stringliteral">&quot;integers &gt; 0&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* POS_    0  */</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    ,{<span class="stringliteral">&quot;pos0_&quot;</span>,  <span class="stringliteral">&quot;integers &gt;= 0&quot;</span>, CSYMBOL, 0}  <span class="comment">/* POS0_   1  */</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    ,{<span class="stringliteral">&quot;neg_&quot;</span>,   <span class="stringliteral">&quot;integers &lt; 0&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* NEG_    2  */</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    ,{<span class="stringliteral">&quot;neg0_&quot;</span>,  <span class="stringliteral">&quot;integers &lt;= 0&quot;</span>, CSYMBOL, 0}  <span class="comment">/* NEG0_   3  */</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    ,{<span class="stringliteral">&quot;even_&quot;</span>,  <span class="stringliteral">&quot;even integers&quot;</span>, CSYMBOL, 0}  <span class="comment">/* EVEN_   4  */</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    ,{<span class="stringliteral">&quot;odd_&quot;</span>,   <span class="stringliteral">&quot;odd integers&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* ODD_    5  */</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    ,{<span class="stringliteral">&quot;int_&quot;</span>,   <span class="stringliteral">&quot;all integers&quot;</span>,  CSYMBOL, 0}  <span class="comment">/* Z_      6  */</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    ,{<span class="stringliteral">&quot;symbol_&quot;</span>,<span class="stringliteral">&quot;only symbols&quot;</span>,  CSYMBOL, MAXPOSITIVE}  <span class="comment">/* SYMBOL_ 7  */</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    ,{<span class="stringliteral">&quot;fixed_&quot;</span>, <span class="stringliteral">&quot;fixed indices&quot;</span>, CINDEX, 0}   <span class="comment">/* FIXED_  8  */</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    ,{<span class="stringliteral">&quot;index_&quot;</span>, <span class="stringliteral">&quot;all indices&quot;</span>,   CINDEX, 0}   <span class="comment">/* INDEX_  9  */</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    ,{<span class="stringliteral">&quot;number_&quot;</span>,<span class="stringliteral">&quot;all rationals&quot;</span>, CSYMBOL, 0}  <span class="comment">/* Q_     10  */</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    ,{<span class="stringliteral">&quot;dummyindices_&quot;</span>, <span class="stringliteral">&quot;dummy indices&quot;</span>, CINDEX, 0}   <span class="comment">/* DUMMYINDEX_ 11  */</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    ,{<span class="stringliteral">&quot;vector_&quot;</span>,<span class="stringliteral">&quot;only vectors&quot;</span>,  CVECTOR, 0}  <span class="comment">/* VECTOR_ 12  */</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>};</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>UBYTE BufferForOutput[MAXLINELENGTH+14];</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keywordtype">char</span> *setupfilename = <span class="stringliteral">&quot;form.set&quot;</span>;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>INILOCK(ErrorMessageLock)</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>INILOCK(FileReadLock)</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astruct_all_globals_html"><div class="ttname"><a href="struct_all_globals.html">AllGlobals</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l02468">structs.h:2468</a></div></div>
 <div class="ttc" id="astruct_fixed_globals_html"><div class="ttname"><a href="struct_fixed_globals.html">FixedGlobals</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l02521">structs.h:2521</a></div></div>
 <div class="ttc" id="astructfixedset_html"><div class="ttname"><a href="structfixedset.html">fixedset</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00574">structs.h:574</a></div></div>

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-265-ga405343</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-284-gc6f4a40</span>
    </div>
   </td>
  </tr>
@@ -7772,106 +7772,110 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l07769" name="l07769"></a><span class="lineno"> 7769</span>        MesPrint(<span class="stringliteral">&quot;@Simultaneous use of floating point and modulus arithmetic makes no sense.&quot;</span>);</div>
 <div class="line"><a id="l07770" name="l07770"></a><span class="lineno"> 7770</span>        error = 1;</div>
 <div class="line"><a id="l07771" name="l07771"></a><span class="lineno"> 7771</span>    }</div>
-<div class="line"><a id="l07772" name="l07772"></a><span class="lineno"> 7772</span>    <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
-<div class="line"><a id="l07773" name="l07773"></a><span class="lineno"> 7773</span><span class="comment">/*</span></div>
-<div class="line"><a id="l07774" name="l07774"></a><span class="lineno"> 7774</span><span class="comment">    The first parameter is the float precision</span></div>
-<div class="line"><a id="l07775" name="l07775"></a><span class="lineno"> 7775</span><span class="comment">*/</span></div>
-<div class="line"><a id="l07776" name="l07776"></a><span class="lineno"> 7776</span>    ss = s;</div>
-<div class="line"><a id="l07777" name="l07777"></a><span class="lineno"> 7777</span>    <span class="keywordflow">if</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> ) {</div>
-<div class="line"><a id="l07778" name="l07778"></a><span class="lineno"> 7778</span>        x = 0;</div>
-<div class="line"><a id="l07779" name="l07779"></a><span class="lineno"> 7779</span>        <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l07780" name="l07780"></a><span class="lineno"> 7780</span>            x = 10*x + (*s++-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a id="l07781" name="l07781"></a><span class="lineno"> 7781</span>        } <span class="keywordflow">while</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> );</div>
-<div class="line"><a id="l07782" name="l07782"></a><span class="lineno"> 7782</span><span class="comment">/*</span></div>
-<div class="line"><a id="l07783" name="l07783"></a><span class="lineno"> 7783</span><span class="comment">        The precision can either be in digits or bits. </span></div>
-<div class="line"><a id="l07784" name="l07784"></a><span class="lineno"> 7784</span><span class="comment">        AC.DefaultPrecision is always in bits. </span></div>
-<div class="line"><a id="l07785" name="l07785"></a><span class="lineno"> 7785</span><span class="comment">*/</span></div>
-<div class="line"><a id="l07786" name="l07786"></a><span class="lineno"> 7786</span>        <span class="keywordflow">if</span> ( tolower(*s) == <span class="charliteral">&#39;d&#39;</span> ) { AC.tDefaultPrecision = (LONG)ceil(x*log2(10.0)); s++; }</div>
-<div class="line"><a id="l07787" name="l07787"></a><span class="lineno"> 7787</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( tolower(*s) == <span class="charliteral">&#39;b&#39;</span> ) { AC.tDefaultPrecision = x; s++; }</div>
-<div class="line"><a id="l07788" name="l07788"></a><span class="lineno"> 7788</span>        <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllPar;</div>
-<div class="line"><a id="l07789" name="l07789"></a><span class="lineno"> 7789</span>        <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
-<div class="line"><a id="l07790" name="l07790"></a><span class="lineno"> 7790</span><span class="comment">/*</span></div>
-<div class="line"><a id="l07791" name="l07791"></a><span class="lineno"> 7791</span><span class="comment">        The second parameter is either absent, which implies zero MZV weight, </span></div>
-<div class="line"><a id="l07792" name="l07792"></a><span class="lineno"> 7792</span><span class="comment">        or of the form MZV = &lt;weight&gt;</span></div>
-<div class="line"><a id="l07793" name="l07793"></a><span class="lineno"> 7793</span><span class="comment">*/</span></div>
-<div class="line"><a id="l07794" name="l07794"></a><span class="lineno"> 7794</span>        <span class="keywordflow">if</span> ( tolower(*s) == <span class="charliteral">&#39;m&#39;</span> &amp;&amp; tolower(s[1]) == <span class="charliteral">&#39;z&#39;</span> &amp;&amp; tolower(s[2]) == <span class="charliteral">&#39;v&#39;</span>) {</div>
-<div class="line"><a id="l07795" name="l07795"></a><span class="lineno"> 7795</span>            s+=3;</div>
-<div class="line"><a id="l07796" name="l07796"></a><span class="lineno"> 7796</span>            <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
-<div class="line"><a id="l07797" name="l07797"></a><span class="lineno"> 7797</span>            <span class="keywordflow">if</span> ( *s != <span class="charliteral">&#39;=&#39;</span>) <span class="keywordflow">goto</span> IllPar;</div>
-<div class="line"><a id="l07798" name="l07798"></a><span class="lineno"> 7798</span>            s++;</div>
-<div class="line"><a id="l07799" name="l07799"></a><span class="lineno"> 7799</span>            <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
-<div class="line"><a id="l07800" name="l07800"></a><span class="lineno"> 7800</span>            <span class="keywordflow">if</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> ) {</div>
-<div class="line"><a id="l07801" name="l07801"></a><span class="lineno"> 7801</span>                x = 0;</div>
-<div class="line"><a id="l07802" name="l07802"></a><span class="lineno"> 7802</span>                <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l07803" name="l07803"></a><span class="lineno"> 7803</span>                    x = 10*x + (*s++ - <span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a id="l07804" name="l07804"></a><span class="lineno"> 7804</span>                } <span class="keywordflow">while</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> );</div>
-<div class="line"><a id="l07805" name="l07805"></a><span class="lineno"> 7805</span>                AC.tMaxWeight = x;</div>
-<div class="line"><a id="l07806" name="l07806"></a><span class="lineno"> 7806</span>                <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
-<div class="line"><a id="l07807" name="l07807"></a><span class="lineno"> 7807</span>            }</div>
-<div class="line"><a id="l07808" name="l07808"></a><span class="lineno"> 7808</span>            <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllPar;</div>
-<div class="line"><a id="l07809" name="l07809"></a><span class="lineno"> 7809</span>        }</div>
-<div class="line"><a id="l07810" name="l07810"></a><span class="lineno"> 7810</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l07811" name="l07811"></a><span class="lineno"> 7811</span>            AC.tMaxWeight = 0;</div>
-<div class="line"><a id="l07812" name="l07812"></a><span class="lineno"> 7812</span>        }</div>
-<div class="line"><a id="l07813" name="l07813"></a><span class="lineno"> 7813</span>        <span class="keywordflow">if</span> ( *s ) <span class="keywordflow">goto</span> IllPar;</div>
-<div class="line"><a id="l07814" name="l07814"></a><span class="lineno"> 7814</span>    }</div>
-<div class="line"><a id="l07815" name="l07815"></a><span class="lineno"> 7815</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *s != 0 ) {</div>
-<div class="line"><a id="l07816" name="l07816"></a><span class="lineno"> 7816</span>IllPar:</div>
-<div class="line"><a id="l07817" name="l07817"></a><span class="lineno"> 7817</span>        MesPrint(<span class="stringliteral">&quot;@Illegal parameter in %#StartFloat: %s &quot;</span>,ss);</div>
-<div class="line"><a id="l07818" name="l07818"></a><span class="lineno"> 7818</span>        error = 1;</div>
-<div class="line"><a id="l07819" name="l07819"></a><span class="lineno"> 7819</span>    }</div>
-<div class="line"><a id="l07820" name="l07820"></a><span class="lineno"> 7820</span>    <span class="keywordflow">if</span> ( error == 0 ) {</div>
-<div class="line"><a id="l07821" name="l07821"></a><span class="lineno"> 7821</span>        <span class="keywordflow">if</span> ( AC.tDefaultPrecision &amp;&amp; ( AC.tDefaultPrecision != AC.DefaultPrecision</div>
-<div class="line"><a id="l07822" name="l07822"></a><span class="lineno"> 7822</span>        || AT.aux_ == 0 ) ) {</div>
-<div class="line"><a id="l07823" name="l07823"></a><span class="lineno"> 7823</span>            AC.DefaultPrecision = AC.tDefaultPrecision;</div>
-<div class="line"><a id="l07824" name="l07824"></a><span class="lineno"> 7824</span>            AC.tDefaultPrecision = 0;</div>
-<div class="line"><a id="l07825" name="l07825"></a><span class="lineno"> 7825</span>        }</div>
-<div class="line"><a id="l07826" name="l07826"></a><span class="lineno"> 7826</span>        <span class="keywordflow">if</span> ( AC.tMaxWeight &amp;&amp; ( AC.tMaxWeight != AC.MaxWeight</div>
-<div class="line"><a id="l07827" name="l07827"></a><span class="lineno"> 7827</span>        || AT.aux_ == 0 ) ) {</div>
-<div class="line"><a id="l07828" name="l07828"></a><span class="lineno"> 7828</span>            AC.MaxWeight = AC.tMaxWeight;</div>
-<div class="line"><a id="l07829" name="l07829"></a><span class="lineno"> 7829</span>            AC.tMaxWeight = 0;</div>
-<div class="line"><a id="l07830" name="l07830"></a><span class="lineno"> 7830</span>        }</div>
-<div class="line"><a id="l07831" name="l07831"></a><span class="lineno"> 7831</span>        SetFloatPrecision(AC.DefaultPrecision+AC.MaxWeight+1);</div>
-<div class="line"><a id="l07832" name="l07832"></a><span class="lineno"> 7832</span>        SetupMPFTables();</div>
-<div class="line"><a id="l07833" name="l07833"></a><span class="lineno"> 7833</span>        <span class="keywordflow">if</span> ( AC.MaxWeight &gt; 0 ) SetupMZVTables();</div>
-<div class="line"><a id="l07834" name="l07834"></a><span class="lineno"> 7834</span>        SetfFloatPrecision(AC.DefaultPrecision);</div>
-<div class="line"><a id="l07835" name="l07835"></a><span class="lineno"> 7835</span>    }</div>
-<div class="line"><a id="l07836" name="l07836"></a><span class="lineno"> 7836</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l07837" name="l07837"></a><span class="lineno"> 7837</span>        AC.tDefaultPrecision = 0;</div>
-<div class="line"><a id="l07838" name="l07838"></a><span class="lineno"> 7838</span>        AC.tMaxWeight = 0;</div>
+<div class="line"><a id="l07772" name="l07772"></a><span class="lineno"> 7772</span>    <span class="keywordflow">if</span> ( AT.aux_ ) { <span class="comment">// First, we clean up any previous floating point system. </span></div>
+<div class="line"><a id="l07773" name="l07773"></a><span class="lineno"> 7773</span>        ClearfFloat();</div>
+<div class="line"><a id="l07774" name="l07774"></a><span class="lineno"> 7774</span>        ClearMZVTables();</div>
+<div class="line"><a id="l07775" name="l07775"></a><span class="lineno"> 7775</span>    }</div>
+<div class="line"><a id="l07776" name="l07776"></a><span class="lineno"> 7776</span>    <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
+<div class="line"><a id="l07777" name="l07777"></a><span class="lineno"> 7777</span><span class="comment">/*</span></div>
+<div class="line"><a id="l07778" name="l07778"></a><span class="lineno"> 7778</span><span class="comment">    The first parameter is the float precision</span></div>
+<div class="line"><a id="l07779" name="l07779"></a><span class="lineno"> 7779</span><span class="comment">*/</span></div>
+<div class="line"><a id="l07780" name="l07780"></a><span class="lineno"> 7780</span>    ss = s;</div>
+<div class="line"><a id="l07781" name="l07781"></a><span class="lineno"> 7781</span>    <span class="keywordflow">if</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> ) {</div>
+<div class="line"><a id="l07782" name="l07782"></a><span class="lineno"> 7782</span>        x = 0;</div>
+<div class="line"><a id="l07783" name="l07783"></a><span class="lineno"> 7783</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l07784" name="l07784"></a><span class="lineno"> 7784</span>            x = 10*x + (*s++-<span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a id="l07785" name="l07785"></a><span class="lineno"> 7785</span>        } <span class="keywordflow">while</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> );</div>
+<div class="line"><a id="l07786" name="l07786"></a><span class="lineno"> 7786</span><span class="comment">/*</span></div>
+<div class="line"><a id="l07787" name="l07787"></a><span class="lineno"> 7787</span><span class="comment">        The precision can either be in digits or bits. </span></div>
+<div class="line"><a id="l07788" name="l07788"></a><span class="lineno"> 7788</span><span class="comment">        AC.DefaultPrecision is always in bits. </span></div>
+<div class="line"><a id="l07789" name="l07789"></a><span class="lineno"> 7789</span><span class="comment">*/</span></div>
+<div class="line"><a id="l07790" name="l07790"></a><span class="lineno"> 7790</span>        <span class="keywordflow">if</span> ( tolower(*s) == <span class="charliteral">&#39;d&#39;</span> ) { AC.tDefaultPrecision = (LONG)ceil(x*log2(10.0)); s++; }</div>
+<div class="line"><a id="l07791" name="l07791"></a><span class="lineno"> 7791</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( tolower(*s) == <span class="charliteral">&#39;b&#39;</span> ) { AC.tDefaultPrecision = x; s++; }</div>
+<div class="line"><a id="l07792" name="l07792"></a><span class="lineno"> 7792</span>        <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllPar;</div>
+<div class="line"><a id="l07793" name="l07793"></a><span class="lineno"> 7793</span>        <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
+<div class="line"><a id="l07794" name="l07794"></a><span class="lineno"> 7794</span><span class="comment">/*</span></div>
+<div class="line"><a id="l07795" name="l07795"></a><span class="lineno"> 7795</span><span class="comment">        The second parameter is either absent, which implies zero MZV weight, </span></div>
+<div class="line"><a id="l07796" name="l07796"></a><span class="lineno"> 7796</span><span class="comment">        or of the form MZV = &lt;weight&gt;</span></div>
+<div class="line"><a id="l07797" name="l07797"></a><span class="lineno"> 7797</span><span class="comment">*/</span></div>
+<div class="line"><a id="l07798" name="l07798"></a><span class="lineno"> 7798</span>        <span class="keywordflow">if</span> ( tolower(*s) == <span class="charliteral">&#39;m&#39;</span> &amp;&amp; tolower(s[1]) == <span class="charliteral">&#39;z&#39;</span> &amp;&amp; tolower(s[2]) == <span class="charliteral">&#39;v&#39;</span>) {</div>
+<div class="line"><a id="l07799" name="l07799"></a><span class="lineno"> 7799</span>            s+=3;</div>
+<div class="line"><a id="l07800" name="l07800"></a><span class="lineno"> 7800</span>            <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
+<div class="line"><a id="l07801" name="l07801"></a><span class="lineno"> 7801</span>            <span class="keywordflow">if</span> ( *s != <span class="charliteral">&#39;=&#39;</span>) <span class="keywordflow">goto</span> IllPar;</div>
+<div class="line"><a id="l07802" name="l07802"></a><span class="lineno"> 7802</span>            s++;</div>
+<div class="line"><a id="l07803" name="l07803"></a><span class="lineno"> 7803</span>            <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
+<div class="line"><a id="l07804" name="l07804"></a><span class="lineno"> 7804</span>            <span class="keywordflow">if</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> ) {</div>
+<div class="line"><a id="l07805" name="l07805"></a><span class="lineno"> 7805</span>                x = 0;</div>
+<div class="line"><a id="l07806" name="l07806"></a><span class="lineno"> 7806</span>                <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l07807" name="l07807"></a><span class="lineno"> 7807</span>                    x = 10*x + (*s++ - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a id="l07808" name="l07808"></a><span class="lineno"> 7808</span>                } <span class="keywordflow">while</span> ( *s &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *s &lt;= <span class="charliteral">&#39;9&#39;</span> );</div>
+<div class="line"><a id="l07809" name="l07809"></a><span class="lineno"> 7809</span>                AC.tMaxWeight = x;</div>
+<div class="line"><a id="l07810" name="l07810"></a><span class="lineno"> 7810</span>                <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
+<div class="line"><a id="l07811" name="l07811"></a><span class="lineno"> 7811</span>            }</div>
+<div class="line"><a id="l07812" name="l07812"></a><span class="lineno"> 7812</span>            <span class="keywordflow">else</span> <span class="keywordflow">goto</span> IllPar;</div>
+<div class="line"><a id="l07813" name="l07813"></a><span class="lineno"> 7813</span>        }</div>
+<div class="line"><a id="l07814" name="l07814"></a><span class="lineno"> 7814</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l07815" name="l07815"></a><span class="lineno"> 7815</span>            AC.tMaxWeight = 0;</div>
+<div class="line"><a id="l07816" name="l07816"></a><span class="lineno"> 7816</span>        }</div>
+<div class="line"><a id="l07817" name="l07817"></a><span class="lineno"> 7817</span>        <span class="keywordflow">if</span> ( *s ) <span class="keywordflow">goto</span> IllPar;</div>
+<div class="line"><a id="l07818" name="l07818"></a><span class="lineno"> 7818</span>    }</div>
+<div class="line"><a id="l07819" name="l07819"></a><span class="lineno"> 7819</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *s != 0 ) {</div>
+<div class="line"><a id="l07820" name="l07820"></a><span class="lineno"> 7820</span>IllPar:</div>
+<div class="line"><a id="l07821" name="l07821"></a><span class="lineno"> 7821</span>        MesPrint(<span class="stringliteral">&quot;@Illegal parameter in %#StartFloat: %s &quot;</span>,ss);</div>
+<div class="line"><a id="l07822" name="l07822"></a><span class="lineno"> 7822</span>        error = 1;</div>
+<div class="line"><a id="l07823" name="l07823"></a><span class="lineno"> 7823</span>    }</div>
+<div class="line"><a id="l07824" name="l07824"></a><span class="lineno"> 7824</span>    <span class="keywordflow">if</span> ( error == 0 ) {</div>
+<div class="line"><a id="l07825" name="l07825"></a><span class="lineno"> 7825</span>        <span class="keywordflow">if</span> ( AC.tDefaultPrecision &amp;&amp; ( AC.tDefaultPrecision != AC.DefaultPrecision</div>
+<div class="line"><a id="l07826" name="l07826"></a><span class="lineno"> 7826</span>        || AT.aux_ == 0 ) ) {</div>
+<div class="line"><a id="l07827" name="l07827"></a><span class="lineno"> 7827</span>            AC.DefaultPrecision = AC.tDefaultPrecision;</div>
+<div class="line"><a id="l07828" name="l07828"></a><span class="lineno"> 7828</span>            AC.tDefaultPrecision = 0;</div>
+<div class="line"><a id="l07829" name="l07829"></a><span class="lineno"> 7829</span>        }</div>
+<div class="line"><a id="l07830" name="l07830"></a><span class="lineno"> 7830</span>        <span class="keywordflow">if</span> ( AC.tMaxWeight &amp;&amp; ( AC.tMaxWeight != AC.MaxWeight</div>
+<div class="line"><a id="l07831" name="l07831"></a><span class="lineno"> 7831</span>        || AT.aux_ == 0 ) ) {</div>
+<div class="line"><a id="l07832" name="l07832"></a><span class="lineno"> 7832</span>            AC.MaxWeight = AC.tMaxWeight;</div>
+<div class="line"><a id="l07833" name="l07833"></a><span class="lineno"> 7833</span>            AC.tMaxWeight = 0;</div>
+<div class="line"><a id="l07834" name="l07834"></a><span class="lineno"> 7834</span>        }</div>
+<div class="line"><a id="l07835" name="l07835"></a><span class="lineno"> 7835</span>        SetFloatPrecision(AC.DefaultPrecision+AC.MaxWeight+1);</div>
+<div class="line"><a id="l07836" name="l07836"></a><span class="lineno"> 7836</span>        SetupMPFTables();</div>
+<div class="line"><a id="l07837" name="l07837"></a><span class="lineno"> 7837</span>        <span class="keywordflow">if</span> ( AC.MaxWeight &gt; 0 ) SetupMZVTables();</div>
+<div class="line"><a id="l07838" name="l07838"></a><span class="lineno"> 7838</span>        SetfFloatPrecision(AC.DefaultPrecision);</div>
 <div class="line"><a id="l07839" name="l07839"></a><span class="lineno"> 7839</span>    }</div>
-<div class="line"><a id="l07840" name="l07840"></a><span class="lineno"> 7840</span>    <span class="keywordflow">return</span>(error);</div>
-<div class="line"><a id="l07841" name="l07841"></a><span class="lineno"> 7841</span>}</div>
-<div class="line"><a id="l07842" name="l07842"></a><span class="lineno"> 7842</span> </div>
-<div class="line"><a id="l07843" name="l07843"></a><span class="lineno"> 7843</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l07844" name="l07844"></a><span class="lineno"> 7844</span><span class="comment">/*</span></div>
-<div class="line"><a id="l07845" name="l07845"></a><span class="lineno"> 7845</span><span class="comment">        #] DoStartFloat : </span></div>
-<div class="line"><a id="l07846" name="l07846"></a><span class="lineno"> 7846</span><span class="comment">        #[ DoEndFloat :</span></div>
-<div class="line"><a id="l07847" name="l07847"></a><span class="lineno"> 7847</span><span class="comment">*/</span></div>
-<div class="line"><a id="l07848" name="l07848"></a><span class="lineno"> 7848</span><span class="preprocessor">#ifdef WITHFLOAT</span></div>
-<div class="line"><a id="l07849" name="l07849"></a><span class="lineno"> 7849</span> </div>
-<div class="line"><a id="l07850" name="l07850"></a><span class="lineno"> 7850</span><span class="keywordtype">int</span> DoEndFloat(UBYTE *s)</div>
-<div class="line"><a id="l07851" name="l07851"></a><span class="lineno"> 7851</span>{</div>
-<div class="line"><a id="l07852" name="l07852"></a><span class="lineno"> 7852</span>    <span class="keywordtype">int</span> error = 0;</div>
-<div class="line"><a id="l07853" name="l07853"></a><span class="lineno"> 7853</span>    <span class="keywordflow">if</span> ( AP.PreSwitchModes[AP.PreSwitchLevel] != EXECUTINGPRESWITCH ) <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a id="l07854" name="l07854"></a><span class="lineno"> 7854</span>    <span class="keywordflow">if</span> ( AP.PreIfStack[AP.PreIfLevel] != EXECUTINGIF ) <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a id="l07855" name="l07855"></a><span class="lineno"> 7855</span>    <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
-<div class="line"><a id="l07856" name="l07856"></a><span class="lineno"> 7856</span>    <span class="keywordflow">if</span> ( *s != 0 ) {</div>
-<div class="line"><a id="l07857" name="l07857"></a><span class="lineno"> 7857</span>        MesPrint(<span class="stringliteral">&quot;@Illegal parameter in %#EndFloat instruction: %s &quot;</span>,s);</div>
-<div class="line"><a id="l07858" name="l07858"></a><span class="lineno"> 7858</span>        error = 1;</div>
-<div class="line"><a id="l07859" name="l07859"></a><span class="lineno"> 7859</span>    }</div>
-<div class="line"><a id="l07860" name="l07860"></a><span class="lineno"> 7860</span>    <span class="keywordflow">if</span> ( error == 0 ) {</div>
-<div class="line"><a id="l07861" name="l07861"></a><span class="lineno"> 7861</span>        ClearfFloat();</div>
-<div class="line"><a id="l07862" name="l07862"></a><span class="lineno"> 7862</span>        ClearMZVTables();</div>
+<div class="line"><a id="l07840" name="l07840"></a><span class="lineno"> 7840</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l07841" name="l07841"></a><span class="lineno"> 7841</span>        AC.tDefaultPrecision = 0;</div>
+<div class="line"><a id="l07842" name="l07842"></a><span class="lineno"> 7842</span>        AC.tMaxWeight = 0;</div>
+<div class="line"><a id="l07843" name="l07843"></a><span class="lineno"> 7843</span>    }</div>
+<div class="line"><a id="l07844" name="l07844"></a><span class="lineno"> 7844</span>    <span class="keywordflow">return</span>(error);</div>
+<div class="line"><a id="l07845" name="l07845"></a><span class="lineno"> 7845</span>}</div>
+<div class="line"><a id="l07846" name="l07846"></a><span class="lineno"> 7846</span> </div>
+<div class="line"><a id="l07847" name="l07847"></a><span class="lineno"> 7847</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l07848" name="l07848"></a><span class="lineno"> 7848</span><span class="comment">/*</span></div>
+<div class="line"><a id="l07849" name="l07849"></a><span class="lineno"> 7849</span><span class="comment">        #] DoStartFloat : </span></div>
+<div class="line"><a id="l07850" name="l07850"></a><span class="lineno"> 7850</span><span class="comment">        #[ DoEndFloat :</span></div>
+<div class="line"><a id="l07851" name="l07851"></a><span class="lineno"> 7851</span><span class="comment">*/</span></div>
+<div class="line"><a id="l07852" name="l07852"></a><span class="lineno"> 7852</span><span class="preprocessor">#ifdef WITHFLOAT</span></div>
+<div class="line"><a id="l07853" name="l07853"></a><span class="lineno"> 7853</span> </div>
+<div class="line"><a id="l07854" name="l07854"></a><span class="lineno"> 7854</span><span class="keywordtype">int</span> DoEndFloat(UBYTE *s)</div>
+<div class="line"><a id="l07855" name="l07855"></a><span class="lineno"> 7855</span>{</div>
+<div class="line"><a id="l07856" name="l07856"></a><span class="lineno"> 7856</span>    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a id="l07857" name="l07857"></a><span class="lineno"> 7857</span>    <span class="keywordflow">if</span> ( AP.PreSwitchModes[AP.PreSwitchLevel] != EXECUTINGPRESWITCH ) <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a id="l07858" name="l07858"></a><span class="lineno"> 7858</span>    <span class="keywordflow">if</span> ( AP.PreIfStack[AP.PreIfLevel] != EXECUTINGIF ) <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a id="l07859" name="l07859"></a><span class="lineno"> 7859</span>    <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
+<div class="line"><a id="l07860" name="l07860"></a><span class="lineno"> 7860</span>    <span class="keywordflow">if</span> ( *s != 0 ) {</div>
+<div class="line"><a id="l07861" name="l07861"></a><span class="lineno"> 7861</span>        MesPrint(<span class="stringliteral">&quot;@Illegal parameter in %#EndFloat instruction: %s &quot;</span>,s);</div>
+<div class="line"><a id="l07862" name="l07862"></a><span class="lineno"> 7862</span>        error = 1;</div>
 <div class="line"><a id="l07863" name="l07863"></a><span class="lineno"> 7863</span>    }</div>
-<div class="line"><a id="l07864" name="l07864"></a><span class="lineno"> 7864</span>    <span class="keywordflow">return</span>(error);</div>
-<div class="line"><a id="l07865" name="l07865"></a><span class="lineno"> 7865</span>}</div>
-<div class="line"><a id="l07866" name="l07866"></a><span class="lineno"> 7866</span> </div>
-<div class="line"><a id="l07867" name="l07867"></a><span class="lineno"> 7867</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l07868" name="l07868"></a><span class="lineno"> 7868</span><span class="comment">/*</span></div>
-<div class="line"><a id="l07869" name="l07869"></a><span class="lineno"> 7869</span><span class="comment">        #] DoEndFloat : </span></div>
-<div class="line"><a id="l07870" name="l07870"></a><span class="lineno"> 7870</span><span class="comment">    # ] PreProcessor :</span></div>
-<div class="line"><a id="l07871" name="l07871"></a><span class="lineno"> 7871</span><span class="comment">*/</span></div>
+<div class="line"><a id="l07864" name="l07864"></a><span class="lineno"> 7864</span>    <span class="keywordflow">if</span> ( error == 0 ) {</div>
+<div class="line"><a id="l07865" name="l07865"></a><span class="lineno"> 7865</span>        ClearfFloat();</div>
+<div class="line"><a id="l07866" name="l07866"></a><span class="lineno"> 7866</span>        ClearMZVTables();</div>
+<div class="line"><a id="l07867" name="l07867"></a><span class="lineno"> 7867</span>    }</div>
+<div class="line"><a id="l07868" name="l07868"></a><span class="lineno"> 7868</span>    <span class="keywordflow">return</span>(error);</div>
+<div class="line"><a id="l07869" name="l07869"></a><span class="lineno"> 7869</span>}</div>
+<div class="line"><a id="l07870" name="l07870"></a><span class="lineno"> 7870</span> </div>
+<div class="line"><a id="l07871" name="l07871"></a><span class="lineno"> 7871</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l07872" name="l07872"></a><span class="lineno"> 7872</span><span class="comment">/*</span></div>
+<div class="line"><a id="l07873" name="l07873"></a><span class="lineno"> 7873</span><span class="comment">        #] DoEndFloat : </span></div>
+<div class="line"><a id="l07874" name="l07874"></a><span class="lineno"> 7874</span><span class="comment">    # ] PreProcessor :</span></div>
+<div class="line"><a id="l07875" name="l07875"></a><span class="lineno"> 7875</span><span class="comment">*/</span></div>
 <div class="ttc" id="acheckpoint_8c_html_a60d3513a65e83e59f4aa48421f7356e6"><div class="ttname"><a href="checkpoint_8c.html#a60d3513a65e83e59f4aa48421f7356e6">DoCheckpoint</a></div><div class="ttdeci">void DoCheckpoint(int moduletype)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l03111">checkpoint.c:3111</a></div></div>
 <div class="ttc" id="acheckpoint_8c_html_a9213bd2589bf698d8ee098f10bf12d65"><div class="ttname"><a href="checkpoint_8c.html#a9213bd2589bf698d8ee098f10bf12d65">DoRecovery</a></div><div class="ttdeci">int DoRecovery(int *moduletype)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l01402">checkpoint.c:1402</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a26072cb500b84460ce5816cc247311f6"><div class="ttname"><a href="comtool_8c.html#a26072cb500b84460ce5816cc247311f6">AddRHS</a></div><div class="ttdeci">WORD * AddRHS(int num, int type)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00214">comtool.c:214</a></div></div>

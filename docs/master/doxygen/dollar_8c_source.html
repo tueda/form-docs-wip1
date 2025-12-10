@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-265-ga405343</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-284-gc6f4a40</span>
    </div>
   </td>
  </tr>
@@ -3577,7 +3577,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03554" name="l03554"></a><span class="lineno"> 3554</span><span class="keywordtype">void</span> CleanDollarFactors(<a class="code hl_struct" href="struct_do_ll_ar_s.html">DOLLARS</a> d)</div>
 <div class="line"><a id="l03555" name="l03555"></a><span class="lineno"> 3555</span>{</div>
 <div class="line"><a id="l03556" name="l03556"></a><span class="lineno"> 3556</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a id="l03557" name="l03557"></a><span class="lineno"> 3557</span>    <span class="keywordflow">if</span> ( d-&gt;nfactors &gt; 1 ) {</div>
+<div class="line"><a id="l03557" name="l03557"></a><span class="lineno"> 3557</span>    <span class="keywordflow">if</span> ( d-&gt;nfactors &gt;= 1 ) {</div>
 <div class="line"><a id="l03558" name="l03558"></a><span class="lineno"> 3558</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; d-&gt;nfactors; i++ ) {</div>
 <div class="line"><a id="l03559" name="l03559"></a><span class="lineno"> 3559</span>            <span class="keywordflow">if</span> ( d-&gt;factors[i].where )</div>
 <div class="line"><a id="l03560" name="l03560"></a><span class="lineno"> 3560</span>                M_free(d-&gt;factors[i].where,<span class="stringliteral">&quot;dollar factors&quot;</span>);</div>
