@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-284-gc6f4a40</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-285-g59b9c40</span>
    </div>
   </td>
  </tr>
@@ -3579,404 +3579,405 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l03556" name="l03556"></a><span class="lineno"> 3556</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l03557" name="l03557"></a><span class="lineno"> 3557</span>    <span class="keywordflow">if</span> ( d-&gt;nfactors &gt;= 1 ) {</div>
 <div class="line"><a id="l03558" name="l03558"></a><span class="lineno"> 3558</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; d-&gt;nfactors; i++ ) {</div>
-<div class="line"><a id="l03559" name="l03559"></a><span class="lineno"> 3559</span>            <span class="keywordflow">if</span> ( d-&gt;factors[i].where )</div>
-<div class="line"><a id="l03560" name="l03560"></a><span class="lineno"> 3560</span>                M_free(d-&gt;factors[i].where,<span class="stringliteral">&quot;dollar factors&quot;</span>);</div>
-<div class="line"><a id="l03561" name="l03561"></a><span class="lineno"> 3561</span>        }</div>
-<div class="line"><a id="l03562" name="l03562"></a><span class="lineno"> 3562</span>    }</div>
-<div class="line"><a id="l03563" name="l03563"></a><span class="lineno"> 3563</span>    <span class="keywordflow">if</span> ( d-&gt;factors ) {</div>
-<div class="line"><a id="l03564" name="l03564"></a><span class="lineno"> 3564</span>        M_free(d-&gt;factors,<span class="stringliteral">&quot;dollar factors&quot;</span>);</div>
-<div class="line"><a id="l03565" name="l03565"></a><span class="lineno"> 3565</span>        d-&gt;factors = 0;</div>
-<div class="line"><a id="l03566" name="l03566"></a><span class="lineno"> 3566</span>    }</div>
-<div class="line"><a id="l03567" name="l03567"></a><span class="lineno"> 3567</span>    d-&gt;nfactors = 0;</div>
-<div class="line"><a id="l03568" name="l03568"></a><span class="lineno"> 3568</span>}</div>
-<div class="line"><a id="l03569" name="l03569"></a><span class="lineno"> 3569</span> </div>
-<div class="line"><a id="l03570" name="l03570"></a><span class="lineno"> 3570</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03571" name="l03571"></a><span class="lineno"> 3571</span><span class="comment">    #] CleanDollarFactors : </span></div>
-<div class="line"><a id="l03572" name="l03572"></a><span class="lineno"> 3572</span><span class="comment">    #[ TakeDollarContent :</span></div>
-<div class="line"><a id="l03573" name="l03573"></a><span class="lineno"> 3573</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03574" name="l03574"></a><span class="lineno"> 3574</span> </div>
-<div class="line"><a id="l03575" name="l03575"></a><span class="lineno"> 3575</span>WORD *TakeDollarContent(PHEAD WORD *dollarbuffer, WORD **factor)</div>
-<div class="line"><a id="l03576" name="l03576"></a><span class="lineno"> 3576</span>{</div>
-<div class="line"><a id="l03577" name="l03577"></a><span class="lineno"> 3577</span>    WORD *remain, *t;</div>
-<div class="line"><a id="l03578" name="l03578"></a><span class="lineno"> 3578</span>    <span class="keywordtype">int</span> pow;</div>
-<div class="line"><a id="l03579" name="l03579"></a><span class="lineno"> 3579</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03580" name="l03580"></a><span class="lineno"> 3580</span><span class="comment">    We force the sign of the first term to be positive.</span></div>
-<div class="line"><a id="l03581" name="l03581"></a><span class="lineno"> 3581</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03582" name="l03582"></a><span class="lineno"> 3582</span>    t = dollarbuffer; pow = 1;</div>
-<div class="line"><a id="l03583" name="l03583"></a><span class="lineno"> 3583</span>    t += *t;</div>
-<div class="line"><a id="l03584" name="l03584"></a><span class="lineno"> 3584</span>    <span class="keywordflow">if</span> ( t[-1] &lt; 0 ) {</div>
-<div class="line"><a id="l03585" name="l03585"></a><span class="lineno"> 3585</span>        pow = 0;</div>
-<div class="line"><a id="l03586" name="l03586"></a><span class="lineno"> 3586</span>        t[-1] = -t[-1];</div>
-<div class="line"><a id="l03587" name="l03587"></a><span class="lineno"> 3587</span>        <span class="keywordflow">while</span> ( *t ) {</div>
-<div class="line"><a id="l03588" name="l03588"></a><span class="lineno"> 3588</span>            t += *t; t[-1] = -t[-1];</div>
-<div class="line"><a id="l03589" name="l03589"></a><span class="lineno"> 3589</span>        }</div>
-<div class="line"><a id="l03590" name="l03590"></a><span class="lineno"> 3590</span>    }</div>
-<div class="line"><a id="l03591" name="l03591"></a><span class="lineno"> 3591</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03592" name="l03592"></a><span class="lineno"> 3592</span><span class="comment">    Now the GCD of the numerators and the LCM of the denominators:</span></div>
-<div class="line"><a id="l03593" name="l03593"></a><span class="lineno"> 3593</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03594" name="l03594"></a><span class="lineno"> 3594</span>    <span class="keywordflow">if</span> ( AN.cmod != 0 ) {</div>
-<div class="line"><a id="l03595" name="l03595"></a><span class="lineno"> 3595</span>        <span class="keywordflow">if</span> ( ( *factor = <a class="code hl_function" href="dollar_8c.html#adf9813c268b1a77f85e68e80a011844d">MakeDollarMod</a>(BHEAD dollarbuffer,&amp;remain) ) == 0 ) {</div>
-<div class="line"><a id="l03596" name="l03596"></a><span class="lineno"> 3596</span>            Terminate(-1);</div>
-<div class="line"><a id="l03597" name="l03597"></a><span class="lineno"> 3597</span>        }</div>
-<div class="line"><a id="l03598" name="l03598"></a><span class="lineno"> 3598</span>        <span class="keywordflow">if</span> ( pow == 0 ) {</div>
-<div class="line"><a id="l03599" name="l03599"></a><span class="lineno"> 3599</span>            (*factor)[**factor-1] = -(*factor)[**factor-1];</div>
-<div class="line"><a id="l03600" name="l03600"></a><span class="lineno"> 3600</span>            (*factor)[**factor-1] += AN.cmod[0];</div>
-<div class="line"><a id="l03601" name="l03601"></a><span class="lineno"> 3601</span>        }</div>
-<div class="line"><a id="l03602" name="l03602"></a><span class="lineno"> 3602</span>    }</div>
-<div class="line"><a id="l03603" name="l03603"></a><span class="lineno"> 3603</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03604" name="l03604"></a><span class="lineno"> 3604</span>        <span class="keywordflow">if</span> ( ( *factor = <a class="code hl_function" href="dollar_8c.html#a00c9b1bf10d19f4376e652b9fd61955c">MakeDollarInteger</a>(BHEAD dollarbuffer,&amp;remain) ) == 0 ) {</div>
-<div class="line"><a id="l03605" name="l03605"></a><span class="lineno"> 3605</span>            Terminate(-1);</div>
-<div class="line"><a id="l03606" name="l03606"></a><span class="lineno"> 3606</span>        }</div>
-<div class="line"><a id="l03607" name="l03607"></a><span class="lineno"> 3607</span>        <span class="keywordflow">if</span> ( pow == 0 ) {</div>
-<div class="line"><a id="l03608" name="l03608"></a><span class="lineno"> 3608</span>            (*factor)[**factor-1] = -(*factor)[**factor-1];</div>
-<div class="line"><a id="l03609" name="l03609"></a><span class="lineno"> 3609</span>        }</div>
-<div class="line"><a id="l03610" name="l03610"></a><span class="lineno"> 3610</span>    }</div>
-<div class="line"><a id="l03611" name="l03611"></a><span class="lineno"> 3611</span>    <span class="keywordflow">return</span>(remain);</div>
-<div class="line"><a id="l03612" name="l03612"></a><span class="lineno"> 3612</span>}</div>
-<div class="line"><a id="l03613" name="l03613"></a><span class="lineno"> 3613</span> </div>
-<div class="line"><a id="l03614" name="l03614"></a><span class="lineno"> 3614</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03615" name="l03615"></a><span class="lineno"> 3615</span><span class="comment">    #] TakeDollarContent : </span></div>
-<div class="line"><a id="l03616" name="l03616"></a><span class="lineno"> 3616</span><span class="comment">    #[ MakeDollarInteger :</span></div>
-<div class="line"><a id="l03617" name="l03617"></a><span class="lineno"> 3617</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen03627" data-start="{" data-end="}">
-<div class="line"><a id="l03627" name="l03627"></a><span class="lineno"><a class="line" href="declare_8h.html#a364eb34f23bef087d72800ef883a2bd1"> 3627</a></span>WORD *<a class="code hl_function" href="dollar_8c.html#a00c9b1bf10d19f4376e652b9fd61955c">MakeDollarInteger</a>(PHEAD WORD *bufin,WORD **bufout)</div>
-<div class="line"><a id="l03628" name="l03628"></a><span class="lineno"> 3628</span>{</div>
-<div class="line"><a id="l03629" name="l03629"></a><span class="lineno"> 3629</span>    GETBIDENTITY</div>
-<div class="line"><a id="l03630" name="l03630"></a><span class="lineno"> 3630</span>    UWORD *GCDbuffer, *GCDbuffer2, *LCMbuffer, *LCMb, *LCMc;</div>
-<div class="line"><a id="l03631" name="l03631"></a><span class="lineno"> 3631</span>    WORD *r, *r1, *r2, *r3, *rnext, i, k, j, *oldworkpointer, *factor;</div>
-<div class="line"><a id="l03632" name="l03632"></a><span class="lineno"> 3632</span>    WORD kGCD, kLCM, kGCD2, kkLCM, jLCM, jGCD;</div>
-<div class="line"><a id="l03633" name="l03633"></a><span class="lineno"> 3633</span>    <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf+AC.cbufnum;</div>
-<div class="line"><a id="l03634" name="l03634"></a><span class="lineno"> 3634</span> </div>
-<div class="line"><a id="l03635" name="l03635"></a><span class="lineno"> 3635</span>    GCDbuffer = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03636" name="l03636"></a><span class="lineno"> 3636</span>    GCDbuffer2 = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03637" name="l03637"></a><span class="lineno"> 3637</span>    LCMbuffer = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03638" name="l03638"></a><span class="lineno"> 3638</span>    LCMb = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03639" name="l03639"></a><span class="lineno"> 3639</span>    LCMc = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03640" name="l03640"></a><span class="lineno"> 3640</span>    r = bufin;</div>
-<div class="line"><a id="l03641" name="l03641"></a><span class="lineno"> 3641</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03642" name="l03642"></a><span class="lineno"> 3642</span><span class="comment">    First take the first term to load up the LCM and the GCD</span></div>
-<div class="line"><a id="l03643" name="l03643"></a><span class="lineno"> 3643</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03644" name="l03644"></a><span class="lineno"> 3644</span>    r2 = r + *r;</div>
-<div class="line"><a id="l03645" name="l03645"></a><span class="lineno"> 3645</span>    j = r2[-1];</div>
-<div class="line"><a id="l03646" name="l03646"></a><span class="lineno"> 3646</span>    r3 = r2 - ABS(j);</div>
-<div class="line"><a id="l03647" name="l03647"></a><span class="lineno"> 3647</span>    k = REDLENG(j);</div>
-<div class="line"><a id="l03648" name="l03648"></a><span class="lineno"> 3648</span>    <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
-<div class="line"><a id="l03649" name="l03649"></a><span class="lineno"> 3649</span>    <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
-<div class="line"><a id="l03650" name="l03650"></a><span class="lineno"> 3650</span>    <span class="keywordflow">for</span> ( kGCD = 0; kGCD &lt; k; kGCD++ ) GCDbuffer[kGCD] = r3[kGCD];</div>
-<div class="line"><a id="l03651" name="l03651"></a><span class="lineno"> 3651</span>    k = REDLENG(j);</div>
-<div class="line"><a id="l03652" name="l03652"></a><span class="lineno"> 3652</span>    <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
-<div class="line"><a id="l03653" name="l03653"></a><span class="lineno"> 3653</span>    r3 += k;</div>
-<div class="line"><a id="l03654" name="l03654"></a><span class="lineno"> 3654</span>    <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
-<div class="line"><a id="l03655" name="l03655"></a><span class="lineno"> 3655</span>    <span class="keywordflow">for</span> ( kLCM = 0; kLCM &lt; k; kLCM++ ) LCMbuffer[kLCM] = r3[kLCM];</div>
-<div class="line"><a id="l03656" name="l03656"></a><span class="lineno"> 3656</span>    r1 = r2;</div>
-<div class="line"><a id="l03657" name="l03657"></a><span class="lineno"> 3657</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03658" name="l03658"></a><span class="lineno"> 3658</span><span class="comment">    Now go through the rest of the terms in this argument.</span></div>
-<div class="line"><a id="l03659" name="l03659"></a><span class="lineno"> 3659</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03660" name="l03660"></a><span class="lineno"> 3660</span>    <span class="keywordflow">while</span> ( *r1 ) {</div>
-<div class="line"><a id="l03661" name="l03661"></a><span class="lineno"> 3661</span>        r2 = r1 + *r1;</div>
-<div class="line"><a id="l03662" name="l03662"></a><span class="lineno"> 3662</span>        j = r2[-1];</div>
-<div class="line"><a id="l03663" name="l03663"></a><span class="lineno"> 3663</span>        r3 = r2 - ABS(j);</div>
-<div class="line"><a id="l03664" name="l03664"></a><span class="lineno"> 3664</span>        k = REDLENG(j);</div>
-<div class="line"><a id="l03665" name="l03665"></a><span class="lineno"> 3665</span>        <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
-<div class="line"><a id="l03666" name="l03666"></a><span class="lineno"> 3666</span>        <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
-<div class="line"><a id="l03667" name="l03667"></a><span class="lineno"> 3667</span>        <span class="keywordflow">if</span> ( ( ( GCDbuffer[0] == 1 ) &amp;&amp; ( kGCD == 1 ) ) ) {</div>
-<div class="line"><a id="l03668" name="l03668"></a><span class="lineno"> 3668</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03669" name="l03669"></a><span class="lineno"> 3669</span><span class="comment">            GCD is already 1</span></div>
-<div class="line"><a id="l03670" name="l03670"></a><span class="lineno"> 3670</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03671" name="l03671"></a><span class="lineno"> 3671</span>        }</div>
-<div class="line"><a id="l03672" name="l03672"></a><span class="lineno"> 3672</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( ( k != 1 ) || ( r3[0] != 1 ) ) ) {</div>
-<div class="line"><a id="l03673" name="l03673"></a><span class="lineno"> 3673</span>            <span class="keywordflow">if</span> ( GcdLong(BHEAD GCDbuffer,kGCD,(UWORD *)r3,k,GCDbuffer2,&amp;kGCD2) ) {</div>
-<div class="line"><a id="l03674" name="l03674"></a><span class="lineno"> 3674</span>                <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
-<div class="line"><a id="l03675" name="l03675"></a><span class="lineno"> 3675</span>            }</div>
-<div class="line"><a id="l03676" name="l03676"></a><span class="lineno"> 3676</span>            kGCD = kGCD2;</div>
-<div class="line"><a id="l03677" name="l03677"></a><span class="lineno"> 3677</span>            <span class="keywordflow">for</span> ( i = 0; i &lt; kGCD; i++ ) GCDbuffer[i] = GCDbuffer2[i];</div>
-<div class="line"><a id="l03678" name="l03678"></a><span class="lineno"> 3678</span>        }</div>
-<div class="line"><a id="l03679" name="l03679"></a><span class="lineno"> 3679</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03680" name="l03680"></a><span class="lineno"> 3680</span>            kGCD = 1; GCDbuffer[0] = 1;</div>
-<div class="line"><a id="l03681" name="l03681"></a><span class="lineno"> 3681</span>        }</div>
-<div class="line"><a id="l03682" name="l03682"></a><span class="lineno"> 3682</span>        k = REDLENG(j);</div>
-<div class="line"><a id="l03683" name="l03683"></a><span class="lineno"> 3683</span>        <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
-<div class="line"><a id="l03684" name="l03684"></a><span class="lineno"> 3684</span>        r3 += k;</div>
-<div class="line"><a id="l03685" name="l03685"></a><span class="lineno"> 3685</span>        <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
-<div class="line"><a id="l03686" name="l03686"></a><span class="lineno"> 3686</span>        <span class="keywordflow">if</span> ( ( ( LCMbuffer[0] == 1 ) &amp;&amp; ( kLCM == 1 ) ) ) {</div>
-<div class="line"><a id="l03687" name="l03687"></a><span class="lineno"> 3687</span>            <span class="keywordflow">for</span> ( kLCM = 0; kLCM &lt; k; kLCM++ )</div>
-<div class="line"><a id="l03688" name="l03688"></a><span class="lineno"> 3688</span>                LCMbuffer[kLCM] = r3[kLCM];</div>
-<div class="line"><a id="l03689" name="l03689"></a><span class="lineno"> 3689</span>        }</div>
-<div class="line"><a id="l03690" name="l03690"></a><span class="lineno"> 3690</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( k != 1 ) || ( r3[0] != 1 ) ) {</div>
-<div class="line"><a id="l03691" name="l03691"></a><span class="lineno"> 3691</span>            <span class="keywordflow">if</span> ( GcdLong(BHEAD LCMbuffer,kLCM,(UWORD *)r3,k,LCMb,&amp;kkLCM) ) {</div>
-<div class="line"><a id="l03692" name="l03692"></a><span class="lineno"> 3692</span>                <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
-<div class="line"><a id="l03693" name="l03693"></a><span class="lineno"> 3693</span>            }</div>
-<div class="line"><a id="l03694" name="l03694"></a><span class="lineno"> 3694</span>            DivLong((UWORD *)r3,k,LCMb,kkLCM,LCMb,&amp;kkLCM,LCMc,&amp;jLCM);</div>
-<div class="line"><a id="l03695" name="l03695"></a><span class="lineno"> 3695</span>            MulLong(LCMbuffer,kLCM,LCMb,kkLCM,LCMc,&amp;jLCM);</div>
-<div class="line"><a id="l03696" name="l03696"></a><span class="lineno"> 3696</span>            <span class="keywordflow">for</span> ( kLCM = 0; kLCM &lt; jLCM; kLCM++ )</div>
-<div class="line"><a id="l03697" name="l03697"></a><span class="lineno"> 3697</span>                LCMbuffer[kLCM] = LCMc[kLCM];</div>
-<div class="line"><a id="l03698" name="l03698"></a><span class="lineno"> 3698</span>        }</div>
-<div class="line"><a id="l03699" name="l03699"></a><span class="lineno"> 3699</span>        <span class="keywordflow">else</span> {} <span class="comment">/* LCM doesn&#39;t change */</span></div>
-<div class="line"><a id="l03700" name="l03700"></a><span class="lineno"> 3700</span>        r1 = r2;</div>
-<div class="line"><a id="l03701" name="l03701"></a><span class="lineno"> 3701</span>    }</div>
-<div class="line"><a id="l03702" name="l03702"></a><span class="lineno"> 3702</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03703" name="l03703"></a><span class="lineno"> 3703</span><span class="comment">    Now put the factor together: GCD/LCM</span></div>
-<div class="line"><a id="l03704" name="l03704"></a><span class="lineno"> 3704</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03705" name="l03705"></a><span class="lineno"> 3705</span>    r3 = (WORD *)(GCDbuffer);</div>
-<div class="line"><a id="l03706" name="l03706"></a><span class="lineno"> 3706</span>    <span class="keywordflow">if</span> ( kGCD == kLCM ) {</div>
-<div class="line"><a id="l03707" name="l03707"></a><span class="lineno"> 3707</span>        <span class="keywordflow">for</span> ( jGCD = 0; jGCD &lt; kGCD; jGCD++ )</div>
-<div class="line"><a id="l03708" name="l03708"></a><span class="lineno"> 3708</span>            r3[jGCD+kGCD] = LCMbuffer[jGCD];</div>
-<div class="line"><a id="l03709" name="l03709"></a><span class="lineno"> 3709</span>        k = kGCD;</div>
-<div class="line"><a id="l03710" name="l03710"></a><span class="lineno"> 3710</span>    }</div>
-<div class="line"><a id="l03711" name="l03711"></a><span class="lineno"> 3711</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( kGCD &gt; kLCM ) {</div>
-<div class="line"><a id="l03712" name="l03712"></a><span class="lineno"> 3712</span>        <span class="keywordflow">for</span> ( jGCD = 0; jGCD &lt; kLCM; jGCD++ )</div>
-<div class="line"><a id="l03713" name="l03713"></a><span class="lineno"> 3713</span>            r3[jGCD+kGCD] = LCMbuffer[jGCD];</div>
-<div class="line"><a id="l03714" name="l03714"></a><span class="lineno"> 3714</span>        <span class="keywordflow">for</span> ( jGCD = kLCM; jGCD &lt; kGCD; jGCD++ )</div>
-<div class="line"><a id="l03715" name="l03715"></a><span class="lineno"> 3715</span>            r3[jGCD+kGCD] = 0;</div>
-<div class="line"><a id="l03716" name="l03716"></a><span class="lineno"> 3716</span>        k = kGCD;</div>
-<div class="line"><a id="l03717" name="l03717"></a><span class="lineno"> 3717</span>    }</div>
-<div class="line"><a id="l03718" name="l03718"></a><span class="lineno"> 3718</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03719" name="l03719"></a><span class="lineno"> 3719</span>        <span class="keywordflow">for</span> ( jGCD = kGCD; jGCD &lt; kLCM; jGCD++ )</div>
-<div class="line"><a id="l03720" name="l03720"></a><span class="lineno"> 3720</span>            r3[jGCD] = 0;</div>
-<div class="line"><a id="l03721" name="l03721"></a><span class="lineno"> 3721</span>        <span class="keywordflow">for</span> ( jGCD = 0; jGCD &lt; kLCM; jGCD++ )</div>
-<div class="line"><a id="l03722" name="l03722"></a><span class="lineno"> 3722</span>            r3[jGCD+kLCM] = LCMbuffer[jGCD];</div>
-<div class="line"><a id="l03723" name="l03723"></a><span class="lineno"> 3723</span>        k = kLCM;</div>
-<div class="line"><a id="l03724" name="l03724"></a><span class="lineno"> 3724</span>    }</div>
-<div class="line"><a id="l03725" name="l03725"></a><span class="lineno"> 3725</span>    j = 2*k+1;</div>
-<div class="line"><a id="l03726" name="l03726"></a><span class="lineno"> 3726</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03727" name="l03727"></a><span class="lineno"> 3727</span><span class="comment">    Now we have to write this to factor</span></div>
-<div class="line"><a id="l03728" name="l03728"></a><span class="lineno"> 3728</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03729" name="l03729"></a><span class="lineno"> 3729</span>    factor = r1 = (WORD *)Malloc1((j+2)*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03730" name="l03730"></a><span class="lineno"> 3730</span>    *r1++ = j+1; r2 = r3;</div>
-<div class="line"><a id="l03731" name="l03731"></a><span class="lineno"> 3731</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; k; i++ ) { *r1++ = *r2++; *r1++ = *r2++; }</div>
-<div class="line"><a id="l03732" name="l03732"></a><span class="lineno"> 3732</span>    *r1++ = j;</div>
-<div class="line"><a id="l03733" name="l03733"></a><span class="lineno"> 3733</span>    *r1 = 0;</div>
-<div class="line"><a id="l03734" name="l03734"></a><span class="lineno"> 3734</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03735" name="l03735"></a><span class="lineno"> 3735</span><span class="comment">    Next we have to take the factor out from the argument.</span></div>
-<div class="line"><a id="l03736" name="l03736"></a><span class="lineno"> 3736</span><span class="comment">    This cannot be done in location, because the denominator stuff can make</span></div>
-<div class="line"><a id="l03737" name="l03737"></a><span class="lineno"> 3737</span><span class="comment">    coefficients longer.</span></div>
-<div class="line"><a id="l03738" name="l03738"></a><span class="lineno"> 3738</span><span class="comment"></span> </div>
-<div class="line"><a id="l03739" name="l03739"></a><span class="lineno"> 3739</span><span class="comment">    We do this via a sort because the things may be jumbled any way and we</span></div>
-<div class="line"><a id="l03740" name="l03740"></a><span class="lineno"> 3740</span><span class="comment">    do not know in advance how much space we need.</span></div>
-<div class="line"><a id="l03741" name="l03741"></a><span class="lineno"> 3741</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03742" name="l03742"></a><span class="lineno"> 3742</span>    <a class="code hl_function" href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a>(BHEAD0);</div>
-<div class="line"><a id="l03743" name="l03743"></a><span class="lineno"> 3743</span>    r = bufin;</div>
-<div class="line"><a id="l03744" name="l03744"></a><span class="lineno"> 3744</span>    oldworkpointer = AT.WorkPointer;</div>
-<div class="line"><a id="l03745" name="l03745"></a><span class="lineno"> 3745</span>    <span class="keywordflow">while</span> ( *r ) {</div>
-<div class="line"><a id="l03746" name="l03746"></a><span class="lineno"> 3746</span>        rnext = r + *r;</div>
-<div class="line"><a id="l03747" name="l03747"></a><span class="lineno"> 3747</span>        j = ABS(rnext[-1]);</div>
-<div class="line"><a id="l03748" name="l03748"></a><span class="lineno"> 3748</span>        r3 = rnext - j;</div>
-<div class="line"><a id="l03749" name="l03749"></a><span class="lineno"> 3749</span>        r2 = oldworkpointer;</div>
-<div class="line"><a id="l03750" name="l03750"></a><span class="lineno"> 3750</span>        <span class="keywordflow">while</span> ( r &lt; r3 ) *r2++ = *r++;</div>
-<div class="line"><a id="l03751" name="l03751"></a><span class="lineno"> 3751</span>        j = (j-1)/2;    <span class="comment">/* reduced length. Remember, k is the other red length */</span></div>
-<div class="line"><a id="l03752" name="l03752"></a><span class="lineno"> 3752</span>        <span class="keywordflow">if</span> ( DivRat(BHEAD (UWORD *)r3,j,GCDbuffer,k,(UWORD *)r2,&amp;i) ) {</div>
-<div class="line"><a id="l03753" name="l03753"></a><span class="lineno"> 3753</span>            <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
-<div class="line"><a id="l03754" name="l03754"></a><span class="lineno"> 3754</span>        }</div>
-<div class="line"><a id="l03755" name="l03755"></a><span class="lineno"> 3755</span>        i = 2*i+1;</div>
-<div class="line"><a id="l03756" name="l03756"></a><span class="lineno"> 3756</span>        r2 = r2 + i;</div>
-<div class="line"><a id="l03757" name="l03757"></a><span class="lineno"> 3757</span>        <span class="keywordflow">if</span> ( rnext[-1] &lt; 0 ) r2[-1] = -i;</div>
-<div class="line"><a id="l03758" name="l03758"></a><span class="lineno"> 3758</span>        <span class="keywordflow">else</span>                 r2[-1] =  i;</div>
-<div class="line"><a id="l03759" name="l03759"></a><span class="lineno"> 3759</span>        *oldworkpointer = r2-oldworkpointer;</div>
-<div class="line"><a id="l03760" name="l03760"></a><span class="lineno"> 3760</span>        AT.WorkPointer = r2;</div>
-<div class="line"><a id="l03761" name="l03761"></a><span class="lineno"> 3761</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD oldworkpointer,C-&gt;numlhs) ) {</div>
-<div class="line"><a id="l03762" name="l03762"></a><span class="lineno"> 3762</span>            <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
-<div class="line"><a id="l03763" name="l03763"></a><span class="lineno"> 3763</span>        }</div>
-<div class="line"><a id="l03764" name="l03764"></a><span class="lineno"> 3764</span>        r = rnext;</div>
-<div class="line"><a id="l03765" name="l03765"></a><span class="lineno"> 3765</span>    }</div>
-<div class="line"><a id="l03766" name="l03766"></a><span class="lineno"> 3766</span>    AT.WorkPointer = oldworkpointer;</div>
-<div class="line"><a id="l03767" name="l03767"></a><span class="lineno"> 3767</span>    AN.tryterm = 0; <span class="comment">/* for now */</span></div>
-<div class="line"><a id="l03768" name="l03768"></a><span class="lineno"> 3768</span>    <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)bufout,2);</div>
-<div class="line"><a id="l03769" name="l03769"></a><span class="lineno"> 3769</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03770" name="l03770"></a><span class="lineno"> 3770</span><span class="comment">    Cleanup</span></div>
-<div class="line"><a id="l03771" name="l03771"></a><span class="lineno"> 3771</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03772" name="l03772"></a><span class="lineno"> 3772</span>    NumberFree(LCMc,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03773" name="l03773"></a><span class="lineno"> 3773</span>    NumberFree(LCMb,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03774" name="l03774"></a><span class="lineno"> 3774</span>    NumberFree(LCMbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03775" name="l03775"></a><span class="lineno"> 3775</span>    NumberFree(GCDbuffer2,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03776" name="l03776"></a><span class="lineno"> 3776</span>    NumberFree(GCDbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03777" name="l03777"></a><span class="lineno"> 3777</span>    <span class="keywordflow">return</span>(factor);</div>
-<div class="line"><a id="l03778" name="l03778"></a><span class="lineno"> 3778</span> </div>
-<div class="line"><a id="l03779" name="l03779"></a><span class="lineno"> 3779</span>MakeDollarIntegerErr:</div>
-<div class="line"><a id="l03780" name="l03780"></a><span class="lineno"> 3780</span>    NumberFree(LCMc,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03781" name="l03781"></a><span class="lineno"> 3781</span>    NumberFree(LCMb,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03782" name="l03782"></a><span class="lineno"> 3782</span>    NumberFree(LCMbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03783" name="l03783"></a><span class="lineno"> 3783</span>    NumberFree(GCDbuffer2,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03784" name="l03784"></a><span class="lineno"> 3784</span>    NumberFree(GCDbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03785" name="l03785"></a><span class="lineno"> 3785</span>    MesCall(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
-<div class="line"><a id="l03786" name="l03786"></a><span class="lineno"> 3786</span>    Terminate(-1);</div>
-<div class="line"><a id="l03787" name="l03787"></a><span class="lineno"> 3787</span>    <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a id="l03788" name="l03788"></a><span class="lineno"> 3788</span>}</div>
+<div class="line"><a id="l03559" name="l03559"></a><span class="lineno"> 3559</span>            <span class="keywordflow">if</span> ( d-&gt;factors )</div>
+<div class="line"><a id="l03560" name="l03560"></a><span class="lineno"> 3560</span>                <span class="keywordflow">if</span> ( d-&gt;factors[i].where )</div>
+<div class="line"><a id="l03561" name="l03561"></a><span class="lineno"> 3561</span>                    M_free(d-&gt;factors[i].where,<span class="stringliteral">&quot;dollar factors&quot;</span>);</div>
+<div class="line"><a id="l03562" name="l03562"></a><span class="lineno"> 3562</span>        }</div>
+<div class="line"><a id="l03563" name="l03563"></a><span class="lineno"> 3563</span>    }</div>
+<div class="line"><a id="l03564" name="l03564"></a><span class="lineno"> 3564</span>    <span class="keywordflow">if</span> ( d-&gt;factors ) {</div>
+<div class="line"><a id="l03565" name="l03565"></a><span class="lineno"> 3565</span>        M_free(d-&gt;factors,<span class="stringliteral">&quot;dollar factors&quot;</span>);</div>
+<div class="line"><a id="l03566" name="l03566"></a><span class="lineno"> 3566</span>        d-&gt;factors = 0;</div>
+<div class="line"><a id="l03567" name="l03567"></a><span class="lineno"> 3567</span>    }</div>
+<div class="line"><a id="l03568" name="l03568"></a><span class="lineno"> 3568</span>    d-&gt;nfactors = 0;</div>
+<div class="line"><a id="l03569" name="l03569"></a><span class="lineno"> 3569</span>}</div>
+<div class="line"><a id="l03570" name="l03570"></a><span class="lineno"> 3570</span> </div>
+<div class="line"><a id="l03571" name="l03571"></a><span class="lineno"> 3571</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03572" name="l03572"></a><span class="lineno"> 3572</span><span class="comment">    #] CleanDollarFactors : </span></div>
+<div class="line"><a id="l03573" name="l03573"></a><span class="lineno"> 3573</span><span class="comment">    #[ TakeDollarContent :</span></div>
+<div class="line"><a id="l03574" name="l03574"></a><span class="lineno"> 3574</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03575" name="l03575"></a><span class="lineno"> 3575</span> </div>
+<div class="line"><a id="l03576" name="l03576"></a><span class="lineno"> 3576</span>WORD *TakeDollarContent(PHEAD WORD *dollarbuffer, WORD **factor)</div>
+<div class="line"><a id="l03577" name="l03577"></a><span class="lineno"> 3577</span>{</div>
+<div class="line"><a id="l03578" name="l03578"></a><span class="lineno"> 3578</span>    WORD *remain, *t;</div>
+<div class="line"><a id="l03579" name="l03579"></a><span class="lineno"> 3579</span>    <span class="keywordtype">int</span> pow;</div>
+<div class="line"><a id="l03580" name="l03580"></a><span class="lineno"> 3580</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03581" name="l03581"></a><span class="lineno"> 3581</span><span class="comment">    We force the sign of the first term to be positive.</span></div>
+<div class="line"><a id="l03582" name="l03582"></a><span class="lineno"> 3582</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03583" name="l03583"></a><span class="lineno"> 3583</span>    t = dollarbuffer; pow = 1;</div>
+<div class="line"><a id="l03584" name="l03584"></a><span class="lineno"> 3584</span>    t += *t;</div>
+<div class="line"><a id="l03585" name="l03585"></a><span class="lineno"> 3585</span>    <span class="keywordflow">if</span> ( t[-1] &lt; 0 ) {</div>
+<div class="line"><a id="l03586" name="l03586"></a><span class="lineno"> 3586</span>        pow = 0;</div>
+<div class="line"><a id="l03587" name="l03587"></a><span class="lineno"> 3587</span>        t[-1] = -t[-1];</div>
+<div class="line"><a id="l03588" name="l03588"></a><span class="lineno"> 3588</span>        <span class="keywordflow">while</span> ( *t ) {</div>
+<div class="line"><a id="l03589" name="l03589"></a><span class="lineno"> 3589</span>            t += *t; t[-1] = -t[-1];</div>
+<div class="line"><a id="l03590" name="l03590"></a><span class="lineno"> 3590</span>        }</div>
+<div class="line"><a id="l03591" name="l03591"></a><span class="lineno"> 3591</span>    }</div>
+<div class="line"><a id="l03592" name="l03592"></a><span class="lineno"> 3592</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03593" name="l03593"></a><span class="lineno"> 3593</span><span class="comment">    Now the GCD of the numerators and the LCM of the denominators:</span></div>
+<div class="line"><a id="l03594" name="l03594"></a><span class="lineno"> 3594</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03595" name="l03595"></a><span class="lineno"> 3595</span>    <span class="keywordflow">if</span> ( AN.cmod != 0 ) {</div>
+<div class="line"><a id="l03596" name="l03596"></a><span class="lineno"> 3596</span>        <span class="keywordflow">if</span> ( ( *factor = <a class="code hl_function" href="dollar_8c.html#adf9813c268b1a77f85e68e80a011844d">MakeDollarMod</a>(BHEAD dollarbuffer,&amp;remain) ) == 0 ) {</div>
+<div class="line"><a id="l03597" name="l03597"></a><span class="lineno"> 3597</span>            Terminate(-1);</div>
+<div class="line"><a id="l03598" name="l03598"></a><span class="lineno"> 3598</span>        }</div>
+<div class="line"><a id="l03599" name="l03599"></a><span class="lineno"> 3599</span>        <span class="keywordflow">if</span> ( pow == 0 ) {</div>
+<div class="line"><a id="l03600" name="l03600"></a><span class="lineno"> 3600</span>            (*factor)[**factor-1] = -(*factor)[**factor-1];</div>
+<div class="line"><a id="l03601" name="l03601"></a><span class="lineno"> 3601</span>            (*factor)[**factor-1] += AN.cmod[0];</div>
+<div class="line"><a id="l03602" name="l03602"></a><span class="lineno"> 3602</span>        }</div>
+<div class="line"><a id="l03603" name="l03603"></a><span class="lineno"> 3603</span>    }</div>
+<div class="line"><a id="l03604" name="l03604"></a><span class="lineno"> 3604</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03605" name="l03605"></a><span class="lineno"> 3605</span>        <span class="keywordflow">if</span> ( ( *factor = <a class="code hl_function" href="dollar_8c.html#a00c9b1bf10d19f4376e652b9fd61955c">MakeDollarInteger</a>(BHEAD dollarbuffer,&amp;remain) ) == 0 ) {</div>
+<div class="line"><a id="l03606" name="l03606"></a><span class="lineno"> 3606</span>            Terminate(-1);</div>
+<div class="line"><a id="l03607" name="l03607"></a><span class="lineno"> 3607</span>        }</div>
+<div class="line"><a id="l03608" name="l03608"></a><span class="lineno"> 3608</span>        <span class="keywordflow">if</span> ( pow == 0 ) {</div>
+<div class="line"><a id="l03609" name="l03609"></a><span class="lineno"> 3609</span>            (*factor)[**factor-1] = -(*factor)[**factor-1];</div>
+<div class="line"><a id="l03610" name="l03610"></a><span class="lineno"> 3610</span>        }</div>
+<div class="line"><a id="l03611" name="l03611"></a><span class="lineno"> 3611</span>    }</div>
+<div class="line"><a id="l03612" name="l03612"></a><span class="lineno"> 3612</span>    <span class="keywordflow">return</span>(remain);</div>
+<div class="line"><a id="l03613" name="l03613"></a><span class="lineno"> 3613</span>}</div>
+<div class="line"><a id="l03614" name="l03614"></a><span class="lineno"> 3614</span> </div>
+<div class="line"><a id="l03615" name="l03615"></a><span class="lineno"> 3615</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03616" name="l03616"></a><span class="lineno"> 3616</span><span class="comment">    #] TakeDollarContent : </span></div>
+<div class="line"><a id="l03617" name="l03617"></a><span class="lineno"> 3617</span><span class="comment">    #[ MakeDollarInteger :</span></div>
+<div class="line"><a id="l03618" name="l03618"></a><span class="lineno"> 3618</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen03628" data-start="{" data-end="}">
+<div class="line"><a id="l03628" name="l03628"></a><span class="lineno"><a class="line" href="declare_8h.html#a364eb34f23bef087d72800ef883a2bd1"> 3628</a></span>WORD *<a class="code hl_function" href="dollar_8c.html#a00c9b1bf10d19f4376e652b9fd61955c">MakeDollarInteger</a>(PHEAD WORD *bufin,WORD **bufout)</div>
+<div class="line"><a id="l03629" name="l03629"></a><span class="lineno"> 3629</span>{</div>
+<div class="line"><a id="l03630" name="l03630"></a><span class="lineno"> 3630</span>    GETBIDENTITY</div>
+<div class="line"><a id="l03631" name="l03631"></a><span class="lineno"> 3631</span>    UWORD *GCDbuffer, *GCDbuffer2, *LCMbuffer, *LCMb, *LCMc;</div>
+<div class="line"><a id="l03632" name="l03632"></a><span class="lineno"> 3632</span>    WORD *r, *r1, *r2, *r3, *rnext, i, k, j, *oldworkpointer, *factor;</div>
+<div class="line"><a id="l03633" name="l03633"></a><span class="lineno"> 3633</span>    WORD kGCD, kLCM, kGCD2, kkLCM, jLCM, jGCD;</div>
+<div class="line"><a id="l03634" name="l03634"></a><span class="lineno"> 3634</span>    <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf+AC.cbufnum;</div>
+<div class="line"><a id="l03635" name="l03635"></a><span class="lineno"> 3635</span> </div>
+<div class="line"><a id="l03636" name="l03636"></a><span class="lineno"> 3636</span>    GCDbuffer = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03637" name="l03637"></a><span class="lineno"> 3637</span>    GCDbuffer2 = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03638" name="l03638"></a><span class="lineno"> 3638</span>    LCMbuffer = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03639" name="l03639"></a><span class="lineno"> 3639</span>    LCMb = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03640" name="l03640"></a><span class="lineno"> 3640</span>    LCMc = NumberMalloc(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03641" name="l03641"></a><span class="lineno"> 3641</span>    r = bufin;</div>
+<div class="line"><a id="l03642" name="l03642"></a><span class="lineno"> 3642</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03643" name="l03643"></a><span class="lineno"> 3643</span><span class="comment">    First take the first term to load up the LCM and the GCD</span></div>
+<div class="line"><a id="l03644" name="l03644"></a><span class="lineno"> 3644</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03645" name="l03645"></a><span class="lineno"> 3645</span>    r2 = r + *r;</div>
+<div class="line"><a id="l03646" name="l03646"></a><span class="lineno"> 3646</span>    j = r2[-1];</div>
+<div class="line"><a id="l03647" name="l03647"></a><span class="lineno"> 3647</span>    r3 = r2 - ABS(j);</div>
+<div class="line"><a id="l03648" name="l03648"></a><span class="lineno"> 3648</span>    k = REDLENG(j);</div>
+<div class="line"><a id="l03649" name="l03649"></a><span class="lineno"> 3649</span>    <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
+<div class="line"><a id="l03650" name="l03650"></a><span class="lineno"> 3650</span>    <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
+<div class="line"><a id="l03651" name="l03651"></a><span class="lineno"> 3651</span>    <span class="keywordflow">for</span> ( kGCD = 0; kGCD &lt; k; kGCD++ ) GCDbuffer[kGCD] = r3[kGCD];</div>
+<div class="line"><a id="l03652" name="l03652"></a><span class="lineno"> 3652</span>    k = REDLENG(j);</div>
+<div class="line"><a id="l03653" name="l03653"></a><span class="lineno"> 3653</span>    <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
+<div class="line"><a id="l03654" name="l03654"></a><span class="lineno"> 3654</span>    r3 += k;</div>
+<div class="line"><a id="l03655" name="l03655"></a><span class="lineno"> 3655</span>    <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
+<div class="line"><a id="l03656" name="l03656"></a><span class="lineno"> 3656</span>    <span class="keywordflow">for</span> ( kLCM = 0; kLCM &lt; k; kLCM++ ) LCMbuffer[kLCM] = r3[kLCM];</div>
+<div class="line"><a id="l03657" name="l03657"></a><span class="lineno"> 3657</span>    r1 = r2;</div>
+<div class="line"><a id="l03658" name="l03658"></a><span class="lineno"> 3658</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03659" name="l03659"></a><span class="lineno"> 3659</span><span class="comment">    Now go through the rest of the terms in this argument.</span></div>
+<div class="line"><a id="l03660" name="l03660"></a><span class="lineno"> 3660</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03661" name="l03661"></a><span class="lineno"> 3661</span>    <span class="keywordflow">while</span> ( *r1 ) {</div>
+<div class="line"><a id="l03662" name="l03662"></a><span class="lineno"> 3662</span>        r2 = r1 + *r1;</div>
+<div class="line"><a id="l03663" name="l03663"></a><span class="lineno"> 3663</span>        j = r2[-1];</div>
+<div class="line"><a id="l03664" name="l03664"></a><span class="lineno"> 3664</span>        r3 = r2 - ABS(j);</div>
+<div class="line"><a id="l03665" name="l03665"></a><span class="lineno"> 3665</span>        k = REDLENG(j);</div>
+<div class="line"><a id="l03666" name="l03666"></a><span class="lineno"> 3666</span>        <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
+<div class="line"><a id="l03667" name="l03667"></a><span class="lineno"> 3667</span>        <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
+<div class="line"><a id="l03668" name="l03668"></a><span class="lineno"> 3668</span>        <span class="keywordflow">if</span> ( ( ( GCDbuffer[0] == 1 ) &amp;&amp; ( kGCD == 1 ) ) ) {</div>
+<div class="line"><a id="l03669" name="l03669"></a><span class="lineno"> 3669</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03670" name="l03670"></a><span class="lineno"> 3670</span><span class="comment">            GCD is already 1</span></div>
+<div class="line"><a id="l03671" name="l03671"></a><span class="lineno"> 3671</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03672" name="l03672"></a><span class="lineno"> 3672</span>        }</div>
+<div class="line"><a id="l03673" name="l03673"></a><span class="lineno"> 3673</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( ( k != 1 ) || ( r3[0] != 1 ) ) ) {</div>
+<div class="line"><a id="l03674" name="l03674"></a><span class="lineno"> 3674</span>            <span class="keywordflow">if</span> ( GcdLong(BHEAD GCDbuffer,kGCD,(UWORD *)r3,k,GCDbuffer2,&amp;kGCD2) ) {</div>
+<div class="line"><a id="l03675" name="l03675"></a><span class="lineno"> 3675</span>                <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
+<div class="line"><a id="l03676" name="l03676"></a><span class="lineno"> 3676</span>            }</div>
+<div class="line"><a id="l03677" name="l03677"></a><span class="lineno"> 3677</span>            kGCD = kGCD2;</div>
+<div class="line"><a id="l03678" name="l03678"></a><span class="lineno"> 3678</span>            <span class="keywordflow">for</span> ( i = 0; i &lt; kGCD; i++ ) GCDbuffer[i] = GCDbuffer2[i];</div>
+<div class="line"><a id="l03679" name="l03679"></a><span class="lineno"> 3679</span>        }</div>
+<div class="line"><a id="l03680" name="l03680"></a><span class="lineno"> 3680</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03681" name="l03681"></a><span class="lineno"> 3681</span>            kGCD = 1; GCDbuffer[0] = 1;</div>
+<div class="line"><a id="l03682" name="l03682"></a><span class="lineno"> 3682</span>        }</div>
+<div class="line"><a id="l03683" name="l03683"></a><span class="lineno"> 3683</span>        k = REDLENG(j);</div>
+<div class="line"><a id="l03684" name="l03684"></a><span class="lineno"> 3684</span>        <span class="keywordflow">if</span> ( k &lt; 0 ) k = -k;</div>
+<div class="line"><a id="l03685" name="l03685"></a><span class="lineno"> 3685</span>        r3 += k;</div>
+<div class="line"><a id="l03686" name="l03686"></a><span class="lineno"> 3686</span>        <span class="keywordflow">while</span> ( ( k &gt; 1 ) &amp;&amp; ( r3[k-1] == 0 ) ) k--;</div>
+<div class="line"><a id="l03687" name="l03687"></a><span class="lineno"> 3687</span>        <span class="keywordflow">if</span> ( ( ( LCMbuffer[0] == 1 ) &amp;&amp; ( kLCM == 1 ) ) ) {</div>
+<div class="line"><a id="l03688" name="l03688"></a><span class="lineno"> 3688</span>            <span class="keywordflow">for</span> ( kLCM = 0; kLCM &lt; k; kLCM++ )</div>
+<div class="line"><a id="l03689" name="l03689"></a><span class="lineno"> 3689</span>                LCMbuffer[kLCM] = r3[kLCM];</div>
+<div class="line"><a id="l03690" name="l03690"></a><span class="lineno"> 3690</span>        }</div>
+<div class="line"><a id="l03691" name="l03691"></a><span class="lineno"> 3691</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ( k != 1 ) || ( r3[0] != 1 ) ) {</div>
+<div class="line"><a id="l03692" name="l03692"></a><span class="lineno"> 3692</span>            <span class="keywordflow">if</span> ( GcdLong(BHEAD LCMbuffer,kLCM,(UWORD *)r3,k,LCMb,&amp;kkLCM) ) {</div>
+<div class="line"><a id="l03693" name="l03693"></a><span class="lineno"> 3693</span>                <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
+<div class="line"><a id="l03694" name="l03694"></a><span class="lineno"> 3694</span>            }</div>
+<div class="line"><a id="l03695" name="l03695"></a><span class="lineno"> 3695</span>            DivLong((UWORD *)r3,k,LCMb,kkLCM,LCMb,&amp;kkLCM,LCMc,&amp;jLCM);</div>
+<div class="line"><a id="l03696" name="l03696"></a><span class="lineno"> 3696</span>            MulLong(LCMbuffer,kLCM,LCMb,kkLCM,LCMc,&amp;jLCM);</div>
+<div class="line"><a id="l03697" name="l03697"></a><span class="lineno"> 3697</span>            <span class="keywordflow">for</span> ( kLCM = 0; kLCM &lt; jLCM; kLCM++ )</div>
+<div class="line"><a id="l03698" name="l03698"></a><span class="lineno"> 3698</span>                LCMbuffer[kLCM] = LCMc[kLCM];</div>
+<div class="line"><a id="l03699" name="l03699"></a><span class="lineno"> 3699</span>        }</div>
+<div class="line"><a id="l03700" name="l03700"></a><span class="lineno"> 3700</span>        <span class="keywordflow">else</span> {} <span class="comment">/* LCM doesn&#39;t change */</span></div>
+<div class="line"><a id="l03701" name="l03701"></a><span class="lineno"> 3701</span>        r1 = r2;</div>
+<div class="line"><a id="l03702" name="l03702"></a><span class="lineno"> 3702</span>    }</div>
+<div class="line"><a id="l03703" name="l03703"></a><span class="lineno"> 3703</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03704" name="l03704"></a><span class="lineno"> 3704</span><span class="comment">    Now put the factor together: GCD/LCM</span></div>
+<div class="line"><a id="l03705" name="l03705"></a><span class="lineno"> 3705</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03706" name="l03706"></a><span class="lineno"> 3706</span>    r3 = (WORD *)(GCDbuffer);</div>
+<div class="line"><a id="l03707" name="l03707"></a><span class="lineno"> 3707</span>    <span class="keywordflow">if</span> ( kGCD == kLCM ) {</div>
+<div class="line"><a id="l03708" name="l03708"></a><span class="lineno"> 3708</span>        <span class="keywordflow">for</span> ( jGCD = 0; jGCD &lt; kGCD; jGCD++ )</div>
+<div class="line"><a id="l03709" name="l03709"></a><span class="lineno"> 3709</span>            r3[jGCD+kGCD] = LCMbuffer[jGCD];</div>
+<div class="line"><a id="l03710" name="l03710"></a><span class="lineno"> 3710</span>        k = kGCD;</div>
+<div class="line"><a id="l03711" name="l03711"></a><span class="lineno"> 3711</span>    }</div>
+<div class="line"><a id="l03712" name="l03712"></a><span class="lineno"> 3712</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( kGCD &gt; kLCM ) {</div>
+<div class="line"><a id="l03713" name="l03713"></a><span class="lineno"> 3713</span>        <span class="keywordflow">for</span> ( jGCD = 0; jGCD &lt; kLCM; jGCD++ )</div>
+<div class="line"><a id="l03714" name="l03714"></a><span class="lineno"> 3714</span>            r3[jGCD+kGCD] = LCMbuffer[jGCD];</div>
+<div class="line"><a id="l03715" name="l03715"></a><span class="lineno"> 3715</span>        <span class="keywordflow">for</span> ( jGCD = kLCM; jGCD &lt; kGCD; jGCD++ )</div>
+<div class="line"><a id="l03716" name="l03716"></a><span class="lineno"> 3716</span>            r3[jGCD+kGCD] = 0;</div>
+<div class="line"><a id="l03717" name="l03717"></a><span class="lineno"> 3717</span>        k = kGCD;</div>
+<div class="line"><a id="l03718" name="l03718"></a><span class="lineno"> 3718</span>    }</div>
+<div class="line"><a id="l03719" name="l03719"></a><span class="lineno"> 3719</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03720" name="l03720"></a><span class="lineno"> 3720</span>        <span class="keywordflow">for</span> ( jGCD = kGCD; jGCD &lt; kLCM; jGCD++ )</div>
+<div class="line"><a id="l03721" name="l03721"></a><span class="lineno"> 3721</span>            r3[jGCD] = 0;</div>
+<div class="line"><a id="l03722" name="l03722"></a><span class="lineno"> 3722</span>        <span class="keywordflow">for</span> ( jGCD = 0; jGCD &lt; kLCM; jGCD++ )</div>
+<div class="line"><a id="l03723" name="l03723"></a><span class="lineno"> 3723</span>            r3[jGCD+kLCM] = LCMbuffer[jGCD];</div>
+<div class="line"><a id="l03724" name="l03724"></a><span class="lineno"> 3724</span>        k = kLCM;</div>
+<div class="line"><a id="l03725" name="l03725"></a><span class="lineno"> 3725</span>    }</div>
+<div class="line"><a id="l03726" name="l03726"></a><span class="lineno"> 3726</span>    j = 2*k+1;</div>
+<div class="line"><a id="l03727" name="l03727"></a><span class="lineno"> 3727</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03728" name="l03728"></a><span class="lineno"> 3728</span><span class="comment">    Now we have to write this to factor</span></div>
+<div class="line"><a id="l03729" name="l03729"></a><span class="lineno"> 3729</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03730" name="l03730"></a><span class="lineno"> 3730</span>    factor = r1 = (WORD *)Malloc1((j+2)*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03731" name="l03731"></a><span class="lineno"> 3731</span>    *r1++ = j+1; r2 = r3;</div>
+<div class="line"><a id="l03732" name="l03732"></a><span class="lineno"> 3732</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; k; i++ ) { *r1++ = *r2++; *r1++ = *r2++; }</div>
+<div class="line"><a id="l03733" name="l03733"></a><span class="lineno"> 3733</span>    *r1++ = j;</div>
+<div class="line"><a id="l03734" name="l03734"></a><span class="lineno"> 3734</span>    *r1 = 0;</div>
+<div class="line"><a id="l03735" name="l03735"></a><span class="lineno"> 3735</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03736" name="l03736"></a><span class="lineno"> 3736</span><span class="comment">    Next we have to take the factor out from the argument.</span></div>
+<div class="line"><a id="l03737" name="l03737"></a><span class="lineno"> 3737</span><span class="comment">    This cannot be done in location, because the denominator stuff can make</span></div>
+<div class="line"><a id="l03738" name="l03738"></a><span class="lineno"> 3738</span><span class="comment">    coefficients longer.</span></div>
+<div class="line"><a id="l03739" name="l03739"></a><span class="lineno"> 3739</span><span class="comment"></span> </div>
+<div class="line"><a id="l03740" name="l03740"></a><span class="lineno"> 3740</span><span class="comment">    We do this via a sort because the things may be jumbled any way and we</span></div>
+<div class="line"><a id="l03741" name="l03741"></a><span class="lineno"> 3741</span><span class="comment">    do not know in advance how much space we need.</span></div>
+<div class="line"><a id="l03742" name="l03742"></a><span class="lineno"> 3742</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03743" name="l03743"></a><span class="lineno"> 3743</span>    <a class="code hl_function" href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a>(BHEAD0);</div>
+<div class="line"><a id="l03744" name="l03744"></a><span class="lineno"> 3744</span>    r = bufin;</div>
+<div class="line"><a id="l03745" name="l03745"></a><span class="lineno"> 3745</span>    oldworkpointer = AT.WorkPointer;</div>
+<div class="line"><a id="l03746" name="l03746"></a><span class="lineno"> 3746</span>    <span class="keywordflow">while</span> ( *r ) {</div>
+<div class="line"><a id="l03747" name="l03747"></a><span class="lineno"> 3747</span>        rnext = r + *r;</div>
+<div class="line"><a id="l03748" name="l03748"></a><span class="lineno"> 3748</span>        j = ABS(rnext[-1]);</div>
+<div class="line"><a id="l03749" name="l03749"></a><span class="lineno"> 3749</span>        r3 = rnext - j;</div>
+<div class="line"><a id="l03750" name="l03750"></a><span class="lineno"> 3750</span>        r2 = oldworkpointer;</div>
+<div class="line"><a id="l03751" name="l03751"></a><span class="lineno"> 3751</span>        <span class="keywordflow">while</span> ( r &lt; r3 ) *r2++ = *r++;</div>
+<div class="line"><a id="l03752" name="l03752"></a><span class="lineno"> 3752</span>        j = (j-1)/2;    <span class="comment">/* reduced length. Remember, k is the other red length */</span></div>
+<div class="line"><a id="l03753" name="l03753"></a><span class="lineno"> 3753</span>        <span class="keywordflow">if</span> ( DivRat(BHEAD (UWORD *)r3,j,GCDbuffer,k,(UWORD *)r2,&amp;i) ) {</div>
+<div class="line"><a id="l03754" name="l03754"></a><span class="lineno"> 3754</span>            <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
+<div class="line"><a id="l03755" name="l03755"></a><span class="lineno"> 3755</span>        }</div>
+<div class="line"><a id="l03756" name="l03756"></a><span class="lineno"> 3756</span>        i = 2*i+1;</div>
+<div class="line"><a id="l03757" name="l03757"></a><span class="lineno"> 3757</span>        r2 = r2 + i;</div>
+<div class="line"><a id="l03758" name="l03758"></a><span class="lineno"> 3758</span>        <span class="keywordflow">if</span> ( rnext[-1] &lt; 0 ) r2[-1] = -i;</div>
+<div class="line"><a id="l03759" name="l03759"></a><span class="lineno"> 3759</span>        <span class="keywordflow">else</span>                 r2[-1] =  i;</div>
+<div class="line"><a id="l03760" name="l03760"></a><span class="lineno"> 3760</span>        *oldworkpointer = r2-oldworkpointer;</div>
+<div class="line"><a id="l03761" name="l03761"></a><span class="lineno"> 3761</span>        AT.WorkPointer = r2;</div>
+<div class="line"><a id="l03762" name="l03762"></a><span class="lineno"> 3762</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD oldworkpointer,C-&gt;numlhs) ) {</div>
+<div class="line"><a id="l03763" name="l03763"></a><span class="lineno"> 3763</span>            <span class="keywordflow">goto</span> MakeDollarIntegerErr;</div>
+<div class="line"><a id="l03764" name="l03764"></a><span class="lineno"> 3764</span>        }</div>
+<div class="line"><a id="l03765" name="l03765"></a><span class="lineno"> 3765</span>        r = rnext;</div>
+<div class="line"><a id="l03766" name="l03766"></a><span class="lineno"> 3766</span>    }</div>
+<div class="line"><a id="l03767" name="l03767"></a><span class="lineno"> 3767</span>    AT.WorkPointer = oldworkpointer;</div>
+<div class="line"><a id="l03768" name="l03768"></a><span class="lineno"> 3768</span>    AN.tryterm = 0; <span class="comment">/* for now */</span></div>
+<div class="line"><a id="l03769" name="l03769"></a><span class="lineno"> 3769</span>    <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)bufout,2);</div>
+<div class="line"><a id="l03770" name="l03770"></a><span class="lineno"> 3770</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03771" name="l03771"></a><span class="lineno"> 3771</span><span class="comment">    Cleanup</span></div>
+<div class="line"><a id="l03772" name="l03772"></a><span class="lineno"> 3772</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03773" name="l03773"></a><span class="lineno"> 3773</span>    NumberFree(LCMc,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03774" name="l03774"></a><span class="lineno"> 3774</span>    NumberFree(LCMb,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03775" name="l03775"></a><span class="lineno"> 3775</span>    NumberFree(LCMbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03776" name="l03776"></a><span class="lineno"> 3776</span>    NumberFree(GCDbuffer2,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03777" name="l03777"></a><span class="lineno"> 3777</span>    NumberFree(GCDbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03778" name="l03778"></a><span class="lineno"> 3778</span>    <span class="keywordflow">return</span>(factor);</div>
+<div class="line"><a id="l03779" name="l03779"></a><span class="lineno"> 3779</span> </div>
+<div class="line"><a id="l03780" name="l03780"></a><span class="lineno"> 3780</span>MakeDollarIntegerErr:</div>
+<div class="line"><a id="l03781" name="l03781"></a><span class="lineno"> 3781</span>    NumberFree(LCMc,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03782" name="l03782"></a><span class="lineno"> 3782</span>    NumberFree(LCMb,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03783" name="l03783"></a><span class="lineno"> 3783</span>    NumberFree(LCMbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03784" name="l03784"></a><span class="lineno"> 3784</span>    NumberFree(GCDbuffer2,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03785" name="l03785"></a><span class="lineno"> 3785</span>    NumberFree(GCDbuffer,<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03786" name="l03786"></a><span class="lineno"> 3786</span>    MesCall(<span class="stringliteral">&quot;MakeDollarInteger&quot;</span>);</div>
+<div class="line"><a id="l03787" name="l03787"></a><span class="lineno"> 3787</span>    Terminate(-1);</div>
+<div class="line"><a id="l03788" name="l03788"></a><span class="lineno"> 3788</span>    <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a id="l03789" name="l03789"></a><span class="lineno"> 3789</span>}</div>
 </div>
-<div class="line"><a id="l03789" name="l03789"></a><span class="lineno"> 3789</span> </div>
-<div class="line"><a id="l03790" name="l03790"></a><span class="lineno"> 3790</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03791" name="l03791"></a><span class="lineno"> 3791</span><span class="comment">    #] MakeDollarInteger : </span></div>
-<div class="line"><a id="l03792" name="l03792"></a><span class="lineno"> 3792</span><span class="comment">    #[ MakeDollarMod :</span></div>
-<div class="line"><a id="l03793" name="l03793"></a><span class="lineno"> 3793</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen03801" data-start="{" data-end="}">
-<div class="line"><a id="l03801" name="l03801"></a><span class="lineno"><a class="line" href="declare_8h.html#a54ed5811455351be41b657c7844fd17f"> 3801</a></span>WORD *<a class="code hl_function" href="dollar_8c.html#adf9813c268b1a77f85e68e80a011844d">MakeDollarMod</a>(PHEAD WORD *buffer, WORD **bufout)</div>
-<div class="line"><a id="l03802" name="l03802"></a><span class="lineno"> 3802</span>{</div>
-<div class="line"><a id="l03803" name="l03803"></a><span class="lineno"> 3803</span>    GETBIDENTITY</div>
-<div class="line"><a id="l03804" name="l03804"></a><span class="lineno"> 3804</span>    WORD *r, *r1, x, xx, ix, ip;</div>
-<div class="line"><a id="l03805" name="l03805"></a><span class="lineno"> 3805</span>    WORD *factor, *oldworkpointer;</div>
-<div class="line"><a id="l03806" name="l03806"></a><span class="lineno"> 3806</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a id="l03807" name="l03807"></a><span class="lineno"> 3807</span>    <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf+AC.cbufnum;</div>
-<div class="line"><a id="l03808" name="l03808"></a><span class="lineno"> 3808</span>    r = buffer;</div>
-<div class="line"><a id="l03809" name="l03809"></a><span class="lineno"> 3809</span>    x = r[*r-3];</div>
-<div class="line"><a id="l03810" name="l03810"></a><span class="lineno"> 3810</span>    <span class="keywordflow">if</span> ( r[*r-1] &lt; 0 ) x += AN.cmod[0];</div>
-<div class="line"><a id="l03811" name="l03811"></a><span class="lineno"> 3811</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#ae563b26fb36c6550122a01b80326d29d">GetModInverses</a>(x,(WORD)(AN.cmod[0]),&amp;ix,&amp;ip) ) {</div>
-<div class="line"><a id="l03812" name="l03812"></a><span class="lineno"> 3812</span>        Terminate(-1);</div>
-<div class="line"><a id="l03813" name="l03813"></a><span class="lineno"> 3813</span>    }</div>
-<div class="line"><a id="l03814" name="l03814"></a><span class="lineno"> 3814</span>    factor = (WORD *)Malloc1(5*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;MakeDollarMod&quot;</span>);</div>
-<div class="line"><a id="l03815" name="l03815"></a><span class="lineno"> 3815</span>    factor[0] = 4; factor[1] = x; factor[2] = 1; factor[3] = 3; factor[4] = 0;</div>
-<div class="line"><a id="l03816" name="l03816"></a><span class="lineno"> 3816</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03817" name="l03817"></a><span class="lineno"> 3817</span><span class="comment">    Now we have to multiply all coefficients by ix.</span></div>
-<div class="line"><a id="l03818" name="l03818"></a><span class="lineno"> 3818</span><span class="comment">    This does not make things longer, but we should keep to the conventions</span></div>
-<div class="line"><a id="l03819" name="l03819"></a><span class="lineno"> 3819</span><span class="comment">    of MakeDollarInteger.</span></div>
-<div class="line"><a id="l03820" name="l03820"></a><span class="lineno"> 3820</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03821" name="l03821"></a><span class="lineno"> 3821</span>    <a class="code hl_function" href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a>(BHEAD0);</div>
-<div class="line"><a id="l03822" name="l03822"></a><span class="lineno"> 3822</span>    r = buffer;</div>
-<div class="line"><a id="l03823" name="l03823"></a><span class="lineno"> 3823</span>    oldworkpointer = AT.WorkPointer;</div>
-<div class="line"><a id="l03824" name="l03824"></a><span class="lineno"> 3824</span>    <span class="keywordflow">while</span> ( *r ) {</div>
-<div class="line"><a id="l03825" name="l03825"></a><span class="lineno"> 3825</span>        r1 = oldworkpointer; i = *r;</div>
-<div class="line"><a id="l03826" name="l03826"></a><span class="lineno"> 3826</span>        NCOPY(r1,r,i);</div>
-<div class="line"><a id="l03827" name="l03827"></a><span class="lineno"> 3827</span>        xx = r1[-3]; <span class="keywordflow">if</span> ( r1[-1] &lt; 0 ) xx += AN.cmod[0];</div>
-<div class="line"><a id="l03828" name="l03828"></a><span class="lineno"> 3828</span>        r1[-1] = (WORD)((((LONG)xx)*ix) % AN.cmod[0]);</div>
-<div class="line"><a id="l03829" name="l03829"></a><span class="lineno"> 3829</span>        *r1 = 0; AT.WorkPointer = r1;</div>
-<div class="line"><a id="l03830" name="l03830"></a><span class="lineno"> 3830</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD oldworkpointer,C-&gt;numlhs) ) {</div>
-<div class="line"><a id="l03831" name="l03831"></a><span class="lineno"> 3831</span>            Terminate(-1);</div>
-<div class="line"><a id="l03832" name="l03832"></a><span class="lineno"> 3832</span>        }</div>
-<div class="line"><a id="l03833" name="l03833"></a><span class="lineno"> 3833</span>    }</div>
-<div class="line"><a id="l03834" name="l03834"></a><span class="lineno"> 3834</span>    AT.WorkPointer = oldworkpointer;</div>
-<div class="line"><a id="l03835" name="l03835"></a><span class="lineno"> 3835</span>    AN.tryterm = 0; <span class="comment">/* for now */</span></div>
-<div class="line"><a id="l03836" name="l03836"></a><span class="lineno"> 3836</span>    <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)bufout,2);</div>
-<div class="line"><a id="l03837" name="l03837"></a><span class="lineno"> 3837</span>    <span class="keywordflow">return</span>(factor);</div>
-<div class="line"><a id="l03838" name="l03838"></a><span class="lineno"> 3838</span>}</div>
+<div class="line"><a id="l03790" name="l03790"></a><span class="lineno"> 3790</span> </div>
+<div class="line"><a id="l03791" name="l03791"></a><span class="lineno"> 3791</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03792" name="l03792"></a><span class="lineno"> 3792</span><span class="comment">    #] MakeDollarInteger : </span></div>
+<div class="line"><a id="l03793" name="l03793"></a><span class="lineno"> 3793</span><span class="comment">    #[ MakeDollarMod :</span></div>
+<div class="line"><a id="l03794" name="l03794"></a><span class="lineno"> 3794</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen03802" data-start="{" data-end="}">
+<div class="line"><a id="l03802" name="l03802"></a><span class="lineno"><a class="line" href="declare_8h.html#a54ed5811455351be41b657c7844fd17f"> 3802</a></span>WORD *<a class="code hl_function" href="dollar_8c.html#adf9813c268b1a77f85e68e80a011844d">MakeDollarMod</a>(PHEAD WORD *buffer, WORD **bufout)</div>
+<div class="line"><a id="l03803" name="l03803"></a><span class="lineno"> 3803</span>{</div>
+<div class="line"><a id="l03804" name="l03804"></a><span class="lineno"> 3804</span>    GETBIDENTITY</div>
+<div class="line"><a id="l03805" name="l03805"></a><span class="lineno"> 3805</span>    WORD *r, *r1, x, xx, ix, ip;</div>
+<div class="line"><a id="l03806" name="l03806"></a><span class="lineno"> 3806</span>    WORD *factor, *oldworkpointer;</div>
+<div class="line"><a id="l03807" name="l03807"></a><span class="lineno"> 3807</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a id="l03808" name="l03808"></a><span class="lineno"> 3808</span>    <a class="code hl_struct" href="struct_cb_uf.html">CBUF</a> *C = cbuf+AC.cbufnum;</div>
+<div class="line"><a id="l03809" name="l03809"></a><span class="lineno"> 3809</span>    r = buffer;</div>
+<div class="line"><a id="l03810" name="l03810"></a><span class="lineno"> 3810</span>    x = r[*r-3];</div>
+<div class="line"><a id="l03811" name="l03811"></a><span class="lineno"> 3811</span>    <span class="keywordflow">if</span> ( r[*r-1] &lt; 0 ) x += AN.cmod[0];</div>
+<div class="line"><a id="l03812" name="l03812"></a><span class="lineno"> 3812</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#ae563b26fb36c6550122a01b80326d29d">GetModInverses</a>(x,(WORD)(AN.cmod[0]),&amp;ix,&amp;ip) ) {</div>
+<div class="line"><a id="l03813" name="l03813"></a><span class="lineno"> 3813</span>        Terminate(-1);</div>
+<div class="line"><a id="l03814" name="l03814"></a><span class="lineno"> 3814</span>    }</div>
+<div class="line"><a id="l03815" name="l03815"></a><span class="lineno"> 3815</span>    factor = (WORD *)Malloc1(5*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;MakeDollarMod&quot;</span>);</div>
+<div class="line"><a id="l03816" name="l03816"></a><span class="lineno"> 3816</span>    factor[0] = 4; factor[1] = x; factor[2] = 1; factor[3] = 3; factor[4] = 0;</div>
+<div class="line"><a id="l03817" name="l03817"></a><span class="lineno"> 3817</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03818" name="l03818"></a><span class="lineno"> 3818</span><span class="comment">    Now we have to multiply all coefficients by ix.</span></div>
+<div class="line"><a id="l03819" name="l03819"></a><span class="lineno"> 3819</span><span class="comment">    This does not make things longer, but we should keep to the conventions</span></div>
+<div class="line"><a id="l03820" name="l03820"></a><span class="lineno"> 3820</span><span class="comment">    of MakeDollarInteger.</span></div>
+<div class="line"><a id="l03821" name="l03821"></a><span class="lineno"> 3821</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03822" name="l03822"></a><span class="lineno"> 3822</span>    <a class="code hl_function" href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a>(BHEAD0);</div>
+<div class="line"><a id="l03823" name="l03823"></a><span class="lineno"> 3823</span>    r = buffer;</div>
+<div class="line"><a id="l03824" name="l03824"></a><span class="lineno"> 3824</span>    oldworkpointer = AT.WorkPointer;</div>
+<div class="line"><a id="l03825" name="l03825"></a><span class="lineno"> 3825</span>    <span class="keywordflow">while</span> ( *r ) {</div>
+<div class="line"><a id="l03826" name="l03826"></a><span class="lineno"> 3826</span>        r1 = oldworkpointer; i = *r;</div>
+<div class="line"><a id="l03827" name="l03827"></a><span class="lineno"> 3827</span>        NCOPY(r1,r,i);</div>
+<div class="line"><a id="l03828" name="l03828"></a><span class="lineno"> 3828</span>        xx = r1[-3]; <span class="keywordflow">if</span> ( r1[-1] &lt; 0 ) xx += AN.cmod[0];</div>
+<div class="line"><a id="l03829" name="l03829"></a><span class="lineno"> 3829</span>        r1[-1] = (WORD)((((LONG)xx)*ix) % AN.cmod[0]);</div>
+<div class="line"><a id="l03830" name="l03830"></a><span class="lineno"> 3830</span>        *r1 = 0; AT.WorkPointer = r1;</div>
+<div class="line"><a id="l03831" name="l03831"></a><span class="lineno"> 3831</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a>(BHEAD oldworkpointer,C-&gt;numlhs) ) {</div>
+<div class="line"><a id="l03832" name="l03832"></a><span class="lineno"> 3832</span>            Terminate(-1);</div>
+<div class="line"><a id="l03833" name="l03833"></a><span class="lineno"> 3833</span>        }</div>
+<div class="line"><a id="l03834" name="l03834"></a><span class="lineno"> 3834</span>    }</div>
+<div class="line"><a id="l03835" name="l03835"></a><span class="lineno"> 3835</span>    AT.WorkPointer = oldworkpointer;</div>
+<div class="line"><a id="l03836" name="l03836"></a><span class="lineno"> 3836</span>    AN.tryterm = 0; <span class="comment">/* for now */</span></div>
+<div class="line"><a id="l03837" name="l03837"></a><span class="lineno"> 3837</span>    <a class="code hl_function" href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a>(BHEAD (WORD *)bufout,2);</div>
+<div class="line"><a id="l03838" name="l03838"></a><span class="lineno"> 3838</span>    <span class="keywordflow">return</span>(factor);</div>
+<div class="line"><a id="l03839" name="l03839"></a><span class="lineno"> 3839</span>}</div>
 </div>
-<div class="line"><a id="l03839" name="l03839"></a><span class="lineno"> 3839</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03840" name="l03840"></a><span class="lineno"> 3840</span><span class="comment">    #] MakeDollarMod : </span></div>
-<div class="line"><a id="l03841" name="l03841"></a><span class="lineno"> 3841</span><span class="comment">    #[ GetDolNum :</span></div>
-<div class="line"><a id="l03842" name="l03842"></a><span class="lineno"> 3842</span><span class="comment"></span> </div>
-<div class="line"><a id="l03843" name="l03843"></a><span class="lineno"> 3843</span><span class="comment">    Evaluates a chain of DOLLAREXPR2 into a number</span></div>
-<div class="line"><a id="l03844" name="l03844"></a><span class="lineno"> 3844</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03845" name="l03845"></a><span class="lineno"> 3845</span> </div>
-<div class="line"><a id="l03846" name="l03846"></a><span class="lineno"> 3846</span><span class="keywordtype">int</span> GetDolNum(PHEAD WORD *t, WORD *tstop)</div>
-<div class="line"><a id="l03847" name="l03847"></a><span class="lineno"> 3847</span>{</div>
-<div class="line"><a id="l03848" name="l03848"></a><span class="lineno"> 3848</span>    <a class="code hl_struct" href="struct_do_ll_ar_s.html">DOLLARS</a> d;</div>
-<div class="line"><a id="l03849" name="l03849"></a><span class="lineno"> 3849</span>    WORD num, *w;</div>
-<div class="line"><a id="l03850" name="l03850"></a><span class="lineno"> 3850</span>    <span class="keywordflow">if</span> ( t+3 &lt; tstop &amp;&amp; t[3] == DOLLAREXPR2 ) {</div>
-<div class="line"><a id="l03851" name="l03851"></a><span class="lineno"> 3851</span>        d = Dollars + t[2];</div>
-<div class="line"><a id="l03852" name="l03852"></a><span class="lineno"> 3852</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
-<div class="line"><a id="l03853" name="l03853"></a><span class="lineno"> 3853</span>        {</div>
-<div class="line"><a id="l03854" name="l03854"></a><span class="lineno"> 3854</span>            <span class="keywordtype">int</span> nummodopt, dtype;</div>
-<div class="line"><a id="l03855" name="l03855"></a><span class="lineno"> 3855</span>            dtype = -1;</div>
-<div class="line"><a id="l03856" name="l03856"></a><span class="lineno"> 3856</span>            <span class="keywordflow">if</span> ( AS.MultiThreaded &amp;&amp; ( AC.mparallelflag == PARALLELFLAG ) ) {</div>
-<div class="line"><a id="l03857" name="l03857"></a><span class="lineno"> 3857</span>                <span class="keywordflow">for</span> ( nummodopt = 0; nummodopt &lt; NumModOptdollars; nummodopt++ ) {</div>
-<div class="line"><a id="l03858" name="l03858"></a><span class="lineno"> 3858</span>                    <span class="keywordflow">if</span> ( t[2] == ModOptdollars[nummodopt].number ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l03859" name="l03859"></a><span class="lineno"> 3859</span>                }</div>
-<div class="line"><a id="l03860" name="l03860"></a><span class="lineno"> 3860</span>                <span class="keywordflow">if</span> ( nummodopt &lt; NumModOptdollars ) {</div>
-<div class="line"><a id="l03861" name="l03861"></a><span class="lineno"> 3861</span>                    dtype = ModOptdollars[nummodopt].type;</div>
-<div class="line"><a id="l03862" name="l03862"></a><span class="lineno"> 3862</span>                    <span class="keywordflow">if</span> ( dtype == MODLOCAL ) {</div>
-<div class="line"><a id="l03863" name="l03863"></a><span class="lineno"> 3863</span>                        d = ModOptdollars[nummodopt].dstruct+AT.identity;</div>
-<div class="line"><a id="l03864" name="l03864"></a><span class="lineno"> 3864</span>                    }</div>
-<div class="line"><a id="l03865" name="l03865"></a><span class="lineno"> 3865</span>                    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03866" name="l03866"></a><span class="lineno"> 3866</span>                        MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03867" name="l03867"></a><span class="lineno"> 3867</span>                        MesPrint(<span class="stringliteral">&quot;&amp;Illegal attempt to use $-variable %s in module %l&quot;</span>,</div>
-<div class="line"><a id="l03868" name="l03868"></a><span class="lineno"> 3868</span>                            DOLLARNAME(Dollars,t[2]),AC.CModule);</div>
-<div class="line"><a id="l03869" name="l03869"></a><span class="lineno"> 3869</span>                        MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03870" name="l03870"></a><span class="lineno"> 3870</span>                        Terminate(-1);</div>
-<div class="line"><a id="l03871" name="l03871"></a><span class="lineno"> 3871</span>                    }</div>
-<div class="line"><a id="l03872" name="l03872"></a><span class="lineno"> 3872</span>                }</div>
-<div class="line"><a id="l03873" name="l03873"></a><span class="lineno"> 3873</span>            }</div>
-<div class="line"><a id="l03874" name="l03874"></a><span class="lineno"> 3874</span>        }</div>
-<div class="line"><a id="l03875" name="l03875"></a><span class="lineno"> 3875</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l03876" name="l03876"></a><span class="lineno"> 3876</span>        <span class="keywordflow">if</span> ( d-&gt;factors == 0 ) {</div>
-<div class="line"><a id="l03877" name="l03877"></a><span class="lineno"> 3877</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03878" name="l03878"></a><span class="lineno"> 3878</span>            MesPrint(<span class="stringliteral">&quot;Attempt to use a factor of an unfactored $-variable&quot;</span>);</div>
-<div class="line"><a id="l03879" name="l03879"></a><span class="lineno"> 3879</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03880" name="l03880"></a><span class="lineno"> 3880</span>            Terminate(-1);</div>
-<div class="line"><a id="l03881" name="l03881"></a><span class="lineno"> 3881</span>        }</div>
-<div class="line"><a id="l03882" name="l03882"></a><span class="lineno"> 3882</span>        num = GetDolNum(BHEAD t+t[1],tstop);</div>
-<div class="line"><a id="l03883" name="l03883"></a><span class="lineno"> 3883</span>        <span class="keywordflow">if</span> ( num == 0 ) <span class="keywordflow">return</span>(d-&gt;nfactors);</div>
-<div class="line"><a id="l03884" name="l03884"></a><span class="lineno"> 3884</span>        <span class="keywordflow">if</span> ( num &gt; d-&gt;nfactors ) {</div>
-<div class="line"><a id="l03885" name="l03885"></a><span class="lineno"> 3885</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03886" name="l03886"></a><span class="lineno"> 3886</span>            MesPrint(<span class="stringliteral">&quot;Attempt to use an nonexisting factor %d of a $-variable&quot;</span>,num);</div>
-<div class="line"><a id="l03887" name="l03887"></a><span class="lineno"> 3887</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03888" name="l03888"></a><span class="lineno"> 3888</span>            Terminate(-1);</div>
-<div class="line"><a id="l03889" name="l03889"></a><span class="lineno"> 3889</span>        }</div>
-<div class="line"><a id="l03890" name="l03890"></a><span class="lineno"> 3890</span>        w = d-&gt;factors[num-1].where;</div>
-<div class="line"><a id="l03891" name="l03891"></a><span class="lineno"> 3891</span>        <span class="keywordflow">if</span> ( w == 0 ) <span class="keywordflow">return</span>(d-&gt;factors[num-1].value);</div>
-<div class="line"><a id="l03892" name="l03892"></a><span class="lineno"> 3892</span>        <span class="keywordflow">if</span> ( w[0] == 4 &amp;&amp; w[4] == 0 &amp;&amp; w[3] == 3 &amp;&amp; w[2] == 1 &amp;&amp; w[1] &gt; 0</div>
-<div class="line"><a id="l03893" name="l03893"></a><span class="lineno"> 3893</span>        &amp;&amp; w[1] &lt; MAXPOSITIVE ) <span class="keywordflow">return</span>(w[1]);</div>
-<div class="line"><a id="l03894" name="l03894"></a><span class="lineno"> 3894</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03895" name="l03895"></a><span class="lineno"> 3895</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03896" name="l03896"></a><span class="lineno"> 3896</span>            MesPrint(<span class="stringliteral">&quot;Illegal type of factor number of a $-variable&quot;</span>);</div>
-<div class="line"><a id="l03897" name="l03897"></a><span class="lineno"> 3897</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03898" name="l03898"></a><span class="lineno"> 3898</span>            Terminate(-1);</div>
-<div class="line"><a id="l03899" name="l03899"></a><span class="lineno"> 3899</span>        }</div>
-<div class="line"><a id="l03900" name="l03900"></a><span class="lineno"> 3900</span>    }</div>
-<div class="line"><a id="l03901" name="l03901"></a><span class="lineno"> 3901</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( t[2] &lt; 0 ) {</div>
-<div class="line"><a id="l03902" name="l03902"></a><span class="lineno"> 3902</span>        <span class="keywordflow">return</span>(-t[2]-1);</div>
-<div class="line"><a id="l03903" name="l03903"></a><span class="lineno"> 3903</span>    }</div>
-<div class="line"><a id="l03904" name="l03904"></a><span class="lineno"> 3904</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03905" name="l03905"></a><span class="lineno"> 3905</span>        d = Dollars + t[2];</div>
-<div class="line"><a id="l03906" name="l03906"></a><span class="lineno"> 3906</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
-<div class="line"><a id="l03907" name="l03907"></a><span class="lineno"> 3907</span>        {</div>
-<div class="line"><a id="l03908" name="l03908"></a><span class="lineno"> 3908</span>            <span class="keywordtype">int</span> nummodopt, dtype;</div>
-<div class="line"><a id="l03909" name="l03909"></a><span class="lineno"> 3909</span>            dtype = -1;</div>
-<div class="line"><a id="l03910" name="l03910"></a><span class="lineno"> 3910</span>            <span class="keywordflow">if</span> ( AS.MultiThreaded &amp;&amp; ( AC.mparallelflag == PARALLELFLAG ) ) {</div>
-<div class="line"><a id="l03911" name="l03911"></a><span class="lineno"> 3911</span>                <span class="keywordflow">for</span> ( nummodopt = 0; nummodopt &lt; NumModOptdollars; nummodopt++ ) {</div>
-<div class="line"><a id="l03912" name="l03912"></a><span class="lineno"> 3912</span>                    <span class="keywordflow">if</span> ( t[2] == ModOptdollars[nummodopt].number ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l03913" name="l03913"></a><span class="lineno"> 3913</span>                }</div>
-<div class="line"><a id="l03914" name="l03914"></a><span class="lineno"> 3914</span>                <span class="keywordflow">if</span> ( nummodopt &lt; NumModOptdollars ) {</div>
-<div class="line"><a id="l03915" name="l03915"></a><span class="lineno"> 3915</span>                    dtype = ModOptdollars[nummodopt].type;</div>
-<div class="line"><a id="l03916" name="l03916"></a><span class="lineno"> 3916</span>                    <span class="keywordflow">if</span> ( dtype == MODLOCAL ) {</div>
-<div class="line"><a id="l03917" name="l03917"></a><span class="lineno"> 3917</span>                        d = ModOptdollars[nummodopt].dstruct+AT.identity;</div>
-<div class="line"><a id="l03918" name="l03918"></a><span class="lineno"> 3918</span>                    }</div>
-<div class="line"><a id="l03919" name="l03919"></a><span class="lineno"> 3919</span>                    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l03920" name="l03920"></a><span class="lineno"> 3920</span>                        MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03921" name="l03921"></a><span class="lineno"> 3921</span>                        MesPrint(<span class="stringliteral">&quot;&amp;Illegal attempt to use $-variable %s in module %l&quot;</span>,</div>
-<div class="line"><a id="l03922" name="l03922"></a><span class="lineno"> 3922</span>                            DOLLARNAME(Dollars,t[2]),AC.CModule);</div>
-<div class="line"><a id="l03923" name="l03923"></a><span class="lineno"> 3923</span>                        MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03924" name="l03924"></a><span class="lineno"> 3924</span>                        Terminate(-1);</div>
-<div class="line"><a id="l03925" name="l03925"></a><span class="lineno"> 3925</span>                    }</div>
-<div class="line"><a id="l03926" name="l03926"></a><span class="lineno"> 3926</span>                }</div>
-<div class="line"><a id="l03927" name="l03927"></a><span class="lineno"> 3927</span>            }</div>
-<div class="line"><a id="l03928" name="l03928"></a><span class="lineno"> 3928</span>        }</div>
-<div class="line"><a id="l03929" name="l03929"></a><span class="lineno"> 3929</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l03930" name="l03930"></a><span class="lineno"> 3930</span>        <span class="keywordflow">if</span> ( d-&gt;type == DOLZERO ) <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a id="l03931" name="l03931"></a><span class="lineno"> 3931</span>        <span class="keywordflow">if</span> ( d-&gt;type == DOLTERMS || d-&gt;type == DOLNUMBER ) {</div>
-<div class="line"><a id="l03932" name="l03932"></a><span class="lineno"> 3932</span>            <span class="keywordflow">if</span> ( d-&gt;where[0] == 4 &amp;&amp; d-&gt;where[4] == 0 &amp;&amp; d-&gt;where[3] == 3</div>
-<div class="line"><a id="l03933" name="l03933"></a><span class="lineno"> 3933</span>                &amp;&amp; d-&gt;where[2] == 1 &amp;&amp; d-&gt;where[1] &gt; 0</div>
-<div class="line"><a id="l03934" name="l03934"></a><span class="lineno"> 3934</span>                &amp;&amp; d-&gt;where[1] &lt; MAXPOSITIVE ) <span class="keywordflow">return</span>(d-&gt;where[1]);</div>
-<div class="line"><a id="l03935" name="l03935"></a><span class="lineno"> 3935</span>            MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03936" name="l03936"></a><span class="lineno"> 3936</span>            MesPrint(<span class="stringliteral">&quot;Attempt to use an nonexisting factor of a $-variable&quot;</span>);</div>
-<div class="line"><a id="l03937" name="l03937"></a><span class="lineno"> 3937</span>            MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03938" name="l03938"></a><span class="lineno"> 3938</span>            Terminate(-1);</div>
-<div class="line"><a id="l03939" name="l03939"></a><span class="lineno"> 3939</span>        }</div>
-<div class="line"><a id="l03940" name="l03940"></a><span class="lineno"> 3940</span>        MLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03941" name="l03941"></a><span class="lineno"> 3941</span>        MesPrint(<span class="stringliteral">&quot;Illegal type of factor number of a $-variable&quot;</span>);</div>
-<div class="line"><a id="l03942" name="l03942"></a><span class="lineno"> 3942</span>        MUNLOCK(ErrorMessageLock);</div>
-<div class="line"><a id="l03943" name="l03943"></a><span class="lineno"> 3943</span>        Terminate(-1);</div>
-<div class="line"><a id="l03944" name="l03944"></a><span class="lineno"> 3944</span>    }</div>
-<div class="line"><a id="l03945" name="l03945"></a><span class="lineno"> 3945</span>    <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a id="l03946" name="l03946"></a><span class="lineno"> 3946</span>}</div>
-<div class="line"><a id="l03947" name="l03947"></a><span class="lineno"> 3947</span> </div>
-<div class="line"><a id="l03948" name="l03948"></a><span class="lineno"> 3948</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03949" name="l03949"></a><span class="lineno"> 3949</span><span class="comment">    #] GetDolNum : </span></div>
-<div class="line"><a id="l03950" name="l03950"></a><span class="lineno"> 3950</span><span class="comment">    #[ AddPotModdollar :</span></div>
-<div class="line"><a id="l03951" name="l03951"></a><span class="lineno"> 3951</span><span class="comment">*/</span></div>
-<div class="line"><a id="l03952" name="l03952"></a><span class="lineno"> 3952</span> </div>
-<div class="foldopen" id="foldopen03959" data-start="{" data-end="}">
-<div class="line"><a id="l03959" name="l03959"></a><span class="lineno"><a class="line" href="declare_8h.html#a3f61503891515c6616a071be88c0782c"> 3959</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="dollar_8c.html#a83a7021f5782fb70dbf9a72c75a2a95f">AddPotModdollar</a>(WORD numdollar)</div>
-<div class="line"><a id="l03960" name="l03960"></a><span class="lineno"> 3960</span>{</div>
-<div class="line"><a id="l03961" name="l03961"></a><span class="lineno"> 3961</span>    <span class="keywordtype">int</span> i, n = NumPotModdollars;</div>
-<div class="line"><a id="l03962" name="l03962"></a><span class="lineno"> 3962</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; n; i++ ) {</div>
-<div class="line"><a id="l03963" name="l03963"></a><span class="lineno"> 3963</span>        <span class="keywordflow">if</span> ( numdollar == PotModdollars[i] ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l03964" name="l03964"></a><span class="lineno"> 3964</span>    }</div>
-<div class="line"><a id="l03965" name="l03965"></a><span class="lineno"> 3965</span>    <span class="keywordflow">if</span> ( i &gt;= n ) {</div>
-<div class="line"><a id="l03966" name="l03966"></a><span class="lineno"> 3966</span>        *(WORD *)FromList(&amp;AC.PotModDolList) = numdollar;</div>
-<div class="line"><a id="l03967" name="l03967"></a><span class="lineno"> 3967</span>    }</div>
-<div class="line"><a id="l03968" name="l03968"></a><span class="lineno"> 3968</span>}</div>
+<div class="line"><a id="l03840" name="l03840"></a><span class="lineno"> 3840</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03841" name="l03841"></a><span class="lineno"> 3841</span><span class="comment">    #] MakeDollarMod : </span></div>
+<div class="line"><a id="l03842" name="l03842"></a><span class="lineno"> 3842</span><span class="comment">    #[ GetDolNum :</span></div>
+<div class="line"><a id="l03843" name="l03843"></a><span class="lineno"> 3843</span><span class="comment"></span> </div>
+<div class="line"><a id="l03844" name="l03844"></a><span class="lineno"> 3844</span><span class="comment">    Evaluates a chain of DOLLAREXPR2 into a number</span></div>
+<div class="line"><a id="l03845" name="l03845"></a><span class="lineno"> 3845</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03846" name="l03846"></a><span class="lineno"> 3846</span> </div>
+<div class="line"><a id="l03847" name="l03847"></a><span class="lineno"> 3847</span><span class="keywordtype">int</span> GetDolNum(PHEAD WORD *t, WORD *tstop)</div>
+<div class="line"><a id="l03848" name="l03848"></a><span class="lineno"> 3848</span>{</div>
+<div class="line"><a id="l03849" name="l03849"></a><span class="lineno"> 3849</span>    <a class="code hl_struct" href="struct_do_ll_ar_s.html">DOLLARS</a> d;</div>
+<div class="line"><a id="l03850" name="l03850"></a><span class="lineno"> 3850</span>    WORD num, *w;</div>
+<div class="line"><a id="l03851" name="l03851"></a><span class="lineno"> 3851</span>    <span class="keywordflow">if</span> ( t+3 &lt; tstop &amp;&amp; t[3] == DOLLAREXPR2 ) {</div>
+<div class="line"><a id="l03852" name="l03852"></a><span class="lineno"> 3852</span>        d = Dollars + t[2];</div>
+<div class="line"><a id="l03853" name="l03853"></a><span class="lineno"> 3853</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
+<div class="line"><a id="l03854" name="l03854"></a><span class="lineno"> 3854</span>        {</div>
+<div class="line"><a id="l03855" name="l03855"></a><span class="lineno"> 3855</span>            <span class="keywordtype">int</span> nummodopt, dtype;</div>
+<div class="line"><a id="l03856" name="l03856"></a><span class="lineno"> 3856</span>            dtype = -1;</div>
+<div class="line"><a id="l03857" name="l03857"></a><span class="lineno"> 3857</span>            <span class="keywordflow">if</span> ( AS.MultiThreaded &amp;&amp; ( AC.mparallelflag == PARALLELFLAG ) ) {</div>
+<div class="line"><a id="l03858" name="l03858"></a><span class="lineno"> 3858</span>                <span class="keywordflow">for</span> ( nummodopt = 0; nummodopt &lt; NumModOptdollars; nummodopt++ ) {</div>
+<div class="line"><a id="l03859" name="l03859"></a><span class="lineno"> 3859</span>                    <span class="keywordflow">if</span> ( t[2] == ModOptdollars[nummodopt].number ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l03860" name="l03860"></a><span class="lineno"> 3860</span>                }</div>
+<div class="line"><a id="l03861" name="l03861"></a><span class="lineno"> 3861</span>                <span class="keywordflow">if</span> ( nummodopt &lt; NumModOptdollars ) {</div>
+<div class="line"><a id="l03862" name="l03862"></a><span class="lineno"> 3862</span>                    dtype = ModOptdollars[nummodopt].type;</div>
+<div class="line"><a id="l03863" name="l03863"></a><span class="lineno"> 3863</span>                    <span class="keywordflow">if</span> ( dtype == MODLOCAL ) {</div>
+<div class="line"><a id="l03864" name="l03864"></a><span class="lineno"> 3864</span>                        d = ModOptdollars[nummodopt].dstruct+AT.identity;</div>
+<div class="line"><a id="l03865" name="l03865"></a><span class="lineno"> 3865</span>                    }</div>
+<div class="line"><a id="l03866" name="l03866"></a><span class="lineno"> 3866</span>                    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03867" name="l03867"></a><span class="lineno"> 3867</span>                        MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03868" name="l03868"></a><span class="lineno"> 3868</span>                        MesPrint(<span class="stringliteral">&quot;&amp;Illegal attempt to use $-variable %s in module %l&quot;</span>,</div>
+<div class="line"><a id="l03869" name="l03869"></a><span class="lineno"> 3869</span>                            DOLLARNAME(Dollars,t[2]),AC.CModule);</div>
+<div class="line"><a id="l03870" name="l03870"></a><span class="lineno"> 3870</span>                        MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03871" name="l03871"></a><span class="lineno"> 3871</span>                        Terminate(-1);</div>
+<div class="line"><a id="l03872" name="l03872"></a><span class="lineno"> 3872</span>                    }</div>
+<div class="line"><a id="l03873" name="l03873"></a><span class="lineno"> 3873</span>                }</div>
+<div class="line"><a id="l03874" name="l03874"></a><span class="lineno"> 3874</span>            }</div>
+<div class="line"><a id="l03875" name="l03875"></a><span class="lineno"> 3875</span>        }</div>
+<div class="line"><a id="l03876" name="l03876"></a><span class="lineno"> 3876</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l03877" name="l03877"></a><span class="lineno"> 3877</span>        <span class="keywordflow">if</span> ( d-&gt;factors == 0 ) {</div>
+<div class="line"><a id="l03878" name="l03878"></a><span class="lineno"> 3878</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03879" name="l03879"></a><span class="lineno"> 3879</span>            MesPrint(<span class="stringliteral">&quot;Attempt to use a factor of an unfactored $-variable&quot;</span>);</div>
+<div class="line"><a id="l03880" name="l03880"></a><span class="lineno"> 3880</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03881" name="l03881"></a><span class="lineno"> 3881</span>            Terminate(-1);</div>
+<div class="line"><a id="l03882" name="l03882"></a><span class="lineno"> 3882</span>        }</div>
+<div class="line"><a id="l03883" name="l03883"></a><span class="lineno"> 3883</span>        num = GetDolNum(BHEAD t+t[1],tstop);</div>
+<div class="line"><a id="l03884" name="l03884"></a><span class="lineno"> 3884</span>        <span class="keywordflow">if</span> ( num == 0 ) <span class="keywordflow">return</span>(d-&gt;nfactors);</div>
+<div class="line"><a id="l03885" name="l03885"></a><span class="lineno"> 3885</span>        <span class="keywordflow">if</span> ( num &gt; d-&gt;nfactors ) {</div>
+<div class="line"><a id="l03886" name="l03886"></a><span class="lineno"> 3886</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03887" name="l03887"></a><span class="lineno"> 3887</span>            MesPrint(<span class="stringliteral">&quot;Attempt to use an nonexisting factor %d of a $-variable&quot;</span>,num);</div>
+<div class="line"><a id="l03888" name="l03888"></a><span class="lineno"> 3888</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03889" name="l03889"></a><span class="lineno"> 3889</span>            Terminate(-1);</div>
+<div class="line"><a id="l03890" name="l03890"></a><span class="lineno"> 3890</span>        }</div>
+<div class="line"><a id="l03891" name="l03891"></a><span class="lineno"> 3891</span>        w = d-&gt;factors[num-1].where;</div>
+<div class="line"><a id="l03892" name="l03892"></a><span class="lineno"> 3892</span>        <span class="keywordflow">if</span> ( w == 0 ) <span class="keywordflow">return</span>(d-&gt;factors[num-1].value);</div>
+<div class="line"><a id="l03893" name="l03893"></a><span class="lineno"> 3893</span>        <span class="keywordflow">if</span> ( w[0] == 4 &amp;&amp; w[4] == 0 &amp;&amp; w[3] == 3 &amp;&amp; w[2] == 1 &amp;&amp; w[1] &gt; 0</div>
+<div class="line"><a id="l03894" name="l03894"></a><span class="lineno"> 3894</span>        &amp;&amp; w[1] &lt; MAXPOSITIVE ) <span class="keywordflow">return</span>(w[1]);</div>
+<div class="line"><a id="l03895" name="l03895"></a><span class="lineno"> 3895</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03896" name="l03896"></a><span class="lineno"> 3896</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03897" name="l03897"></a><span class="lineno"> 3897</span>            MesPrint(<span class="stringliteral">&quot;Illegal type of factor number of a $-variable&quot;</span>);</div>
+<div class="line"><a id="l03898" name="l03898"></a><span class="lineno"> 3898</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03899" name="l03899"></a><span class="lineno"> 3899</span>            Terminate(-1);</div>
+<div class="line"><a id="l03900" name="l03900"></a><span class="lineno"> 3900</span>        }</div>
+<div class="line"><a id="l03901" name="l03901"></a><span class="lineno"> 3901</span>    }</div>
+<div class="line"><a id="l03902" name="l03902"></a><span class="lineno"> 3902</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( t[2] &lt; 0 ) {</div>
+<div class="line"><a id="l03903" name="l03903"></a><span class="lineno"> 3903</span>        <span class="keywordflow">return</span>(-t[2]-1);</div>
+<div class="line"><a id="l03904" name="l03904"></a><span class="lineno"> 3904</span>    }</div>
+<div class="line"><a id="l03905" name="l03905"></a><span class="lineno"> 3905</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03906" name="l03906"></a><span class="lineno"> 3906</span>        d = Dollars + t[2];</div>
+<div class="line"><a id="l03907" name="l03907"></a><span class="lineno"> 3907</span><span class="preprocessor">#ifdef WITHPTHREADS</span></div>
+<div class="line"><a id="l03908" name="l03908"></a><span class="lineno"> 3908</span>        {</div>
+<div class="line"><a id="l03909" name="l03909"></a><span class="lineno"> 3909</span>            <span class="keywordtype">int</span> nummodopt, dtype;</div>
+<div class="line"><a id="l03910" name="l03910"></a><span class="lineno"> 3910</span>            dtype = -1;</div>
+<div class="line"><a id="l03911" name="l03911"></a><span class="lineno"> 3911</span>            <span class="keywordflow">if</span> ( AS.MultiThreaded &amp;&amp; ( AC.mparallelflag == PARALLELFLAG ) ) {</div>
+<div class="line"><a id="l03912" name="l03912"></a><span class="lineno"> 3912</span>                <span class="keywordflow">for</span> ( nummodopt = 0; nummodopt &lt; NumModOptdollars; nummodopt++ ) {</div>
+<div class="line"><a id="l03913" name="l03913"></a><span class="lineno"> 3913</span>                    <span class="keywordflow">if</span> ( t[2] == ModOptdollars[nummodopt].number ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l03914" name="l03914"></a><span class="lineno"> 3914</span>                }</div>
+<div class="line"><a id="l03915" name="l03915"></a><span class="lineno"> 3915</span>                <span class="keywordflow">if</span> ( nummodopt &lt; NumModOptdollars ) {</div>
+<div class="line"><a id="l03916" name="l03916"></a><span class="lineno"> 3916</span>                    dtype = ModOptdollars[nummodopt].type;</div>
+<div class="line"><a id="l03917" name="l03917"></a><span class="lineno"> 3917</span>                    <span class="keywordflow">if</span> ( dtype == MODLOCAL ) {</div>
+<div class="line"><a id="l03918" name="l03918"></a><span class="lineno"> 3918</span>                        d = ModOptdollars[nummodopt].dstruct+AT.identity;</div>
+<div class="line"><a id="l03919" name="l03919"></a><span class="lineno"> 3919</span>                    }</div>
+<div class="line"><a id="l03920" name="l03920"></a><span class="lineno"> 3920</span>                    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l03921" name="l03921"></a><span class="lineno"> 3921</span>                        MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03922" name="l03922"></a><span class="lineno"> 3922</span>                        MesPrint(<span class="stringliteral">&quot;&amp;Illegal attempt to use $-variable %s in module %l&quot;</span>,</div>
+<div class="line"><a id="l03923" name="l03923"></a><span class="lineno"> 3923</span>                            DOLLARNAME(Dollars,t[2]),AC.CModule);</div>
+<div class="line"><a id="l03924" name="l03924"></a><span class="lineno"> 3924</span>                        MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03925" name="l03925"></a><span class="lineno"> 3925</span>                        Terminate(-1);</div>
+<div class="line"><a id="l03926" name="l03926"></a><span class="lineno"> 3926</span>                    }</div>
+<div class="line"><a id="l03927" name="l03927"></a><span class="lineno"> 3927</span>                }</div>
+<div class="line"><a id="l03928" name="l03928"></a><span class="lineno"> 3928</span>            }</div>
+<div class="line"><a id="l03929" name="l03929"></a><span class="lineno"> 3929</span>        }</div>
+<div class="line"><a id="l03930" name="l03930"></a><span class="lineno"> 3930</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l03931" name="l03931"></a><span class="lineno"> 3931</span>        <span class="keywordflow">if</span> ( d-&gt;type == DOLZERO ) <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a id="l03932" name="l03932"></a><span class="lineno"> 3932</span>        <span class="keywordflow">if</span> ( d-&gt;type == DOLTERMS || d-&gt;type == DOLNUMBER ) {</div>
+<div class="line"><a id="l03933" name="l03933"></a><span class="lineno"> 3933</span>            <span class="keywordflow">if</span> ( d-&gt;where[0] == 4 &amp;&amp; d-&gt;where[4] == 0 &amp;&amp; d-&gt;where[3] == 3</div>
+<div class="line"><a id="l03934" name="l03934"></a><span class="lineno"> 3934</span>                &amp;&amp; d-&gt;where[2] == 1 &amp;&amp; d-&gt;where[1] &gt; 0</div>
+<div class="line"><a id="l03935" name="l03935"></a><span class="lineno"> 3935</span>                &amp;&amp; d-&gt;where[1] &lt; MAXPOSITIVE ) <span class="keywordflow">return</span>(d-&gt;where[1]);</div>
+<div class="line"><a id="l03936" name="l03936"></a><span class="lineno"> 3936</span>            MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03937" name="l03937"></a><span class="lineno"> 3937</span>            MesPrint(<span class="stringliteral">&quot;Attempt to use an nonexisting factor of a $-variable&quot;</span>);</div>
+<div class="line"><a id="l03938" name="l03938"></a><span class="lineno"> 3938</span>            MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03939" name="l03939"></a><span class="lineno"> 3939</span>            Terminate(-1);</div>
+<div class="line"><a id="l03940" name="l03940"></a><span class="lineno"> 3940</span>        }</div>
+<div class="line"><a id="l03941" name="l03941"></a><span class="lineno"> 3941</span>        MLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03942" name="l03942"></a><span class="lineno"> 3942</span>        MesPrint(<span class="stringliteral">&quot;Illegal type of factor number of a $-variable&quot;</span>);</div>
+<div class="line"><a id="l03943" name="l03943"></a><span class="lineno"> 3943</span>        MUNLOCK(ErrorMessageLock);</div>
+<div class="line"><a id="l03944" name="l03944"></a><span class="lineno"> 3944</span>        Terminate(-1);</div>
+<div class="line"><a id="l03945" name="l03945"></a><span class="lineno"> 3945</span>    }</div>
+<div class="line"><a id="l03946" name="l03946"></a><span class="lineno"> 3946</span>    <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a id="l03947" name="l03947"></a><span class="lineno"> 3947</span>}</div>
+<div class="line"><a id="l03948" name="l03948"></a><span class="lineno"> 3948</span> </div>
+<div class="line"><a id="l03949" name="l03949"></a><span class="lineno"> 3949</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03950" name="l03950"></a><span class="lineno"> 3950</span><span class="comment">    #] GetDolNum : </span></div>
+<div class="line"><a id="l03951" name="l03951"></a><span class="lineno"> 3951</span><span class="comment">    #[ AddPotModdollar :</span></div>
+<div class="line"><a id="l03952" name="l03952"></a><span class="lineno"> 3952</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03953" name="l03953"></a><span class="lineno"> 3953</span> </div>
+<div class="foldopen" id="foldopen03960" data-start="{" data-end="}">
+<div class="line"><a id="l03960" name="l03960"></a><span class="lineno"><a class="line" href="declare_8h.html#a3f61503891515c6616a071be88c0782c"> 3960</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="dollar_8c.html#a83a7021f5782fb70dbf9a72c75a2a95f">AddPotModdollar</a>(WORD numdollar)</div>
+<div class="line"><a id="l03961" name="l03961"></a><span class="lineno"> 3961</span>{</div>
+<div class="line"><a id="l03962" name="l03962"></a><span class="lineno"> 3962</span>    <span class="keywordtype">int</span> i, n = NumPotModdollars;</div>
+<div class="line"><a id="l03963" name="l03963"></a><span class="lineno"> 3963</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; n; i++ ) {</div>
+<div class="line"><a id="l03964" name="l03964"></a><span class="lineno"> 3964</span>        <span class="keywordflow">if</span> ( numdollar == PotModdollars[i] ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l03965" name="l03965"></a><span class="lineno"> 3965</span>    }</div>
+<div class="line"><a id="l03966" name="l03966"></a><span class="lineno"> 3966</span>    <span class="keywordflow">if</span> ( i &gt;= n ) {</div>
+<div class="line"><a id="l03967" name="l03967"></a><span class="lineno"> 3967</span>        *(WORD *)FromList(&amp;AC.PotModDolList) = numdollar;</div>
+<div class="line"><a id="l03968" name="l03968"></a><span class="lineno"> 3968</span>    }</div>
+<div class="line"><a id="l03969" name="l03969"></a><span class="lineno"> 3969</span>}</div>
 </div>
-<div class="line"><a id="l03969" name="l03969"></a><span class="lineno"> 3969</span> </div>
-<div class="line"><a id="l03970" name="l03970"></a><span class="lineno"> 3970</span><span class="comment">/*</span></div>
-<div class="line"><a id="l03971" name="l03971"></a><span class="lineno"> 3971</span><span class="comment">    #] AddPotModdollar : </span></div>
-<div class="line"><a id="l03972" name="l03972"></a><span class="lineno"> 3972</span><span class="comment">*/</span></div>
+<div class="line"><a id="l03970" name="l03970"></a><span class="lineno"> 3970</span> </div>
+<div class="line"><a id="l03971" name="l03971"></a><span class="lineno"> 3971</span><span class="comment">/*</span></div>
+<div class="line"><a id="l03972" name="l03972"></a><span class="lineno"> 3972</span><span class="comment">    #] AddPotModdollar : </span></div>
+<div class="line"><a id="l03973" name="l03973"></a><span class="lineno"> 3973</span><span class="comment">*/</span></div>
 <div class="ttc" id="acomtool_8c_html_a15c25c5aa0a8c7ea9d0b2a0b9ec9d0a3"><div class="ttname"><a href="comtool_8c.html#a15c25c5aa0a8c7ea9d0b2a0b9ec9d0a3">AddNtoL</a></div><div class="ttdeci">int AddNtoL(int n, WORD *array)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00288">comtool.c:288</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a11d87d8362ccf85ebbdea700255d5c5d"><div class="ttname"><a href="declare_8h.html#a11d87d8362ccf85ebbdea700255d5c5d">LocalConvertToPoly</a></div><div class="ttdeci">int LocalConvertToPoly(PHEAD WORD *, WORD *, WORD, WORD)</div><div class="ttdef"><b>Definition</b> <a href="notation_8c_source.html#l00510">notation.c:510</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a1500d4ab031bdcc72e2d8ca074719220"><div class="ttname"><a href="declare_8h.html#a1500d4ab031bdcc72e2d8ca074719220">poly_factorize_dollar</a></div><div class="ttdeci">WORD * poly_factorize_dollar(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="polywrap_8cc_source.html#l01146">polywrap.cc:1146</a></div></div>
@@ -3988,10 +3989,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="adeclare_8h_html_a810ffd40ad0b36edaa9c5ce818f3de26"><div class="ttname"><a href="declare_8h.html#a810ffd40ad0b36edaa9c5ce818f3de26">StoreTerm</a></div><div class="ttdeci">int StoreTerm(PHEAD WORD *)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04550">sort.c:4550</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a99ebcff357ae7956b0ab9ee2417a6af0"><div class="ttname"><a href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a></div><div class="ttdeci">int NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00649">sort.c:649</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ae563b26fb36c6550122a01b80326d29d"><div class="ttname"><a href="declare_8h.html#ae563b26fb36c6550122a01b80326d29d">GetModInverses</a></div><div class="ttdeci">int GetModInverses(WORD, WORD, WORD *, WORD *)</div><div class="ttdef"><b>Definition</b> <a href="reken_8c_source.html#l01477">reken.c:1477</a></div></div>
-<div class="ttc" id="adollar_8c_html_a00c9b1bf10d19f4376e652b9fd61955c"><div class="ttname"><a href="dollar_8c.html#a00c9b1bf10d19f4376e652b9fd61955c">MakeDollarInteger</a></div><div class="ttdeci">WORD * MakeDollarInteger(PHEAD WORD *bufin, WORD **bufout)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03627">dollar.c:3627</a></div></div>
-<div class="ttc" id="adollar_8c_html_a83a7021f5782fb70dbf9a72c75a2a95f"><div class="ttname"><a href="dollar_8c.html#a83a7021f5782fb70dbf9a72c75a2a95f">AddPotModdollar</a></div><div class="ttdeci">void AddPotModdollar(WORD numdollar)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03959">dollar.c:3959</a></div></div>
+<div class="ttc" id="adollar_8c_html_a00c9b1bf10d19f4376e652b9fd61955c"><div class="ttname"><a href="dollar_8c.html#a00c9b1bf10d19f4376e652b9fd61955c">MakeDollarInteger</a></div><div class="ttdeci">WORD * MakeDollarInteger(PHEAD WORD *bufin, WORD **bufout)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03628">dollar.c:3628</a></div></div>
+<div class="ttc" id="adollar_8c_html_a83a7021f5782fb70dbf9a72c75a2a95f"><div class="ttname"><a href="dollar_8c.html#a83a7021f5782fb70dbf9a72c75a2a95f">AddPotModdollar</a></div><div class="ttdeci">void AddPotModdollar(WORD numdollar)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03960">dollar.c:3960</a></div></div>
 <div class="ttc" id="adollar_8c_html_a8fbe807fad1ecd07d17b898b52f8f83a"><div class="ttname"><a href="dollar_8c.html#a8fbe807fad1ecd07d17b898b52f8f83a">EvalDoLoopArg</a></div><div class="ttdeci">WORD EvalDoLoopArg(PHEAD WORD *arg, WORD par)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l02651">dollar.c:2651</a></div></div>
-<div class="ttc" id="adollar_8c_html_adf9813c268b1a77f85e68e80a011844d"><div class="ttname"><a href="dollar_8c.html#adf9813c268b1a77f85e68e80a011844d">MakeDollarMod</a></div><div class="ttdeci">WORD * MakeDollarMod(PHEAD WORD *buffer, WORD **bufout)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03801">dollar.c:3801</a></div></div>
+<div class="ttc" id="adollar_8c_html_adf9813c268b1a77f85e68e80a011844d"><div class="ttname"><a href="dollar_8c.html#adf9813c268b1a77f85e68e80a011844d">MakeDollarMod</a></div><div class="ttdeci">WORD * MakeDollarMod(PHEAD WORD *buffer, WORD **bufout)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03802">dollar.c:3802</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="aparallel_8c_html_a51acdb267f2a3289d44558f794ff320a"><div class="ttname"><a href="parallel_8c.html#a51acdb267f2a3289d44558f794ff320a">PF_BroadcastPreDollar</a></div><div class="ttdeci">int PF_BroadcastPreDollar(WORD **dbuffer, LONG *newsize, int *numterms)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l02218">parallel.c:2218</a></div></div>
 <div class="ttc" id="astruct_cb_uf_html"><div class="ttname"><a href="struct_cb_uf.html">CbUf</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00971">structs.h:971</a></div></div>
