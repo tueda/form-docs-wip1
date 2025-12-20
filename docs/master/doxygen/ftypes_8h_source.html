@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-285-g59b9c40</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-288-g73a6a14</span>
    </div>
   </td>
  </tr>
@@ -1114,19 +1114,39 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span><span class="preprocessor">#define DENSETABLE 1</span></div>
 <div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span><span class="preprocessor">#define SPARSETABLE 0</span></div>
 <div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span> </div>
-<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span><span class="preprocessor">#define ONEPARTICLEIRREDUCIBLE 1</span></div>
-<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span><span class="preprocessor">#define WITHINSERTIONS         2</span></div>
-<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span><span class="preprocessor">#define NOTADPOLES             4</span></div>
-<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span><span class="preprocessor">#define WITHSYMMETRIZE         8</span></div>
-<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span><span class="preprocessor">#define TOPOLOGIESONLY        16</span></div>
-<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span><span class="preprocessor">#define NONODES               32</span></div>
-<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span><span class="preprocessor">#define WITHEDGES             64</span></div>
-<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span><span class="preprocessor">#define CHECKEXTERN          128</span></div>
-<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span><span class="preprocessor">#define WITHBLOCKS           256</span></div>
-<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span><span class="preprocessor">#define WITHONEPI            512</span></div>
-<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span><span class="preprocessor">#define NOSNAILS            1024</span></div>
-<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span><span class="preprocessor">#define NOEXTSELF           2048</span></div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span> </div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span><span class="comment">// Diagram generator flags. They should be powers of two, since they are added</span></div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span><span class="comment">// to pass to diagrams and masked in diawrap.cc to check the flags.</span></div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span><span class="comment">// We use a &quot;stringified&quot; version of these when defining the FORM preprocessor</span></div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span><span class="comment">// variables, so can&#39;t neatly use &quot;1&lt;&lt;10&quot; etc here.</span></div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span><span class="preprocessor">#define TOPOLOGIESONLY  1</span></div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span><span class="preprocessor">#define WITHOUTNODES    2</span></div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span><span class="preprocessor">#define WITHEDGES       4</span></div>
+<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span><span class="preprocessor">#define WITHBLOCKS      8</span></div>
+<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span><span class="preprocessor">#define WITHONEPISETS   16</span></div>
+<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span><span class="preprocessor">#define WITHSYMMETRIZEI 32</span></div>
+<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span><span class="preprocessor">#define WITHSYMMETRIZEF 64</span></div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span><span class="comment">// This is not an &quot;option&quot; preprocessor var but is set by &quot;external&quot; particle definitions</span></div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span><span class="preprocessor">#define CHECKEXTERN     128</span></div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span><span class="comment">// The &quot;qgraf compatible&quot; filtering flags:</span></div>
+<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span><span class="preprocessor">#define ONEPARTI        256</span></div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span><span class="preprocessor">#define ONEPARTR        512</span></div>
+<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span><span class="preprocessor">#define ONSHELL         1024</span></div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span><span class="preprocessor">#define OFFSHELL        2048</span></div>
+<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span><span class="preprocessor">#define NOSIGMA         4096</span></div>
+<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span><span class="preprocessor">#define SIGMA           8192</span></div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span><span class="preprocessor">#define NOSNAIL         16384</span></div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span><span class="preprocessor">#define SNAIL           32768</span></div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span><span class="preprocessor">#define NOTADPOLE       65536</span></div>
+<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span><span class="preprocessor">#define TADPOLE         131072</span></div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span><span class="preprocessor">#define SIMPLE          262144</span></div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span><span class="preprocessor">#define NOTSIMPLE       524288</span></div>
+<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span><span class="preprocessor">#define BIPART          1048576</span></div>
+<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span><span class="preprocessor">#define NONBIPART       2097152</span></div>
+<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span><span class="preprocessor">#define CYCLI           4194304</span></div>
+<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span><span class="preprocessor">#define CYCLR           8388608</span></div>
+<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span><span class="preprocessor">#define FLOOP           16777216</span></div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span><span class="preprocessor">#define NOTFLOOP        33554432</span></div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span> </div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
