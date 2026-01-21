@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-292-g4341c63</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-316-gfe34bd1</span>
    </div>
   </td>
  </tr>
@@ -322,7 +322,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <span class="keywordflow">if</span> ( namebuf[0] == <span class="charliteral">&#39;$&#39;</span> ) {</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                raiselow = PRENOACTION;</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                <span class="keywordflow">if</span> ( AP.PreproFlag &amp;&amp; *AP.preStart) {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                    s = EndOfToken(AP.preStart);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                    s = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(AP.preStart);</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                    c = *s; *s = 0;</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                    <span class="keywordflow">if</span> ( ( StrICmp(AP.preStart,(UBYTE *)<span class="stringliteral">&quot;ifdef&quot;</span>) == 0</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                    || StrICmp(AP.preStart,(UBYTE *)<span class="stringliteral">&quot;ifndef&quot;</span>) == 0 )</div>
@@ -333,7 +333,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                    *s = c; </div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                }</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                    s = EndOfToken(namebuf+1);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                    s = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(namebuf+1);</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                    <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;[&#39;</span> ) { <span class="keywordflow">while</span> ( *s ) s++; }</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                }</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; s[1] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; s[2] == 0 )</div>
@@ -352,7 +352,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                raiselow = PRENOACTION;</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                <span class="keywordflow">if</span> ( AP.PreproFlag &amp;&amp; *AP.preStart) {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                    s = EndOfToken(AP.preStart);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                    s = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(AP.preStart);</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                    c = *s; *s = 0;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                    <span class="keywordflow">if</span> ( ( StrICmp(AP.preStart,(UBYTE *)<span class="stringliteral">&quot;ifdef&quot;</span>) == 0</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                    || StrICmp(AP.preStart,(UBYTE *)<span class="stringliteral">&quot;ifndef&quot;</span>) == 0 )</div>
@@ -362,7 +362,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>                    }</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                    *s = c; </div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                s = EndOfToken(namebuf);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                s = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(namebuf);</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;_&#39;</span> ) s++;</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; s[1] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; s[2] == 0 )</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                    raiselow = PRELOWERAFTER;</div>
@@ -1258,7 +1258,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>    <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>retry:;</div>
 <div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>        key = FindKeyWord(t,precommands,<span class="keyword">sizeof</span>(precommands)/<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_k_e_y_w_o_r_d.html">KEYWORD</a>));</div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>        s = EndOfToken(t);</div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>        s = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(t);</div>
 <div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>        <span class="keywordflow">if</span> ( key == 0 ) {</div>
 <div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>            <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;;&#39;</span> ) {</div>
 <div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>                *s = 0; <span class="keywordflow">goto</span> retry;</div>
@@ -2552,12 +2552,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>        }</div>
 <div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>    }</div>
 <div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>        s1 = s; s = SkipAName(s);</div>
+<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>        s1 = s; s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s);</div>
 <div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>        <span class="keywordflow">if</span> ( *s != <span class="charliteral">&#39;,&#39;</span> &amp;&amp; *s != <span class="charliteral">&#39; &#39;</span> &amp;&amp; *s != <span class="charliteral">&#39;\t&#39;</span> ) <span class="keywordflow">goto</span> syntax;</div>
 <div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>        *s++ = 0;</div>
 <div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>        <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;,&#39;</span> || *s == <span class="charliteral">&#39; &#39;</span> || *s == <span class="charliteral">&#39;\t&#39;</span> ) s++;</div>
 <div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span>        <span class="keywordflow">if</span> ( FG.cTable[*s] != 0 &amp;&amp; *s != <span class="charliteral">&#39;[&#39;</span> ) <span class="keywordflow">goto</span> syntax;</div>
-<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span>        s2 = s; s = SkipAName(s);</div>
+<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span>        s2 = s; s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s);</div>
 <div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span>        <span class="keywordflow">if</span> ( *s != 0 &amp;&amp; *s != <span class="charliteral">&#39;;&#39;</span> ) <span class="keywordflow">goto</span> syntax;</div>
 <div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span>        *s = 0;</div>
 <div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span>        <span class="keywordflow">if</span> ( GetName(AC.exprnames,s1,&amp;num1,NOAUTO) != CEXPRESSION ) {</div>
@@ -2597,7 +2597,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02568" name="l02568"></a><span class="lineno"> 2568</span><span class="comment">    1:  Get the name of the procedure.</span></div>
 <div class="line"><a id="l02569" name="l02569"></a><span class="lineno"> 2569</span><span class="comment">    2:  Locate the procedure.</span></div>
 <div class="line"><a id="l02570" name="l02570"></a><span class="lineno"> 2570</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02571" name="l02571"></a><span class="lineno"> 2571</span>    name = s; s = EndOfToken(s); c = *s; *s = 0;</div>
+<div class="line"><a id="l02571" name="l02571"></a><span class="lineno"> 2571</span>    name = s; s = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(s); c = *s; *s = 0;</div>
 <div class="line"><a id="l02572" name="l02572"></a><span class="lineno"> 2572</span>    <span class="keywordflow">for</span> ( i = NumProcedures-1; i &gt;= 0; i-- ) {</div>
 <div class="line"><a id="l02573" name="l02573"></a><span class="lineno"> 2573</span>        <span class="keywordflow">if</span> ( StrCmp(Procedures[i].name,name) == 0 ) <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l02574" name="l02574"></a><span class="lineno"> 2574</span>    }</div>
@@ -2634,7 +2634,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02605" name="l02605"></a><span class="lineno"> 2605</span>    SKIPBLANKS(t)</div>
 <div class="line"><a id="l02606" name="l02606"></a><span class="lineno"> 2606</span>    t += 9;</div>
 <div class="line"><a id="l02607" name="l02607"></a><span class="lineno"> 2607</span>    SKIPBLANKS(t)</div>
-<div class="line"><a id="l02608" name="l02608"></a><span class="lineno"> 2608</span>    u = EndOfToken(t);</div>
+<div class="line"><a id="l02608" name="l02608"></a><span class="lineno"> 2608</span>    u = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(t);</div>
 <div class="line"><a id="l02609" name="l02609"></a><span class="lineno"> 2609</span>    cp = *u; *u = 0;</div>
 <div class="line"><a id="l02610" name="l02610"></a><span class="lineno"> 2610</span>    <span class="keywordflow">if</span> ( StrCmp(t,name) != 0 ) <span class="keywordflow">goto</span> wrongfile;</div>
 <div class="line"><a id="l02611" name="l02611"></a><span class="lineno"> 2611</span>    *u = cp;</div>
@@ -2651,7 +2651,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02622" name="l02622"></a><span class="lineno"> 2622</span>        args2 = u;</div>
 <div class="line"><a id="l02623" name="l02623"></a><span class="lineno"> 2623</span>        <span class="keywordflow">while</span> ( *u != <span class="charliteral">&#39;)&#39;</span> ) {</div>
 <div class="line"><a id="l02624" name="l02624"></a><span class="lineno"> 2624</span>            <span class="keywordflow">if</span> ( *u == <span class="charliteral">&#39;?&#39;</span> ) { wildargs++; u++; nwildargs = narg2+1; }</div>
-<div class="line"><a id="l02625" name="l02625"></a><span class="lineno"> 2625</span>            narg2++; u = EndOfToken(u); SKIPBLANKS(u)</div>
+<div class="line"><a id="l02625" name="l02625"></a><span class="lineno"> 2625</span>            narg2++; u = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(u); SKIPBLANKS(u)</div>
 <div class="line"><a id="l02626" name="l02626"></a><span class="lineno"> 2626</span>            <span class="keywordflow">if</span> ( *u == <span class="charliteral">&#39;,&#39;</span> ) { u++; SKIPBLANKS(u) }</div>
 <div class="line"><a id="l02627" name="l02627"></a><span class="lineno"> 2627</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *u != <span class="charliteral">&#39;)&#39;</span> || ( wildargs &gt; 1 ) ) {</div>
 <div class="line"><a id="l02628" name="l02628"></a><span class="lineno"> 2628</span>                MesPrint(<span class="stringliteral">&quot;@Illegal argument field in procedure %s&quot;</span>,p-&gt;name);</div>
@@ -2713,11 +2713,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02684" name="l02684"></a><span class="lineno"> 2684</span>            args2++;</div>
 <div class="line"><a id="l02685" name="l02685"></a><span class="lineno"> 2685</span>        }</div>
 <div class="line"><a id="l02686" name="l02686"></a><span class="lineno"> 2686</span>        <span class="keywordflow">if</span> ( *t == <span class="charliteral">&#39;?&#39;</span> &amp;&amp; inwildargs == 0 ) {</div>
-<div class="line"><a id="l02687" name="l02687"></a><span class="lineno"> 2687</span>            args2 = EndOfToken(args2); c = *args2; *args2 = 0;</div>
+<div class="line"><a id="l02687" name="l02687"></a><span class="lineno"> 2687</span>            args2 = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(args2); c = *args2; *args2 = 0;</div>
 <div class="line"><a id="l02688" name="l02688"></a><span class="lineno"> 2688</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="pre_8c.html#a756f329998f8ff7f368fb6ec5af494f7">PutPreVar</a>(t,(UBYTE *)<span class="stringliteral">&quot;&quot;</span>,0,0) &lt; 0 ) <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l02689" name="l02689"></a><span class="lineno"> 2689</span>        }</div>
 <div class="line"><a id="l02690" name="l02690"></a><span class="lineno"> 2690</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02691" name="l02691"></a><span class="lineno"> 2691</span>            args2 = EndOfToken(args2); c = *args2; *args2 = 0;</div>
+<div class="line"><a id="l02691" name="l02691"></a><span class="lineno"> 2691</span>            args2 = <a class="code hl_function" href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a>(args2); c = *args2; *args2 = 0;</div>
 <div class="line"><a id="l02692" name="l02692"></a><span class="lineno"> 2692</span>            t1 = t2 = args1;</div>
 <div class="line"><a id="l02693" name="l02693"></a><span class="lineno"> 2693</span>            <span class="keywordflow">while</span> ( *t1 ) {</div>
 <div class="line"><a id="l02694" name="l02694"></a><span class="lineno"> 2694</span>                <span class="keywordflow">if</span> ( *t1 == <span class="charliteral">&#39;\\&#39;</span> ) t1++;</div>
@@ -3018,7 +3018,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02998" name="l02998"></a><span class="lineno"> 2998</span>        AC.RhsExprInModuleFlag = 0;</div>
 <div class="line"><a id="l02999" name="l02999"></a><span class="lineno"> 2999</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l03000" name="l03000"></a><span class="lineno"> 3000</span>        t = s;</div>
-<div class="line"><a id="l03001" name="l03001"></a><span class="lineno"> 3001</span>        <span class="keywordflow">if</span> ( ( s = SkipAName(s) ) == 0 ) <span class="keywordflow">goto</span> illdo;</div>
+<div class="line"><a id="l03001" name="l03001"></a><span class="lineno"> 3001</span>        <span class="keywordflow">if</span> ( ( s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s) ) == 0 ) <span class="keywordflow">goto</span> illdo;</div>
 <div class="line"><a id="l03002" name="l03002"></a><span class="lineno"> 3002</span>        c = *s; *s = 0;</div>
 <div class="line"><a id="l03003" name="l03003"></a><span class="lineno"> 3003</span>        <span class="keywordflow">if</span> ( GetName(AC.exprnames,t,&amp;expnum,NOAUTO) == CEXPRESSION ) {</div>
 <div class="line"><a id="l03004" name="l03004"></a><span class="lineno"> 3004</span>            loop-&gt;type = ONEEXPRESSION;</div>
@@ -4838,7 +4838,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04825" name="l04825"></a><span class="lineno"> 4825</span>                    }</div>
 <div class="line"><a id="l04826" name="l04826"></a><span class="lineno"> 4826</span>                }</div>
 <div class="line"><a id="l04827" name="l04827"></a><span class="lineno"> 4827</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04828" name="l04828"></a><span class="lineno"> 4828</span>                    tt = SkipAName(t);</div>
+<div class="line"><a id="l04828" name="l04828"></a><span class="lineno"> 4828</span>                    tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l04829" name="l04829"></a><span class="lineno"> 4829</span>                    c = *tt; *tt = 0;</div>
 <div class="line"><a id="l04830" name="l04830"></a><span class="lineno"> 4830</span>                    <span class="keywordflow">if</span> ( GetName(AC.exprnames,t,&amp;numexp,NOAUTO) == NAMENOTFOUND ) {</div>
 <div class="line"><a id="l04831" name="l04831"></a><span class="lineno"> 4831</span>                        MesPrint(<span class="stringliteral">&quot;@%s has not (yet) been defined&quot;</span>,t);</div>
@@ -4915,7 +4915,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04902" name="l04902"></a><span class="lineno"> 4902</span>                    *tt++ = c;</div>
 <div class="line"><a id="l04903" name="l04903"></a><span class="lineno"> 4903</span>                }</div>
 <div class="line"><a id="l04904" name="l04904"></a><span class="lineno"> 4904</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04905" name="l04905"></a><span class="lineno"> 4905</span>                    tt = SkipAName(t);</div>
+<div class="line"><a id="l04905" name="l04905"></a><span class="lineno"> 4905</span>                    tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l04906" name="l04906"></a><span class="lineno"> 4906</span>                    c = *tt; *tt = 0;</div>
 <div class="line"><a id="l04907" name="l04907"></a><span class="lineno"> 4907</span>                    <span class="keywordflow">if</span> ( GetName(AC.exprnames,t,&amp;numexp,NOAUTO) == NAMENOTFOUND ) { x = 0; }</div>
 <div class="line"><a id="l04908" name="l04908"></a><span class="lineno"> 4908</span>                    <span class="keywordflow">else</span> { x = 1; }</div>
@@ -4961,7 +4961,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04948" name="l04948"></a><span class="lineno"> 4948</span>                    *tt = c;</div>
 <div class="line"><a id="l04949" name="l04949"></a><span class="lineno"> 4949</span>                }</div>
 <div class="line"><a id="l04950" name="l04950"></a><span class="lineno"> 4950</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04951" name="l04951"></a><span class="lineno"> 4951</span>                    tt = SkipAName(t);</div>
+<div class="line"><a id="l04951" name="l04951"></a><span class="lineno"> 4951</span>                    tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l04952" name="l04952"></a><span class="lineno"> 4952</span>                    c = *tt; *tt = 0;</div>
 <div class="line"><a id="l04953" name="l04953"></a><span class="lineno"> 4953</span>                    <span class="keywordflow">if</span> ( GetName(AC.exprnames,t,&amp;numexp,NOAUTO) == NAMENOTFOUND ) {</div>
 <div class="line"><a id="l04954" name="l04954"></a><span class="lineno"> 4954</span>                        MesPrint(<span class="stringliteral">&quot;@expression in isnumerical(%s) does not exist&quot;</span>,t);</div>
@@ -4997,7 +4997,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04984" name="l04984"></a><span class="lineno"> 4984</span>                <span class="keywordtype">int</span> stype;</div>
 <div class="line"><a id="l04985" name="l04985"></a><span class="lineno"> 4985</span>                *t++ = c;</div>
 <div class="line"><a id="l04986" name="l04986"></a><span class="lineno"> 4986</span>                <span class="keywordflow">while</span> ( *t == <span class="charliteral">&#39; &#39;</span> || *t == <span class="charliteral">&#39;\t&#39;</span> || *t == <span class="charliteral">&#39;\n&#39;</span> || *t == <span class="charliteral">&#39;\r&#39;</span> ) t++;</div>
-<div class="line"><a id="l04987" name="l04987"></a><span class="lineno"> 4987</span>                tt = SkipAName(t);</div>
+<div class="line"><a id="l04987" name="l04987"></a><span class="lineno"> 4987</span>                tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l04988" name="l04988"></a><span class="lineno"> 4988</span>                c = *tt; *tt = 0;</div>
 <div class="line"><a id="l04989" name="l04989"></a><span class="lineno"> 4989</span>                <span class="keywordflow">if</span> ( ( stype = GetName(AC.varnames,t,&amp;numsym,NOAUTO) ) == NAMENOTFOUND ) {</div>
 <div class="line"><a id="l04990" name="l04990"></a><span class="lineno"> 4990</span>                    MesPrint(<span class="stringliteral">&quot;@%s has not (yet) been defined&quot;</span>,t);</div>
@@ -5030,7 +5030,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05017" name="l05017"></a><span class="lineno"> 5017</span>                <span class="keywordtype">int</span> stype;</div>
 <div class="line"><a id="l05018" name="l05018"></a><span class="lineno"> 5018</span>                *t++ = c;</div>
 <div class="line"><a id="l05019" name="l05019"></a><span class="lineno"> 5019</span>                <span class="keywordflow">while</span> ( *t == <span class="charliteral">&#39; &#39;</span> || *t == <span class="charliteral">&#39;\t&#39;</span> || *t == <span class="charliteral">&#39;\n&#39;</span> || *t == <span class="charliteral">&#39;\r&#39;</span> ) t++;</div>
-<div class="line"><a id="l05020" name="l05020"></a><span class="lineno"> 5020</span>                tt = SkipAName(t);</div>
+<div class="line"><a id="l05020" name="l05020"></a><span class="lineno"> 5020</span>                tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l05021" name="l05021"></a><span class="lineno"> 5021</span>                c = *tt; *tt = 0;</div>
 <div class="line"><a id="l05022" name="l05022"></a><span class="lineno"> 5022</span>                <span class="keywordflow">if</span> ( ( stype = GetName(AC.varnames,t,&amp;numsym,NOAUTO) ) == NAMENOTFOUND ) {</div>
 <div class="line"><a id="l05023" name="l05023"></a><span class="lineno"> 5023</span>                    MesPrint(<span class="stringliteral">&quot;@%s has not (yet) been defined&quot;</span>,t);</div>
@@ -5076,7 +5076,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05063" name="l05063"></a><span class="lineno"> 5063</span>                    *tt = c;</div>
 <div class="line"><a id="l05064" name="l05064"></a><span class="lineno"> 5064</span>                }</div>
 <div class="line"><a id="l05065" name="l05065"></a><span class="lineno"> 5065</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l05066" name="l05066"></a><span class="lineno"> 5066</span>                    tt = SkipAName(t);</div>
+<div class="line"><a id="l05066" name="l05066"></a><span class="lineno"> 5066</span>                    tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l05067" name="l05067"></a><span class="lineno"> 5067</span>                    c = *tt; *tt = 0;</div>
 <div class="line"><a id="l05068" name="l05068"></a><span class="lineno"> 5068</span>                    <span class="keywordflow">if</span> ( GetName(AC.exprnames,t,&amp;numexp,NOAUTO) == NAMENOTFOUND ) {</div>
 <div class="line"><a id="l05069" name="l05069"></a><span class="lineno"> 5069</span>                        MesPrint(<span class="stringliteral">&quot;@ %s should be the name of an expression or a $ variable&quot;</span>,t);</div>
@@ -5103,7 +5103,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05090" name="l05090"></a><span class="lineno"> 5090</span>                UBYTE *tt;</div>
 <div class="line"><a id="l05091" name="l05091"></a><span class="lineno"> 5091</span>                *t++ = c;</div>
 <div class="line"><a id="l05092" name="l05092"></a><span class="lineno"> 5092</span>                <span class="keywordflow">while</span> ( *t == <span class="charliteral">&#39; &#39;</span> || *t == <span class="charliteral">&#39;\t&#39;</span> || *t == <span class="charliteral">&#39;\n&#39;</span> || *t == <span class="charliteral">&#39;\r&#39;</span> ) t++;</div>
-<div class="line"><a id="l05093" name="l05093"></a><span class="lineno"> 5093</span>                tt = SkipAName(t);</div>
+<div class="line"><a id="l05093" name="l05093"></a><span class="lineno"> 5093</span>                tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l05094" name="l05094"></a><span class="lineno"> 5094</span>                c = *tt; *tt = 0;</div>
 <div class="line"><a id="l05095" name="l05095"></a><span class="lineno"> 5095</span>                <span class="keywordflow">if</span> ( GetPreVar(t,<a class="code hl_define" href="ftypes_8h.html#a694af121e4b95d07faaf8c5c7c76887b">WITHOUTERROR</a>) != 0 ) x = 1;</div>
 <div class="line"><a id="l05096" name="l05096"></a><span class="lineno"> 5096</span>                <span class="keywordflow">else</span> x = 0;</div>
@@ -5135,7 +5135,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l05122" name="l05122"></a><span class="lineno"> 5122</span>                <span class="keywordflow">if</span> ( *t != <span class="charliteral">&#39;,&#39;</span> ) <span class="keywordflow">goto</span> flagerror;</div>
 <div class="line"><a id="l05123" name="l05123"></a><span class="lineno"> 5123</span>                t++;</div>
 <div class="line"><a id="l05124" name="l05124"></a><span class="lineno"> 5124</span>                <span class="keywordflow">while</span> ( *t == <span class="charliteral">&#39; &#39;</span> || *t == <span class="charliteral">&#39;\t&#39;</span> ) t++;</div>
-<div class="line"><a id="l05125" name="l05125"></a><span class="lineno"> 5125</span>                tt = SkipAName(t);</div>
+<div class="line"><a id="l05125" name="l05125"></a><span class="lineno"> 5125</span>                tt = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(t);</div>
 <div class="line"><a id="l05126" name="l05126"></a><span class="lineno"> 5126</span>                c = *tt; *tt = 0;</div>
 <div class="line"><a id="l05127" name="l05127"></a><span class="lineno"> 5127</span>                <span class="keywordflow">if</span> ( GetName(AC.exprnames,t,&amp;numexp,NOAUTO) == NAMENOTFOUND ) {</div>
 <div class="line"><a id="l05128" name="l05128"></a><span class="lineno"> 5128</span>                    MesPrint(<span class="stringliteral">&quot;@ %s should be the name of an expression&quot;</span>,t);</div>
@@ -6525,7 +6525,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06512" name="l06512"></a><span class="lineno"> 6512</span>                    <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l06513" name="l06513"></a><span class="lineno"> 6513</span>                }</div>
 <div class="line"><a id="l06514" name="l06514"></a><span class="lineno"> 6514</span>                ss = s;</div>
-<div class="line"><a id="l06515" name="l06515"></a><span class="lineno"> 6515</span>                <span class="keywordflow">if</span> ( ( s = SkipAName(ss) ) == 0 || s[-1] == <span class="charliteral">&#39;_&#39;</span> ) <span class="keywordflow">goto</span> noexpr;</div>
+<div class="line"><a id="l06515" name="l06515"></a><span class="lineno"> 6515</span>                <span class="keywordflow">if</span> ( ( s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(ss) ) == 0 || s[-1] == <span class="charliteral">&#39;_&#39;</span> ) <span class="keywordflow">goto</span> noexpr;</div>
 <div class="line"><a id="l06516" name="l06516"></a><span class="lineno"> 6516</span>                s1 = s; c = c1 = *s1;</div>
 <div class="line"><a id="l06517" name="l06517"></a><span class="lineno"> 6517</span>                <span class="keywordflow">if</span> ( c1 == <span class="charliteral">&#39;(&#39;</span> ) {</div>
 <div class="line"><a id="l06518" name="l06518"></a><span class="lineno"> 6518</span>                    SKIPBRA3(s)</div>
@@ -6734,7 +6734,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06721" name="l06721"></a><span class="lineno"> 6721</span>            MesPrint(<span class="stringliteral">&quot;@%s is undefined&quot;</span>,s);</div>
 <div class="line"><a id="l06722" name="l06722"></a><span class="lineno"> 6722</span>            <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l06723" name="l06723"></a><span class="lineno"> 6723</span>        }</div>
-<div class="line"><a id="l06724" name="l06724"></a><span class="lineno"> 6724</span>        s = SkipAName(s+1);</div>
+<div class="line"><a id="l06724" name="l06724"></a><span class="lineno"> 6724</span>        s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s+1);</div>
 <div class="line"><a id="l06725" name="l06725"></a><span class="lineno"> 6725</span>        <span class="keywordflow">if</span> ( *s != 0 ) {</div>
 <div class="line"><a id="l06726" name="l06726"></a><span class="lineno"> 6726</span>            MesPrint(<span class="stringliteral">&quot;@#FactDollar should have a single $variable for its argument&quot;</span>);</div>
 <div class="line"><a id="l06727" name="l06727"></a><span class="lineno"> 6727</span>            <span class="keywordflow">return</span>(-1);</div>
@@ -6900,7 +6900,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l06887" name="l06887"></a><span class="lineno"> 6887</span>    <span class="keywordflow">if</span> ( AP.PreSwitchModes[AP.PreSwitchLevel] != EXECUTINGPRESWITCH ) <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l06888" name="l06888"></a><span class="lineno"> 6888</span>    <span class="keywordflow">if</span> ( AP.PreIfStack[AP.PreIfLevel] != EXECUTINGIF ) <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l06889" name="l06889"></a><span class="lineno"> 6889</span>    DUMMYUSE(*s)</div>
-<div class="line"><a id="l06890" name="l06890"></a><span class="lineno"> 6890</span>    exprname = s; s = SkipAName(s);</div>
+<div class="line"><a id="l06890" name="l06890"></a><span class="lineno"> 6890</span>    exprname = s; s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s);</div>
 <div class="line"><a id="l06891" name="l06891"></a><span class="lineno"> 6891</span>    <span class="keywordflow">if</span> ( *s != 0 &amp;&amp; *s != <span class="charliteral">&#39;;&#39;</span> ) {</div>
 <div class="line"><a id="l06892" name="l06892"></a><span class="lineno"> 6892</span>        MesPrint(<span class="stringliteral">&quot;@proper syntax is #Optimize,expression&quot;</span>);</div>
 <div class="line"><a id="l06893" name="l06893"></a><span class="lineno"> 6893</span>        <span class="keywordflow">return</span>(-1);</div>
@@ -7681,7 +7681,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l07678" name="l07678"></a><span class="lineno"> 7678</span>        UBYTE *s1, c;</div>
 <div class="line"><a id="l07679" name="l07679"></a><span class="lineno"> 7679</span>        WORD num1;</div>
 <div class="line"><a id="l07680" name="l07680"></a><span class="lineno"> 7680</span>        <span class="keywordflow">if</span> ( FG.cTable[*s] != 0 &amp;&amp; *s != <span class="charliteral">&#39;[&#39;</span> ) <span class="keywordflow">goto</span> syntax;</div>
-<div class="line"><a id="l07681" name="l07681"></a><span class="lineno"> 7681</span>        s1 = s; s = SkipAName(s);</div>
+<div class="line"><a id="l07681" name="l07681"></a><span class="lineno"> 7681</span>        s1 = s; s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s);</div>
 <div class="line"><a id="l07682" name="l07682"></a><span class="lineno"> 7682</span>        c = *s; *s = 0;</div>
 <div class="line"><a id="l07683" name="l07683"></a><span class="lineno"> 7683</span>        <span class="keywordflow">if</span> ( GetName(AC.exprnames,s1,&amp;num1,NOAUTO) != CEXPRESSION ) {</div>
 <div class="line"><a id="l07684" name="l07684"></a><span class="lineno"> 7684</span>            MesPrint(<span class="stringliteral">&quot;@%s is not an active expression&quot;</span>,s1);</div>
@@ -7878,6 +7878,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l07875" name="l07875"></a><span class="lineno"> 7875</span><span class="comment">*/</span></div>
 <div class="ttc" id="acheckpoint_8c_html_a60d3513a65e83e59f4aa48421f7356e6"><div class="ttname"><a href="checkpoint_8c.html#a60d3513a65e83e59f4aa48421f7356e6">DoCheckpoint</a></div><div class="ttdeci">void DoCheckpoint(int moduletype)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l03111">checkpoint.c:3111</a></div></div>
 <div class="ttc" id="acheckpoint_8c_html_a9213bd2589bf698d8ee098f10bf12d65"><div class="ttname"><a href="checkpoint_8c.html#a9213bd2589bf698d8ee098f10bf12d65">DoRecovery</a></div><div class="ttdeci">int DoRecovery(int *moduletype)</div><div class="ttdef"><b>Definition</b> <a href="checkpoint_8c_source.html#l01402">checkpoint.c:1402</a></div></div>
+<div class="ttc" id="acompiler_8c_html_a25f2e26d0cf00a011669666e5340bb50"><div class="ttname"><a href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a></div><div class="ttdeci">UBYTE * SkipAName(UBYTE *s)</div><div class="ttdef"><b>Definition</b> <a href="compiler_8c_source.html#l00443">compiler.c:443</a></div></div>
 <div class="ttc" id="acomtool_8c_html_a26072cb500b84460ce5816cc247311f6"><div class="ttname"><a href="comtool_8c.html#a26072cb500b84460ce5816cc247311f6">AddRHS</a></div><div class="ttdeci">WORD * AddRHS(int num, int type)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00214">comtool.c:214</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ab9540604e742ad4b787c1bd5b93484b0"><div class="ttname"><a href="comtool_8c.html#ab9540604e742ad4b787c1bd5b93484b0">AddNtoC</a></div><div class="ttdeci">int AddNtoC(int bufnum, int n, WORD *array, int par)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00317">comtool.c:317</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ad6f6e76a3969acee0be0a3c9a7c2a36a"><div class="ttname"><a href="comtool_8c.html#ad6f6e76a3969acee0be0a3c9a7c2a36a">clearcbuf</a></div><div class="ttdeci">void clearcbuf(WORD num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00116">comtool.c:116</a></div></div>
@@ -7887,13 +7888,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="adeclare_8h_html_a3f61503891515c6616a071be88c0782c"><div class="ttname"><a href="declare_8h.html#a3f61503891515c6616a071be88c0782c">AddPotModdollar</a></div><div class="ttdeci">void AddPotModdollar(WORD)</div><div class="ttdef"><b>Definition</b> <a href="dollar_8c_source.html#l03960">dollar.c:3960</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a44770ed698bf9bf084656622978cccf7"><div class="ttname"><a href="declare_8h.html#a44770ed698bf9bf084656622978cccf7">PutOut</a></div><div class="ttdeci">WORD PutOut(PHEAD WORD *, POSITION *, FILEHANDLE *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01470">sort.c:1470</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00745">sort.c:745</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03267">proces.c:3267</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03250">proces.c:3250</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04956">sort.c:4956</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a8684ab28c98721d0ccd012606c92e7dc"><div class="ttname"><a href="declare_8h.html#a8684ab28c98721d0ccd012606c92e7dc">EndOfToken</a></div><div class="ttdeci">UBYTE * EndOfToken(UBYTE *)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l01932">tools.c:1932</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a90fab21487809d64e64f115845dcdde9"><div class="ttname"><a href="declare_8h.html#a90fab21487809d64e64f115845dcdde9">ClearOptimize</a></div><div class="ttdeci">int ClearOptimize(void)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04974">optimize.cc:4974</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a99ebcff357ae7956b0ab9ee2417a6af0"><div class="ttname"><a href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a></div><div class="ttdeci">int NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00649">sort.c:649</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a9be311915f0822785e9270f60f116e09"><div class="ttname"><a href="declare_8h.html#a9be311915f0822785e9270f60f116e09">Optimize</a></div><div class="ttdeci">int Optimize(WORD, int)</div><div class="ttdef"><b>Definition</b> <a href="optimize_8cc_source.html#l04637">optimize.cc:4637</a></div></div>
 <div class="ttc" id="adeclare_8h_html_ac7a45ccfed7aa11042e2f5c259854882"><div class="ttname"><a href="declare_8h.html#ac7a45ccfed7aa11042e2f5c259854882">FlushOut</a></div><div class="ttdeci">int FlushOut(POSITION *, FILEHANDLE *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l01832">sort.c:1832</a></div></div>
-<div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03468">tools.c:3468</a></div></div>
+<div class="ttc" id="adeclare_8h_html_ad53eeb9522c14e03cb52f0f32294cfd3"><div class="ttname"><a href="declare_8h.html#ad53eeb9522c14e03cb52f0f32294cfd3">TimeCPU</a></div><div class="ttdeci">LONG TimeCPU(WORD)</div><div class="ttdef"><b>Definition</b> <a href="tools_8c_source.html#l03487">tools.c:3487</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="aftypes_8h_html_a694af121e4b95d07faaf8c5c7c76887b"><div class="ttname"><a href="ftypes_8h.html#a694af121e4b95d07faaf8c5c7c76887b">WITHOUTERROR</a></div><div class="ttdeci">#define WITHOUTERROR</div><div class="ttdef"><b>Definition</b> <a href="ftypes_8h_source.html#l00051">ftypes.h:51</a></div></div>
 <div class="ttc" id="aparallel_8c_html_a27b88f27e555759116cf5bf20931ae2a"><div class="ttname"><a href="parallel_8c.html#a27b88f27e555759116cf5bf20931ae2a">PF_BroadcastRedefinedPreVars</a></div><div class="ttdeci">int PF_BroadcastRedefinedPreVars(void)</div><div class="ttdef"><b>Definition</b> <a href="parallel_8c_source.html#l03001">parallel.c:3001</a></div></div>

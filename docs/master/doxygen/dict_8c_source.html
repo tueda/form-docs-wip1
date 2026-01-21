@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-292-g4341c63</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-316-gfe34bd1</span>
    </div>
   </td>
  </tr>
@@ -1001,7 +1001,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>    <span class="keywordflow">if</span> ( AP.PreIfStack[AP.PreIfLevel] != EXECUTINGIF ) <span class="keywordflow">return</span>(0);</div>
 <div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>    <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39; &#39;</span> ) s++;</div>
 <div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span> </div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>    name = s; s = SkipAName(s);</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>    name = s; s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s);</div>
 <div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>    <span class="keywordflow">if</span> ( *s != 0 &amp;&amp; *s != <span class="charliteral">&#39;;&#39;</span> ) {</div>
 <div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>        MesPrint(<span class="stringliteral">&quot;@proper syntax is #opendictionary name&quot;</span>);</div>
 <div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>        <span class="keywordflow">return</span>(-1);</div>
@@ -1068,7 +1068,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span>        <span class="keywordflow">return</span>(-1);</div>
 <div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>    }</div>
 <div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span> </div>
-<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>    name = s; s = SkipAName(s);</div>
+<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>    name = s; s = <a class="code hl_function" href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a>(s);</div>
 <div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>    ss = s; <span class="keywordflow">while</span> ( *s &amp;&amp; *s != <span class="charliteral">&#39;(&#39;</span> ) s++;</div>
 <div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>    c = *ss; *ss = 0;</div>
 <div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>    <span class="keywordflow">if</span> ( c == 0 ) {</div>
@@ -1216,10 +1216,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span><span class="comment">/*</span></div>
 <div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span><span class="comment">    #] DictFromBytes : </span></div>
 <div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span><span class="comment">*/</span></div>
+<div class="ttc" id="acompiler_8c_html_a25f2e26d0cf00a011669666e5340bb50"><div class="ttname"><a href="compiler_8c.html#a25f2e26d0cf00a011669666e5340bb50">SkipAName</a></div><div class="ttdeci">UBYTE * SkipAName(UBYTE *s)</div><div class="ttdef"><b>Definition</b> <a href="compiler_8c_source.html#l00443">compiler.c:443</a></div></div>
 <div class="ttc" id="acomtool_8c_html_ae9069b4533ceac646564659a6fc61ba2"><div class="ttname"><a href="comtool_8c.html#ae9069b4533ceac646564659a6fc61ba2">AddLHS</a></div><div class="ttdeci">WORD * AddLHS(int num)</div><div class="ttdef"><b>Definition</b> <a href="comtool_8c_source.html#l00188">comtool.c:188</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a233585272ceff89c858e46cf29de1096"><div class="ttname"><a href="declare_8h.html#a233585272ceff89c858e46cf29de1096">SortWild</a></div><div class="ttdeci">int SortWild(WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04763">sort.c:4763</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a541b2f6087dafa3f4c964d1a7dc055f0"><div class="ttname"><a href="declare_8h.html#a541b2f6087dafa3f4c964d1a7dc055f0">EndSort</a></div><div class="ttdeci">LONG EndSort(PHEAD WORD *, int)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00745">sort.c:745</a></div></div>
-<div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03267">proces.c:3267</a></div></div>
+<div class="ttc" id="adeclare_8h_html_a5dffea50e44008b2ba71d49f56af9d3e"><div class="ttname"><a href="declare_8h.html#a5dffea50e44008b2ba71d49f56af9d3e">Generator</a></div><div class="ttdeci">int Generator(PHEAD WORD *, WORD)</div><div class="ttdef"><b>Definition</b> <a href="proces_8c_source.html#l03250">proces.c:3250</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a69497409061c881ca2d83db4a6933d57"><div class="ttname"><a href="declare_8h.html#a69497409061c881ca2d83db4a6933d57">LowerSortLevel</a></div><div class="ttdeci">void LowerSortLevel(void)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l04956">sort.c:4956</a></div></div>
 <div class="ttc" id="adeclare_8h_html_a99ebcff357ae7956b0ab9ee2417a6af0"><div class="ttname"><a href="declare_8h.html#a99ebcff357ae7956b0ab9ee2417a6af0">NewSort</a></div><div class="ttdeci">int NewSort(PHEAD0)</div><div class="ttdef"><b>Definition</b> <a href="sort_8c_source.html#l00649">sort.c:649</a></div></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>

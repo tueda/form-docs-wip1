@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-292-g4341c63</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-316-gfe34bd1</span>
    </div>
   </td>
  </tr>
@@ -398,116 +398,125 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                <span class="keywordflow">return</span>(1);</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            }</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            ss = s; s = SkipName(s); c = *s; *s = 0; name = ConstructName(ss,0);</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            <span class="keywordflow">if</span> ( GetVar(name,&amp;type,&amp;v-&gt;couplings[v-&gt;ncouplings],CSYMBOL,WITHAUTO)</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                 == NAMENOTFOUND ) {</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                WORD minpow = -MAXPOWER;</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                WORD maxpow =  MAXPOWER;</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                WORD cplx = 0, dim = 0;</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                v-&gt;couplings[v-&gt;ncouplings] = AddSymbol(name,minpow,maxpow,cplx,dim);</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            }</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>            *s = c;</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            v-&gt;ncouplings++;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="comment">            Now possibly a power</span></div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>            <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;^&#39;</span> ) { <span class="comment">/* we need an integer */</span></div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                WORD x = 0; WORD sign = 1;</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                s++;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;-&#39;</span> || *s == <span class="charliteral">&#39;+&#39;</span> ) {</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                    <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;-&#39;</span> ) sign = -sign;</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                    s++;</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                }</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                <span class="keywordflow">while</span> ( FG.cTable[*s] == 1 ) x = 10*x + *s++ - <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                v-&gt;couplings[v-&gt;ncouplings++] = x;</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>            }</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                v-&gt;couplings[v-&gt;ncouplings++] = 1;</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>            }</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            SKIPBLANKS(s);</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;*&#39;</span> ) { s++; <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>            <span class="keywordflow">if</span> ( *s != <span class="charliteral">&#39;,&#39;</span> ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            s++;</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            SKIPBLANKS(s);</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        }</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      }</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>      <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        v-&gt;error = 1;</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        MesPrint(<span class="stringliteral">&quot;&amp;A vertex statement needs at least one coupling constant.&quot;</span>);</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      }</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    }</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    <span class="keywordflow">if</span> ( v-&gt;error == 0 ) {</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="comment">        Register which types of vertices are possible for each particle.</span></div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        <span class="keywordtype">int</span> i, j;</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; v-&gt;nparticles; i++ ) {</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>            <span class="keywordflow">for</span> ( j = 0; j &lt; m-&gt;nparticles; j++ ) {</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>                <span class="keywordflow">if</span> ( m-&gt;vertices[j]-&gt;particles[0].number == v-&gt;particles[i].number ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>                <span class="keywordflow">if</span> ( m-&gt;vertices[j]-&gt;particles[1].number == v-&gt;particles[i].number ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>            }</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>            m-&gt;vertices[j]-&gt;couplings[v-&gt;nparticles] = 1;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        }</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    }</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <span class="keywordflow">return</span>(v-&gt;error);</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>}</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="comment">    #] CoVertex : </span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="comment">    #[ CoEndModel :</span></div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="keywordtype">int</span> CoEndModel(UBYTE *s)</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>{</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    <span class="keywordtype">int</span> i, j, k, kk;</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    WORD csize = 0, *newcouplings, newsize;</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    <a class="code hl_struct" href="struct_mo_de_l.html">MODEL</a> *m;</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    <a class="code hl_struct" href="struct_ve_rt_ex.html">VERTEX</a> *v;</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="keywordflow">if</span> ( AC.ModelLevel &lt;= 0 ) {</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        MesPrint(<span class="stringliteral">&quot;&amp;EndModel statement without matching Model statement&quot;</span>);</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        <span class="keywordflow">return</span>(1);</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    }</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    m = AC.models[AC.nummodels-1];</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><span class="comment">    Now create a list of all coupling constants.</span></div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><span class="comment">    Note that we do not expect an astronomical number of them and hence</span></div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="comment">    we use a simple insertion algorithm.</span></div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    m-&gt;ncouplings = 0;</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; m-&gt;nvertices; i++ ) {</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        v = m-&gt;vertices[i+m-&gt;nparticles];</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        m-&gt;legcouple[v-&gt;nparticles] = 1;</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        <span class="keywordflow">if</span> ( m-&gt;ncouplings + v-&gt;ncouplings &gt; csize ) {</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            <span class="keywordflow">if</span> ( csize == 0 ) newsize = v-&gt;ncouplings + 10;</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>            <span class="keywordflow">else</span> newsize = 2*csize;</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>            newcouplings = (WORD *)Malloc1(newsize*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;m-&gt;couplings&quot;</span>);</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>            <span class="keywordflow">for</span> ( k = 0; k &lt; m-&gt;ncouplings; k++ ) newcouplings[k] = m-&gt;couplings[k];</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>            <span class="keywordflow">if</span> ( csize &gt; 0 ) M_free(m-&gt;couplings,<span class="stringliteral">&quot;m-&gt;couplings&quot;</span>);</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>            m-&gt;couplings = newcouplings;</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>            csize = newsize;</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        }</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        <span class="keywordflow">for</span> ( j = 0; j &lt; v-&gt;ncouplings; j += 2 ) {</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            WORD sym = v-&gt;couplings[j];</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>            <span class="keywordflow">for</span> ( k = 0; k &lt; m-&gt;ncouplings; k++ ) {</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>                <span class="keywordflow">if</span> ( sym == m-&gt;couplings[k] ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>                <span class="keywordflow">if</span> ( sym &lt; m-&gt;couplings[k] ) {</div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>                    <span class="keywordflow">for</span> ( kk = m-&gt;ncouplings; kk &gt; k; k-- )</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>                        m-&gt;couplings[kk] = m-&gt;couplings[kk-1];</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                    m-&gt;couplings[k] = sym;</div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>                    m-&gt;ncouplings++;</div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>                }</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>            }</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>            <span class="keywordflow">if</span> ( k &gt;= m-&gt;ncouplings ) m-&gt;couplings[m-&gt;ncouplings++] = sym;</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        }</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    }</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    AC.ModelLevel--;</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>    DUMMYUSE(s)</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    <span class="keywordflow">return</span>(LoadModel(m));</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>}</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span> </div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span><span class="comment">    #] CoEndModel : </span></div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            <span class="comment">// Forbid couplings which have no symbol or an overal numerical factor.</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            <span class="keywordflow">if</span> ( *name == 0 ) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                v-&gt;error = 1;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                MesPrint(<span class="stringliteral">&quot;&amp;Invalid coupling constant in vertex statement.&quot;</span>);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            }</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>            <span class="keywordflow">if</span> ( GetVar(name,&amp;type,&amp;v-&gt;couplings[v-&gt;ncouplings],CSYMBOL,WITHAUTO)</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                 == NAMENOTFOUND ) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                WORD minpow = -MAXPOWER;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                WORD maxpow =  MAXPOWER;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                WORD cplx = 0, dim = 0;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                v-&gt;couplings[v-&gt;ncouplings] = AddSymbol(name,minpow,maxpow,cplx,dim);</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>            }</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>            *s = c;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            v-&gt;ncouplings++;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="comment">            Now possibly a power</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>            <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;^&#39;</span> ) { <span class="comment">/* we need an integer */</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                WORD x = 0; WORD sign = 1;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                s++;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                <span class="keywordflow">while</span> ( *s == <span class="charliteral">&#39;-&#39;</span> || *s == <span class="charliteral">&#39;+&#39;</span> ) {</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                    <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;-&#39;</span> ) sign = -sign;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                    s++;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                }</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                <span class="keywordflow">if</span> ( sign == -1 ) {</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                    v-&gt;error = 1;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                    MesPrint(<span class="stringliteral">&quot;&amp;Invalid negative power of coupling constant.&quot;</span>);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                }</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                <span class="keywordflow">while</span> ( FG.cTable[*s] == 1 ) x = 10*x + *s++ - <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                v-&gt;couplings[v-&gt;ncouplings++] = x;</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>            }</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>                v-&gt;couplings[v-&gt;ncouplings++] = 1;</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>            }</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            SKIPBLANKS(s);</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>            <span class="keywordflow">if</span> ( *s == <span class="charliteral">&#39;*&#39;</span> ) { s++; <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>            <span class="keywordflow">if</span> ( *s != <span class="charliteral">&#39;,&#39;</span> ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            s++;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            SKIPBLANKS(s);</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        }</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      }</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>      <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        v-&gt;error = 1;</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        MesPrint(<span class="stringliteral">&quot;&amp;A vertex statement needs at least one coupling constant.&quot;</span>);</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>      }</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    }</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    <span class="keywordflow">if</span> ( v-&gt;error == 0 ) {</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span><span class="comment">        Register which types of vertices are possible for each particle.</span></div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        <span class="keywordflow">for</span> ( i = 0; i &lt; v-&gt;nparticles; i++ ) {</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            <span class="keywordflow">for</span> ( j = 0; j &lt; m-&gt;nparticles; j++ ) {</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                <span class="keywordflow">if</span> ( m-&gt;vertices[j]-&gt;particles[0].number == v-&gt;particles[i].number ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                <span class="keywordflow">if</span> ( m-&gt;vertices[j]-&gt;particles[1].number == v-&gt;particles[i].number ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>            }</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            m-&gt;vertices[j]-&gt;couplings[v-&gt;nparticles] = 1;</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        }</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    }</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    <span class="keywordflow">return</span>(v-&gt;error);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>}</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span><span class="comment">    #] CoVertex : </span></div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span><span class="comment">    #[ CoEndModel :</span></div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="keywordtype">int</span> CoEndModel(UBYTE *s)</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>{</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="keywordtype">int</span> i, j, k, kk;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    WORD csize = 0, *newcouplings, newsize;</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    <a class="code hl_struct" href="struct_mo_de_l.html">MODEL</a> *m;</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>    <a class="code hl_struct" href="struct_ve_rt_ex.html">VERTEX</a> *v;</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    <span class="keywordflow">if</span> ( AC.ModelLevel &lt;= 0 ) {</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        MesPrint(<span class="stringliteral">&quot;&amp;EndModel statement without matching Model statement&quot;</span>);</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        <span class="keywordflow">return</span>(1);</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    }</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    m = AC.models[AC.nummodels-1];</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span><span class="comment">    Now create a list of all coupling constants.</span></div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span><span class="comment">    Note that we do not expect an astronomical number of them and hence</span></div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span><span class="comment">    we use a simple insertion algorithm.</span></div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    m-&gt;ncouplings = 0;</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>    <span class="keywordflow">for</span> ( i = 0; i &lt; m-&gt;nvertices; i++ ) {</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        v = m-&gt;vertices[i+m-&gt;nparticles];</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        m-&gt;legcouple[v-&gt;nparticles] = 1;</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        <span class="keywordflow">if</span> ( m-&gt;ncouplings + v-&gt;ncouplings &gt; csize ) {</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            <span class="keywordflow">if</span> ( csize == 0 ) newsize = v-&gt;ncouplings + 10;</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>            <span class="keywordflow">else</span> newsize = 2*csize;</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>            newcouplings = (WORD *)Malloc1(newsize*<span class="keyword">sizeof</span>(WORD),<span class="stringliteral">&quot;m-&gt;couplings&quot;</span>);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>            <span class="keywordflow">for</span> ( k = 0; k &lt; m-&gt;ncouplings; k++ ) newcouplings[k] = m-&gt;couplings[k];</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>            <span class="keywordflow">if</span> ( csize &gt; 0 ) M_free(m-&gt;couplings,<span class="stringliteral">&quot;m-&gt;couplings&quot;</span>);</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>            m-&gt;couplings = newcouplings;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>            csize = newsize;</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>        }</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keywordflow">for</span> ( j = 0; j &lt; v-&gt;ncouplings; j += 2 ) {</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>            WORD sym = v-&gt;couplings[j];</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>            <span class="keywordflow">for</span> ( k = 0; k &lt; m-&gt;ncouplings; k++ ) {</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>                <span class="keywordflow">if</span> ( sym == m-&gt;couplings[k] ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>                <span class="keywordflow">if</span> ( sym &lt; m-&gt;couplings[k] ) {</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>                    <span class="keywordflow">for</span> ( kk = m-&gt;ncouplings; kk &gt; k; k-- )</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>                        m-&gt;couplings[kk] = m-&gt;couplings[kk-1];</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>                    m-&gt;couplings[k] = sym;</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>                    m-&gt;ncouplings++;</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>                }</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>            }</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>            <span class="keywordflow">if</span> ( k &gt;= m-&gt;ncouplings ) m-&gt;couplings[m-&gt;ncouplings++] = sym;</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>        }</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    }</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    AC.ModelLevel--;</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    DUMMYUSE(s)</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    <span class="keywordflow">return</span>(LoadModel(m));</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>}</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span><span class="comment">    #] CoEndModel : </span></div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span><span class="comment">*/</span></div>
 <div class="ttc" id="aform3_8h_html"><div class="ttname"><a href="form3_8h.html">form3.h</a></div></div>
 <div class="ttc" id="astruct_mo_de_l_html"><div class="ttname"><a href="struct_mo_de_l.html">MoDeL</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00637">structs.h:637</a></div></div>
 <div class="ttc" id="astruct_pa_rt_ic_le_html"><div class="ttname"><a href="struct_pa_rt_ic_le.html">PaRtIcLe</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00619">structs.h:619</a></div></div>

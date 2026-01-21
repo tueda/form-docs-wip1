@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-292-g4341c63</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-316-gfe34bd1</span>
    </div>
   </td>
  </tr>
@@ -53,46 +53,53 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="form3_8h_source.html">form3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="comtool_8h_source.html">comtool.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for compiler.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="compiler_8c__incl.png" border="0" usemap="#acompiler_8c" alt=""/></div>
 <map name="acompiler_8c" id="acompiler_8c">
-<area shape="rect" title=" " alt="" coords="419,5,508,31"/>
-<area shape="rect" href="form3_8h.html" title=" " alt="" coords="427,79,500,104"/>
-<area shape="poly" title=" " alt="" coords="466,31,466,65,461,65,461,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,76,177"/>
-<area shape="poly" title=" " alt="" coords="427,100,283,121,90,155,89,149,282,116,426,95"/>
-<area shape="rect" title=" " alt="" coords="101,152,175,177"/>
-<area shape="poly" title=" " alt="" coords="427,103,189,155,188,150,426,98"/>
-<area shape="rect" title=" " alt="" coords="119,225,186,251"/>
-<area shape="poly" title=" " alt="" coords="427,102,351,121,308,136,266,154,217,186,176,218,173,214,213,181,263,150,306,131,349,116,426,97"/>
-<area shape="rect" title=" " alt="" coords="211,225,281,251"/>
-<area shape="poly" title=" " alt="" coords="427,99,359,116,323,132,290,154,269,182,255,213,250,211,264,180,287,150,320,127,357,111,426,94"/>
-<area shape="rect" title=" " alt="" coords="395,225,465,251"/>
-<area shape="poly" title=" " alt="" coords="462,105,447,153,436,212,431,211,442,151,457,104"/>
-<area shape="rect" title=" " alt="" coords="489,225,560,251"/>
-<area shape="poly" title=" " alt="" coords="469,104,478,137,492,176,512,213,507,215,488,178,473,139,464,105"/>
-<area shape="rect" title=" " alt="" coords="501,152,572,177"/>
-<area shape="poly" title=" " alt="" coords="477,102,517,140,513,144,474,106"/>
-<area shape="rect" href="ftypes_8h.html" title=" " alt="" coords="597,152,671,177"/>
-<area shape="poly" title=" " alt="" coords="492,102,595,144,593,149,490,106"/>
-<area shape="rect" href="fsizes_8h.html" title=" " alt="" coords="695,152,767,177"/>
-<area shape="poly" title=" " alt="" coords="501,100,683,148,681,153,499,105"/>
-<area shape="rect" href="minos_8h.html" title=" " alt="" coords="301,152,375,177"/>
-<area shape="poly" title=" " alt="" coords="445,106,372,147,369,143,442,102"/>
-<area shape="rect" href="structs_8h.html" title=" " alt="" coords="792,152,871,177"/>
-<area shape="poly" title=" " alt="" coords="501,97,779,149,778,154,500,102"/>
-<area shape="rect" href="declare_8h.html" title=" " alt="" coords="895,152,978,177"/>
-<area shape="poly" title=" " alt="" coords="501,94,662,115,882,149,881,154,662,121,500,100"/>
-<area shape="rect" href="variable_8h.html" title=" " alt="" coords="1003,152,1089,177"/>
-<area shape="poly" title=" " alt="" coords="501,93,705,113,990,149,989,155,704,118,500,98"/>
-<area shape="poly" title=" " alt="" coords="309,180,196,223,195,218,307,175"/>
-<area shape="poly" title=" " alt="" coords="325,179,273,219,270,215,322,175"/>
-<area shape="poly" title=" " alt="" coords="354,175,406,215,403,219,351,179"/>
-<area shape="poly" title=" " alt="" coords="369,175,482,218,481,223,367,180"/>
-<area shape="rect" title=" " alt="" coords="306,225,370,251"/>
-<area shape="poly" title=" " alt="" coords="341,178,341,212,335,212,335,178"/>
+<area shape="rect" title=" " alt="" coords="469,5,559,31"/>
+<area shape="rect" href="form3_8h.html" title=" " alt="" coords="477,152,551,177"/>
+<area shape="poly" title=" " alt="" coords="513,32,502,79,503,110,509,138,503,139,497,110,497,78,508,30"/>
+<area shape="rect" href="comtool_8h.html" title=" " alt="" coords="512,79,599,104"/>
+<area shape="poly" title=" " alt="" coords="523,30,544,65,539,68,519,32"/>
+<area shape="rect" title=" " alt="" coords="5,225,76,251"/>
+<area shape="poly" title=" " alt="" coords="477,173,313,193,90,228,89,223,313,188,477,167"/>
+<area shape="rect" title=" " alt="" coords="101,225,175,251"/>
+<area shape="poly" title=" " alt="" coords="477,175,194,228,189,229,188,224,194,223,477,170"/>
+<area shape="rect" title=" " alt="" coords="142,299,209,324"/>
+<area shape="poly" title=" " alt="" coords="478,175,395,194,347,209,300,228,246,259,201,292,198,288,243,255,298,223,345,204,393,189,476,170"/>
+<area shape="rect" title=" " alt="" coords="233,299,304,324"/>
+<area shape="poly" title=" " alt="" coords="478,173,406,191,366,206,330,227,302,256,282,287,278,285,298,253,327,223,364,201,404,186,476,168"/>
+<area shape="rect" title=" " alt="" coords="328,299,399,324"/>
+<area shape="poly" title=" " alt="" coords="477,169,443,174,405,183,370,200,342,227,336,241,337,256,350,286,345,288,332,257,331,240,337,224,367,196,403,178,442,168,477,164"/>
+<area shape="rect" title=" " alt="" coords="423,299,493,324"/>
+<area shape="poly" title=" " alt="" coords="512,179,470,287,465,285,507,177"/>
+<area shape="rect" title=" " alt="" coords="552,225,623,251"/>
+<area shape="poly" title=" " alt="" coords="528,176,567,214,564,218,524,180"/>
+<area shape="rect" title=" " alt="" coords="647,225,722,251"/>
+<area shape="poly" title=" " alt="" coords="542,175,645,218,643,222,540,180"/>
+<area shape="rect" title=" " alt="" coords="518,299,582,324"/>
+<area shape="poly" title=" " alt="" coords="520,177,546,285,541,286,514,178"/>
+<area shape="rect" href="ftypes_8h.html" title=" " alt="" coords="746,225,821,251"/>
+<area shape="poly" title=" " alt="" coords="552,173,733,221,732,226,550,178"/>
+<area shape="rect" href="fsizes_8h.html" title=" " alt="" coords="845,225,917,251"/>
+<area shape="poly" title=" " alt="" coords="551,170,832,223,831,228,550,175"/>
+<area shape="rect" href="minos_8h.html" title=" " alt="" coords="351,225,426,251"/>
+<area shape="poly" title=" " alt="" coords="495,180,422,221,420,216,493,175"/>
+<area shape="rect" href="structs_8h.html" title=" " alt="" coords="941,225,1020,251"/>
+<area shape="poly" title=" " alt="" coords="551,168,711,189,928,223,927,228,710,194,550,173"/>
+<area shape="rect" href="declare_8h.html" title=" " alt="" coords="1045,225,1127,251"/>
+<area shape="poly" title=" " alt="" coords="552,166,752,186,1031,223,1030,228,752,191,551,172"/>
+<area shape="rect" href="variable_8h.html" title=" " alt="" coords="1152,225,1239,251"/>
+<area shape="poly" title=" " alt="" coords="551,165,794,184,962,200,1138,223,1138,228,962,206,793,189,551,171"/>
+<area shape="poly" title=" " alt="" coords="355,253,223,297,221,292,354,248"/>
+<area shape="poly" title=" " alt="" coords="371,253,302,294,299,289,368,248"/>
+<area shape="poly" title=" " alt="" coords="387,252,374,287,369,285,382,250"/>
+<area shape="poly" title=" " alt="" coords="402,249,439,287,435,291,398,253"/>
+<area shape="poly" title=" " alt="" coords="416,248,512,291,510,295,414,253"/>
+<area shape="poly" title=" " alt="" coords="551,106,530,141,525,139,546,103"/>
 </map>
 </div>
 </div>
@@ -180,7 +187,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00259">259</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00260">260</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -196,7 +203,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00260">260</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00261">261</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -212,7 +219,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00261">261</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00262">262</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -231,9 +238,9 @@ Variables</h2></td></tr>
 <div class="line">    M_free(subexpbuffers,<span class="stringliteral">&quot;subexpbuffers&quot;</span>);\</div>
 <div class="line">    subexpbuffers = (<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a> *)Malloc1(256*<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_su_bb_uf.html">SUBBUF</a>),<span class="stringliteral">&quot;subexpbuffers&quot;</span>);\</div>
 <div class="line">    topsubexpbuffers = subexpbuffers+256; } insubexpbuffers = 0; }</div>
-<div class="ttc" id="astruct_su_bb_uf_html"><div class="ttname"><a href="struct_su_bb_uf.html">SuBbUf</a></div><div class="ttdef"><b>Definition</b> <a href="compiler_8c_source.html#l00263">compiler.c:263</a></div></div>
+<div class="ttc" id="astruct_su_bb_uf_html"><div class="ttname"><a href="struct_su_bb_uf.html">SuBbUf</a></div><div class="ttdef"><b>Definition</b> <a href="compiler_8c_source.html#l00264">compiler.c:264</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00272">272</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00273">273</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -254,7 +261,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00314">314</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00315">315</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -274,7 +281,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00340">340</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00341">341</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -294,7 +301,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00384">384</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00385">385</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -313,8 +320,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Skips a name and gives a pointer to the character after the name. If there is not a proper name, it emits a compiler message and then returns a null pointer. This function supports formal names (e.g., <code>[x+a]</code>) and $-variables in addition to ordinary identifiers.</p>
+<dl class="section note"><dt>Note</dt><dd>The brackets are assumed to be matched already.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Pointer to a null-terminated input string that starts with a name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the character after the name, or a null pointer if the name is invalid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00434">434</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00443">443</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -344,7 +360,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00462">462</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00476">476</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -364,7 +380,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00508">508</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00522">522</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -400,7 +416,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00522">522</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00536">536</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -420,7 +436,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00558">558</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00572">572</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -440,7 +456,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00673">673</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00706">706</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -460,7 +476,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00717">717</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00750">750</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -480,7 +496,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00852">852</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00885">885</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -534,7 +550,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l01915">1915</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l01948">1948</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -554,7 +570,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l01952">1952</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l01985">1985</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -584,7 +600,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l02249">2249</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l02282">2282</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -601,7 +617,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00257">257</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00258">258</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -617,7 +633,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00268">268</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00269">269</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -633,7 +649,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00269">269</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00270">270</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>
@@ -649,7 +665,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00270">270</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compiler_8c_source.html#l00271">271</a> of file <a class="el" href="compiler_8c_source.html">compiler.c</a>.</p>
 
 </div>
 </div>

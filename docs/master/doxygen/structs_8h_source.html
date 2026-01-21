@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-292-g4341c63</span>
+   <div id="projectname">FORM<span id="projectnumber">&#160;v5.0.0-beta.1-316-gfe34bd1</span>
    </div>
   </td>
  </tr>
@@ -2264,40 +2264,35 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l02497" name="l02497"></a><span class="lineno"> 2497</span><span class="preprocessor">#define BHEAD0</span></div>
 <div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span> </div>
-<div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span><span class="preprocessor">#ifdef ANSI</span></div>
-<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span><span class="keyword">typedef</span> int (*WCN)(PHEAD WORD *,WORD *,WORD,WORD);</div>
-<div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span><span class="keyword">typedef</span> int (*WCN2)(PHEAD WORD *,WORD *);</div>
-<div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span><span class="keyword">typedef</span> int (*WCN)();</div>
-<div class="line"><a id="l02505" name="l02505"></a><span class="lineno"> 2505</span><span class="keyword">typedef</span> int (*WCN2)();</div>
-<div class="line"><a id="l02506" name="l02506"></a><span class="lineno"> 2506</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l02507" name="l02507"></a><span class="lineno"> 2507</span> </div>
-<div class="line"><a id="l02508" name="l02508"></a><span class="lineno"> 2508</span><span class="keyword">typedef</span> WORD (*COMPARE)(PHEAD WORD *,WORD *,WORD);</div>
-<div class="line"><a id="l02509" name="l02509"></a><span class="lineno"> 2509</span> </div>
-<div class="foldopen" id="foldopen02521" data-start="{" data-end="};">
-<div class="line"><a id="l02521" name="l02521"></a><span class="lineno"><a class="line" href="struct_fixed_globals.html"> 2521</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_fixed_globals.html">FixedGlobals</a> {</div>
-<div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span>    WCN     Operation[8];</div>
-<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>    WCN2    OperaFind[6];</div>
-<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>    <span class="keywordtype">char</span>    *VarType[10];</div>
-<div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>    <span class="keywordtype">char</span>    *ExprStat[21];</div>
-<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>    <span class="keywordtype">char</span>    *FunNam[2];</div>
-<div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>    <span class="keywordtype">char</span>    *swmes[3];</div>
-<div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>    <span class="keywordtype">char</span>    *fname;</div>
-<div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>    <span class="keywordtype">char</span>    *fname2;</div>
-<div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span>    UBYTE   *s_one;</div>
-<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span>    WORD    fnamebase;</div>
-<div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span>    WORD    fname2base;</div>
-<div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span>    WORD    fnamesize;</div>
-<div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span>    WORD    fname2size;</div>
-<div class="line"><a id="l02535" name="l02535"></a><span class="lineno"> 2535</span>    UINT    cTable[256];</div>
-<div class="line"><a id="l02536" name="l02536"></a><span class="lineno"><a class="line" href="structs_8h.html#a0aef34b386fa4373eece67ad3d3d1642"> 2536</a></span>} <a class="code hl_typedef" href="structs_8h.html#a0aef34b386fa4373eece67ad3d3d1642">FIXEDGLOBALS</a>;</div>
+<div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span><span class="keyword">typedef</span> int (*WCN)(PHEAD WORD *,WORD *,WORD,WORD);</div>
+<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span><span class="keyword">typedef</span> int (*WCN2)(PHEAD WORD *,WORD *);</div>
+<div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span> </div>
+<div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span><span class="keyword">typedef</span> WORD (*COMPARE)(PHEAD WORD *,WORD *,WORD);</div>
+<div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span> </div>
+<div class="foldopen" id="foldopen02516" data-start="{" data-end="};">
+<div class="line"><a id="l02516" name="l02516"></a><span class="lineno"><a class="line" href="struct_fixed_globals.html"> 2516</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_fixed_globals.html">FixedGlobals</a> {</div>
+<div class="line"><a id="l02517" name="l02517"></a><span class="lineno"> 2517</span>    WCN     Operation[8];</div>
+<div class="line"><a id="l02518" name="l02518"></a><span class="lineno"> 2518</span>    WCN2    OperaFind[6];</div>
+<div class="line"><a id="l02519" name="l02519"></a><span class="lineno"> 2519</span>    <span class="keywordtype">char</span>    *VarType[10];</div>
+<div class="line"><a id="l02520" name="l02520"></a><span class="lineno"> 2520</span>    <span class="keywordtype">char</span>    *ExprStat[21];</div>
+<div class="line"><a id="l02521" name="l02521"></a><span class="lineno"> 2521</span>    <span class="keywordtype">char</span>    *FunNam[2];</div>
+<div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span>    <span class="keywordtype">char</span>    *swmes[3];</div>
+<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>    <span class="keywordtype">char</span>    *fname;</div>
+<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>    <span class="keywordtype">char</span>    *fname2;</div>
+<div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>    UBYTE   *s_one;</div>
+<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>    WORD    fnamebase;</div>
+<div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>    WORD    fname2base;</div>
+<div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>    WORD    fnamesize;</div>
+<div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>    WORD    fname2size;</div>
+<div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span>    UINT    cTable[256];</div>
+<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"><a class="line" href="structs_8h.html#a0aef34b386fa4373eece67ad3d3d1642"> 2531</a></span>} <a class="code hl_typedef" href="structs_8h.html#a0aef34b386fa4373eece67ad3d3d1642">FIXEDGLOBALS</a>;</div>
 </div>
-<div class="line"><a id="l02537" name="l02537"></a><span class="lineno"> 2537</span> </div>
-<div class="line"><a id="l02538" name="l02538"></a><span class="lineno"> 2538</span><span class="comment">/*</span></div>
-<div class="line"><a id="l02539" name="l02539"></a><span class="lineno"> 2539</span><span class="comment">    #] FG : </span></div>
-<div class="line"><a id="l02540" name="l02540"></a><span class="lineno"> 2540</span><span class="comment">*/</span></div>
-<div class="line"><a id="l02541" name="l02541"></a><span class="lineno"> 2541</span> </div>
-<div class="line"><a id="l02542" name="l02542"></a><span class="lineno"> 2542</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span> </div>
+<div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span><span class="comment">/*</span></div>
+<div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span><span class="comment">    #] FG : </span></div>
+<div class="line"><a id="l02535" name="l02535"></a><span class="lineno"> 2535</span><span class="comment">*/</span></div>
+<div class="line"><a id="l02536" name="l02536"></a><span class="lineno"> 2536</span> </div>
+<div class="line"><a id="l02537" name="l02537"></a><span class="lineno"> 2537</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astruct_all_globals_html"><div class="ttname"><a href="struct_all_globals.html">AllGlobals</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l02468">structs.h:2468</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nd_ex_html"><div class="ttname"><a href="struct_br_ac_ke_ti_nd_ex.html">BrAcKeTiNdEx</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00311">structs.h:311</a></div></div>
 <div class="ttc" id="astruct_br_ac_ke_ti_nf_o_html"><div class="ttname"><a href="struct_br_ac_ke_ti_nf_o.html">BrAcKeTiNfO</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00322">structs.h:322</a></div></div>
@@ -2390,7 +2385,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="astruct_fi_le_in_de_x_html_aceb5e57c11d3f0409399e79f1ec4a82d"><div class="ttname"><a href="struct_fi_le_in_de_x.html#aceb5e57c11d3f0409399e79f1ec4a82d">FiLeInDeX::next</a></div><div class="ttdeci">POSITION next</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00138">structs.h:138</a></div></div>
 <div class="ttc" id="astruct_fi_le_in_de_x_html_ad5b487d900fcf9c5755bd41247673eda"><div class="ttname"><a href="struct_fi_le_in_de_x.html#ad5b487d900fcf9c5755bd41247673eda">FiLeInDeX::expression</a></div><div class="ttdeci">INDEXENTRY expression[INFILEINDEX]</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00140">structs.h:140</a></div></div>
 <div class="ttc" id="astruct_fi_le_in_de_x_html_aeff7ab0ea84f934fa533a827d5977f2f"><div class="ttname"><a href="struct_fi_le_in_de_x.html#aeff7ab0ea84f934fa533a827d5977f2f">FiLeInDeX::empty</a></div><div class="ttdeci">SBYTE empty[EMPTYININDEX]</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00141">structs.h:141</a></div></div>
-<div class="ttc" id="astruct_fixed_globals_html"><div class="ttname"><a href="struct_fixed_globals.html">FixedGlobals</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l02521">structs.h:2521</a></div></div>
+<div class="ttc" id="astruct_fixed_globals_html"><div class="ttname"><a href="struct_fixed_globals.html">FixedGlobals</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l02516">structs.h:2516</a></div></div>
 <div class="ttc" id="astruct_fu_nc_ti_on_html"><div class="ttname"><a href="struct_fu_nc_ti_on.html">FuNcTiOn</a></div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00487">structs.h:487</a></div></div>
 <div class="ttc" id="astruct_fu_nc_ti_on_html_a13addb2593bcba36b9de2962e43ce1b6"><div class="ttname"><a href="struct_fu_nc_ti_on.html#a13addb2593bcba36b9de2962e43ce1b6">FuNcTiOn::node</a></div><div class="ttdeci">WORD node</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00497">structs.h:497</a></div></div>
 <div class="ttc" id="astruct_fu_nc_ti_on_html_a1d8e03636d7c718847fe1131d0b21092"><div class="ttname"><a href="struct_fu_nc_ti_on.html#a1d8e03636d7c718847fe1131d0b21092">FuNcTiOn::complex</a></div><div class="ttdeci">WORD complex</div><div class="ttdef"><b>Definition</b> <a href="structs_8h_source.html#l00492">structs.h:492</a></div></div>
