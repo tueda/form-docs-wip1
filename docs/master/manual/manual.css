@@ -68,5 +68,6 @@ PRE.preform		{   }
 SPAN.sc		{   }
 SPAN.tt		{   }
 SPAN.arabic		{   }
+SPAN.textbf		{ font-weight: bold  }
 SPAN.textit		{ font-style: italic  }
 SPAN.texttt		{ font-family: monospace  }
